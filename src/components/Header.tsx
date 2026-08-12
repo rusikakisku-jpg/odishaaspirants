@@ -18,6 +18,8 @@ import {
 
 export default function Header() {
   const pathname = usePathname();
+  if (pathname?.startsWith('/admin')) return null;
+
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   // Desktop Header Nav Items (5 items matching live header)
