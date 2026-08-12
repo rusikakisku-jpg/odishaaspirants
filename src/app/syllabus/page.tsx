@@ -1,74 +1,74 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Search, Eye } from 'lucide-react';
+import { fetchSyllabusApi, fetchJobsApi } from '@/lib/api';
 
-interface SyllabusItem {
-  id: string;
+interface SyllabusDisplayItem {
+  id: string | number;
   title: string;
-  board: 'OSSC' | 'OPSC' | 'OSSSC';
+  board: string;
   year: string;
   link: string;
 }
 
-const SYLLABUS_DATA: SyllabusItem[] = [
-  {
-    id: 'syl-1',
-    title: 'OSSC Combined Graduate Level (CGL) Syllabus',
-    board: 'OSSC',
-    year: '2026',
-    link: '/jobs/1',
-  },
-  {
-    id: 'syl-2',
-    title: 'Odisha Civil Services (OCS) Syllabus',
-    board: 'OPSC',
-    year: '2026',
-    link: '/jobs/2',
-  },
-  {
-    id: 'syl-3',
-    title: 'OSSSC Combined Group-C Teachers Syllabus',
-    board: 'OSSSC',
-    year: '2026',
-    link: '/jobs/3',
-  },
-  {
-    id: 'syl-4',
-    title: 'OSSC Junior Executive Assistant Syllabus',
-    board: 'OSSC',
-    year: '2026',
-    link: '/jobs/4',
-  },
-];
-
 export default function SyllabusPage() {
   const [activeBoard, setActiveBoard] = useState<string>('All');
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [syllabusList, setSyllabusList] = useState<SyllabusDisplayItem[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredItems = SYLLABUS_DATA.filter((item) => {
-    const matchesBoard = activeBoard === 'All' || item.board === activeBoard;
+  useEffect(() => {
+    async function loadData() {
+      const [patterns, jobs] = await Promise.all([
+        fetchSyllabusApi(),
+        fetchJobsApi(),
+      ]);
+
+      const formatted: SyllabusDisplayItem[] = patterns.map((p: any) => ({
+        id: p.id,
+        title: p.title,
+        board: p.board,
+        year: p.update_year || '2026',
+        link: `/jobs/${p.id}`,
+      }));
+
+      // If patterns array is smaller, combine with jobs syllabus entries
+      jobs.forEach((j) => {
+        if (!formatted.some((f) => String(f.id) === String(j.id))) {
+          formatted.push({
+            id: j.id,
+            title: `${j.title} Syllabus`,
+            board: j.board,
+            year: '2026',
+            link: `/jobs/${j.id}`,
+          });
+        }
+      });
+
+      setSyllabusList(formatted);
+      setLoading(false);
+    }
+    loadData();
+  }, []);
+
+  const filteredItems = syllabusList.filter((item) => {
+    const matchesBoard = activeBoard === 'All' || item.board.toUpperCase() === activeBoard.toUpperCase();
     const matchesSearch =
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.board.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesBoard && matchesSearch;
   });
 
-  const getBoardBadgeClass = (board: string) => {
-    if (board === 'OPSC') return 'board-opsc';
-    if (board === 'OSSC') return 'board-ossc';
-    return 'board-osssc';
-  };
-
   return (
     <>
       <div className="container">
-        {/* Page Header & Search - Matched with odishaaspirants.com/syllabus */}
+        {/* Header Search Row matching odishaaspirants.com/syllabus */}
         <div className="header-search-row">
           <div className="page-header">
-            <h1>Exam Syllabus &amp; Schemes</h1>
-            <p>View official syllabus PDFs and check detailed question paper patterns and marks scheme.</p>
+            <h1>Exam Syllabus &amp; Pattern</h1>
+            <p>Official examination pattern, subject-wise marks distribution, and syllabus guides.</p>
           </div>
 
           <div className="search-wrapper">
@@ -85,291 +85,102 @@ export default function SyllabusPage() {
           </div>
         </div>
 
-        {/* Board Filter Tabs Row */}
-        <div className="filter-row">
-          <div className="filter-tabs">
-            {['All', 'OSSC', 'OPSC', 'OSSSC'].map((board) => (
-              <button
-                key={board}
-                className={`filter-btn ${activeBoard === board ? 'active' : ''}`}
-                onClick={() => setActiveBoard(board)}
-              >
-                {board === 'All' ? 'All Boards' : board}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Syllabus List */}
-        <div className="syllabus-list" id="syllabusList">
-          {filteredItems.length > 0 ? (
-            filteredItems.map((item) => (
-              <div key={item.id} className="syllabus-item" data-board={item.board}>
-                <div className="syl-item-header">
-                  <div className="syl-item-title-area">
-                    <span className={`board-badge ${getBoardBadgeClass(item.board)}`}>{item.board}</span>
-                    <span className="syl-item-year">{item.year}</span>
-                    <h3 className="syl-item-title">{item.title}</h3>
-                  </div>
-                  <Link href={item.link} className="btn-download">
-                    <Eye style={{ width: '15px', height: '15px' }} /> View
-                  </Link>
-                </div>
-              </div>
-            ))
-          ) : (
-            <div
+        {/* Board Filter Tabs matching odishaaspirants.com/syllabus */}
+        <div style={{ display: 'flex', gap: '10px', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
+          {['All', 'OSSC', 'OPSC', 'OSSSC'].map((board) => (
+            <button
+              key={board}
+              onClick={() => setActiveBoard(board)}
               style={{
-                textAlign: 'center',
-                padding: '4rem 2rem',
-                background: '#ffffff',
-                border: '1px solid #e2e8f0',
-                borderRadius: '8px',
-                color: '#64748b',
-                fontWeight: 600,
+                padding: '0.5rem 1.25rem',
+                borderRadius: '9999px',
+                border: activeBoard === board ? '1px solid #0b4ca3' : '1px solid #cbd5e1',
+                background: activeBoard === board ? '#0b4ca3' : '#ffffff',
+                color: activeBoard === board ? '#ffffff' : '#475569',
+                fontWeight: 700,
+                fontSize: '0.88rem',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                fontFamily: 'Poppins, sans-serif',
               }}
             >
-              <p style={{ margin: 0, fontSize: '1.1rem', color: '#0f172a', marginBottom: '8px' }}>No Syllabus Found</p>
-              <p style={{ margin: 0, fontSize: '0.9rem', fontWeight: 400 }}>
-                No syllabus matches your search query "{searchTerm}". Try different keywords.
-              </p>
+              {board}
+            </button>
+          ))}
+        </div>
+
+        {/* Syllabus Items List matching odishaaspirants.com/syllabus */}
+        <div className="table-card" style={{ padding: '1.25rem' }}>
+          {loading ? (
+            <div style={{ textAlign: 'center', padding: '2rem', color: '#64748b' }}>
+              Loading syllabus guides from Cloudflare D1...
             </div>
+          ) : filteredItems.length > 0 ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {filteredItems.map((item) => (
+                <div
+                  key={item.id}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '1.1rem 1.4rem',
+                    background: '#ffffff',
+                    border: '1px solid #e2e8f0',
+                    borderRadius: '10px',
+                    gap: '15px',
+                    flexWrap: 'wrap',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '260px' }}>
+                    <span
+                      style={{
+                        background: '#eff6ff',
+                        color: '#0b4ca3',
+                        padding: '4px 10px',
+                        borderRadius: '6px',
+                        fontSize: '0.78rem',
+                        fontWeight: 800,
+                        textTransform: 'uppercase',
+                        fontFamily: 'Poppins, sans-serif',
+                      }}
+                    >
+                      {item.board}
+                    </span>
+                    <h3 style={{ fontSize: '0.98rem', fontWeight: 700, color: '#0f172a', margin: 0, fontFamily: 'Poppins, sans-serif' }}>
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                    <span style={{ fontSize: '0.82rem', color: '#64748b', fontWeight: 600 }}>Year {item.year}</span>
+                    <Link
+                      href={item.link}
+                      className="btn-view"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        background: '#10b981',
+                        color: '#ffffff',
+                        padding: '0.5rem 1.1rem',
+                        borderRadius: '6px',
+                        fontSize: '0.82rem',
+                        fontWeight: 700,
+                        textDecoration: 'none',
+                      }}
+                    >
+                      <Eye style={{ width: '15px', height: '15px' }} /> View Syllabus
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="no-records">No exam syllabus matching your filter criteria.</div>
           )}
         </div>
       </div>
-
-      <style jsx>{`
-        .container {
-          max-width: 1240px;
-          margin: 3rem auto 5rem auto;
-          padding: 0 1.5rem;
-        }
-
-        .header-search-row {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 20px;
-          margin-bottom: 2.5rem;
-          flex-wrap: wrap;
-        }
-
-        .page-header {
-          text-align: left;
-          margin-bottom: 0;
-          flex: 1;
-          min-width: 300px;
-        }
-
-        .page-header h1 {
-          font-size: 2.25rem;
-          font-weight: 800;
-          color: #0f172a;
-          margin: 0 0 0.5rem 0;
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .page-header p {
-          color: #64748b;
-          font-size: 0.98rem;
-          margin: 0;
-          line-height: 1.6;
-        }
-
-        .search-wrapper {
-          position: relative;
-          width: 100%;
-          max-width: 380px;
-          flex-shrink: 0;
-        }
-
-        .search-input {
-          width: 100%;
-          padding: 0.85rem 1.25rem 0.85rem 3rem;
-          border: 1px solid #cbd5e1;
-          border-radius: 9999px;
-          font-size: 0.95rem;
-          outline: none;
-          transition: all 0.3s;
-          background: #ffffff;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-          box-sizing: border-box;
-        }
-
-        .search-input:focus {
-          border-color: #0b4ca3;
-          box-shadow: 0 4px 12px rgba(11, 76, 163, 0.1);
-        }
-
-        .search-icon {
-          position: absolute;
-          left: 1.25rem;
-          top: 50%;
-          transform: translateY(-50%);
-          color: #94a3b8;
-        }
-
-        .filter-row {
-          margin-bottom: 2rem;
-          display: flex;
-          justify-content: flex-start;
-        }
-
-        .filter-tabs {
-          display: flex;
-          gap: 0.6rem;
-          flex-wrap: wrap;
-        }
-
-        .filter-btn {
-          background: #ffffff;
-          border: 1px solid #cbd5e1;
-          padding: 0.55rem 1.4rem;
-          border-radius: 9999px;
-          font-size: 0.88rem;
-          font-weight: 700;
-          color: #334155;
-          cursor: pointer;
-          transition: all 0.2s;
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .filter-btn:hover {
-          background: #f8fafc;
-          border-color: #cbd5e1;
-        }
-
-        .filter-btn.active {
-          background: #0b4ca3;
-          color: #ffffff;
-          border-color: #0b4ca3;
-          box-shadow: 0 4px 10px rgba(11, 76, 163, 0.2);
-        }
-
-        .syllabus-list {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          margin-bottom: 3rem;
-        }
-
-        .syllabus-item {
-          background: #ffffff;
-          border: 1px solid #e2e8f0;
-          border-radius: 8px;
-          padding: 1.25rem 1.5rem;
-          transition: all 0.2s ease;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
-          box-sizing: border-box;
-        }
-
-        .syllabus-item:hover {
-          border-color: #cbd5e1;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-        }
-
-        .syl-item-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 15px;
-          flex-wrap: wrap;
-        }
-
-        .syl-item-title-area {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          flex-wrap: wrap;
-        }
-
-        .board-badge {
-          font-size: 0.7rem;
-          font-weight: 700;
-          padding: 3px 8px;
-          border-radius: 4px;
-          letter-spacing: 0.5px;
-          text-transform: uppercase;
-        }
-
-        .board-opsc {
-          background: #e0f2fe;
-          color: #0369a1;
-        }
-        .board-ossc {
-          background: #dcfce7;
-          color: #15803d;
-        }
-        .board-osssc {
-          background: #fef3c7;
-          color: #b45309;
-        }
-
-        .syl-item-year {
-          font-size: 0.7rem;
-          font-weight: 700;
-          padding: 3px 8px;
-          border-radius: 4px;
-          letter-spacing: 0.5px;
-          background: #f1f5f9;
-          color: #475569;
-        }
-
-        .syl-item-title {
-          font-size: 0.95rem;
-          font-weight: 700;
-          color: #0f172a;
-          margin: 0;
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .btn-download {
-          background: #10b981;
-          color: #ffffff;
-          text-decoration: none;
-          padding: 0.5rem 1rem;
-          border-radius: 6px;
-          font-size: 0.82rem;
-          font-weight: 700;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 6px;
-          transition: background 0.2s;
-          border: none;
-          cursor: pointer;
-          box-shadow: 0 2px 4px rgba(16, 185, 129, 0.1);
-        }
-
-        .btn-download:hover {
-          background: #059669;
-        }
-
-        @media (max-width: 768px) {
-          .container {
-            margin: 2rem auto 4rem auto;
-            padding: 0 1rem;
-          }
-          .header-search-row {
-            flex-direction: column;
-            align-items: stretch;
-            text-align: center;
-            gap: 1.5rem;
-          }
-          .page-header {
-            text-align: center;
-          }
-          .page-header h1 {
-            font-size: 1.85rem;
-          }
-          .search-wrapper {
-            max-width: 100%;
-          }
-          .filter-row {
-            justify-content: center;
-          }
-        }
-      `}</style>
     </>
   );
 }

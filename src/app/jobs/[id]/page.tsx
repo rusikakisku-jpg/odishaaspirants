@@ -1,9 +1,13 @@
 import React from 'react';
-import { JOBS_DATA } from '@/lib/data';
+import { fetchJobsApi } from '@/lib/api';
 import JobDetailsClient from './JobDetailsClient';
 
-export function generateStaticParams() {
-  return JOBS_DATA.map((job) => ({
+export async function generateStaticParams() {
+  const jobs = await fetchJobsApi();
+  if (jobs.length === 0) {
+    return [{ id: '1' }, { id: '7' }, { id: '8' }, { id: '9' }, { id: '10' }, { id: '58' }, { id: '99' }];
+  }
+  return jobs.map((job) => ({
     id: String(job.id),
   }));
 }

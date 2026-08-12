@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { MOCK_TEST_EXAM, Question } from '@/lib/data';
+import { Question } from '@/lib/data';
 import {
   Clock,
   CheckCircle,
@@ -18,8 +18,71 @@ import {
   Sparkles,
 } from 'lucide-react';
 
+const DEFAULT_EXAM = {
+  id: 1,
+  title: 'OSSSC Combined Recruitment Exam IV (CRE IV) Official Full Mock Test',
+  board: 'OSSSC',
+  timeLimitMinutes: 120,
+  marksCorrect: 1,
+  marksIncorrect: -0.25,
+  examYear: 2026,
+  sections: ['General Awareness', 'Arithmetic', 'Reasoning & Computer', 'Odia & English Language'],
+  questions: [
+    {
+      id: 1,
+      section: 'General Awareness',
+      questionText: 'The famous Kalinga War fought by Emperor Ashoka took place in which ancient year?',
+      optionA: '261 BC',
+      optionB: '326 BC',
+      optionC: '232 BC',
+      optionD: '185 BC',
+      correctOption: 'A' as const,
+    },
+    {
+      id: 2,
+      section: 'General Awareness',
+      questionText: 'Who was the founder of the Ganga Dynasty in Odisha who constructed the famous Sun Temple of Konark?',
+      optionA: 'Anantavarman Chodaganga',
+      optionB: 'Narasimhadeva I',
+      optionC: 'Kapilendra Deva',
+      optionD: 'Purushottama Deva',
+      correctOption: 'B' as const,
+    },
+    {
+      id: 3,
+      section: 'General Awareness',
+      questionText: 'Which river is known as the "Sorrow of Odisha" prior to the construction of the Hirakud Dam?',
+      optionA: 'Baitarani River',
+      optionB: 'Brahmani River',
+      optionC: 'Mahanadi River',
+      optionD: 'Rushikulya River',
+      correctOption: 'C' as const,
+    },
+    {
+      id: 4,
+      section: 'Arithmetic',
+      questionText: 'If a sum of money doubles itself in 8 years at simple interest, what is the rate of interest per annum?',
+      optionA: '10%',
+      optionB: '12.5%',
+      optionC: '15%',
+      optionD: '8%',
+      correctOption: 'B' as const,
+    },
+    {
+      id: 5,
+      section: 'Reasoning & Computer',
+      questionText: 'In MS Excel, which keyboard shortcut key is used to insert a new worksheet instantly?',
+      optionA: 'Shift + F11',
+      optionB: 'Ctrl + N',
+      optionC: 'Alt + Shift + F1',
+      optionD: 'Ctrl + F12',
+      correctOption: 'A' as const,
+    },
+  ],
+};
+
 export default function TestPlayerPage() {
-  const exam = MOCK_TEST_EXAM;
+  const exam = DEFAULT_EXAM;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState<Record<number, 'A' | 'B' | 'C' | 'D'>>({});
