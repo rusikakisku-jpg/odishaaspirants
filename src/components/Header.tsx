@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -13,12 +13,14 @@ import {
   GraduationCap,
   FileText,
   Book,
+  HelpCircle,
 } from 'lucide-react';
 
 export default function Header() {
   const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  // Desktop Header Nav Items (5 items matching live header)
   const navItems = [
     { label: 'Home', href: '/', key: 'home', icon: Home },
     { label: 'Latest Jobs', href: '/latest-jobs', key: 'jobs', icon: Briefcase },
@@ -26,6 +28,32 @@ export default function Header() {
     { label: 'Answer Key', href: '/answer-key', key: 'key', icon: Key },
     { label: 'Result', href: '/result', key: 'result', icon: GraduationCap },
   ];
+
+  // Drawer Nav Items (Full list matching mobile/tablet side drawer)
+  const drawerNavItems = [
+    { label: 'Home', href: '/', key: 'home', icon: Home },
+    { label: 'Latest Jobs', href: '/latest-jobs', key: 'jobs', icon: Briefcase },
+    { label: 'Admit Card', href: '/admit-card', key: 'admit', icon: IdCard },
+    { label: 'Answer Key', href: '/answer-key', key: 'key', icon: Key },
+    { label: 'Result', href: '/result', key: 'result', icon: GraduationCap },
+    { label: 'Syllabus', href: '/syllabus', key: 'syllabus', icon: FileText },
+    { label: 'Previous Year Papers', href: '/pyq', key: 'pyq', icon: Book },
+    { label: 'Study Notes', href: '/notes', key: 'notes', icon: HelpCircle },
+  ];
+
+  const handleDrawerToggle = (isOpen: boolean) => {
+    setDrawerOpen(isOpen);
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+  };
+
+  useEffect(() => {
+    setDrawerOpen(false);
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = '';
+    }
+  }, [pathname]);
 
   const isNavActive = (itemHref: string) => {
     if (!pathname) return false;
@@ -37,6 +65,9 @@ export default function Header() {
     if (cleanHref === '/admit-card') return cleanPath === '/admit-card' || cleanPath.includes('admit');
     if (cleanHref === '/answer-key') return cleanPath === '/answer-key' || cleanPath.includes('key');
     if (cleanHref === '/result') return cleanPath === '/result' || cleanPath.includes('result');
+    if (cleanHref === '/syllabus') return cleanPath === '/syllabus';
+    if (cleanHref === '/pyq') return cleanPath === '/pyq';
+    if (cleanHref === '/notes') return cleanPath === '/notes';
 
     return cleanPath === cleanHref || cleanPath.startsWith(cleanHref);
   };
@@ -65,8 +96,8 @@ export default function Header() {
             })}
           </ul>
 
-          {/* Mobile Drawer Toggle Button */}
-          <button className="nav-toggle-btn" onClick={() => setDrawerOpen(true)} aria-label="Open Navigation">
+          {/* Mobile & Tablet Drawer Toggle Button */}
+          <button className="nav-toggle-btn" onClick={() => handleDrawerToggle(true)} aria-label="Open Navigation">
             <Menu style={{ width: '24px', height: '24px' }} />
           </button>
         </div>
@@ -74,44 +105,44 @@ export default function Header() {
 
       {/* Mobile Bottom Navigation Bar */}
       <div className="mobile-bottom-nav">
-        <Link href="/" className={`bottom-nav-link ${pathname === '/' ? 'active' : ''}`}>
+        <Link href="/" className={`bottom-nav-link ${isNavActive('/') ? 'active' : ''}`}>
           <Home style={{ width: '20px', height: '20px' }} />
           <span>Home</span>
         </Link>
-        <Link href="/latest-jobs" className={`bottom-nav-link ${pathname === '/latest-jobs' ? 'active' : ''}`}>
+        <Link href="/latest-jobs" className={`bottom-nav-link ${isNavActive('/latest-jobs') ? 'active' : ''}`}>
           <Briefcase style={{ width: '20px', height: '20px' }} />
           <span>Jobs</span>
         </Link>
-        <Link href="/admit-card" className={`bottom-nav-link ${pathname === '/admit-card' ? 'active' : ''}`}>
+        <Link href="/admit-card" className={`bottom-nav-link ${isNavActive('/admit-card') ? 'active' : ''}`}>
           <IdCard style={{ width: '20px', height: '20px' }} />
           <span>Admit</span>
         </Link>
-        <Link href="/answer-key" className={`bottom-nav-link ${pathname === '/answer-key' ? 'active' : ''}`}>
+        <Link href="/answer-key" className={`bottom-nav-link ${isNavActive('/answer-key') ? 'active' : ''}`}>
           <Key style={{ width: '20px', height: '20px' }} />
           <span>Key</span>
         </Link>
-        <Link href="/result" className={`bottom-nav-link ${pathname === '/result' ? 'active' : ''}`}>
+        <Link href="/result" className={`bottom-nav-link ${isNavActive('/result') ? 'active' : ''}`}>
           <GraduationCap style={{ width: '20px', height: '20px' }} />
           <span>Result</span>
         </Link>
       </div>
 
-      {/* Mobile Off-Canvas Drawer */}
-      <div className={`drawer-overlay ${drawerOpen ? 'open' : ''}`} onClick={() => setDrawerOpen(false)}>
+      {/* Mobile & Tablet Off-Canvas Drawer */}
+      <div className={`drawer-overlay ${drawerOpen ? 'open' : ''}`} onClick={() => handleDrawerToggle(false)}>
         <aside className="drawer-aside" onClick={(e) => e.stopPropagation()}>
           <div className="drawer-header">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: '1.2rem', color: '#0b4ca3' }}>
+              <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: '1.25rem', color: '#0b4ca3' }}>
                 Odisha Aspirants
               </span>
             </div>
-            <button className="drawer-close" onClick={() => setDrawerOpen(false)} aria-label="Close menu">
+            <button className="drawer-close" onClick={() => handleDrawerToggle(false)} aria-label="Close menu">
               &times;
             </button>
           </div>
 
           <ul className="drawer-menu">
-            {navItems.map((item) => {
+            {drawerNavItems.map((item) => {
               const active = isNavActive(item.href);
               const IconComp = item.icon;
               return (
@@ -119,7 +150,7 @@ export default function Header() {
                   <Link
                     href={item.href}
                     className={`drawer-link ${active ? 'active' : ''}`}
-                    onClick={() => setDrawerOpen(false)}
+                    onClick={() => handleDrawerToggle(false)}
                   >
                     <IconComp style={{ width: '18px', height: '18px' }} />
                     <span>{item.label}</span>
@@ -229,11 +260,9 @@ export default function Header() {
           display: none;
           background: none;
           border: none;
-          font-size: 1.4rem;
           color: #0f172a;
           cursor: pointer;
-          padding: 8px;
-          border-radius: 4px;
+          border-radius: 8px;
           transition: background 0.2s;
         }
 
@@ -278,9 +307,10 @@ export default function Header() {
 
         .bottom-nav-link.active {
           color: #0b4ca3;
+          font-weight: 700;
         }
 
-        /* Mobile Off-Canvas Drawer */
+        /* Mobile & Tablet Off-Canvas Drawer */
         .drawer-overlay {
           position: fixed;
           top: 0;
@@ -320,7 +350,7 @@ export default function Header() {
         }
 
         .drawer-header {
-          padding: 1.5rem;
+          padding: 1.25rem 1.5rem;
           border-bottom: 1px solid #e2e8f0;
           display: flex;
           justify-content: space-between;
@@ -330,20 +360,27 @@ export default function Header() {
         .drawer-close {
           background: #f8fafc;
           border: 1px solid #e2e8f0;
-          width: 44px;
-          height: 44px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.4rem;
+          font-size: 1.3rem;
           cursor: pointer;
           color: #0f172a;
+          transition: all 0.2s;
+        }
+
+        .drawer-close:hover {
+          background: #fee2e2;
+          color: #ef4444;
+          border-color: #fecaca;
         }
 
         .drawer-menu {
           list-style: none;
-          padding: 1.5rem;
+          padding: 1.25rem;
           margin: 0;
           display: flex;
           flex-direction: column;
@@ -362,13 +399,15 @@ export default function Header() {
           font-weight: 600;
           border-radius: 12px;
           transition: all 0.2s;
-          font-size: 0.98rem;
+          font-size: 0.95rem;
+          font-family: 'Poppins', sans-serif;
         }
 
         .drawer-link:hover,
         .drawer-link.active {
           color: #0b4ca3;
           background: #eff6ff;
+          font-weight: 700;
         }
 
         @media (max-width: 1200px) {
@@ -379,6 +418,9 @@ export default function Header() {
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 44px;
+            height: 44px;
+            padding: 0;
           }
         }
 
@@ -388,6 +430,12 @@ export default function Header() {
           }
           .mobile-bottom-nav {
             display: flex;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .nav-brand-title {
+            font-size: 1.2rem;
           }
         }
       `}</style>
