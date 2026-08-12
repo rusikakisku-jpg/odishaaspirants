@@ -203,9 +203,9 @@ export default function LatestJobsPage() {
         }
 
         .jobs-table td {
-          padding: 1.3rem 1.5rem;
+          padding: 1.1rem 1.4rem;
           border-bottom: 1px solid #e2e8f0;
-          font-size: 0.92rem;
+          font-size: 0.85rem;
           color: #334155;
           vertical-align: middle;
           box-sizing: border-box;
@@ -223,6 +223,7 @@ export default function LatestJobsPage() {
           font-weight: 600;
           color: #0f172a;
           white-space: nowrap;
+          font-size: 0.84rem;
         }
 
         .board-col {
@@ -233,13 +234,13 @@ export default function LatestJobsPage() {
         }
 
         .board-col strong {
-          font-size: 0.95rem;
+          font-size: 0.88rem;
           font-weight: 800;
           color: #0f172a;
         }
 
         .board-full-name {
-          font-size: 0.78rem;
+          font-size: 0.74rem;
           color: #64748b;
           font-weight: 500;
         }
@@ -247,17 +248,20 @@ export default function LatestJobsPage() {
         .post-name-col {
           font-weight: 700;
           color: #0f172a;
+          font-size: 0.88rem;
         }
 
         .eligibility-col {
           color: #475569;
           font-weight: 500;
+          font-size: 0.84rem;
         }
 
         .last-date-col {
           color: #475569;
           font-weight: 500;
           white-space: nowrap;
+          font-size: 0.84rem;
         }
 
         .action-col {
@@ -268,9 +272,9 @@ export default function LatestJobsPage() {
           background: #10b981;
           color: #ffffff;
           text-decoration: none;
-          padding: 0.6rem 1.2rem;
+          padding: 0.5rem 1.1rem;
           border-radius: 6px;
-          font-size: 0.82rem;
+          font-size: 0.78rem;
           font-weight: 700;
           display: inline-block;
           transition: background 0.2s;
