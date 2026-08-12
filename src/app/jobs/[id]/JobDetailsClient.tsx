@@ -153,28 +153,32 @@ export default function JobDetailsClient({ id, initialJob, initialAllJobs }: Job
           </div>
         </main>
 
-        {/* Sidebar Column */}
+        {/* Sidebar Column - Single Combined Container */}
         <aside className="sidebar">
-          {/* Action card */}
-          <div className="widget-card">
-            <h4 className="widget-title">Quick Actions</h4>
-            <a href={job.ctaUrl || '#'} className="quick-link-btn btn-apply" target="_blank" rel="noopener noreferrer">
-              {job.ctaText || 'Apply Online'}
-            </a>
-            <a href={job.notificationUrl || '#'} className="quick-link-btn btn-notif" target="_blank" rel="noopener noreferrer">
-              📄 View Official PDF
-            </a>
-          </div>
+          <div className="widget-card" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            {/* Quick Actions Section */}
+            <div>
+              <h4 className="widget-title" style={{ marginTop: 0 }}>Quick Actions</h4>
+              <a href={job.ctaUrl || '#'} className="quick-link-btn btn-apply" target="_blank" rel="noopener noreferrer">
+                {job.ctaText || 'Apply Online'}
+              </a>
+              <a href={job.notificationUrl || '#'} className="quick-link-btn btn-notif" target="_blank" rel="noopener noreferrer" style={{ marginTop: '10px' }}>
+                📄 View Official PDF
+              </a>
+            </div>
 
-          {/* Recruitment Board Widget */}
-          <div className="widget-card">
-            <h4 className="widget-title">About the Board</h4>
-            <p style={{ fontSize: '0.88rem', color: '#475569', margin: '0 0 1rem 0', lineHeight: 1.6 }}>
-              The <strong>{job.boardFull}</strong> handles recruitment drives for executive, administrative, and technical departments across Odisha.
-            </p>
-            <Link href="/latest-jobs" style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0b4ca3', textDecoration: 'none' }}>
-              View all from {job.board} &rarr;
-            </Link>
+            <hr style={{ border: 0, borderTop: '1px solid #e2e8f0', margin: 0 }} />
+
+            {/* About Board Section */}
+            <div>
+              <h4 className="widget-title" style={{ marginTop: 0 }}>About the Board</h4>
+              <p style={{ fontSize: '0.88rem', color: '#475569', margin: '0 0 1rem 0', lineHeight: 1.6 }}>
+                The <strong>{job.boardFull}</strong> handles recruitment drives for executive, administrative, and technical departments across Odisha.
+              </p>
+              <Link href="/latest-jobs" style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0b4ca3', textDecoration: 'none' }}>
+                View all from {job.board} &rarr;
+              </Link>
+            </div>
           </div>
         </aside>
       </div>
