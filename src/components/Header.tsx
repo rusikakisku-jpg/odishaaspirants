@@ -29,7 +29,11 @@ export default function Header() {
 
   const isNavActive = (itemHref: string) => {
     if (itemHref === '/') return pathname === '/';
-    return pathname === itemHref || pathname.startsWith(itemHref + '/');
+    if (itemHref === '/latest-jobs') return pathname === '/latest-jobs' || pathname === '/jobs';
+    if (itemHref === '/admit-card') return pathname === '/admit-card' || pathname.includes('admit');
+    if (itemHref === '/answer-key') return pathname === '/answer-key' || pathname.includes('key');
+    if (itemHref === '/result') return pathname === '/result' || pathname.includes('result');
+    return pathname === itemHref || pathname.startsWith(itemHref);
   };
 
   return (
@@ -174,15 +178,14 @@ export default function Header() {
           margin: 0;
           padding: 0;
           gap: 1.5rem;
-          align-items: center;
-          justify-content: center;
+          align-items: stretch;
           height: 100%;
         }
 
         .nav-menu li {
           height: 100%;
           display: flex;
-          align-items: center;
+          align-items: stretch;
         }
 
         .nav-link {
@@ -191,15 +194,14 @@ export default function Header() {
           font-weight: 600;
           font-size: 0.92rem;
           font-family: 'Poppins', sans-serif;
-          padding: 0 0.4rem;
+          padding: 0 0.5rem;
           transition: all 0.2s ease;
           border-bottom: 3px solid transparent;
-          display: inline-flex;
+          display: flex;
           align-items: center;
           justify-content: center;
           box-sizing: border-box;
           height: 100%;
-          line-height: 1;
         }
 
         .nav-link:hover {
@@ -207,8 +209,9 @@ export default function Header() {
         }
 
         .nav-link.active {
-          color: #0b4ca3;
-          border-bottom: 3px solid #ff7a00;
+          color: #0b4ca3 !important;
+          font-weight: 700 !important;
+          border-bottom: 3px solid #ff7a00 !important;
         }
 
         .nav-toggle-btn {
