@@ -3,96 +3,123 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { JOBS_DATA } from '@/lib/data';
-import { Search, Briefcase, ChevronRight } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 export default function LatestJobsPage() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedBoard, setSelectedBoard] = useState('all');
 
   const filteredJobs = JOBS_DATA.filter((j) => {
     const isJobCategory = j.category === 'vacancy';
-    const matchesSearch = j.title.toLowerCase().includes(searchTerm.toLowerCase()) || j.board.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesBoard = selectedBoard === 'all' || j.board === selectedBoard;
-    return isJobCategory && matchesSearch && matchesBoard;
+    const matchesSearch =
+      j.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      j.board.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      j.boardFull.toLowerCase().includes(searchTerm.toLowerCase());
+    return isJobCategory && matchesSearch;
   });
 
   return (
-    <div style={{ maxWidth: '1240px', margin: '30px auto', padding: '0 1.5rem' }}>
-      <div style={{ marginBottom: '30px', background: 'white', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '30px' }}>
-        <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0f172a', margin: '0 0 10px 0', fontFamily: 'Poppins' }}>
-          Latest Government Job Vacancies in Odisha 2026
-        </h1>
-        <p style={{ color: '#64748b', margin: '0 0 20px 0', fontSize: '0.95rem' }}>
-          Explore all active recruitment notifications, online application forms, and vacancy details from OSSSC, OPSC, OSSC, and Railway.
-        </p>
+    <div className="container" style={{ maxWidth: '1240px', margin: '3rem auto 5rem auto', padding: '0 1.5rem' }}>
+      {/* Header & Search Row matching odishaaspirants.com/latest-jobs */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '20px', marginBottom: '2.5rem', flexWrap: 'wrap' }}>
+        <div style={{ flex: 1, minWidth: '300px' }}>
+          <h1 style={{ fontSize: '2.25rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.5rem 0', fontFamily: 'Poppins, sans-serif' }}>
+            Latest Jobs
+          </h1>
+          <p style={{ color: '#64748b', fontSize: '0.98rem', margin: 0, lineHeight: 1.6 }}>
+            Latest government job openings and recruitment notifications.
+          </p>
+        </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 200px', gap: '15px' }}>
-          <div style={{ position: 'relative' }}>
-            <Search style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', width: '18px', height: '18px', color: '#94a3b8' }} />
-            <input
-              type="text"
-              placeholder="Search job title or board..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              style={{ width: '100%', padding: '12px 14px 12px 42px', borderRadius: '10px', border: '1px solid #cbd5e1', outline: 'none', fontSize: '0.95rem', boxSizing: 'border-box' }}
-            />
-          </div>
-
-          <select
-            value={selectedBoard}
-            onChange={(e) => setSelectedBoard(e.target.value)}
-            style={{ padding: '12px', borderRadius: '10px', border: '1px solid #cbd5e1', outline: 'none', fontSize: '0.9rem', color: '#0f172a' }}
-          >
-            <option value="all">All Boards</option>
-            <option value="OSSSC">OSSSC</option>
-            <option value="OPSC">OPSC</option>
-            <option value="OSSC">OSSC</option>
-            <option value="Odisha Police">Odisha Police</option>
-            <option value="Railway RRB">Railway RRB</option>
-          </select>
+        <div style={{ position: 'relative', width: '100%', maxWidth: '380px' }}>
+          <Search style={{ position: 'absolute', left: '1.25rem', top: '50%', transform: 'translateY(-50%)', width: '18px', height: '18px', color: '#94a3b8' }} />
+          <input
+            type="text"
+            placeholder="Search past papers, boards, or titles..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            style={{
+              width: '100%',
+              padding: '0.85rem 1.25rem 0.85rem 3rem',
+              border: '1px solid #cbd5e1',
+              borderRadius: '9999px',
+              fontSize: '0.95rem',
+              outline: 'none',
+              background: '#ffffff',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02)',
+              boxSizing: 'border-box',
+            }}
+          />
         </div>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-        {filteredJobs.map((job) => (
-          <div key={job.id} style={{ background: 'white', border: '1px solid #e2e8f0', borderRadius: '16px', padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px' }}>
-            <div style={{ flex: 1, minWidth: '280px' }}>
-              <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '8px' }}>
-                <span style={{ background: '#0b4ca3', color: 'white', padding: '2px 10px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 800 }}>
-                  {job.board}
-                </span>
-                <span style={{ background: '#f1f5f9', color: '#475569', padding: '2px 10px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
-                  {job.vacancies}
-                </span>
-              </div>
-              <h3 style={{ margin: '0 0 6px 0', fontSize: '1.1rem', fontWeight: 700, color: '#0f172a', fontFamily: 'Poppins' }}>
-                {job.title}
-              </h3>
-              <p style={{ margin: 0, color: '#64748b', fontSize: '0.85rem' }}>
-                Qualification: {job.qualification} | Last Date: <strong style={{ color: '#ef4444' }}>{job.lastDate}</strong>
-              </p>
-            </div>
-
-            <Link
-              href={`/jobs/${job.id}`}
-              style={{
-                background: '#0b4ca3',
-                color: 'white',
-                padding: '10px 20px',
-                borderRadius: '9999px',
-                textDecoration: 'none',
-                fontWeight: 700,
-                fontSize: '0.85rem',
-                fontFamily: 'Poppins',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-              }}
-            >
-              View Details <ChevronRight style={{ width: '16px', height: '16px' }} />
-            </Link>
-          </div>
-        ))}
+      {/* Listing Table matching odishaaspirants.com */}
+      <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.02)', overflow: 'hidden' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead>
+            <tr style={{ background: '#f8fafc', borderBottom: '1.5px solid #e2e8f0' }}>
+              <th style={{ width: '160px', padding: '1.2rem 1.5rem', textAlign: 'left', color: '#475569', fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.2px' }}>
+                Publish Date
+              </th>
+              <th style={{ width: '250px', padding: '1.2rem 1.5rem', textAlign: 'left', color: '#475569', fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.2px' }}>
+                Board
+              </th>
+              <th style={{ padding: '1.2rem 1.5rem', textAlign: 'left', color: '#475569', fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.2px' }}>
+                Post Name
+              </th>
+              <th style={{ padding: '1.2rem 1.5rem', textAlign: 'left', color: '#475569', fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.2px' }}>
+                Eligibility
+              </th>
+              <th style={{ width: '160px', padding: '1.2rem 1.5rem', textAlign: 'left', color: '#475569', fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.2px' }}>
+                Last Date
+              </th>
+              <th style={{ width: '140px', padding: '1.2rem 1.5rem', textAlign: 'center', color: '#475569', fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.2px' }}>
+                More
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredJobs.map((job) => (
+              <tr key={job.id} style={{ borderBottom: '1px solid #e2e8f0' }}>
+                <td style={{ padding: '1.3rem 1.5rem', fontWeight: 600, color: '#0f172a', whiteSpace: 'nowrap' }}>
+                  {job.publishDate}
+                </td>
+                <td style={{ padding: '1.3rem 1.5rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                    <strong style={{ fontSize: '0.95rem', fontWeight: 800, color: '#0f172a' }}>{job.board}</strong>
+                    <span style={{ fontSize: '0.78rem', color: '#64748b', fontWeight: 500 }}>{job.boardFull}</span>
+                  </div>
+                </td>
+                <td style={{ padding: '1.3rem 1.5rem', fontWeight: 700, color: '#0f172a' }}>
+                  {job.title}
+                </td>
+                <td style={{ padding: '1.3rem 1.5rem', color: '#475569', fontWeight: 500 }}>
+                  {job.qualification}
+                </td>
+                <td style={{ padding: '1.3rem 1.5rem', color: '#475569', fontWeight: 500, whiteSpace: 'nowrap' }}>
+                  {job.lastDate}
+                </td>
+                <td style={{ padding: '1.3rem 1.5rem', textAlign: 'center' }}>
+                  <Link
+                    href={`/jobs/${job.id}`}
+                    style={{
+                      background: '#10b981',
+                      color: '#ffffff',
+                      textDecoration: 'none',
+                      padding: '0.6rem 1.2rem',
+                      borderRadius: '6px',
+                      fontSize: '0.82rem',
+                      fontWeight: 700,
+                      display: 'inline-block',
+                      boxShadow: '0 2px 4px rgba(16, 185, 129, 0.15)',
+                    }}
+                  >
+                    View Details
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
