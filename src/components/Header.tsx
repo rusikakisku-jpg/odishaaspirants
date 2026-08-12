@@ -28,12 +28,17 @@ export default function Header() {
   ];
 
   const isNavActive = (itemHref: string) => {
-    if (itemHref === '/') return pathname === '/';
-    if (itemHref === '/latest-jobs') return pathname === '/latest-jobs' || pathname === '/jobs';
-    if (itemHref === '/admit-card') return pathname === '/admit-card' || pathname.includes('admit');
-    if (itemHref === '/answer-key') return pathname === '/answer-key' || pathname.includes('key');
-    if (itemHref === '/result') return pathname === '/result' || pathname.includes('result');
-    return pathname === itemHref || pathname.startsWith(itemHref);
+    if (!pathname) return false;
+    const cleanPath = pathname.replace(/\/$/, '') || '/';
+    const cleanHref = itemHref.replace(/\/$/, '') || '/';
+
+    if (cleanHref === '/') return cleanPath === '/';
+    if (cleanHref === '/latest-jobs') return cleanPath === '/latest-jobs' || cleanPath === '/jobs';
+    if (cleanHref === '/admit-card') return cleanPath === '/admit-card' || cleanPath.includes('admit');
+    if (cleanHref === '/answer-key') return cleanPath === '/answer-key' || cleanPath.includes('key');
+    if (cleanHref === '/result') return cleanPath === '/result' || cleanPath.includes('result');
+
+    return cleanPath === cleanHref || cleanPath.startsWith(cleanHref);
   };
 
   return (
@@ -178,14 +183,17 @@ export default function Header() {
           margin: 0;
           padding: 0;
           gap: 1.5rem;
-          align-items: stretch;
-          height: 100%;
+          align-items: center;
+          justify-content: center;
+          height: 80px;
         }
 
         .nav-menu li {
-          height: 100%;
+          height: 80px;
           display: flex;
-          align-items: stretch;
+          align-items: center;
+          margin: 0;
+          padding: 0;
         }
 
         .nav-link {
@@ -194,14 +202,16 @@ export default function Header() {
           font-weight: 600;
           font-size: 0.92rem;
           font-family: 'Poppins', sans-serif;
-          padding: 0 0.5rem;
+          padding: 0 0.6rem;
           transition: all 0.2s ease;
           border-bottom: 3px solid transparent;
-          display: flex;
+          display: inline-flex;
           align-items: center;
           justify-content: center;
           box-sizing: border-box;
-          height: 100%;
+          height: 80px;
+          line-height: 80px;
+          position: relative;
         }
 
         .nav-link:hover {
@@ -212,6 +222,7 @@ export default function Header() {
           color: #0b4ca3 !important;
           font-weight: 700 !important;
           border-bottom: 3px solid #ff7a00 !important;
+          background: rgba(11, 76, 163, 0.03);
         }
 
         .nav-toggle-btn {
