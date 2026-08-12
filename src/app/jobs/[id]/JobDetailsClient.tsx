@@ -155,28 +155,27 @@ export default function JobDetailsClient({ id, initialJob, initialAllJobs }: Job
 
         {/* Sidebar Column - Single Combined Container */}
         <aside className="sidebar">
-          <div className="widget-card" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            {/* Quick Actions Section */}
-            <div>
-              <h4 className="widget-title" style={{ marginTop: 0 }}>Quick Actions</h4>
-              <a href={job.ctaUrl || '#'} className="quick-link-btn btn-apply" target="_blank" rel="noopener noreferrer">
-                {job.ctaText || 'Apply Online'}
-              </a>
-              <a href={job.notificationUrl || '#'} className="quick-link-btn btn-notif" target="_blank" rel="noopener noreferrer" style={{ marginTop: '10px' }}>
-                📄 View Official PDF
-              </a>
-            </div>
+          <div className="widget-card">
+            <h4 className="widget-title">Quick Actions &amp; Board Info</h4>
 
-            <hr style={{ border: 0, borderTop: '1px solid #e2e8f0', margin: 0 }} />
+            {/* CTA Buttons */}
+            <a href={job.ctaUrl || '#'} className="quick-link-btn btn-apply" target="_blank" rel="noopener noreferrer">
+              {job.ctaText || 'Apply Online'}
+            </a>
+            <a href={job.notificationUrl || '#'} className="quick-link-btn btn-notif" target="_blank" rel="noopener noreferrer" style={{ marginBottom: '1.25rem' }}>
+              📄 View Official PDF Notification
+            </a>
 
-            {/* About Board Section */}
-            <div>
-              <h4 className="widget-title" style={{ marginTop: 0 }}>About the Board</h4>
-              <p style={{ fontSize: '0.88rem', color: '#475569', margin: '0 0 1rem 0', lineHeight: 1.6 }}>
-                The <strong>{job.boardFull}</strong> handles recruitment drives for executive, administrative, and technical departments across Odisha.
+            {/* Board Info */}
+            <div style={{ paddingTop: '1.25rem', borderTop: '1px solid #e2e8f0' }}>
+              <div style={{ fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '6px' }}>
+                About {job.board} ({job.boardFull})
+              </div>
+              <p style={{ fontSize: '0.85rem', color: '#64748b', margin: '0 0 0.85rem 0', lineHeight: 1.6 }}>
+                The <strong>{job.boardFull}</strong> conducts recruitment examinations for state civil services and government departments in Odisha.
               </p>
-              <Link href="/latest-jobs" style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0b4ca3', textDecoration: 'none' }}>
-                View all from {job.board} &rarr;
+              <Link href="/latest-jobs" style={{ fontSize: '0.82rem', fontWeight: 700, color: '#0b4ca3', textDecoration: 'none' }}>
+                View all {job.board} jobs &rarr;
               </Link>
             </div>
           </div>
