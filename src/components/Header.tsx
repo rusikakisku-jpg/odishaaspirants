@@ -390,9 +390,11 @@ export default function Header() {
         }
 
         .drawer-link {
-          display: flex;
-          align-items: center;
-          gap: 12px;
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center !important;
+          justify-content: flex-start !important;
+          gap: 14px !important;
           padding: 0.85rem 1.25rem;
           text-decoration: none;
           color: #334155;
@@ -401,6 +403,14 @@ export default function Header() {
           transition: all 0.2s;
           font-size: 0.95rem;
           font-family: 'Poppins', sans-serif;
+          white-space: nowrap;
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .drawer-link span {
+          display: inline-block;
+          font-size: 0.95rem;
         }
 
         .drawer-link:hover,
