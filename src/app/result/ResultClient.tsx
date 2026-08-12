@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { JobItem } from '@/lib/data';
-import { fetchJobsApi } from '@/lib/api';
+import { fetchJobsApi, getJobSlug } from '@/lib/api';
 import { Search } from 'lucide-react';
 
 export default function ResultClient({ initialItems }: { initialItems: JobItem[] }) {
@@ -89,7 +89,7 @@ export default function ResultClient({ initialItems }: { initialItems: JobItem[]
                       <span className="cell-value">{item.lastDate}</span>
                     </td>
                     <td data-label="Action" className="action-col">
-                      <Link href={`/jobs/${item.id}`} className="btn-view">
+                      <Link href={`/articles/${getJobSlug(item)}`} className="btn-view">
                         View Details
                       </Link>
                     </td>

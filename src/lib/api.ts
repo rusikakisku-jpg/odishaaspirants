@@ -9,6 +9,13 @@ const getFetchOptions = (): RequestInit => {
   return { cache: 'no-cache' };
 };
 
+export function getJobSlug(job: { id: number; board: string; title: string; slug?: string }): string {
+  if (job.slug && job.slug.trim().length > 0) return job.slug;
+  const raw = `${job.board}-${job.title}`.toLowerCase();
+  const clean = raw.replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+  return clean || `job-${job.id}`;
+}
+
 // Transform database row (snake_case) into frontend JobItem interface (camelCase)
 export function transformDbJob(row: any): JobItem {
   return {

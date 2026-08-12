@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { JobItem } from '@/lib/data';
-import { fetchJobsApi, fetchPyqsApi, fetchSyllabusApi } from '@/lib/api';
+import { fetchJobsApi, fetchPyqsApi, fetchSyllabusApi, getJobSlug } from '@/lib/api';
 import {
   Briefcase,
   IdCard,
@@ -88,7 +88,7 @@ export default function HomePageClient({
               {vacancies.length > 0 ? (
                 vacancies.map((item) => (
                   <li key={item.id}>
-                    <Link href={`/jobs/${item.id}`} className="card-list-item">
+                    <Link href={`/articles/${getJobSlug(item)}`} className="card-list-item">
                       <span className="item-bullet"></span>
                       <span>{item.title}</span>
                     </Link>
@@ -115,7 +115,7 @@ export default function HomePageClient({
               {admitCards.length > 0 ? (
                 admitCards.map((item) => (
                   <li key={item.id}>
-                    <Link href={`/jobs/${item.id}`} className="card-list-item">
+                    <Link href={`/articles/${getJobSlug(item)}`} className="card-list-item">
                       <span className="item-bullet"></span>
                       <span>{item.title}</span>
                     </Link>
@@ -142,7 +142,7 @@ export default function HomePageClient({
               {answerKeys.length > 0 ? (
                 answerKeys.map((item) => (
                   <li key={item.id}>
-                    <Link href={`/jobs/${item.id}`} className="card-list-item">
+                    <Link href={`/articles/${getJobSlug(item)}`} className="card-list-item">
                       <span className="item-bullet"></span>
                       <span>{item.title}</span>
                     </Link>
@@ -169,7 +169,7 @@ export default function HomePageClient({
               {results.length > 0 ? (
                 results.map((item) => (
                   <li key={item.id}>
-                    <Link href={`/jobs/${item.id}`} className="card-list-item">
+                    <Link href={`/articles/${getJobSlug(item)}`} className="card-list-item">
                       <span className="item-bullet"></span>
                       <span>{item.title}</span>
                     </Link>
@@ -223,7 +223,7 @@ export default function HomePageClient({
               {syllabusList.length > 0 ? (
                 syllabusList.map((item) => (
                   <li key={item.id}>
-                    <Link href={`/jobs/${item.id}`} className="card-list-item">
+                    <Link href={`/articles/${getJobSlug(item)}`} className="card-list-item">
                       <span className="item-bullet"></span>
                       <span>{item.title}</span>
                     </Link>
