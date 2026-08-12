@@ -963,8 +963,15 @@ h1, h2, h3, h4, h5, h6, .poppins-font {
    Job Details Page - /jobs/[id]
    ======================================== */
 
-/* Main two-column layout: main content + sidebar */
+/* General page container - single column, max-width wrapper */
 .container {
+  max-width: 1240px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Job details two-column layout: main content + sidebar */
+.job-detail-layout {
   max-width: 1240px;
   margin: 2rem auto;
   padding: 0 1.5rem;
@@ -1426,7 +1433,7 @@ h1, h2, h3, h4, h5, h6, .poppins-font {
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .container {
+  .job-detail-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1442,6 +1449,10 @@ h1, h2, h3, h4, h5, h6, .poppins-font {
 
 @media (max-width: 768px) {
   .container {
+    padding: 0 1rem;
+  }
+
+  .job-detail-layout {
     margin: 1rem auto;
     padding: 0 1rem;
   }

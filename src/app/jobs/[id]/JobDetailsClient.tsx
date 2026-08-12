@@ -75,7 +75,7 @@ export default function JobDetailsClient({ id }: { id: string }) {
       </div>
 
       {/* Main Content Grid */}
-      <div className="container">
+      <div className="job-detail-layout">
         {/* Main Column */}
         <main>
           {/* Details Card Container */}
