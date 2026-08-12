@@ -134,6 +134,8 @@ export default function Header() {
           z-index: 1000;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
           box-sizing: border-box;
+          display: flex;
+          align-items: center;
         }
 
         .nav-container {
@@ -143,7 +145,7 @@ export default function Header() {
           padding: 0 1.5rem;
           display: flex;
           justify-content: space-between;
-          align-items: stretch;
+          align-items: center;
           height: 100%;
           box-sizing: border-box;
         }
@@ -153,6 +155,7 @@ export default function Header() {
           align-items: center;
           gap: 10px;
           text-decoration: none;
+          height: 100%;
         }
 
         .nav-brand-title {
@@ -170,30 +173,33 @@ export default function Header() {
           list-style: none;
           margin: 0;
           padding: 0;
-          gap: 1.25rem;
-          align-items: stretch;
+          gap: 1.5rem;
+          align-items: center;
+          justify-content: center;
           height: 100%;
         }
 
         .nav-menu li {
           height: 100%;
           display: flex;
-          align-items: stretch;
+          align-items: center;
         }
 
         .nav-link {
           text-decoration: none;
           color: #334155;
           font-weight: 600;
-          font-size: 0.88rem;
+          font-size: 0.92rem;
           font-family: 'Poppins', sans-serif;
-          padding: 0 0.2rem;
+          padding: 0 0.4rem;
           transition: all 0.2s ease;
           border-bottom: 3px solid transparent;
-          display: flex;
+          display: inline-flex;
           align-items: center;
+          justify-content: center;
           box-sizing: border-box;
           height: 100%;
+          line-height: 1;
         }
 
         .nav-link:hover {
