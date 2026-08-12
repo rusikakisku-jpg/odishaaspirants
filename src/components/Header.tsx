@@ -253,7 +253,7 @@ export default function Header() {
           color: #0b4ca3 !important;
           font-weight: 700 !important;
           border-bottom: 3px solid #ff7a00 !important;
-          background: rgba(11, 76, 163, 0.03);
+          background: transparent !important;
         }
 
         .nav-toggle-btn {
