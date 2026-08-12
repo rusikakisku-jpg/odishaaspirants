@@ -107,7 +107,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div style={{ padding: '1.5rem', display: 'flex', justifyContent: 'center', background: 'white' }}>
-              <Link href="/jobs" style={{ background: '#0b4ca3', color: 'white', fontFamily: 'Poppins', fontSize: '0.8rem', fontWeight: 750, textTransform: 'uppercase', textDecoration: 'none', padding: '0.65rem 1.75rem', borderRadius: '9999px', boxShadow: '0 4px 10px rgba(11, 76, 163, 0.15)', letterSpacing: '0.5px' }}>
+              <Link href="/latest-jobs" style={{ background: '#0b4ca3', color: 'white', fontFamily: 'Poppins', fontSize: '0.8rem', fontWeight: 750, textTransform: 'uppercase', textDecoration: 'none', padding: '0.65rem 1.75rem', borderRadius: '9999px', boxShadow: '0 4px 10px rgba(11, 76, 163, 0.15)', letterSpacing: '0.5px' }}>
                 ALL LATEST JOBS
               </Link>
             </div>
@@ -132,7 +132,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div style={{ padding: '1.5rem', display: 'flex', justifyContent: 'center', background: 'white' }}>
-              <Link href="/jobs" style={{ background: '#0b4ca3', color: 'white', fontFamily: 'Poppins', fontSize: '0.8rem', fontWeight: 750, textTransform: 'uppercase', textDecoration: 'none', padding: '0.65rem 1.75rem', borderRadius: '9999px', boxShadow: '0 4px 10px rgba(11, 76, 163, 0.15)', letterSpacing: '0.5px' }}>
+              <Link href="/admit-card" style={{ background: '#0b4ca3', color: 'white', fontFamily: 'Poppins', fontSize: '0.8rem', fontWeight: 750, textTransform: 'uppercase', textDecoration: 'none', padding: '0.65rem 1.75rem', borderRadius: '9999px', boxShadow: '0 4px 10px rgba(11, 76, 163, 0.15)', letterSpacing: '0.5px' }}>
                 ALL ADMIT CARDS
               </Link>
             </div>
@@ -157,7 +157,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div style={{ padding: '1.5rem', display: 'flex', justifyContent: 'center', background: 'white' }}>
-              <Link href="/jobs" style={{ background: '#0b4ca3', color: 'white', fontFamily: 'Poppins', fontSize: '0.8rem', fontWeight: 750, textTransform: 'uppercase', textDecoration: 'none', padding: '0.65rem 1.75rem', borderRadius: '9999px', boxShadow: '0 4px 10px rgba(11, 76, 163, 0.15)', letterSpacing: '0.5px' }}>
+              <Link href="/answer-key" style={{ background: '#0b4ca3', color: 'white', fontFamily: 'Poppins', fontSize: '0.8rem', fontWeight: 750, textTransform: 'uppercase', textDecoration: 'none', padding: '0.65rem 1.75rem', borderRadius: '9999px', boxShadow: '0 4px 10px rgba(11, 76, 163, 0.15)', letterSpacing: '0.5px' }}>
                 ALL ANSWER KEYS
               </Link>
             </div>
@@ -182,7 +182,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div style={{ padding: '1.5rem', display: 'flex', justifyContent: 'center', background: 'white' }}>
-              <Link href="/jobs" style={{ background: '#0b4ca3', color: 'white', fontFamily: 'Poppins', fontSize: '0.8rem', fontWeight: 750, textTransform: 'uppercase', textDecoration: 'none', padding: '0.65rem 1.75rem', borderRadius: '9999px', boxShadow: '0 4px 10px rgba(11, 76, 163, 0.15)', letterSpacing: '0.5px' }}>
+              <Link href="/result" style={{ background: '#0b4ca3', color: 'white', fontFamily: 'Poppins', fontSize: '0.8rem', fontWeight: 750, textTransform: 'uppercase', textDecoration: 'none', padding: '0.65rem 1.75rem', borderRadius: '9999px', boxShadow: '0 4px 10px rgba(11, 76, 163, 0.15)', letterSpacing: '0.5px' }}>
                 ALL RESULTS
               </Link>
             </div>

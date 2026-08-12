@@ -21,10 +21,10 @@ export default function Header() {
 
   const navItems = [
     { label: 'Home', href: '/', key: 'home', icon: Home },
-    { label: 'Latest Jobs', href: '/jobs', key: 'jobs', icon: Briefcase },
-    { label: 'Admit Card', href: '/jobs?cat=admit', key: 'admit', icon: IdCard },
-    { label: 'Answer Key', href: '/jobs?cat=key', key: 'key', icon: Key },
-    { label: 'Result', href: '/jobs?cat=result', key: 'result', icon: GraduationCap },
+    { label: 'Latest Jobs', href: '/latest-jobs', key: 'jobs', icon: Briefcase },
+    { label: 'Admit Card', href: '/admit-card', key: 'admit', icon: IdCard },
+    { label: 'Answer Key', href: '/answer-key', key: 'key', icon: Key },
+    { label: 'Result', href: '/result', key: 'result', icon: GraduationCap },
   ];
 
   const isNavActive = (itemHref: string) => {
@@ -69,19 +69,19 @@ export default function Header() {
           <Home style={{ width: '20px', height: '20px' }} />
           <span>Home</span>
         </Link>
-        <Link href="/jobs" className={`bottom-nav-link ${pathname === '/jobs' ? 'active' : ''}`}>
+        <Link href="/latest-jobs" className={`bottom-nav-link ${pathname === '/latest-jobs' ? 'active' : ''}`}>
           <Briefcase style={{ width: '20px', height: '20px' }} />
           <span>Jobs</span>
         </Link>
-        <Link href="/jobs?cat=admit" className="bottom-nav-link">
+        <Link href="/admit-card" className={`bottom-nav-link ${pathname === '/admit-card' ? 'active' : ''}`}>
           <IdCard style={{ width: '20px', height: '20px' }} />
           <span>Admit</span>
         </Link>
-        <Link href="/jobs?cat=key" className="bottom-nav-link">
+        <Link href="/answer-key" className={`bottom-nav-link ${pathname === '/answer-key' ? 'active' : ''}`}>
           <Key style={{ width: '20px', height: '20px' }} />
           <span>Key</span>
         </Link>
-        <Link href="/jobs?cat=result" className="bottom-nav-link">
+        <Link href="/result" className={`bottom-nav-link ${pathname === '/result' ? 'active' : ''}`}>
           <GraduationCap style={{ width: '20px', height: '20px' }} />
           <span>Result</span>
         </Link>
