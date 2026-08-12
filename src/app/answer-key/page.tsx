@@ -27,7 +27,7 @@ export default function AnswerKeyPage() {
           </div>
 
           <div className="search-wrapper">
-            <Search className="search-icon" style={{ width: '18px', height: '18px' }} />
+            <Search style={{ position: 'absolute', left: '1.25rem', top: '50%', transform: 'translateY(-50%)', width: '18px', height: '18px', color: '#94a3b8', pointerEvents: 'none', zIndex: 10 }} />
             <input
               type="text"
               className="search-input"
