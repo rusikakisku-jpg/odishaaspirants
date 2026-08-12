@@ -511,6 +511,7 @@ h1, h2, h3, h4, h5, h6, .poppins-font {
 
 .action-col {
   text-align: center;
+  white-space: nowrap !important;
 }
 
 .btn-view {
@@ -526,6 +527,7 @@ h1, h2, h3, h4, h5, h6, .poppins-font {
   border: none;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(16, 185, 129, 0.15);
+  white-space: nowrap !important;
 }
 
 .btn-view:hover {
