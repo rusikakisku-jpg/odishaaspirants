@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export const metadata: Metadata = {
   title: 'Odisha Aspirants - Government Recruitment & CBT Mock Test Portal',
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <ScrollToTop />
         <div className="bg-mesh-container"></div>
         <div className="glow-blob-1"></div>
         <div className="glow-blob-2"></div>
