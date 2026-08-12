@@ -18,7 +18,7 @@ import {
 
 export default function JobDetailsPage() {
   const params = useParams();
-  const idStr = params.id as string;
+  const idStr = String((params?.id as string) || '1');
   const job = JOBS_DATA.find((j) => String(j.id) === idStr) || JOBS_DATA[0];
 
   const [activeTab, setActiveTab] = useState<'overview' | 'eligibility' | 'dates' | 'fee' | 'syllabus' | 'apply'>('overview');
