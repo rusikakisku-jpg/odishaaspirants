@@ -6,28 +6,33 @@ import { useRouter } from 'next/navigation';
 import { JobItem } from '@/lib/data';
 import { fetchJobDetailsApi, fetchJobsApi } from '@/lib/api';
 
-export default function JobDetailsClient({ id }: { id: string }) {
+interface JobDetailsClientProps {
+  id: string;
+  initialJob: JobItem | null;
+  initialAllJobs: JobItem[];
+}
+
+export default function JobDetailsClient({ id, initialJob, initialAllJobs }: JobDetailsClientProps) {
   const router = useRouter();
-  const [job, setJob] = useState<JobItem | null>(null);
-  const [allJobs, setAllJobs] = useState<JobItem[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [job, setJob] = useState<JobItem | null>(initialJob);
+  const [allJobs, setAllJobs] = useState<JobItem[]>(initialAllJobs || []);
 
   useEffect(() => {
-    async function loadData() {
-      setLoading(true);
-      const [singleJob, list] = await Promise.all([
-        fetchJobDetailsApi(id),
-        fetchJobsApi(),
-      ]);
-      if (singleJob) {
-        setJob(singleJob);
-      } else if (list.length > 0) {
-        setJob(list[0]);
-      }
-      setAllJobs(list);
-      setLoading(false);
+    async function refreshData() {
+      try {
+        const [singleJob, list] = await Promise.all([
+          fetchJobDetailsApi(id),
+          fetchJobsApi(),
+        ]);
+        if (singleJob) {
+          setJob(singleJob);
+        }
+        if (list.length > 0) {
+          setAllJobs(list);
+        }
+      } catch (e) {}
     }
-    loadData();
+    refreshData();
   }, [id]);
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -36,14 +41,6 @@ export default function JobDetailsClient({ id }: { id: string }) {
       router.push(`/jobs/${targetId}`);
     }
   };
-
-  if (loading) {
-    return (
-      <div style={{ maxWidth: '1200px', margin: '4rem auto', padding: '0 1.5rem', textAlign: 'center', color: '#64748b' }}>
-        Loading job details from Cloudflare D1...
-      </div>
-    );
-  }
 
   if (!job) {
     return (
@@ -201,14 +198,14 @@ export default function JobDetailsClient({ id }: { id: string }) {
         </aside>
       </div>
 
-      {/* Sticky Bottom Bar for Mobile View */}
+      {/* Mobile Bottom Action Bar */}
       <div className="sticky-bar">
         <div className="sticky-container">
-          <a href={job.notificationUrl || '#'} className="sticky-btn btn-notif" target="_blank" rel="noopener noreferrer">
-            PDF
-          </a>
           <a href={job.ctaUrl || '#'} className="sticky-btn btn-apply" target="_blank" rel="noopener noreferrer">
             {job.ctaText || 'Apply Online'}
+          </a>
+          <a href={job.notificationUrl || '#'} className="sticky-btn btn-notif" target="_blank" rel="noopener noreferrer">
+            PDF Notification
           </a>
         </div>
       </div>

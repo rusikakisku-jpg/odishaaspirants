@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchJobsApi } from '@/lib/api';
+import { fetchJobsApi, fetchJobDetailsApi } from '@/lib/api';
 import JobDetailsClient from './JobDetailsClient';
 
 export async function generateStaticParams() {
@@ -14,5 +14,10 @@ export async function generateStaticParams() {
 
 export default async function JobDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  return <JobDetailsClient id={id} />;
+  const [job, allJobs] = await Promise.all([
+    fetchJobDetailsApi(id),
+    fetchJobsApi(),
+  ]);
+
+  return <JobDetailsClient id={id} initialJob={job} initialAllJobs={allJobs} />;
 }

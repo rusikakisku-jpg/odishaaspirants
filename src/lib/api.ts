@@ -2,6 +2,13 @@ import { JobItem, PYQItem, NoteItem, SyllabusItem } from './data';
 
 const API_BASE = 'https://odisha-aspirants-api.rusikakisku.workers.dev/api';
 
+const getFetchOptions = (): RequestInit => {
+  if (typeof window === 'undefined') {
+    return {};
+  }
+  return { cache: 'no-cache' };
+};
+
 // Transform database row (snake_case) into frontend JobItem interface (camelCase)
 export function transformDbJob(row: any): JobItem {
   return {
@@ -33,7 +40,7 @@ export function transformDbJob(row: any): JobItem {
 export async function fetchJobsApi(category?: string): Promise<JobItem[]> {
   try {
     const url = category ? `${API_BASE}/jobs?category=${category}` : `${API_BASE}/jobs`;
-    const res = await fetch(url, { cache: 'no-store' });
+    const res = await fetch(url, getFetchOptions());
     const json = await res.json();
     if (json.success && Array.isArray(json.data)) {
       return json.data.map(transformDbJob);
@@ -47,7 +54,7 @@ export async function fetchJobsApi(category?: string): Promise<JobItem[]> {
 // Fetch single job details by ID or Slug
 export async function fetchJobDetailsApi(idOrSlug: string): Promise<JobItem | null> {
   try {
-    const res = await fetch(`${API_BASE}/jobs/${idOrSlug}`, { cache: 'no-store' });
+    const res = await fetch(`${API_BASE}/jobs/${idOrSlug}`, getFetchOptions());
     const json = await res.json();
     if (json.success && json.data) {
       return transformDbJob(json.data);
@@ -61,7 +68,7 @@ export async function fetchJobDetailsApi(idOrSlug: string): Promise<JobItem | nu
 // Fetch Syllabus Patterns & Subjects from Cloudflare D1 Database
 export async function fetchSyllabusApi(): Promise<any[]> {
   try {
-    const res = await fetch(`${API_BASE}/syllabus`, { cache: 'no-store' });
+    const res = await fetch(`${API_BASE}/syllabus`, getFetchOptions());
     const json = await res.json();
     if (json.success && Array.isArray(json.data)) {
       return json.data;
@@ -75,7 +82,7 @@ export async function fetchSyllabusApi(): Promise<any[]> {
 // Fetch PYQ Papers from Cloudflare D1 Database
 export async function fetchPyqsApi(): Promise<any[]> {
   try {
-    const res = await fetch(`${API_BASE}/pyq`, { cache: 'no-store' });
+    const res = await fetch(`${API_BASE}/pyq`, getFetchOptions());
     const json = await res.json();
     if (json.success && Array.isArray(json.data)) {
       return json.data;
@@ -89,7 +96,7 @@ export async function fetchPyqsApi(): Promise<any[]> {
 // Fetch Study Notes from Cloudflare D1 Database
 export async function fetchNotesApi(): Promise<any[]> {
   try {
-    const res = await fetch(`${API_BASE}/notes`, { cache: 'no-store' });
+    const res = await fetch(`${API_BASE}/notes`, getFetchOptions());
     const json = await res.json();
     if (json.success && Array.isArray(json.data)) {
       return json.data;
