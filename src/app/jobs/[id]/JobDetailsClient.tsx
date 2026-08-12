@@ -52,25 +52,6 @@ export default function JobDetailsClient({ id, initialJob, initialAllJobs }: Job
 
   return (
     <>
-      {/* Top Selector Bar matching odishaaspirants.com */}
-      <div className="top-selector-bar">
-        <div className="selector-container">
-          <span className="selector-label">Currently Viewing Job Details:</span>
-          <select
-            className="job-select"
-            value={job.id}
-            onChange={handleSelectChange}
-            aria-label="Select Job"
-          >
-            {allJobs.map((j) => (
-              <option key={j.id} value={j.id}>
-                {j.board} - {j.title}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
       {/* Main Content Grid */}
       <div className="job-detail-layout">
         {/* Main Column */}
