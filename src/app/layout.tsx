@@ -16,6 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <div className="bg-mesh-container"></div>
+        <div className="glow-blob-1"></div>
+        <div className="glow-blob-2"></div>
         <Header />
         <main style={{ minHeight: 'calc(100vh - 380px)' }}>
           {children}

@@ -29,6 +29,48 @@ h1, h2, h3, h4, h5, h6, .poppins-font {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Global Background Mesh Container & Glowing Ambient Blobs */
+.bg-mesh-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    linear-gradient(rgba(226, 232, 240, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center center;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.glow-blob-1 {
+  position: fixed;
+  top: -10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: rgba(255, 122, 0, 0.08);
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.glow-blob-2 {
+  position: fixed;
+  bottom: -10%;
+  left: -10%;
+  width: 700px;
+  height: 700px;
+  background: rgba(11, 76, 163, 0.08);
+  border-radius: 50%;
+  filter: blur(150px);
+  z-index: -1;
+  pointer-events: none;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

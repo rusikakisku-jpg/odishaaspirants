@@ -25,9 +25,6 @@ export default function Header() {
     { label: 'Admit Card', href: '/jobs?cat=admit', key: 'admit', icon: IdCard },
     { label: 'Answer Key', href: '/jobs?cat=key', key: 'key', icon: Key },
     { label: 'Result', href: '/jobs?cat=result', key: 'result', icon: GraduationCap },
-    { label: 'Previous year Questions', href: '/pyq', key: 'pyq', icon: FileText },
-    { label: 'Syllabus', href: '/syllabus', key: 'syllabus', icon: Book },
-    { label: 'Notes', href: '/notes', key: 'notes', icon: FileText },
   ];
 
   const isNavActive = (itemHref: string) => {
