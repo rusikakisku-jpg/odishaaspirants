@@ -1,4 +1,4 @@
-# Govt Exam Zone (govtexamzone.com) - Full-Stack Node.js Platform
+# Odisha Aspirants (odishaaspirants.com) - Full-Stack Node.js Platform
 
 A modern, high-performance, pixel-accurate government recruitment alerts portal built with **Node.js**, **Express**, **EJS**, **SQLite / Cloudflare D1 Database**, and **Cloudflare R2 Object Storage**.
 
@@ -9,7 +9,7 @@ Designed with strict attention to recruitment exam information architecture, den
 ## 🌟 Key Features
 
 ### 1. Authentic Government Recruitment Portal UI
-- **Official Header**: Crimson/Maroon `#ab183d` banner with custom SVG logo emblem and subtitle `WWW.GOVTEXAMZONE.COM`.
+- **Official Header**: Crimson/Maroon `#ab183d` banner with custom SVG logo emblem and subtitle `WWW.ODISHAASPIRANTS.COM`.
 - **Sticky Header & Menu**: Fixed header navigation with smooth scrolling, dropdown menus, and zero content jumping.
 - **Marquee Tickers**: Scrolling alert tickers with alternate bounce direction for urgent exam updates.
 - **Iconic Color Badges**: 2x4 responsive highlight grid for high-priority exams (SSC, UPSC, UP Police, Railway RRB, Banking, etc.).
@@ -63,9 +63,9 @@ cp .env.example .env
 
 Default credentials:
 - **Port**: `3000`
-- **Super Admin**: `admin` / `govtexamzone@2026` (`/admin/login`)
-- **Senior Editor**: `editor@govtexamzone.com` / `editor@2026` (`/editor-portal/login`)
-- **Author**: `amit.sharma@govtexamzone.com` / `author@2026` (`/author-portal/login`)
+- **Super Admin**: `admin` / `odishaaspirants@2026` (`/admin/login`)
+- **Senior Editor**: `editor@odishaaspirants.com` / `editor@2026` (`/editor-portal/login`)
+- **Author**: `amit.sharma@odishaaspirants.com` / `author@2026` (`/author-portal/login`)
 
 ### 3. Start the Server
 ```bash

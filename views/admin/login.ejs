@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="<%= (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/gez-logo.svg' %>">
+  <link rel="icon" href="<%= (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' %>">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -328,10 +328,10 @@
     <!-- Brand Header -->
     <div class="brand-header">
       <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/" class="brand-emblem" title="Back to Homepage">
-        <img src="<%= (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/gez-logo.svg' %>" alt="Logo">
+        <img src="<%= (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/oa-logo.svg' %>" alt="Logo">
       </a>
       <h1 class="brand-title">Admin Console</h1>
-      <p class="brand-subtitle">Govt Exam Zone Administration</p>
+      <p class="brand-subtitle">Odisha Aspirants Administration</p>
     </div>
 
     <!-- Error Alert -->
@@ -396,7 +396,7 @@
           <span>Demo:</span>
           <code>admin</code>
           <span>/</span>
-          <code>govtexamzone@2026</code>
+          <code>odishaaspirants@2026</code>
         </div>
         <button type="button" class="btn-autofill" id="quickFillBtn" title="Fill credentials & login">
           ⚡ Auto-Fill
@@ -438,7 +438,7 @@
   if (quickFillBtn && userField && pwdInput && form) {
     quickFillBtn.addEventListener('click', () => {
       userField.value = 'admin';
-      pwdInput.value = 'govtexamzone@2026';
+      pwdInput.value = 'odishaaspirants@2026';
       form.submit();
     });
   }

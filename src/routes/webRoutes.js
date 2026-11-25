@@ -50,12 +50,12 @@ router.use(async (req, res, next) => {
       fetchAllCategoryCounts()
     ]);
     const siteSettings = {
-      telegram_url: 'https://t.me/govtexamzoneofficial',
+      telegram_url: 'https://t.me/odishaaspirantsofficial',
       whatsapp_url: 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10',
-      contact_email: 'contact.govtexamzone@gmail.com',
-      site_title: 'Govt Exam Zone',
+      contact_email: 'contact@odishaaspirants.com',
+      site_title: 'Odisha Aspirants',
       site_logo: '',
-      site_favicon: '/images/gez-logo.svg',
+      site_favicon: '/images/oa-logo.svg',
       post_detail_layout: 'classic',
       hidden_categories: '[]',
       auto_hide_empty_categories: '0'
@@ -63,15 +63,15 @@ router.use(async (req, res, next) => {
     if (sRows && Array.isArray(sRows)) {
       sRows.forEach(r => { siteSettings[r.key] = r.value; });
     }
-    // Remove legacy support email if stored in D1 settings
-    if (!siteSettings.contact_email || /^support@govtexamzone/i.test(siteSettings.contact_email.trim())) {
-      siteSettings.contact_email = 'contact.govtexamzone@gmail.com';
+    // Default fallback email if missing
+    if (!siteSettings.contact_email) {
+      siteSettings.contact_email = 'contact@odishaaspirants.com';
       try {
-        await d1.prepare("INSERT OR REPLACE INTO settings (key, value) VALUES ('contact_email', 'contact.govtexamzone@gmail.com')").run();
+        await d1.prepare("INSERT OR REPLACE INTO settings (key, value) VALUES ('contact_email', 'contact@odishaaspirants.com')").run();
       } catch (err) {}
     }
     // Remove previous demo/uploaded logo so header displays clean text by default
-    if (siteSettings.site_logo && (siteSettings.site_logo.includes('photo_2026') || siteSettings.site_logo.includes('gez-logo.svg'))) {
+    if (siteSettings.site_logo && (siteSettings.site_logo.includes('photo_2026') || siteSettings.site_logo.includes('oa-logo.svg'))) {
       siteSettings.site_logo = '';
       try {
         await d1.prepare("UPDATE settings SET value = '' WHERE key = 'site_logo'").run();
@@ -84,12 +84,12 @@ router.use(async (req, res, next) => {
     res.locals.visibleCategories = cachedVisibleCategories;
   } catch (e) {
     res.locals.settings = cachedSettings || {
-      telegram_url: 'https://t.me/govtexamzoneofficial',
+      telegram_url: 'https://t.me/odishaaspirantsofficial',
       whatsapp_url: 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10',
-      contact_email: 'contact.govtexamzone@gmail.com',
-      site_title: 'Govt Exam Zone',
+      contact_email: 'contact@odishaaspirants.com',
+      site_title: 'Odisha Aspirants',
       site_logo: '',
-      site_favicon: '/images/gez-logo.svg',
+      site_favicon: '/images/oa-logo.svg',
       post_detail_layout: 'classic',
       hidden_categories: '[]',
       auto_hide_empty_categories: '0'
@@ -131,7 +131,7 @@ router.get('/', async (req, res, next) => {
     ]);
 
     res.render('pages/index', {
-      title: `${res.locals.settings?.site_title || 'Govt Exam Zone'} : ${res.locals.settings?.site_tagline || 'Latest Govt Jobs, Admit Card, Results 2026'} | ${res.locals.settings?.header_subtitle || 'WWW.GOVTEXAMZONE.COM'}`,
+      title: `${res.locals.settings?.site_title || 'Odisha Aspirants'} : ${res.locals.settings?.site_tagline || 'Latest Govt Jobs, Admit Card, Results 2026'} | ${res.locals.settings?.header_subtitle || 'WWW.ODISHAASPIRANTS.COM'}`,
       marquees,
       badges,
       results,
@@ -178,8 +178,8 @@ router.get('/category/:cat', async (req, res, next) => {
     const totalPages = Math.ceil(totalPosts / limit) || 1;
 
     res.render('pages/category', {
-      title: `${catInfo.name} - Govt Exam Zone 2026 | WWW.GOVTEXAMZONE.COM`,
-      metaDescription: `Find latest ${catInfo.name} 2026 notifications, online application forms, official exam dates, eligibility criteria, and results at Govt Exam Zone.`,
+      title: `${catInfo.name} - Odisha Aspirants 2026 | WWW.ODISHAASPIRANTS.COM`,
+      metaDescription: `Find latest ${catInfo.name} 2026 notifications, online application forms, official exam dates, eligibility criteria, and results at Odisha Aspirants.`,
       categorySlug,
       catInfo,
       posts,
@@ -209,7 +209,7 @@ router.get('/post/:slug', async (req, res, next) => {
 
     if (!post) {
       return res.status(404).render('pages/error', {
-        title: 'Post Not Found | Govt Exam Zone',
+        title: 'Post Not Found | Odisha Aspirants',
         message: 'The job or result notification you are looking for does not exist or has been removed.'
       });
     }
@@ -239,20 +239,20 @@ router.get('/post/:slug', async (req, res, next) => {
     const links = safeJsonParse(post.links, []);
 
     const author = authorRow || {
-      name: 'Govt Exam Zone Editorial Team',
+      name: 'Odisha Aspirants Editorial Team',
       slug: 'editorial-team',
       role: 'Senior Recruitment Analyst & Fact-Checker Lead',
       avatar_url: '/images/default-avatar.svg',
-      bio: 'The official editorial and verification desk of Govt Exam Zone.'
+      bio: 'The official editorial and verification desk of Odisha Aspirants.'
     };
 
     res.set('Cache-Control', 'public, max-age=30, s-maxage=60, stale-while-revalidate=120');
 
     res.render('pages/detail', {
-      title: `${post.title} - Govt Exam Zone | WWW.GOVTEXAMZONE.COM`,
+      title: `${post.title} - Odisha Aspirants | WWW.ODISHAASPIRANTS.COM`,
       metaDescription: post.short_desc 
         ? post.short_desc.replace(/\s+/g, ' ').trim() 
-        : `${post.title}. Check notification details, eligibility criteria, application process, and official links at Govt Exam Zone.`,
+        : `${post.title}. Check notification details, eligibility criteria, application process, and official links at Odisha Aspirants.`,
       post,
       author,
       catInfo: CATEGORIES[post.category] || { name: 'Notification', slug: post.category },
@@ -290,8 +290,8 @@ router.get('/search', async (req, res, next) => {
     }
 
     res.render('pages/search', {
-      title: `Search: ${query || 'Government Jobs 2026'} - Govt Exam Zone`,
-      metaDescription: `Search results for "${query || 'Govt Jobs'}" across latest government vacancies, admit cards, and results at Govt Exam Zone.`,
+      title: `Search: ${query || 'Government Jobs 2026'} - Odisha Aspirants`,
+      metaDescription: `Search results for "${query || 'Govt Jobs'}" across latest government vacancies, admit cards, and results at Odisha Aspirants.`,
       query,
       posts
     });
@@ -303,7 +303,7 @@ router.get('/search', async (req, res, next) => {
 // Candidate Tools: Age Calculator
 router.get('/tools/age-calculator', (req, res) => {
   res.render('pages/age-calculator', {
-    title: 'Government Exam Online Age Calculator 2026 : Exact Age as on Cutoff Date | Govt Exam Zone',
+    title: 'Government Exam Online Age Calculator 2026 : Exact Age as on Cutoff Date | Odisha Aspirants',
     metaDescription: 'Free online Government Exam Age Calculator 2026. Calculate exact age in years, months and days as on notification cutoff date for SSC CGL, UPSC, Railways, Police & Banking jobs.'
   });
 });
@@ -311,7 +311,7 @@ router.get('/tools/age-calculator', (req, res) => {
 // Candidate Tools: Photo & Signature Resizer Specs
 router.get('/tools/photo-resizer', (req, res) => {
   res.render('pages/photo-resizer', {
-    title: 'Photo & Signature Resizer Dimensions Guide 2026 : SSC, UPSC, Railway | Govt Exam Zone',
+    title: 'Photo & Signature Resizer Dimensions Guide 2026 : SSC, UPSC, Railway | Odisha Aspirants',
     metaDescription: 'Official Photo and Signature dimension specifications guide 2026 for SSC, UPSC, UP Police, Railway RRB, and Banking exam online application forms.'
   });
 });
@@ -319,7 +319,7 @@ router.get('/tools/photo-resizer', (req, res) => {
 // Candidate Tools: Interactive Image Resizer & Name on Photo Maker
 router.get('/tools/image-resizer', (req, res) => {
   res.render('pages/image-resizer', {
-    title: 'Government Exam Photo & Signature Resizer with Name/Date on Photo Maker 2026 | Govt Exam Zone',
+    title: 'Government Exam Photo & Signature Resizer with Name/Date on Photo Maker 2026 | Odisha Aspirants',
     metaDescription: 'Free interactive Government Exam Photo & Signature Resizer with Name and Date on photo maker tool. Crop, compress to 20KB-50KB for Sarkari Exam forms.'
   });
 });
@@ -393,9 +393,9 @@ router.get('/feed', async (req, res) => {
 
     let rss = `<?xml version="1.0" encoding="UTF-8"?>\n`;
     rss += `<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n<channel>\n`;
-    rss += `  <title>${res.locals.settings?.site_title || 'Govt Exam Zone'} Latest Notifications</title>\n`;
+    rss += `  <title>${res.locals.settings?.site_title || 'Odisha Aspirants'} Latest Notifications</title>\n`;
     rss += `  <link>${host}</link>\n`;
-    rss += `  <description>${res.locals.settings?.site_tagline || 'Latest Govt Exam Zone Jobs, Online Form, Admit Cards & Results 2026'}</description>\n`;
+    rss += `  <description>${res.locals.settings?.site_tagline || 'Latest Odisha Aspirants Jobs, Online Form, Admit Cards & Results 2026'}</description>\n`;
     rss += `  <language>en-in</language>\n`;
     rss += `  <atom:link href="${host}/feed" rel="self" type="application/rss+xml" />\n`;
 
@@ -455,8 +455,8 @@ router.get('/about-us', async (req, res, next) => {
   try {
     const teamMembers = await d1.prepare('SELECT * FROM authors WHERE is_active = 1 ORDER BY id ASC LIMIT 10').all();
     res.render('pages/about', {
-      title: 'About Us, Mission & Editorial Standards - Govt Exam Zone | Trusted Sarkari Portal',
-      metaDescription: 'Learn about Govt Exam Zone, our verified editorial research team, fact-checking policies, and mission to deliver authentic government job alerts.',
+      title: 'About Us, Mission & Editorial Standards - Odisha Aspirants | Trusted Sarkari Portal',
+      metaDescription: 'Learn about Odisha Aspirants, our verified editorial research team, fact-checking policies, and mission to deliver authentic government job alerts.',
       teamMembers
     });
   } catch (err) {
@@ -468,8 +468,8 @@ router.get('/about', (req, res) => res.redirect(301, '/about-us'));
 // Dedicated FAQ Page
 router.get('/faq', (req, res) => {
   res.render('pages/faq', {
-    title: 'Frequently Asked Questions (FAQ) - Govt Exam Zone | Candidate Helpdesk',
-    metaDescription: 'Find clear answers to frequently asked questions about Government Jobs 2026 notifications, online application process, admit cards, exam results, and verification at Govt Exam Zone.'
+    title: 'Frequently Asked Questions (FAQ) - Odisha Aspirants | Candidate Helpdesk',
+    metaDescription: 'Find clear answers to frequently asked questions about Government Jobs 2026 notifications, online application process, admit cards, exam results, and verification at Odisha Aspirants.'
   });
 });
 router.get('/faqs', (req, res) => res.redirect(301, '/faq'));
@@ -477,9 +477,9 @@ router.get('/faqs', (req, res) => res.redirect(301, '/faq'));
 // Dedicated Contact Page
 router.get('/contact-us', (req, res) => {
   res.render('pages/contact', {
-    title: 'Contact Us & Candidate Helpdesk - Govt Exam Zone',
+    title: 'Contact Us & Candidate Helpdesk - Odisha Aspirants',
     pageTitle: 'Contact Us',
-    metaDescription: 'Contact Govt Exam Zone candidate support and helpdesk for queries, corrections, feedback, and official communication.'
+    metaDescription: 'Contact Odisha Aspirants candidate support and helpdesk for queries, corrections, feedback, and official communication.'
   });
 });
 router.get('/contact', (req, res) => res.redirect(301, '/contact-us'));
@@ -487,16 +487,16 @@ router.get('/contact', (req, res) => res.redirect(301, '/contact-us'));
 // Dedicated Privacy Policy Page
 router.get('/privacy-policy', (req, res) => {
   res.render('pages/privacy-policy', {
-    title: 'Privacy Policy - Govt Exam Zone | Candidate Data Protection',
-    metaDescription: 'Official Privacy Policy of Govt Exam Zone explaining data collection, cookies, Google AdSense compliance, and candidate privacy.'
+    title: 'Privacy Policy - Odisha Aspirants | Candidate Data Protection',
+    metaDescription: 'Official Privacy Policy of Odisha Aspirants explaining data collection, cookies, Google AdSense compliance, and candidate privacy.'
   });
 });
 
 // Dedicated Terms & Conditions Page
 router.get('/terms-conditions', (req, res) => {
   res.render('pages/terms', {
-    title: 'Terms and Conditions of Use - Govt Exam Zone',
-    metaDescription: 'Review the official Terms and Conditions governing the use of Govt Exam Zone public educational information portal and services.'
+    title: 'Terms and Conditions of Use - Odisha Aspirants',
+    metaDescription: 'Review the official Terms and Conditions governing the use of Odisha Aspirants public educational information portal and services.'
   });
 });
 router.get('/terms', (req, res) => res.redirect(301, '/terms-conditions'));
@@ -504,8 +504,8 @@ router.get('/terms', (req, res) => res.redirect(301, '/terms-conditions'));
 // Dedicated Disclaimer Policy Page
 router.get('/disclaimer', (req, res) => {
   res.render('pages/disclaimer', {
-    title: 'Disclaimer Policy - Govt Exam Zone Official Recruitment Notice',
-    metaDescription: 'Official Disclaimer Policy of Govt Exam Zone regarding government exam updates, third-party official links, and candidate advisory.'
+    title: 'Disclaimer Policy - Odisha Aspirants Official Recruitment Notice',
+    metaDescription: 'Official Disclaimer Policy of Odisha Aspirants regarding government exam updates, third-party official links, and candidate advisory.'
   });
 });
 

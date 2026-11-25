@@ -1,14 +1,14 @@
 {
-  "name": "Govt Exam Zone Official Portal 2026",
-  "short_name": "GovtExamZone",
+  "name": "Odisha Aspirants Official Portal 2026",
+  "short_name": "OdishaAspirants",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ab183d",
   "theme_color": "#ab183d",
-  "description": "Govt Exam Zone provides fastest live updates for Govt Exam Zone 2026, Govt Jobs, Latest Online Forms, Admit Card & Results.",
+  "description": "Odisha Aspirants provides fastest live updates for Odisha Aspirants 2026, Govt Jobs, Latest Online Forms, Admit Card & Results.",
   "icons": [
     {
-      "src": "/images/gez-logo.svg",
+      "src": "/images/oa-logo.svg",
       "sizes": "192x192 512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"

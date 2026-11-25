@@ -3,7 +3,7 @@ const d1 = require('./d1Client');
 async function seedDatabase() {
   await d1.init();
 
-  console.log('🌱 Seeding initial Govt Exam Zone database...');
+  console.log('🌱 Seeding initial Odisha Aspirants database...');
 
   // 0. Ensure all core tables exist before querying or inserting
   if (d1.CORE_TABLES && Array.isArray(d1.CORE_TABLES)) {
@@ -46,26 +46,26 @@ async function seedDatabase() {
     if (!authorCount || authorCount.count === 0) {
       const initialAuthors = [
         {
-          name: 'Govt Exam Zone Editorial Team',
+          name: 'Odisha Aspirants Editorial Team',
           slug: 'editorial-team',
           role: 'Senior Recruitment Analyst & Fact-Checker Lead',
-          email: 'editor@govtexamzone.com',
-          bio: 'The official editorial and verification desk of Govt Exam Zone. Our research team meticulously verifies all central and state government job notifications, admit cards, answer keys, and results directly from official gazettes and commissions.',
+          email: 'editor@odishaaspirants.com',
+          bio: 'The official editorial and verification desk of Odisha Aspirants. Our research team meticulously verifies all central and state government job notifications, admit cards, answer keys, and results directly from official gazettes and commissions.',
           qualification: 'Master of Public Administration & Statistical Analysis',
           experience: '10+ Years Competitive Exams Analysis',
           avatar_url: '/images/default-avatar.svg',
-          telegram_url: 'https://t.me/govtexamzoneofficial'
+          telegram_url: 'https://t.me/odishaaspirantsofficial'
         },
         {
           name: 'Amit Kumar Sharma',
           slug: 'amit-sharma',
           role: 'Technical Recruitment & Engineering Exam Specialist',
-          email: 'amit.sharma@govtexamzone.com',
+          email: 'amit.sharma@odishaaspirants.com',
           bio: 'Exam researcher specializing in technical recruitments across SSC JE, Railway RRB ALP/Technician, Defence CDS/NDA, and state engineering service examinations.',
           qualification: 'B.Tech (Mechanical Engineering), GATE Qualified',
           experience: '7+ Years Recruitment Guidance',
           avatar_url: '/images/default-avatar.svg',
-          telegram_url: 'https://t.me/govtexamzoneofficial'
+          telegram_url: 'https://t.me/odishaaspirantsofficial'
         }
       ];
 
@@ -87,7 +87,7 @@ async function seedDatabase() {
       const authorsWithoutPass = await d1.prepare("SELECT id, slug, email FROM authors WHERE password_hash IS NULL OR password_hash = ''").all();
       if (authorsWithoutPass && authorsWithoutPass.length > 0) {
         for (const a of authorsWithoutPass) {
-          const defPass = (a.slug === 'editorial-team' || a.email === 'editor@govtexamzone.com') ? 'editor@2026' : 'author@2026';
+          const defPass = (a.slug === 'editorial-team' || a.email === 'editor@odishaaspirants.com') ? 'editor@2026' : 'author@2026';
           const pHash = hashPassword(defPass);
           await d1.prepare('UPDATE authors SET password_hash = ? WHERE id = ?').bind(pHash, a.id).run();
         }
@@ -773,8 +773,8 @@ async function seedDatabase() {
           { label: 'Download CBT 2 Part B Technical Trade Syllabus (PDF)', url: 'https://rrbapply.gov.in', btn_text: 'Click Here' },
           { label: 'Download Official Exam Pattern & Selection Scheme', url: 'https://rrbapply.gov.in', btn_text: 'Click Here' },
           { label: 'Download Official RRB Notification PDF', url: 'https://rrbapply.gov.in', btn_text: 'Click Here' },
-          { label: 'Join Govt Exam Zone Telegram Channel', url: 'https://t.me/govtexamzoneofficial', btn_text: 'Join Telegram' },
-          { label: 'Join Govt Exam Zone WhatsApp Channel', url: 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10', btn_text: 'Join WhatsApp' },
+          { label: 'Join Odisha Aspirants Telegram Channel', url: 'https://t.me/odishaaspirantsofficial', btn_text: 'Join Telegram' },
+          { label: 'Join Odisha Aspirants WhatsApp Channel', url: 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10', btn_text: 'Join WhatsApp' },
           { label: 'RRB Official Recruitment Portal', url: 'https://rrbapply.gov.in', btn_text: 'Official Portal' }
         ]),
         official_website_url: 'https://indianrailways.gov.in'

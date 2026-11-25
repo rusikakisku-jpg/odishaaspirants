@@ -31,12 +31,12 @@ router.use(async (req, res, next) => {
   try {
     const sRows = await d1.prepare('SELECT * FROM settings').all();
     const siteSettings = {
-      telegram_url: 'https://t.me/govtexamzoneofficial',
+      telegram_url: 'https://t.me/odishaaspirantsofficial',
       whatsapp_url: 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10',
-      contact_email: 'contact.govtexamzone@gmail.com',
-      site_title: 'Govt Exam Zone',
-      site_logo: '/images/gez-logo.svg',
-      site_favicon: '/images/gez-logo.svg'
+      contact_email: 'contact@odishaaspirants.com',
+      site_title: 'Odisha Aspirants',
+      site_logo: '/images/oa-logo.svg',
+      site_favicon: '/images/oa-logo.svg'
     };
     if (sRows && Array.isArray(sRows)) {
       sRows.forEach(r => { siteSettings[r.key] = r.value; });
@@ -44,12 +44,12 @@ router.use(async (req, res, next) => {
     res.locals.settings = siteSettings;
   } catch (e) {
     res.locals.settings = {
-      telegram_url: 'https://t.me/govtexamzoneofficial',
+      telegram_url: 'https://t.me/odishaaspirantsofficial',
       whatsapp_url: 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10',
-      contact_email: 'contact.govtexamzone@gmail.com',
-      site_title: 'Govt Exam Zone',
-      site_logo: '/images/gez-logo.svg',
-      site_favicon: '/images/gez-logo.svg'
+      contact_email: 'contact@odishaaspirants.com',
+      site_title: 'Odisha Aspirants',
+      site_logo: '/images/oa-logo.svg',
+      site_favicon: '/images/oa-logo.svg'
     };
   }
   next();
@@ -62,7 +62,7 @@ router.use(async (req, res, next) => {
 // Author Login Page
 router.get('/login', async (req, res) => {
   // If already logged in, redirect directly to dashboard
-  const token = req.cookies?.gez_author_token;
+  const token = req.cookies?.oa_author_token;
   if (token) {
     const author = await getAuthorFromToken(token);
     if (author) {
@@ -77,7 +77,7 @@ router.get('/login', async (req, res) => {
   } catch(e) {}
 
   res.render('author/login', {
-    title: 'Author Login - Editorial & Contributor Desk | Govt Exam Zone',
+    title: 'Author Login - Editorial & Contributor Desk | Odisha Aspirants',
     error: null,
     returnUrl: req.query.returnUrl || '/author-portal',
     sampleAuthors: sampleAuthors || []
@@ -93,7 +93,7 @@ router.post('/login', async (req, res, next) => {
 
     if (!inputIdentifier || !inputPassword) {
       return res.render('author/login', {
-        title: 'Author Login - Govt Exam Zone',
+        title: 'Author Login - Odisha Aspirants',
         error: 'Please provide both Author Email/Username and Password.',
         returnUrl,
         sampleAuthors: []
@@ -108,7 +108,7 @@ router.post('/login', async (req, res, next) => {
 
     if (!author) {
       return res.render('author/login', {
-        title: 'Author Login - Govt Exam Zone',
+        title: 'Author Login - Odisha Aspirants',
         error: `No verified author found with username or email: "${inputIdentifier}".`,
         returnUrl,
         sampleAuthors: []
@@ -118,7 +118,7 @@ router.post('/login', async (req, res, next) => {
     const isValid = verifyPassword(inputPassword, author.password_hash);
     if (!isValid) {
       return res.render('author/login', {
-        title: 'Author Login - Govt Exam Zone',
+        title: 'Author Login - Odisha Aspirants',
         error: 'Incorrect author password. Please verify and try again.',
         returnUrl,
         sampleAuthors: []
@@ -191,7 +191,7 @@ router.get(['/', '/dashboard'], async (req, res, next) => {
     }
 
     res.render('author/dashboard', {
-      title: `${author.name} - ${isEditor ? 'Editor' : 'Author'} Workspace | Govt Exam Zone`,
+      title: `${author.name} - ${isEditor ? 'Editor' : 'Author'} Workspace | Odisha Aspirants`,
       author,
       isEditor,
       stats: {
@@ -544,7 +544,7 @@ router.get('/profile', async (req, res, next) => {
   try {
     const author = await d1.prepare('SELECT * FROM authors WHERE id = ?').bind(req.author.id).first();
     res.render('author/profile', {
-      title: 'Author Profile & Account Settings - Govt Exam Zone',
+      title: 'Author Profile & Account Settings - Odisha Aspirants',
       author: author || req.author,
       success: req.query.success || '',
       error: req.query.error || ''

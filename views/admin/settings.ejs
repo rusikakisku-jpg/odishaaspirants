@@ -58,8 +58,8 @@
             id="site_title" 
             name="site_title" 
             class="form-control" 
-            value="<%= settings.site_title || 'Govt Exam Zone' %>" 
-            placeholder="Govt Exam Zone"
+            value="<%= settings.site_title || 'Odisha Aspirants' %>" 
+            placeholder="Odisha Aspirants"
             required
           >
           <small class="field-hint">Primary portal name displayed in top header and browser titles.</small>
@@ -72,8 +72,8 @@
             id="header_subtitle" 
             name="header_subtitle" 
             class="form-control" 
-            value="<%= settings.header_subtitle || 'WWW.GOVTEXAMZONE.COM' %>" 
-            placeholder="WWW.GOVTEXAMZONE.COM"
+            value="<%= settings.header_subtitle || 'WWW.ODISHAASPIRANTS.COM' %>" 
+            placeholder="WWW.ODISHAASPIRANTS.COM"
           >
           <small class="field-hint">Subtitle displayed below the main logo in the red header bar.</small>
         </div>
@@ -148,7 +148,7 @@
           <!-- Favicon Management -->
           <div class="form-group" style="flex: 1; min-width: 280px;">
             <%
-              const activeFaviconVal = (typeof settings.site_favicon === 'string') ? settings.site_favicon : '/images/gez-logo.svg';
+              const activeFaviconVal = (typeof settings.site_favicon === 'string') ? settings.site_favicon : '/images/oa-logo.svg';
               const hasFaviconVal = Boolean(activeFaviconVal && activeFaviconVal.trim());
             %>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
@@ -201,7 +201,7 @@
                 name="site_favicon" 
                 class="form-control" 
                 value="<%= activeFaviconVal %>" 
-                placeholder="Leave empty for no custom favicon, or enter /images/gez-logo.svg"
+                placeholder="Leave empty for no custom favicon, or enter /images/oa-logo.svg"
               >
               <small class="field-hint">ICO, PNG, or SVG format (recommended 32x32 or 48x48). Click "Delete / Remove Favicon" above to clear it cleanly.</small>
             </div>
@@ -230,8 +230,8 @@
             id="site_domain" 
             name="site_domain" 
             class="form-control" 
-            value="<%= settings.site_domain || 'https://govtexamzone.com' %>" 
-            placeholder="https://govtexamzone.com"
+            value="<%= settings.site_domain || 'https://odishaaspirants.com' %>" 
+            placeholder="https://odishaaspirants.com"
           >
           <small class="field-hint">Canonical domain used for generating sitemaps and share links.</small>
         </div>
@@ -244,8 +244,8 @@
           id="copyright_text" 
           name="copyright_text" 
           class="form-control" 
-          value="<%= settings.copyright_text || '© {year} govtexamzone.com. All Rights Reserved.' %>" 
-          placeholder="© {year} govtexamzone.com. All Rights Reserved."
+          value="<%= settings.copyright_text || '© {year} odishaaspirants.com. All Rights Reserved.' %>" 
+          placeholder="© {year} odishaaspirants.com. All Rights Reserved."
         >
         <small class="field-hint">Fetched from backend settings on every page. Use <code>{year}</code> or any <code>20xx</code> year — it automatically updates to the current year on the live website.</small>
       </div>
@@ -403,8 +403,8 @@
             id="telegram_url" 
             name="telegram_url" 
             class="form-control" 
-            value="<%= settings.telegram_url || 'https://t.me/govtexamzoneofficial' %>" 
-            placeholder="https://t.me/govtexamzoneofficial"
+            value="<%= settings.telegram_url || 'https://t.me/odishaaspirantsofficial' %>" 
+            placeholder="https://t.me/odishaaspirantsofficial"
             required
           >
           <small class="field-hint">Connected to top "Join Telegram Channel" button and mobile drawer.</small>
@@ -434,7 +434,7 @@
             name="youtube_url" 
             class="form-control" 
             value="<%= settings.youtube_url || '' %>" 
-            placeholder="https://youtube.com/@govtexamzone"
+            placeholder="https://youtube.com/@odishaaspirants"
           >
           <small class="field-hint">Official video channel link.</small>
         </div>
@@ -447,7 +447,7 @@
             name="twitter_url" 
             class="form-control" 
             value="<%= settings.twitter_url || '' %>" 
-            placeholder="https://x.com/govtexamzone"
+            placeholder="https://x.com/odishaaspirants"
           >
           <small class="field-hint">Official Twitter / X handle URL.</small>
         </div>
@@ -462,7 +462,7 @@
             name="instagram_url" 
             class="form-control" 
             value="<%= settings.instagram_url || '' %>" 
-            placeholder="https://instagram.com/govtexamzone"
+            placeholder="https://instagram.com/odishaaspirants"
           >
           <small class="field-hint">Official Instagram page URL.</small>
         </div>
@@ -475,7 +475,7 @@
             name="facebook_url" 
             class="form-control" 
             value="<%= settings.facebook_url || '' %>" 
-            placeholder="https://facebook.com/govtexamzone"
+            placeholder="https://facebook.com/odishaaspirants"
           >
           <small class="field-hint">Official Facebook page link.</small>
         </div>
@@ -501,8 +501,8 @@
             id="contact_email" 
             name="contact_email" 
             class="form-control" 
-            value="<%= settings.contact_email || 'contact.govtexamzone@gmail.com' %>" 
-            placeholder="contact.govtexamzone@gmail.com"
+            value="<%= settings.contact_email || 'contact@odishaaspirants.com' %>" 
+            placeholder="contact@odishaaspirants.com"
           >
           <small class="field-hint">Primary email for candidate feedback, corrections, and DMCA notices.</small>
         </div>
@@ -528,7 +528,7 @@
           name="office_address" 
           class="form-control" 
           rows="2" 
-          placeholder="e.g. Govt Exam Zone Media & Edu Services, New Delhi, India"
+          placeholder="e.g. Odisha Aspirants Media & Edu Services, New Delhi, India"
         ><%= settings.office_address || '' %></textarea>
         <small class="field-hint">Displayed on the Contact Us / About information section.</small>
       </div>
@@ -552,8 +552,8 @@
           name="meta_description" 
           class="form-control" 
           rows="3" 
-          placeholder="Govt Exam Zone provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card..."
-        ><%= settings.meta_description || 'Govt Exam Zone (govtexamzone.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.' %></textarea>
+          placeholder="Odisha Aspirants provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card..."
+        ><%= settings.meta_description || 'Odisha Aspirants (odishaaspirants.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.' %></textarea>
         <small class="field-hint">Used for search engine summary snippets on homepage and search results.</small>
       </div>
 
@@ -564,8 +564,8 @@
           id="meta_keywords" 
           name="meta_keywords" 
           class="form-control" 
-          value="<%= settings.meta_keywords || 'Govt Exam Zone, govtexamzone, govtexamzone.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' %>" 
-          placeholder="Govt Exam Zone, Govt Jobs 2026, Admit Card, Results..."
+          value="<%= settings.meta_keywords || 'Odisha Aspirants, odishaaspirants, odishaaspirants.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' %>" 
+          placeholder="Odisha Aspirants, Govt Jobs 2026, Admit Card, Results..."
         >
         <small class="field-hint">Comma-separated keywords for meta tags.</small>
       </div>

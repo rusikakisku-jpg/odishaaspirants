@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="<%= (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/gez-logo.svg' %>">
+  <link rel="icon" href="<%= (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' %>">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -279,12 +279,12 @@
     <div class="author-login-card">
       <div class="brand-header">
         <div class="brand-logo-wrap">
-          <img src="<%= (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/gez-logo.svg' %>" alt="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>">
+          <img src="<%= (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/oa-logo.svg' %>" alt="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' %>">
         </div>
         <div>
           <span class="brand-badge">🛡️ Editor &amp; ✍️ Author Contributor Desk</span>
         </div>
-        <h1 class="brand-title"><%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %></h1>
+        <h1 class="brand-title"><%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' %></h1>
         <p class="brand-sub">Secure workspace for Senior Editors and Author Contributors.</p>
       </div>
 
@@ -306,7 +306,7 @@
               id="identifier" 
               name="identifier" 
               class="form-input" 
-              placeholder="e.g. editor@govtexamzone.com or editorial-team" 
+              placeholder="e.g. editor@odishaaspirants.com or editorial-team" 
               required
               autocomplete="username"
               autofocus
@@ -342,18 +342,18 @@
           <span style="font-size: 11px; text-transform: none; color: #64748b;">Click to populate</span>
         </div>
         <div class="quick-chips-wrap">
-          <button type="button" class="author-chip-btn" onclick="fillAuthor('editor@govtexamzone.com', 'editor@2026')">
+          <button type="button" class="author-chip-btn" onclick="fillAuthor('editor@odishaaspirants.com', 'editor@2026')">
             <div>
               <b style="color: #60a5fa;">🛡️ Senior Editor Lead</b>
-              <div style="font-size: 11px; color: #94a3b8;">editor@govtexamzone.com</div>
+              <div style="font-size: 11px; color: #94a3b8;">editor@odishaaspirants.com</div>
             </div>
             <span style="background: rgba(37,99,235,0.2); color: #93c5fd; font-size: 11px; padding: 2px 7px; border-radius: 4px;">Fill Editor</span>
           </button>
 
-          <button type="button" class="author-chip-btn" onclick="fillAuthor('amit.sharma@govtexamzone.com', 'author@2026')">
+          <button type="button" class="author-chip-btn" onclick="fillAuthor('amit.sharma@odishaaspirants.com', 'author@2026')">
             <div>
               <b style="color: #34d399;">✍️ Author / Contributor</b>
-              <div style="font-size: 11px; color: #94a3b8;">amit.sharma@govtexamzone.com</div>
+              <div style="font-size: 11px; color: #94a3b8;">amit.sharma@odishaaspirants.com</div>
             </div>
             <span style="background: rgba(16,185,129,0.2); color: #6ee7b7; font-size: 11px; padding: 2px 7px; border-radius: 4px;">Fill Author</span>
           </button>

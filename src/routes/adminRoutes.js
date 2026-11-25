@@ -37,12 +37,12 @@ router.use(async (req, res, next) => {
   try {
     const sRows = await d1.prepare('SELECT * FROM settings').all();
     const siteSettings = {
-      telegram_url: 'https://t.me/govtexamzoneofficial',
+      telegram_url: 'https://t.me/odishaaspirantsofficial',
       whatsapp_url: 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10',
-      contact_email: 'contact.govtexamzone@gmail.com',
-      site_title: 'Govt Exam Zone',
+      contact_email: 'contact@odishaaspirants.com',
+      site_title: 'Odisha Aspirants',
       site_logo: '',
-      site_favicon: '/images/gez-logo.svg'
+      site_favicon: '/images/oa-logo.svg'
     };
     if (sRows && Array.isArray(sRows)) {
       sRows.forEach(r => { siteSettings[r.key] = r.value; });
@@ -50,12 +50,12 @@ router.use(async (req, res, next) => {
     res.locals.settings = siteSettings;
   } catch (e) {
     res.locals.settings = {
-      telegram_url: 'https://t.me/govtexamzoneofficial',
+      telegram_url: 'https://t.me/odishaaspirantsofficial',
       whatsapp_url: 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10',
-      contact_email: 'contact.govtexamzone@gmail.com',
-      site_title: 'Govt Exam Zone',
+      contact_email: 'contact@odishaaspirants.com',
+      site_title: 'Odisha Aspirants',
       site_logo: '',
-      site_favicon: '/images/gez-logo.svg'
+      site_favicon: '/images/oa-logo.svg'
     };
   }
   next();
@@ -64,7 +64,7 @@ router.use(async (req, res, next) => {
 // Admin Login Form
 router.get('/login', (req, res) => {
   res.render('admin/login', {
-    title: 'Admin Login - Govt Exam Zone Panel',
+    title: 'Admin Login - Odisha Aspirants Panel',
     error: null
   });
 });
@@ -77,16 +77,16 @@ router.post('/login', (req, res) => {
   const validUsers = [
     (config.admin.username || 'admin').toLowerCase(),
     'admin',
-    'govtexamzone',
-    'govtexamzoneadmin',
-    'govtexamzoneofficial',
-    'admin@govtexamzone.com'
+    'odishaaspirants',
+    'odishaaspirantsadmin',
+    'odishaaspirantsofficial',
+    'admin@odishaaspirants.com'
   ];
 
   const validPasswords = [
     config.admin.password,
-    'govtexamzone@2026',
-    'GovtExamZone@2026',
+    'odishaaspirants@2026',
+    'OdishaAspirants@2026',
     'admin2026'
   ];
 
@@ -102,8 +102,8 @@ router.post('/login', (req, res) => {
 
   console.warn(`[AUTH] Failed login attempt: user="${req.body?.username}"`);
   res.render('admin/login', {
-    title: 'Admin Login - Govt Exam Zone Panel',
-    error: 'Invalid username or password. Please use username "admin" and password "govtexamzone@2026" or click the Auto-Fill button.'
+    title: 'Admin Login - Odisha Aspirants Panel',
+    error: 'Invalid username or password. Please use username "admin" and password "odishaaspirants@2026" or click the Auto-Fill button.'
   });
 });
 
@@ -240,7 +240,7 @@ router.get('/', async (req, res, next) => {
     ]);
 
     res.render('admin/dashboard', {
-      title: 'Admin Dashboard - Govt Exam Zone Control Panel',
+      title: 'Admin Dashboard - Odisha Aspirants Control Panel',
       totalPosts: totalPostsRow?.count || 0,
       categoriesCount,
       recentPosts,
@@ -278,7 +278,7 @@ router.get('/posts', async (req, res, next) => {
     const posts = await d1.prepare(query).bind(...params).all();
 
     res.render('admin/posts-list', {
-      title: 'Manage Posts - Govt Exam Zone Admin',
+      title: 'Manage Posts - Odisha Aspirants Admin',
       posts,
       categories: CATEGORIES,
       selectedCategory: category,
@@ -296,7 +296,7 @@ router.get('/posts/new', async (req, res, next) => {
   try {
     const authors = await d1.prepare('SELECT id, name, role FROM authors WHERE is_active = 1 ORDER BY id ASC').all();
     res.render('admin/post-form', {
-      title: 'Create New Post - Govt Exam Zone Admin',
+      title: 'Create New Post - Odisha Aspirants Admin',
       post: null,
       categoryHistoryMap: {},
       authors: authors || [],
@@ -422,7 +422,7 @@ router.get('/posts/edit/:id', async (req, res, next) => {
     ]);
 
     res.render('admin/post-form', {
-      title: `Edit: ${post.title} - Govt Exam Zone Admin`,
+      title: `Edit: ${post.title} - Odisha Aspirants Admin`,
       post,
       categoryHistoryMap: categoryHistoryMap || {},
       authors: authors || [],
@@ -558,7 +558,7 @@ router.get('/authors', async (req, res, next) => {
     `).all();
 
     res.render('admin/authors', {
-      title: 'Manage Editorial Team & Authors - Govt Exam Zone Admin',
+      title: 'Manage Editorial Team & Authors - Odisha Aspirants Admin',
       authors: authors || [],
       success: req.query.success || ''
     });
@@ -670,7 +670,7 @@ router.get('/badges', async (req, res, next) => {
   try {
     const badges = await d1.prepare('SELECT * FROM badges ORDER BY display_order ASC, id ASC').all();
     res.render('admin/badges', {
-      title: 'Manage 8 Quick Badges - Govt Exam Zone Admin',
+      title: 'Manage 8 Quick Badges - Odisha Aspirants Admin',
       badges: badges || [],
       saved: req.query.saved === '1',
       deleted: req.query.deleted === '1'
@@ -720,7 +720,7 @@ router.get('/marquees', async (req, res, next) => {
   try {
     const marquees = await d1.prepare('SELECT * FROM marquees ORDER BY display_order ASC, id ASC').all();
     res.render('admin/marquees', {
-      title: 'Manage Marquees / Tickers - Govt Exam Zone Admin',
+      title: 'Manage Marquees / Tickers - Odisha Aspirants Admin',
       marquees: marquees || [],
       saved: req.query.saved === '1',
       deleted: req.query.deleted === '1'
@@ -910,24 +910,24 @@ router.get('/settings', async (req, res, next) => {
       });
     }
     const settings = {
-      telegram_url: 'https://t.me/govtexamzoneofficial',
+      telegram_url: 'https://t.me/odishaaspirantsofficial',
       whatsapp_url: 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10',
-      contact_email: 'contact.govtexamzone@gmail.com',
-      site_title: 'Govt Exam Zone',
+      contact_email: 'contact@odishaaspirants.com',
+      site_title: 'Odisha Aspirants',
       site_logo: '',
-      site_favicon: '/images/gez-logo.svg',
-      header_subtitle: 'WWW.GOVTEXAMZONE.COM',
+      site_favicon: '/images/oa-logo.svg',
+      header_subtitle: 'WWW.ODISHAASPIRANTS.COM',
       site_tagline: 'Latest Govt Jobs, Admit Card, Results 2026',
-      site_domain: 'https://govtexamzone.com',
-      copyright_text: '© 2026 govtexamzone.com. All Rights Reserved.',
+      site_domain: 'https://odishaaspirants.com',
+      copyright_text: '© 2026 odishaaspirants.com. All Rights Reserved.',
       youtube_url: '',
       twitter_url: '',
       instagram_url: '',
       facebook_url: '',
       contact_phone: '',
       office_address: '',
-      meta_description: 'Govt Exam Zone (govtexamzone.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.',
-      meta_keywords: 'Govt Exam Zone, govtexamzone, govtexamzone.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment',
+      meta_description: 'Odisha Aspirants (odishaaspirants.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.',
+      meta_keywords: 'Odisha Aspirants, odishaaspirants, odishaaspirants.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment',
       google_site_verification: '',
       google_analytics_id: '',
       notice_banner_active: '0',
@@ -947,12 +947,12 @@ router.get('/settings', async (req, res, next) => {
     if (rows && Array.isArray(rows)) {
       rows.forEach(r => { settings[r.key] = r.value; });
     }
-    if (!settings.contact_email || /^support@govtexamzone/i.test(settings.contact_email.trim())) {
-      settings.contact_email = 'contact.govtexamzone@gmail.com';
+    if (!settings.contact_email) {
+      settings.contact_email = 'contact@odishaaspirants.com';
     }
     const hiddenCategoriesList = safeJsonParse(settings.hidden_categories, []);
     res.render('admin/settings', {
-      title: 'Portal Settings - Govt Exam Zone Admin',
+      title: 'Portal Settings - Odisha Aspirants Admin',
       settings,
       categories: CATEGORIES,
       categoryCountMap,
@@ -993,9 +993,9 @@ router.post('/settings/save', upload.fields([
       rawSettings.google_analytics_id = gaMatch ? gaMatch[0].toUpperCase() : gaTrim.replace(/[<>"'\s]/g, '');
     }
 
-    // Prevent legacy support@govtexamzone email from being saved
-    if (typeof rawSettings.contact_email === 'string' && /^support@govtexamzone/i.test(rawSettings.contact_email.trim())) {
-      rawSettings.contact_email = 'contact.govtexamzone@gmail.com';
+    // Default fallback if contact_email is cleared
+    if (typeof rawSettings.contact_email === 'string' && !rawSettings.contact_email.trim()) {
+      rawSettings.contact_email = 'contact@odishaaspirants.com';
     }
 
     // Process logo file upload if provided

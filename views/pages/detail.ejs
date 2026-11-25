@@ -24,12 +24,12 @@
   "hiringOrganization": {
     "@type": "Organization",
     "name": "<%= (post.department || 'Government Recruitment Board').replace(/"/g, '\\"') %>",
-    "sameAs": "<%= post.official_website_url || ((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://govtexamzone.com') %>"
+    "sameAs": "<%= post.official_website_url || ((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://odishaaspirants.com') %>"
   },
   "author": {
     "@type": "Organization",
-    "name": <%- JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone') %>,
-    "url": <%- JSON.stringify(((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://govtexamzone.com')) %>
+    "name": <%- JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants') %>,
+    "url": <%- JSON.stringify(((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://odishaaspirants.com')) %>
   },
   "jobLocation": {
     "@type": "Place",
@@ -47,7 +47,7 @@
 <%
   const detailDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 %>
 {
   "@context": "https://schema.org",
@@ -104,7 +104,7 @@
 
             <div class="gez-article-meta">
               <span class="gez-meta-byline">
-                by <a href="<%= author.slug ? '/author/' + author.slug : '/authors' %>"><%= author.name || 'Govt Exam Zone Team' %></a>
+                by <a href="<%= author.slug ? '/author/' + author.slug : '/authors' %>"><%= author.name || 'Odisha Aspirants Team' %></a>
               </span>
               <span class="gez-meta-date">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -128,7 +128,7 @@
 
           <!-- Social Share Bar (WhatsApp & Telegram) -->
           <%
-            const sharePageUrl = typeof fullUrl !== 'undefined' ? fullUrl : ('https://govtexamzone.com/post/' + post.slug);
+            const sharePageUrl = typeof fullUrl !== 'undefined' ? fullUrl : ('https://odishaaspirants.com/post/' + post.slug);
           %>
           <div class="gez-share-bar">
             <span class="gez-share-label">Share:</span>
@@ -155,7 +155,7 @@
             <h3>Get Instant Govt Exam &amp; Result Alerts</h3>
             <p>Join our official Telegram &amp; WhatsApp channels for fastest job notifications, admit cards, and cutoff updates.</p>
             <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-              <a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' %>" target="_blank" rel="noopener noreferrer" class="gez-btn-cta" style="background: #229ED9;">
+              <a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' %>" target="_blank" rel="noopener noreferrer" class="gez-btn-cta" style="background: #229ED9;">
                 ✈️ Join Telegram Channel
               </a>
               <a href="<%= (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' %>" target="_blank" rel="noopener noreferrer" class="gez-btn-cta" style="background: #16a34a;">
@@ -295,7 +295,7 @@
 
     <!-- Social Connect Strip (Only Telegram & WhatsApp on Post Details) -->
     <div class="social-bar" style="margin: 12px 0 14px 0;">
-      <a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' %>" target="_blank" rel="noopener noreferrer" class="social-btn telegram">Join Telegram Channel</a>
+      <a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' %>" target="_blank" rel="noopener noreferrer" class="social-btn telegram">Join Telegram Channel</a>
       <a href="<%= (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' %>" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp">WhatsApp Channel</a>
     </div>
 

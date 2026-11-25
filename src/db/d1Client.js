@@ -363,7 +363,7 @@ class D1Client {
         `).run();
       } catch (pcErr) {}
 
-      // 3. Check if marquees table has data; if empty, auto-seed initial Govt Exam Zone records (unless skip_auto_seed is enabled)
+      // 3. Check if marquees table has data; if empty, auto-seed initial Odisha Aspirants records (unless skip_auto_seed is enabled)
       try {
         const skipSeedRow = await nativeD1.prepare("SELECT value FROM settings WHERE key = 'skip_auto_seed'").first().catch(() => null);
         if (!skipSeedRow || skipSeedRow.value !== '1') {

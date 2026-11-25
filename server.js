@@ -47,7 +47,7 @@ if (typeof WebSocketPair === 'undefined' && !globalThis.__CF_ENV__ && !globalThi
 // Favicon handler
 app.get('/favicon.ico', (req, res) => {
   const icoPath = path.resolve('public/favicon.ico');
-  const svgPath = path.resolve('public/images/gez-logo.svg');
+  const svgPath = path.resolve('public/images/oa-logo.svg');
   const fs = require('fs');
   if (fs.existsSync(icoPath)) return res.sendFile(icoPath);
   if (fs.existsSync(svgPath)) return res.sendFile(svgPath);
@@ -86,7 +86,7 @@ app.get('/api/seed-db', async (req, res) => {
     res.status(500).json({ success: false, error: err.message, tableResults, stack: err.stack });
   }
 });
-// Hostname-based routing for dedicated admin subdomain (setup.govtexamzone.com)
+// Hostname-based routing for dedicated admin subdomain (setup.odishaaspirants.com)
 app.use((req, res, next) => {
   const isSubdomain = isAdminSubdomainRequest(req);
   res.locals.isAdminSubdomain = isSubdomain;
@@ -135,7 +135,7 @@ app.use((req, res, next) => {
     return next();
   }
 
-  // Route all other requests on setup.govtexamzone.com directly into adminRoutes
+  // Route all other requests on setup.odishaaspirants.com directly into adminRoutes
   req.url = '/admin' + (req.url === '/' ? '' : req.url);
   return next();
 });
@@ -160,8 +160,8 @@ app.use('/', webRoutes);
 app.use((req, res) => {
   res.status(404);
   res.render('pages/error', {
-    title: '404 - Page Not Found | Govt Exam Zone',
-    message: 'The page you are looking for does not exist on Govt Exam Zone.'
+    title: '404 - Page Not Found | Odisha Aspirants',
+    message: 'The page you are looking for does not exist on Odisha Aspirants.'
   }, (renderErr, html) => {
     if (renderErr) {
       return res.type('text/html').send('<h1>404 - Page Not Found</h1>');
@@ -175,7 +175,7 @@ app.use((err, req, res, next) => {
   console.error('Server Error:', err);
   res.status(500);
   res.render('pages/error', {
-    title: '500 - Server Error | Govt Exam Zone',
+    title: '500 - Server Error | Odisha Aspirants',
     message: err.message || 'An internal error occurred. Please try again later.'
   }, (renderErr, html) => {
     if (renderErr) {
@@ -190,7 +190,7 @@ const PORT = config.server.port || 3000;
 if (typeof WebSocketPair === 'undefined' && !globalThis.__CF_ENV__ && !globalThis.__CF_PAGES__) {
   app.listen(PORT, () => {
     console.log(`=======================================================`);
-    console.log(`✅ Govt Exam Zone Server running on http://localhost:${PORT}`);
+    console.log(`✅ Odisha Aspirants Server running on http://localhost:${PORT}`);
     console.log(`🔒 Admin Panel available at http://localhost:${PORT}/admin`);
     console.log(`   Default credentials: user=${config.admin.username}, pass=${config.admin.password}`);
     console.log(`💾 Cloudflare D1 Database: ${d1.isCloudflareD1 ? 'Connected (Remote)' : 'Active (Local SQLite emulation)'}`);
@@ -203,7 +203,7 @@ if (typeof WebSocketPair === 'undefined' && !globalThis.__CF_ENV__ && !globalThi
 if (typeof WebSocketPair === 'undefined' && !globalThis.__CF_ENV__ && !globalThis.__CF_PAGES__) {
   (async function initDatabase() {
     try {
-      console.log('🚀 Initializing Govt Exam Zone Portal DB...');
+      console.log('🚀 Initializing Odisha Aspirants Portal DB...');
       await d1.init();
       console.log('✅ Database schema verified and active.');
       if (!d1.isNativeD1) {

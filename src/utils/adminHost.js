@@ -14,11 +14,11 @@ function getRequestHost(req) {
 
 /**
  * Determine if the incoming request targets the dedicated admin subdomain
- * (setup.govtexamzone.com).
+ * (setup.odishaaspirants.com).
  */
 function isAdminSubdomainRequest(req) {
   const host = getRequestHost(req);
-  const configured = (config.admin && config.admin.subdomain) || 'setup.govtexamzone.com';
+  const configured = (config.admin && config.admin.subdomain) || 'setup.odishaaspirants.com';
   return Boolean(host && host === configured.toLowerCase());
 }
 
@@ -33,7 +33,7 @@ function isHttpsRequest(req) {
 
 /**
  * Return the base path prefix for admin links/actions:
- * "" on setup.govtexamzone.com, "/admin" everywhere else.
+ * "" on setup.odishaaspirants.com, "/admin" everywhere else.
  */
 function getAdminBase(req) {
   return isAdminSubdomainRequest(req) ? '' : '/admin';
@@ -44,7 +44,7 @@ function getAdminBase(req) {
  */
 function getPublicBase(req) {
   return isAdminSubdomainRequest(req)
-    ? ((config.admin && config.admin.publicSiteUrl) || 'https://govtexamzone.com')
+    ? ((config.admin && config.admin.publicSiteUrl) || 'https://odishaaspirants.com')
     : '';
 }
 

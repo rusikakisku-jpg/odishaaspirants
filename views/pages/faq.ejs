@@ -4,9 +4,9 @@
 <%
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
-    : 'https://govtexamzone.com';
-  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
-  const supportEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+    : 'https://odishaaspirants.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants';
+  const supportEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com';
 %>
 
 <!-- Schema.org JSON-LD Structured Data: BreadcrumbList & FAQPage -->
@@ -39,7 +39,7 @@
           "name": "What is <%= portalName %> and what services are provided?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "<%= portalName %> (govtexamzone.com) is an independent public educational and recruitment information portal. We provide authentic, prompt alerts for Central and State Government Jobs (Sarkari Naukri), Exam Notifications, Online Application Forms, Hall Tickets/Admit Cards, Official Answer Keys, Syllabus, and Exam Results."
+            "text": "<%= portalName %> (odishaaspirants.com) is an independent public educational and recruitment information portal. We provide authentic, prompt alerts for Central and State Government Jobs (Sarkari Naukri), Exam Notifications, Online Application Forms, Hall Tickets/Admit Cards, Official Answer Keys, Syllabus, and Exam Results."
           }
         },
         {
@@ -149,7 +149,7 @@
             Q1: What is <%= portalName %> and what services are provided?
           </summary>
           <div style="padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;">
-            <b><%= portalName %> (govtexamzone.com)</b> is an independent public educational portal designed to help job aspirants track Indian Government Jobs (Sarkari Naukri), competitive exam alerts, online application forms, admit cards, answer keys, syllabus, and results across all Central and State government commissions.
+            <b><%= portalName %> (odishaaspirants.com)</b> is an independent public educational portal designed to help job aspirants track Indian Government Jobs (Sarkari Naukri), competitive exam alerts, online application forms, admit cards, answer keys, syllabus, and results across all Central and State government commissions.
           </div>
         </details>
 
@@ -250,7 +250,7 @@
           <div style="padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;">
             Join our official verified social channels:
             <ul style="margin: 8px 0 0 18px; padding-left: 0;">
-              <li><a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' %>" target="_blank" rel="noopener" style="color: #0284c7; font-weight: bold;">✈️ Join Official Telegram Channel</a></li>
+              <li><a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' %>" target="_blank" rel="noopener" style="color: #0284c7; font-weight: bold;">✈️ Join Official Telegram Channel</a></li>
               <li><a href="<%= (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' %>" target="_blank" rel="noopener" style="color: #16a34a; font-weight: bold;">💬 Join Official WhatsApp Channel</a></li>
             </ul>
           </div>

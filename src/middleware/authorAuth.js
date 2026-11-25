@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const config = require('../config/env');
 const d1 = require('../db/d1Client');
 
-const PASSWORD_SALT = 'gez_author_salt_2026';
+const PASSWORD_SALT = 'oa_author_salt_2026';
 
 function hashPassword(password) {
   if (!password) return '';
@@ -17,7 +17,7 @@ function verifyPassword(inputPassword, storedHash) {
 }
 
 function generateAuthorToken(author) {
-  const secret = config.server.sessionSecret || 'govtexamzone_secret_key_cloudflare_d1_r2';
+  const secret = config.server.sessionSecret || 'odishaaspirants_secret_key_cloudflare_d1_r2';
   const data = `${author.id}:${author.slug}`;
   const sig = crypto.createHmac('sha256', secret).update(data).digest('hex');
   return `${author.id}.${sig}`;
@@ -34,7 +34,7 @@ async function getAuthorFromToken(token) {
     const author = await d1.prepare('SELECT * FROM authors WHERE id = ? AND is_active = 1').bind(authorId).first();
     if (!author) return null;
 
-    const secret = config.server.sessionSecret || 'govtexamzone_secret_key_cloudflare_d1_r2';
+    const secret = config.server.sessionSecret || 'odishaaspirants_secret_key_cloudflare_d1_r2';
     const expectedSig = crypto.createHmac('sha256', secret).update(`${author.id}:${author.slug}`).digest('hex');
 
     if (sig === expectedSig) {
@@ -47,14 +47,14 @@ async function getAuthorFromToken(token) {
 }
 
 async function requireAuthorAuth(req, res, next) {
-  const token = req.cookies?.gez_author_token;
+  const token = req.cookies?.oa_author_token;
   const author = await getAuthorFromToken(token);
 
   if (author) {
     const isEditor = Boolean(
       author.id === 1 ||
       (author.role && (author.role.toLowerCase().includes('editor') || author.role.toLowerCase().includes('lead'))) ||
-      author.email === 'editor@govtexamzone.com' ||
+      author.email === 'editor@odishaaspirants.com' ||
       author.slug === 'editorial-team'
     );
     req.author = author;
@@ -76,7 +76,7 @@ async function requireAuthorAuth(req, res, next) {
 
 function setAuthorAuthCookie(res, author) {
   const token = generateAuthorToken(author);
-  res.cookie('gez_author_token', token, {
+  res.cookie('oa_author_token', token, {
     httpOnly: true,
     maxAge: 14 * 24 * 60 * 60 * 1000, // 14 days session
     sameSite: 'lax',
@@ -85,7 +85,7 @@ function setAuthorAuthCookie(res, author) {
 }
 
 function clearAuthorAuthCookie(res) {
-  res.clearCookie('gez_author_token', { path: '/' });
+  res.clearCookie('oa_author_token', { path: '/' });
 }
 
 module.exports = {

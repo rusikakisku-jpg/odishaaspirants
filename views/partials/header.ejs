@@ -3,33 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= typeof title !== 'undefined' ? title : 'Govt Exam Zone : Latest Govt Jobs, Admit Card, Results 2026 | WWW.GOVTEXAMZONE.COM' %></title>
+  <title><%= typeof title !== 'undefined' ? title : 'Odisha Aspirants : Latest Govt Jobs, Admit Card, Results 2026 | WWW.ODISHAASPIRANTS.COM' %></title>
   
   <%
     const siteBase = (typeof settings !== 'undefined' && settings.site_domain) 
       ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
-      : 'https://govtexamzone.com';
+      : 'https://odishaaspirants.com';
     const pagePath = (typeof currentPath !== 'undefined' && currentPath !== '/') ? currentPath : '';
     const canonicalUrl = typeof fullUrl !== 'undefined' ? fullUrl : (siteBase + pagePath);
     const logoAbsolute = (typeof post !== 'undefined' && post && post.thumbnail && post.thumbnail.trim())
       ? (post.thumbnail.trim().startsWith('http') ? post.thumbnail.trim() : siteBase + post.thumbnail.trim())
       : ((typeof settings !== 'undefined' && settings.site_logo) 
           ? (settings.site_logo.startsWith('http') ? settings.site_logo : siteBase + settings.site_logo) 
-          : siteBase + '/images/gez-logo.svg');
+          : siteBase + '/images/oa-logo.svg');
     const activeMetaDesc = (typeof metaDescription !== 'undefined' && metaDescription) 
       ? metaDescription 
       : ((typeof settings !== 'undefined' && settings.meta_description) 
           ? settings.meta_description 
-          : 'Govt Exam Zone (govtexamzone.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.');
+          : 'Odisha Aspirants (odishaaspirants.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.');
   %>
   <!-- Primary Meta Tags -->
-  <meta name="title" content="<%= typeof title !== 'undefined' ? title : ((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title + ' : Latest Govt Jobs & Results 2026' : 'Govt Exam Zone : Latest Govt Jobs & Results 2026') %>">
+  <meta name="title" content="<%= typeof title !== 'undefined' ? title : ((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title + ' : Latest Govt Jobs & Results 2026' : 'Odisha Aspirants : Latest Govt Jobs & Results 2026') %>">
   <meta name="description" content="<%= activeMetaDesc %>">
-  <meta name="keywords" content="<%= (typeof settings !== 'undefined' && settings.meta_keywords) ? settings.meta_keywords : 'Govt Exam Zone, govtexamzone, govtexamzone.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' %>">
-  <meta name="author" content="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>">
+  <meta name="keywords" content="<%= (typeof settings !== 'undefined' && settings.meta_keywords) ? settings.meta_keywords : 'Odisha Aspirants, odishaaspirants, odishaaspirants.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' %>">
+  <meta name="author" content="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' %>">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="<%= canonicalUrl %>">
-  <link rel="alternate" type="application/rss+xml" title="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %> RSS Feed" href="/feed">
+  <link rel="alternate" type="application/rss+xml" title="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' %> RSS Feed" href="/feed">
   <% if (typeof settings !== 'undefined' && settings.google_site_verification) { %>
   <meta name="google-site-verification" content="<%= settings.google_site_verification %>">
   <% } %>
@@ -41,17 +41,17 @@
   <!-- Open Graph / Facebook Meta Tags -->
   <meta property="og:type" content="<%= typeof post !== 'undefined' ? 'article' : 'website' %>">
   <meta property="og:url" content="<%= canonicalUrl %>">
-  <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : 'Govt Exam Zone : Latest Govt Jobs & Results 2026' %>">
+  <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : 'Odisha Aspirants : Latest Govt Jobs & Results 2026' %>">
   <meta property="og:description" content="<%= activeMetaDesc %>">
   <meta property="og:image" content="<%= logoAbsolute %>">
-  <meta property="og:site_name" content="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>">
+  <meta property="og:site_name" content="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' %>">
   <meta property="og:locale" content="en_IN">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@govtexamzone">
+  <meta name="twitter:site" content="@odishaaspirants">
   <meta name="twitter:url" content="<%= canonicalUrl %>">
-  <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? title : 'Govt Exam Zone : Latest Govt Jobs & Results 2026' %>">
+  <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? title : 'Odisha Aspirants : Latest Govt Jobs & Results 2026' %>">
   <meta name="twitter:description" content="<%= activeMetaDesc %>">
   <meta name="twitter:image" content="<%= logoAbsolute %>">
 
@@ -59,13 +59,13 @@
   <meta name="theme-color" content="#ab183d">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>">
+  <meta name="apple-mobile-web-app-title" content="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' %>">
   <link rel="manifest" href="/manifest.json">
   <%
     const hasCustomFaviconSetting = typeof settings !== 'undefined' && typeof settings.site_favicon === 'string';
     const activeFavicon = hasCustomFaviconSetting
       ? settings.site_favicon.trim()
-      : '/images/gez-logo.svg';
+      : '/images/oa-logo.svg';
   %>
   <% if (activeFavicon) { %>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -89,8 +89,8 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>",
-    "alternateName": ["GovtExamZone", "Govt Exam Zone Official", "GEZ Official"],
+    "name": "<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' %>",
+    "alternateName": ["OdishaAspirants", "Odisha Aspirants Official", "Odisha Aspirants Official"],
     "url": "<%= siteBase %>",
     "potentialAction": {
       "@type": "SearchAction",
@@ -116,12 +116,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>",
+    "name": "<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' %>",
     "url": "<%= siteBase %>",
     "logo": "<%= logoAbsolute %>",
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "<%= (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com' %>",
+      "email": "<%= (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com' %>",
       "contactType": "Customer Support",
       "areaServed": "IN",
       "availableLanguage": ["en", "hi"]
@@ -167,13 +167,13 @@
     <div class="container">
       <div class="header-inner">
         <% if (typeof settings !== 'undefined' && settings.site_logo && settings.site_logo.trim()) { %>
-        <a href="/" class="header-logo" title="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %> Official Portal">
-          <img src="<%= settings.site_logo %>" alt="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %> Emblem Logo" width="110" height="110">
+        <a href="/" class="header-logo" title="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' %> Official Portal">
+          <img src="<%= settings.site_logo %>" alt="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' %> Emblem Logo" width="110" height="110">
         </a>
         <% } %>
         <div class="header-text">
-          <h1 class="header-title"><a href="/"><%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title.toUpperCase() : 'GOVT EXAM ZONE' %></a></h1>
-          <div class="header-subtitle"><%= (typeof settings !== 'undefined' && settings.header_subtitle) ? settings.header_subtitle : 'WWW.GOVTEXAMZONE.COM' %></div>
+          <h1 class="header-title"><a href="/"><%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title.toUpperCase() : 'ODISHA ASPIRANTS' %></a></h1>
+          <div class="header-subtitle"><%= (typeof settings !== 'undefined' && settings.header_subtitle) ? settings.header_subtitle : 'WWW.ODISHAASPIRANTS.COM' %></div>
         </div>
       </div>
     </div>
@@ -293,7 +293,7 @@
               placeholder="Search Exams, Jobs..." 
               autocomplete="off"
               value="<%= typeof query !== 'undefined' ? query : '' %>"
-              aria-label="Search Govt Exam Zone"
+              aria-label="Search Odisha Aspirants"
             >
             <button type="submit" class="header-search-btn">Search</button>
           </form>

@@ -7,10 +7,10 @@ function getAllValidTokens() {
   const validUsers = [
     (config.admin.username || 'admin').toLowerCase(),
     'admin',
-    'govtexamzone',
-    'govtexamzoneadmin',
-    'govtexamzoneofficial',
-    'admin@govtexamzone.com'
+    'odishaaspirants',
+    'odishaaspirantsadmin',
+    'odishaaspirantsofficial',
+    'admin@odishaaspirants.com'
   ];
   return validUsers.map(u => crypto.createHmac('sha256', secret).update(u).digest('hex'));
 }

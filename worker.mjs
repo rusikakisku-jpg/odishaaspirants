@@ -122,7 +122,7 @@ export default {
       const url = new URL(request.url);
       const reqHost = (request.headers.get("x-forwarded-host") || request.headers.get("host") || url.hostname || "")
         .split(",")[0].split(":")[0].trim().toLowerCase();
-      const adminSubdomain = (env?.ADMIN_SUBDOMAIN || "setup.govtexamzone.com").trim().toLowerCase();
+      const adminSubdomain = (env?.ADMIN_SUBDOMAIN || "setup.odishaaspirants.com").trim().toLowerCase();
       const isSetupSubdomain = Boolean(reqHost && reqHost === adminSubdomain);
 
       // 1. Serve uploaded media / documents directly from Cloudflare R2 bucket if requested
@@ -146,7 +146,7 @@ export default {
       }
 
       // 2. Check if this request can be served as a static asset via env.ASSETS (Pages / Workers Assets)
-      // On setup.govtexamzone.com, never serve public static robots.txt or sitemap.xml from ASSETS
+      // On setup.odishaaspirants.com, never serve public static robots.txt or sitemap.xml from ASSETS
       const isSeoPublicFile = url.pathname === '/robots.txt' || url.pathname === '/sitemap.xml';
       const isAsset = (!isSetupSubdomain || !isSeoPublicFile) && (
                       /\.[a-zA-Z0-9]+$/.test(url.pathname) ||
@@ -179,7 +179,7 @@ export default {
       // Favicon fallback to logo if favicon.ico is requested
       if (url.pathname === '/favicon.ico' && env && env.ASSETS) {
         try {
-          const fallbackRes = await env.ASSETS.fetch(new Request(new URL('/images/gez-logo.svg', request.url), request));
+          const fallbackRes = await env.ASSETS.fetch(new Request(new URL('/images/oa-logo.svg', request.url), request));
           if (fallbackRes && fallbackRes.status !== 404) {
             return fallbackRes;
           }
@@ -190,7 +190,7 @@ export default {
     } catch (err) {
       console.error("Worker fetch exception:", err);
       return new Response(
-        "Govt Exam Zone - Worker Exception:\n" + (err.stack || err.message || String(err)),
+        "Odisha Aspirants - Worker Exception:\n" + (err.stack || err.message || String(err)),
         {
           status: 500,
           headers: { "content-type": "text/plain; charset=utf-8" }

@@ -1,4 +1,4 @@
-name = "govtexamzone"
+name = "odishaaspirants"
 pages_build_output_dir = "./dist"
 compatibility_date = "2025-09-01"
 compatibility_flags = [
@@ -11,14 +11,14 @@ compatibility_flags = [
 [vars]
 NODE_ENV = "production"
 ADMIN_USERNAME = "admin"
-ADMIN_SUBDOMAIN = "setup.govtexamzone.com"
-PUBLIC_SITE_URL = "https://govtexamzone.com"
+ADMIN_SUBDOMAIN = "setup.odishaaspirants.com"
+PUBLIC_SITE_URL = "https://odishaaspirants.com"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "govtexamzone-db"
-database_id = "ce83a546-323f-467b-8748-4fe6be6a3e12"
+database_name = "odishaaspirants_db"
+database_id = "08121a59-c6c5-4f9c-9fed-c376f17bd23d"
 
 [[r2_buckets]]
 binding = "STORAGE_BUCKET"
-bucket_name = "govtexamzone-files"
+bucket_name = "odishaaspirants"

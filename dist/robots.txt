@@ -7,4 +7,4 @@ Disallow: /api/*
 
 Crawl-delay: 1
 
-Sitemap: https://govtexamzone.com/sitemap.xml
+Sitemap: https://odishaaspirants.com/sitemap.xml

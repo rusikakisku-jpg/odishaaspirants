@@ -4,9 +4,9 @@
 <%
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
-    : 'https://govtexamzone.com';
-  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
-  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+    : 'https://odishaaspirants.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com';
 %>
 
 <!-- Schema.org JSON-LD Structured Data: BreadcrumbList & ContactPage -->
@@ -35,14 +35,14 @@
       "@type": "ContactPage",
       "name": "Contact Us & Candidate Helpdesk - <%= portalName %>",
       "url": "<%= siteDomain %>/contact-us",
-      "description": "Official communication and candidate helpdesk for <%= portalName %>. Direct support at contact.govtexamzone@gmail.com.",
+      "description": "Official communication and candidate helpdesk for <%= portalName %>. Direct support at contact@odishaaspirants.com.",
       "mainEntity": {
         "@type": "Organization",
         "name": "<%= portalName %>",
         "url": "<%= siteDomain %>",
         "contactPoint": {
           "@type": "ContactPoint",
-          "email": "contact.govtexamzone@gmail.com",
+          "email": "contact@odishaaspirants.com",
           "contactType": "Customer Support & Grievance Redressal",
           "areaServed": "IN",
           "availableLanguage": ["en", "hi"]
@@ -87,13 +87,13 @@
             <div style="background: #ffffff; border: 1px solid #fcd34d; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px;">
               <span style="font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 700; display: block; margin-bottom: 2px;">Email Address</span>
               <div style="font-family: monospace; font-size: 15px; font-weight: 700; color: var(--primary-red); word-break: break-all;">
-                <!--email_off-->contact.govtexamzone@gmail.com<!--/email_off-->
+                <!--email_off-->contact@odishaaspirants.com<!--/email_off-->
               </div>
             </div>
           </div>
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
             <!--email_off-->
-            <a href="mailto:contact.govtexamzone@gmail.com" class="btn btn-primary btn-sm" style="background: var(--primary-red); border-color: var(--primary-red); padding: 7px 14px; text-decoration: none; font-size: 13px; font-weight: 600;">
+            <a href="mailto:contact@odishaaspirants.com" class="btn btn-primary btn-sm" style="background: var(--primary-red); border-color: var(--primary-red); padding: 7px 14px; text-decoration: none; font-size: 13px; font-weight: 600;">
               ✉️ Send Email
             </a>
             <!--/email_off-->
@@ -114,7 +114,7 @@
               Get real-time breaking alerts directly on your mobile as soon as exam notices are issued:
             </p>
             <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
-              <a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' %>" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; text-decoration: none; color: #0284c7; font-weight: 600; font-size: 13.5px;">
+              <a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' %>" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; text-decoration: none; color: #0284c7; font-weight: 600; font-size: 13.5px;">
                 <span style="font-size: 18px;">✈️</span>
                 <span>Join Official Telegram Channel</span>
               </a>
@@ -191,7 +191,7 @@
               🚀 Compose &amp; Send to Helpdesk
             </button>
             <span style="font-size: 12.5px; color: #64748b;">
-              Direct Email: <!--email_off-->contact.govtexamzone@gmail.com<!--/email_off-->
+              Direct Email: <!--email_off-->contact@odishaaspirants.com<!--/email_off-->
             </span>
           </div>
         </form>
@@ -212,7 +212,7 @@
         </h3>
         <p style="margin: 0; font-size: 13.5px; color: #7f1d1d; line-height: 1.65;">
           <b><%= portalName %> is a 100% free informational portal and never asks for money, application fees, or OTPs from candidates.</b> 
-          We do not sell recruitment forms or provide appointment guarantees. If any individual contacts you demanding money claiming to represent <%= portalName %>, please recognize it as an unauthorized fraud and report it immediately to our official email (<!--email_off-->contact.govtexamzone@gmail.com<!--/email_off-->) and your local cybercrime authority.
+          We do not sell recruitment forms or provide appointment guarantees. If any individual contacts you demanding money claiming to represent <%= portalName %>, please recognize it as an unauthorized fraud and report it immediately to our official email (<!--email_off-->contact@odishaaspirants.com<!--/email_off-->) and your local cybercrime authority.
         </p>
       </div>
 
@@ -222,7 +222,7 @@
 
 <script>
 function copyContactEmail() {
-  var email = "contact.govtexamzone@gmail.com";
+  var email = "contact@odishaaspirants.com";
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(email).then(function() {
       var btn = document.getElementById("copyEmailBtn");
@@ -252,13 +252,13 @@ function handleContactSubmit(e) {
 
   var subject = encodeURIComponent("[" + reason + "] " + (exam ? "- " + exam : "") + " from " + name);
   var body = encodeURIComponent(
-    "Dear Govt Exam Zone Helpdesk,\n\n" +
+    "Dear Odisha Aspirants Helpdesk,\n\n" +
     msg + "\n\n" +
     (exam ? "Referenced Notification / URL: " + exam + "\n" : "") +
     "Sender Name: " + name + "\n"
   );
 
-  window.location.href = "mailto:contact.govtexamzone@gmail.com?subject=" + subject + "&body=" + body;
+  window.location.href = "mailto:contact@odishaaspirants.com?subject=" + subject + "&body=" + body;
 }
 </script>
 

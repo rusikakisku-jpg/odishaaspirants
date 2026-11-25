@@ -1,7 +1,7 @@
 {
-  "name": "govtexamzone",
+  "name": "odishaaspirants",
   "version": "1.0.1",
-  "description": "Govt Exam Zone - Full-Stack Recruitment Portal",
+  "description": "Odisha Aspirants - Full-Stack Recruitment Portal",
   "main": "worker.mjs",
   "scripts": {
     "start": "node server.js",

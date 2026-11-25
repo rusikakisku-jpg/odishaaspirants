@@ -213,9 +213,9 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// node_modules/ms/index.js
+// ../../root/workspace/node_modules/ms/index.js
 var require_ms = __commonJS({
-  "node_modules/ms/index.js"(exports, module) {
+  "../../root/workspace/node_modules/ms/index.js"(exports, module) {
     var s = 1e3;
     var m = s * 60;
     var h = m * 60;
@@ -329,9 +329,9 @@ var require_ms = __commonJS({
   }
 });
 
-// node_modules/debug/src/common.js
+// ../../root/workspace/node_modules/debug/src/common.js
 var require_common = __commonJS({
-  "node_modules/debug/src/common.js"(exports, module) {
+  "../../root/workspace/node_modules/debug/src/common.js"(exports, module) {
     function setup(env2) {
       createDebug.debug = createDebug;
       createDebug.default = createDebug;
@@ -506,9 +506,9 @@ var require_common = __commonJS({
   }
 });
 
-// node_modules/debug/src/browser.js
+// ../../root/workspace/node_modules/debug/src/browser.js
 var require_browser = __commonJS({
-  "node_modules/debug/src/browser.js"(exports, module) {
+  "../../root/workspace/node_modules/debug/src/browser.js"(exports, module) {
     exports.formatArgs = formatArgs;
     exports.save = save;
     exports.load = load;
@@ -699,9 +699,9 @@ var require_supports_color = __commonJS({
   }
 });
 
-// node_modules/debug/src/node.js
+// ../../root/workspace/node_modules/debug/src/node.js
 var require_node = __commonJS({
-  "node_modules/debug/src/node.js"(exports, module) {
+  "../../root/workspace/node_modules/debug/src/node.js"(exports, module) {
     var tty = require_tty();
     var util = __require("node:util");
     exports.init = init;
@@ -873,9 +873,9 @@ var require_node = __commonJS({
   }
 });
 
-// node_modules/debug/src/index.js
+// ../../root/workspace/node_modules/debug/src/index.js
 var require_src = __commonJS({
-  "node_modules/debug/src/index.js"(exports, module) {
+  "../../root/workspace/node_modules/debug/src/index.js"(exports, module) {
     if (typeof process === "undefined" || process.type === "renderer" || process.browser === true || process.__nwjs) {
       module.exports = require_browser();
     } else {
@@ -884,9 +884,9 @@ var require_src = __commonJS({
   }
 });
 
-// node_modules/depd/index.js
+// ../../root/workspace/node_modules/depd/index.js
 var require_depd = __commonJS({
-  "node_modules/depd/index.js"(exports, module) {
+  "../../root/workspace/node_modules/depd/index.js"(exports, module) {
     var relative = __require("node:path").relative;
     module.exports = depd;
     var basePath = process.cwd();
@@ -1190,9 +1190,9 @@ var require_depd = __commonJS({
   }
 });
 
-// node_modules/setprototypeof/index.js
+// ../../root/workspace/node_modules/setprototypeof/index.js
 var require_setprototypeof = __commonJS({
-  "node_modules/setprototypeof/index.js"(exports, module) {
+  "../../root/workspace/node_modules/setprototypeof/index.js"(exports, module) {
     "use strict";
     module.exports = Object.setPrototypeOf || ({ __proto__: [] } instanceof Array ? setProtoOf : mixinProperties);
     function setProtoOf(obj, proto) {
@@ -1210,9 +1210,9 @@ var require_setprototypeof = __commonJS({
   }
 });
 
-// node_modules/statuses/codes.json
+// ../../root/workspace/node_modules/statuses/codes.json
 var require_codes = __commonJS({
-  "node_modules/statuses/codes.json"(exports, module) {
+  "../../root/workspace/node_modules/statuses/codes.json"(exports, module) {
     module.exports = {
       "100": "Continue",
       "101": "Switching Protocols",
@@ -1281,9 +1281,9 @@ var require_codes = __commonJS({
   }
 });
 
-// node_modules/statuses/index.js
+// ../../root/workspace/node_modules/statuses/index.js
 var require_statuses = __commonJS({
-  "node_modules/statuses/index.js"(exports, module) {
+  "../../root/workspace/node_modules/statuses/index.js"(exports, module) {
     "use strict";
     var codes = require_codes();
     module.exports = status;
@@ -1352,9 +1352,9 @@ var require_statuses = __commonJS({
   }
 });
 
-// node_modules/inherits/inherits_browser.js
+// ../../root/workspace/node_modules/inherits/inherits_browser.js
 var require_inherits_browser = __commonJS({
-  "node_modules/inherits/inherits_browser.js"(exports, module) {
+  "../../root/workspace/node_modules/inherits/inherits_browser.js"(exports, module) {
     if (typeof Object.create === "function") {
       module.exports = function inherits(ctor, superCtor) {
         if (superCtor) {
@@ -1384,9 +1384,9 @@ var require_inherits_browser = __commonJS({
   }
 });
 
-// node_modules/inherits/inherits.js
+// ../../root/workspace/node_modules/inherits/inherits.js
 var require_inherits = __commonJS({
-  "node_modules/inherits/inherits.js"(exports, module) {
+  "../../root/workspace/node_modules/inherits/inherits.js"(exports, module) {
     try {
       util = __require("node:util");
       if (typeof util.inherits !== "function") throw "";
@@ -1398,9 +1398,9 @@ var require_inherits = __commonJS({
   }
 });
 
-// node_modules/toidentifier/index.js
+// ../../root/workspace/node_modules/toidentifier/index.js
 var require_toidentifier = __commonJS({
-  "node_modules/toidentifier/index.js"(exports, module) {
+  "../../root/workspace/node_modules/toidentifier/index.js"(exports, module) {
     "use strict";
     module.exports = toIdentifier;
     function toIdentifier(str) {
@@ -1411,9 +1411,9 @@ var require_toidentifier = __commonJS({
   }
 });
 
-// node_modules/http-errors/index.js
+// ../../root/workspace/node_modules/http-errors/index.js
 var require_http_errors = __commonJS({
-  "node_modules/http-errors/index.js"(exports, module) {
+  "../../root/workspace/node_modules/http-errors/index.js"(exports, module) {
     "use strict";
     var deprecate = require_depd()("http-errors");
     var setPrototypeOf = require_setprototypeof();
@@ -1575,9 +1575,9 @@ var require_http_errors = __commonJS({
   }
 });
 
-// node_modules/bytes/index.js
+// ../../root/workspace/node_modules/bytes/index.js
 var require_bytes = __commonJS({
-  "node_modules/bytes/index.js"(exports, module) {
+  "../../root/workspace/node_modules/bytes/index.js"(exports, module) {
     "use strict";
     module.exports = bytes;
     module.exports.format = format;
@@ -1664,9 +1664,9 @@ var require_bytes = __commonJS({
   }
 });
 
-// node_modules/safer-buffer/safer.js
+// ../../root/workspace/node_modules/safer-buffer/safer.js
 var require_safer = __commonJS({
-  "node_modules/safer-buffer/safer.js"(exports, module) {
+  "../../root/workspace/node_modules/safer-buffer/safer.js"(exports, module) {
     "use strict";
     var buffer = __require("node:buffer");
     var Buffer2 = buffer.Buffer;
@@ -1732,9 +1732,9 @@ var require_safer = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/lib/bom-handling.js
+// ../../root/workspace/node_modules/iconv-lite/lib/bom-handling.js
 var require_bom_handling = __commonJS({
-  "node_modules/iconv-lite/lib/bom-handling.js"(exports) {
+  "../../root/workspace/node_modules/iconv-lite/lib/bom-handling.js"(exports) {
     "use strict";
     var BOMChar = "\uFEFF";
     exports.PrependBOM = PrependBOMWrapper;
@@ -1778,9 +1778,9 @@ var require_bom_handling = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/lib/helpers/merge-exports.js
+// ../../root/workspace/node_modules/iconv-lite/lib/helpers/merge-exports.js
 var require_merge_exports = __commonJS({
-  "node_modules/iconv-lite/lib/helpers/merge-exports.js"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/lib/helpers/merge-exports.js"(exports, module) {
     "use strict";
     var hasOwn = typeof Object.hasOwn === "undefined" ? Function.call.bind(Object.prototype.hasOwnProperty) : Object.hasOwn;
     function mergeModules(target, module2) {
@@ -1794,9 +1794,9 @@ var require_merge_exports = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/internal.js
+// ../../root/workspace/node_modules/iconv-lite/encodings/internal.js
 var require_internal = __commonJS({
-  "node_modules/iconv-lite/encodings/internal.js"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/internal.js"(exports, module) {
     "use strict";
     var Buffer2 = require_safer().Buffer;
     module.exports = {
@@ -1975,9 +1975,9 @@ var require_internal = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/utf32.js
+// ../../root/workspace/node_modules/iconv-lite/encodings/utf32.js
 var require_utf32 = __commonJS({
-  "node_modules/iconv-lite/encodings/utf32.js"(exports) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/utf32.js"(exports) {
     "use strict";
     var Buffer2 = require_safer().Buffer;
     exports._utf32 = Utf32Codec;
@@ -2210,9 +2210,9 @@ var require_utf32 = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/utf16.js
+// ../../root/workspace/node_modules/iconv-lite/encodings/utf16.js
 var require_utf16 = __commonJS({
-  "node_modules/iconv-lite/encodings/utf16.js"(exports) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/utf16.js"(exports) {
     "use strict";
     var Buffer2 = require_safer().Buffer;
     exports.utf16be = Utf16BECodec;
@@ -2353,9 +2353,9 @@ var require_utf16 = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/utf7.js
+// ../../root/workspace/node_modules/iconv-lite/encodings/utf7.js
 var require_utf7 = __commonJS({
-  "node_modules/iconv-lite/encodings/utf7.js"(exports) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/utf7.js"(exports) {
     "use strict";
     var Buffer2 = require_safer().Buffer;
     exports.utf7 = Utf7Codec;
@@ -2571,9 +2571,9 @@ var require_utf7 = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/sbcs-codec.js
+// ../../root/workspace/node_modules/iconv-lite/encodings/sbcs-codec.js
 var require_sbcs_codec = __commonJS({
-  "node_modules/iconv-lite/encodings/sbcs-codec.js"(exports) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/sbcs-codec.js"(exports) {
     "use strict";
     var Buffer2 = require_safer().Buffer;
     exports._sbcs = SBCSCodec;
@@ -2633,9 +2633,9 @@ var require_sbcs_codec = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/sbcs-data.js
+// ../../root/workspace/node_modules/iconv-lite/encodings/sbcs-data.js
 var require_sbcs_data = __commonJS({
-  "node_modules/iconv-lite/encodings/sbcs-data.js"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/sbcs-data.js"(exports, module) {
     "use strict";
     module.exports = {
       // Not supported by iconv, not sure why.
@@ -2788,9 +2788,9 @@ var require_sbcs_data = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/sbcs-data-generated.js
+// ../../root/workspace/node_modules/iconv-lite/encodings/sbcs-data-generated.js
 var require_sbcs_data_generated = __commonJS({
-  "node_modules/iconv-lite/encodings/sbcs-data-generated.js"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/sbcs-data-generated.js"(exports, module) {
     "use strict";
     module.exports = {
       "437": "cp437",
@@ -3243,9 +3243,9 @@ var require_sbcs_data_generated = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/dbcs-codec.js
+// ../../root/workspace/node_modules/iconv-lite/encodings/dbcs-codec.js
 var require_dbcs_codec = __commonJS({
-  "node_modules/iconv-lite/encodings/dbcs-codec.js"(exports) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/dbcs-codec.js"(exports) {
     "use strict";
     var Buffer2 = require_safer().Buffer;
     exports._dbcs = DBCSCodec;
@@ -3703,9 +3703,9 @@ var require_dbcs_codec = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/shiftjis.json
+// ../../root/workspace/node_modules/iconv-lite/encodings/tables/shiftjis.json
 var require_shiftjis = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/shiftjis.json"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/tables/shiftjis.json"(exports, module) {
     module.exports = [
       ["0", "\0", 128],
       ["a1", "\uFF61", 62],
@@ -3834,9 +3834,9 @@ var require_shiftjis = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/eucjp.json
+// ../../root/workspace/node_modules/iconv-lite/encodings/tables/eucjp.json
 var require_eucjp = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/eucjp.json"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/tables/eucjp.json"(exports, module) {
     module.exports = [
       ["0", "\0", 127],
       ["8ea1", "\uFF61", 62],
@@ -4022,9 +4022,9 @@ var require_eucjp = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/cp936.json
+// ../../root/workspace/node_modules/iconv-lite/encodings/tables/cp936.json
 var require_cp936 = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/cp936.json"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/tables/cp936.json"(exports, module) {
     module.exports = [
       ["0", "\0", 127, "\u20AC"],
       ["8140", "\u4E02\u4E04\u4E05\u4E06\u4E0F\u4E12\u4E17\u4E1F\u4E20\u4E21\u4E23\u4E26\u4E29\u4E2E\u4E2F\u4E31\u4E33\u4E35\u4E37\u4E3C\u4E40\u4E41\u4E42\u4E44\u4E46\u4E4A\u4E51\u4E55\u4E57\u4E5A\u4E5B\u4E62\u4E63\u4E64\u4E65\u4E67\u4E68\u4E6A", 5, "\u4E72\u4E74", 9, "\u4E7F", 6, "\u4E87\u4E8A"],
@@ -4292,9 +4292,9 @@ var require_cp936 = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/gbk-added.json
+// ../../root/workspace/node_modules/iconv-lite/encodings/tables/gbk-added.json
 var require_gbk_added = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/gbk-added.json"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/tables/gbk-added.json"(exports, module) {
     module.exports = [
       ["a140", "\uE4C6", 62],
       ["a180", "\uE505", 32],
@@ -4354,16 +4354,16 @@ var require_gbk_added = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/gb18030-ranges.json
+// ../../root/workspace/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json
 var require_gb18030_ranges = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/gb18030-ranges.json"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json"(exports, module) {
     module.exports = { uChars: [128, 165, 169, 178, 184, 216, 226, 235, 238, 244, 248, 251, 253, 258, 276, 284, 300, 325, 329, 334, 364, 463, 465, 467, 469, 471, 473, 475, 477, 506, 594, 610, 712, 716, 730, 930, 938, 962, 970, 1026, 1104, 1106, 8209, 8215, 8218, 8222, 8231, 8241, 8244, 8246, 8252, 8365, 8452, 8454, 8458, 8471, 8482, 8556, 8570, 8596, 8602, 8713, 8720, 8722, 8726, 8731, 8737, 8740, 8742, 8748, 8751, 8760, 8766, 8777, 8781, 8787, 8802, 8808, 8816, 8854, 8858, 8870, 8896, 8979, 9322, 9372, 9548, 9588, 9616, 9622, 9634, 9652, 9662, 9672, 9676, 9680, 9702, 9735, 9738, 9793, 9795, 11906, 11909, 11913, 11917, 11928, 11944, 11947, 11951, 11956, 11960, 11964, 11979, 12284, 12292, 12312, 12319, 12330, 12351, 12436, 12447, 12535, 12543, 12586, 12842, 12850, 12964, 13200, 13215, 13218, 13253, 13263, 13267, 13270, 13384, 13428, 13727, 13839, 13851, 14617, 14703, 14801, 14816, 14964, 15183, 15471, 15585, 16471, 16736, 17208, 17325, 17330, 17374, 17623, 17997, 18018, 18212, 18218, 18301, 18318, 18760, 18811, 18814, 18820, 18823, 18844, 18848, 18872, 19576, 19620, 19738, 19887, 40870, 59244, 59336, 59367, 59413, 59417, 59423, 59431, 59437, 59443, 59452, 59460, 59478, 59493, 63789, 63866, 63894, 63976, 63986, 64016, 64018, 64021, 64025, 64034, 64037, 64042, 65074, 65093, 65107, 65112, 65127, 65132, 65375, 65510, 65536], gbChars: [0, 36, 38, 45, 50, 81, 89, 95, 96, 100, 103, 104, 105, 109, 126, 133, 148, 172, 175, 179, 208, 306, 307, 308, 309, 310, 311, 312, 313, 341, 428, 443, 544, 545, 558, 741, 742, 749, 750, 805, 819, 820, 7922, 7924, 7925, 7927, 7934, 7943, 7944, 7945, 7950, 8062, 8148, 8149, 8152, 8164, 8174, 8236, 8240, 8262, 8264, 8374, 8380, 8381, 8384, 8388, 8390, 8392, 8393, 8394, 8396, 8401, 8406, 8416, 8419, 8424, 8437, 8439, 8445, 8482, 8485, 8496, 8521, 8603, 8936, 8946, 9046, 9050, 9063, 9066, 9076, 9092, 9100, 9108, 9111, 9113, 9131, 9162, 9164, 9218, 9219, 11329, 11331, 11334, 11336, 11346, 11361, 11363, 11366, 11370, 11372, 11375, 11389, 11682, 11686, 11687, 11692, 11694, 11714, 11716, 11723, 11725, 11730, 11736, 11982, 11989, 12102, 12336, 12348, 12350, 12384, 12393, 12395, 12397, 12510, 12553, 12851, 12962, 12973, 13738, 13823, 13919, 13933, 14080, 14298, 14585, 14698, 15583, 15847, 16318, 16434, 16438, 16481, 16729, 17102, 17122, 17315, 17320, 17402, 17418, 17859, 17909, 17911, 17915, 17916, 17936, 17939, 17961, 18664, 18703, 18814, 18962, 19043, 33469, 33470, 33471, 33484, 33485, 33490, 33497, 33501, 33505, 33513, 33520, 33536, 33550, 37845, 37921, 37948, 38029, 38038, 38064, 38065, 38066, 38069, 38075, 38076, 38078, 39108, 39109, 39113, 39114, 39115, 39116, 39265, 39394, 189e3] };
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/cp949.json
+// ../../root/workspace/node_modules/iconv-lite/encodings/tables/cp949.json
 var require_cp949 = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/cp949.json"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/tables/cp949.json"(exports, module) {
     module.exports = [
       ["0", "\0", 127],
       ["8141", "\uAC02\uAC03\uAC05\uAC06\uAC0B", 4, "\uAC18\uAC1E\uAC1F\uAC21\uAC22\uAC23\uAC25", 6, "\uAC2E\uAC32\uAC33\uAC34"],
@@ -4640,9 +4640,9 @@ var require_cp949 = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/cp950.json
+// ../../root/workspace/node_modules/iconv-lite/encodings/tables/cp950.json
 var require_cp950 = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/cp950.json"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/tables/cp950.json"(exports, module) {
     module.exports = [
       ["0", "\0", 127],
       ["a140", "\u3000\uFF0C\u3001\u3002\uFF0E\u2027\uFF1B\uFF1A\uFF1F\uFF01\uFE30\u2026\u2025\uFE50\uFE51\uFE52\xB7\uFE54\uFE55\uFE56\uFE57\uFF5C\u2013\uFE31\u2014\uFE33\u2574\uFE34\uFE4F\uFF08\uFF09\uFE35\uFE36\uFF5B\uFF5D\uFE37\uFE38\u3014\u3015\uFE39\uFE3A\u3010\u3011\uFE3B\uFE3C\u300A\u300B\uFE3D\uFE3E\u3008\u3009\uFE3F\uFE40\u300C\u300D\uFE41\uFE42\u300E\u300F\uFE43\uFE44\uFE59\uFE5A"],
@@ -4823,9 +4823,9 @@ var require_cp950 = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/big5-added.json
+// ../../root/workspace/node_modules/iconv-lite/encodings/tables/big5-added.json
 var require_big5_added = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/big5-added.json"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/tables/big5-added.json"(exports, module) {
     module.exports = [
       ["8740", "\u43F0\u4C32\u4603\u45A6\u4578\u{27267}\u4D77\u45B3\u{27CB1}\u4CE2\u{27CC5}\u3B95\u4736\u4744\u4C47\u4C40\u{242BF}\u{23617}\u{27352}\u{26E8B}\u{270D2}\u4C57\u{2A351}\u474F\u45DA\u4C85\u{27C6C}\u4D07\u4AA4\u46A1\u{26B23}\u7225\u{25A54}\u{21A63}\u{23E06}\u{23F61}\u664D\u56FB"],
       ["8767", "\u7D95\u591D\u{28BB9}\u3DF4\u9734\u{27BEF}\u5BDB\u{21D5E}\u5AA4\u3625\u{29EB0}\u5AD1\u5BB7\u5CFC\u676E\u8593\u{29945}\u7461\u749D\u3875\u{21D53}\u{2369E}\u{26021}\u3EEC"],
@@ -4951,9 +4951,9 @@ var require_big5_added = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/dbcs-data.js
+// ../../root/workspace/node_modules/iconv-lite/encodings/dbcs-data.js
 var require_dbcs_data = __commonJS({
-  "node_modules/iconv-lite/encodings/dbcs-data.js"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/dbcs-data.js"(exports, module) {
     "use strict";
     module.exports = {
       // == Japanese/ShiftJIS ====================================================
@@ -5198,9 +5198,9 @@ var require_dbcs_data = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/index.js
+// ../../root/workspace/node_modules/iconv-lite/encodings/index.js
 var require_encodings = __commonJS({
-  "node_modules/iconv-lite/encodings/index.js"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/encodings/index.js"(exports, module) {
     "use strict";
     var mergeModules = require_merge_exports();
     var modules = [
@@ -5223,9 +5223,9 @@ var require_encodings = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/lib/streams.js
+// ../../root/workspace/node_modules/iconv-lite/lib/streams.js
 var require_streams = __commonJS({
-  "node_modules/iconv-lite/lib/streams.js"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/lib/streams.js"(exports, module) {
     "use strict";
     var Buffer2 = require_safer().Buffer;
     module.exports = function(streamModule) {
@@ -5320,9 +5320,9 @@ var require_streams = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/lib/index.js
+// ../../root/workspace/node_modules/iconv-lite/lib/index.js
 var require_lib = __commonJS({
-  "node_modules/iconv-lite/lib/index.js"(exports, module) {
+  "../../root/workspace/node_modules/iconv-lite/lib/index.js"(exports, module) {
     "use strict";
     var Buffer2 = require_safer().Buffer;
     var bomHandling = require_bom_handling();
@@ -5452,9 +5452,9 @@ var require_lib = __commonJS({
   }
 });
 
-// node_modules/unpipe/index.js
+// ../../root/workspace/node_modules/unpipe/index.js
 var require_unpipe = __commonJS({
-  "node_modules/unpipe/index.js"(exports, module) {
+  "../../root/workspace/node_modules/unpipe/index.js"(exports, module) {
     "use strict";
     module.exports = unpipe;
     function hasPipeDataListeners(stream) {
@@ -5490,9 +5490,9 @@ var require_unpipe = __commonJS({
   }
 });
 
-// node_modules/raw-body/index.js
+// ../../root/workspace/node_modules/raw-body/index.js
 var require_raw_body = __commonJS({
-  "node_modules/raw-body/index.js"(exports, module) {
+  "../../root/workspace/node_modules/raw-body/index.js"(exports, module) {
     "use strict";
     var asyncHooks = tryRequireAsyncHooks();
     var bytes = require_bytes();
@@ -5679,9 +5679,9 @@ var require_raw_body = __commonJS({
   }
 });
 
-// node_modules/ee-first/index.js
+// ../../root/workspace/node_modules/ee-first/index.js
 var require_ee_first = __commonJS({
-  "node_modules/ee-first/index.js"(exports, module) {
+  "../../root/workspace/node_modules/ee-first/index.js"(exports, module) {
     "use strict";
     module.exports = first;
     function first(stuff, done) {
@@ -5735,9 +5735,9 @@ var require_ee_first = __commonJS({
   }
 });
 
-// node_modules/on-finished/index.js
+// ../../root/workspace/node_modules/on-finished/index.js
 var require_on_finished = __commonJS({
-  "node_modules/on-finished/index.js"(exports, module) {
+  "../../root/workspace/node_modules/on-finished/index.js"(exports, module) {
     "use strict";
     module.exports = onFinished;
     module.exports.isFinished = isFinished;
@@ -5839,9 +5839,9 @@ var require_on_finished = __commonJS({
   }
 });
 
-// node_modules/type-is/node_modules/content-type/dist/index.js
+// ../../root/workspace/node_modules/type-is/node_modules/content-type/dist/index.js
 var require_dist = __commonJS({
-  "node_modules/type-is/node_modules/content-type/dist/index.js"(exports) {
+  "../../root/workspace/node_modules/type-is/node_modules/content-type/dist/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.format = format;
@@ -5978,9 +5978,9 @@ var require_dist = __commonJS({
   }
 });
 
-// node_modules/mime-db/db.json
+// ../../root/workspace/node_modules/mime-db/db.json
 var require_db = __commonJS({
-  "node_modules/mime-db/db.json"(exports, module) {
+  "../../root/workspace/node_modules/mime-db/db.json"(exports, module) {
     module.exports = {
       "application/1d-interleaved-parityfec": {
         source: "iana"
@@ -15326,16 +15326,16 @@ var require_db = __commonJS({
   }
 });
 
-// node_modules/mime-db/index.js
+// ../../root/workspace/node_modules/mime-db/index.js
 var require_mime_db = __commonJS({
-  "node_modules/mime-db/index.js"(exports, module) {
+  "../../root/workspace/node_modules/mime-db/index.js"(exports, module) {
     module.exports = require_db();
   }
 });
 
-// node_modules/mime-types/mimeScore.js
+// ../../root/workspace/node_modules/mime-types/mimeScore.js
 var require_mimeScore = __commonJS({
-  "node_modules/mime-types/mimeScore.js"(exports, module) {
+  "../../root/workspace/node_modules/mime-types/mimeScore.js"(exports, module) {
     var FACET_SCORES = {
       "prs.": 100,
       "x-": 200,
@@ -15377,9 +15377,9 @@ var require_mimeScore = __commonJS({
   }
 });
 
-// node_modules/mime-types/index.js
+// ../../root/workspace/node_modules/mime-types/index.js
 var require_mime_types = __commonJS({
-  "node_modules/mime-types/index.js"(exports) {
+  "../../root/workspace/node_modules/mime-types/index.js"(exports) {
     "use strict";
     var db = require_mime_db();
     var extname = __require("node:path").extname;
@@ -15483,9 +15483,9 @@ var require_mime_types = __commonJS({
   }
 });
 
-// node_modules/media-typer/index.js
+// ../../root/workspace/node_modules/media-typer/index.js
 var require_media_typer = __commonJS({
-  "node_modules/media-typer/index.js"(exports) {
+  "../../root/workspace/node_modules/media-typer/index.js"(exports) {
     "use strict";
     var SUBTYPE_NAME_REGEXP = /^[A-Za-z0-9][A-Za-z0-9!#$&^_.-]{0,126}$/;
     var TYPE_NAME_REGEXP = /^[A-Za-z0-9][A-Za-z0-9!#$&^_-]{0,126}$/;
@@ -15547,9 +15547,9 @@ var require_media_typer = __commonJS({
   }
 });
 
-// node_modules/type-is/index.js
+// ../../root/workspace/node_modules/type-is/index.js
 var require_type_is = __commonJS({
-  "node_modules/type-is/index.js"(exports, module) {
+  "../../root/workspace/node_modules/type-is/index.js"(exports, module) {
     "use strict";
     var contentType = require_dist();
     var mime = require_mime_types();
@@ -15638,9 +15638,9 @@ var require_type_is = __commonJS({
   }
 });
 
-// node_modules/body-parser/node_modules/content-type/dist/index.js
+// ../../root/workspace/node_modules/body-parser/node_modules/content-type/dist/index.js
 var require_dist2 = __commonJS({
-  "node_modules/body-parser/node_modules/content-type/dist/index.js"(exports) {
+  "../../root/workspace/node_modules/body-parser/node_modules/content-type/dist/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.format = format;
@@ -15777,9 +15777,9 @@ var require_dist2 = __commonJS({
   }
 });
 
-// node_modules/body-parser/lib/utils.js
+// ../../root/workspace/node_modules/body-parser/lib/utils.js
 var require_utils = __commonJS({
-  "node_modules/body-parser/lib/utils.js"(exports, module) {
+  "../../root/workspace/node_modules/body-parser/lib/utils.js"(exports, module) {
     "use strict";
     var bytes = require_bytes();
     var contentType = require_dist2();
@@ -15829,9 +15829,9 @@ var require_utils = __commonJS({
   }
 });
 
-// node_modules/body-parser/lib/read.js
+// ../../root/workspace/node_modules/body-parser/lib/read.js
 var require_read = __commonJS({
-  "node_modules/body-parser/lib/read.js"(exports, module) {
+  "../../root/workspace/node_modules/body-parser/lib/read.js"(exports, module) {
     "use strict";
     var createError = require_http_errors();
     var getBody = require_raw_body();
@@ -15987,9 +15987,9 @@ var require_read = __commonJS({
   }
 });
 
-// node_modules/body-parser/lib/types/json.js
+// ../../root/workspace/node_modules/body-parser/lib/types/json.js
 var require_json = __commonJS({
-  "node_modules/body-parser/lib/types/json.js"(exports, module) {
+  "../../root/workspace/node_modules/body-parser/lib/types/json.js"(exports, module) {
     "use strict";
     var debug = require_src()("body-parser:json");
     var read = require_read();
@@ -16086,9 +16086,9 @@ var require_json = __commonJS({
   }
 });
 
-// node_modules/body-parser/lib/types/raw.js
+// ../../root/workspace/node_modules/body-parser/lib/types/raw.js
 var require_raw = __commonJS({
-  "node_modules/body-parser/lib/types/raw.js"(exports, module) {
+  "../../root/workspace/node_modules/body-parser/lib/types/raw.js"(exports, module) {
     "use strict";
     var debug = require_src()("body-parser:raw");
     var read = require_read();
@@ -16108,9 +16108,9 @@ var require_raw = __commonJS({
   }
 });
 
-// node_modules/body-parser/lib/types/text.js
+// ../../root/workspace/node_modules/body-parser/lib/types/text.js
 var require_text = __commonJS({
-  "node_modules/body-parser/lib/types/text.js"(exports, module) {
+  "../../root/workspace/node_modules/body-parser/lib/types/text.js"(exports, module) {
     "use strict";
     var debug = require_src()("body-parser:text");
     var read = require_read();
@@ -16125,24 +16125,24 @@ var require_text = __commonJS({
   }
 });
 
-// node_modules/es-errors/type.js
+// ../../root/workspace/node_modules/es-errors/type.js
 var require_type = __commonJS({
-  "node_modules/es-errors/type.js"(exports, module) {
+  "../../root/workspace/node_modules/es-errors/type.js"(exports, module) {
     "use strict";
     module.exports = TypeError;
   }
 });
 
-// node_modules/object-inspect/util.inspect.js
+// ../../root/workspace/node_modules/object-inspect/util.inspect.js
 var require_util_inspect = __commonJS({
-  "node_modules/object-inspect/util.inspect.js"(exports, module) {
+  "../../root/workspace/node_modules/object-inspect/util.inspect.js"(exports, module) {
     module.exports = __require("node:util").inspect;
   }
 });
 
-// node_modules/object-inspect/index.js
+// ../../root/workspace/node_modules/object-inspect/index.js
 var require_object_inspect = __commonJS({
-  "node_modules/object-inspect/index.js"(exports, module) {
+  "../../root/workspace/node_modules/object-inspect/index.js"(exports, module) {
     var hasMap = typeof Map === "function" && Map.prototype;
     var mapSizeDescriptor = Object.getOwnPropertyDescriptor && hasMap ? Object.getOwnPropertyDescriptor(Map.prototype, "size") : null;
     var mapSize = hasMap && mapSizeDescriptor && typeof mapSizeDescriptor.get === "function" ? mapSizeDescriptor.get : null;
@@ -16671,9 +16671,9 @@ var require_object_inspect = __commonJS({
   }
 });
 
-// node_modules/side-channel-list/index.js
+// ../../root/workspace/node_modules/side-channel-list/index.js
 var require_side_channel_list = __commonJS({
-  "node_modules/side-channel-list/index.js"(exports, module) {
+  "../../root/workspace/node_modules/side-channel-list/index.js"(exports, module) {
     "use strict";
     var inspect = require_object_inspect();
     var $TypeError = require_type();
@@ -16764,113 +16764,113 @@ var require_side_channel_list = __commonJS({
   }
 });
 
-// node_modules/es-object-atoms/index.js
+// ../../root/workspace/node_modules/es-object-atoms/index.js
 var require_es_object_atoms = __commonJS({
-  "node_modules/es-object-atoms/index.js"(exports, module) {
+  "../../root/workspace/node_modules/es-object-atoms/index.js"(exports, module) {
     "use strict";
     module.exports = Object;
   }
 });
 
-// node_modules/es-errors/index.js
+// ../../root/workspace/node_modules/es-errors/index.js
 var require_es_errors = __commonJS({
-  "node_modules/es-errors/index.js"(exports, module) {
+  "../../root/workspace/node_modules/es-errors/index.js"(exports, module) {
     "use strict";
     module.exports = Error;
   }
 });
 
-// node_modules/es-errors/eval.js
+// ../../root/workspace/node_modules/es-errors/eval.js
 var require_eval = __commonJS({
-  "node_modules/es-errors/eval.js"(exports, module) {
+  "../../root/workspace/node_modules/es-errors/eval.js"(exports, module) {
     "use strict";
     module.exports = EvalError;
   }
 });
 
-// node_modules/es-errors/range.js
+// ../../root/workspace/node_modules/es-errors/range.js
 var require_range = __commonJS({
-  "node_modules/es-errors/range.js"(exports, module) {
+  "../../root/workspace/node_modules/es-errors/range.js"(exports, module) {
     "use strict";
     module.exports = RangeError;
   }
 });
 
-// node_modules/es-errors/ref.js
+// ../../root/workspace/node_modules/es-errors/ref.js
 var require_ref = __commonJS({
-  "node_modules/es-errors/ref.js"(exports, module) {
+  "../../root/workspace/node_modules/es-errors/ref.js"(exports, module) {
     "use strict";
     module.exports = ReferenceError;
   }
 });
 
-// node_modules/es-errors/syntax.js
+// ../../root/workspace/node_modules/es-errors/syntax.js
 var require_syntax = __commonJS({
-  "node_modules/es-errors/syntax.js"(exports, module) {
+  "../../root/workspace/node_modules/es-errors/syntax.js"(exports, module) {
     "use strict";
     module.exports = SyntaxError;
   }
 });
 
-// node_modules/es-errors/uri.js
+// ../../root/workspace/node_modules/es-errors/uri.js
 var require_uri = __commonJS({
-  "node_modules/es-errors/uri.js"(exports, module) {
+  "../../root/workspace/node_modules/es-errors/uri.js"(exports, module) {
     "use strict";
     module.exports = URIError;
   }
 });
 
-// node_modules/math-intrinsics/abs.js
+// ../../root/workspace/node_modules/math-intrinsics/abs.js
 var require_abs = __commonJS({
-  "node_modules/math-intrinsics/abs.js"(exports, module) {
+  "../../root/workspace/node_modules/math-intrinsics/abs.js"(exports, module) {
     "use strict";
     module.exports = Math.abs;
   }
 });
 
-// node_modules/math-intrinsics/floor.js
+// ../../root/workspace/node_modules/math-intrinsics/floor.js
 var require_floor = __commonJS({
-  "node_modules/math-intrinsics/floor.js"(exports, module) {
+  "../../root/workspace/node_modules/math-intrinsics/floor.js"(exports, module) {
     "use strict";
     module.exports = Math.floor;
   }
 });
 
-// node_modules/math-intrinsics/max.js
+// ../../root/workspace/node_modules/math-intrinsics/max.js
 var require_max = __commonJS({
-  "node_modules/math-intrinsics/max.js"(exports, module) {
+  "../../root/workspace/node_modules/math-intrinsics/max.js"(exports, module) {
     "use strict";
     module.exports = Math.max;
   }
 });
 
-// node_modules/math-intrinsics/min.js
+// ../../root/workspace/node_modules/math-intrinsics/min.js
 var require_min = __commonJS({
-  "node_modules/math-intrinsics/min.js"(exports, module) {
+  "../../root/workspace/node_modules/math-intrinsics/min.js"(exports, module) {
     "use strict";
     module.exports = Math.min;
   }
 });
 
-// node_modules/math-intrinsics/pow.js
+// ../../root/workspace/node_modules/math-intrinsics/pow.js
 var require_pow = __commonJS({
-  "node_modules/math-intrinsics/pow.js"(exports, module) {
+  "../../root/workspace/node_modules/math-intrinsics/pow.js"(exports, module) {
     "use strict";
     module.exports = Math.pow;
   }
 });
 
-// node_modules/math-intrinsics/round.js
+// ../../root/workspace/node_modules/math-intrinsics/round.js
 var require_round = __commonJS({
-  "node_modules/math-intrinsics/round.js"(exports, module) {
+  "../../root/workspace/node_modules/math-intrinsics/round.js"(exports, module) {
     "use strict";
     module.exports = Math.round;
   }
 });
 
-// node_modules/math-intrinsics/isNaN.js
+// ../../root/workspace/node_modules/math-intrinsics/isNaN.js
 var require_isNaN = __commonJS({
-  "node_modules/math-intrinsics/isNaN.js"(exports, module) {
+  "../../root/workspace/node_modules/math-intrinsics/isNaN.js"(exports, module) {
     "use strict";
     module.exports = Number.isNaN || function isNaN2(a) {
       return a !== a;
@@ -16878,9 +16878,9 @@ var require_isNaN = __commonJS({
   }
 });
 
-// node_modules/math-intrinsics/sign.js
+// ../../root/workspace/node_modules/math-intrinsics/sign.js
 var require_sign = __commonJS({
-  "node_modules/math-intrinsics/sign.js"(exports, module) {
+  "../../root/workspace/node_modules/math-intrinsics/sign.js"(exports, module) {
     "use strict";
     var $isNaN = require_isNaN();
     module.exports = function sign(number) {
@@ -16892,17 +16892,17 @@ var require_sign = __commonJS({
   }
 });
 
-// node_modules/gopd/gOPD.js
+// ../../root/workspace/node_modules/gopd/gOPD.js
 var require_gOPD = __commonJS({
-  "node_modules/gopd/gOPD.js"(exports, module) {
+  "../../root/workspace/node_modules/gopd/gOPD.js"(exports, module) {
     "use strict";
     module.exports = Object.getOwnPropertyDescriptor;
   }
 });
 
-// node_modules/gopd/index.js
+// ../../root/workspace/node_modules/gopd/index.js
 var require_gopd = __commonJS({
-  "node_modules/gopd/index.js"(exports, module) {
+  "../../root/workspace/node_modules/gopd/index.js"(exports, module) {
     "use strict";
     var $gOPD = require_gOPD();
     if ($gOPD) {
@@ -16916,9 +16916,9 @@ var require_gopd = __commonJS({
   }
 });
 
-// node_modules/es-define-property/index.js
+// ../../root/workspace/node_modules/es-define-property/index.js
 var require_es_define_property = __commonJS({
-  "node_modules/es-define-property/index.js"(exports, module) {
+  "../../root/workspace/node_modules/es-define-property/index.js"(exports, module) {
     "use strict";
     var $defineProperty = Object.defineProperty || false;
     if ($defineProperty) {
@@ -16932,9 +16932,9 @@ var require_es_define_property = __commonJS({
   }
 });
 
-// node_modules/has-symbols/shams.js
+// ../../root/workspace/node_modules/has-symbols/shams.js
 var require_shams = __commonJS({
-  "node_modules/has-symbols/shams.js"(exports, module) {
+  "../../root/workspace/node_modules/has-symbols/shams.js"(exports, module) {
     "use strict";
     module.exports = function hasSymbols() {
       if (typeof Symbol !== "function" || typeof Object.getOwnPropertySymbols !== "function") {
@@ -16987,9 +16987,9 @@ var require_shams = __commonJS({
   }
 });
 
-// node_modules/has-symbols/index.js
+// ../../root/workspace/node_modules/has-symbols/index.js
 var require_has_symbols = __commonJS({
-  "node_modules/has-symbols/index.js"(exports, module) {
+  "../../root/workspace/node_modules/has-symbols/index.js"(exports, module) {
     "use strict";
     var origSymbol = typeof Symbol !== "undefined" && Symbol;
     var hasSymbolSham = require_shams();
@@ -17011,26 +17011,26 @@ var require_has_symbols = __commonJS({
   }
 });
 
-// node_modules/get-proto/Reflect.getPrototypeOf.js
+// ../../root/workspace/node_modules/get-proto/Reflect.getPrototypeOf.js
 var require_Reflect_getPrototypeOf = __commonJS({
-  "node_modules/get-proto/Reflect.getPrototypeOf.js"(exports, module) {
+  "../../root/workspace/node_modules/get-proto/Reflect.getPrototypeOf.js"(exports, module) {
     "use strict";
     module.exports = typeof Reflect !== "undefined" && Reflect.getPrototypeOf || null;
   }
 });
 
-// node_modules/get-proto/Object.getPrototypeOf.js
+// ../../root/workspace/node_modules/get-proto/Object.getPrototypeOf.js
 var require_Object_getPrototypeOf = __commonJS({
-  "node_modules/get-proto/Object.getPrototypeOf.js"(exports, module) {
+  "../../root/workspace/node_modules/get-proto/Object.getPrototypeOf.js"(exports, module) {
     "use strict";
     var $Object = require_es_object_atoms();
     module.exports = $Object.getPrototypeOf || null;
   }
 });
 
-// node_modules/function-bind/implementation.js
+// ../../root/workspace/node_modules/function-bind/implementation.js
 var require_implementation = __commonJS({
-  "node_modules/function-bind/implementation.js"(exports, module) {
+  "../../root/workspace/node_modules/function-bind/implementation.js"(exports, module) {
     "use strict";
     var ERROR_MESSAGE = "Function.prototype.bind called on incompatible ";
     var toStr = Object.prototype.toString;
@@ -17104,42 +17104,42 @@ var require_implementation = __commonJS({
   }
 });
 
-// node_modules/function-bind/index.js
+// ../../root/workspace/node_modules/function-bind/index.js
 var require_function_bind = __commonJS({
-  "node_modules/function-bind/index.js"(exports, module) {
+  "../../root/workspace/node_modules/function-bind/index.js"(exports, module) {
     "use strict";
     var implementation = require_implementation();
     module.exports = Function.prototype.bind || implementation;
   }
 });
 
-// node_modules/call-bind-apply-helpers/functionCall.js
+// ../../root/workspace/node_modules/call-bind-apply-helpers/functionCall.js
 var require_functionCall = __commonJS({
-  "node_modules/call-bind-apply-helpers/functionCall.js"(exports, module) {
+  "../../root/workspace/node_modules/call-bind-apply-helpers/functionCall.js"(exports, module) {
     "use strict";
     module.exports = Function.prototype.call;
   }
 });
 
-// node_modules/call-bind-apply-helpers/functionApply.js
+// ../../root/workspace/node_modules/call-bind-apply-helpers/functionApply.js
 var require_functionApply = __commonJS({
-  "node_modules/call-bind-apply-helpers/functionApply.js"(exports, module) {
+  "../../root/workspace/node_modules/call-bind-apply-helpers/functionApply.js"(exports, module) {
     "use strict";
     module.exports = Function.prototype.apply;
   }
 });
 
-// node_modules/call-bind-apply-helpers/reflectApply.js
+// ../../root/workspace/node_modules/call-bind-apply-helpers/reflectApply.js
 var require_reflectApply = __commonJS({
-  "node_modules/call-bind-apply-helpers/reflectApply.js"(exports, module) {
+  "../../root/workspace/node_modules/call-bind-apply-helpers/reflectApply.js"(exports, module) {
     "use strict";
     module.exports = typeof Reflect !== "undefined" && Reflect && Reflect.apply;
   }
 });
 
-// node_modules/call-bind-apply-helpers/actualApply.js
+// ../../root/workspace/node_modules/call-bind-apply-helpers/actualApply.js
 var require_actualApply = __commonJS({
-  "node_modules/call-bind-apply-helpers/actualApply.js"(exports, module) {
+  "../../root/workspace/node_modules/call-bind-apply-helpers/actualApply.js"(exports, module) {
     "use strict";
     var bind = require_function_bind();
     var $apply = require_functionApply();
@@ -17149,9 +17149,9 @@ var require_actualApply = __commonJS({
   }
 });
 
-// node_modules/call-bind-apply-helpers/index.js
+// ../../root/workspace/node_modules/call-bind-apply-helpers/index.js
 var require_call_bind_apply_helpers = __commonJS({
-  "node_modules/call-bind-apply-helpers/index.js"(exports, module) {
+  "../../root/workspace/node_modules/call-bind-apply-helpers/index.js"(exports, module) {
     "use strict";
     var bind = require_function_bind();
     var $TypeError = require_type();
@@ -17166,9 +17166,9 @@ var require_call_bind_apply_helpers = __commonJS({
   }
 });
 
-// node_modules/dunder-proto/get.js
+// ../../root/workspace/node_modules/dunder-proto/get.js
 var require_get = __commonJS({
-  "node_modules/dunder-proto/get.js"(exports, module) {
+  "../../root/workspace/node_modules/dunder-proto/get.js"(exports, module) {
     "use strict";
     var callBind = require_call_bind_apply_helpers();
     var gOPD = require_gopd();
@@ -17197,9 +17197,9 @@ var require_get = __commonJS({
   }
 });
 
-// node_modules/get-proto/index.js
+// ../../root/workspace/node_modules/get-proto/index.js
 var require_get_proto = __commonJS({
-  "node_modules/get-proto/index.js"(exports, module) {
+  "../../root/workspace/node_modules/get-proto/index.js"(exports, module) {
     "use strict";
     var reflectGetProto = require_Reflect_getPrototypeOf();
     var originalGetProto = require_Object_getPrototypeOf();
@@ -17217,9 +17217,9 @@ var require_get_proto = __commonJS({
   }
 });
 
-// node_modules/hasown/index.js
+// ../../root/workspace/node_modules/hasown/index.js
 var require_hasown = __commonJS({
-  "node_modules/hasown/index.js"(exports, module) {
+  "../../root/workspace/node_modules/hasown/index.js"(exports, module) {
     "use strict";
     var call = Function.prototype.call;
     var $hasOwn = Object.prototype.hasOwnProperty;
@@ -17228,9 +17228,9 @@ var require_hasown = __commonJS({
   }
 });
 
-// node_modules/get-intrinsic/index.js
+// ../../root/workspace/node_modules/get-intrinsic/index.js
 var require_get_intrinsic = __commonJS({
-  "node_modules/get-intrinsic/index.js"(exports, module) {
+  "../../root/workspace/node_modules/get-intrinsic/index.js"(exports, module) {
     "use strict";
     var undefined2;
     var $Object = require_es_object_atoms();
@@ -17559,9 +17559,9 @@ var require_get_intrinsic = __commonJS({
   }
 });
 
-// node_modules/call-bound/index.js
+// ../../root/workspace/node_modules/call-bound/index.js
 var require_call_bound = __commonJS({
-  "node_modules/call-bound/index.js"(exports, module) {
+  "../../root/workspace/node_modules/call-bound/index.js"(exports, module) {
     "use strict";
     var GetIntrinsic = require_get_intrinsic();
     var callBindBasic = require_call_bind_apply_helpers();
@@ -17582,9 +17582,9 @@ var require_call_bound = __commonJS({
   }
 });
 
-// node_modules/side-channel-map/index.js
+// ../../root/workspace/node_modules/side-channel-map/index.js
 var require_side_channel_map = __commonJS({
-  "node_modules/side-channel-map/index.js"(exports, module) {
+  "../../root/workspace/node_modules/side-channel-map/index.js"(exports, module) {
     "use strict";
     var GetIntrinsic = require_get_intrinsic();
     var callBound = require_call_bound();
@@ -17638,9 +17638,9 @@ var require_side_channel_map = __commonJS({
   }
 });
 
-// node_modules/side-channel-weakmap/index.js
+// ../../root/workspace/node_modules/side-channel-weakmap/index.js
 var require_side_channel_weakmap = __commonJS({
-  "node_modules/side-channel-weakmap/index.js"(exports, module) {
+  "../../root/workspace/node_modules/side-channel-weakmap/index.js"(exports, module) {
     "use strict";
     var GetIntrinsic = require_get_intrinsic();
     var callBound = require_call_bound();
@@ -17711,9 +17711,9 @@ var require_side_channel_weakmap = __commonJS({
   }
 });
 
-// node_modules/side-channel/index.js
+// ../../root/workspace/node_modules/side-channel/index.js
 var require_side_channel = __commonJS({
-  "node_modules/side-channel/index.js"(exports, module) {
+  "../../root/workspace/node_modules/side-channel/index.js"(exports, module) {
     "use strict";
     var $TypeError = require_type();
     var inspect = require_object_inspect();
@@ -17751,9 +17751,9 @@ var require_side_channel = __commonJS({
   }
 });
 
-// node_modules/qs/lib/formats.js
+// ../../root/workspace/node_modules/qs/lib/formats.js
 var require_formats = __commonJS({
-  "node_modules/qs/lib/formats.js"(exports, module) {
+  "../../root/workspace/node_modules/qs/lib/formats.js"(exports, module) {
     "use strict";
     var replace = String.prototype.replace;
     var percentTwenties = /%20/g;
@@ -17777,9 +17777,9 @@ var require_formats = __commonJS({
   }
 });
 
-// node_modules/qs/lib/utils.js
+// ../../root/workspace/node_modules/qs/lib/utils.js
 var require_utils2 = __commonJS({
-  "node_modules/qs/lib/utils.js"(exports, module) {
+  "../../root/workspace/node_modules/qs/lib/utils.js"(exports, module) {
     "use strict";
     var formats = require_formats();
     var getSideChannel = require_side_channel();
@@ -18083,9 +18083,9 @@ var require_utils2 = __commonJS({
   }
 });
 
-// node_modules/qs/lib/stringify.js
+// ../../root/workspace/node_modules/qs/lib/stringify.js
 var require_stringify = __commonJS({
-  "node_modules/qs/lib/stringify.js"(exports, module) {
+  "../../root/workspace/node_modules/qs/lib/stringify.js"(exports, module) {
     "use strict";
     var getSideChannel = require_side_channel();
     var utils = require_utils2();
@@ -18380,9 +18380,9 @@ var require_stringify = __commonJS({
   }
 });
 
-// node_modules/qs/lib/parse.js
+// ../../root/workspace/node_modules/qs/lib/parse.js
 var require_parse = __commonJS({
-  "node_modules/qs/lib/parse.js"(exports, module) {
+  "../../root/workspace/node_modules/qs/lib/parse.js"(exports, module) {
     "use strict";
     var utils = require_utils2();
     var has = Object.prototype.hasOwnProperty;
@@ -18708,9 +18708,9 @@ var require_parse = __commonJS({
   }
 });
 
-// node_modules/qs/lib/index.js
+// ../../root/workspace/node_modules/qs/lib/index.js
 var require_lib2 = __commonJS({
-  "node_modules/qs/lib/index.js"(exports, module) {
+  "../../root/workspace/node_modules/qs/lib/index.js"(exports, module) {
     "use strict";
     var stringify2 = require_stringify();
     var parse2 = require_parse();
@@ -18723,9 +18723,9 @@ var require_lib2 = __commonJS({
   }
 });
 
-// node_modules/body-parser/lib/types/urlencoded.js
+// ../../root/workspace/node_modules/body-parser/lib/types/urlencoded.js
 var require_urlencoded = __commonJS({
-  "node_modules/body-parser/lib/types/urlencoded.js"(exports, module) {
+  "../../root/workspace/node_modules/body-parser/lib/types/urlencoded.js"(exports, module) {
     "use strict";
     var createError = require_http_errors();
     var debug = require_src()("body-parser:urlencoded");
@@ -18809,9 +18809,9 @@ var require_urlencoded = __commonJS({
   }
 });
 
-// node_modules/body-parser/index.js
+// ../../root/workspace/node_modules/body-parser/index.js
 var require_body_parser = __commonJS({
-  "node_modules/body-parser/index.js"(exports, module) {
+  "../../root/workspace/node_modules/body-parser/index.js"(exports, module) {
     "use strict";
     exports = module.exports = bodyParser;
     exports.json = require_json();
@@ -18824,9 +18824,9 @@ var require_body_parser = __commonJS({
   }
 });
 
-// node_modules/merge-descriptors/index.js
+// ../../root/workspace/node_modules/merge-descriptors/index.js
 var require_merge_descriptors = __commonJS({
-  "node_modules/merge-descriptors/index.js"(exports, module) {
+  "../../root/workspace/node_modules/merge-descriptors/index.js"(exports, module) {
     "use strict";
     function mergeDescriptors(destination, source, overwrite = true) {
       if (!destination) {
@@ -18848,9 +18848,9 @@ var require_merge_descriptors = __commonJS({
   }
 });
 
-// node_modules/encodeurl/index.js
+// ../../root/workspace/node_modules/encodeurl/index.js
 var require_encodeurl = __commonJS({
-  "node_modules/encodeurl/index.js"(exports, module) {
+  "../../root/workspace/node_modules/encodeurl/index.js"(exports, module) {
     "use strict";
     module.exports = encodeUrl;
     var ENCODE_CHARS_REGEXP = /(?:[^\x21\x23-\x3B\x3D\x3F-\x5F\x61-\x7A\x7C\x7E]|%(?:[^0-9A-Fa-f]|[0-9A-Fa-f][^0-9A-Fa-f]|$))+/g;
@@ -18862,9 +18862,9 @@ var require_encodeurl = __commonJS({
   }
 });
 
-// node_modules/escape-html/index.js
+// ../../root/workspace/node_modules/escape-html/index.js
 var require_escape_html = __commonJS({
-  "node_modules/escape-html/index.js"(exports, module) {
+  "../../root/workspace/node_modules/escape-html/index.js"(exports, module) {
     "use strict";
     var matchHtmlRegExp = /["'&<>]/;
     module.exports = escapeHtml;
@@ -18909,9 +18909,9 @@ var require_escape_html = __commonJS({
   }
 });
 
-// node_modules/parseurl/index.js
+// ../../root/workspace/node_modules/parseurl/index.js
 var require_parseurl = __commonJS({
-  "node_modules/parseurl/index.js"(exports, module) {
+  "../../root/workspace/node_modules/parseurl/index.js"(exports, module) {
     "use strict";
     var url = __require("node:url");
     var parse2 = url.parse;
@@ -18993,9 +18993,9 @@ var require_parseurl = __commonJS({
   }
 });
 
-// node_modules/finalhandler/index.js
+// ../../root/workspace/node_modules/finalhandler/index.js
 var require_finalhandler = __commonJS({
-  "node_modules/finalhandler/index.js"(exports, module) {
+  "../../root/workspace/node_modules/finalhandler/index.js"(exports, module) {
     "use strict";
     var debug = require_src()("finalhandler");
     var encodeUrl = require_encodeurl();
@@ -19120,9 +19120,9 @@ var require_finalhandler = __commonJS({
   }
 });
 
-// node_modules/express/lib/view.js
+// ../../root/workspace/node_modules/express/lib/view.js
 var require_view = __commonJS({
-  "node_modules/express/lib/view.js"(exports, module) {
+  "../../root/workspace/node_modules/express/lib/view.js"(exports, module) {
     "use strict";
     var debug = require_src()("express:view");
     var path = __require("node:path");
@@ -19214,9 +19214,9 @@ var require_view = __commonJS({
   }
 });
 
-// node_modules/content-type/index.js
+// ../../root/workspace/node_modules/content-type/index.js
 var require_content_type = __commonJS({
-  "node_modules/content-type/index.js"(exports) {
+  "../../root/workspace/node_modules/content-type/index.js"(exports) {
     "use strict";
     var PARAM_REGEXP = /; *([!#$%&'*+.^_`|~0-9A-Za-z-]+) *= *("(?:[\u000b\u0020\u0021\u0023-\u005b\u005d-\u007e\u0080-\u00ff]|\\[\u000b\u0020-\u00ff])*"|[!#$%&'*+.^_`|~0-9A-Za-z-]+) */g;
     var TEXT_REGEXP = /^[\u000b\u0020-\u007e\u0080-\u00ff]+$/;
@@ -19318,9 +19318,9 @@ var require_content_type = __commonJS({
   }
 });
 
-// node_modules/etag/index.js
+// ../../root/workspace/node_modules/etag/index.js
 var require_etag = __commonJS({
-  "node_modules/etag/index.js"(exports, module) {
+  "../../root/workspace/node_modules/etag/index.js"(exports, module) {
     "use strict";
     module.exports = etag;
     var crypto6 = __require("node:crypto");
@@ -19360,9 +19360,9 @@ var require_etag = __commonJS({
   }
 });
 
-// node_modules/forwarded/index.js
+// ../../root/workspace/node_modules/forwarded/index.js
 var require_forwarded = __commonJS({
-  "node_modules/forwarded/index.js"(exports, module) {
+  "../../root/workspace/node_modules/forwarded/index.js"(exports, module) {
     "use strict";
     module.exports = forwarded;
     function forwarded(req) {
@@ -19407,9 +19407,9 @@ var require_forwarded = __commonJS({
   }
 });
 
-// node_modules/ipaddr.js/lib/ipaddr.js
+// ../../root/workspace/node_modules/ipaddr.js/lib/ipaddr.js
 var require_ipaddr = __commonJS({
-  "node_modules/ipaddr.js/lib/ipaddr.js"(exports, module) {
+  "../../root/workspace/node_modules/ipaddr.js/lib/ipaddr.js"(exports, module) {
     (function() {
       var expandIPv6, ipaddr, ipv4Part, ipv4Regexes, ipv6Part, ipv6Regexes, matchCIDR, root, zoneIndex;
       ipaddr = {};
@@ -20029,9 +20029,9 @@ var require_ipaddr = __commonJS({
   }
 });
 
-// node_modules/proxy-addr/index.js
+// ../../root/workspace/node_modules/proxy-addr/index.js
 var require_proxy_addr = __commonJS({
-  "node_modules/proxy-addr/index.js"(exports, module) {
+  "../../root/workspace/node_modules/proxy-addr/index.js"(exports, module) {
     "use strict";
     module.exports = proxyaddr;
     module.exports.all = alladdrs;
@@ -20204,9 +20204,9 @@ var require_proxy_addr = __commonJS({
   }
 });
 
-// node_modules/express/lib/utils.js
+// ../../root/workspace/node_modules/express/lib/utils.js
 var require_utils3 = __commonJS({
-  "node_modules/express/lib/utils.js"(exports) {
+  "../../root/workspace/node_modules/express/lib/utils.js"(exports) {
     "use strict";
     var { METHODS } = __require("node:http");
     var contentType = require_content_type();
@@ -20331,9 +20331,9 @@ var require_utils3 = __commonJS({
   }
 });
 
-// node_modules/wrappy/wrappy.js
+// ../../root/workspace/node_modules/wrappy/wrappy.js
 var require_wrappy = __commonJS({
-  "node_modules/wrappy/wrappy.js"(exports, module) {
+  "../../root/workspace/node_modules/wrappy/wrappy.js"(exports, module) {
     module.exports = wrappy;
     function wrappy(fn, cb) {
       if (fn && cb) return wrappy(fn)(cb);
@@ -20361,9 +20361,9 @@ var require_wrappy = __commonJS({
   }
 });
 
-// node_modules/once/once.js
+// ../../root/workspace/node_modules/once/once.js
 var require_once = __commonJS({
-  "node_modules/once/once.js"(exports, module) {
+  "../../root/workspace/node_modules/once/once.js"(exports, module) {
     var wrappy = require_wrappy();
     module.exports = wrappy(once);
     module.exports.strict = wrappy(onceStrict);
@@ -20405,9 +20405,9 @@ var require_once = __commonJS({
   }
 });
 
-// node_modules/is-promise/index.js
+// ../../root/workspace/node_modules/is-promise/index.js
 var require_is_promise = __commonJS({
-  "node_modules/is-promise/index.js"(exports, module) {
+  "../../root/workspace/node_modules/is-promise/index.js"(exports, module) {
     module.exports = isPromise;
     module.exports.default = isPromise;
     function isPromise(obj) {
@@ -20416,9 +20416,9 @@ var require_is_promise = __commonJS({
   }
 });
 
-// node_modules/path-to-regexp/dist/index.js
+// ../../root/workspace/node_modules/path-to-regexp/dist/index.js
 var require_dist3 = __commonJS({
-  "node_modules/path-to-regexp/dist/index.js"(exports) {
+  "../../root/workspace/node_modules/path-to-regexp/dist/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.PathError = exports.TokenData = void 0;
@@ -20785,9 +20785,9 @@ var require_dist3 = __commonJS({
   }
 });
 
-// node_modules/router/lib/layer.js
+// ../../root/workspace/node_modules/router/lib/layer.js
 var require_layer = __commonJS({
-  "node_modules/router/lib/layer.js"(exports, module) {
+  "../../root/workspace/node_modules/router/lib/layer.js"(exports, module) {
     "use strict";
     var isPromise = require_is_promise();
     var pathRegexp = require_dist3();
@@ -20935,9 +20935,9 @@ var require_layer = __commonJS({
   }
 });
 
-// node_modules/router/lib/route.js
+// ../../root/workspace/node_modules/router/lib/route.js
 var require_route = __commonJS({
-  "node_modules/router/lib/route.js"(exports, module) {
+  "../../root/workspace/node_modules/router/lib/route.js"(exports, module) {
     "use strict";
     var debug = require_src()("router:route");
     var Layer = require_layer();
@@ -21055,9 +21055,9 @@ var require_route = __commonJS({
   }
 });
 
-// node_modules/router/index.js
+// ../../root/workspace/node_modules/router/index.js
 var require_router = __commonJS({
-  "node_modules/router/index.js"(exports, module) {
+  "../../root/workspace/node_modules/router/index.js"(exports, module) {
     "use strict";
     var isPromise = require_is_promise();
     var Layer = require_layer();
@@ -21453,9 +21453,9 @@ var require_router = __commonJS({
   }
 });
 
-// node_modules/express/lib/application.js
+// ../../root/workspace/node_modules/express/lib/application.js
 var require_application = __commonJS({
-  "node_modules/express/lib/application.js"(exports, module) {
+  "../../root/workspace/node_modules/express/lib/application.js"(exports, module) {
     "use strict";
     var finalhandler = require_finalhandler();
     var debug = require_src()("express:application");
@@ -21714,9 +21714,9 @@ var require_application = __commonJS({
   }
 });
 
-// node_modules/negotiator/node_modules/content-type/dist/index.js
+// ../../root/workspace/node_modules/negotiator/node_modules/content-type/dist/index.js
 var require_dist4 = __commonJS({
-  "node_modules/negotiator/node_modules/content-type/dist/index.js"(exports) {
+  "../../root/workspace/node_modules/negotiator/node_modules/content-type/dist/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.format = format;
@@ -21853,9 +21853,9 @@ var require_dist4 = __commonJS({
   }
 });
 
-// node_modules/negotiator/lib/accept.js
+// ../../root/workspace/node_modules/negotiator/lib/accept.js
 var require_accept = __commonJS({
-  "node_modules/negotiator/lib/accept.js"(exports, module) {
+  "../../root/workspace/node_modules/negotiator/lib/accept.js"(exports, module) {
     "use strict";
     var contentType = require_dist4();
     module.exports = parseAccept;
@@ -21881,9 +21881,9 @@ var require_accept = __commonJS({
   }
 });
 
-// node_modules/negotiator/lib/charset.js
+// ../../root/workspace/node_modules/negotiator/lib/charset.js
 var require_charset = __commonJS({
-  "node_modules/negotiator/lib/charset.js"(exports, module) {
+  "../../root/workspace/node_modules/negotiator/lib/charset.js"(exports, module) {
     "use strict";
     var parseAccept = require_accept();
     module.exports = preferredCharsets;
@@ -21953,9 +21953,9 @@ var require_charset = __commonJS({
   }
 });
 
-// node_modules/negotiator/lib/encoding.js
+// ../../root/workspace/node_modules/negotiator/lib/encoding.js
 var require_encoding = __commonJS({
-  "node_modules/negotiator/lib/encoding.js"(exports, module) {
+  "../../root/workspace/node_modules/negotiator/lib/encoding.js"(exports, module) {
     "use strict";
     var parseAccept = require_accept();
     module.exports = preferredEncodings;
@@ -22053,9 +22053,9 @@ var require_encoding = __commonJS({
   }
 });
 
-// node_modules/negotiator/lib/language.js
+// ../../root/workspace/node_modules/negotiator/lib/language.js
 var require_language = __commonJS({
-  "node_modules/negotiator/lib/language.js"(exports, module) {
+  "../../root/workspace/node_modules/negotiator/lib/language.js"(exports, module) {
     "use strict";
     var contentType = require_dist4();
     var parseAccept = require_accept();
@@ -22137,9 +22137,9 @@ var require_language = __commonJS({
   }
 });
 
-// node_modules/negotiator/lib/mediaType.js
+// ../../root/workspace/node_modules/negotiator/lib/mediaType.js
 var require_mediaType = __commonJS({
-  "node_modules/negotiator/lib/mediaType.js"(exports, module) {
+  "../../root/workspace/node_modules/negotiator/lib/mediaType.js"(exports, module) {
     "use strict";
     var contentType = require_dist4();
     var parseAcceptHeader = require_accept();
@@ -22234,9 +22234,9 @@ var require_mediaType = __commonJS({
   }
 });
 
-// node_modules/negotiator/index.js
+// ../../root/workspace/node_modules/negotiator/index.js
 var require_negotiator = __commonJS({
-  "node_modules/negotiator/index.js"(exports, module) {
+  "../../root/workspace/node_modules/negotiator/index.js"(exports, module) {
     "use strict";
     var preferredCharsets = require_charset();
     var preferredEncodings = require_encoding();
@@ -22290,9 +22290,9 @@ var require_negotiator = __commonJS({
   }
 });
 
-// node_modules/accepts/index.js
+// ../../root/workspace/node_modules/accepts/index.js
 var require_accepts = __commonJS({
-  "node_modules/accepts/index.js"(exports, module) {
+  "../../root/workspace/node_modules/accepts/index.js"(exports, module) {
     "use strict";
     var Negotiator = require_negotiator();
     var mime = require_mime_types();
@@ -22371,9 +22371,9 @@ var require_accepts = __commonJS({
   }
 });
 
-// node_modules/fresh/index.js
+// ../../root/workspace/node_modules/fresh/index.js
 var require_fresh = __commonJS({
-  "node_modules/fresh/index.js"(exports, module) {
+  "../../root/workspace/node_modules/fresh/index.js"(exports, module) {
     "use strict";
     var CACHE_CONTROL_NO_CACHE_REGEXP = /(?:^|,)\s*?no-cache\s*?(?:,|$)/;
     module.exports = fresh;
@@ -22443,9 +22443,9 @@ var require_fresh = __commonJS({
   }
 });
 
-// node_modules/range-parser/index.js
+// ../../root/workspace/node_modules/range-parser/index.js
 var require_range_parser = __commonJS({
-  "node_modules/range-parser/index.js"(exports, module) {
+  "../../root/workspace/node_modules/range-parser/index.js"(exports, module) {
     "use strict";
     module.exports = rangeParser;
     function rangeParser(size, str, options) {
@@ -22536,9 +22536,9 @@ var require_range_parser = __commonJS({
   }
 });
 
-// node_modules/express/lib/request.js
+// ../../root/workspace/node_modules/express/lib/request.js
 var require_request = __commonJS({
-  "node_modules/express/lib/request.js"(exports, module) {
+  "../../root/workspace/node_modules/express/lib/request.js"(exports, module) {
     "use strict";
     var accepts = require_accepts();
     var isIP = __require("node:net").isIP;
@@ -22684,9 +22684,9 @@ var require_request = __commonJS({
   }
 });
 
-// node_modules/content-disposition/index.js
+// ../../root/workspace/node_modules/content-disposition/index.js
 var require_content_disposition = __commonJS({
-  "node_modules/content-disposition/index.js"(exports, module) {
+  "../../root/workspace/node_modules/content-disposition/index.js"(exports, module) {
     "use strict";
     module.exports = contentDisposition;
     module.exports.parse = parse2;
@@ -22893,9 +22893,9 @@ var require_content_disposition = __commonJS({
   }
 });
 
-// node_modules/express/node_modules/cookie-signature/index.js
+// ../../root/workspace/node_modules/express/node_modules/cookie-signature/index.js
 var require_cookie_signature = __commonJS({
-  "node_modules/express/node_modules/cookie-signature/index.js"(exports) {
+  "../../root/workspace/node_modules/express/node_modules/cookie-signature/index.js"(exports) {
     var crypto6 = __require("node:crypto");
     exports.sign = function(val2, secret) {
       if ("string" != typeof val2) throw new TypeError("Cookie value must be provided as a string.");
@@ -22911,9 +22911,9 @@ var require_cookie_signature = __commonJS({
   }
 });
 
-// node_modules/cookie/index.js
+// ../../root/workspace/node_modules/cookie/index.js
 var require_cookie = __commonJS({
-  "node_modules/cookie/index.js"(exports) {
+  "../../root/workspace/node_modules/cookie/index.js"(exports) {
     "use strict";
     exports.parse = parse2;
     exports.serialize = serialize;
@@ -23077,9 +23077,9 @@ var require_cookie = __commonJS({
   }
 });
 
-// node_modules/send/index.js
+// ../../root/workspace/node_modules/send/index.js
 var require_send = __commonJS({
-  "node_modules/send/index.js"(exports, module) {
+  "../../root/workspace/node_modules/send/index.js"(exports, module) {
     "use strict";
     var createError = require_http_errors();
     var debug = require_src()("send");
@@ -23560,9 +23560,9 @@ var require_send = __commonJS({
   }
 });
 
-// node_modules/vary/index.js
+// ../../root/workspace/node_modules/vary/index.js
 var require_vary = __commonJS({
-  "node_modules/vary/index.js"(exports, module) {
+  "../../root/workspace/node_modules/vary/index.js"(exports, module) {
     "use strict";
     module.exports = vary;
     module.exports.append = append;
@@ -23633,9 +23633,9 @@ var require_vary = __commonJS({
   }
 });
 
-// node_modules/express/lib/response.js
+// ../../root/workspace/node_modules/express/lib/response.js
 var require_response = __commonJS({
-  "node_modules/express/lib/response.js"(exports, module) {
+  "../../root/workspace/node_modules/express/lib/response.js"(exports, module) {
     "use strict";
     var contentDisposition = require_content_disposition();
     var createError = require_http_errors();
@@ -24103,9 +24103,9 @@ var require_response = __commonJS({
   }
 });
 
-// node_modules/serve-static/index.js
+// ../../root/workspace/node_modules/serve-static/index.js
 var require_serve_static = __commonJS({
-  "node_modules/serve-static/index.js"(exports, module) {
+  "../../root/workspace/node_modules/serve-static/index.js"(exports, module) {
     "use strict";
     var encodeUrl = require_encodeurl();
     var escapeHtml = require_escape_html();
@@ -24207,9 +24207,9 @@ var require_serve_static = __commonJS({
   }
 });
 
-// node_modules/express/lib/express.js
+// ../../root/workspace/node_modules/express/lib/express.js
 var require_express = __commonJS({
-  "node_modules/express/lib/express.js"(exports, module) {
+  "../../root/workspace/node_modules/express/lib/express.js"(exports, module) {
     "use strict";
     var bodyParser = require_body_parser();
     var EventEmitter2 = __require("node:events").EventEmitter;
@@ -24247,17 +24247,17 @@ var require_express = __commonJS({
   }
 });
 
-// node_modules/express/index.js
+// ../../root/workspace/node_modules/express/index.js
 var require_express2 = __commonJS({
-  "node_modules/express/index.js"(exports, module) {
+  "../../root/workspace/node_modules/express/index.js"(exports, module) {
     "use strict";
     module.exports = require_express();
   }
 });
 
-// node_modules/cookie-signature/index.js
+// ../../root/workspace/node_modules/cookie-signature/index.js
 var require_cookie_signature2 = __commonJS({
-  "node_modules/cookie-signature/index.js"(exports) {
+  "../../root/workspace/node_modules/cookie-signature/index.js"(exports) {
     var crypto6 = __require("node:crypto");
     exports.sign = function(val2, secret) {
       if ("string" != typeof val2) throw new TypeError("Cookie value must be provided as a string.");
@@ -24276,9 +24276,9 @@ var require_cookie_signature2 = __commonJS({
   }
 });
 
-// node_modules/cookie-parser/index.js
+// ../../root/workspace/node_modules/cookie-parser/index.js
 var require_cookie_parser = __commonJS({
-  "node_modules/cookie-parser/index.js"(exports, module) {
+  "../../root/workspace/node_modules/cookie-parser/index.js"(exports, module) {
     "use strict";
     var cookie = require_cookie();
     var signature = require_cookie_signature2();
@@ -24368,9 +24368,9 @@ var require_cookie_parser = __commonJS({
   }
 });
 
-// node_modules/object-assign/index.js
+// ../../root/workspace/node_modules/object-assign/index.js
 var require_object_assign = __commonJS({
-  "node_modules/object-assign/index.js"(exports, module) {
+  "../../root/workspace/node_modules/object-assign/index.js"(exports, module) {
     "use strict";
     var getOwnPropertySymbols = Object.getOwnPropertySymbols;
     var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -24438,9 +24438,9 @@ var require_object_assign = __commonJS({
   }
 });
 
-// node_modules/cors/lib/index.js
+// ../../root/workspace/node_modules/cors/lib/index.js
 var require_lib3 = __commonJS({
-  "node_modules/cors/lib/index.js"(exports, module) {
+  "../../root/workspace/node_modules/cors/lib/index.js"(exports, module) {
     (function() {
       "use strict";
       var assign = require_object_assign();
@@ -24646,9 +24646,9 @@ var require_lib3 = __commonJS({
   }
 });
 
-// node_modules/dotenv/dist/index.cjs
+// ../../root/workspace/node_modules/dotenv/dist/index.cjs
 var require_dist5 = __commonJS({
-  "node_modules/dotenv/dist/index.cjs"(exports, module) {
+  "../../root/workspace/node_modules/dotenv/dist/index.cjs"(exports, module) {
     var I = (e, o) => () => {
       try {
         return o || e((o = { exports: {} }).exports, o), o.exports;
@@ -25050,13 +25050,13 @@ var require_env = __commonJS({
       server: {
         port: parseInt(process.env.PORT || cfEnv.PORT || "3000", 10),
         nodeEnv: process.env.NODE_ENV || cfEnv.NODE_ENV || "development",
-        sessionSecret: process.env.SESSION_SECRET || cfEnv.SESSION_SECRET || "govtexamzone_secret_key_cloudflare_d1_r2"
+        sessionSecret: process.env.SESSION_SECRET || cfEnv.SESSION_SECRET || "odishaaspirants_secret_key_cloudflare_d1_r2"
       },
       admin: {
         username: process.env.ADMIN_USERNAME || cfEnv.ADMIN_USERNAME || "admin",
-        password: process.env.ADMIN_PASSWORD || cfEnv.ADMIN_PASSWORD || "govtexamzone@2026",
-        subdomain: (process.env.ADMIN_SUBDOMAIN || cfEnv.ADMIN_SUBDOMAIN || "setup.govtexamzone.com").trim().toLowerCase(),
-        publicSiteUrl: (process.env.PUBLIC_SITE_URL || cfEnv.PUBLIC_SITE_URL || "https://govtexamzone.com").trim().replace(/\/+$/, "")
+        password: process.env.ADMIN_PASSWORD || cfEnv.ADMIN_PASSWORD || "odishaaspirants@2026",
+        subdomain: (process.env.ADMIN_SUBDOMAIN || cfEnv.ADMIN_SUBDOMAIN || "setup.odishaaspirants.com").trim().toLowerCase(),
+        publicSiteUrl: (process.env.PUBLIC_SITE_URL || cfEnv.PUBLIC_SITE_URL || "https://odishaaspirants.com").trim().replace(/\/+$/, "")
       },
       cloudflare: {
         d1: {
@@ -25071,7 +25071,7 @@ var require_env = __commonJS({
           accountId: process.env.R2_ACCOUNT_ID || "",
           accessKeyId: process.env.R2_ACCESS_KEY_ID || "",
           secretAccessKey: process.env.R2_SECRET_ACCESS_KEY || "",
-          bucketName: process.env.R2_BUCKET_NAME || "govtexamzone-files",
+          bucketName: process.env.R2_BUCKET_NAME || "odishaaspirants",
           publicUrl: (process.env.R2_PUBLIC_URL || "").replace(/\/+$/, ""),
           get isConfigured() {
             return Boolean(this.accountId && this.accessKeyId && this.secretAccessKey && this.bucketName);
@@ -25083,9 +25083,9 @@ var require_env = __commonJS({
   }
 });
 
-// node_modules/sql.js/dist/sql-wasm.js
+// ../../root/workspace/node_modules/sql.js/dist/sql-wasm.js
 var require_sql_wasm = __commonJS({
-  "node_modules/sql.js/dist/sql-wasm.js"(exports, module) {
+  "../../root/workspace/node_modules/sql.js/dist/sql-wasm.js"(exports, module) {
     var initSqlJsPromise = void 0;
     var initSqlJs = function(moduleConfig) {
       if (initSqlJsPromise) {
@@ -27230,7 +27230,7 @@ var require_authorAuth = __commonJS({
     var crypto6 = __require("node:crypto");
     var config = require_env();
     var d1 = require_d1Client();
-    var PASSWORD_SALT = "gez_author_salt_2026";
+    var PASSWORD_SALT = "oa_author_salt_2026";
     function hashPassword(password) {
       if (!password) return "";
       return crypto6.pbkdf2Sync(password, PASSWORD_SALT, 1e3, 32, "sha256").toString("hex");
@@ -27241,7 +27241,7 @@ var require_authorAuth = __commonJS({
       return hashPassword(inputPassword) === storedHash;
     }
     function generateAuthorToken(author) {
-      const secret = config.server.sessionSecret || "govtexamzone_secret_key_cloudflare_d1_r2";
+      const secret = config.server.sessionSecret || "odishaaspirants_secret_key_cloudflare_d1_r2";
       const data = `${author.id}:${author.slug}`;
       const sig = crypto6.createHmac("sha256", secret).update(data).digest("hex");
       return `${author.id}.${sig}`;
@@ -27254,7 +27254,7 @@ var require_authorAuth = __commonJS({
       try {
         const author = await d1.prepare("SELECT * FROM authors WHERE id = ? AND is_active = 1").bind(authorId).first();
         if (!author) return null;
-        const secret = config.server.sessionSecret || "govtexamzone_secret_key_cloudflare_d1_r2";
+        const secret = config.server.sessionSecret || "odishaaspirants_secret_key_cloudflare_d1_r2";
         const expectedSig = crypto6.createHmac("sha256", secret).update(`${author.id}:${author.slug}`).digest("hex");
         if (sig === expectedSig) {
           return author;
@@ -27265,11 +27265,11 @@ var require_authorAuth = __commonJS({
       return null;
     }
     async function requireAuthorAuth(req, res, next) {
-      const token = req.cookies?.gez_author_token;
+      const token = req.cookies?.oa_author_token;
       const author = await getAuthorFromToken(token);
       if (author) {
         const isEditor = Boolean(
-          author.id === 1 || author.role && (author.role.toLowerCase().includes("editor") || author.role.toLowerCase().includes("lead")) || author.email === "editor@govtexamzone.com" || author.slug === "editorial-team"
+          author.id === 1 || author.role && (author.role.toLowerCase().includes("editor") || author.role.toLowerCase().includes("lead")) || author.email === "editor@odishaaspirants.com" || author.slug === "editorial-team"
         );
         req.author = author;
         req.isEditor = isEditor;
@@ -27286,7 +27286,7 @@ var require_authorAuth = __commonJS({
     }
     function setAuthorAuthCookie(res, author) {
       const token = generateAuthorToken(author);
-      res.cookie("gez_author_token", token, {
+      res.cookie("oa_author_token", token, {
         httpOnly: true,
         maxAge: 14 * 24 * 60 * 60 * 1e3,
         // 14 days session
@@ -27295,7 +27295,7 @@ var require_authorAuth = __commonJS({
       });
     }
     function clearAuthorAuthCookie(res) {
-      res.clearCookie("gez_author_token", { path: "/" });
+      res.clearCookie("oa_author_token", { path: "/" });
     }
     module.exports = {
       hashPassword,
@@ -27315,7 +27315,7 @@ var require_seed = __commonJS({
     var d1 = require_d1Client();
     async function seedDatabase() {
       await d1.init();
-      console.log("\u{1F331} Seeding initial Govt Exam Zone database...");
+      console.log("\u{1F331} Seeding initial Odisha Aspirants database...");
       if (d1.CORE_TABLES && Array.isArray(d1.CORE_TABLES)) {
         for (const sql of d1.CORE_TABLES) {
           try {
@@ -27353,26 +27353,26 @@ var require_seed = __commonJS({
         if (!authorCount || authorCount.count === 0) {
           const initialAuthors = [
             {
-              name: "Govt Exam Zone Editorial Team",
+              name: "Odisha Aspirants Editorial Team",
               slug: "editorial-team",
               role: "Senior Recruitment Analyst & Fact-Checker Lead",
-              email: "editor@govtexamzone.com",
-              bio: "The official editorial and verification desk of Govt Exam Zone. Our research team meticulously verifies all central and state government job notifications, admit cards, answer keys, and results directly from official gazettes and commissions.",
+              email: "editor@odishaaspirants.com",
+              bio: "The official editorial and verification desk of Odisha Aspirants. Our research team meticulously verifies all central and state government job notifications, admit cards, answer keys, and results directly from official gazettes and commissions.",
               qualification: "Master of Public Administration & Statistical Analysis",
               experience: "10+ Years Competitive Exams Analysis",
               avatar_url: "/images/default-avatar.svg",
-              telegram_url: "https://t.me/govtexamzoneofficial"
+              telegram_url: "https://t.me/odishaaspirantsofficial"
             },
             {
               name: "Amit Kumar Sharma",
               slug: "amit-sharma",
               role: "Technical Recruitment & Engineering Exam Specialist",
-              email: "amit.sharma@govtexamzone.com",
+              email: "amit.sharma@odishaaspirants.com",
               bio: "Exam researcher specializing in technical recruitments across SSC JE, Railway RRB ALP/Technician, Defence CDS/NDA, and state engineering service examinations.",
               qualification: "B.Tech (Mechanical Engineering), GATE Qualified",
               experience: "7+ Years Recruitment Guidance",
               avatar_url: "/images/default-avatar.svg",
-              telegram_url: "https://t.me/govtexamzoneofficial"
+              telegram_url: "https://t.me/odishaaspirantsofficial"
             }
           ];
           for (const a of initialAuthors) {
@@ -27391,7 +27391,7 @@ var require_seed = __commonJS({
           const authorsWithoutPass = await d1.prepare("SELECT id, slug, email FROM authors WHERE password_hash IS NULL OR password_hash = ''").all();
           if (authorsWithoutPass && authorsWithoutPass.length > 0) {
             for (const a of authorsWithoutPass) {
-              const defPass = a.slug === "editorial-team" || a.email === "editor@govtexamzone.com" ? "editor@2026" : "author@2026";
+              const defPass = a.slug === "editorial-team" || a.email === "editor@odishaaspirants.com" ? "editor@2026" : "author@2026";
               const pHash = hashPassword(defPass);
               await d1.prepare("UPDATE authors SET password_hash = ? WHERE id = ?").bind(pHash, a.id).run();
             }
@@ -28043,8 +28043,8 @@ var require_seed = __commonJS({
               { label: "Download CBT 2 Part B Technical Trade Syllabus (PDF)", url: "https://rrbapply.gov.in", btn_text: "Click Here" },
               { label: "Download Official Exam Pattern & Selection Scheme", url: "https://rrbapply.gov.in", btn_text: "Click Here" },
               { label: "Download Official RRB Notification PDF", url: "https://rrbapply.gov.in", btn_text: "Click Here" },
-              { label: "Join Govt Exam Zone Telegram Channel", url: "https://t.me/govtexamzoneofficial", btn_text: "Join Telegram" },
-              { label: "Join Govt Exam Zone WhatsApp Channel", url: "https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10", btn_text: "Join WhatsApp" },
+              { label: "Join Odisha Aspirants Telegram Channel", url: "https://t.me/odishaaspirantsofficial", btn_text: "Join Telegram" },
+              { label: "Join Odisha Aspirants WhatsApp Channel", url: "https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10", btn_text: "Join WhatsApp" },
               { label: "RRB Official Recruitment Portal", url: "https://rrbapply.gov.in", btn_text: "Official Portal" }
             ]),
             official_website_url: "https://indianrailways.gov.in"
@@ -28701,49 +28701,49 @@ var require_helpers = __commonJS({
         name: "Latest Jobs",
         slug: "latest-jobs",
         color: "#ab183d",
-        introEn: "Welcome to Govt Exam Zone \u2014 your dedicated source for verified government job notifications across India. Stay informed about the latest Central and State Government vacancies, online application procedures, eligibility criteria, and last dates to apply. Whether you are preparing for UPSC, SSC, Railway (RRB), Banking, Defence, Teaching, or State Police recruitment, our editorial desk cross-checks all circulars directly with official government gazettes to deliver authentic, timely alerts."
+        introEn: "Welcome to Odisha Aspirants \u2014 your dedicated source for verified government job notifications across India. Stay informed about the latest Central and State Government vacancies, online application procedures, eligibility criteria, and last dates to apply. Whether you are preparing for UPSC, SSC, Railway (RRB), Banking, Defence, Teaching, or State Police recruitment, our editorial desk cross-checks all circulars directly with official government gazettes to deliver authentic, timely alerts."
       },
       "admit-card": {
         name: "Admit Card",
         slug: "admit-card",
         color: "#ab183d",
-        introEn: "Welcome to Govt Exam Zone \u2014 your instant access point for government exam admit cards and hall tickets nationwide. Stay updated on upcoming preliminary, mains, skill tests, and physical examination schedules conducted by major recruitment commissions. Find direct server download links, exam city intimation slips, and step-by-step instructions to print your official hall ticket without server delays."
+        introEn: "Welcome to Odisha Aspirants \u2014 your instant access point for government exam admit cards and hall tickets nationwide. Stay updated on upcoming preliminary, mains, skill tests, and physical examination schedules conducted by major recruitment commissions. Find direct server download links, exam city intimation slips, and step-by-step instructions to print your official hall ticket without server delays."
       },
       "result": {
         name: "Results",
         slug: "result",
         color: "#ab183d",
-        introEn: "Welcome to Govt Exam Zone \u2014 track your competitive examination results with total speed and authenticity. We bring you prompt announcements for tier-wise written examinations, cutoff marks, selection lists, and final merit rankings across Central and State government boards. Check your scorecards and download official result PDF documents directly through fast, reliable mirror links."
+        introEn: "Welcome to Odisha Aspirants \u2014 track your competitive examination results with total speed and authenticity. We bring you prompt announcements for tier-wise written examinations, cutoff marks, selection lists, and final merit rankings across Central and State government boards. Check your scorecards and download official result PDF documents directly through fast, reliable mirror links."
       },
       "syllabus": {
         name: "Syllabus",
         slug: "syllabus",
         color: "#ab183d",
-        introEn: "Welcome to Govt Exam Zone \u2014 download official, comprehensive examination syllabi and test patterns for competitive examinations throughout India. A winning preparation strategy starts with complete clarity on subject-wise weightage, marking schemes, and time duration. Download detailed, verified PDF syllabi for SSC, UPSC, Railway (RRB NTPC, ALP, Group D), Police, and State Commission exams."
+        introEn: "Welcome to Odisha Aspirants \u2014 download official, comprehensive examination syllabi and test patterns for competitive examinations throughout India. A winning preparation strategy starts with complete clarity on subject-wise weightage, marking schemes, and time duration. Download detailed, verified PDF syllabi for SSC, UPSC, Railway (RRB NTPC, ALP, Group D), Police, and State Commission exams."
       },
       "answer-key": {
         name: "Answer Key",
         slug: "answer-key",
         color: "#ab183d",
-        introEn: "Welcome to Govt Exam Zone \u2014 verify your answers with official provisional and final answer keys released by government recruiting authorities. Calculate your estimated scores, download candidate response sheets, and access official objection windows before deadlines. We provide direct links to commission dispute portals for SSC, RRB, Police, NTA, and State Board exams."
+        introEn: "Welcome to Odisha Aspirants \u2014 verify your answers with official provisional and final answer keys released by government recruiting authorities. Calculate your estimated scores, download candidate response sheets, and access official objection windows before deadlines. We provide direct links to commission dispute portals for SSC, RRB, Police, NTA, and State Board exams."
       },
       "admission": {
         name: "Admission",
         slug: "admission",
         color: "#ab183d",
-        introEn: "Welcome to Govt Exam Zone \u2014 your guide for premier entrance examinations, admission registration forms, counselling schedules, and university allotments across India. Discover verified circulars for NTA NEET, JEE Main, CUET, Polytechnic, ITI, B.Ed, and Central University programmes with complete eligibility and direct apply access."
+        introEn: "Welcome to Odisha Aspirants \u2014 your guide for premier entrance examinations, admission registration forms, counselling schedules, and university allotments across India. Discover verified circulars for NTA NEET, JEE Main, CUET, Polytechnic, ITI, B.Ed, and Central University programmes with complete eligibility and direct apply access."
       },
       "certificate-verification": {
         name: "Certificate Verification",
         slug: "certificate-verification",
         color: "#ab183d",
-        introEn: "Welcome to Govt Exam Zone \u2014 authentic information and direct links for document verification, e-certificates, and public digital identity services. Access authorized portals for Aadhaar updates, PAN Card applications, Caste/Income certificate verification, and DigiLocker credentials essential for government job verification rounds."
+        introEn: "Welcome to Odisha Aspirants \u2014 authentic information and direct links for document verification, e-certificates, and public digital identity services. Access authorized portals for Aadhaar updates, PAN Card applications, Caste/Income certificate verification, and DigiLocker credentials essential for government job verification rounds."
       },
       "important": {
         name: "Important",
         slug: "important",
         color: "#ab183d",
-        introEn: "Welcome to Govt Exam Zone \u2014 track critical candidate advisories, One-Time Registration (OTR) procedures, government scholarship programs, and student welfare initiatives. Stay ahead with timely updates on SSC OTR, State Commission OTRs, National Scholarship Portals, and major administrative recruitment notifications."
+        introEn: "Welcome to Odisha Aspirants \u2014 track critical candidate advisories, One-Time Registration (OTR) procedures, government scholarship programs, and student welfare initiatives. Stay ahead with timely updates on SSC OTR, State Commission OTRs, National Scholarship Portals, and major administrative recruitment notifications."
       }
     };
     module.exports = {
@@ -29050,12 +29050,12 @@ var require_webRoutes = __commonJS({
           fetchAllCategoryCounts()
         ]);
         const siteSettings = {
-          telegram_url: "https://t.me/govtexamzoneofficial",
+          telegram_url: "https://t.me/odishaaspirantsofficial",
           whatsapp_url: "https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10",
-          contact_email: "contact.govtexamzone@gmail.com",
-          site_title: "Govt Exam Zone",
+          contact_email: "contact@odishaaspirants.com",
+          site_title: "Odisha Aspirants",
           site_logo: "",
-          site_favicon: "/images/gez-logo.svg",
+          site_favicon: "/images/oa-logo.svg",
           post_detail_layout: "classic",
           hidden_categories: "[]",
           auto_hide_empty_categories: "0"
@@ -29065,14 +29065,14 @@ var require_webRoutes = __commonJS({
             siteSettings[r.key] = r.value;
           });
         }
-        if (!siteSettings.contact_email || /^support@govtexamzone/i.test(siteSettings.contact_email.trim())) {
-          siteSettings.contact_email = "contact.govtexamzone@gmail.com";
+        if (!siteSettings.contact_email) {
+          siteSettings.contact_email = "contact@odishaaspirants.com";
           try {
-            await d1.prepare("INSERT OR REPLACE INTO settings (key, value) VALUES ('contact_email', 'contact.govtexamzone@gmail.com')").run();
+            await d1.prepare("INSERT OR REPLACE INTO settings (key, value) VALUES ('contact_email', 'contact@odishaaspirants.com')").run();
           } catch (err) {
           }
         }
-        if (siteSettings.site_logo && (siteSettings.site_logo.includes("photo_2026") || siteSettings.site_logo.includes("gez-logo.svg"))) {
+        if (siteSettings.site_logo && (siteSettings.site_logo.includes("photo_2026") || siteSettings.site_logo.includes("oa-logo.svg"))) {
           siteSettings.site_logo = "";
           try {
             await d1.prepare("UPDATE settings SET value = '' WHERE key = 'site_logo'").run();
@@ -29086,12 +29086,12 @@ var require_webRoutes = __commonJS({
         res.locals.visibleCategories = cachedVisibleCategories;
       } catch (e) {
         res.locals.settings = cachedSettings || {
-          telegram_url: "https://t.me/govtexamzoneofficial",
+          telegram_url: "https://t.me/odishaaspirantsofficial",
           whatsapp_url: "https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10",
-          contact_email: "contact.govtexamzone@gmail.com",
-          site_title: "Govt Exam Zone",
+          contact_email: "contact@odishaaspirants.com",
+          site_title: "Odisha Aspirants",
           site_logo: "",
-          site_favicon: "/images/gez-logo.svg",
+          site_favicon: "/images/oa-logo.svg",
           post_detail_layout: "classic",
           hidden_categories: "[]",
           auto_hide_empty_categories: "0"
@@ -29127,7 +29127,7 @@ var require_webRoutes = __commonJS({
           fetchCategoryPosts("important", 8, 0)
         ]);
         res.render("pages/index", {
-          title: `${res.locals.settings?.site_title || "Govt Exam Zone"} : ${res.locals.settings?.site_tagline || "Latest Govt Jobs, Admit Card, Results 2026"} | ${res.locals.settings?.header_subtitle || "WWW.GOVTEXAMZONE.COM"}`,
+          title: `${res.locals.settings?.site_title || "Odisha Aspirants"} : ${res.locals.settings?.site_tagline || "Latest Govt Jobs, Admit Card, Results 2026"} | ${res.locals.settings?.header_subtitle || "WWW.ODISHAASPIRANTS.COM"}`,
           marquees,
           badges,
           results,
@@ -29164,8 +29164,8 @@ var require_webRoutes = __commonJS({
         ]);
         const totalPages = Math.ceil(totalPosts / limit) || 1;
         res.render("pages/category", {
-          title: `${catInfo.name} - Govt Exam Zone 2026 | WWW.GOVTEXAMZONE.COM`,
-          metaDescription: `Find latest ${catInfo.name} 2026 notifications, online application forms, official exam dates, eligibility criteria, and results at Govt Exam Zone.`,
+          title: `${catInfo.name} - Odisha Aspirants 2026 | WWW.ODISHAASPIRANTS.COM`,
+          metaDescription: `Find latest ${catInfo.name} 2026 notifications, online application forms, official exam dates, eligibility criteria, and results at Odisha Aspirants.`,
           categorySlug,
           catInfo,
           posts,
@@ -29190,7 +29190,7 @@ var require_webRoutes = __commonJS({
         ).bind(slug).first();
         if (!post) {
           return res.status(404).render("pages/error", {
-            title: "Post Not Found | Govt Exam Zone",
+            title: "Post Not Found | Odisha Aspirants",
             message: "The job or result notification you are looking for does not exist or has been removed."
           });
         }
@@ -29213,16 +29213,16 @@ var require_webRoutes = __commonJS({
         const categoryDetails = safeJsonParse(post.category_details, []);
         const links = safeJsonParse(post.links, []);
         const author = authorRow || {
-          name: "Govt Exam Zone Editorial Team",
+          name: "Odisha Aspirants Editorial Team",
           slug: "editorial-team",
           role: "Senior Recruitment Analyst & Fact-Checker Lead",
           avatar_url: "/images/default-avatar.svg",
-          bio: "The official editorial and verification desk of Govt Exam Zone."
+          bio: "The official editorial and verification desk of Odisha Aspirants."
         };
         res.set("Cache-Control", "public, max-age=30, s-maxage=60, stale-while-revalidate=120");
         res.render("pages/detail", {
-          title: `${post.title} - Govt Exam Zone | WWW.GOVTEXAMZONE.COM`,
-          metaDescription: post.short_desc ? post.short_desc.replace(/\s+/g, " ").trim() : `${post.title}. Check notification details, eligibility criteria, application process, and official links at Govt Exam Zone.`,
+          title: `${post.title} - Odisha Aspirants | WWW.ODISHAASPIRANTS.COM`,
+          metaDescription: post.short_desc ? post.short_desc.replace(/\s+/g, " ").trim() : `${post.title}. Check notification details, eligibility criteria, application process, and official links at Odisha Aspirants.`,
           post,
           author,
           catInfo: CATEGORIES[post.category] || { name: "Notification", slug: post.category },
@@ -29256,8 +29256,8 @@ var require_webRoutes = __commonJS({
       `).bind(searchTerm, searchTerm, searchTerm).all();
         }
         res.render("pages/search", {
-          title: `Search: ${query || "Government Jobs 2026"} - Govt Exam Zone`,
-          metaDescription: `Search results for "${query || "Govt Jobs"}" across latest government vacancies, admit cards, and results at Govt Exam Zone.`,
+          title: `Search: ${query || "Government Jobs 2026"} - Odisha Aspirants`,
+          metaDescription: `Search results for "${query || "Govt Jobs"}" across latest government vacancies, admit cards, and results at Odisha Aspirants.`,
           query,
           posts
         });
@@ -29267,19 +29267,19 @@ var require_webRoutes = __commonJS({
     });
     router.get("/tools/age-calculator", (req, res) => {
       res.render("pages/age-calculator", {
-        title: "Government Exam Online Age Calculator 2026 : Exact Age as on Cutoff Date | Govt Exam Zone",
+        title: "Government Exam Online Age Calculator 2026 : Exact Age as on Cutoff Date | Odisha Aspirants",
         metaDescription: "Free online Government Exam Age Calculator 2026. Calculate exact age in years, months and days as on notification cutoff date for SSC CGL, UPSC, Railways, Police & Banking jobs."
       });
     });
     router.get("/tools/photo-resizer", (req, res) => {
       res.render("pages/photo-resizer", {
-        title: "Photo & Signature Resizer Dimensions Guide 2026 : SSC, UPSC, Railway | Govt Exam Zone",
+        title: "Photo & Signature Resizer Dimensions Guide 2026 : SSC, UPSC, Railway | Odisha Aspirants",
         metaDescription: "Official Photo and Signature dimension specifications guide 2026 for SSC, UPSC, UP Police, Railway RRB, and Banking exam online application forms."
       });
     });
     router.get("/tools/image-resizer", (req, res) => {
       res.render("pages/image-resizer", {
-        title: "Government Exam Photo & Signature Resizer with Name/Date on Photo Maker 2026 | Govt Exam Zone",
+        title: "Government Exam Photo & Signature Resizer with Name/Date on Photo Maker 2026 | Odisha Aspirants",
         metaDescription: "Free interactive Government Exam Photo & Signature Resizer with Name and Date on photo maker tool. Crop, compress to 20KB-50KB for Sarkari Exam forms."
       });
     });
@@ -29340,11 +29340,11 @@ var require_webRoutes = __commonJS({
         rss += `<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 `;
-        rss += `  <title>${res.locals.settings?.site_title || "Govt Exam Zone"} Latest Notifications</title>
+        rss += `  <title>${res.locals.settings?.site_title || "Odisha Aspirants"} Latest Notifications</title>
 `;
         rss += `  <link>${host}</link>
 `;
-        rss += `  <description>${res.locals.settings?.site_tagline || "Latest Govt Exam Zone Jobs, Online Form, Admit Cards & Results 2026"}</description>
+        rss += `  <description>${res.locals.settings?.site_tagline || "Latest Odisha Aspirants Jobs, Online Form, Admit Cards & Results 2026"}</description>
 `;
         rss += `  <language>en-in</language>
 `;
@@ -29402,8 +29402,8 @@ Sitemap: ${host}/sitemap.xml
       try {
         const teamMembers = await d1.prepare("SELECT * FROM authors WHERE is_active = 1 ORDER BY id ASC LIMIT 10").all();
         res.render("pages/about", {
-          title: "About Us, Mission & Editorial Standards - Govt Exam Zone | Trusted Sarkari Portal",
-          metaDescription: "Learn about Govt Exam Zone, our verified editorial research team, fact-checking policies, and mission to deliver authentic government job alerts.",
+          title: "About Us, Mission & Editorial Standards - Odisha Aspirants | Trusted Sarkari Portal",
+          metaDescription: "Learn about Odisha Aspirants, our verified editorial research team, fact-checking policies, and mission to deliver authentic government job alerts.",
           teamMembers
         });
       } catch (err) {
@@ -29413,45 +29413,45 @@ Sitemap: ${host}/sitemap.xml
     router.get("/about", (req, res) => res.redirect(301, "/about-us"));
     router.get("/faq", (req, res) => {
       res.render("pages/faq", {
-        title: "Frequently Asked Questions (FAQ) - Govt Exam Zone | Candidate Helpdesk",
-        metaDescription: "Find clear answers to frequently asked questions about Government Jobs 2026 notifications, online application process, admit cards, exam results, and verification at Govt Exam Zone."
+        title: "Frequently Asked Questions (FAQ) - Odisha Aspirants | Candidate Helpdesk",
+        metaDescription: "Find clear answers to frequently asked questions about Government Jobs 2026 notifications, online application process, admit cards, exam results, and verification at Odisha Aspirants."
       });
     });
     router.get("/faqs", (req, res) => res.redirect(301, "/faq"));
     router.get("/contact-us", (req, res) => {
       res.render("pages/contact", {
-        title: "Contact Us & Candidate Helpdesk - Govt Exam Zone",
+        title: "Contact Us & Candidate Helpdesk - Odisha Aspirants",
         pageTitle: "Contact Us",
-        metaDescription: "Contact Govt Exam Zone candidate support and helpdesk for queries, corrections, feedback, and official communication."
+        metaDescription: "Contact Odisha Aspirants candidate support and helpdesk for queries, corrections, feedback, and official communication."
       });
     });
     router.get("/contact", (req, res) => res.redirect(301, "/contact-us"));
     router.get("/privacy-policy", (req, res) => {
       res.render("pages/privacy-policy", {
-        title: "Privacy Policy - Govt Exam Zone | Candidate Data Protection",
-        metaDescription: "Official Privacy Policy of Govt Exam Zone explaining data collection, cookies, Google AdSense compliance, and candidate privacy."
+        title: "Privacy Policy - Odisha Aspirants | Candidate Data Protection",
+        metaDescription: "Official Privacy Policy of Odisha Aspirants explaining data collection, cookies, Google AdSense compliance, and candidate privacy."
       });
     });
     router.get("/terms-conditions", (req, res) => {
       res.render("pages/terms", {
-        title: "Terms and Conditions of Use - Govt Exam Zone",
-        metaDescription: "Review the official Terms and Conditions governing the use of Govt Exam Zone public educational information portal and services."
+        title: "Terms and Conditions of Use - Odisha Aspirants",
+        metaDescription: "Review the official Terms and Conditions governing the use of Odisha Aspirants public educational information portal and services."
       });
     });
     router.get("/terms", (req, res) => res.redirect(301, "/terms-conditions"));
     router.get("/disclaimer", (req, res) => {
       res.render("pages/disclaimer", {
-        title: "Disclaimer Policy - Govt Exam Zone Official Recruitment Notice",
-        metaDescription: "Official Disclaimer Policy of Govt Exam Zone regarding government exam updates, third-party official links, and candidate advisory."
+        title: "Disclaimer Policy - Odisha Aspirants Official Recruitment Notice",
+        metaDescription: "Official Disclaimer Policy of Odisha Aspirants regarding government exam updates, third-party official links, and candidate advisory."
       });
     });
     module.exports = router;
   }
 });
 
-// node_modules/multer/node_modules/media-typer/index.js
+// ../../root/workspace/node_modules/multer/node_modules/media-typer/index.js
 var require_media_typer2 = __commonJS({
-  "node_modules/multer/node_modules/media-typer/index.js"(exports) {
+  "../../root/workspace/node_modules/multer/node_modules/media-typer/index.js"(exports) {
     var paramRegExp = /; *([!#$%&'\*\+\-\.0-9A-Z\^_`a-z\|~]+) *= *("(?:[ !\u0023-\u005b\u005d-\u007e\u0080-\u00ff]|\\[\u0020-\u007e])*"|[!#$%&'\*\+\-\.0-9A-Z\^_`a-z\|~]+) */g;
     var textRegExp = /^[\u0020-\u007e\u0080-\u00ff]+$/;
     var tokenRegExp = /^[!#$%&'\*\+\-\.0-9A-Z\^_`a-z\|~]+$/;
@@ -29573,9 +29573,9 @@ var require_media_typer2 = __commonJS({
   }
 });
 
-// node_modules/multer/node_modules/mime-db/db.json
+// ../../root/workspace/node_modules/multer/node_modules/mime-db/db.json
 var require_db2 = __commonJS({
-  "node_modules/multer/node_modules/mime-db/db.json"(exports, module) {
+  "../../root/workspace/node_modules/multer/node_modules/mime-db/db.json"(exports, module) {
     module.exports = {
       "application/1d-interleaved-parityfec": {
         source: "iana"
@@ -38098,16 +38098,16 @@ var require_db2 = __commonJS({
   }
 });
 
-// node_modules/multer/node_modules/mime-db/index.js
+// ../../root/workspace/node_modules/multer/node_modules/mime-db/index.js
 var require_mime_db2 = __commonJS({
-  "node_modules/multer/node_modules/mime-db/index.js"(exports, module) {
+  "../../root/workspace/node_modules/multer/node_modules/mime-db/index.js"(exports, module) {
     module.exports = require_db2();
   }
 });
 
-// node_modules/multer/node_modules/mime-types/index.js
+// ../../root/workspace/node_modules/multer/node_modules/mime-types/index.js
 var require_mime_types2 = __commonJS({
-  "node_modules/multer/node_modules/mime-types/index.js"(exports) {
+  "../../root/workspace/node_modules/multer/node_modules/mime-types/index.js"(exports) {
     "use strict";
     var db = require_mime_db2();
     var extname = __require("node:path").extname;
@@ -38195,9 +38195,9 @@ var require_mime_types2 = __commonJS({
   }
 });
 
-// node_modules/multer/node_modules/type-is/index.js
+// ../../root/workspace/node_modules/multer/node_modules/type-is/index.js
 var require_type_is2 = __commonJS({
-  "node_modules/multer/node_modules/type-is/index.js"(exports, module) {
+  "../../root/workspace/node_modules/multer/node_modules/type-is/index.js"(exports, module) {
     "use strict";
     var typer = require_media_typer2();
     var mime = require_mime_types2();
@@ -38300,9 +38300,9 @@ var require_type_is2 = __commonJS({
   }
 });
 
-// node_modules/busboy/lib/utils.js
+// ../../root/workspace/node_modules/busboy/lib/utils.js
 var require_utils4 = __commonJS({
-  "node_modules/busboy/lib/utils.js"(exports, module) {
+  "../../root/workspace/node_modules/busboy/lib/utils.js"(exports, module) {
     "use strict";
     function parseContentType(str) {
       if (str.length === 0)
@@ -39987,9 +39987,9 @@ var require_utils4 = __commonJS({
   }
 });
 
-// node_modules/streamsearch/lib/sbmh.js
+// ../../root/workspace/node_modules/streamsearch/lib/sbmh.js
 var require_sbmh = __commonJS({
-  "node_modules/streamsearch/lib/sbmh.js"(exports, module) {
+  "../../root/workspace/node_modules/streamsearch/lib/sbmh.js"(exports, module) {
     "use strict";
     function memcmp(buf1, pos1, buf2, pos2, num) {
       for (let i = 0; i < num; ++i) {
@@ -40384,9 +40384,9 @@ var require_sbmh = __commonJS({
   }
 });
 
-// node_modules/busboy/lib/types/multipart.js
+// ../../root/workspace/node_modules/busboy/lib/types/multipart.js
 var require_multipart = __commonJS({
-  "node_modules/busboy/lib/types/multipart.js"(exports, module) {
+  "../../root/workspace/node_modules/busboy/lib/types/multipart.js"(exports, module) {
     "use strict";
     var { Readable: Readable2, Writable } = __require("node:stream");
     var StreamSearch = require_sbmh();
@@ -41431,9 +41431,9 @@ var require_multipart = __commonJS({
   }
 });
 
-// node_modules/busboy/lib/types/urlencoded.js
+// ../../root/workspace/node_modules/busboy/lib/types/urlencoded.js
 var require_urlencoded2 = __commonJS({
-  "node_modules/busboy/lib/types/urlencoded.js"(exports, module) {
+  "../../root/workspace/node_modules/busboy/lib/types/urlencoded.js"(exports, module) {
     "use strict";
     var { Writable } = __require("node:stream");
     var { getDecoder } = require_utils4();
@@ -41978,9 +41978,9 @@ var require_urlencoded2 = __commonJS({
   }
 });
 
-// node_modules/busboy/lib/index.js
+// ../../root/workspace/node_modules/busboy/lib/index.js
 var require_lib4 = __commonJS({
-  "node_modules/busboy/lib/index.js"(exports, module) {
+  "../../root/workspace/node_modules/busboy/lib/index.js"(exports, module) {
     "use strict";
     var { parseContentType } = require_utils4();
     function getInstance(cfg) {
@@ -42030,9 +42030,9 @@ var require_lib4 = __commonJS({
   }
 });
 
-// node_modules/append-field/lib/parse-path.js
+// ../../root/workspace/node_modules/append-field/lib/parse-path.js
 var require_parse_path = __commonJS({
-  "node_modules/append-field/lib/parse-path.js"(exports, module) {
+  "../../root/workspace/node_modules/append-field/lib/parse-path.js"(exports, module) {
     var reFirstKey = /^[^\[]*/;
     var reDigitPath = /^\[(\d+)\]/;
     var reNormalPath = /^\[([^\]]+)\]/;
@@ -42079,9 +42079,9 @@ var require_parse_path = __commonJS({
   }
 });
 
-// node_modules/append-field/lib/set-value.js
+// ../../root/workspace/node_modules/append-field/lib/set-value.js
 var require_set_value = __commonJS({
-  "node_modules/append-field/lib/set-value.js"(exports, module) {
+  "../../root/workspace/node_modules/append-field/lib/set-value.js"(exports, module) {
     function valueType(value) {
       if (value === void 0) return "undefined";
       if (Array.isArray(value)) return "array";
@@ -42142,9 +42142,9 @@ var require_set_value = __commonJS({
   }
 });
 
-// node_modules/append-field/index.js
+// ../../root/workspace/node_modules/append-field/index.js
 var require_append_field = __commonJS({
-  "node_modules/append-field/index.js"(exports, module) {
+  "../../root/workspace/node_modules/append-field/index.js"(exports, module) {
     var parsePath = require_parse_path();
     var setValue = require_set_value();
     function appendField(store, key, value) {
@@ -42157,9 +42157,9 @@ var require_append_field = __commonJS({
   }
 });
 
-// node_modules/multer/lib/counter.js
+// ../../root/workspace/node_modules/multer/lib/counter.js
 var require_counter = __commonJS({
-  "node_modules/multer/lib/counter.js"(exports, module) {
+  "../../root/workspace/node_modules/multer/lib/counter.js"(exports, module) {
     var EventEmitter2 = __require("node:events").EventEmitter;
     function Counter() {
       EventEmitter2.call(this);
@@ -42183,9 +42183,9 @@ var require_counter = __commonJS({
   }
 });
 
-// node_modules/multer/lib/multer-error.js
+// ../../root/workspace/node_modules/multer/lib/multer-error.js
 var require_multer_error = __commonJS({
-  "node_modules/multer/lib/multer-error.js"(exports, module) {
+  "../../root/workspace/node_modules/multer/lib/multer-error.js"(exports, module) {
     var util = __require("node:util");
     var errorMessages = {
       LIMIT_PART_COUNT: "Too many parts",
@@ -42214,9 +42214,9 @@ var require_multer_error = __commonJS({
   }
 });
 
-// node_modules/multer/lib/file-appender.js
+// ../../root/workspace/node_modules/multer/lib/file-appender.js
 var require_file_appender = __commonJS({
-  "node_modules/multer/lib/file-appender.js"(exports, module) {
+  "../../root/workspace/node_modules/multer/lib/file-appender.js"(exports, module) {
     function arrayRemove(arr, item) {
       var idx = arr.indexOf(item);
       if (~idx) arr.splice(idx, 1);
@@ -42291,9 +42291,9 @@ var require_file_appender = __commonJS({
   }
 });
 
-// node_modules/multer/lib/remove-uploaded-files.js
+// ../../root/workspace/node_modules/multer/lib/remove-uploaded-files.js
 var require_remove_uploaded_files = __commonJS({
-  "node_modules/multer/lib/remove-uploaded-files.js"(exports, module) {
+  "../../root/workspace/node_modules/multer/lib/remove-uploaded-files.js"(exports, module) {
     function removeUploadedFiles(uploadedFiles, remove, cb) {
       var length = uploadedFiles.length;
       var errors = [];
@@ -42321,9 +42321,9 @@ var require_remove_uploaded_files = __commonJS({
   }
 });
 
-// node_modules/multer/lib/validate-limits.js
+// ../../root/workspace/node_modules/multer/lib/validate-limits.js
 var require_validate_limits = __commonJS({
-  "node_modules/multer/lib/validate-limits.js"(exports, module) {
+  "../../root/workspace/node_modules/multer/lib/validate-limits.js"(exports, module) {
     function validateLimits(limits) {
       Object.keys(limits).forEach(function(key) {
         var value = limits[key];
@@ -42336,9 +42336,9 @@ var require_validate_limits = __commonJS({
   }
 });
 
-// node_modules/multer/lib/make-middleware.js
+// ../../root/workspace/node_modules/multer/lib/make-middleware.js
 var require_make_middleware = __commonJS({
-  "node_modules/multer/lib/make-middleware.js"(exports, module) {
+  "../../root/workspace/node_modules/multer/lib/make-middleware.js"(exports, module) {
     var is = require_type_is2();
     var AsyncResource = __require("node:async_hooks").AsyncResource;
     var Busboy = require_lib4();
@@ -42661,9 +42661,9 @@ var require_make_middleware = __commonJS({
   }
 });
 
-// node_modules/multer/storage/disk.js
+// ../../root/workspace/node_modules/multer/storage/disk.js
 var require_disk = __commonJS({
-  "node_modules/multer/storage/disk.js"(exports, module) {
+  "../../root/workspace/node_modules/multer/storage/disk.js"(exports, module) {
     var fs = __require("node:fs");
     var os = __require("node:os");
     var path = __require("node:path");
@@ -42775,9 +42775,9 @@ var require_disk = __commonJS({
   }
 });
 
-// node_modules/multer/storage/memory.js
+// ../../root/workspace/node_modules/multer/storage/memory.js
 var require_memory = __commonJS({
-  "node_modules/multer/storage/memory.js"(exports, module) {
+  "../../root/workspace/node_modules/multer/storage/memory.js"(exports, module) {
     function MemoryStorage(opts) {
     }
     MemoryStorage.prototype._handleFile = function _handleFile(req, file, cb) {
@@ -42803,9 +42803,9 @@ var require_memory = __commonJS({
   }
 });
 
-// node_modules/multer/index.js
+// ../../root/workspace/node_modules/multer/index.js
 var require_multer = __commonJS({
-  "node_modules/multer/index.js"(exports, module) {
+  "../../root/workspace/node_modules/multer/index.js"(exports, module) {
     var makeMiddleware = require_make_middleware();
     var diskStorage = require_disk();
     var memoryStorage = require_memory();
@@ -42920,9 +42920,9 @@ var require_multer = __commonJS({
   }
 });
 
-// node_modules/@smithy/types/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/types/dist-cjs/index.js
 var require_dist_cjs = __commonJS({
-  "node_modules/@smithy/types/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/types/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -43040,9 +43040,9 @@ var require_dist_cjs = __commonJS({
   }
 });
 
-// node_modules/@smithy/protocol-http/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/protocol-http/dist-cjs/index.js
 var require_dist_cjs2 = __commonJS({
-  "node_modules/@smithy/protocol-http/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/protocol-http/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -43278,9 +43278,9 @@ var require_dist_cjs2 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/middleware-expect-continue/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/middleware-expect-continue/dist-cjs/index.js
 var require_dist_cjs3 = __commonJS({
-  "node_modules/@aws-sdk/middleware-expect-continue/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/middleware-expect-continue/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -43341,9 +43341,9 @@ var require_dist_cjs3 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/middleware-host-header/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/middleware-host-header/dist-cjs/index.js
 var require_dist_cjs4 = __commonJS({
-  "node_modules/@aws-sdk/middleware-host-header/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/middleware-host-header/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -43407,9 +43407,9 @@ var require_dist_cjs4 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js
 var require_dist_cjs5 = __commonJS({
-  "node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -43481,9 +43481,9 @@ var require_dist_cjs5 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/middleware-recursion-detection/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/middleware-recursion-detection/dist-cjs/index.js
 var require_dist_cjs6 = __commonJS({
-  "node_modules/@aws-sdk/middleware-recursion-detection/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/middleware-recursion-detection/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -43545,9 +43545,9 @@ var require_dist_cjs6 = __commonJS({
   }
 });
 
-// node_modules/@smithy/middleware-stack/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/middleware-stack/dist-cjs/index.js
 var require_dist_cjs7 = __commonJS({
-  "node_modules/@smithy/middleware-stack/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/middleware-stack/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -43862,9 +43862,9 @@ var require_dist_cjs7 = __commonJS({
   }
 });
 
-// node_modules/@smithy/is-array-buffer/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/is-array-buffer/dist-cjs/index.js
 var require_dist_cjs8 = __commonJS({
-  "node_modules/@smithy/is-array-buffer/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/is-array-buffer/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -43892,9 +43892,9 @@ var require_dist_cjs8 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-buffer-from/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-buffer-from/dist-cjs/index.js
 var require_dist_cjs9 = __commonJS({
-  "node_modules/@smithy/util-buffer-from/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-buffer-from/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -43936,9 +43936,9 @@ var require_dist_cjs9 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-base64/dist-cjs/fromBase64.js
+// ../../root/workspace/node_modules/@smithy/util-base64/dist-cjs/fromBase64.js
 var require_fromBase64 = __commonJS({
-  "node_modules/@smithy/util-base64/dist-cjs/fromBase64.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-base64/dist-cjs/fromBase64.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.fromBase64 = void 0;
@@ -43958,9 +43958,9 @@ var require_fromBase64 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-utf8/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-utf8/dist-cjs/index.js
 var require_dist_cjs10 = __commonJS({
-  "node_modules/@smithy/util-utf8/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-utf8/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -44012,9 +44012,9 @@ var require_dist_cjs10 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-base64/dist-cjs/toBase64.js
+// ../../root/workspace/node_modules/@smithy/util-base64/dist-cjs/toBase64.js
 var require_toBase64 = __commonJS({
-  "node_modules/@smithy/util-base64/dist-cjs/toBase64.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-base64/dist-cjs/toBase64.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.toBase64 = void 0;
@@ -44036,9 +44036,9 @@ var require_toBase64 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-base64/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-base64/dist-cjs/index.js
 var require_dist_cjs11 = __commonJS({
-  "node_modules/@smithy/util-base64/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-base64/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -44060,9 +44060,9 @@ var require_dist_cjs11 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/getAwsChunkedEncodingStream.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/getAwsChunkedEncodingStream.js
 var require_getAwsChunkedEncodingStream = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/getAwsChunkedEncodingStream.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/getAwsChunkedEncodingStream.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getAwsChunkedEncodingStream = void 0;
@@ -44098,9 +44098,9 @@ var require_getAwsChunkedEncodingStream = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-uri-escape/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-uri-escape/dist-cjs/index.js
 var require_dist_cjs12 = __commonJS({
-  "node_modules/@smithy/util-uri-escape/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-uri-escape/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -44134,9 +44134,9 @@ var require_dist_cjs12 = __commonJS({
   }
 });
 
-// node_modules/@smithy/querystring-builder/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/querystring-builder/dist-cjs/index.js
 var require_dist_cjs13 = __commonJS({
-  "node_modules/@smithy/querystring-builder/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/querystring-builder/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -44184,9 +44184,9 @@ var require_dist_cjs13 = __commonJS({
   }
 });
 
-// node_modules/@smithy/node-http-handler/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/node-http-handler/dist-cjs/index.js
 var require_dist_cjs14 = __commonJS({
-  "node_modules/@smithy/node-http-handler/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/node-http-handler/dist-cjs/index.js"(exports, module) {
     var __create2 = Object.create;
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -44947,9 +44947,9 @@ or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler conf
   }
 });
 
-// node_modules/@smithy/util-stream/node_modules/@smithy/fetch-http-handler/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-stream/node_modules/@smithy/fetch-http-handler/dist-cjs/index.js
 var require_dist_cjs15 = __commonJS({
-  "node_modules/@smithy/util-stream/node_modules/@smithy/fetch-http-handler/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-stream/node_modules/@smithy/fetch-http-handler/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -45198,9 +45198,9 @@ var require_dist_cjs15 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-hex-encoding/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-hex-encoding/dist-cjs/index.js
 var require_dist_cjs16 = __commonJS({
-  "node_modules/@smithy/util-hex-encoding/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-hex-encoding/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -45262,9 +45262,9 @@ var require_dist_cjs16 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/stream-type-check.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/stream-type-check.js
 var require_stream_type_check = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/stream-type-check.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/stream-type-check.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isBlob = exports.isReadableStream = void 0;
@@ -45281,9 +45281,9 @@ var require_stream_type_check = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/sdk-stream-mixin.browser.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/sdk-stream-mixin.browser.js
 var require_sdk_stream_mixin_browser = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/sdk-stream-mixin.browser.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/sdk-stream-mixin.browser.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.sdkStreamMixin = void 0;
@@ -45349,9 +45349,9 @@ var require_sdk_stream_mixin_browser = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/sdk-stream-mixin.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/sdk-stream-mixin.js
 var require_sdk_stream_mixin = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/sdk-stream-mixin.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/sdk-stream-mixin.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.sdkStreamMixin = void 0;
@@ -45408,9 +45408,9 @@ var require_sdk_stream_mixin = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/splitStream.browser.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/splitStream.browser.js
 var require_splitStream_browser = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/splitStream.browser.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/splitStream.browser.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.splitStream = void 0;
@@ -45425,9 +45425,9 @@ var require_splitStream_browser = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/splitStream.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/splitStream.js
 var require_splitStream = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/splitStream.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/splitStream.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.splitStream = void 0;
@@ -45448,9 +45448,9 @@ var require_splitStream = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/headStream.browser.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/headStream.browser.js
 var require_headStream_browser = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/headStream.browser.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/headStream.browser.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.headStream = void 0;
@@ -45489,9 +45489,9 @@ var require_headStream_browser = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/headStream.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/headStream.js
 var require_headStream = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/headStream.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/headStream.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.headStream = void 0;
@@ -45541,9 +45541,9 @@ var require_headStream = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/checksum/ChecksumStream.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/checksum/ChecksumStream.js
 var require_ChecksumStream = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/checksum/ChecksumStream.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/checksum/ChecksumStream.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ChecksumStream = void 0;
@@ -45593,9 +45593,9 @@ var require_ChecksumStream = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/checksum/ChecksumStream.browser.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/checksum/ChecksumStream.browser.js
 var require_ChecksumStream_browser = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/checksum/ChecksumStream.browser.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/checksum/ChecksumStream.browser.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ChecksumStream = void 0;
@@ -45607,9 +45607,9 @@ var require_ChecksumStream_browser = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/checksum/createChecksumStream.browser.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/checksum/createChecksumStream.browser.js
 var require_createChecksumStream_browser = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/checksum/createChecksumStream.browser.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/checksum/createChecksumStream.browser.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.createChecksumStream = void 0;
@@ -45652,9 +45652,9 @@ var require_createChecksumStream_browser = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/checksum/createChecksumStream.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/checksum/createChecksumStream.js
 var require_createChecksumStream = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/checksum/createChecksumStream.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/checksum/createChecksumStream.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.createChecksumStream = void 0;
@@ -45671,9 +45671,9 @@ var require_createChecksumStream = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-stream/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/index.js
 var require_dist_cjs17 = __commonJS({
-  "node_modules/@smithy/util-stream/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-stream/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -45755,10 +45755,10 @@ var require_dist_cjs17 = __commonJS({
   }
 });
 
-// node_modules/@smithy/core/dist-es/submodules/protocols/collect-stream-body.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/submodules/protocols/collect-stream-body.js
 var import_util_stream, collectBody2;
 var init_collect_stream_body = __esm({
-  "node_modules/@smithy/core/dist-es/submodules/protocols/collect-stream-body.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/submodules/protocols/collect-stream-body.js"() {
     import_util_stream = __toESM(require_dist_cjs17());
     collectBody2 = async (streamBody = new Uint8Array(), context) => {
       if (streamBody instanceof Uint8Array) {
@@ -45773,21 +45773,21 @@ var init_collect_stream_body = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/submodules/protocols/extended-encode-uri-component.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/submodules/protocols/extended-encode-uri-component.js
 function extendedEncodeURIComponent2(str) {
   return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
     return "%" + c.charCodeAt(0).toString(16).toUpperCase();
   });
 }
 var init_extended_encode_uri_component = __esm({
-  "node_modules/@smithy/core/dist-es/submodules/protocols/extended-encode-uri-component.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/submodules/protocols/extended-encode-uri-component.js"() {
   }
 });
 
-// node_modules/@smithy/core/dist-es/submodules/protocols/resolve-path.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/submodules/protocols/resolve-path.js
 var resolvedPath2;
 var init_resolve_path = __esm({
-  "node_modules/@smithy/core/dist-es/submodules/protocols/resolve-path.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/submodules/protocols/resolve-path.js"() {
     init_extended_encode_uri_component();
     resolvedPath2 = (resolvedPath3, input, memberName, labelValueProvider, uriLabel, isGreedyLabel) => {
       if (input != null && input[memberName] !== void 0) {
@@ -45804,13 +45804,13 @@ var init_resolve_path = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/submodules/protocols/requestBuilder.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/submodules/protocols/requestBuilder.js
 function requestBuilder(input, context) {
   return new RequestBuilder(input, context);
 }
 var import_protocol_http, RequestBuilder;
 var init_requestBuilder = __esm({
-  "node_modules/@smithy/core/dist-es/submodules/protocols/requestBuilder.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/submodules/protocols/requestBuilder.js"() {
     import_protocol_http = __toESM(require_dist_cjs2());
     init_resolve_path();
     RequestBuilder = class {
@@ -45878,7 +45878,7 @@ var init_requestBuilder = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/submodules/protocols/index.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/submodules/protocols/index.js
 var protocols_exports = {};
 __export(protocols_exports, {
   RequestBuilder: () => RequestBuilder,
@@ -45888,7 +45888,7 @@ __export(protocols_exports, {
   resolvedPath: () => resolvedPath2
 });
 var init_protocols = __esm({
-  "node_modules/@smithy/core/dist-es/submodules/protocols/index.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/submodules/protocols/index.js"() {
     init_collect_stream_body();
     init_extended_encode_uri_component();
     init_requestBuilder();
@@ -45896,9 +45896,9 @@ var init_protocols = __esm({
   }
 });
 
-// node_modules/@smithy/smithy-client/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/smithy-client/dist-cjs/index.js
 var require_dist_cjs18 = __commonJS({
-  "node_modules/@smithy/smithy-client/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/smithy-client/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -47073,9 +47073,9 @@ var require_dist_cjs18 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-middleware/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-middleware/dist-cjs/index.js
 var require_dist_cjs19 = __commonJS({
-  "node_modules/@smithy/util-middleware/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-middleware/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -47111,9 +47111,9 @@ var require_dist_cjs19 = __commonJS({
   }
 });
 
-// node_modules/@smithy/signature-v4/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/signature-v4/dist-cjs/index.js
 var require_dist_cjs20 = __commonJS({
-  "node_modules/@smithy/signature-v4/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/signature-v4/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -47667,9 +47667,9 @@ ${(0, import_util_hex_encoding.toHex)(hashedRequest)}`;
   }
 });
 
-// node_modules/@smithy/util-config-provider/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-config-provider/dist-cjs/index.js
 var require_dist_cjs21 = __commonJS({
-  "node_modules/@smithy/util-config-provider/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-config-provider/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -47721,16 +47721,16 @@ var require_dist_cjs21 = __commonJS({
   }
 });
 
-// node_modules/@smithy/core/dist-es/getSmithyContext.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/getSmithyContext.js
 var import_types, getSmithyContext;
 var init_getSmithyContext = __esm({
-  "node_modules/@smithy/core/dist-es/getSmithyContext.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/getSmithyContext.js"() {
     import_types = __toESM(require_dist_cjs());
     getSmithyContext = (context) => context[import_types.SMITHY_CONTEXT_KEY] || (context[import_types.SMITHY_CONTEXT_KEY] = {});
   }
 });
 
-// node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/httpAuthSchemeMiddleware.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/httpAuthSchemeMiddleware.js
 function convertHttpAuthSchemesToMap(httpAuthSchemes) {
   const map = /* @__PURE__ */ new Map();
   for (const scheme of httpAuthSchemes) {
@@ -47740,7 +47740,7 @@ function convertHttpAuthSchemesToMap(httpAuthSchemes) {
 }
 var import_types2, import_util_middleware, httpAuthSchemeMiddleware;
 var init_httpAuthSchemeMiddleware = __esm({
-  "node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/httpAuthSchemeMiddleware.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/httpAuthSchemeMiddleware.js"() {
     import_types2 = __toESM(require_dist_cjs());
     import_util_middleware = __toESM(require_dist_cjs19());
     httpAuthSchemeMiddleware = (config, mwOptions) => (next, context) => async (args) => {
@@ -47777,10 +47777,10 @@ var init_httpAuthSchemeMiddleware = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/getHttpAuthSchemeEndpointRuleSetPlugin.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/getHttpAuthSchemeEndpointRuleSetPlugin.js
 var httpAuthSchemeEndpointRuleSetMiddlewareOptions, getHttpAuthSchemeEndpointRuleSetPlugin;
 var init_getHttpAuthSchemeEndpointRuleSetPlugin = __esm({
-  "node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/getHttpAuthSchemeEndpointRuleSetPlugin.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/getHttpAuthSchemeEndpointRuleSetPlugin.js"() {
     init_httpAuthSchemeMiddleware();
     httpAuthSchemeEndpointRuleSetMiddlewareOptions = {
       step: "serialize",
@@ -47801,9 +47801,9 @@ var init_getHttpAuthSchemeEndpointRuleSetPlugin = __esm({
   }
 });
 
-// node_modules/@smithy/middleware-serde/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/middleware-serde/dist-cjs/index.js
 var require_dist_cjs22 = __commonJS({
-  "node_modules/@smithy/middleware-serde/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/middleware-serde/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -47891,10 +47891,10 @@ var require_dist_cjs22 = __commonJS({
   }
 });
 
-// node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/getHttpAuthSchemePlugin.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/getHttpAuthSchemePlugin.js
 var import_middleware_serde, httpAuthSchemeMiddlewareOptions, getHttpAuthSchemePlugin;
 var init_getHttpAuthSchemePlugin = __esm({
-  "node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/getHttpAuthSchemePlugin.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/getHttpAuthSchemePlugin.js"() {
     import_middleware_serde = __toESM(require_dist_cjs22());
     init_httpAuthSchemeMiddleware();
     httpAuthSchemeMiddlewareOptions = {
@@ -47916,19 +47916,19 @@ var init_getHttpAuthSchemePlugin = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/index.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/index.js
 var init_middleware_http_auth_scheme = __esm({
-  "node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/index.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-auth-scheme/index.js"() {
     init_httpAuthSchemeMiddleware();
     init_getHttpAuthSchemeEndpointRuleSetPlugin();
     init_getHttpAuthSchemePlugin();
   }
 });
 
-// node_modules/@smithy/core/dist-es/middleware-http-signing/httpSigningMiddleware.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-signing/httpSigningMiddleware.js
 var import_protocol_http2, import_types3, import_util_middleware2, defaultErrorHandler, defaultSuccessHandler, httpSigningMiddleware;
 var init_httpSigningMiddleware = __esm({
-  "node_modules/@smithy/core/dist-es/middleware-http-signing/httpSigningMiddleware.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-signing/httpSigningMiddleware.js"() {
     import_protocol_http2 = __toESM(require_dist_cjs2());
     import_types3 = __toESM(require_dist_cjs());
     import_util_middleware2 = __toESM(require_dist_cjs19());
@@ -47957,10 +47957,10 @@ var init_httpSigningMiddleware = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/middleware-http-signing/getHttpSigningMiddleware.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-signing/getHttpSigningMiddleware.js
 var httpSigningMiddlewareOptions, getHttpSigningPlugin;
 var init_getHttpSigningMiddleware = __esm({
-  "node_modules/@smithy/core/dist-es/middleware-http-signing/getHttpSigningMiddleware.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-signing/getHttpSigningMiddleware.js"() {
     init_httpSigningMiddleware();
     httpSigningMiddlewareOptions = {
       step: "finalizeRequest",
@@ -47979,18 +47979,18 @@ var init_getHttpSigningMiddleware = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/middleware-http-signing/index.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-signing/index.js
 var init_middleware_http_signing = __esm({
-  "node_modules/@smithy/core/dist-es/middleware-http-signing/index.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/middleware-http-signing/index.js"() {
     init_httpSigningMiddleware();
     init_getHttpSigningMiddleware();
   }
 });
 
-// node_modules/@smithy/core/dist-es/normalizeProvider.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/normalizeProvider.js
 var normalizeProvider;
 var init_normalizeProvider = __esm({
-  "node_modules/@smithy/core/dist-es/normalizeProvider.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/normalizeProvider.js"() {
     normalizeProvider = (input) => {
       if (typeof input === "function")
         return input;
@@ -48000,7 +48000,7 @@ var init_normalizeProvider = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/pagination/createPaginator.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/pagination/createPaginator.js
 function createPaginator(ClientCtor, CommandCtor, inputTokenName, outputTokenName, pageSizeTokenName) {
   return async function* paginateOperation(config, input, ...additionalArguments) {
     let token = config.startingToken || void 0;
@@ -48026,7 +48026,7 @@ function createPaginator(ClientCtor, CommandCtor, inputTokenName, outputTokenNam
 }
 var makePagedClientRequest, get;
 var init_createPaginator = __esm({
-  "node_modules/@smithy/core/dist-es/pagination/createPaginator.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/pagination/createPaginator.js"() {
     makePagedClientRequest = async (CommandCtor, client, input, ...args) => {
       return await client.send(new CommandCtor(input), ...args);
     };
@@ -48044,14 +48044,14 @@ var init_createPaginator = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/protocols/requestBuilder.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/protocols/requestBuilder.js
 var init_requestBuilder2 = __esm({
-  "node_modules/@smithy/core/dist-es/protocols/requestBuilder.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/protocols/requestBuilder.js"() {
     init_protocols();
   }
 });
 
-// node_modules/@smithy/core/dist-es/setFeature.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/setFeature.js
 function setFeature(context, feature, value) {
   if (!context.__smithy_context) {
     context.__smithy_context = {
@@ -48063,14 +48063,14 @@ function setFeature(context, feature, value) {
   context.__smithy_context.features[feature] = value;
 }
 var init_setFeature = __esm({
-  "node_modules/@smithy/core/dist-es/setFeature.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/setFeature.js"() {
   }
 });
 
-// node_modules/@smithy/core/dist-es/util-identity-and-auth/DefaultIdentityProviderConfig.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/DefaultIdentityProviderConfig.js
 var DefaultIdentityProviderConfig;
 var init_DefaultIdentityProviderConfig = __esm({
-  "node_modules/@smithy/core/dist-es/util-identity-and-auth/DefaultIdentityProviderConfig.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/DefaultIdentityProviderConfig.js"() {
     DefaultIdentityProviderConfig = class {
       constructor(config) {
         this.authSchemes = /* @__PURE__ */ new Map();
@@ -48087,10 +48087,10 @@ var init_DefaultIdentityProviderConfig = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/httpApiKeyAuth.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/httpApiKeyAuth.js
 var import_protocol_http3, import_types4, HttpApiKeyAuthSigner;
 var init_httpApiKeyAuth = __esm({
-  "node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/httpApiKeyAuth.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/httpApiKeyAuth.js"() {
     import_protocol_http3 = __toESM(require_dist_cjs2());
     import_types4 = __toESM(require_dist_cjs());
     HttpApiKeyAuthSigner = class {
@@ -48121,10 +48121,10 @@ var init_httpApiKeyAuth = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/httpBearerAuth.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/httpBearerAuth.js
 var import_protocol_http4, HttpBearerAuthSigner;
 var init_httpBearerAuth = __esm({
-  "node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/httpBearerAuth.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/httpBearerAuth.js"() {
     import_protocol_http4 = __toESM(require_dist_cjs2());
     HttpBearerAuthSigner = class {
       async sign(httpRequest, identity, signingProperties) {
@@ -48139,10 +48139,10 @@ var init_httpBearerAuth = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/noAuth.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/noAuth.js
 var NoAuthSigner;
 var init_noAuth = __esm({
-  "node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/noAuth.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/noAuth.js"() {
     NoAuthSigner = class {
       async sign(httpRequest, identity, signingProperties) {
         return httpRequest;
@@ -48151,19 +48151,19 @@ var init_noAuth = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/index.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/index.js
 var init_httpAuthSchemes = __esm({
-  "node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/index.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/httpAuthSchemes/index.js"() {
     init_httpApiKeyAuth();
     init_httpBearerAuth();
     init_noAuth();
   }
 });
 
-// node_modules/@smithy/core/dist-es/util-identity-and-auth/memoizeIdentityProvider.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/memoizeIdentityProvider.js
 var createIsIdentityExpiredFunction, EXPIRATION_MS, isIdentityExpired, doesIdentityRequireRefresh, memoizeIdentityProvider;
 var init_memoizeIdentityProvider = __esm({
-  "node_modules/@smithy/core/dist-es/util-identity-and-auth/memoizeIdentityProvider.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/memoizeIdentityProvider.js"() {
     createIsIdentityExpiredFunction = (expirationMs) => (identity) => doesIdentityRequireRefresh(identity) && identity.expiration.getTime() - Date.now() < expirationMs;
     EXPIRATION_MS = 3e5;
     isIdentityExpired = createIsIdentityExpiredFunction(EXPIRATION_MS);
@@ -48219,16 +48219,16 @@ var init_memoizeIdentityProvider = __esm({
   }
 });
 
-// node_modules/@smithy/core/dist-es/util-identity-and-auth/index.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/index.js
 var init_util_identity_and_auth = __esm({
-  "node_modules/@smithy/core/dist-es/util-identity-and-auth/index.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/util-identity-and-auth/index.js"() {
     init_DefaultIdentityProviderConfig();
     init_httpAuthSchemes();
     init_memoizeIdentityProvider();
   }
 });
 
-// node_modules/@smithy/core/dist-es/index.js
+// ../../root/workspace/node_modules/@smithy/core/dist-es/index.js
 var dist_es_exports = {};
 __export(dist_es_exports, {
   DefaultIdentityProviderConfig: () => DefaultIdentityProviderConfig,
@@ -48255,7 +48255,7 @@ __export(dist_es_exports, {
   setFeature: () => setFeature
 });
 var init_dist_es = __esm({
-  "node_modules/@smithy/core/dist-es/index.js"() {
+  "../../root/workspace/node_modules/@smithy/core/dist-es/index.js"() {
     init_getSmithyContext();
     init_middleware_http_auth_scheme();
     init_middleware_http_signing();
@@ -48267,9 +48267,9 @@ var init_dist_es = __esm({
   }
 });
 
-// node_modules/@aws-sdk/util-arn-parser/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/util-arn-parser/dist-cjs/index.js
 var require_dist_cjs23 = __commonJS({
-  "node_modules/@aws-sdk/util-arn-parser/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/util-arn-parser/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -48327,9 +48327,9 @@ var require_dist_cjs23 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js
 var require_dist_cjs24 = __commonJS({
-  "node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -48943,9 +48943,9 @@ var require_dist_cjs24 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-endpoints/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-endpoints/dist-cjs/index.js
 var require_dist_cjs25 = __commonJS({
-  "node_modules/@smithy/util-endpoints/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-endpoints/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -49418,9 +49418,9 @@ var require_dist_cjs25 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/util-endpoints/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/util-endpoints/dist-cjs/index.js
 var require_dist_cjs26 = __commonJS({
-  "node_modules/@aws-sdk/util-endpoints/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/util-endpoints/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -49787,9 +49787,9 @@ var require_dist_cjs26 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/middleware-user-agent/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/middleware-user-agent/dist-cjs/index.js
 var require_dist_cjs27 = __commonJS({
-  "node_modules/@aws-sdk/middleware-user-agent/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/middleware-user-agent/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -49897,9 +49897,9 @@ var require_dist_cjs27 = __commonJS({
   }
 });
 
-// node_modules/@smithy/config-resolver/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/config-resolver/dist-cjs/index.js
 var require_dist_cjs28 = __commonJS({
-  "node_modules/@smithy/config-resolver/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/config-resolver/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -50083,9 +50083,9 @@ var require_dist_cjs28 = __commonJS({
   }
 });
 
-// node_modules/@smithy/eventstream-serde-config-resolver/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/eventstream-serde-config-resolver/dist-cjs/index.js
 var require_dist_cjs29 = __commonJS({
-  "node_modules/@smithy/eventstream-serde-config-resolver/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/eventstream-serde-config-resolver/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -50116,9 +50116,9 @@ var require_dist_cjs29 = __commonJS({
   }
 });
 
-// node_modules/@smithy/middleware-content-length/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/middleware-content-length/dist-cjs/index.js
 var require_dist_cjs30 = __commonJS({
-  "node_modules/@smithy/middleware-content-length/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/middleware-content-length/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -50183,7 +50183,7 @@ var require_dist_cjs30 = __commonJS({
   }
 });
 
-// node_modules/uuid/dist/esm-node/rng.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/rng.js
 import crypto2 from "node:crypto";
 function rng() {
   if (poolPtr > rnds8Pool.length - 16) {
@@ -50194,33 +50194,33 @@ function rng() {
 }
 var rnds8Pool, poolPtr;
 var init_rng = __esm({
-  "node_modules/uuid/dist/esm-node/rng.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/rng.js"() {
     rnds8Pool = new Uint8Array(256);
     poolPtr = rnds8Pool.length;
   }
 });
 
-// node_modules/uuid/dist/esm-node/regex.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/regex.js
 var regex_default;
 var init_regex = __esm({
-  "node_modules/uuid/dist/esm-node/regex.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/regex.js"() {
     regex_default = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
   }
 });
 
-// node_modules/uuid/dist/esm-node/validate.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/validate.js
 function validate(uuid) {
   return typeof uuid === "string" && regex_default.test(uuid);
 }
 var validate_default;
 var init_validate = __esm({
-  "node_modules/uuid/dist/esm-node/validate.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/validate.js"() {
     init_regex();
     validate_default = validate;
   }
 });
 
-// node_modules/uuid/dist/esm-node/stringify.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/stringify.js
 function unsafeStringify(arr, offset = 0) {
   return byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + "-" + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + "-" + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + "-" + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + "-" + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]];
 }
@@ -50233,7 +50233,7 @@ function stringify(arr, offset = 0) {
 }
 var byteToHex, stringify_default;
 var init_stringify = __esm({
-  "node_modules/uuid/dist/esm-node/stringify.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/stringify.js"() {
     init_validate();
     byteToHex = [];
     for (let i = 0; i < 256; ++i) {
@@ -50243,7 +50243,7 @@ var init_stringify = __esm({
   }
 });
 
-// node_modules/uuid/dist/esm-node/v1.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/v1.js
 function v1(options, buf, offset) {
   let i = buf && offset || 0;
   const b = buf || new Array(16);
@@ -50294,7 +50294,7 @@ function v1(options, buf, offset) {
 }
 var _nodeId, _clockseq, _lastMSecs, _lastNSecs, v1_default;
 var init_v1 = __esm({
-  "node_modules/uuid/dist/esm-node/v1.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/v1.js"() {
     init_rng();
     init_stringify();
     _lastMSecs = 0;
@@ -50303,7 +50303,7 @@ var init_v1 = __esm({
   }
 });
 
-// node_modules/uuid/dist/esm-node/parse.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/parse.js
 function parse(uuid) {
   if (!validate_default(uuid)) {
     throw TypeError("Invalid UUID");
@@ -50330,13 +50330,13 @@ function parse(uuid) {
 }
 var parse_default;
 var init_parse = __esm({
-  "node_modules/uuid/dist/esm-node/parse.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/parse.js"() {
     init_validate();
     parse_default = parse;
   }
 });
 
-// node_modules/uuid/dist/esm-node/v35.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/v35.js
 function stringToBytes(str) {
   str = unescape(encodeURIComponent(str));
   const bytes = [];
@@ -50382,7 +50382,7 @@ function v35(name, version2, hashfunc) {
 }
 var DNS, URL2;
 var init_v35 = __esm({
-  "node_modules/uuid/dist/esm-node/v35.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/v35.js"() {
     init_stringify();
     init_parse();
     DNS = "6ba7b810-9dad-11d1-80b4-00c04fd430c8";
@@ -50390,7 +50390,7 @@ var init_v35 = __esm({
   }
 });
 
-// node_modules/uuid/dist/esm-node/md5.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/md5.js
 import crypto3 from "node:crypto";
 function md5(bytes) {
   if (Array.isArray(bytes)) {
@@ -50402,15 +50402,15 @@ function md5(bytes) {
 }
 var md5_default;
 var init_md5 = __esm({
-  "node_modules/uuid/dist/esm-node/md5.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/md5.js"() {
     md5_default = md5;
   }
 });
 
-// node_modules/uuid/dist/esm-node/v3.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/v3.js
 var v3, v3_default;
 var init_v3 = __esm({
-  "node_modules/uuid/dist/esm-node/v3.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/v3.js"() {
     init_v35();
     init_md5();
     v3 = v35("v3", 48, md5_default);
@@ -50418,18 +50418,18 @@ var init_v3 = __esm({
   }
 });
 
-// node_modules/uuid/dist/esm-node/native.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/native.js
 import crypto4 from "node:crypto";
 var native_default;
 var init_native = __esm({
-  "node_modules/uuid/dist/esm-node/native.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/native.js"() {
     native_default = {
       randomUUID: crypto4.randomUUID
     };
   }
 });
 
-// node_modules/uuid/dist/esm-node/v4.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/v4.js
 function v4(options, buf, offset) {
   if (native_default.randomUUID && !buf && !options) {
     return native_default.randomUUID();
@@ -50449,7 +50449,7 @@ function v4(options, buf, offset) {
 }
 var v4_default;
 var init_v4 = __esm({
-  "node_modules/uuid/dist/esm-node/v4.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/v4.js"() {
     init_native();
     init_rng();
     init_stringify();
@@ -50457,7 +50457,7 @@ var init_v4 = __esm({
   }
 });
 
-// node_modules/uuid/dist/esm-node/sha1.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/sha1.js
 import crypto5 from "node:crypto";
 function sha1(bytes) {
   if (Array.isArray(bytes)) {
@@ -50469,15 +50469,15 @@ function sha1(bytes) {
 }
 var sha1_default;
 var init_sha1 = __esm({
-  "node_modules/uuid/dist/esm-node/sha1.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/sha1.js"() {
     sha1_default = sha1;
   }
 });
 
-// node_modules/uuid/dist/esm-node/v5.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/v5.js
 var v5, v5_default;
 var init_v5 = __esm({
-  "node_modules/uuid/dist/esm-node/v5.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/v5.js"() {
     init_v35();
     init_sha1();
     v5 = v35("v5", 80, sha1_default);
@@ -50485,15 +50485,15 @@ var init_v5 = __esm({
   }
 });
 
-// node_modules/uuid/dist/esm-node/nil.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/nil.js
 var nil_default;
 var init_nil = __esm({
-  "node_modules/uuid/dist/esm-node/nil.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/nil.js"() {
     nil_default = "00000000-0000-0000-0000-000000000000";
   }
 });
 
-// node_modules/uuid/dist/esm-node/version.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/version.js
 function version(uuid) {
   if (!validate_default(uuid)) {
     throw TypeError("Invalid UUID");
@@ -50502,13 +50502,13 @@ function version(uuid) {
 }
 var version_default;
 var init_version = __esm({
-  "node_modules/uuid/dist/esm-node/version.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/version.js"() {
     init_validate();
     version_default = version;
   }
 });
 
-// node_modules/uuid/dist/esm-node/index.js
+// ../../root/workspace/node_modules/uuid/dist/esm-node/index.js
 var esm_node_exports = {};
 __export(esm_node_exports, {
   NIL: () => nil_default,
@@ -50522,7 +50522,7 @@ __export(esm_node_exports, {
   version: () => version_default
 });
 var init_esm_node = __esm({
-  "node_modules/uuid/dist/esm-node/index.js"() {
+  "../../root/workspace/node_modules/uuid/dist/esm-node/index.js"() {
     init_v1();
     init_v3();
     init_v4();
@@ -50535,9 +50535,9 @@ var init_esm_node = __esm({
   }
 });
 
-// node_modules/@smithy/service-error-classification/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/service-error-classification/dist-cjs/index.js
 var require_dist_cjs31 = __commonJS({
-  "node_modules/@smithy/service-error-classification/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/service-error-classification/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -50622,9 +50622,9 @@ var require_dist_cjs31 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-retry/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-retry/dist-cjs/index.js
 var require_dist_cjs32 = __commonJS({
-  "node_modules/@smithy/util-retry/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-retry/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -50937,9 +50937,9 @@ var require_dist_cjs32 = __commonJS({
   }
 });
 
-// node_modules/@smithy/middleware-retry/dist-cjs/isStreamingPayload/isStreamingPayload.js
+// ../../root/workspace/node_modules/@smithy/middleware-retry/dist-cjs/isStreamingPayload/isStreamingPayload.js
 var require_isStreamingPayload = __commonJS({
-  "node_modules/@smithy/middleware-retry/dist-cjs/isStreamingPayload/isStreamingPayload.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/middleware-retry/dist-cjs/isStreamingPayload/isStreamingPayload.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isStreamingPayload = void 0;
@@ -50949,9 +50949,9 @@ var require_isStreamingPayload = __commonJS({
   }
 });
 
-// node_modules/@smithy/middleware-retry/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/middleware-retry/dist-cjs/index.js
 var require_dist_cjs33 = __commonJS({
-  "node_modules/@smithy/middleware-retry/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/middleware-retry/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -51322,10 +51322,10 @@ var require_dist_cjs33 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/client/emitWarningIfUnsupportedVersion.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/client/emitWarningIfUnsupportedVersion.js
 var warningEmitted, emitWarningIfUnsupportedVersion;
 var init_emitWarningIfUnsupportedVersion = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/client/emitWarningIfUnsupportedVersion.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/client/emitWarningIfUnsupportedVersion.js"() {
     warningEmitted = false;
     emitWarningIfUnsupportedVersion = (version2) => {
       if (version2 && !warningEmitted && parseInt(version2.substring(1, version2.indexOf("."))) < 18) {
@@ -51342,43 +51342,43 @@ More information can be found at: https://a.co/74kJMmI`);
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/client/index.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/client/index.js
 var init_client = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/client/index.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/client/index.js"() {
     init_emitWarningIfUnsupportedVersion();
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/getDateHeader.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/getDateHeader.js
 var import_protocol_http5, getDateHeader;
 var init_getDateHeader = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/getDateHeader.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/getDateHeader.js"() {
     import_protocol_http5 = __toESM(require_dist_cjs2());
     getDateHeader = (response) => import_protocol_http5.HttpResponse.isInstance(response) ? response.headers?.date ?? response.headers?.Date : void 0;
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/getSkewCorrectedDate.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/getSkewCorrectedDate.js
 var getSkewCorrectedDate;
 var init_getSkewCorrectedDate = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/getSkewCorrectedDate.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/getSkewCorrectedDate.js"() {
     getSkewCorrectedDate = (systemClockOffset) => new Date(Date.now() + systemClockOffset);
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/isClockSkewed.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/isClockSkewed.js
 var isClockSkewed;
 var init_isClockSkewed = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/isClockSkewed.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/isClockSkewed.js"() {
     init_getSkewCorrectedDate();
     isClockSkewed = (clockTime, systemClockOffset) => Math.abs(getSkewCorrectedDate(systemClockOffset).getTime() - clockTime) >= 3e5;
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/getUpdatedSystemClockOffset.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/getUpdatedSystemClockOffset.js
 var getUpdatedSystemClockOffset;
 var init_getUpdatedSystemClockOffset = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/getUpdatedSystemClockOffset.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/getUpdatedSystemClockOffset.js"() {
     init_isClockSkewed();
     getUpdatedSystemClockOffset = (clockTime, currentSystemClockOffset) => {
       const clockTimeInMs = Date.parse(clockTime);
@@ -51390,19 +51390,19 @@ var init_getUpdatedSystemClockOffset = __esm({
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/index.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/index.js
 var init_utils = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/index.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/utils/index.js"() {
     init_getDateHeader();
     init_getSkewCorrectedDate();
     init_getUpdatedSystemClockOffset();
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/AwsSdkSigV4Signer.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/AwsSdkSigV4Signer.js
 var import_protocol_http6, throwSigningPropertyError, validateSigningProperties, AwsSdkSigV4Signer, AWSSDKSigV4Signer;
 var init_AwsSdkSigV4Signer = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/AwsSdkSigV4Signer.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/AwsSdkSigV4Signer.js"() {
     import_protocol_http6 = __toESM(require_dist_cjs2());
     init_utils();
     throwSigningPropertyError = (name, property) => {
@@ -51478,10 +51478,10 @@ var init_AwsSdkSigV4Signer = __esm({
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/AwsSdkSigV4ASigner.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/AwsSdkSigV4ASigner.js
 var import_protocol_http7, AwsSdkSigV4ASigner;
 var init_AwsSdkSigV4ASigner = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/AwsSdkSigV4ASigner.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/AwsSdkSigV4ASigner.js"() {
     import_protocol_http7 = __toESM(require_dist_cjs2());
     init_utils();
     init_AwsSdkSigV4Signer();
@@ -51504,9 +51504,9 @@ var init_AwsSdkSigV4ASigner = __esm({
   }
 });
 
-// node_modules/@smithy/property-provider/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/property-provider/dist-cjs/index.js
 var require_dist_cjs34 = __commonJS({
-  "node_modules/@smithy/property-provider/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/property-provider/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -51653,10 +51653,10 @@ var require_dist_cjs34 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/resolveAwsSdkSigV4AConfig.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/resolveAwsSdkSigV4AConfig.js
 var import_property_provider, resolveAwsSdkSigV4AConfig, NODE_SIGV4A_CONFIG_OPTIONS;
 var init_resolveAwsSdkSigV4AConfig = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/resolveAwsSdkSigV4AConfig.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/resolveAwsSdkSigV4AConfig.js"() {
     init_dist_es();
     import_property_provider = __toESM(require_dist_cjs34());
     resolveAwsSdkSigV4AConfig = (config) => {
@@ -51685,10 +51685,10 @@ var init_resolveAwsSdkSigV4AConfig = __esm({
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/resolveAwsSdkSigV4Config.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/resolveAwsSdkSigV4Config.js
 var import_signature_v4, resolveAwsSdkSigV4Config, resolveAWSSDKSigV4Config;
 var init_resolveAwsSdkSigV4Config = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/resolveAwsSdkSigV4Config.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/resolveAwsSdkSigV4Config.js"() {
     init_dist_es();
     import_signature_v4 = __toESM(require_dist_cjs20());
     resolveAwsSdkSigV4Config = (config) => {
@@ -51769,9 +51769,9 @@ var init_resolveAwsSdkSigV4Config = __esm({
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/index.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/index.js
 var init_aws_sdk = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/index.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/aws_sdk/index.js"() {
     init_AwsSdkSigV4Signer();
     init_AwsSdkSigV4ASigner();
     init_resolveAwsSdkSigV4AConfig();
@@ -51779,17 +51779,17 @@ var init_aws_sdk = __esm({
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/index.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/index.js
 var init_httpAuthSchemes2 = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/index.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/httpAuthSchemes/index.js"() {
     init_aws_sdk();
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/protocols/coercing-serializers.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/protocols/coercing-serializers.js
 var _toStr, _toBool, _toNum;
 var init_coercing_serializers = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/protocols/coercing-serializers.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/protocols/coercing-serializers.js"() {
     _toStr = (val2) => {
       if (val2 == null) {
         return val2;
@@ -51846,10 +51846,10 @@ var init_coercing_serializers = __esm({
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/protocols/json/awsExpectUnion.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/protocols/json/awsExpectUnion.js
 var import_smithy_client, awsExpectUnion;
 var init_awsExpectUnion = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/protocols/json/awsExpectUnion.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/protocols/json/awsExpectUnion.js"() {
     import_smithy_client = __toESM(require_dist_cjs18());
     awsExpectUnion = (value) => {
       if (value == null) {
@@ -51863,19 +51863,19 @@ var init_awsExpectUnion = __esm({
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/protocols/common.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/protocols/common.js
 var import_smithy_client2, collectBodyString;
 var init_common = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/protocols/common.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/protocols/common.js"() {
     import_smithy_client2 = __toESM(require_dist_cjs18());
     collectBodyString = (streamBody, context) => (0, import_smithy_client2.collectBody)(streamBody, context).then((body) => context.utf8Encoder(body));
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/protocols/json/parseJsonBody.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/protocols/json/parseJsonBody.js
 var parseJsonBody, parseJsonErrorBody, loadRestJsonErrorCode;
 var init_parseJsonBody = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/protocols/json/parseJsonBody.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/protocols/json/parseJsonBody.js"() {
     init_common();
     parseJsonBody = (streamBody, context) => collectBodyString(streamBody, context).then((encoded) => {
       if (encoded.length) {
@@ -51929,9 +51929,9 @@ var init_parseJsonBody = __esm({
   }
 });
 
-// node_modules/fast-xml-parser/src/util.js
+// ../../root/workspace/node_modules/fast-xml-parser/src/util.js
 var require_util = __commonJS({
-  "node_modules/fast-xml-parser/src/util.js"(exports) {
+  "../../root/workspace/node_modules/fast-xml-parser/src/util.js"(exports) {
     "use strict";
     var nameStartChar = ":A-Za-z_\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD";
     var nameChar = nameStartChar + "\\-.\\d\\u00B7\\u0300-\\u036F\\u203F-\\u2040";
@@ -51988,9 +51988,9 @@ var require_util = __commonJS({
   }
 });
 
-// node_modules/fast-xml-parser/src/validator.js
+// ../../root/workspace/node_modules/fast-xml-parser/src/validator.js
 var require_validator = __commonJS({
-  "node_modules/fast-xml-parser/src/validator.js"(exports) {
+  "../../root/workspace/node_modules/fast-xml-parser/src/validator.js"(exports) {
     "use strict";
     var util = require_util();
     var defaultOptions = {
@@ -52300,9 +52300,9 @@ var require_validator = __commonJS({
   }
 });
 
-// node_modules/fast-xml-parser/src/xmlparser/OptionsBuilder.js
+// ../../root/workspace/node_modules/fast-xml-parser/src/xmlparser/OptionsBuilder.js
 var require_OptionsBuilder = __commonJS({
-  "node_modules/fast-xml-parser/src/xmlparser/OptionsBuilder.js"(exports) {
+  "../../root/workspace/node_modules/fast-xml-parser/src/xmlparser/OptionsBuilder.js"(exports) {
     var defaultOptions = {
       preserveOrder: false,
       attributeNamePrefix: "@_",
@@ -52355,9 +52355,9 @@ var require_OptionsBuilder = __commonJS({
   }
 });
 
-// node_modules/fast-xml-parser/src/xmlparser/xmlNode.js
+// ../../root/workspace/node_modules/fast-xml-parser/src/xmlparser/xmlNode.js
 var require_xmlNode = __commonJS({
-  "node_modules/fast-xml-parser/src/xmlparser/xmlNode.js"(exports, module) {
+  "../../root/workspace/node_modules/fast-xml-parser/src/xmlparser/xmlNode.js"(exports, module) {
     "use strict";
     var XmlNode = class {
       constructor(tagname) {
@@ -52382,9 +52382,9 @@ var require_xmlNode = __commonJS({
   }
 });
 
-// node_modules/fast-xml-parser/src/xmlparser/DocTypeReader.js
+// ../../root/workspace/node_modules/fast-xml-parser/src/xmlparser/DocTypeReader.js
 var require_DocTypeReader = __commonJS({
-  "node_modules/fast-xml-parser/src/xmlparser/DocTypeReader.js"(exports, module) {
+  "../../root/workspace/node_modules/fast-xml-parser/src/xmlparser/DocTypeReader.js"(exports, module) {
     var util = require_util();
     function readDocType(xmlData, i) {
       const entities = {};
@@ -52480,9 +52480,9 @@ var require_DocTypeReader = __commonJS({
   }
 });
 
-// node_modules/strnum/strnum.js
+// ../../root/workspace/node_modules/strnum/strnum.js
 var require_strnum = __commonJS({
-  "node_modules/strnum/strnum.js"(exports, module) {
+  "../../root/workspace/node_modules/strnum/strnum.js"(exports, module) {
     var hexRegex = /^[-+]?0x[a-fA-F0-9]+$/;
     var numRegex = /^([\-\+])?(0*)([0-9]*(\.[0-9]*)?)$/;
     var consider = {
@@ -52568,9 +52568,9 @@ var require_strnum = __commonJS({
   }
 });
 
-// node_modules/fast-xml-parser/src/xmlparser/OrderedObjParser.js
+// ../../root/workspace/node_modules/fast-xml-parser/src/xmlparser/OrderedObjParser.js
 var require_OrderedObjParser = __commonJS({
-  "node_modules/fast-xml-parser/src/xmlparser/OrderedObjParser.js"(exports, module) {
+  "../../root/workspace/node_modules/fast-xml-parser/src/xmlparser/OrderedObjParser.js"(exports, module) {
     "use strict";
     var util = require_util();
     var xmlNode = require_xmlNode();
@@ -53058,9 +53058,9 @@ var require_OrderedObjParser = __commonJS({
   }
 });
 
-// node_modules/fast-xml-parser/src/xmlparser/node2json.js
+// ../../root/workspace/node_modules/fast-xml-parser/src/xmlparser/node2json.js
 var require_node2json = __commonJS({
-  "node_modules/fast-xml-parser/src/xmlparser/node2json.js"(exports) {
+  "../../root/workspace/node_modules/fast-xml-parser/src/xmlparser/node2json.js"(exports) {
     "use strict";
     function prettify(node, options) {
       return compress(node, options);
@@ -53145,9 +53145,9 @@ var require_node2json = __commonJS({
   }
 });
 
-// node_modules/fast-xml-parser/src/xmlparser/XMLParser.js
+// ../../root/workspace/node_modules/fast-xml-parser/src/xmlparser/XMLParser.js
 var require_XMLParser = __commonJS({
-  "node_modules/fast-xml-parser/src/xmlparser/XMLParser.js"(exports, module) {
+  "../../root/workspace/node_modules/fast-xml-parser/src/xmlparser/XMLParser.js"(exports, module) {
     var { buildOptions } = require_OptionsBuilder();
     var OrderedObjParser = require_OrderedObjParser();
     var { prettify } = require_node2json();
@@ -53203,9 +53203,9 @@ var require_XMLParser = __commonJS({
   }
 });
 
-// node_modules/fast-xml-parser/src/xmlbuilder/orderedJs2Xml.js
+// ../../root/workspace/node_modules/fast-xml-parser/src/xmlbuilder/orderedJs2Xml.js
 var require_orderedJs2Xml = __commonJS({
-  "node_modules/fast-xml-parser/src/xmlbuilder/orderedJs2Xml.js"(exports, module) {
+  "../../root/workspace/node_modules/fast-xml-parser/src/xmlbuilder/orderedJs2Xml.js"(exports, module) {
     var EOL = "\n";
     function toXml(jArray, options) {
       let indentation = "";
@@ -53328,9 +53328,9 @@ var require_orderedJs2Xml = __commonJS({
   }
 });
 
-// node_modules/fast-xml-parser/src/xmlbuilder/json2xml.js
+// ../../root/workspace/node_modules/fast-xml-parser/src/xmlbuilder/json2xml.js
 var require_json2xml = __commonJS({
-  "node_modules/fast-xml-parser/src/xmlbuilder/json2xml.js"(exports, module) {
+  "../../root/workspace/node_modules/fast-xml-parser/src/xmlbuilder/json2xml.js"(exports, module) {
     "use strict";
     var buildFromOrderedJs = require_orderedJs2Xml();
     var defaultOptions = {
@@ -53569,9 +53569,9 @@ var require_json2xml = __commonJS({
   }
 });
 
-// node_modules/fast-xml-parser/src/fxp.js
+// ../../root/workspace/node_modules/fast-xml-parser/src/fxp.js
 var require_fxp = __commonJS({
-  "node_modules/fast-xml-parser/src/fxp.js"(exports, module) {
+  "../../root/workspace/node_modules/fast-xml-parser/src/fxp.js"(exports, module) {
     "use strict";
     var validator = require_validator();
     var XMLParser2 = require_XMLParser();
@@ -53584,10 +53584,10 @@ var require_fxp = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/protocols/xml/parseXmlBody.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/protocols/xml/parseXmlBody.js
 var import_smithy_client3, import_fast_xml_parser, parseXmlBody, parseXmlErrorBody, loadRestXmlErrorCode;
 var init_parseXmlBody = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/protocols/xml/parseXmlBody.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/protocols/xml/parseXmlBody.js"() {
     import_smithy_client3 = __toESM(require_dist_cjs18());
     import_fast_xml_parser = __toESM(require_fxp());
     init_common();
@@ -53647,9 +53647,9 @@ var init_parseXmlBody = __esm({
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/submodules/protocols/index.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/protocols/index.js
 var init_protocols2 = __esm({
-  "node_modules/@aws-sdk/core/dist-es/submodules/protocols/index.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/submodules/protocols/index.js"() {
     init_coercing_serializers();
     init_awsExpectUnion();
     init_parseJsonBody();
@@ -53657,7 +53657,7 @@ var init_protocols2 = __esm({
   }
 });
 
-// node_modules/@aws-sdk/core/dist-es/index.js
+// ../../root/workspace/node_modules/@aws-sdk/core/dist-es/index.js
 var dist_es_exports2 = {};
 __export(dist_es_exports2, {
   AWSSDKSigV4Signer: () => AWSSDKSigV4Signer,
@@ -53681,16 +53681,16 @@ __export(dist_es_exports2, {
   validateSigningProperties: () => validateSigningProperties
 });
 var init_dist_es2 = __esm({
-  "node_modules/@aws-sdk/core/dist-es/index.js"() {
+  "../../root/workspace/node_modules/@aws-sdk/core/dist-es/index.js"() {
     init_client();
     init_httpAuthSchemes2();
     init_protocols2();
   }
 });
 
-// node_modules/@aws-sdk/signature-v4-multi-region/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/signature-v4-multi-region/dist-cjs/index.js
 var require_dist_cjs35 = __commonJS({
-  "node_modules/@aws-sdk/signature-v4-multi-region/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/signature-v4-multi-region/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -53785,9 +53785,9 @@ For more information please go to https://github.com/aws/aws-sdk-js-v3#functiona
   }
 });
 
-// node_modules/@smithy/shared-ini-file-loader/dist-cjs/getHomeDir.js
+// ../../root/workspace/node_modules/@smithy/shared-ini-file-loader/dist-cjs/getHomeDir.js
 var require_getHomeDir = __commonJS({
-  "node_modules/@smithy/shared-ini-file-loader/dist-cjs/getHomeDir.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/shared-ini-file-loader/dist-cjs/getHomeDir.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getHomeDir = void 0;
@@ -53817,9 +53817,9 @@ var require_getHomeDir = __commonJS({
   }
 });
 
-// node_modules/@smithy/shared-ini-file-loader/dist-cjs/getSSOTokenFilepath.js
+// ../../root/workspace/node_modules/@smithy/shared-ini-file-loader/dist-cjs/getSSOTokenFilepath.js
 var require_getSSOTokenFilepath = __commonJS({
-  "node_modules/@smithy/shared-ini-file-loader/dist-cjs/getSSOTokenFilepath.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/shared-ini-file-loader/dist-cjs/getSSOTokenFilepath.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getSSOTokenFilepath = void 0;
@@ -53835,9 +53835,9 @@ var require_getSSOTokenFilepath = __commonJS({
   }
 });
 
-// node_modules/@smithy/shared-ini-file-loader/dist-cjs/getSSOTokenFromFile.js
+// ../../root/workspace/node_modules/@smithy/shared-ini-file-loader/dist-cjs/getSSOTokenFromFile.js
 var require_getSSOTokenFromFile = __commonJS({
-  "node_modules/@smithy/shared-ini-file-loader/dist-cjs/getSSOTokenFromFile.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/shared-ini-file-loader/dist-cjs/getSSOTokenFromFile.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getSSOTokenFromFile = void 0;
@@ -53853,9 +53853,9 @@ var require_getSSOTokenFromFile = __commonJS({
   }
 });
 
-// node_modules/@smithy/shared-ini-file-loader/dist-cjs/slurpFile.js
+// ../../root/workspace/node_modules/@smithy/shared-ini-file-loader/dist-cjs/slurpFile.js
 var require_slurpFile = __commonJS({
-  "node_modules/@smithy/shared-ini-file-loader/dist-cjs/slurpFile.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/shared-ini-file-loader/dist-cjs/slurpFile.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.slurpFile = void 0;
@@ -53872,9 +53872,9 @@ var require_slurpFile = __commonJS({
   }
 });
 
-// node_modules/@smithy/shared-ini-file-loader/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/shared-ini-file-loader/dist-cjs/index.js
 var require_dist_cjs36 = __commonJS({
-  "node_modules/@smithy/shared-ini-file-loader/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/shared-ini-file-loader/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -54037,9 +54037,9 @@ var require_dist_cjs36 = __commonJS({
   }
 });
 
-// node_modules/@smithy/node-config-provider/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/node-config-provider/dist-cjs/index.js
 var require_dist_cjs37 = __commonJS({
-  "node_modules/@smithy/node-config-provider/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/node-config-provider/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -54123,9 +54123,9 @@ var require_dist_cjs37 = __commonJS({
   }
 });
 
-// node_modules/@smithy/middleware-endpoint/dist-cjs/adaptors/getEndpointUrlConfig.js
+// ../../root/workspace/node_modules/@smithy/middleware-endpoint/dist-cjs/adaptors/getEndpointUrlConfig.js
 var require_getEndpointUrlConfig = __commonJS({
-  "node_modules/@smithy/middleware-endpoint/dist-cjs/adaptors/getEndpointUrlConfig.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/middleware-endpoint/dist-cjs/adaptors/getEndpointUrlConfig.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getEndpointUrlConfig = void 0;
@@ -54164,9 +54164,9 @@ var require_getEndpointUrlConfig = __commonJS({
   }
 });
 
-// node_modules/@smithy/middleware-endpoint/dist-cjs/adaptors/getEndpointFromConfig.js
+// ../../root/workspace/node_modules/@smithy/middleware-endpoint/dist-cjs/adaptors/getEndpointFromConfig.js
 var require_getEndpointFromConfig = __commonJS({
-  "node_modules/@smithy/middleware-endpoint/dist-cjs/adaptors/getEndpointFromConfig.js"(exports) {
+  "../../root/workspace/node_modules/@smithy/middleware-endpoint/dist-cjs/adaptors/getEndpointFromConfig.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getEndpointFromConfig = void 0;
@@ -54177,9 +54177,9 @@ var require_getEndpointFromConfig = __commonJS({
   }
 });
 
-// node_modules/@smithy/querystring-parser/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/querystring-parser/dist-cjs/index.js
 var require_dist_cjs38 = __commonJS({
-  "node_modules/@smithy/querystring-parser/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/querystring-parser/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -54228,9 +54228,9 @@ var require_dist_cjs38 = __commonJS({
   }
 });
 
-// node_modules/@smithy/url-parser/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/url-parser/dist-cjs/index.js
 var require_dist_cjs39 = __commonJS({
-  "node_modules/@smithy/url-parser/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/url-parser/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -54275,9 +54275,9 @@ var require_dist_cjs39 = __commonJS({
   }
 });
 
-// node_modules/@smithy/middleware-endpoint/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/middleware-endpoint/dist-cjs/index.js
 var require_dist_cjs40 = __commonJS({
-  "node_modules/@smithy/middleware-endpoint/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/middleware-endpoint/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -54532,9 +54532,9 @@ var require_dist_cjs40 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-s3/dist-cjs/endpoint/ruleset.js
+// ../../root/workspace/node_modules/@aws-sdk/client-s3/dist-cjs/endpoint/ruleset.js
 var require_ruleset = __commonJS({
-  "node_modules/@aws-sdk/client-s3/dist-cjs/endpoint/ruleset.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-s3/dist-cjs/endpoint/ruleset.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ruleSet = void 0;
@@ -54719,9 +54719,9 @@ var require_ruleset = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-s3/dist-cjs/endpoint/endpointResolver.js
+// ../../root/workspace/node_modules/@aws-sdk/client-s3/dist-cjs/endpoint/endpointResolver.js
 var require_endpointResolver = __commonJS({
-  "node_modules/@aws-sdk/client-s3/dist-cjs/endpoint/endpointResolver.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-s3/dist-cjs/endpoint/endpointResolver.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.defaultEndpointResolver = void 0;
@@ -54758,9 +54758,9 @@ var require_endpointResolver = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-s3/dist-cjs/auth/httpAuthSchemeProvider.js
+// ../../root/workspace/node_modules/@aws-sdk/client-s3/dist-cjs/auth/httpAuthSchemeProvider.js
 var require_httpAuthSchemeProvider = __commonJS({
-  "node_modules/@aws-sdk/client-s3/dist-cjs/auth/httpAuthSchemeProvider.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-s3/dist-cjs/auth/httpAuthSchemeProvider.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.resolveHttpAuthSchemeConfig = exports.defaultS3HttpAuthSchemeProvider = exports.defaultS3HttpAuthSchemeParametersProvider = void 0;
@@ -54887,9 +54887,9 @@ var require_httpAuthSchemeProvider = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/xml-builder/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/xml-builder/dist-cjs/index.js
 var require_dist_cjs41 = __commonJS({
-  "node_modules/@aws-sdk/xml-builder/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/xml-builder/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -55047,7 +55047,7 @@ var require_dist_cjs41 = __commonJS({
   }
 });
 
-// node_modules/tslib/tslib.es6.mjs
+// ../../root/workspace/node_modules/tslib/tslib.es6.mjs
 var tslib_es6_exports = {};
 __export(tslib_es6_exports, {
   __addDisposableResource: () => __addDisposableResource,
@@ -55486,7 +55486,7 @@ function __rewriteRelativeImportExtension(path, preserveJsx) {
 }
 var extendStatics, __assign, __createBinding, __setModuleDefault, ownKeys, _SuppressedError, tslib_es6_default;
 var init_tslib_es6 = __esm({
-  "node_modules/tslib/tslib.es6.mjs"() {
+  "../../root/workspace/node_modules/tslib/tslib.es6.mjs"() {
     extendStatics = function(d, b) {
       extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
         d2.__proto__ = b2;
@@ -55572,9 +55572,9 @@ var init_tslib_es6 = __esm({
   }
 });
 
-// node_modules/@aws-sdk/client-s3/package.json
+// ../../root/workspace/node_modules/@aws-sdk/client-s3/package.json
 var require_package = __commonJS({
-  "node_modules/@aws-sdk/client-s3/package.json"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/client-s3/package.json"(exports, module) {
     module.exports = {
       name: "@aws-sdk/client-s3",
       description: "AWS SDK for JavaScript S3 Client for Node.js, Browser and React Native",
@@ -55704,9 +55704,9 @@ var require_package = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-env/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-env/dist-cjs/index.js
 var require_dist_cjs42 = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-env/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-env/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -55768,9 +55768,9 @@ var require_dist_cjs42 = __commonJS({
   }
 });
 
-// node_modules/@smithy/credential-provider-imds/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/credential-provider-imds/dist-cjs/index.js
 var require_dist_cjs43 = __commonJS({
-  "node_modules/@smithy/credential-provider-imds/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/credential-provider-imds/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -56165,9 +56165,9 @@ For more information, please visit: ` + STATIC_STABILITY_DOC_URL
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/checkUrl.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/checkUrl.js
 var require_checkUrl = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/checkUrl.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/checkUrl.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.checkUrl = void 0;
@@ -56208,9 +56208,9 @@ var require_checkUrl = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/requestHelpers.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/requestHelpers.js
 var require_requestHelpers = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/requestHelpers.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/requestHelpers.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getCredentials = exports.createGetRequest = void 0;
@@ -56264,9 +56264,9 @@ var require_requestHelpers = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/retry-wrapper.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/retry-wrapper.js
 var require_retry_wrapper = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/retry-wrapper.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/retry-wrapper.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.retryWrapper = void 0;
@@ -56286,9 +56286,9 @@ var require_retry_wrapper = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/fromHttp.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/fromHttp.js
 var require_fromHttp = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/fromHttp.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-http/dist-cjs/fromHttp/fromHttp.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.fromHttp = void 0;
@@ -56353,9 +56353,9 @@ Set AWS_CONTAINER_CREDENTIALS_FULL_URI or AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-http/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-http/dist-cjs/index.js
 var require_dist_cjs44 = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-http/dist-cjs/index.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-http/dist-cjs/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.fromHttp = void 0;
@@ -56366,9 +56366,9 @@ var require_dist_cjs44 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso/dist-cjs/auth/httpAuthSchemeProvider.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sso/dist-cjs/auth/httpAuthSchemeProvider.js
 var require_httpAuthSchemeProvider2 = __commonJS({
-  "node_modules/@aws-sdk/client-sso/dist-cjs/auth/httpAuthSchemeProvider.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso/dist-cjs/auth/httpAuthSchemeProvider.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.resolveHttpAuthSchemeConfig = exports.defaultSSOHttpAuthSchemeProvider = exports.defaultSSOHttpAuthSchemeParametersProvider = void 0;
@@ -56439,9 +56439,9 @@ var require_httpAuthSchemeProvider2 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso/package.json
+// ../../root/workspace/node_modules/@aws-sdk/client-sso/package.json
 var require_package2 = __commonJS({
-  "node_modules/@aws-sdk/client-sso/package.json"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso/package.json"(exports, module) {
     module.exports = {
       name: "@aws-sdk/client-sso",
       description: "AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native",
@@ -56543,9 +56543,9 @@ var require_package2 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/util-user-agent-node/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/util-user-agent-node/dist-cjs/index.js
 var require_dist_cjs45 = __commonJS({
-  "node_modules/@aws-sdk/util-user-agent-node/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/util-user-agent-node/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -56627,9 +56627,9 @@ var require_dist_cjs45 = __commonJS({
   }
 });
 
-// node_modules/@smithy/hash-node/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/hash-node/dist-cjs/index.js
 var require_dist_cjs46 = __commonJS({
-  "node_modules/@smithy/hash-node/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/hash-node/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -56691,9 +56691,9 @@ var require_dist_cjs46 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-body-length-node/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-body-length-node/dist-cjs/index.js
 var require_dist_cjs47 = __commonJS({
-  "node_modules/@smithy/util-body-length-node/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-body-length-node/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -56740,9 +56740,9 @@ var require_dist_cjs47 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso/dist-cjs/endpoint/ruleset.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sso/dist-cjs/endpoint/ruleset.js
 var require_ruleset2 = __commonJS({
-  "node_modules/@aws-sdk/client-sso/dist-cjs/endpoint/ruleset.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso/dist-cjs/endpoint/ruleset.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ruleSet = void 0;
@@ -56775,9 +56775,9 @@ var require_ruleset2 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso/dist-cjs/endpoint/endpointResolver.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sso/dist-cjs/endpoint/endpointResolver.js
 var require_endpointResolver2 = __commonJS({
-  "node_modules/@aws-sdk/client-sso/dist-cjs/endpoint/endpointResolver.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso/dist-cjs/endpoint/endpointResolver.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.defaultEndpointResolver = void 0;
@@ -56799,9 +56799,9 @@ var require_endpointResolver2 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso/dist-cjs/runtimeConfig.shared.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sso/dist-cjs/runtimeConfig.shared.js
 var require_runtimeConfig_shared = __commonJS({
-  "node_modules/@aws-sdk/client-sso/dist-cjs/runtimeConfig.shared.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso/dist-cjs/runtimeConfig.shared.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getRuntimeConfig = void 0;
@@ -56845,9 +56845,9 @@ var require_runtimeConfig_shared = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-defaults-mode-node/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-defaults-mode-node/dist-cjs/index.js
 var require_dist_cjs48 = __commonJS({
-  "node_modules/@smithy/util-defaults-mode-node/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-defaults-mode-node/dist-cjs/index.js"(exports, module) {
     var __create2 = Object.create;
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -56954,9 +56954,9 @@ var require_dist_cjs48 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso/dist-cjs/runtimeConfig.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sso/dist-cjs/runtimeConfig.js
 var require_runtimeConfig = __commonJS({
-  "node_modules/@aws-sdk/client-sso/dist-cjs/runtimeConfig.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso/dist-cjs/runtimeConfig.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getRuntimeConfig = void 0;
@@ -57005,9 +57005,9 @@ var require_runtimeConfig = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/region-config-resolver/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/region-config-resolver/dist-cjs/index.js
 var require_dist_cjs49 = __commonJS({
-  "node_modules/@aws-sdk/region-config-resolver/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/region-config-resolver/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -57103,9 +57103,9 @@ var require_dist_cjs49 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sso/dist-cjs/index.js
 var require_dist_cjs50 = __commonJS({
-  "node_modules/@aws-sdk/client-sso/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -57634,9 +57634,9 @@ var require_dist_cjs50 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso-oidc/dist-cjs/auth/httpAuthSchemeProvider.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/dist-cjs/auth/httpAuthSchemeProvider.js
 var require_httpAuthSchemeProvider3 = __commonJS({
-  "node_modules/@aws-sdk/client-sso-oidc/dist-cjs/auth/httpAuthSchemeProvider.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/dist-cjs/auth/httpAuthSchemeProvider.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.resolveHttpAuthSchemeConfig = exports.defaultSSOOIDCHttpAuthSchemeProvider = exports.defaultSSOOIDCHttpAuthSchemeParametersProvider = void 0;
@@ -57703,9 +57703,9 @@ var require_httpAuthSchemeProvider3 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso-oidc/package.json
+// ../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/package.json
 var require_package3 = __commonJS({
-  "node_modules/@aws-sdk/client-sso-oidc/package.json"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/package.json"(exports, module) {
     module.exports = {
       name: "@aws-sdk/client-sso-oidc",
       description: "AWS SDK for JavaScript Sso Oidc Client for Node.js, Browser and React Native",
@@ -57811,9 +57811,9 @@ var require_package3 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso-oidc/dist-cjs/endpoint/ruleset.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/dist-cjs/endpoint/ruleset.js
 var require_ruleset3 = __commonJS({
-  "node_modules/@aws-sdk/client-sso-oidc/dist-cjs/endpoint/ruleset.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/dist-cjs/endpoint/ruleset.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ruleSet = void 0;
@@ -57846,9 +57846,9 @@ var require_ruleset3 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso-oidc/dist-cjs/endpoint/endpointResolver.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/dist-cjs/endpoint/endpointResolver.js
 var require_endpointResolver3 = __commonJS({
-  "node_modules/@aws-sdk/client-sso-oidc/dist-cjs/endpoint/endpointResolver.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/dist-cjs/endpoint/endpointResolver.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.defaultEndpointResolver = void 0;
@@ -57870,9 +57870,9 @@ var require_endpointResolver3 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso-oidc/dist-cjs/runtimeConfig.shared.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/dist-cjs/runtimeConfig.shared.js
 var require_runtimeConfig_shared2 = __commonJS({
-  "node_modules/@aws-sdk/client-sso-oidc/dist-cjs/runtimeConfig.shared.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/dist-cjs/runtimeConfig.shared.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getRuntimeConfig = void 0;
@@ -57916,9 +57916,9 @@ var require_runtimeConfig_shared2 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso-oidc/dist-cjs/runtimeConfig.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/dist-cjs/runtimeConfig.js
 var require_runtimeConfig2 = __commonJS({
-  "node_modules/@aws-sdk/client-sso-oidc/dist-cjs/runtimeConfig.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/dist-cjs/runtimeConfig.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getRuntimeConfig = void 0;
@@ -57969,9 +57969,9 @@ var require_runtimeConfig2 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sso-oidc/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/dist-cjs/index.js
 var require_dist_cjs51 = __commonJS({
-  "node_modules/@aws-sdk/client-sso-oidc/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sso-oidc/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -58938,9 +58938,9 @@ var require_dist_cjs51 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/token-providers/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/token-providers/dist-cjs/index.js
 var require_dist_cjs52 = __commonJS({
-  "node_modules/@aws-sdk/token-providers/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/token-providers/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __create2 = Object.create;
     var __defProp2 = Object.defineProperty;
@@ -59118,9 +59118,9 @@ var require_dist_cjs52 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-sso/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-sso/dist-cjs/index.js
 var require_dist_cjs53 = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-sso/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-sso/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -59333,9 +59333,9 @@ Reference: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.ht
   }
 });
 
-// node_modules/@aws-sdk/client-sts/dist-cjs/auth/httpAuthSchemeProvider.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/auth/httpAuthSchemeProvider.js
 var require_httpAuthSchemeProvider4 = __commonJS({
-  "node_modules/@aws-sdk/client-sts/dist-cjs/auth/httpAuthSchemeProvider.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/auth/httpAuthSchemeProvider.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.resolveHttpAuthSchemeConfig = exports.resolveStsAuthConfig = exports.defaultSTSHttpAuthSchemeProvider = exports.defaultSTSHttpAuthSchemeParametersProvider = void 0;
@@ -59405,9 +59405,9 @@ var require_httpAuthSchemeProvider4 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/EndpointParameters.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/EndpointParameters.js
 var require_EndpointParameters = __commonJS({
-  "node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/EndpointParameters.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/EndpointParameters.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.commonParams = exports.resolveClientEndpointParameters = void 0;
@@ -59431,9 +59431,9 @@ var require_EndpointParameters = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sts/package.json
+// ../../root/workspace/node_modules/@aws-sdk/client-sts/package.json
 var require_package4 = __commonJS({
-  "node_modules/@aws-sdk/client-sts/package.json"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sts/package.json"(exports, module) {
     module.exports = {
       name: "@aws-sdk/client-sts",
       description: "AWS SDK for JavaScript Sts Client for Node.js, Browser and React Native",
@@ -59539,9 +59539,9 @@ var require_package4 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/ruleset.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/ruleset.js
 var require_ruleset4 = __commonJS({
-  "node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/ruleset.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/ruleset.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ruleSet = void 0;
@@ -59586,9 +59586,9 @@ var require_ruleset4 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/endpointResolver.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/endpointResolver.js
 var require_endpointResolver4 = __commonJS({
-  "node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/endpointResolver.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/endpointResolver.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.defaultEndpointResolver = void 0;
@@ -59610,9 +59610,9 @@ var require_endpointResolver4 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sts/dist-cjs/runtimeConfig.shared.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/runtimeConfig.shared.js
 var require_runtimeConfig_shared3 = __commonJS({
-  "node_modules/@aws-sdk/client-sts/dist-cjs/runtimeConfig.shared.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/runtimeConfig.shared.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getRuntimeConfig = void 0;
@@ -59656,9 +59656,9 @@ var require_runtimeConfig_shared3 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sts/dist-cjs/runtimeConfig.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/runtimeConfig.js
 var require_runtimeConfig3 = __commonJS({
-  "node_modules/@aws-sdk/client-sts/dist-cjs/runtimeConfig.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/runtimeConfig.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getRuntimeConfig = void 0;
@@ -59722,9 +59722,9 @@ var require_runtimeConfig3 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sts/dist-cjs/auth/httpAuthExtensionConfiguration.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/auth/httpAuthExtensionConfiguration.js
 var require_httpAuthExtensionConfiguration = __commonJS({
-  "node_modules/@aws-sdk/client-sts/dist-cjs/auth/httpAuthExtensionConfiguration.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/auth/httpAuthExtensionConfiguration.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.resolveHttpAuthRuntimeConfig = exports.getHttpAuthExtensionConfiguration = void 0;
@@ -59770,9 +59770,9 @@ var require_httpAuthExtensionConfiguration = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sts/dist-cjs/runtimeExtensions.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/runtimeExtensions.js
 var require_runtimeExtensions = __commonJS({
-  "node_modules/@aws-sdk/client-sts/dist-cjs/runtimeExtensions.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/runtimeExtensions.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.resolveRuntimeExtensions = void 0;
@@ -59801,9 +59801,9 @@ var require_runtimeExtensions = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sts/dist-cjs/STSClient.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/STSClient.js
 var require_STSClient = __commonJS({
-  "node_modules/@aws-sdk/client-sts/dist-cjs/STSClient.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/STSClient.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.STSClient = exports.__Client = void 0;
@@ -59859,9 +59859,9 @@ var require_STSClient = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-sts/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/index.js
 var require_dist_cjs54 = __commonJS({
-  "node_modules/@aws-sdk/client-sts/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/client-sts/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -61215,9 +61215,9 @@ var require_dist_cjs54 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-process/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-process/dist-cjs/index.js
 var require_dist_cjs55 = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-process/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-process/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -61310,9 +61310,9 @@ var require_dist_cjs55 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-web-identity/dist-cjs/fromWebToken.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-web-identity/dist-cjs/fromWebToken.js
 var require_fromWebToken = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-web-identity/dist-cjs/fromWebToken.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-web-identity/dist-cjs/fromWebToken.js"(exports) {
     "use strict";
     var __createBinding2 = exports && exports.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
@@ -61369,9 +61369,9 @@ var require_fromWebToken = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-web-identity/dist-cjs/fromTokenFile.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-web-identity/dist-cjs/fromTokenFile.js
 var require_fromTokenFile = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-web-identity/dist-cjs/fromTokenFile.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-web-identity/dist-cjs/fromTokenFile.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.fromTokenFile = void 0;
@@ -61402,9 +61402,9 @@ var require_fromTokenFile = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-web-identity/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-web-identity/dist-cjs/index.js
 var require_dist_cjs56 = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-web-identity/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-web-identity/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -61427,9 +61427,9 @@ var require_dist_cjs56 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-ini/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-ini/dist-cjs/index.js
 var require_dist_cjs57 = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-ini/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-ini/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __create2 = Object.create;
     var __defProp2 = Object.defineProperty;
@@ -61648,9 +61648,9 @@ var require_dist_cjs57 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/credential-provider-node/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/credential-provider-node/dist-cjs/index.js
 var require_dist_cjs58 = __commonJS({
-  "node_modules/@aws-sdk/credential-provider-node/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/credential-provider-node/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __create2 = Object.create;
     var __defProp2 = Object.defineProperty;
@@ -61791,9 +61791,9 @@ var require_dist_cjs58 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/middleware-bucket-endpoint/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/middleware-bucket-endpoint/dist-cjs/index.js
 var require_dist_cjs59 = __commonJS({
-  "node_modules/@aws-sdk/middleware-bucket-endpoint/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/middleware-bucket-endpoint/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -62256,9 +62256,9 @@ var require_dist_cjs59 = __commonJS({
   }
 });
 
-// node_modules/@aws-crypto/util/node_modules/@smithy/is-array-buffer/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-crypto/util/node_modules/@smithy/is-array-buffer/dist-cjs/index.js
 var require_dist_cjs60 = __commonJS({
-  "node_modules/@aws-crypto/util/node_modules/@smithy/is-array-buffer/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-crypto/util/node_modules/@smithy/is-array-buffer/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -62286,9 +62286,9 @@ var require_dist_cjs60 = __commonJS({
   }
 });
 
-// node_modules/@aws-crypto/util/node_modules/@smithy/util-buffer-from/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-crypto/util/node_modules/@smithy/util-buffer-from/dist-cjs/index.js
 var require_dist_cjs61 = __commonJS({
-  "node_modules/@aws-crypto/util/node_modules/@smithy/util-buffer-from/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-crypto/util/node_modules/@smithy/util-buffer-from/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -62330,9 +62330,9 @@ var require_dist_cjs61 = __commonJS({
   }
 });
 
-// node_modules/@aws-crypto/util/node_modules/@smithy/util-utf8/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-crypto/util/node_modules/@smithy/util-utf8/dist-cjs/index.js
 var require_dist_cjs62 = __commonJS({
-  "node_modules/@aws-crypto/util/node_modules/@smithy/util-utf8/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-crypto/util/node_modules/@smithy/util-utf8/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -62384,9 +62384,9 @@ var require_dist_cjs62 = __commonJS({
   }
 });
 
-// node_modules/@aws-crypto/util/build/main/convertToBuffer.js
+// ../../root/workspace/node_modules/@aws-crypto/util/build/main/convertToBuffer.js
 var require_convertToBuffer = __commonJS({
-  "node_modules/@aws-crypto/util/build/main/convertToBuffer.js"(exports) {
+  "../../root/workspace/node_modules/@aws-crypto/util/build/main/convertToBuffer.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.convertToBuffer = void 0;
@@ -62409,9 +62409,9 @@ var require_convertToBuffer = __commonJS({
   }
 });
 
-// node_modules/@aws-crypto/util/build/main/isEmptyData.js
+// ../../root/workspace/node_modules/@aws-crypto/util/build/main/isEmptyData.js
 var require_isEmptyData = __commonJS({
-  "node_modules/@aws-crypto/util/build/main/isEmptyData.js"(exports) {
+  "../../root/workspace/node_modules/@aws-crypto/util/build/main/isEmptyData.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isEmptyData = void 0;
@@ -62425,9 +62425,9 @@ var require_isEmptyData = __commonJS({
   }
 });
 
-// node_modules/@aws-crypto/util/build/main/numToUint8.js
+// ../../root/workspace/node_modules/@aws-crypto/util/build/main/numToUint8.js
 var require_numToUint8 = __commonJS({
-  "node_modules/@aws-crypto/util/build/main/numToUint8.js"(exports) {
+  "../../root/workspace/node_modules/@aws-crypto/util/build/main/numToUint8.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.numToUint8 = void 0;
@@ -62443,9 +62443,9 @@ var require_numToUint8 = __commonJS({
   }
 });
 
-// node_modules/@aws-crypto/util/build/main/uint32ArrayFrom.js
+// ../../root/workspace/node_modules/@aws-crypto/util/build/main/uint32ArrayFrom.js
 var require_uint32ArrayFrom = __commonJS({
-  "node_modules/@aws-crypto/util/build/main/uint32ArrayFrom.js"(exports) {
+  "../../root/workspace/node_modules/@aws-crypto/util/build/main/uint32ArrayFrom.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.uint32ArrayFrom = void 0;
@@ -62465,9 +62465,9 @@ var require_uint32ArrayFrom = __commonJS({
   }
 });
 
-// node_modules/@aws-crypto/util/build/main/index.js
+// ../../root/workspace/node_modules/@aws-crypto/util/build/main/index.js
 var require_main = __commonJS({
-  "node_modules/@aws-crypto/util/build/main/index.js"(exports) {
+  "../../root/workspace/node_modules/@aws-crypto/util/build/main/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.uint32ArrayFrom = exports.numToUint8 = exports.isEmptyData = exports.convertToBuffer = void 0;
@@ -62490,9 +62490,9 @@ var require_main = __commonJS({
   }
 });
 
-// node_modules/@aws-crypto/crc32/build/main/aws_crc32.js
+// ../../root/workspace/node_modules/@aws-crypto/crc32/build/main/aws_crc32.js
 var require_aws_crc32 = __commonJS({
-  "node_modules/@aws-crypto/crc32/build/main/aws_crc32.js"(exports) {
+  "../../root/workspace/node_modules/@aws-crypto/crc32/build/main/aws_crc32.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AwsCrc32 = void 0;
@@ -62527,9 +62527,9 @@ var require_aws_crc32 = __commonJS({
   }
 });
 
-// node_modules/@aws-crypto/crc32/build/main/index.js
+// ../../root/workspace/node_modules/@aws-crypto/crc32/build/main/index.js
 var require_main2 = __commonJS({
-  "node_modules/@aws-crypto/crc32/build/main/index.js"(exports) {
+  "../../root/workspace/node_modules/@aws-crypto/crc32/build/main/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AwsCrc32 = exports.Crc32 = exports.crc32 = void 0;
@@ -62836,9 +62836,9 @@ var require_main2 = __commonJS({
   }
 });
 
-// node_modules/@smithy/eventstream-codec/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/eventstream-codec/dist-cjs/index.js
 var require_dist_cjs63 = __commonJS({
-  "node_modules/@smithy/eventstream-codec/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/eventstream-codec/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -63294,9 +63294,9 @@ var require_dist_cjs63 = __commonJS({
   }
 });
 
-// node_modules/@smithy/eventstream-serde-universal/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/eventstream-serde-universal/dist-cjs/index.js
 var require_dist_cjs64 = __commonJS({
-  "node_modules/@smithy/eventstream-serde-universal/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/eventstream-serde-universal/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -63463,9 +63463,9 @@ var require_dist_cjs64 = __commonJS({
   }
 });
 
-// node_modules/@smithy/eventstream-serde-node/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/eventstream-serde-node/dist-cjs/index.js
 var require_dist_cjs65 = __commonJS({
-  "node_modules/@smithy/eventstream-serde-node/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/eventstream-serde-node/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -63540,9 +63540,9 @@ var require_dist_cjs65 = __commonJS({
   }
 });
 
-// node_modules/@smithy/hash-stream-node/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/hash-stream-node/dist-cjs/index.js
 var require_dist_cjs66 = __commonJS({
-  "node_modules/@smithy/hash-stream-node/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/hash-stream-node/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -63629,9 +63629,9 @@ var require_dist_cjs66 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-s3/dist-cjs/runtimeConfig.shared.js
+// ../../root/workspace/node_modules/@aws-sdk/client-s3/dist-cjs/runtimeConfig.shared.js
 var require_runtimeConfig_shared4 = __commonJS({
-  "node_modules/@aws-sdk/client-s3/dist-cjs/runtimeConfig.shared.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-s3/dist-cjs/runtimeConfig.shared.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getRuntimeConfig = void 0;
@@ -63681,9 +63681,9 @@ var require_runtimeConfig_shared4 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-s3/dist-cjs/runtimeConfig.js
+// ../../root/workspace/node_modules/@aws-sdk/client-s3/dist-cjs/runtimeConfig.js
 var require_runtimeConfig4 = __commonJS({
-  "node_modules/@aws-sdk/client-s3/dist-cjs/runtimeConfig.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/client-s3/dist-cjs/runtimeConfig.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getRuntimeConfig = void 0;
@@ -63745,9 +63745,9 @@ var require_runtimeConfig4 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/middleware-ssec/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/middleware-ssec/dist-cjs/index.js
 var require_dist_cjs67 = __commonJS({
-  "node_modules/@aws-sdk/middleware-ssec/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/middleware-ssec/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -63841,9 +63841,9 @@ var require_dist_cjs67 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/middleware-location-constraint/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/middleware-location-constraint/dist-cjs/index.js
 var require_dist_cjs68 = __commonJS({
-  "node_modules/@aws-sdk/middleware-location-constraint/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/middleware-location-constraint/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -63901,9 +63901,9 @@ var require_dist_cjs68 = __commonJS({
   }
 });
 
-// node_modules/@aws-crypto/crc32c/build/main/aws_crc32c.js
+// ../../root/workspace/node_modules/@aws-crypto/crc32c/build/main/aws_crc32c.js
 var require_aws_crc32c = __commonJS({
-  "node_modules/@aws-crypto/crc32c/build/main/aws_crc32c.js"(exports) {
+  "../../root/workspace/node_modules/@aws-crypto/crc32c/build/main/aws_crc32c.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AwsCrc32c = void 0;
@@ -63938,9 +63938,9 @@ var require_aws_crc32c = __commonJS({
   }
 });
 
-// node_modules/@aws-crypto/crc32c/build/main/index.js
+// ../../root/workspace/node_modules/@aws-crypto/crc32c/build/main/index.js
 var require_main3 = __commonJS({
-  "node_modules/@aws-crypto/crc32c/build/main/index.js"(exports) {
+  "../../root/workspace/node_modules/@aws-crypto/crc32c/build/main/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AwsCrc32c = exports.Crc32c = exports.crc32c = void 0;
@@ -64247,9 +64247,9 @@ var require_main3 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/middleware-flexible-checksums/dist-cjs/streams/create-read-stream-on-buffer.js
+// ../../root/workspace/node_modules/@aws-sdk/middleware-flexible-checksums/dist-cjs/streams/create-read-stream-on-buffer.js
 var require_create_read_stream_on_buffer = __commonJS({
-  "node_modules/@aws-sdk/middleware-flexible-checksums/dist-cjs/streams/create-read-stream-on-buffer.js"(exports) {
+  "../../root/workspace/node_modules/@aws-sdk/middleware-flexible-checksums/dist-cjs/streams/create-read-stream-on-buffer.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.createReadStreamOnBuffer = void 0;
@@ -64264,9 +64264,9 @@ var require_create_read_stream_on_buffer = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/middleware-flexible-checksums/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/middleware-flexible-checksums/dist-cjs/index.js
 var require_dist_cjs69 = __commonJS({
-  "node_modules/@aws-sdk/middleware-flexible-checksums/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/middleware-flexible-checksums/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -64545,9 +64545,9 @@ var require_dist_cjs69 = __commonJS({
   }
 });
 
-// node_modules/@smithy/util-waiter/dist-cjs/index.js
+// ../../root/workspace/node_modules/@smithy/util-waiter/dist-cjs/index.js
 var require_dist_cjs70 = __commonJS({
-  "node_modules/@smithy/util-waiter/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@smithy/util-waiter/dist-cjs/index.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -64720,9 +64720,9 @@ var require_dist_cjs70 = __commonJS({
   }
 });
 
-// node_modules/@aws-sdk/client-s3/dist-cjs/index.js
+// ../../root/workspace/node_modules/@aws-sdk/client-s3/dist-cjs/index.js
 var require_dist_cjs71 = __commonJS({
-  "node_modules/@aws-sdk/client-s3/dist-cjs/index.js"(exports, module) {
+  "../../root/workspace/node_modules/@aws-sdk/client-s3/dist-cjs/index.js"(exports, module) {
     "use strict";
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -75117,7 +75117,7 @@ var require_adminHost = __commonJS({
     }
     function isAdminSubdomainRequest(req) {
       const host = getRequestHost(req);
-      const configured = config.admin && config.admin.subdomain || "setup.govtexamzone.com";
+      const configured = config.admin && config.admin.subdomain || "setup.odishaaspirants.com";
       return Boolean(host && host === configured.toLowerCase());
     }
     function isHttpsRequest(req) {
@@ -75129,7 +75129,7 @@ var require_adminHost = __commonJS({
       return isAdminSubdomainRequest(req) ? "" : "/admin";
     }
     function getPublicBase(req) {
-      return isAdminSubdomainRequest(req) ? config.admin && config.admin.publicSiteUrl || "https://govtexamzone.com" : "";
+      return isAdminSubdomainRequest(req) ? config.admin && config.admin.publicSiteUrl || "https://odishaaspirants.com" : "";
     }
     function getAdminUrl(req, subPath = "") {
       const base = getAdminBase(req);
@@ -75161,10 +75161,10 @@ var require_auth = __commonJS({
       const validUsers = [
         (config.admin.username || "admin").toLowerCase(),
         "admin",
-        "govtexamzone",
-        "govtexamzoneadmin",
-        "govtexamzoneofficial",
-        "admin@govtexamzone.com"
+        "odishaaspirants",
+        "odishaaspirantsadmin",
+        "odishaaspirantsofficial",
+        "admin@odishaaspirants.com"
       ];
       return validUsers.map((u) => crypto6.createHmac("sha256", secret).update(u).digest("hex"));
     }
@@ -75279,12 +75279,12 @@ var require_adminRoutes = __commonJS({
       try {
         const sRows = await d1.prepare("SELECT * FROM settings").all();
         const siteSettings = {
-          telegram_url: "https://t.me/govtexamzoneofficial",
+          telegram_url: "https://t.me/odishaaspirantsofficial",
           whatsapp_url: "https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10",
-          contact_email: "contact.govtexamzone@gmail.com",
-          site_title: "Govt Exam Zone",
+          contact_email: "contact@odishaaspirants.com",
+          site_title: "Odisha Aspirants",
           site_logo: "",
-          site_favicon: "/images/gez-logo.svg"
+          site_favicon: "/images/oa-logo.svg"
         };
         if (sRows && Array.isArray(sRows)) {
           sRows.forEach((r) => {
@@ -75294,19 +75294,19 @@ var require_adminRoutes = __commonJS({
         res.locals.settings = siteSettings;
       } catch (e) {
         res.locals.settings = {
-          telegram_url: "https://t.me/govtexamzoneofficial",
+          telegram_url: "https://t.me/odishaaspirantsofficial",
           whatsapp_url: "https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10",
-          contact_email: "contact.govtexamzone@gmail.com",
-          site_title: "Govt Exam Zone",
+          contact_email: "contact@odishaaspirants.com",
+          site_title: "Odisha Aspirants",
           site_logo: "",
-          site_favicon: "/images/gez-logo.svg"
+          site_favicon: "/images/oa-logo.svg"
         };
       }
       next();
     });
     router.get("/login", (req, res) => {
       res.render("admin/login", {
-        title: "Admin Login - Govt Exam Zone Panel",
+        title: "Admin Login - Odisha Aspirants Panel",
         error: null
       });
     });
@@ -75316,15 +75316,15 @@ var require_adminRoutes = __commonJS({
       const validUsers = [
         (config.admin.username || "admin").toLowerCase(),
         "admin",
-        "govtexamzone",
-        "govtexamzoneadmin",
-        "govtexamzoneofficial",
-        "admin@govtexamzone.com"
+        "odishaaspirants",
+        "odishaaspirantsadmin",
+        "odishaaspirantsofficial",
+        "admin@odishaaspirants.com"
       ];
       const validPasswords = [
         config.admin.password,
-        "govtexamzone@2026",
-        "GovtExamZone@2026",
+        "odishaaspirants@2026",
+        "OdishaAspirants@2026",
         "admin2026"
       ];
       const isUserValid = validUsers.includes(inputUser);
@@ -75336,8 +75336,8 @@ var require_adminRoutes = __commonJS({
       }
       console.warn(`[AUTH] Failed login attempt: user="${req.body?.username}"`);
       res.render("admin/login", {
-        title: "Admin Login - Govt Exam Zone Panel",
-        error: 'Invalid username or password. Please use username "admin" and password "govtexamzone@2026" or click the Auto-Fill button.'
+        title: "Admin Login - Odisha Aspirants Panel",
+        error: 'Invalid username or password. Please use username "admin" and password "odishaaspirants@2026" or click the Auto-Fill button.'
       });
     });
     router.get("/logout", (req, res) => {
@@ -75456,7 +75456,7 @@ var require_adminRoutes = __commonJS({
           getDashboardAnalytics()
         ]);
         res.render("admin/dashboard", {
-          title: "Admin Dashboard - Govt Exam Zone Control Panel",
+          title: "Admin Dashboard - Odisha Aspirants Control Panel",
           totalPosts: totalPostsRow?.count || 0,
           categoriesCount,
           recentPosts,
@@ -75487,7 +75487,7 @@ var require_adminRoutes = __commonJS({
         query += " ORDER BY id DESC LIMIT 100";
         const posts = await d1.prepare(query).bind(...params).all();
         res.render("admin/posts-list", {
-          title: "Manage Posts - Govt Exam Zone Admin",
+          title: "Manage Posts - Odisha Aspirants Admin",
           posts,
           categories: CATEGORIES,
           selectedCategory: category,
@@ -75503,7 +75503,7 @@ var require_adminRoutes = __commonJS({
       try {
         const authors = await d1.prepare("SELECT id, name, role FROM authors WHERE is_active = 1 ORDER BY id ASC").all();
         res.render("admin/post-form", {
-          title: "Create New Post - Govt Exam Zone Admin",
+          title: "Create New Post - Odisha Aspirants Admin",
           post: null,
           categoryHistoryMap: {},
           authors: authors || [],
@@ -75638,7 +75638,7 @@ var require_adminRoutes = __commonJS({
           getPostCategoryMap(post.id)
         ]);
         res.render("admin/post-form", {
-          title: `Edit: ${post.title} - Govt Exam Zone Admin`,
+          title: `Edit: ${post.title} - Odisha Aspirants Admin`,
           post,
           categoryHistoryMap: categoryHistoryMap || {},
           authors: authors || [],
@@ -75779,7 +75779,7 @@ var require_adminRoutes = __commonJS({
       ORDER BY a.id ASC
     `).all();
         res.render("admin/authors", {
-          title: "Manage Editorial Team & Authors - Govt Exam Zone Admin",
+          title: "Manage Editorial Team & Authors - Odisha Aspirants Admin",
           authors: authors || [],
           success: req.query.success || ""
         });
@@ -75894,7 +75894,7 @@ var require_adminRoutes = __commonJS({
       try {
         const badges = await d1.prepare("SELECT * FROM badges ORDER BY display_order ASC, id ASC").all();
         res.render("admin/badges", {
-          title: "Manage 8 Quick Badges - Govt Exam Zone Admin",
+          title: "Manage 8 Quick Badges - Odisha Aspirants Admin",
           badges: badges || [],
           saved: req.query.saved === "1",
           deleted: req.query.deleted === "1"
@@ -75939,7 +75939,7 @@ var require_adminRoutes = __commonJS({
       try {
         const marquees = await d1.prepare("SELECT * FROM marquees ORDER BY display_order ASC, id ASC").all();
         res.render("admin/marquees", {
-          title: "Manage Marquees / Tickers - Govt Exam Zone Admin",
+          title: "Manage Marquees / Tickers - Odisha Aspirants Admin",
           marquees: marquees || [],
           saved: req.query.saved === "1",
           deleted: req.query.deleted === "1"
@@ -76104,24 +76104,24 @@ var require_adminRoutes = __commonJS({
           });
         }
         const settings = {
-          telegram_url: "https://t.me/govtexamzoneofficial",
+          telegram_url: "https://t.me/odishaaspirantsofficial",
           whatsapp_url: "https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10",
-          contact_email: "contact.govtexamzone@gmail.com",
-          site_title: "Govt Exam Zone",
+          contact_email: "contact@odishaaspirants.com",
+          site_title: "Odisha Aspirants",
           site_logo: "",
-          site_favicon: "/images/gez-logo.svg",
-          header_subtitle: "WWW.GOVTEXAMZONE.COM",
+          site_favicon: "/images/oa-logo.svg",
+          header_subtitle: "WWW.ODISHAASPIRANTS.COM",
           site_tagline: "Latest Govt Jobs, Admit Card, Results 2026",
-          site_domain: "https://govtexamzone.com",
-          copyright_text: "\xA9 2026 govtexamzone.com. All Rights Reserved.",
+          site_domain: "https://odishaaspirants.com",
+          copyright_text: "\xA9 2026 odishaaspirants.com. All Rights Reserved.",
           youtube_url: "",
           twitter_url: "",
           instagram_url: "",
           facebook_url: "",
           contact_phone: "",
           office_address: "",
-          meta_description: "Govt Exam Zone (govtexamzone.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.",
-          meta_keywords: "Govt Exam Zone, govtexamzone, govtexamzone.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment",
+          meta_description: "Odisha Aspirants (odishaaspirants.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.",
+          meta_keywords: "Odisha Aspirants, odishaaspirants, odishaaspirants.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment",
           google_site_verification: "",
           google_analytics_id: "",
           notice_banner_active: "0",
@@ -76143,12 +76143,12 @@ var require_adminRoutes = __commonJS({
             settings[r.key] = r.value;
           });
         }
-        if (!settings.contact_email || /^support@govtexamzone/i.test(settings.contact_email.trim())) {
-          settings.contact_email = "contact.govtexamzone@gmail.com";
+        if (!settings.contact_email) {
+          settings.contact_email = "contact@odishaaspirants.com";
         }
         const hiddenCategoriesList = safeJsonParse(settings.hidden_categories, []);
         res.render("admin/settings", {
-          title: "Portal Settings - Govt Exam Zone Admin",
+          title: "Portal Settings - Odisha Aspirants Admin",
           settings,
           categories: CATEGORIES,
           categoryCountMap,
@@ -76181,8 +76181,8 @@ var require_adminRoutes = __commonJS({
           const gaMatch = gaTrim.match(/\b(G|GT|UA|AW)-[A-Z0-9-]+\b/i);
           rawSettings.google_analytics_id = gaMatch ? gaMatch[0].toUpperCase() : gaTrim.replace(/[<>"'\s]/g, "");
         }
-        if (typeof rawSettings.contact_email === "string" && /^support@govtexamzone/i.test(rawSettings.contact_email.trim())) {
-          rawSettings.contact_email = "contact.govtexamzone@gmail.com";
+        if (typeof rawSettings.contact_email === "string" && !rawSettings.contact_email.trim()) {
+          rawSettings.contact_email = "contact@odishaaspirants.com";
         }
         const logoFile = req.files?.site_logo_file?.[0];
         if (logoFile && logoFile.size > 0) {
@@ -76270,12 +76270,12 @@ var require_authorRoutes = __commonJS({
       try {
         const sRows = await d1.prepare("SELECT * FROM settings").all();
         const siteSettings = {
-          telegram_url: "https://t.me/govtexamzoneofficial",
+          telegram_url: "https://t.me/odishaaspirantsofficial",
           whatsapp_url: "https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10",
-          contact_email: "contact.govtexamzone@gmail.com",
-          site_title: "Govt Exam Zone",
-          site_logo: "/images/gez-logo.svg",
-          site_favicon: "/images/gez-logo.svg"
+          contact_email: "contact@odishaaspirants.com",
+          site_title: "Odisha Aspirants",
+          site_logo: "/images/oa-logo.svg",
+          site_favicon: "/images/oa-logo.svg"
         };
         if (sRows && Array.isArray(sRows)) {
           sRows.forEach((r) => {
@@ -76285,18 +76285,18 @@ var require_authorRoutes = __commonJS({
         res.locals.settings = siteSettings;
       } catch (e) {
         res.locals.settings = {
-          telegram_url: "https://t.me/govtexamzoneofficial",
+          telegram_url: "https://t.me/odishaaspirantsofficial",
           whatsapp_url: "https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10",
-          contact_email: "contact.govtexamzone@gmail.com",
-          site_title: "Govt Exam Zone",
-          site_logo: "/images/gez-logo.svg",
-          site_favicon: "/images/gez-logo.svg"
+          contact_email: "contact@odishaaspirants.com",
+          site_title: "Odisha Aspirants",
+          site_logo: "/images/oa-logo.svg",
+          site_favicon: "/images/oa-logo.svg"
         };
       }
       next();
     });
     router.get("/login", async (req, res) => {
-      const token = req.cookies?.gez_author_token;
+      const token = req.cookies?.oa_author_token;
       if (token) {
         const author = await getAuthorFromToken(token);
         if (author) {
@@ -76309,7 +76309,7 @@ var require_authorRoutes = __commonJS({
       } catch (e) {
       }
       res.render("author/login", {
-        title: "Author Login - Editorial & Contributor Desk | Govt Exam Zone",
+        title: "Author Login - Editorial & Contributor Desk | Odisha Aspirants",
         error: null,
         returnUrl: req.query.returnUrl || "/author-portal",
         sampleAuthors: sampleAuthors || []
@@ -76322,7 +76322,7 @@ var require_authorRoutes = __commonJS({
         const returnUrl = req.body?.returnUrl || "/author-portal";
         if (!inputIdentifier || !inputPassword) {
           return res.render("author/login", {
-            title: "Author Login - Govt Exam Zone",
+            title: "Author Login - Odisha Aspirants",
             error: "Please provide both Author Email/Username and Password.",
             returnUrl,
             sampleAuthors: []
@@ -76334,7 +76334,7 @@ var require_authorRoutes = __commonJS({
     `).bind(inputIdentifier, inputIdentifier).first();
         if (!author) {
           return res.render("author/login", {
-            title: "Author Login - Govt Exam Zone",
+            title: "Author Login - Odisha Aspirants",
             error: `No verified author found with username or email: "${inputIdentifier}".`,
             returnUrl,
             sampleAuthors: []
@@ -76343,7 +76343,7 @@ var require_authorRoutes = __commonJS({
         const isValid = verifyPassword(inputPassword, author.password_hash);
         if (!isValid) {
           return res.render("author/login", {
-            title: "Author Login - Govt Exam Zone",
+            title: "Author Login - Odisha Aspirants",
             error: "Incorrect author password. Please verify and try again.",
             returnUrl,
             sampleAuthors: []
@@ -76396,7 +76396,7 @@ var require_authorRoutes = __commonJS({
       `).bind(author.id).all();
         }
         res.render("author/dashboard", {
-          title: `${author.name} - ${isEditor ? "Editor" : "Author"} Workspace | Govt Exam Zone`,
+          title: `${author.name} - ${isEditor ? "Editor" : "Author"} Workspace | Odisha Aspirants`,
           author,
           isEditor,
           stats: {
@@ -76764,7 +76764,7 @@ var require_authorRoutes = __commonJS({
       try {
         const author = await d1.prepare("SELECT * FROM authors WHERE id = ?").bind(req.author.id).first();
         res.render("author/profile", {
-          title: "Author Profile & Account Settings - Govt Exam Zone",
+          title: "Author Profile & Account Settings - Odisha Aspirants",
           author: author || req.author,
           success: req.query.success || "",
           error: req.query.error || ""
@@ -77063,7 +77063,7 @@ var require_templateEngine = __commonJS({
     ;  } 
     ; __append("\\n\\n  <!-- Add New Author Form Card -->\\n  <div style=\\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px 20px; margin-bottom: 25px;\\">\\n    <h3 style=\\"margin-top: 0; margin-bottom: 14px; font-size: 15px; color: #1e293b; display: flex; align-items: center; gap: 6px;\\">\\n      <span>\u2795</span> Add New Author / Editorial Member\\n    </h3>\\n    <form action=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
-    ; __append("/authors/new\\" method=\\"POST\\">\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Full Name *</label>\\n          <input type=\\"text\\" name=\\"name\\" class=\\"form-control\\" placeholder=\\"e.g. Priya Sharma\\" required>\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Slug (URL Identifier)</label>\\n          <input type=\\"text\\" name=\\"slug\\" class=\\"form-control\\" placeholder=\\"e.g. priya-sharma (auto-generated if empty)\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Role / Professional Title *</label>\\n          <input type=\\"text\\" name=\\"role\\" class=\\"form-control\\" placeholder=\\"e.g. Senior Exam Analyst &amp; SSC Specialist\\" required>\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Official Email</label>\\n          <input type=\\"email\\" name=\\"email\\" class=\\"form-control\\" placeholder=\\"e.g. priya@govtexamzone.com\\">\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Qualification</label>\\n          <input type=\\"text\\" name=\\"qualification\\" class=\\"form-control\\" placeholder=\\"e.g. M.A. Public Administration, UGC NET\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Experience</label>\\n          <input type=\\"text\\" name=\\"experience\\" class=\\"form-control\\" placeholder=\\"e.g. 6+ Years Recruitment Reporting\\">\\n        </div>\\n        <div class=\\"form-group\\" style=\\"grid-column: span 2;\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Avatar Image URL</label>\\n          <input type=\\"text\\" name=\\"avatar_url\\" class=\\"form-control\\" placeholder=\\"/images/default-avatar.svg or external image URL\\" value=\\"/images/default-avatar.svg\\">\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label style=\\"font-size: 12.5px; font-weight: 600;\\">Short Bio / Verification Statement *</label>\\n        <textarea name=\\"bio\\" class=\\"form-control\\" rows=\\"2\\" placeholder=\\"Brief professional overview of their background, domain expertise, and fact-checking role.\\" required></textarea>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Twitter / X Profile URL</label>\\n          <input type=\\"url\\" name=\\"twitter_url\\" class=\\"form-control\\" placeholder=\\"https://twitter.com/...\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">LinkedIn Profile URL</label>\\n          <input type=\\"url\\" name=\\"linkedin_url\\" class=\\"form-control\\" placeholder=\\"https://linkedin.com/in/...\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Telegram Profile URL</label>\\n          <input type=\\"url\\" name=\\"telegram_url\\" class=\\"form-control\\" placeholder=\\"https://t.me/...\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Login Password</label>\\n          <input type=\\"text\\" name=\\"password\\" class=\\"form-control\\" placeholder=\\"Default: author@2026\\" value=\\"author@2026\\">\\n        </div>\\n        <div class=\\"form-group\\" style=\\"display: flex; align-items: flex-end; padding-bottom: 8px;\\">\\n          <label style=\\"display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; font-weight: 600;\\">\\n            <input type=\\"checkbox\\" name=\\"is_active\\" value=\\"1\\" checked>\\n            <span>Active &amp; Visible</span>\\n          </label>\\n        </div>\\n      </div>\\n\\n      <button type=\\"submit\\" class=\\"btn btn-primary btn-sm\\" style=\\"padding: 8px 20px;\\">\\n        + Save New Author\\n      </button>\\n    </form>\\n  </div>\\n\\n  <!-- Authors List Table -->\\n  <div style=\\"overflow-x: auto;\\">\\n    <table class=\\"admin-table\\">\\n      <thead>\\n        <tr>\\n          <th style=\\"width: 60px;\\">Avatar</th>\\n          <th>Author Name &amp; Slug</th>\\n          <th>Role &amp; Qualification</th>\\n          <th>Posts</th>\\n          <th>Status</th>\\n          <th style=\\"text-align: right; width: 140px;\\">Actions</th>\\n        </tr>\\n      </thead>\\n      <tbody>\\n        ")
+    ; __append("/authors/new\\" method=\\"POST\\">\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Full Name *</label>\\n          <input type=\\"text\\" name=\\"name\\" class=\\"form-control\\" placeholder=\\"e.g. Priya Sharma\\" required>\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Slug (URL Identifier)</label>\\n          <input type=\\"text\\" name=\\"slug\\" class=\\"form-control\\" placeholder=\\"e.g. priya-sharma (auto-generated if empty)\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Role / Professional Title *</label>\\n          <input type=\\"text\\" name=\\"role\\" class=\\"form-control\\" placeholder=\\"e.g. Senior Exam Analyst &amp; SSC Specialist\\" required>\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Official Email</label>\\n          <input type=\\"email\\" name=\\"email\\" class=\\"form-control\\" placeholder=\\"e.g. priya@odishaaspirants.com\\">\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Qualification</label>\\n          <input type=\\"text\\" name=\\"qualification\\" class=\\"form-control\\" placeholder=\\"e.g. M.A. Public Administration, UGC NET\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Experience</label>\\n          <input type=\\"text\\" name=\\"experience\\" class=\\"form-control\\" placeholder=\\"e.g. 6+ Years Recruitment Reporting\\">\\n        </div>\\n        <div class=\\"form-group\\" style=\\"grid-column: span 2;\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Avatar Image URL</label>\\n          <input type=\\"text\\" name=\\"avatar_url\\" class=\\"form-control\\" placeholder=\\"/images/default-avatar.svg or external image URL\\" value=\\"/images/default-avatar.svg\\">\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label style=\\"font-size: 12.5px; font-weight: 600;\\">Short Bio / Verification Statement *</label>\\n        <textarea name=\\"bio\\" class=\\"form-control\\" rows=\\"2\\" placeholder=\\"Brief professional overview of their background, domain expertise, and fact-checking role.\\" required></textarea>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Twitter / X Profile URL</label>\\n          <input type=\\"url\\" name=\\"twitter_url\\" class=\\"form-control\\" placeholder=\\"https://twitter.com/...\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">LinkedIn Profile URL</label>\\n          <input type=\\"url\\" name=\\"linkedin_url\\" class=\\"form-control\\" placeholder=\\"https://linkedin.com/in/...\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Telegram Profile URL</label>\\n          <input type=\\"url\\" name=\\"telegram_url\\" class=\\"form-control\\" placeholder=\\"https://t.me/...\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Login Password</label>\\n          <input type=\\"text\\" name=\\"password\\" class=\\"form-control\\" placeholder=\\"Default: author@2026\\" value=\\"author@2026\\">\\n        </div>\\n        <div class=\\"form-group\\" style=\\"display: flex; align-items: flex-end; padding-bottom: 8px;\\">\\n          <label style=\\"display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; font-weight: 600;\\">\\n            <input type=\\"checkbox\\" name=\\"is_active\\" value=\\"1\\" checked>\\n            <span>Active &amp; Visible</span>\\n          </label>\\n        </div>\\n      </div>\\n\\n      <button type=\\"submit\\" class=\\"btn btn-primary btn-sm\\" style=\\"padding: 8px 20px;\\">\\n        + Save New Author\\n      </button>\\n    </form>\\n  </div>\\n\\n  <!-- Authors List Table -->\\n  <div style=\\"overflow-x: auto;\\">\\n    <table class=\\"admin-table\\">\\n      <thead>\\n        <tr>\\n          <th style=\\"width: 60px;\\">Avatar</th>\\n          <th>Author Name &amp; Slug</th>\\n          <th>Role &amp; Qualification</th>\\n          <th>Posts</th>\\n          <th>Status</th>\\n          <th style=\\"text-align: right; width: 140px;\\">Actions</th>\\n        </tr>\\n      </thead>\\n      <tbody>\\n        ")
     ;  if (authors && authors.length > 0) { 
     ; __append("\\n          ")
     ;  authors.forEach(a => { 
@@ -77165,7 +77165,7 @@ var require_templateEngine = __commonJS({
     ;  } 
     ; __append("\\n\\n  <!-- Add New Author Form Card -->\\n  <div style=\\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px 20px; margin-bottom: 25px;\\">\\n    <h3 style=\\"margin-top: 0; margin-bottom: 14px; font-size: 15px; color: #1e293b; display: flex; align-items: center; gap: 6px;\\">\\n      <span>\u2795</span> Add New Author / Editorial Member\\n    </h3>\\n    <form action=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
-    ; __append("/authors/new\\" method=\\"POST\\">\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Full Name *</label>\\n          <input type=\\"text\\" name=\\"name\\" class=\\"form-control\\" placeholder=\\"e.g. Priya Sharma\\" required>\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Slug (URL Identifier)</label>\\n          <input type=\\"text\\" name=\\"slug\\" class=\\"form-control\\" placeholder=\\"e.g. priya-sharma (auto-generated if empty)\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Role / Professional Title *</label>\\n          <input type=\\"text\\" name=\\"role\\" class=\\"form-control\\" placeholder=\\"e.g. Senior Exam Analyst &amp; SSC Specialist\\" required>\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Official Email</label>\\n          <input type=\\"email\\" name=\\"email\\" class=\\"form-control\\" placeholder=\\"e.g. priya@govtexamzone.com\\">\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Qualification</label>\\n          <input type=\\"text\\" name=\\"qualification\\" class=\\"form-control\\" placeholder=\\"e.g. M.A. Public Administration, UGC NET\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Experience</label>\\n          <input type=\\"text\\" name=\\"experience\\" class=\\"form-control\\" placeholder=\\"e.g. 6+ Years Recruitment Reporting\\">\\n        </div>\\n        <div class=\\"form-group\\" style=\\"grid-column: span 2;\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Avatar Image URL</label>\\n          <input type=\\"text\\" name=\\"avatar_url\\" class=\\"form-control\\" placeholder=\\"/images/default-avatar.svg or external image URL\\" value=\\"/images/default-avatar.svg\\">\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label style=\\"font-size: 12.5px; font-weight: 600;\\">Short Bio / Verification Statement *</label>\\n        <textarea name=\\"bio\\" class=\\"form-control\\" rows=\\"2\\" placeholder=\\"Brief professional overview of their background, domain expertise, and fact-checking role.\\" required></textarea>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Twitter / X Profile URL</label>\\n          <input type=\\"url\\" name=\\"twitter_url\\" class=\\"form-control\\" placeholder=\\"https://twitter.com/...\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">LinkedIn Profile URL</label>\\n          <input type=\\"url\\" name=\\"linkedin_url\\" class=\\"form-control\\" placeholder=\\"https://linkedin.com/in/...\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Telegram Profile URL</label>\\n          <input type=\\"url\\" name=\\"telegram_url\\" class=\\"form-control\\" placeholder=\\"https://t.me/...\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Login Password</label>\\n          <input type=\\"text\\" name=\\"password\\" class=\\"form-control\\" placeholder=\\"Default: author@2026\\" value=\\"author@2026\\">\\n        </div>\\n        <div class=\\"form-group\\" style=\\"display: flex; align-items: flex-end; padding-bottom: 8px;\\">\\n          <label style=\\"display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; font-weight: 600;\\">\\n            <input type=\\"checkbox\\" name=\\"is_active\\" value=\\"1\\" checked>\\n            <span>Active &amp; Visible</span>\\n          </label>\\n        </div>\\n      </div>\\n\\n      <button type=\\"submit\\" class=\\"btn btn-primary btn-sm\\" style=\\"padding: 8px 20px;\\">\\n        + Save New Author\\n      </button>\\n    </form>\\n  </div>\\n\\n  <!-- Authors List Table -->\\n  <div style=\\"overflow-x: auto;\\">\\n    <table class=\\"admin-table\\">\\n      <thead>\\n        <tr>\\n          <th style=\\"width: 60px;\\">Avatar</th>\\n          <th>Author Name &amp; Slug</th>\\n          <th>Role &amp; Qualification</th>\\n          <th>Posts</th>\\n          <th>Status</th>\\n          <th style=\\"text-align: right; width: 140px;\\">Actions</th>\\n        </tr>\\n      </thead>\\n      <tbody>\\n        ")
+    ; __append("/authors/new\\" method=\\"POST\\">\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Full Name *</label>\\n          <input type=\\"text\\" name=\\"name\\" class=\\"form-control\\" placeholder=\\"e.g. Priya Sharma\\" required>\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Slug (URL Identifier)</label>\\n          <input type=\\"text\\" name=\\"slug\\" class=\\"form-control\\" placeholder=\\"e.g. priya-sharma (auto-generated if empty)\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Role / Professional Title *</label>\\n          <input type=\\"text\\" name=\\"role\\" class=\\"form-control\\" placeholder=\\"e.g. Senior Exam Analyst &amp; SSC Specialist\\" required>\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Official Email</label>\\n          <input type=\\"email\\" name=\\"email\\" class=\\"form-control\\" placeholder=\\"e.g. priya@odishaaspirants.com\\">\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Qualification</label>\\n          <input type=\\"text\\" name=\\"qualification\\" class=\\"form-control\\" placeholder=\\"e.g. M.A. Public Administration, UGC NET\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Experience</label>\\n          <input type=\\"text\\" name=\\"experience\\" class=\\"form-control\\" placeholder=\\"e.g. 6+ Years Recruitment Reporting\\">\\n        </div>\\n        <div class=\\"form-group\\" style=\\"grid-column: span 2;\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Avatar Image URL</label>\\n          <input type=\\"text\\" name=\\"avatar_url\\" class=\\"form-control\\" placeholder=\\"/images/default-avatar.svg or external image URL\\" value=\\"/images/default-avatar.svg\\">\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label style=\\"font-size: 12.5px; font-weight: 600;\\">Short Bio / Verification Statement *</label>\\n        <textarea name=\\"bio\\" class=\\"form-control\\" rows=\\"2\\" placeholder=\\"Brief professional overview of their background, domain expertise, and fact-checking role.\\" required></textarea>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Twitter / X Profile URL</label>\\n          <input type=\\"url\\" name=\\"twitter_url\\" class=\\"form-control\\" placeholder=\\"https://twitter.com/...\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">LinkedIn Profile URL</label>\\n          <input type=\\"url\\" name=\\"linkedin_url\\" class=\\"form-control\\" placeholder=\\"https://linkedin.com/in/...\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Telegram Profile URL</label>\\n          <input type=\\"url\\" name=\\"telegram_url\\" class=\\"form-control\\" placeholder=\\"https://t.me/...\\">\\n        </div>\\n        <div class=\\"form-group\\">\\n          <label style=\\"font-size: 12.5px; font-weight: 600;\\">Login Password</label>\\n          <input type=\\"text\\" name=\\"password\\" class=\\"form-control\\" placeholder=\\"Default: author@2026\\" value=\\"author@2026\\">\\n        </div>\\n        <div class=\\"form-group\\" style=\\"display: flex; align-items: flex-end; padding-bottom: 8px;\\">\\n          <label style=\\"display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; font-weight: 600;\\">\\n            <input type=\\"checkbox\\" name=\\"is_active\\" value=\\"1\\" checked>\\n            <span>Active &amp; Visible</span>\\n          </label>\\n        </div>\\n      </div>\\n\\n      <button type=\\"submit\\" class=\\"btn btn-primary btn-sm\\" style=\\"padding: 8px 20px;\\">\\n        + Save New Author\\n      </button>\\n    </form>\\n  </div>\\n\\n  <!-- Authors List Table -->\\n  <div style=\\"overflow-x: auto;\\">\\n    <table class=\\"admin-table\\">\\n      <thead>\\n        <tr>\\n          <th style=\\"width: 60px;\\">Avatar</th>\\n          <th>Author Name &amp; Slug</th>\\n          <th>Role &amp; Qualification</th>\\n          <th>Posts</th>\\n          <th>Status</th>\\n          <th style=\\"text-align: right; width: 140px;\\">Actions</th>\\n        </tr>\\n      </thead>\\n      <tbody>\\n        ")
     ;  if (authors && authors.length > 0) { 
     ; __append("\\n          ")
     ;  authors.forEach(a => { 
@@ -77555,7 +77555,7 @@ var require_templateEngine = __commonJS({
   function __append(s) { if (s !== undefined && s !== null) __output += s }
   with (locals || {}) {
     ; __append( include('../partials/admin-nav', { currentPath: '/admin' }) )
-    ; __append("\\n\\n<!-- Welcome Banner -->\\n<div class=\\"admin-welcome-banner\\" style=\\"background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 12px; padding: 22px 26px; margin-bottom: 24px; color: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);\\">\\n  <div>\\n    <div style=\\"display: flex; align-items: center; gap: 8px; margin-bottom: 6px;\\">\\n      <span style=\\"background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.3);\\">\\n        \u25CF System Operational\\n      </span>\\n      <span style=\\"color: #94a3b8; font-size: 12px;\\">Cloudflare D1 &amp; R2 Architecture</span>\\n    </div>\\n    <h1 style=\\"font-size: 22px; font-weight: 800; margin: 0 0 6px 0; letter-spacing: -0.5px;\\">\\n      Govt Exam Zone Administrative Suite\\n    </h1>\\n    <p style=\\"color: #94a3b8; font-size: 13.5px; margin: 0;\\">\\n      Real-time management for Govt Exam Zone recruitments, results, admit cards, Cloudflare D1 SQL database and R2 storage.\\n    </p>\\n  </div>\\n  <div class=\\"admin-welcome-actions\\" style=\\"display: flex; gap: 10px; flex-wrap: wrap;\\">\\n    <a href=\\"")
+    ; __append("\\n\\n<!-- Welcome Banner -->\\n<div class=\\"admin-welcome-banner\\" style=\\"background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 12px; padding: 22px 26px; margin-bottom: 24px; color: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);\\">\\n  <div>\\n    <div style=\\"display: flex; align-items: center; gap: 8px; margin-bottom: 6px;\\">\\n      <span style=\\"background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.3);\\">\\n        \u25CF System Operational\\n      </span>\\n      <span style=\\"color: #94a3b8; font-size: 12px;\\">Cloudflare D1 &amp; R2 Architecture</span>\\n    </div>\\n    <h1 style=\\"font-size: 22px; font-weight: 800; margin: 0 0 6px 0; letter-spacing: -0.5px;\\">\\n      Odisha Aspirants Administrative Suite\\n    </h1>\\n    <p style=\\"color: #94a3b8; font-size: 13.5px; margin: 0;\\">\\n      Real-time management for Odisha Aspirants recruitments, results, admit cards, Cloudflare D1 SQL database and R2 storage.\\n    </p>\\n  </div>\\n  <div class=\\"admin-welcome-actions\\" style=\\"display: flex; gap: 10px; flex-wrap: wrap;\\">\\n    <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts/new\\" class=\\"btn btn-primary\\" style=\\"padding: 10px 18px; font-size: 13.5px;\\">\\n      \u2795 Create New Post\\n    </a>\\n    <a href=\\"")
     ; __append(escapeFn( (typeof publicBase !== 'undefined' ? publicBase : '') ))
@@ -77830,7 +77830,7 @@ var require_templateEngine = __commonJS({
   function __append(s) { if (s !== undefined && s !== null) __output += s }
   with (locals || {}) {
     ; __append( include('../partials/admin-nav', { currentPath: '/admin' }) )
-    ; __append("\\n\\n<!-- Welcome Banner -->\\n<div class=\\"admin-welcome-banner\\" style=\\"background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 12px; padding: 22px 26px; margin-bottom: 24px; color: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);\\">\\n  <div>\\n    <div style=\\"display: flex; align-items: center; gap: 8px; margin-bottom: 6px;\\">\\n      <span style=\\"background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.3);\\">\\n        \u25CF System Operational\\n      </span>\\n      <span style=\\"color: #94a3b8; font-size: 12px;\\">Cloudflare D1 &amp; R2 Architecture</span>\\n    </div>\\n    <h1 style=\\"font-size: 22px; font-weight: 800; margin: 0 0 6px 0; letter-spacing: -0.5px;\\">\\n      Govt Exam Zone Administrative Suite\\n    </h1>\\n    <p style=\\"color: #94a3b8; font-size: 13.5px; margin: 0;\\">\\n      Real-time management for Govt Exam Zone recruitments, results, admit cards, Cloudflare D1 SQL database and R2 storage.\\n    </p>\\n  </div>\\n  <div class=\\"admin-welcome-actions\\" style=\\"display: flex; gap: 10px; flex-wrap: wrap;\\">\\n    <a href=\\"")
+    ; __append("\\n\\n<!-- Welcome Banner -->\\n<div class=\\"admin-welcome-banner\\" style=\\"background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 12px; padding: 22px 26px; margin-bottom: 24px; color: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);\\">\\n  <div>\\n    <div style=\\"display: flex; align-items: center; gap: 8px; margin-bottom: 6px;\\">\\n      <span style=\\"background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.3);\\">\\n        \u25CF System Operational\\n      </span>\\n      <span style=\\"color: #94a3b8; font-size: 12px;\\">Cloudflare D1 &amp; R2 Architecture</span>\\n    </div>\\n    <h1 style=\\"font-size: 22px; font-weight: 800; margin: 0 0 6px 0; letter-spacing: -0.5px;\\">\\n      Odisha Aspirants Administrative Suite\\n    </h1>\\n    <p style=\\"color: #94a3b8; font-size: 13.5px; margin: 0;\\">\\n      Real-time management for Odisha Aspirants recruitments, results, admit cards, Cloudflare D1 SQL database and R2 storage.\\n    </p>\\n  </div>\\n  <div class=\\"admin-welcome-actions\\" style=\\"display: flex; gap: 10px; flex-wrap: wrap;\\">\\n    <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts/new\\" class=\\"btn btn-primary\\" style=\\"padding: 10px 18px; font-size: 13.5px;\\">\\n      \u2795 Create New Post\\n    </a>\\n    <a href=\\"")
     ; __append(escapeFn( (typeof publicBase !== 'undefined' ? publicBase : '') ))
@@ -78107,12 +78107,12 @@ var require_templateEngine = __commonJS({
     ; __append("<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, maximum-scale=5.0\\">\\n  <meta name=\\"theme-color\\" content=\\"#0f172a\\">\\n  <title>")
     ; __append(escapeFn( title ))
     ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"icon\\" href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' ))
     ; __append("\\">\\n  <style>\\n    *, *::before, *::after {\\n      box-sizing: border-box;\\n      margin: 0;\\n      padding: 0;\\n    }\\n\\n    body {\\n      min-height: 100vh;\\n      min-height: 100dvh;\\n      display: grid;\\n      place-items: center;\\n      padding: 16px;\\n      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, sans-serif;\\n      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(171, 24, 61, 0.22), transparent 70%),\\n                  radial-gradient(circle 400px at 80% 90%, rgba(2, 132, 199, 0.1), transparent),\\n                  #0b1120;\\n      color: #f8fafc;\\n      overflow-x: hidden;\\n      position: relative;\\n    }\\n\\n    /* Ambient Subtle Grid */\\n    body::before {\\n      content: \\"\\";\\n      position: fixed;\\n      inset: 0;\\n      background-image: \\n        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),\\n        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);\\n      background-size: 28px 28px;\\n      pointer-events: none;\\n      z-index: 1;\\n    }\\n\\n    .login-wrap {\\n      width: 100%;\\n      max-width: 380px;\\n      position: relative;\\n      z-index: 2;\\n    }\\n\\n    /* Compact Glassmorphism Card */\\n    .login-card {\\n      background: rgba(17, 24, 39, 0.88);\\n      backdrop-filter: blur(20px);\\n      -webkit-backdrop-filter: blur(20px);\\n      border: 1px solid rgba(255, 255, 255, 0.09);\\n      border-radius: 18px;\\n      padding: 28px 24px 22px;\\n      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7),\\n                  0 0 0 1px rgba(255, 255, 255, 0.04),\\n                  0 0 35px rgba(171, 24, 61, 0.12);\\n    }\\n\\n    /* Sleek Header */\\n    .brand-header {\\n      text-align: center;\\n      margin-bottom: 20px;\\n    }\\n\\n    .brand-emblem {\\n      display: inline-flex;\\n      align-items: center;\\n      justify-content: center;\\n      width: 52px;\\n      height: 52px;\\n      background: rgba(255, 255, 255, 0.04);\\n      border: 1px solid rgba(255, 255, 255, 0.12);\\n      border-radius: 14px;\\n      padding: 7px;\\n      margin-bottom: 10px;\\n      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);\\n      transition: transform 0.2s ease;\\n      text-decoration: none;\\n    }\\n\\n    .brand-emblem:hover {\\n      transform: scale(1.05);\\n      border-color: rgba(171, 24, 61, 0.4);\\n    }\\n\\n    .brand-emblem img {\\n      width: 100%;\\n      height: 100%;\\n      object-fit: contain;\\n      display: block;\\n    }\\n\\n    .brand-title {\\n      font-size: 20px;\\n      font-weight: 800;\\n      color: #ffffff;\\n      letter-spacing: -0.4px;\\n      margin-bottom: 4px;\\n    }\\n\\n    .brand-subtitle {\\n      font-size: 12.5px;\\n      color: #94a3b8;\\n    }\\n\\n    /* Alert */\\n    .alert-box {\\n      background: rgba(239, 68, 68, 0.12);\\n      border: 1px solid rgba(239, 68, 68, 0.3);\\n      color: #fca5a5;\\n      padding: 9px 12px;\\n      border-radius: 8px;\\n      font-size: 12.5px;\\n      margin-bottom: 16px;\\n      display: flex;\\n      align-items: center;\\n      gap: 8px;\\n    }\\n\\n    /* Form Fields */\\n    .form-group {\\n      margin-bottom: 14px;\\n      text-align: left;\\n    }\\n\\n    .form-group label {\\n      display: block;\\n      font-size: 12px;\\n      font-weight: 600;\\n      color: #cbd5e1;\\n      margin-bottom: 5px;\\n      letter-spacing: 0.1px;\\n    }\\n\\n    .input-box {\\n      position: relative;\\n      display: flex;\\n      align-items: center;\\n    }\\n\\n    .input-box svg {\\n      position: absolute;\\n      left: 13px;\\n      width: 16px;\\n      height: 16px;\\n      fill: #64748b;\\n      pointer-events: none;\\n      transition: fill 0.2s ease;\\n    }\\n\\n    .input-control {\\n      width: 100%;\\n      padding: 10px 12px 10px 38px;\\n      font-size: 14px;\\n      font-family: inherit;\\n      color: #ffffff;\\n      background: rgba(15, 23, 42, 0.6);\\n      border: 1px solid rgba(255, 255, 255, 0.1);\\n      border-radius: 9px;\\n      outline: none;\\n      transition: all 0.2s ease;\\n    }\\n\\n    .input-control::placeholder {\\n      color: #475569;\\n    }\\n\\n    .input-control:focus {\\n      border-color: #ab183d;\\n      background: rgba(15, 23, 42, 0.9);\\n      box-shadow: 0 0 0 3px rgba(171, 24, 61, 0.2);\\n    }\\n\\n    .input-box:focus-within svg {\\n      fill: #ff4d73;\\n    }\\n\\n    /* Password Toggle */\\n    .input-box.pwd input {\\n      padding-right: 38px;\\n    }\\n\\n    .btn-toggle-pwd {\\n      position: absolute;\\n      right: 4px;\\n      background: transparent;\\n      border: none;\\n      cursor: pointer;\\n      color: #94a3b8;\\n      padding: 6px 8px;\\n      border-radius: 6px;\\n      display: flex;\\n      align-items: center;\\n      justify-content: center;\\n      font-size: 15px;\\n      transition: color 0.15s ease;\\n    }\\n\\n    .btn-toggle-pwd:hover {\\n      color: #ffffff;\\n    }\\n\\n    /* Primary Submit Button */\\n    .btn-submit {\\n      width: 100%;\\n      background: linear-gradient(135deg, #ab183d 0%, #7e0e29 100%);\\n      color: #ffffff;\\n      border: none;\\n      padding: 11px 16px;\\n      font-size: 14px;\\n      font-weight: 700;\\n      border-radius: 9px;\\n      cursor: pointer;\\n      box-shadow: 0 4px 12px rgba(171, 24, 61, 0.35);\\n      transition: all 0.2s ease;\\n      display: flex;\\n      align-items: center;\\n      justify-content: center;\\n      gap: 7px;\\n      margin-top: 18px;\\n    }\\n\\n    .btn-submit:hover {\\n      background: linear-gradient(135deg, #bd1b44 0%, #8f1230 100%);\\n      box-shadow: 0 6px 18px rgba(171, 24, 61, 0.5);\\n      transform: translateY(-1px);\\n    }\\n\\n    .btn-submit:active {\\n      transform: translateY(0);\\n    }\\n\\n    /* Compact 1-Line Quick Access Demo Pill */\\n    .quick-access-bar {\\n      margin-top: 14px;\\n      padding: 8px 10px;\\n      background: rgba(255, 255, 255, 0.03);\\n      border: 1px dashed rgba(255, 255, 255, 0.1);\\n      border-radius: 8px;\\n      display: flex;\\n      align-items: center;\\n      justify-content: space-between;\\n      gap: 6px;\\n      font-size: 11.5px;\\n      color: #94a3b8;\\n    }\\n\\n    .quick-access-info {\\n      display: flex;\\n      align-items: center;\\n      gap: 6px;\\n      white-space: nowrap;\\n      overflow: hidden;\\n      text-overflow: ellipsis;\\n    }\\n\\n    .quick-access-info code {\\n      font-family: 'JetBrains Mono', monospace;\\n      color: #ff8da6;\\n      background: rgba(171, 24, 61, 0.2);\\n      padding: 1px 5px;\\n      border-radius: 4px;\\n      font-size: 11px;\\n    }\\n\\n    .btn-autofill {\\n      background: rgba(2, 132, 199, 0.15);\\n      border: 1px solid rgba(2, 132, 199, 0.35);\\n      color: #38bdf8;\\n      font-size: 11px;\\n      font-weight: 700;\\n      padding: 3px 8px;\\n      border-radius: 5px;\\n      cursor: pointer;\\n      white-space: nowrap;\\n      transition: all 0.15s ease;\\n    }\\n\\n    .btn-autofill:hover {\\n      background: rgba(2, 132, 199, 0.3);\\n      color: #7dd3fc;\\n      border-color: rgba(2, 132, 199, 0.6);\\n    }\\n\\n    /* Footer Meta */\\n    .card-footer {\\n      margin-top: 16px;\\n      text-align: center;\\n      display: flex;\\n      flex-direction: column;\\n      gap: 8px;\\n    }\\n\\n    .card-footer a {\\n      font-size: 12px;\\n      color: #64748b;\\n      text-decoration: none;\\n      transition: color 0.15s ease;\\n    }\\n\\n    .card-footer a:hover {\\n      color: #cbd5e1;\\n    }\\n\\n    .security-note {\\n      font-size: 10.5px;\\n      color: #475569;\\n      display: flex;\\n      align-items: center;\\n      justify-content: center;\\n      gap: 4px;\\n    }\\n  </style>\\n</head>\\n<body>\\n\\n<div class=\\"login-wrap\\">\\n  <div class=\\"login-card\\">\\n    \\n    <!-- Brand Header -->\\n    <div class=\\"brand-header\\">\\n      <a href=\\"")
     ; __append(escapeFn( (typeof publicBase !== 'undefined' ? publicBase : '') ))
     ; __append("/\\" class=\\"brand-emblem\\" title=\\"Back to Homepage\\">\\n        <img src=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/gez-logo.svg' ))
-    ; __append("\\" alt=\\"Logo\\">\\n      </a>\\n      <h1 class=\\"brand-title\\">Admin Console</h1>\\n      <p class=\\"brand-subtitle\\">Govt Exam Zone Administration</p>\\n    </div>\\n\\n    <!-- Error Alert -->\\n    ")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/oa-logo.svg' ))
+    ; __append("\\" alt=\\"Logo\\">\\n      </a>\\n      <h1 class=\\"brand-title\\">Admin Console</h1>\\n      <p class=\\"brand-subtitle\\">Odisha Aspirants Administration</p>\\n    </div>\\n\\n    <!-- Error Alert -->\\n    ")
     ;  if (error) { 
     ; __append("\\n      <div class=\\"alert-box\\">\\n        <span>\u26A0\uFE0F</span>\\n        <span>")
     ; __append(escapeFn( error ))
@@ -78120,9 +78120,9 @@ var require_templateEngine = __commonJS({
     ;  } 
     ; __append("\\n\\n    <!-- Sign In Form -->\\n    <form id=\\"adminLoginForm\\" action=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
-    ; __append("/login\\" method=\\"POST\\">\\n      \\n      <!-- Username -->\\n      <div class=\\"form-group\\">\\n        <label for=\\"username\\">Username</label>\\n        <div class=\\"input-box\\">\\n          <svg viewBox=\\"0 0 24 24\\"><path d=\\"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\\"/></svg>\\n          <input \\n            type=\\"text\\" \\n            id=\\"username\\" \\n            name=\\"username\\" \\n            class=\\"input-control\\" \\n            placeholder=\\"admin\\" \\n            required \\n            autofocus \\n            autocomplete=\\"username\\"\\n            spellcheck=\\"false\\"\\n          >\\n        </div>\\n      </div>\\n\\n      <!-- Password -->\\n      <div class=\\"form-group\\">\\n        <label for=\\"password\\">Password</label>\\n        <div class=\\"input-box pwd\\">\\n          <svg viewBox=\\"0 0 24 24\\"><path d=\\"M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z\\"/></svg>\\n          <input \\n            type=\\"password\\" \\n            id=\\"password\\" \\n            name=\\"password\\" \\n            class=\\"input-control\\" \\n            placeholder=\\"\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\\" \\n            required \\n            autocomplete=\\"current-password\\"\\n          >\\n          <button type=\\"button\\" class=\\"btn-toggle-pwd\\" id=\\"pwdToggle\\" title=\\"Toggle password visibility\\">\\n            \u{1F441}\uFE0F\\n          </button>\\n        </div>\\n      </div>\\n\\n      <!-- Submit Button -->\\n      <button type=\\"submit\\" class=\\"btn-submit\\">\\n        <span>Sign In</span>\\n        <span>\u2192</span>\\n      </button>\\n\\n      <!-- Minimal 1-Line Quick Access -->\\n      <div class=\\"quick-access-bar\\">\\n        <div class=\\"quick-access-info\\">\\n          <span>Demo:</span>\\n          <code>admin</code>\\n          <span>/</span>\\n          <code>govtexamzone@2026</code>\\n        </div>\\n        <button type=\\"button\\" class=\\"btn-autofill\\" id=\\"quickFillBtn\\" title=\\"Fill credentials & login\\">\\n          \u26A1 Auto-Fill\\n        </button>\\n      </div>\\n    </form>\\n\\n    <!-- Footer Links -->\\n    <div class=\\"card-footer\\">\\n      <a href=\\"")
+    ; __append("/login\\" method=\\"POST\\">\\n      \\n      <!-- Username -->\\n      <div class=\\"form-group\\">\\n        <label for=\\"username\\">Username</label>\\n        <div class=\\"input-box\\">\\n          <svg viewBox=\\"0 0 24 24\\"><path d=\\"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\\"/></svg>\\n          <input \\n            type=\\"text\\" \\n            id=\\"username\\" \\n            name=\\"username\\" \\n            class=\\"input-control\\" \\n            placeholder=\\"admin\\" \\n            required \\n            autofocus \\n            autocomplete=\\"username\\"\\n            spellcheck=\\"false\\"\\n          >\\n        </div>\\n      </div>\\n\\n      <!-- Password -->\\n      <div class=\\"form-group\\">\\n        <label for=\\"password\\">Password</label>\\n        <div class=\\"input-box pwd\\">\\n          <svg viewBox=\\"0 0 24 24\\"><path d=\\"M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z\\"/></svg>\\n          <input \\n            type=\\"password\\" \\n            id=\\"password\\" \\n            name=\\"password\\" \\n            class=\\"input-control\\" \\n            placeholder=\\"\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\\" \\n            required \\n            autocomplete=\\"current-password\\"\\n          >\\n          <button type=\\"button\\" class=\\"btn-toggle-pwd\\" id=\\"pwdToggle\\" title=\\"Toggle password visibility\\">\\n            \u{1F441}\uFE0F\\n          </button>\\n        </div>\\n      </div>\\n\\n      <!-- Submit Button -->\\n      <button type=\\"submit\\" class=\\"btn-submit\\">\\n        <span>Sign In</span>\\n        <span>\u2192</span>\\n      </button>\\n\\n      <!-- Minimal 1-Line Quick Access -->\\n      <div class=\\"quick-access-bar\\">\\n        <div class=\\"quick-access-info\\">\\n          <span>Demo:</span>\\n          <code>admin</code>\\n          <span>/</span>\\n          <code>odishaaspirants@2026</code>\\n        </div>\\n        <button type=\\"button\\" class=\\"btn-autofill\\" id=\\"quickFillBtn\\" title=\\"Fill credentials & login\\">\\n          \u26A1 Auto-Fill\\n        </button>\\n      </div>\\n    </form>\\n\\n    <!-- Footer Links -->\\n    <div class=\\"card-footer\\">\\n      <a href=\\"")
     ; __append(escapeFn( (typeof publicBase !== 'undefined' ? publicBase : '') ))
-    ; __append("/\\">\u2190 Return to Homepage</a>\\n      <div class=\\"security-note\\">\\n        <span>\u{1F512} 256-Bit SSL Encrypted \u2022 D1 &amp; R2 Protected</span>\\n      </div>\\n    </div>\\n\\n  </div>\\n</div>\\n\\n<script>\\n  // Toggle password visibility\\n  const pwdInput = document.getElementById('password');\\n  const pwdToggle = document.getElementById('pwdToggle');\\n  if (pwdInput && pwdToggle) {\\n    pwdToggle.addEventListener('click', () => {\\n      if (pwdInput.type === 'password') {\\n        pwdInput.type = 'text';\\n        pwdToggle.textContent = '\u{1F512}';\\n      } else {\\n        pwdInput.type = 'password';\\n        pwdToggle.textContent = '\u{1F441}\uFE0F';\\n      }\\n    });\\n  }\\n\\n  // 1-Click Auto Fill & Submit\\n  const quickFillBtn = document.getElementById('quickFillBtn');\\n  const userField = document.getElementById('username');\\n  const form = document.getElementById('adminLoginForm');\\n  if (quickFillBtn && userField && pwdInput && form) {\\n    quickFillBtn.addEventListener('click', () => {\\n      userField.value = 'admin';\\n      pwdInput.value = 'govtexamzone@2026';\\n      form.submit();\\n    });\\n  }\\n</script>\\n\\n</body>\\n</html>\\n")
+    ; __append("/\\">\u2190 Return to Homepage</a>\\n      <div class=\\"security-note\\">\\n        <span>\u{1F512} 256-Bit SSL Encrypted \u2022 D1 &amp; R2 Protected</span>\\n      </div>\\n    </div>\\n\\n  </div>\\n</div>\\n\\n<script>\\n  // Toggle password visibility\\n  const pwdInput = document.getElementById('password');\\n  const pwdToggle = document.getElementById('pwdToggle');\\n  if (pwdInput && pwdToggle) {\\n    pwdToggle.addEventListener('click', () => {\\n      if (pwdInput.type === 'password') {\\n        pwdInput.type = 'text';\\n        pwdToggle.textContent = '\u{1F512}';\\n      } else {\\n        pwdInput.type = 'password';\\n        pwdToggle.textContent = '\u{1F441}\uFE0F';\\n      }\\n    });\\n  }\\n\\n  // 1-Click Auto Fill & Submit\\n  const quickFillBtn = document.getElementById('quickFillBtn');\\n  const userField = document.getElementById('username');\\n  const form = document.getElementById('adminLoginForm');\\n  if (quickFillBtn && userField && pwdInput && form) {\\n    quickFillBtn.addEventListener('click', () => {\\n      userField.value = 'admin';\\n      pwdInput.value = 'odishaaspirants@2026';\\n      form.submit();\\n    });\\n  }\\n</script>\\n\\n</body>\\n</html>\\n")
   }
   return __output;
 `,
@@ -78132,12 +78132,12 @@ var require_templateEngine = __commonJS({
     ; __append("<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, maximum-scale=5.0\\">\\n  <meta name=\\"theme-color\\" content=\\"#0f172a\\">\\n  <title>")
     ; __append(escapeFn( title ))
     ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"icon\\" href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' ))
     ; __append("\\">\\n  <style>\\n    *, *::before, *::after {\\n      box-sizing: border-box;\\n      margin: 0;\\n      padding: 0;\\n    }\\n\\n    body {\\n      min-height: 100vh;\\n      min-height: 100dvh;\\n      display: grid;\\n      place-items: center;\\n      padding: 16px;\\n      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, sans-serif;\\n      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(171, 24, 61, 0.22), transparent 70%),\\n                  radial-gradient(circle 400px at 80% 90%, rgba(2, 132, 199, 0.1), transparent),\\n                  #0b1120;\\n      color: #f8fafc;\\n      overflow-x: hidden;\\n      position: relative;\\n    }\\n\\n    /* Ambient Subtle Grid */\\n    body::before {\\n      content: \\"\\";\\n      position: fixed;\\n      inset: 0;\\n      background-image: \\n        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),\\n        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);\\n      background-size: 28px 28px;\\n      pointer-events: none;\\n      z-index: 1;\\n    }\\n\\n    .login-wrap {\\n      width: 100%;\\n      max-width: 380px;\\n      position: relative;\\n      z-index: 2;\\n    }\\n\\n    /* Compact Glassmorphism Card */\\n    .login-card {\\n      background: rgba(17, 24, 39, 0.88);\\n      backdrop-filter: blur(20px);\\n      -webkit-backdrop-filter: blur(20px);\\n      border: 1px solid rgba(255, 255, 255, 0.09);\\n      border-radius: 18px;\\n      padding: 28px 24px 22px;\\n      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7),\\n                  0 0 0 1px rgba(255, 255, 255, 0.04),\\n                  0 0 35px rgba(171, 24, 61, 0.12);\\n    }\\n\\n    /* Sleek Header */\\n    .brand-header {\\n      text-align: center;\\n      margin-bottom: 20px;\\n    }\\n\\n    .brand-emblem {\\n      display: inline-flex;\\n      align-items: center;\\n      justify-content: center;\\n      width: 52px;\\n      height: 52px;\\n      background: rgba(255, 255, 255, 0.04);\\n      border: 1px solid rgba(255, 255, 255, 0.12);\\n      border-radius: 14px;\\n      padding: 7px;\\n      margin-bottom: 10px;\\n      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);\\n      transition: transform 0.2s ease;\\n      text-decoration: none;\\n    }\\n\\n    .brand-emblem:hover {\\n      transform: scale(1.05);\\n      border-color: rgba(171, 24, 61, 0.4);\\n    }\\n\\n    .brand-emblem img {\\n      width: 100%;\\n      height: 100%;\\n      object-fit: contain;\\n      display: block;\\n    }\\n\\n    .brand-title {\\n      font-size: 20px;\\n      font-weight: 800;\\n      color: #ffffff;\\n      letter-spacing: -0.4px;\\n      margin-bottom: 4px;\\n    }\\n\\n    .brand-subtitle {\\n      font-size: 12.5px;\\n      color: #94a3b8;\\n    }\\n\\n    /* Alert */\\n    .alert-box {\\n      background: rgba(239, 68, 68, 0.12);\\n      border: 1px solid rgba(239, 68, 68, 0.3);\\n      color: #fca5a5;\\n      padding: 9px 12px;\\n      border-radius: 8px;\\n      font-size: 12.5px;\\n      margin-bottom: 16px;\\n      display: flex;\\n      align-items: center;\\n      gap: 8px;\\n    }\\n\\n    /* Form Fields */\\n    .form-group {\\n      margin-bottom: 14px;\\n      text-align: left;\\n    }\\n\\n    .form-group label {\\n      display: block;\\n      font-size: 12px;\\n      font-weight: 600;\\n      color: #cbd5e1;\\n      margin-bottom: 5px;\\n      letter-spacing: 0.1px;\\n    }\\n\\n    .input-box {\\n      position: relative;\\n      display: flex;\\n      align-items: center;\\n    }\\n\\n    .input-box svg {\\n      position: absolute;\\n      left: 13px;\\n      width: 16px;\\n      height: 16px;\\n      fill: #64748b;\\n      pointer-events: none;\\n      transition: fill 0.2s ease;\\n    }\\n\\n    .input-control {\\n      width: 100%;\\n      padding: 10px 12px 10px 38px;\\n      font-size: 14px;\\n      font-family: inherit;\\n      color: #ffffff;\\n      background: rgba(15, 23, 42, 0.6);\\n      border: 1px solid rgba(255, 255, 255, 0.1);\\n      border-radius: 9px;\\n      outline: none;\\n      transition: all 0.2s ease;\\n    }\\n\\n    .input-control::placeholder {\\n      color: #475569;\\n    }\\n\\n    .input-control:focus {\\n      border-color: #ab183d;\\n      background: rgba(15, 23, 42, 0.9);\\n      box-shadow: 0 0 0 3px rgba(171, 24, 61, 0.2);\\n    }\\n\\n    .input-box:focus-within svg {\\n      fill: #ff4d73;\\n    }\\n\\n    /* Password Toggle */\\n    .input-box.pwd input {\\n      padding-right: 38px;\\n    }\\n\\n    .btn-toggle-pwd {\\n      position: absolute;\\n      right: 4px;\\n      background: transparent;\\n      border: none;\\n      cursor: pointer;\\n      color: #94a3b8;\\n      padding: 6px 8px;\\n      border-radius: 6px;\\n      display: flex;\\n      align-items: center;\\n      justify-content: center;\\n      font-size: 15px;\\n      transition: color 0.15s ease;\\n    }\\n\\n    .btn-toggle-pwd:hover {\\n      color: #ffffff;\\n    }\\n\\n    /* Primary Submit Button */\\n    .btn-submit {\\n      width: 100%;\\n      background: linear-gradient(135deg, #ab183d 0%, #7e0e29 100%);\\n      color: #ffffff;\\n      border: none;\\n      padding: 11px 16px;\\n      font-size: 14px;\\n      font-weight: 700;\\n      border-radius: 9px;\\n      cursor: pointer;\\n      box-shadow: 0 4px 12px rgba(171, 24, 61, 0.35);\\n      transition: all 0.2s ease;\\n      display: flex;\\n      align-items: center;\\n      justify-content: center;\\n      gap: 7px;\\n      margin-top: 18px;\\n    }\\n\\n    .btn-submit:hover {\\n      background: linear-gradient(135deg, #bd1b44 0%, #8f1230 100%);\\n      box-shadow: 0 6px 18px rgba(171, 24, 61, 0.5);\\n      transform: translateY(-1px);\\n    }\\n\\n    .btn-submit:active {\\n      transform: translateY(0);\\n    }\\n\\n    /* Compact 1-Line Quick Access Demo Pill */\\n    .quick-access-bar {\\n      margin-top: 14px;\\n      padding: 8px 10px;\\n      background: rgba(255, 255, 255, 0.03);\\n      border: 1px dashed rgba(255, 255, 255, 0.1);\\n      border-radius: 8px;\\n      display: flex;\\n      align-items: center;\\n      justify-content: space-between;\\n      gap: 6px;\\n      font-size: 11.5px;\\n      color: #94a3b8;\\n    }\\n\\n    .quick-access-info {\\n      display: flex;\\n      align-items: center;\\n      gap: 6px;\\n      white-space: nowrap;\\n      overflow: hidden;\\n      text-overflow: ellipsis;\\n    }\\n\\n    .quick-access-info code {\\n      font-family: 'JetBrains Mono', monospace;\\n      color: #ff8da6;\\n      background: rgba(171, 24, 61, 0.2);\\n      padding: 1px 5px;\\n      border-radius: 4px;\\n      font-size: 11px;\\n    }\\n\\n    .btn-autofill {\\n      background: rgba(2, 132, 199, 0.15);\\n      border: 1px solid rgba(2, 132, 199, 0.35);\\n      color: #38bdf8;\\n      font-size: 11px;\\n      font-weight: 700;\\n      padding: 3px 8px;\\n      border-radius: 5px;\\n      cursor: pointer;\\n      white-space: nowrap;\\n      transition: all 0.15s ease;\\n    }\\n\\n    .btn-autofill:hover {\\n      background: rgba(2, 132, 199, 0.3);\\n      color: #7dd3fc;\\n      border-color: rgba(2, 132, 199, 0.6);\\n    }\\n\\n    /* Footer Meta */\\n    .card-footer {\\n      margin-top: 16px;\\n      text-align: center;\\n      display: flex;\\n      flex-direction: column;\\n      gap: 8px;\\n    }\\n\\n    .card-footer a {\\n      font-size: 12px;\\n      color: #64748b;\\n      text-decoration: none;\\n      transition: color 0.15s ease;\\n    }\\n\\n    .card-footer a:hover {\\n      color: #cbd5e1;\\n    }\\n\\n    .security-note {\\n      font-size: 10.5px;\\n      color: #475569;\\n      display: flex;\\n      align-items: center;\\n      justify-content: center;\\n      gap: 4px;\\n    }\\n  </style>\\n</head>\\n<body>\\n\\n<div class=\\"login-wrap\\">\\n  <div class=\\"login-card\\">\\n    \\n    <!-- Brand Header -->\\n    <div class=\\"brand-header\\">\\n      <a href=\\"")
     ; __append(escapeFn( (typeof publicBase !== 'undefined' ? publicBase : '') ))
     ; __append("/\\" class=\\"brand-emblem\\" title=\\"Back to Homepage\\">\\n        <img src=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/gez-logo.svg' ))
-    ; __append("\\" alt=\\"Logo\\">\\n      </a>\\n      <h1 class=\\"brand-title\\">Admin Console</h1>\\n      <p class=\\"brand-subtitle\\">Govt Exam Zone Administration</p>\\n    </div>\\n\\n    <!-- Error Alert -->\\n    ")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/oa-logo.svg' ))
+    ; __append("\\" alt=\\"Logo\\">\\n      </a>\\n      <h1 class=\\"brand-title\\">Admin Console</h1>\\n      <p class=\\"brand-subtitle\\">Odisha Aspirants Administration</p>\\n    </div>\\n\\n    <!-- Error Alert -->\\n    ")
     ;  if (error) { 
     ; __append("\\n      <div class=\\"alert-box\\">\\n        <span>\u26A0\uFE0F</span>\\n        <span>")
     ; __append(escapeFn( error ))
@@ -78145,9 +78145,9 @@ var require_templateEngine = __commonJS({
     ;  } 
     ; __append("\\n\\n    <!-- Sign In Form -->\\n    <form id=\\"adminLoginForm\\" action=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
-    ; __append("/login\\" method=\\"POST\\">\\n      \\n      <!-- Username -->\\n      <div class=\\"form-group\\">\\n        <label for=\\"username\\">Username</label>\\n        <div class=\\"input-box\\">\\n          <svg viewBox=\\"0 0 24 24\\"><path d=\\"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\\"/></svg>\\n          <input \\n            type=\\"text\\" \\n            id=\\"username\\" \\n            name=\\"username\\" \\n            class=\\"input-control\\" \\n            placeholder=\\"admin\\" \\n            required \\n            autofocus \\n            autocomplete=\\"username\\"\\n            spellcheck=\\"false\\"\\n          >\\n        </div>\\n      </div>\\n\\n      <!-- Password -->\\n      <div class=\\"form-group\\">\\n        <label for=\\"password\\">Password</label>\\n        <div class=\\"input-box pwd\\">\\n          <svg viewBox=\\"0 0 24 24\\"><path d=\\"M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z\\"/></svg>\\n          <input \\n            type=\\"password\\" \\n            id=\\"password\\" \\n            name=\\"password\\" \\n            class=\\"input-control\\" \\n            placeholder=\\"\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\\" \\n            required \\n            autocomplete=\\"current-password\\"\\n          >\\n          <button type=\\"button\\" class=\\"btn-toggle-pwd\\" id=\\"pwdToggle\\" title=\\"Toggle password visibility\\">\\n            \u{1F441}\uFE0F\\n          </button>\\n        </div>\\n      </div>\\n\\n      <!-- Submit Button -->\\n      <button type=\\"submit\\" class=\\"btn-submit\\">\\n        <span>Sign In</span>\\n        <span>\u2192</span>\\n      </button>\\n\\n      <!-- Minimal 1-Line Quick Access -->\\n      <div class=\\"quick-access-bar\\">\\n        <div class=\\"quick-access-info\\">\\n          <span>Demo:</span>\\n          <code>admin</code>\\n          <span>/</span>\\n          <code>govtexamzone@2026</code>\\n        </div>\\n        <button type=\\"button\\" class=\\"btn-autofill\\" id=\\"quickFillBtn\\" title=\\"Fill credentials & login\\">\\n          \u26A1 Auto-Fill\\n        </button>\\n      </div>\\n    </form>\\n\\n    <!-- Footer Links -->\\n    <div class=\\"card-footer\\">\\n      <a href=\\"")
+    ; __append("/login\\" method=\\"POST\\">\\n      \\n      <!-- Username -->\\n      <div class=\\"form-group\\">\\n        <label for=\\"username\\">Username</label>\\n        <div class=\\"input-box\\">\\n          <svg viewBox=\\"0 0 24 24\\"><path d=\\"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\\"/></svg>\\n          <input \\n            type=\\"text\\" \\n            id=\\"username\\" \\n            name=\\"username\\" \\n            class=\\"input-control\\" \\n            placeholder=\\"admin\\" \\n            required \\n            autofocus \\n            autocomplete=\\"username\\"\\n            spellcheck=\\"false\\"\\n          >\\n        </div>\\n      </div>\\n\\n      <!-- Password -->\\n      <div class=\\"form-group\\">\\n        <label for=\\"password\\">Password</label>\\n        <div class=\\"input-box pwd\\">\\n          <svg viewBox=\\"0 0 24 24\\"><path d=\\"M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z\\"/></svg>\\n          <input \\n            type=\\"password\\" \\n            id=\\"password\\" \\n            name=\\"password\\" \\n            class=\\"input-control\\" \\n            placeholder=\\"\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\\" \\n            required \\n            autocomplete=\\"current-password\\"\\n          >\\n          <button type=\\"button\\" class=\\"btn-toggle-pwd\\" id=\\"pwdToggle\\" title=\\"Toggle password visibility\\">\\n            \u{1F441}\uFE0F\\n          </button>\\n        </div>\\n      </div>\\n\\n      <!-- Submit Button -->\\n      <button type=\\"submit\\" class=\\"btn-submit\\">\\n        <span>Sign In</span>\\n        <span>\u2192</span>\\n      </button>\\n\\n      <!-- Minimal 1-Line Quick Access -->\\n      <div class=\\"quick-access-bar\\">\\n        <div class=\\"quick-access-info\\">\\n          <span>Demo:</span>\\n          <code>admin</code>\\n          <span>/</span>\\n          <code>odishaaspirants@2026</code>\\n        </div>\\n        <button type=\\"button\\" class=\\"btn-autofill\\" id=\\"quickFillBtn\\" title=\\"Fill credentials & login\\">\\n          \u26A1 Auto-Fill\\n        </button>\\n      </div>\\n    </form>\\n\\n    <!-- Footer Links -->\\n    <div class=\\"card-footer\\">\\n      <a href=\\"")
     ; __append(escapeFn( (typeof publicBase !== 'undefined' ? publicBase : '') ))
-    ; __append("/\\">\u2190 Return to Homepage</a>\\n      <div class=\\"security-note\\">\\n        <span>\u{1F512} 256-Bit SSL Encrypted \u2022 D1 &amp; R2 Protected</span>\\n      </div>\\n    </div>\\n\\n  </div>\\n</div>\\n\\n<script>\\n  // Toggle password visibility\\n  const pwdInput = document.getElementById('password');\\n  const pwdToggle = document.getElementById('pwdToggle');\\n  if (pwdInput && pwdToggle) {\\n    pwdToggle.addEventListener('click', () => {\\n      if (pwdInput.type === 'password') {\\n        pwdInput.type = 'text';\\n        pwdToggle.textContent = '\u{1F512}';\\n      } else {\\n        pwdInput.type = 'password';\\n        pwdToggle.textContent = '\u{1F441}\uFE0F';\\n      }\\n    });\\n  }\\n\\n  // 1-Click Auto Fill & Submit\\n  const quickFillBtn = document.getElementById('quickFillBtn');\\n  const userField = document.getElementById('username');\\n  const form = document.getElementById('adminLoginForm');\\n  if (quickFillBtn && userField && pwdInput && form) {\\n    quickFillBtn.addEventListener('click', () => {\\n      userField.value = 'admin';\\n      pwdInput.value = 'govtexamzone@2026';\\n      form.submit();\\n    });\\n  }\\n</script>\\n\\n</body>\\n</html>\\n")
+    ; __append("/\\">\u2190 Return to Homepage</a>\\n      <div class=\\"security-note\\">\\n        <span>\u{1F512} 256-Bit SSL Encrypted \u2022 D1 &amp; R2 Protected</span>\\n      </div>\\n    </div>\\n\\n  </div>\\n</div>\\n\\n<script>\\n  // Toggle password visibility\\n  const pwdInput = document.getElementById('password');\\n  const pwdToggle = document.getElementById('pwdToggle');\\n  if (pwdInput && pwdToggle) {\\n    pwdToggle.addEventListener('click', () => {\\n      if (pwdInput.type === 'password') {\\n        pwdInput.type = 'text';\\n        pwdToggle.textContent = '\u{1F512}';\\n      } else {\\n        pwdInput.type = 'password';\\n        pwdToggle.textContent = '\u{1F441}\uFE0F';\\n      }\\n    });\\n  }\\n\\n  // 1-Click Auto Fill & Submit\\n  const quickFillBtn = document.getElementById('quickFillBtn');\\n  const userField = document.getElementById('username');\\n  const form = document.getElementById('adminLoginForm');\\n  if (quickFillBtn && userField && pwdInput && form) {\\n    quickFillBtn.addEventListener('click', () => {\\n      userField.value = 'admin';\\n      pwdInput.value = 'odishaaspirants@2026';\\n      form.submit();\\n    });\\n  }\\n</script>\\n\\n</body>\\n</html>\\n")
   }
   return __output;
 `,
@@ -78292,7 +78292,7 @@ var require_templateEngine = __commonJS({
   with (locals || {}) {
     ; __append( include('../partials/admin-nav', { currentPath: post ? '' : '/admin/posts/new' }) )
     ; __append("\\n\\n<div class=\\"admin-card\\">\\n  <div class=\\"admin-card-header\\">\\n    <h2>")
-    ; __append(escapeFn( post ? 'Edit Notification: ' + post.title : 'Create New Govt Exam Zone Notification' ))
+    ; __append(escapeFn( post ? 'Edit Notification: ' + post.title : 'Create New Odisha Aspirants Notification' ))
     ; __append("</h2>\\n    <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts\\" class=\\"btn btn-secondary btn-sm\\">\u2190 Back to Posts</a>\\n  </div>\\n\\n  <form action=\\"")
@@ -78395,7 +78395,7 @@ var require_templateEngine = __commonJS({
     ;  }) 
     ; __append("\\n          ")
     ;  } else { 
-    ; __append("\\n            <option value=\\"1\\">Govt Exam Zone Editorial Team</option>\\n          ")
+    ; __append("\\n            <option value=\\"1\\">Odisha Aspirants Editorial Team</option>\\n          ")
     ;  } 
     ; __append("\\n        </select>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"status\\">Publication Status</label>\\n        <select id=\\"status\\" name=\\"status\\" class=\\"form-control\\">\\n          <option value=\\"active\\" ")
     ; __append(escapeFn( post && post.status === 'active' ? 'selected' : '' ))
@@ -78420,7 +78420,7 @@ var require_templateEngine = __commonJS({
   with (locals || {}) {
     ; __append( include('../partials/admin-nav', { currentPath: post ? '' : '/admin/posts/new' }) )
     ; __append("\\n\\n<div class=\\"admin-card\\">\\n  <div class=\\"admin-card-header\\">\\n    <h2>")
-    ; __append(escapeFn( post ? 'Edit Notification: ' + post.title : 'Create New Govt Exam Zone Notification' ))
+    ; __append(escapeFn( post ? 'Edit Notification: ' + post.title : 'Create New Odisha Aspirants Notification' ))
     ; __append("</h2>\\n    <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts\\" class=\\"btn btn-secondary btn-sm\\">\u2190 Back to Posts</a>\\n  </div>\\n\\n  <form action=\\"")
@@ -78523,7 +78523,7 @@ var require_templateEngine = __commonJS({
     ;  }) 
     ; __append("\\n          ")
     ;  } else { 
-    ; __append("\\n            <option value=\\"1\\">Govt Exam Zone Editorial Team</option>\\n          ")
+    ; __append("\\n            <option value=\\"1\\">Odisha Aspirants Editorial Team</option>\\n          ")
     ;  } 
     ; __append("\\n        </select>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"status\\">Publication Status</label>\\n        <select id=\\"status\\" name=\\"status\\" class=\\"form-control\\">\\n          <option value=\\"active\\" ")
     ; __append(escapeFn( post && post.status === 'active' ? 'selected' : '' ))
@@ -78549,11 +78549,11 @@ var require_templateEngine = __commonJS({
     ; __append( include('../partials/admin-nav', { currentPath: '/admin/posts' }) )
     ; __append("\\n\\n<div class=\\"admin-card\\">\\n  <div class=\\"admin-card-header\\">\\n    <div>\\n      <h2>All Examination &amp; Job Notifications (")
     ; __append(escapeFn( posts ? posts.length : 0 ))
-    ; __append(")</h2>\\n      <div style=\\"font-size: 12.5px; color: #64748b; margin-top: 2px;\\">Search, filter, update or delete notifications across all 8 Govt Exam Zone categories</div>\\n    </div>\\n    <a href=\\"")
+    ; __append(")</h2>\\n      <div style=\\"font-size: 12.5px; color: #64748b; margin-top: 2px;\\">Search, filter, update or delete notifications across all 8 Odisha Aspirants categories</div>\\n    </div>\\n    <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts/new\\" class=\\"btn btn-primary\\">\u2795 Create New Post</a>\\n  </div>\\n\\n  ")
     ;  if (typeof success !== 'undefined' && success === 'created') { 
-    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 Notification successfully created and published live on Govt Exam Zone!\\n    </div>\\n  ")
+    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 Notification successfully created and published live on Odisha Aspirants!\\n    </div>\\n  ")
     ;  } else if (typeof success !== 'undefined' && success === 'updated') { 
     ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 Notification successfully updated!\\n    </div>\\n  ")
     ;  } else if (typeof success !== 'undefined' && success === 'deleted') { 
@@ -78637,11 +78637,11 @@ var require_templateEngine = __commonJS({
     ; __append( include('../partials/admin-nav', { currentPath: '/admin/posts' }) )
     ; __append("\\n\\n<div class=\\"admin-card\\">\\n  <div class=\\"admin-card-header\\">\\n    <div>\\n      <h2>All Examination &amp; Job Notifications (")
     ; __append(escapeFn( posts ? posts.length : 0 ))
-    ; __append(")</h2>\\n      <div style=\\"font-size: 12.5px; color: #64748b; margin-top: 2px;\\">Search, filter, update or delete notifications across all 8 Govt Exam Zone categories</div>\\n    </div>\\n    <a href=\\"")
+    ; __append(")</h2>\\n      <div style=\\"font-size: 12.5px; color: #64748b; margin-top: 2px;\\">Search, filter, update or delete notifications across all 8 Odisha Aspirants categories</div>\\n    </div>\\n    <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts/new\\" class=\\"btn btn-primary\\">\u2795 Create New Post</a>\\n  </div>\\n\\n  ")
     ;  if (typeof success !== 'undefined' && success === 'created') { 
-    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 Notification successfully created and published live on Govt Exam Zone!\\n    </div>\\n  ")
+    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 Notification successfully created and published live on Odisha Aspirants!\\n    </div>\\n  ")
     ;  } else if (typeof success !== 'undefined' && success === 'updated') { 
     ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 Notification successfully updated!\\n    </div>\\n  ")
     ;  } else if (typeof success !== 'undefined' && success === 'deleted') { 
@@ -78868,10 +78868,10 @@ var require_templateEngine = __commonJS({
     ; __append("\\n\\n  <!-- Section Quick Navigation Pills -->\\n  <div class=\\"settings-nav-pills\\" style=\\"display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 26px; border-bottom: 1px solid #e2e8f0; padding-bottom: 14px;\\">\\n    <a href=\\"#section-branding\\" class=\\"settings-pill active\\">\u{1F310} General &amp; Branding</a>\\n    <a href=\\"#section-layout\\" class=\\"settings-pill\\">\u{1F4F0} Post Page Layout</a>\\n    <a href=\\"#section-categories\\" class=\\"settings-pill\\">\u{1F4C2} Category Visibility</a>\\n    <a href=\\"#section-social\\" class=\\"settings-pill\\">\u{1F4F2} Social Communities</a>\\n    <a href=\\"#section-helpdesk\\" class=\\"settings-pill\\">\u2709\uFE0F Contact &amp; Helpdesk</a>\\n    <a href=\\"#section-seo\\" class=\\"settings-pill\\">\u{1F680} SEO &amp; Analytics</a>\\n    <a href=\\"#section-announcement\\" class=\\"settings-pill\\">\u{1F4E2} Urgent Alert Bar</a>\\n    <a href=\\"#section-adsense\\" class=\\"settings-pill\\">\u{1F4B0} AdSense &amp; Ads</a>\\n    <a href=\\"#section-scripts\\" class=\\"settings-pill\\">\u{1F6E0}\uFE0F Custom Scripts</a>\\n  </div>\\n\\n  <form id=\\"masterSettingsForm\\" action=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/settings/save\\" method=\\"POST\\" enctype=\\"multipart/form-data\\">\\n    \\n    <!-- 1. General & Brand Identity -->\\n    <div id=\\"section-branding\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u{1F310}</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">1. General &amp; Brand Identity</h3>\\n          <p class=\\"settings-group-desc\\">Configure website name, logo tagline, domain URL, and copyright attribution.</p>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"site_title\\">Portal Brand Name *</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"site_title\\" \\n            name=\\"site_title\\" \\n            class=\\"form-control\\" \\n            value=\\"")
-    ; __append(escapeFn( settings.site_title || 'Govt Exam Zone' ))
-    ; __append("\\" \\n            placeholder=\\"Govt Exam Zone\\"\\n            required\\n          >\\n          <small class=\\"field-hint\\">Primary portal name displayed in top header and browser titles.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"header_subtitle\\">Header Subtitle (Logo Tag)</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"header_subtitle\\" \\n            name=\\"header_subtitle\\" \\n            class=\\"form-control\\" \\n            value=\\"")
-    ; __append(escapeFn( settings.header_subtitle || 'WWW.GOVTEXAMZONE.COM' ))
-    ; __append("\\" \\n            placeholder=\\"WWW.GOVTEXAMZONE.COM\\"\\n          >\\n          <small class=\\"field-hint\\">Subtitle displayed below the main logo in the red header bar.</small>\\n        </div>\\n      </div>\\n\\n      <!-- Website Logo & Favicon Box -->\\n      <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px; margin: 18px 0;\\">\\n        <h4 style=\\"margin: 0 0 14px 0; color: #1e293b; font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 8px;\\">\\n          <span>\u{1F5BC}\uFE0F</span> Website Logo &amp; Favicon Management\\n        </h4>\\n\\n        <div class=\\"form-row\\">\\n          <!-- Logo Management -->\\n          <div class=\\"form-group\\" style=\\"flex: 1; min-width: 280px;\\">\\n            <div style=\\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;\\">\\n              <label for=\\"site_logo\\" style=\\"margin-bottom: 0;\\">Website Main Logo</label>\\n              <button \\n                type=\\"button\\" \\n                id=\\"removeLogoBtn\\" \\n                class=\\"btn btn-sm\\" \\n                style=\\"background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;\\"\\n                title=\\"Remove logo so header shows clean text title only\\"\\n              >\\n                \u{1F5D1}\uFE0F Delete / Remove Logo\\n              </button>\\n            </div>\\n\\n            <div style=\\"display: flex; gap: 14px; align-items: center; margin-bottom: 10px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px;\\">\\n              <div id=\\"logoPreviewBox\\" style=\\"width: 70px; height: 70px; background: #ab183d; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 5px; flex-shrink: 0; color: #fff; font-size: 11px; text-align: center;\\">\\n                ")
+    ; __append(escapeFn( settings.site_title || 'Odisha Aspirants' ))
+    ; __append("\\" \\n            placeholder=\\"Odisha Aspirants\\"\\n            required\\n          >\\n          <small class=\\"field-hint\\">Primary portal name displayed in top header and browser titles.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"header_subtitle\\">Header Subtitle (Logo Tag)</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"header_subtitle\\" \\n            name=\\"header_subtitle\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append(escapeFn( settings.header_subtitle || 'WWW.ODISHAASPIRANTS.COM' ))
+    ; __append("\\" \\n            placeholder=\\"WWW.ODISHAASPIRANTS.COM\\"\\n          >\\n          <small class=\\"field-hint\\">Subtitle displayed below the main logo in the red header bar.</small>\\n        </div>\\n      </div>\\n\\n      <!-- Website Logo & Favicon Box -->\\n      <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px; margin: 18px 0;\\">\\n        <h4 style=\\"margin: 0 0 14px 0; color: #1e293b; font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 8px;\\">\\n          <span>\u{1F5BC}\uFE0F</span> Website Logo &amp; Favicon Management\\n        </h4>\\n\\n        <div class=\\"form-row\\">\\n          <!-- Logo Management -->\\n          <div class=\\"form-group\\" style=\\"flex: 1; min-width: 280px;\\">\\n            <div style=\\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;\\">\\n              <label for=\\"site_logo\\" style=\\"margin-bottom: 0;\\">Website Main Logo</label>\\n              <button \\n                type=\\"button\\" \\n                id=\\"removeLogoBtn\\" \\n                class=\\"btn btn-sm\\" \\n                style=\\"background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;\\"\\n                title=\\"Remove logo so header shows clean text title only\\"\\n              >\\n                \u{1F5D1}\uFE0F Delete / Remove Logo\\n              </button>\\n            </div>\\n\\n            <div style=\\"display: flex; gap: 14px; align-items: center; margin-bottom: 10px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px;\\">\\n              <div id=\\"logoPreviewBox\\" style=\\"width: 70px; height: 70px; background: #ab183d; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 5px; flex-shrink: 0; color: #fff; font-size: 11px; text-align: center;\\">\\n                ")
     ;  if (settings.site_logo && settings.site_logo.trim()) { 
     ; __append("\\n                  <img id=\\"logoPreviewImg\\" src=\\"")
     ; __append(escapeFn( settings.site_logo ))
@@ -78887,7 +78887,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( settings.site_logo || '' ))
     ; __append("\\" \\n                placeholder=\\"Leave empty for no logo, or enter image path (e.g. /images/logo.png)\\"\\n              >\\n              <small class=\\"field-hint\\">Leave blank or click \\"Delete / Remove Logo\\" above if you don't want any logo in the header. To add a logo, upload a file or enter a path.</small>\\n            </div>\\n          </div>\\n\\n          <!-- Favicon Management -->\\n          <div class=\\"form-group\\" style=\\"flex: 1; min-width: 280px;\\">\\n            ")
     ; 
-              const activeFaviconVal = (typeof settings.site_favicon === 'string') ? settings.site_favicon : '/images/gez-logo.svg';
+              const activeFaviconVal = (typeof settings.site_favicon === 'string') ? settings.site_favicon : '/images/oa-logo.svg';
               const hasFaviconVal = Boolean(activeFaviconVal && activeFaviconVal.trim());
             
     ; __append("\\n            <div style=\\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;\\">\\n              <label for=\\"site_favicon\\" style=\\"margin-bottom: 0;\\">Website Browser Favicon</label>\\n              <button \\n                type=\\"button\\" \\n                id=\\"removeFaviconBtn\\" \\n                class=\\"btn btn-sm\\" \\n                style=\\"background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;\\"\\n                title=\\"Remove custom browser favicon\\"\\n              >\\n                \u{1F5D1}\uFE0F Delete / Remove Favicon\\n              </button>\\n            </div>\\n            <div style=\\"display: flex; gap: 14px; align-items: center; margin-bottom: 10px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px;\\">\\n              <div style=\\"width: 70px; height: 70px; background: #ffffff; border: 1px dashed #94a3b8; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 5px; flex-shrink: 0; text-align: center;\\">\\n                ")
@@ -78904,14 +78904,14 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( hasFaviconVal ? activeFaviconVal : 'No custom favicon active (Browser default)' ))
     ; __append("\\n                </div>\\n              </div>\\n            </div>\\n\\n            <div style=\\"margin-bottom: 8px;\\">\\n              <label style=\\"font-size: 12px; font-weight: 600; color: #475569;\\">Upload New Favicon File</label>\\n              <input \\n                type=\\"file\\" \\n                id=\\"site_favicon_file\\" \\n                name=\\"site_favicon_file\\" \\n                class=\\"form-control\\" \\n                accept=\\"image/x-icon,image/png,image/svg+xml,image/jpeg,image/webp\\"\\n                style=\\"padding: 6px;\\"\\n              >\\n            </div>\\n\\n            <div>\\n              <label for=\\"site_favicon\\" style=\\"font-size: 12px; font-weight: 600; color: #475569;\\">Or Direct Favicon URL / Relative Path</label>\\n              <input \\n                type=\\"text\\" \\n                id=\\"site_favicon\\" \\n                name=\\"site_favicon\\" \\n                class=\\"form-control\\" \\n                value=\\"")
     ; __append(escapeFn( activeFaviconVal ))
-    ; __append("\\" \\n                placeholder=\\"Leave empty for no custom favicon, or enter /images/gez-logo.svg\\"\\n              >\\n              <small class=\\"field-hint\\">ICO, PNG, or SVG format (recommended 32x32 or 48x48). Click \\"Delete / Remove Favicon\\" above to clear it cleanly.</small>\\n            </div>\\n          </div>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"site_tagline\\">Portal Tagline / Slogan</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"site_tagline\\" \\n            name=\\"site_tagline\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append("\\" \\n                placeholder=\\"Leave empty for no custom favicon, or enter /images/oa-logo.svg\\"\\n              >\\n              <small class=\\"field-hint\\">ICO, PNG, or SVG format (recommended 32x32 or 48x48). Click \\"Delete / Remove Favicon\\" above to clear it cleanly.</small>\\n            </div>\\n          </div>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"site_tagline\\">Portal Tagline / Slogan</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"site_tagline\\" \\n            name=\\"site_tagline\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.site_tagline || 'Latest Govt Jobs, Admit Card, Results 2026' ))
     ; __append("\\" \\n            placeholder=\\"Latest Govt Jobs, Admit Card, Results 2026\\"\\n          >\\n          <small class=\\"field-hint\\">Used in SEO title suffixes and social link shares.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"site_domain\\">Primary Domain URL</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"site_domain\\" \\n            name=\\"site_domain\\" \\n            class=\\"form-control\\" \\n            value=\\"")
-    ; __append(escapeFn( settings.site_domain || 'https://govtexamzone.com' 
+    ; __append(escapeFn( settings.site_domain || 'https://odishaaspirants.com' 
 ))
-    ; __append("\\" \\n            placeholder=\\"https://govtexamzone.com\\"\\n          >\\n          <small class=\\"field-hint\\">Canonical domain used for generating sitemaps and share links.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\" style=\\"margin-top: 14px;\\">\\n        <label for=\\"copyright_text\\">Footer Copyright Notice</label>\\n        <input \\n          type=\\"text\\" \\n          id=\\"copyright_text\\" \\n          name=\\"copyright_text\\" \\n          class=\\"form-control\\" \\n          value=\\"")
-    ; __append(escapeFn( settings.copyright_text || '\xA9 {year} govtexamzone.com. All Rights Reserved.' ))
-    ; __append("\\" \\n          placeholder=\\"\xA9 {year} govtexamzone.com. All Rights Reserved.\\"\\n        >\\n        <small class=\\"field-hint\\">Fetched from backend settings on every page. Use <code>{year}</code> or any <code>20xx</code> year \u2014 it automatically updates to the current year on the live website.</small>\\n      </div>\\n    </div>\\n\\n\\n    <!-- 1B. Full Post / Blog Detail Page Layout Configuration -->\\n    <div id=\\"section-layout\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u{1F4F0}</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">Post / Full Blog Detail Page Layout (2 UI Modes)</h3>\\n          <p class=\\"settings-group-desc\\">Choose how full post/blog detail pages display on the frontend. Both Classic Sarkari posts and rich Blog articles automatically adapt to your selected layout.</p>\\n        </div>\\n      </div>\\n\\n      ")
+    ; __append("\\" \\n            placeholder=\\"https://odishaaspirants.com\\"\\n          >\\n          <small class=\\"field-hint\\">Canonical domain used for generating sitemaps and share links.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\" style=\\"margin-top: 14px;\\">\\n        <label for=\\"copyright_text\\">Footer Copyright Notice</label>\\n        <input \\n          type=\\"text\\" \\n          id=\\"copyright_text\\" \\n          name=\\"copyright_text\\" \\n          class=\\"form-control\\" \\n          value=\\"")
+    ; __append(escapeFn( settings.copyright_text || '\xA9 {year} odishaaspirants.com. All Rights Reserved.' ))
+    ; __append("\\" \\n          placeholder=\\"\xA9 {year} odishaaspirants.com. All Rights Reserved.\\"\\n        >\\n        <small class=\\"field-hint\\">Fetched from backend settings on every page. Use <code>{year}</code> or any <code>20xx</code> year \u2014 it automatically updates to the current year on the live website.</small>\\n      </div>\\n    </div>\\n\\n\\n    <!-- 1B. Full Post / Blog Detail Page Layout Configuration -->\\n    <div id=\\"section-layout\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u{1F4F0}</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">Post / Full Blog Detail Page Layout (2 UI Modes)</h3>\\n          <p class=\\"settings-group-desc\\">Choose how full post/blog detail pages display on the frontend. Both Classic Sarkari posts and rich Blog articles automatically adapt to your selected layout.</p>\\n        </div>\\n      </div>\\n\\n      ")
     ;  const activeLayout = (settings.post_detail_layout === 'blog_2col') ? 'blog_2col' : 'classic'; 
     ; __append("\\n      <div class=\\"layout-selector-grid\\" style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;\\">\\n        <!-- Option 1: Classic Sarkari Single-Column -->\\n        <label class=\\"layout-option-card ")
     ; __append(escapeFn( activeLayout === 'classic' ? 'selected' : '' ))
@@ -78961,30 +78961,30 @@ var require_templateEngine = __commonJS({
     ; __append(" style=\\"width: 17px; height: 17px; cursor: pointer;\\">\\n            </div>\\n          </label>\\n        ")
     ;  }) 
     ; __append("\\n      </div>\\n    </div>\\n\\n\\n    <!-- 2. Social Media & Community Channels -->\\n    <div id=\\"section-social\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u{1F4F2}</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">2. Social Media &amp; Community Channels</h3>\\n          <p class=\\"settings-group-desc\\">Connect official Telegram, WhatsApp, YouTube, and social media handles.</p>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"telegram_url\\">\u2708\uFE0F Official Telegram Channel Link *</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"telegram_url\\" \\n            name=\\"telegram_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
-    ; __append(escapeFn( settings.telegram_url || 'https://t.me/govtexamzoneofficial' 
+    ; __append(escapeFn( settings.telegram_url || 'https://t.me/odishaaspirantsofficial' 
 ))
-    ; __append("\\" \\n            placeholder=\\"https://t.me/govtexamzoneofficial\\"\\n            required\\n          >\\n          <small class=\\"field-hint\\">Connected to top \\"Join Telegram Channel\\" button and mobile drawer.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"whatsapp_url\\">\u{1F4AC} Official WhatsApp Channel Link *</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"whatsapp_url\\" \\n            name=\\"whatsapp_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append("\\" \\n            placeholder=\\"https://t.me/odishaaspirantsofficial\\"\\n            required\\n          >\\n          <small class=\\"field-hint\\">Connected to top \\"Join Telegram Channel\\" button and mobile drawer.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"whatsapp_url\\">\u{1F4AC} Official WhatsApp Channel Link *</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"whatsapp_url\\" \\n            name=\\"whatsapp_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.whatsapp_url || 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' 
 ))
     ; __append("\\" \\n            placeholder=\\"https://whatsapp.com/channel/...\\"\\n            required\\n          >\\n          <small class=\\"field-hint\\">Connected to top \\"WhatsApp Channel\\" button and mobile drawer.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"youtube_url\\">\u25B6\uFE0F Official YouTube Channel</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"youtube_url\\" \\n            name=\\"youtube_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.youtube_url || '' ))
-    ; __append("\\" \\n            placeholder=\\"https://youtube.com/@govtexamzone\\"\\n          >\\n          <small class=\\"field-hint\\">Official video channel link.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"twitter_url\\">\u{1F426} Official Twitter / X Link</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"twitter_url\\" \\n            name=\\"twitter_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append("\\" \\n            placeholder=\\"https://youtube.com/@odishaaspirants\\"\\n          >\\n          <small class=\\"field-hint\\">Official video channel link.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"twitter_url\\">\u{1F426} Official Twitter / X Link</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"twitter_url\\" \\n            name=\\"twitter_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.twitter_url || '' ))
-    ; __append("\\" \\n            placeholder=\\"https://x.com/govtexamzone\\"\\n          >\\n          <small class=\\"field-hint\\">Official Twitter / X handle URL.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"instagram_url\\">\u{1F4F7} Official Instagram Profile</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"instagram_url\\" \\n            name=\\"instagram_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append("\\" \\n            placeholder=\\"https://x.com/odishaaspirants\\"\\n          >\\n          <small class=\\"field-hint\\">Official Twitter / X handle URL.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"instagram_url\\">\u{1F4F7} Official Instagram Profile</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"instagram_url\\" \\n            name=\\"instagram_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.instagram_url || '' ))
-    ; __append("\\" \\n            placeholder=\\"https://instagram.com/govtexamzone\\"\\n          >\\n          <small class=\\"field-hint\\">Official Instagram page URL.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"facebook_url\\">\u{1F4D8} Official Facebook Page</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"facebook_url\\" \\n            name=\\"facebook_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append("\\" \\n            placeholder=\\"https://instagram.com/odishaaspirants\\"\\n          >\\n          <small class=\\"field-hint\\">Official Instagram page URL.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"facebook_url\\">\u{1F4D8} Official Facebook Page</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"facebook_url\\" \\n            name=\\"facebook_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.facebook_url || '' ))
-    ; __append("\\" \\n            placeholder=\\"https://facebook.com/govtexamzone\\"\\n          >\\n          <small class=\\"field-hint\\">Official Facebook page link.</small>\\n        </div>\\n      </div>\\n    </div>\\n\\n\\n    <!-- 3. Contact & Helpdesk Information -->\\n    <div id=\\"section-helpdesk\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u2709\uFE0F</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">3. Contact &amp; Candidate Helpdesk</h3>\\n          <p class=\\"settings-group-desc\\">Displayed on Contact Us page and candidate feedback channels.</p>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"contact_email\\">\u2709\uFE0F Official Support / Helpdesk Email</label>\\n          <input \\n            type=\\"email\\" \\n            id=\\"contact_email\\" \\n            name=\\"contact_email\\" \\n            class=\\"form-control\\" \\n            value=\\"")
-    ; __append(escapeFn( settings.contact_email || 'contact.govtexamzone@gmail.com' ))
-    ; __append("\\" \\n            placeholder=\\"contact.govtexamzone@gmail.com\\"\\n          >\\n          <small class=\\"field-hint\\">Primary email for candidate feedback, corrections, and DMCA notices.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"contact_phone\\">\u{1F4DE} Helpline / Telephone Number (Optional)</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"contact_phone\\" \\n            name=\\"contact_phone\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append("\\" \\n            placeholder=\\"https://facebook.com/odishaaspirants\\"\\n          >\\n          <small class=\\"field-hint\\">Official Facebook page link.</small>\\n        </div>\\n      </div>\\n    </div>\\n\\n\\n    <!-- 3. Contact & Helpdesk Information -->\\n    <div id=\\"section-helpdesk\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u2709\uFE0F</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">3. Contact &amp; Candidate Helpdesk</h3>\\n          <p class=\\"settings-group-desc\\">Displayed on Contact Us page and candidate feedback channels.</p>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"contact_email\\">\u2709\uFE0F Official Support / Helpdesk Email</label>\\n          <input \\n            type=\\"email\\" \\n            id=\\"contact_email\\" \\n            name=\\"contact_email\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append(escapeFn( settings.contact_email || 'contact@odishaaspirants.com' ))
+    ; __append("\\" \\n            placeholder=\\"contact@odishaaspirants.com\\"\\n          >\\n          <small class=\\"field-hint\\">Primary email for candidate feedback, corrections, and DMCA notices.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"contact_phone\\">\u{1F4DE} Helpline / Telephone Number (Optional)</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"contact_phone\\" \\n            name=\\"contact_phone\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.contact_phone || '' ))
-    ; __append("\\" \\n            placeholder=\\"e.g. +91-XXXXX-XXXXX (10 AM - 6 PM)\\"\\n          >\\n          <small class=\\"field-hint\\">Helpdesk telephone number or working hours guidance.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\" style=\\"margin-top: 14px;\\">\\n        <label for=\\"office_address\\">\u{1F4CD} Office / Correspondence Address</label>\\n        <textarea \\n          id=\\"office_address\\" \\n          name=\\"office_address\\" \\n          class=\\"form-control\\" \\n          rows=\\"2\\" \\n          placeholder=\\"e.g. Govt Exam Zone Media & Edu Services, New Delhi, India\\"\\n        >")
+    ; __append("\\" \\n            placeholder=\\"e.g. +91-XXXXX-XXXXX (10 AM - 6 PM)\\"\\n          >\\n          <small class=\\"field-hint\\">Helpdesk telephone number or working hours guidance.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\" style=\\"margin-top: 14px;\\">\\n        <label for=\\"office_address\\">\u{1F4CD} Office / Correspondence Address</label>\\n        <textarea \\n          id=\\"office_address\\" \\n          name=\\"office_address\\" \\n          class=\\"form-control\\" \\n          rows=\\"2\\" \\n          placeholder=\\"e.g. Odisha Aspirants Media & Edu Services, New Delhi, India\\"\\n        >")
     ; __append(escapeFn( settings.office_address || '' ))
-    ; __append("</textarea>\\n        <small class=\\"field-hint\\">Displayed on the Contact Us / About information section.</small>\\n      </div>\\n    </div>\\n\\n\\n    <!-- 4. SEO & Search Console Configuration -->\\n    <div id=\\"section-seo\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u{1F680}</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">4. Search Engine Optimization (SEO) &amp; Webmaster</h3>\\n          <p class=\\"settings-group-desc\\">Search engine metadata, Google Search Console verification, and Analytics tracking.</p>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"meta_description\\">Default Meta Description</label>\\n        <textarea \\n          id=\\"meta_description\\" \\n          name=\\"meta_description\\" \\n          class=\\"form-control\\" \\n          rows=\\"3\\" \\n          placeholder=\\"Govt Exam Zone provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card...\\"\\n        >")
-    ; __append(escapeFn( settings.meta_description || 'Govt Exam Zone (govtexamzone.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.' ))
+    ; __append("</textarea>\\n        <small class=\\"field-hint\\">Displayed on the Contact Us / About information section.</small>\\n      </div>\\n    </div>\\n\\n\\n    <!-- 4. SEO & Search Console Configuration -->\\n    <div id=\\"section-seo\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u{1F680}</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">4. Search Engine Optimization (SEO) &amp; Webmaster</h3>\\n          <p class=\\"settings-group-desc\\">Search engine metadata, Google Search Console verification, and Analytics tracking.</p>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"meta_description\\">Default Meta Description</label>\\n        <textarea \\n          id=\\"meta_description\\" \\n          name=\\"meta_description\\" \\n          class=\\"form-control\\" \\n          rows=\\"3\\" \\n          placeholder=\\"Odisha Aspirants provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card...\\"\\n        >")
+    ; __append(escapeFn( settings.meta_description || 'Odisha Aspirants (odishaaspirants.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.' ))
     ; __append("</textarea>\\n        <small class=\\"field-hint\\">Used for search engine summary snippets on homepage and search results.</small>\\n      </div>\\n\\n      <div class=\\"form-group\\" style=\\"margin-top: 14px;\\">\\n        <label for=\\"meta_keywords\\">Default Meta Keywords</label>\\n        <input \\n          type=\\"text\\" \\n          id=\\"meta_keywords\\" \\n          name=\\"meta_keywords\\" \\n          class=\\"form-control\\" \\n          value=\\"")
-    ; __append(escapeFn( settings.meta_keywords || 'Govt Exam Zone, govtexamzone, govtexamzone.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' ))
-    ; __append("\\" \\n          placeholder=\\"Govt Exam Zone, Govt Jobs 2026, Admit Card, Results...\\"\\n        >\\n        <small class=\\"field-hint\\">Comma-separated keywords for meta tags.</small>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"google_site_verification\\">Google Search Console Verification Tag</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"google_site_verification\\" \\n            name=\\"google_site_verification\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append(escapeFn( settings.meta_keywords || 'Odisha Aspirants, odishaaspirants, odishaaspirants.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' ))
+    ; __append("\\" \\n          placeholder=\\"Odisha Aspirants, Govt Jobs 2026, Admit Card, Results...\\"\\n        >\\n        <small class=\\"field-hint\\">Comma-separated keywords for meta tags.</small>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"google_site_verification\\">Google Search Console Verification Tag</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"google_site_verification\\" \\n            name=\\"google_site_verification\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.google_site_verification || '' ))
     ; __append("\\" \\n            placeholder=\\"e.g. abcdef1234567890xyz\\"\\n          >\\n          <small class=\\"field-hint\\">Enter your verification string (content attribute of google-site-verification meta tag).</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"google_analytics_id\\">Google Analytics Tracking ID (GA4)</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"google_analytics_id\\" \\n            name=\\"google_analytics_id\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.google_analytics_id || '' ))
@@ -79033,10 +79033,10 @@ var require_templateEngine = __commonJS({
     ; __append("\\n\\n  <!-- Section Quick Navigation Pills -->\\n  <div class=\\"settings-nav-pills\\" style=\\"display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 26px; border-bottom: 1px solid #e2e8f0; padding-bottom: 14px;\\">\\n    <a href=\\"#section-branding\\" class=\\"settings-pill active\\">\u{1F310} General &amp; Branding</a>\\n    <a href=\\"#section-layout\\" class=\\"settings-pill\\">\u{1F4F0} Post Page Layout</a>\\n    <a href=\\"#section-categories\\" class=\\"settings-pill\\">\u{1F4C2} Category Visibility</a>\\n    <a href=\\"#section-social\\" class=\\"settings-pill\\">\u{1F4F2} Social Communities</a>\\n    <a href=\\"#section-helpdesk\\" class=\\"settings-pill\\">\u2709\uFE0F Contact &amp; Helpdesk</a>\\n    <a href=\\"#section-seo\\" class=\\"settings-pill\\">\u{1F680} SEO &amp; Analytics</a>\\n    <a href=\\"#section-announcement\\" class=\\"settings-pill\\">\u{1F4E2} Urgent Alert Bar</a>\\n    <a href=\\"#section-adsense\\" class=\\"settings-pill\\">\u{1F4B0} AdSense &amp; Ads</a>\\n    <a href=\\"#section-scripts\\" class=\\"settings-pill\\">\u{1F6E0}\uFE0F Custom Scripts</a>\\n  </div>\\n\\n  <form id=\\"masterSettingsForm\\" action=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/settings/save\\" method=\\"POST\\" enctype=\\"multipart/form-data\\">\\n    \\n    <!-- 1. General & Brand Identity -->\\n    <div id=\\"section-branding\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u{1F310}</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">1. General &amp; Brand Identity</h3>\\n          <p class=\\"settings-group-desc\\">Configure website name, logo tagline, domain URL, and copyright attribution.</p>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"site_title\\">Portal Brand Name *</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"site_title\\" \\n            name=\\"site_title\\" \\n            class=\\"form-control\\" \\n            value=\\"")
-    ; __append(escapeFn( settings.site_title || 'Govt Exam Zone' ))
-    ; __append("\\" \\n            placeholder=\\"Govt Exam Zone\\"\\n            required\\n          >\\n          <small class=\\"field-hint\\">Primary portal name displayed in top header and browser titles.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"header_subtitle\\">Header Subtitle (Logo Tag)</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"header_subtitle\\" \\n            name=\\"header_subtitle\\" \\n            class=\\"form-control\\" \\n            value=\\"")
-    ; __append(escapeFn( settings.header_subtitle || 'WWW.GOVTEXAMZONE.COM' ))
-    ; __append("\\" \\n            placeholder=\\"WWW.GOVTEXAMZONE.COM\\"\\n          >\\n          <small class=\\"field-hint\\">Subtitle displayed below the main logo in the red header bar.</small>\\n        </div>\\n      </div>\\n\\n      <!-- Website Logo & Favicon Box -->\\n      <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px; margin: 18px 0;\\">\\n        <h4 style=\\"margin: 0 0 14px 0; color: #1e293b; font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 8px;\\">\\n          <span>\u{1F5BC}\uFE0F</span> Website Logo &amp; Favicon Management\\n        </h4>\\n\\n        <div class=\\"form-row\\">\\n          <!-- Logo Management -->\\n          <div class=\\"form-group\\" style=\\"flex: 1; min-width: 280px;\\">\\n            <div style=\\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;\\">\\n              <label for=\\"site_logo\\" style=\\"margin-bottom: 0;\\">Website Main Logo</label>\\n              <button \\n                type=\\"button\\" \\n                id=\\"removeLogoBtn\\" \\n                class=\\"btn btn-sm\\" \\n                style=\\"background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;\\"\\n                title=\\"Remove logo so header shows clean text title only\\"\\n              >\\n                \u{1F5D1}\uFE0F Delete / Remove Logo\\n              </button>\\n            </div>\\n\\n            <div style=\\"display: flex; gap: 14px; align-items: center; margin-bottom: 10px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px;\\">\\n              <div id=\\"logoPreviewBox\\" style=\\"width: 70px; height: 70px; background: #ab183d; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 5px; flex-shrink: 0; color: #fff; font-size: 11px; text-align: center;\\">\\n                ")
+    ; __append(escapeFn( settings.site_title || 'Odisha Aspirants' ))
+    ; __append("\\" \\n            placeholder=\\"Odisha Aspirants\\"\\n            required\\n          >\\n          <small class=\\"field-hint\\">Primary portal name displayed in top header and browser titles.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"header_subtitle\\">Header Subtitle (Logo Tag)</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"header_subtitle\\" \\n            name=\\"header_subtitle\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append(escapeFn( settings.header_subtitle || 'WWW.ODISHAASPIRANTS.COM' ))
+    ; __append("\\" \\n            placeholder=\\"WWW.ODISHAASPIRANTS.COM\\"\\n          >\\n          <small class=\\"field-hint\\">Subtitle displayed below the main logo in the red header bar.</small>\\n        </div>\\n      </div>\\n\\n      <!-- Website Logo & Favicon Box -->\\n      <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px; margin: 18px 0;\\">\\n        <h4 style=\\"margin: 0 0 14px 0; color: #1e293b; font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 8px;\\">\\n          <span>\u{1F5BC}\uFE0F</span> Website Logo &amp; Favicon Management\\n        </h4>\\n\\n        <div class=\\"form-row\\">\\n          <!-- Logo Management -->\\n          <div class=\\"form-group\\" style=\\"flex: 1; min-width: 280px;\\">\\n            <div style=\\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;\\">\\n              <label for=\\"site_logo\\" style=\\"margin-bottom: 0;\\">Website Main Logo</label>\\n              <button \\n                type=\\"button\\" \\n                id=\\"removeLogoBtn\\" \\n                class=\\"btn btn-sm\\" \\n                style=\\"background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;\\"\\n                title=\\"Remove logo so header shows clean text title only\\"\\n              >\\n                \u{1F5D1}\uFE0F Delete / Remove Logo\\n              </button>\\n            </div>\\n\\n            <div style=\\"display: flex; gap: 14px; align-items: center; margin-bottom: 10px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px;\\">\\n              <div id=\\"logoPreviewBox\\" style=\\"width: 70px; height: 70px; background: #ab183d; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 5px; flex-shrink: 0; color: #fff; font-size: 11px; text-align: center;\\">\\n                ")
     ;  if (settings.site_logo && settings.site_logo.trim()) { 
     ; __append("\\n                  <img id=\\"logoPreviewImg\\" src=\\"")
     ; __append(escapeFn( settings.site_logo ))
@@ -79052,7 +79052,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( settings.site_logo || '' ))
     ; __append("\\" \\n                placeholder=\\"Leave empty for no logo, or enter image path (e.g. /images/logo.png)\\"\\n              >\\n              <small class=\\"field-hint\\">Leave blank or click \\"Delete / Remove Logo\\" above if you don't want any logo in the header. To add a logo, upload a file or enter a path.</small>\\n            </div>\\n          </div>\\n\\n          <!-- Favicon Management -->\\n          <div class=\\"form-group\\" style=\\"flex: 1; min-width: 280px;\\">\\n            ")
     ; 
-              const activeFaviconVal = (typeof settings.site_favicon === 'string') ? settings.site_favicon : '/images/gez-logo.svg';
+              const activeFaviconVal = (typeof settings.site_favicon === 'string') ? settings.site_favicon : '/images/oa-logo.svg';
               const hasFaviconVal = Boolean(activeFaviconVal && activeFaviconVal.trim());
             
     ; __append("\\n            <div style=\\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;\\">\\n              <label for=\\"site_favicon\\" style=\\"margin-bottom: 0;\\">Website Browser Favicon</label>\\n              <button \\n                type=\\"button\\" \\n                id=\\"removeFaviconBtn\\" \\n                class=\\"btn btn-sm\\" \\n                style=\\"background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;\\"\\n                title=\\"Remove custom browser favicon\\"\\n              >\\n                \u{1F5D1}\uFE0F Delete / Remove Favicon\\n              </button>\\n            </div>\\n            <div style=\\"display: flex; gap: 14px; align-items: center; margin-bottom: 10px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px;\\">\\n              <div style=\\"width: 70px; height: 70px; background: #ffffff; border: 1px dashed #94a3b8; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 5px; flex-shrink: 0; text-align: center;\\">\\n                ")
@@ -79069,14 +79069,14 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( hasFaviconVal ? activeFaviconVal : 'No custom favicon active (Browser default)' ))
     ; __append("\\n                </div>\\n              </div>\\n            </div>\\n\\n            <div style=\\"margin-bottom: 8px;\\">\\n              <label style=\\"font-size: 12px; font-weight: 600; color: #475569;\\">Upload New Favicon File</label>\\n              <input \\n                type=\\"file\\" \\n                id=\\"site_favicon_file\\" \\n                name=\\"site_favicon_file\\" \\n                class=\\"form-control\\" \\n                accept=\\"image/x-icon,image/png,image/svg+xml,image/jpeg,image/webp\\"\\n                style=\\"padding: 6px;\\"\\n              >\\n            </div>\\n\\n            <div>\\n              <label for=\\"site_favicon\\" style=\\"font-size: 12px; font-weight: 600; color: #475569;\\">Or Direct Favicon URL / Relative Path</label>\\n              <input \\n                type=\\"text\\" \\n                id=\\"site_favicon\\" \\n                name=\\"site_favicon\\" \\n                class=\\"form-control\\" \\n                value=\\"")
     ; __append(escapeFn( activeFaviconVal ))
-    ; __append("\\" \\n                placeholder=\\"Leave empty for no custom favicon, or enter /images/gez-logo.svg\\"\\n              >\\n              <small class=\\"field-hint\\">ICO, PNG, or SVG format (recommended 32x32 or 48x48). Click \\"Delete / Remove Favicon\\" above to clear it cleanly.</small>\\n            </div>\\n          </div>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"site_tagline\\">Portal Tagline / Slogan</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"site_tagline\\" \\n            name=\\"site_tagline\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append("\\" \\n                placeholder=\\"Leave empty for no custom favicon, or enter /images/oa-logo.svg\\"\\n              >\\n              <small class=\\"field-hint\\">ICO, PNG, or SVG format (recommended 32x32 or 48x48). Click \\"Delete / Remove Favicon\\" above to clear it cleanly.</small>\\n            </div>\\n          </div>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"site_tagline\\">Portal Tagline / Slogan</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"site_tagline\\" \\n            name=\\"site_tagline\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.site_tagline || 'Latest Govt Jobs, Admit Card, Results 2026' ))
     ; __append("\\" \\n            placeholder=\\"Latest Govt Jobs, Admit Card, Results 2026\\"\\n          >\\n          <small class=\\"field-hint\\">Used in SEO title suffixes and social link shares.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"site_domain\\">Primary Domain URL</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"site_domain\\" \\n            name=\\"site_domain\\" \\n            class=\\"form-control\\" \\n            value=\\"")
-    ; __append(escapeFn( settings.site_domain || 'https://govtexamzone.com' 
+    ; __append(escapeFn( settings.site_domain || 'https://odishaaspirants.com' 
 ))
-    ; __append("\\" \\n            placeholder=\\"https://govtexamzone.com\\"\\n          >\\n          <small class=\\"field-hint\\">Canonical domain used for generating sitemaps and share links.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\" style=\\"margin-top: 14px;\\">\\n        <label for=\\"copyright_text\\">Footer Copyright Notice</label>\\n        <input \\n          type=\\"text\\" \\n          id=\\"copyright_text\\" \\n          name=\\"copyright_text\\" \\n          class=\\"form-control\\" \\n          value=\\"")
-    ; __append(escapeFn( settings.copyright_text || '\xA9 {year} govtexamzone.com. All Rights Reserved.' ))
-    ; __append("\\" \\n          placeholder=\\"\xA9 {year} govtexamzone.com. All Rights Reserved.\\"\\n        >\\n        <small class=\\"field-hint\\">Fetched from backend settings on every page. Use <code>{year}</code> or any <code>20xx</code> year \u2014 it automatically updates to the current year on the live website.</small>\\n      </div>\\n    </div>\\n\\n\\n    <!-- 1B. Full Post / Blog Detail Page Layout Configuration -->\\n    <div id=\\"section-layout\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u{1F4F0}</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">Post / Full Blog Detail Page Layout (2 UI Modes)</h3>\\n          <p class=\\"settings-group-desc\\">Choose how full post/blog detail pages display on the frontend. Both Classic Sarkari posts and rich Blog articles automatically adapt to your selected layout.</p>\\n        </div>\\n      </div>\\n\\n      ")
+    ; __append("\\" \\n            placeholder=\\"https://odishaaspirants.com\\"\\n          >\\n          <small class=\\"field-hint\\">Canonical domain used for generating sitemaps and share links.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\" style=\\"margin-top: 14px;\\">\\n        <label for=\\"copyright_text\\">Footer Copyright Notice</label>\\n        <input \\n          type=\\"text\\" \\n          id=\\"copyright_text\\" \\n          name=\\"copyright_text\\" \\n          class=\\"form-control\\" \\n          value=\\"")
+    ; __append(escapeFn( settings.copyright_text || '\xA9 {year} odishaaspirants.com. All Rights Reserved.' ))
+    ; __append("\\" \\n          placeholder=\\"\xA9 {year} odishaaspirants.com. All Rights Reserved.\\"\\n        >\\n        <small class=\\"field-hint\\">Fetched from backend settings on every page. Use <code>{year}</code> or any <code>20xx</code> year \u2014 it automatically updates to the current year on the live website.</small>\\n      </div>\\n    </div>\\n\\n\\n    <!-- 1B. Full Post / Blog Detail Page Layout Configuration -->\\n    <div id=\\"section-layout\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u{1F4F0}</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">Post / Full Blog Detail Page Layout (2 UI Modes)</h3>\\n          <p class=\\"settings-group-desc\\">Choose how full post/blog detail pages display on the frontend. Both Classic Sarkari posts and rich Blog articles automatically adapt to your selected layout.</p>\\n        </div>\\n      </div>\\n\\n      ")
     ;  const activeLayout = (settings.post_detail_layout === 'blog_2col') ? 'blog_2col' : 'classic'; 
     ; __append("\\n      <div class=\\"layout-selector-grid\\" style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;\\">\\n        <!-- Option 1: Classic Sarkari Single-Column -->\\n        <label class=\\"layout-option-card ")
     ; __append(escapeFn( activeLayout === 'classic' ? 'selected' : '' ))
@@ -79126,30 +79126,30 @@ var require_templateEngine = __commonJS({
     ; __append(" style=\\"width: 17px; height: 17px; cursor: pointer;\\">\\n            </div>\\n          </label>\\n        ")
     ;  }) 
     ; __append("\\n      </div>\\n    </div>\\n\\n\\n    <!-- 2. Social Media & Community Channels -->\\n    <div id=\\"section-social\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u{1F4F2}</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">2. Social Media &amp; Community Channels</h3>\\n          <p class=\\"settings-group-desc\\">Connect official Telegram, WhatsApp, YouTube, and social media handles.</p>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"telegram_url\\">\u2708\uFE0F Official Telegram Channel Link *</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"telegram_url\\" \\n            name=\\"telegram_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
-    ; __append(escapeFn( settings.telegram_url || 'https://t.me/govtexamzoneofficial' 
+    ; __append(escapeFn( settings.telegram_url || 'https://t.me/odishaaspirantsofficial' 
 ))
-    ; __append("\\" \\n            placeholder=\\"https://t.me/govtexamzoneofficial\\"\\n            required\\n          >\\n          <small class=\\"field-hint\\">Connected to top \\"Join Telegram Channel\\" button and mobile drawer.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"whatsapp_url\\">\u{1F4AC} Official WhatsApp Channel Link *</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"whatsapp_url\\" \\n            name=\\"whatsapp_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append("\\" \\n            placeholder=\\"https://t.me/odishaaspirantsofficial\\"\\n            required\\n          >\\n          <small class=\\"field-hint\\">Connected to top \\"Join Telegram Channel\\" button and mobile drawer.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"whatsapp_url\\">\u{1F4AC} Official WhatsApp Channel Link *</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"whatsapp_url\\" \\n            name=\\"whatsapp_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.whatsapp_url || 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' 
 ))
     ; __append("\\" \\n            placeholder=\\"https://whatsapp.com/channel/...\\"\\n            required\\n          >\\n          <small class=\\"field-hint\\">Connected to top \\"WhatsApp Channel\\" button and mobile drawer.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"youtube_url\\">\u25B6\uFE0F Official YouTube Channel</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"youtube_url\\" \\n            name=\\"youtube_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.youtube_url || '' ))
-    ; __append("\\" \\n            placeholder=\\"https://youtube.com/@govtexamzone\\"\\n          >\\n          <small class=\\"field-hint\\">Official video channel link.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"twitter_url\\">\u{1F426} Official Twitter / X Link</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"twitter_url\\" \\n            name=\\"twitter_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append("\\" \\n            placeholder=\\"https://youtube.com/@odishaaspirants\\"\\n          >\\n          <small class=\\"field-hint\\">Official video channel link.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"twitter_url\\">\u{1F426} Official Twitter / X Link</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"twitter_url\\" \\n            name=\\"twitter_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.twitter_url || '' ))
-    ; __append("\\" \\n            placeholder=\\"https://x.com/govtexamzone\\"\\n          >\\n          <small class=\\"field-hint\\">Official Twitter / X handle URL.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"instagram_url\\">\u{1F4F7} Official Instagram Profile</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"instagram_url\\" \\n            name=\\"instagram_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append("\\" \\n            placeholder=\\"https://x.com/odishaaspirants\\"\\n          >\\n          <small class=\\"field-hint\\">Official Twitter / X handle URL.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"instagram_url\\">\u{1F4F7} Official Instagram Profile</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"instagram_url\\" \\n            name=\\"instagram_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.instagram_url || '' ))
-    ; __append("\\" \\n            placeholder=\\"https://instagram.com/govtexamzone\\"\\n          >\\n          <small class=\\"field-hint\\">Official Instagram page URL.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"facebook_url\\">\u{1F4D8} Official Facebook Page</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"facebook_url\\" \\n            name=\\"facebook_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append("\\" \\n            placeholder=\\"https://instagram.com/odishaaspirants\\"\\n          >\\n          <small class=\\"field-hint\\">Official Instagram page URL.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"facebook_url\\">\u{1F4D8} Official Facebook Page</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"facebook_url\\" \\n            name=\\"facebook_url\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.facebook_url || '' ))
-    ; __append("\\" \\n            placeholder=\\"https://facebook.com/govtexamzone\\"\\n          >\\n          <small class=\\"field-hint\\">Official Facebook page link.</small>\\n        </div>\\n      </div>\\n    </div>\\n\\n\\n    <!-- 3. Contact & Helpdesk Information -->\\n    <div id=\\"section-helpdesk\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u2709\uFE0F</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">3. Contact &amp; Candidate Helpdesk</h3>\\n          <p class=\\"settings-group-desc\\">Displayed on Contact Us page and candidate feedback channels.</p>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"contact_email\\">\u2709\uFE0F Official Support / Helpdesk Email</label>\\n          <input \\n            type=\\"email\\" \\n            id=\\"contact_email\\" \\n            name=\\"contact_email\\" \\n            class=\\"form-control\\" \\n            value=\\"")
-    ; __append(escapeFn( settings.contact_email || 'contact.govtexamzone@gmail.com' ))
-    ; __append("\\" \\n            placeholder=\\"contact.govtexamzone@gmail.com\\"\\n          >\\n          <small class=\\"field-hint\\">Primary email for candidate feedback, corrections, and DMCA notices.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"contact_phone\\">\u{1F4DE} Helpline / Telephone Number (Optional)</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"contact_phone\\" \\n            name=\\"contact_phone\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append("\\" \\n            placeholder=\\"https://facebook.com/odishaaspirants\\"\\n          >\\n          <small class=\\"field-hint\\">Official Facebook page link.</small>\\n        </div>\\n      </div>\\n    </div>\\n\\n\\n    <!-- 3. Contact & Helpdesk Information -->\\n    <div id=\\"section-helpdesk\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u2709\uFE0F</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">3. Contact &amp; Candidate Helpdesk</h3>\\n          <p class=\\"settings-group-desc\\">Displayed on Contact Us page and candidate feedback channels.</p>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-row\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"contact_email\\">\u2709\uFE0F Official Support / Helpdesk Email</label>\\n          <input \\n            type=\\"email\\" \\n            id=\\"contact_email\\" \\n            name=\\"contact_email\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append(escapeFn( settings.contact_email || 'contact@odishaaspirants.com' ))
+    ; __append("\\" \\n            placeholder=\\"contact@odishaaspirants.com\\"\\n          >\\n          <small class=\\"field-hint\\">Primary email for candidate feedback, corrections, and DMCA notices.</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"contact_phone\\">\u{1F4DE} Helpline / Telephone Number (Optional)</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"contact_phone\\" \\n            name=\\"contact_phone\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.contact_phone || '' ))
-    ; __append("\\" \\n            placeholder=\\"e.g. +91-XXXXX-XXXXX (10 AM - 6 PM)\\"\\n          >\\n          <small class=\\"field-hint\\">Helpdesk telephone number or working hours guidance.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\" style=\\"margin-top: 14px;\\">\\n        <label for=\\"office_address\\">\u{1F4CD} Office / Correspondence Address</label>\\n        <textarea \\n          id=\\"office_address\\" \\n          name=\\"office_address\\" \\n          class=\\"form-control\\" \\n          rows=\\"2\\" \\n          placeholder=\\"e.g. Govt Exam Zone Media & Edu Services, New Delhi, India\\"\\n        >")
+    ; __append("\\" \\n            placeholder=\\"e.g. +91-XXXXX-XXXXX (10 AM - 6 PM)\\"\\n          >\\n          <small class=\\"field-hint\\">Helpdesk telephone number or working hours guidance.</small>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\" style=\\"margin-top: 14px;\\">\\n        <label for=\\"office_address\\">\u{1F4CD} Office / Correspondence Address</label>\\n        <textarea \\n          id=\\"office_address\\" \\n          name=\\"office_address\\" \\n          class=\\"form-control\\" \\n          rows=\\"2\\" \\n          placeholder=\\"e.g. Odisha Aspirants Media & Edu Services, New Delhi, India\\"\\n        >")
     ; __append(escapeFn( settings.office_address || '' ))
-    ; __append("</textarea>\\n        <small class=\\"field-hint\\">Displayed on the Contact Us / About information section.</small>\\n      </div>\\n    </div>\\n\\n\\n    <!-- 4. SEO & Search Console Configuration -->\\n    <div id=\\"section-seo\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u{1F680}</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">4. Search Engine Optimization (SEO) &amp; Webmaster</h3>\\n          <p class=\\"settings-group-desc\\">Search engine metadata, Google Search Console verification, and Analytics tracking.</p>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"meta_description\\">Default Meta Description</label>\\n        <textarea \\n          id=\\"meta_description\\" \\n          name=\\"meta_description\\" \\n          class=\\"form-control\\" \\n          rows=\\"3\\" \\n          placeholder=\\"Govt Exam Zone provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card...\\"\\n        >")
-    ; __append(escapeFn( settings.meta_description || 'Govt Exam Zone (govtexamzone.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.' ))
+    ; __append("</textarea>\\n        <small class=\\"field-hint\\">Displayed on the Contact Us / About information section.</small>\\n      </div>\\n    </div>\\n\\n\\n    <!-- 4. SEO & Search Console Configuration -->\\n    <div id=\\"section-seo\\" class=\\"settings-group-card\\">\\n      <div class=\\"settings-group-header\\">\\n        <span class=\\"settings-group-icon\\">\u{1F680}</span>\\n        <div>\\n          <h3 class=\\"settings-group-title\\">4. Search Engine Optimization (SEO) &amp; Webmaster</h3>\\n          <p class=\\"settings-group-desc\\">Search engine metadata, Google Search Console verification, and Analytics tracking.</p>\\n        </div>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"meta_description\\">Default Meta Description</label>\\n        <textarea \\n          id=\\"meta_description\\" \\n          name=\\"meta_description\\" \\n          class=\\"form-control\\" \\n          rows=\\"3\\" \\n          placeholder=\\"Odisha Aspirants provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card...\\"\\n        >")
+    ; __append(escapeFn( settings.meta_description || 'Odisha Aspirants (odishaaspirants.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.' ))
     ; __append("</textarea>\\n        <small class=\\"field-hint\\">Used for search engine summary snippets on homepage and search results.</small>\\n      </div>\\n\\n      <div class=\\"form-group\\" style=\\"margin-top: 14px;\\">\\n        <label for=\\"meta_keywords\\">Default Meta Keywords</label>\\n        <input \\n          type=\\"text\\" \\n          id=\\"meta_keywords\\" \\n          name=\\"meta_keywords\\" \\n          class=\\"form-control\\" \\n          value=\\"")
-    ; __append(escapeFn( settings.meta_keywords || 'Govt Exam Zone, govtexamzone, govtexamzone.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' ))
-    ; __append("\\" \\n          placeholder=\\"Govt Exam Zone, Govt Jobs 2026, Admit Card, Results...\\"\\n        >\\n        <small class=\\"field-hint\\">Comma-separated keywords for meta tags.</small>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"google_site_verification\\">Google Search Console Verification Tag</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"google_site_verification\\" \\n            name=\\"google_site_verification\\" \\n            class=\\"form-control\\" \\n            value=\\"")
+    ; __append(escapeFn( settings.meta_keywords || 'Odisha Aspirants, odishaaspirants, odishaaspirants.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' ))
+    ; __append("\\" \\n          placeholder=\\"Odisha Aspirants, Govt Jobs 2026, Admit Card, Results...\\"\\n        >\\n        <small class=\\"field-hint\\">Comma-separated keywords for meta tags.</small>\\n      </div>\\n\\n      <div class=\\"form-row\\" style=\\"margin-top: 14px;\\">\\n        <div class=\\"form-group\\">\\n          <label for=\\"google_site_verification\\">Google Search Console Verification Tag</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"google_site_verification\\" \\n            name=\\"google_site_verification\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.google_site_verification || '' ))
     ; __append("\\" \\n            placeholder=\\"e.g. abcdef1234567890xyz\\"\\n          >\\n          <small class=\\"field-hint\\">Enter your verification string (content attribute of google-site-verification meta tag).</small>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"google_analytics_id\\">Google Analytics Tracking ID (GA4)</label>\\n          <input \\n            type=\\"text\\" \\n            id=\\"google_analytics_id\\" \\n            name=\\"google_analytics_id\\" \\n            class=\\"form-control\\" \\n            value=\\"")
     ; __append(escapeFn( settings.google_analytics_id || '' ))
@@ -79236,7 +79236,7 @@ var require_templateEngine = __commonJS({
     ; __append("</span>\\n      </div>\\n      <div style=\\"color: #2563eb; font-weight: 600; font-size: 13.5px; margin: 3px 0 6px 0;\\">\\n        ")
     ; __append(escapeFn( author.role ))
     ; __append("\\n      </div>\\n      <p style=\\"margin: 0; font-size: 13px; color: #475569; line-height: 1.5;\\">\\n        ")
-    ; __append(escapeFn( author.bio || 'Government recruitment analyst and exam fact-checker at Govt Exam Zone.' ))
+    ; __append(escapeFn( author.bio || 'Government recruitment analyst and exam fact-checker at Odisha Aspirants.' ))
     ; __append("\\n      </p>\\n    </div>\\n    <div style=\\"display: flex; gap: 8px;\\">\\n      <a href=\\"/author-portal/profile\\" class=\\"btn btn-secondary btn-sm\\">\u2699\uFE0F Edit Profile &amp; Password</a>\\n    </div>\\n  </div>\\n</div>\\n\\n<!-- Recent Articles Authored Table -->\\n<div class=\\"admin-card\\">\\n  <div class=\\"admin-card-header\\">\\n    <div>\\n      <h2>")
     ; __append(escapeFn( (typeof isEditor !== 'undefined' && isEditor) ? 'Platform Notifications & Articles' : 'Recent Notifications Authored by You' ))
     ; __append("</h2>\\n      <div style=\\"font-size: 12.5px; color: #64748b; margin-top: 2px;\\">\\n        ")
@@ -79344,7 +79344,7 @@ var require_templateEngine = __commonJS({
     ; __append("</span>\\n      </div>\\n      <div style=\\"color: #2563eb; font-weight: 600; font-size: 13.5px; margin: 3px 0 6px 0;\\">\\n        ")
     ; __append(escapeFn( author.role ))
     ; __append("\\n      </div>\\n      <p style=\\"margin: 0; font-size: 13px; color: #475569; line-height: 1.5;\\">\\n        ")
-    ; __append(escapeFn( author.bio || 'Government recruitment analyst and exam fact-checker at Govt Exam Zone.' ))
+    ; __append(escapeFn( author.bio || 'Government recruitment analyst and exam fact-checker at Odisha Aspirants.' ))
     ; __append("\\n      </p>\\n    </div>\\n    <div style=\\"display: flex; gap: 8px;\\">\\n      <a href=\\"/author-portal/profile\\" class=\\"btn btn-secondary btn-sm\\">\u2699\uFE0F Edit Profile &amp; Password</a>\\n    </div>\\n  </div>\\n</div>\\n\\n<!-- Recent Articles Authored Table -->\\n<div class=\\"admin-card\\">\\n  <div class=\\"admin-card-header\\">\\n    <div>\\n      <h2>")
     ; __append(escapeFn( (typeof isEditor !== 'undefined' && isEditor) ? 'Platform Notifications & Articles' : 'Recent Notifications Authored by You' ))
     ; __append("</h2>\\n      <div style=\\"font-size: 12.5px; color: #64748b; margin-top: 2px;\\">\\n        ")
@@ -79407,13 +79407,13 @@ var require_templateEngine = __commonJS({
     ; __append("<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, maximum-scale=5.0\\">\\n  <meta name=\\"theme-color\\" content=\\"#1e293b\\">\\n  <title>")
     ; __append(escapeFn( title ))
     ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"icon\\" href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' ))
     ; __append("\\">\\n  <style>\\n    *, *::before, *::after {\\n      box-sizing: border-box;\\n    }\\n\\n    html, body {\\n      margin: 0;\\n      padding: 0;\\n      width: 100%;\\n      min-height: 100vh;\\n      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif;\\n      -webkit-font-smoothing: antialiased;\\n      background-color: #090d16;\\n    }\\n\\n    body.author-login-body {\\n      display: flex;\\n      flex-direction: column;\\n      justify-content: center;\\n      align-items: center;\\n      padding: 24px 16px;\\n      position: relative;\\n      background: \\n        radial-gradient(ellipse 70% 40% at 50% -10%, rgba(37, 99, 235, 0.18), transparent),\\n        radial-gradient(circle 500px at 90% 90%, rgba(13, 148, 136, 0.08), transparent),\\n        radial-gradient(circle 400px at 10% 85%, rgba(171, 24, 61, 0.08), transparent),\\n        #090d16;\\n    }\\n\\n    .author-login-container {\\n      width: 100%;\\n      max-width: 440px;\\n      position: relative;\\n      z-index: 2;\\n    }\\n\\n    .author-login-card {\\n      background: rgba(15, 23, 42, 0.82);\\n      backdrop-filter: blur(16px);\\n      -webkit-backdrop-filter: blur(16px);\\n      border: 1px solid rgba(255, 255, 255, 0.08);\\n      border-radius: 18px;\\n      padding: 34px 28px;\\n      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);\\n    }\\n\\n    @media (max-width: 480px) {\\n      .author-login-card {\\n        padding: 26px 20px;\\n        border-radius: 14px;\\n      }\\n    }\\n\\n    .brand-header {\\n      text-align: center;\\n      margin-bottom: 26px;\\n    }\\n\\n    .brand-logo-wrap {\\n      display: inline-flex;\\n      align-items: center;\\n      justify-content: center;\\n      width: 68px;\\n      height: 68px;\\n      background: rgba(255, 255, 255, 0.04);\\n      border: 1px solid rgba(255, 255, 255, 0.1);\\n      border-radius: 16px;\\n      padding: 8px;\\n      margin-bottom: 12px;\\n    }\\n\\n    .brand-logo-wrap img {\\n      width: 100%;\\n      height: 100%;\\n      object-fit: contain;\\n    }\\n\\n    .brand-badge {\\n      display: inline-flex;\\n      align-items: center;\\n      gap: 6px;\\n      background: rgba(37, 99, 235, 0.15);\\n      border: 1px solid rgba(37, 99, 235, 0.35);\\n      color: #93c5fd;\\n      font-size: 11.5px;\\n      font-weight: 700;\\n      text-transform: uppercase;\\n      letter-spacing: 0.06em;\\n      padding: 4px 10px;\\n      border-radius: 999px;\\n      margin-bottom: 10px;\\n    }\\n\\n    .brand-title {\\n      color: #ffffff;\\n      font-size: 22px;\\n      font-weight: 800;\\n      letter-spacing: -0.02em;\\n      margin: 0 0 4px 0;\\n    }\\n\\n    .brand-sub {\\n      color: #94a3b8;\\n      font-size: 13px;\\n      margin: 0;\\n      line-height: 1.4;\\n    }\\n\\n    .alert-error {\\n      background: rgba(239, 68, 68, 0.12);\\n      border: 1px solid rgba(239, 68, 68, 0.3);\\n      color: #fca5a5;\\n      padding: 12px 14px;\\n      border-radius: 8px;\\n      font-size: 13px;\\n      line-height: 1.45;\\n      margin-bottom: 20px;\\n      display: flex;\\n      align-items: flex-start;\\n      gap: 8px;\\n    }\\n\\n    .form-group {\\n      margin-bottom: 18px;\\n    }\\n\\n    .form-label {\\n      display: block;\\n      color: #cbd5e1;\\n      font-size: 13px;\\n      font-weight: 600;\\n      margin-bottom: 6px;\\n    }\\n\\n    .input-wrap {\\n      position: relative;\\n    }\\n\\n    .form-input {\\n      width: 100%;\\n      background: rgba(30, 41, 59, 0.7);\\n      border: 1px solid rgba(255, 255, 255, 0.12);\\n      border-radius: 10px;\\n      padding: 12px 14px;\\n      font-size: 14px;\\n      color: #f8fafc;\\n      outline: none;\\n      transition: all 0.2s ease;\\n      font-family: inherit;\\n    }\\n\\n    .form-input:focus {\\n      border-color: #3b82f6;\\n      background: rgba(30, 41, 59, 0.95);\\n      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\\n    }\\n\\n    .password-toggle-btn {\\n      position: absolute;\\n      right: 12px;\\n      top: 50%;\\n      transform: translateY(-50%);\\n      background: transparent;\\n      border: none;\\n      color: #94a3b8;\\n      cursor: pointer;\\n      padding: 4px;\\n      font-size: 16px;\\n      line-height: 1;\\n    }\\n\\n    .btn-submit {\\n      width: 100%;\\n      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);\\n      color: #ffffff;\\n      border: none;\\n      border-radius: 10px;\\n      padding: 13px 18px;\\n      font-size: 14.5px;\\n      font-weight: 700;\\n      cursor: pointer;\\n      transition: all 0.2s ease;\\n      display: flex;\\n      align-items: center;\\n      justify-content: center;\\n      gap: 8px;\\n      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);\\n      margin-top: 22px;\\n    }\\n\\n    .btn-submit:hover {\\n      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);\\n      transform: translateY(-1px);\\n      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);\\n    }\\n\\n    .quick-logins-box {\\n      margin-top: 24px;\\n      padding-top: 18px;\\n      border-top: 1px solid rgba(255, 255, 255, 0.08);\\n    }\\n\\n    .quick-title {\\n      color: #94a3b8;\\n      font-size: 11.5px;\\n      font-weight: 700;\\n      text-transform: uppercase;\\n      letter-spacing: 0.05em;\\n      margin-bottom: 10px;\\n      display: flex;\\n      align-items: center;\\n      justify-content: space-between;\\n    }\\n\\n    .quick-chips-wrap {\\n      display: flex;\\n      flex-direction: column;\\n      gap: 7px;\\n    }\\n\\n    .author-chip-btn {\\n      background: rgba(30, 41, 59, 0.5);\\n      border: 1px solid rgba(255, 255, 255, 0.07);\\n      color: #e2e8f0;\\n      border-radius: 8px;\\n      padding: 8px 12px;\\n      font-size: 12px;\\n      cursor: pointer;\\n      text-align: left;\\n      display: flex;\\n      align-items: center;\\n      justify-content: space-between;\\n      transition: all 0.15s ease;\\n      font-family: inherit;\\n    }\\n\\n    .author-chip-btn:hover {\\n      background: rgba(51, 65, 85, 0.7);\\n      border-color: rgba(59, 130, 246, 0.4);\\n      color: #ffffff;\\n    }\\n\\n    .portal-footer-links {\\n      margin-top: 22px;\\n      text-align: center;\\n      font-size: 12.5px;\\n      color: #64748b;\\n      display: flex;\\n      align-items: center;\\n      justify-content: center;\\n      gap: 14px;\\n      flex-wrap: wrap;\\n    }\\n\\n    .portal-footer-links a {\\n      color: #94a3b8;\\n      text-decoration: none;\\n      transition: color 0.15s;\\n    }\\n\\n    .portal-footer-links a:hover {\\n      color: #60a5fa;\\n    }\\n  </style>\\n</head>\\n<body class=\\"author-login-body\\">\\n  <div class=\\"author-login-container\\">\\n    <div class=\\"author-login-card\\">\\n      <div class=\\"brand-header\\">\\n        <div class=\\"brand-logo-wrap\\">\\n          <img src=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/oa-logo.svg' ))
     ; __append("\\" alt=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("\\">\\n        </div>\\n        <div>\\n          <span class=\\"brand-badge\\">\u{1F6E1}\uFE0F Editor &amp; \u270D\uFE0F Author Contributor Desk</span>\\n        </div>\\n        <h1 class=\\"brand-title\\">")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("</h1>\\n        <p class=\\"brand-sub\\">Secure workspace for Senior Editors and Author Contributors.</p>\\n      </div>\\n\\n      ")
     ;  if (typeof error !== 'undefined' && error) { 
     ; __append("\\n        <div class=\\"alert-error\\">\\n          <span style=\\"font-size: 16px;\\">\u26A0\uFE0F</span>\\n          <span>")
@@ -79422,7 +79422,7 @@ var require_templateEngine = __commonJS({
     ;  } 
     ; __append("\\n\\n      <form action=\\"/author-portal/login\\" method=\\"POST\\" id=\\"authorLoginForm\\">\\n        <input type=\\"hidden\\" name=\\"returnUrl\\" value=\\"")
     ; __append(escapeFn( returnUrl ))
-    ; __append("\\">\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"identifier\\" class=\\"form-label\\">Author Email or Slug Username</label>\\n          <div class=\\"input-wrap\\">\\n            <input \\n              type=\\"text\\" \\n              id=\\"identifier\\" \\n              name=\\"identifier\\" \\n              class=\\"form-input\\" \\n              placeholder=\\"e.g. editor@govtexamzone.com or editorial-team\\" \\n              required\\n              autocomplete=\\"username\\"\\n              autofocus\\n            >\\n          </div>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"password\\" class=\\"form-label\\">Password</label>\\n          <div class=\\"input-wrap\\">\\n            <input \\n              type=\\"password\\" \\n              id=\\"password\\" \\n              name=\\"password\\" \\n              class=\\"form-input\\" \\n              placeholder=\\"Enter your author password\\" \\n              required\\n              autocomplete=\\"current-password\\"\\n            >\\n            <button type=\\"button\\" class=\\"password-toggle-btn\\" id=\\"togglePasswordBtn\\" aria-label=\\"Toggle password visibility\\">\u{1F441}\uFE0F</button>\\n          </div>\\n        </div>\\n\\n        <button type=\\"submit\\" class=\\"btn-submit\\">\\n          <span>\u{1F680} Sign In to Author Portal</span>\\n        </button>\\n      </form>\\n\\n      <!-- Quick 1-Click Fill Chips -->\\n      <div class=\\"quick-logins-box\\">\\n        <div class=\\"quick-title\\">\\n          <span>\u26A1 Quick 1-Click Demo Logins</span>\\n          <span style=\\"font-size: 11px; text-transform: none; color: #64748b;\\">Click to populate</span>\\n        </div>\\n        <div class=\\"quick-chips-wrap\\">\\n          <button type=\\"button\\" class=\\"author-chip-btn\\" onclick=\\"fillAuthor('editor@govtexamzone.com', 'editor@2026')\\">\\n            <div>\\n              <b style=\\"color: #60a5fa;\\">\u{1F6E1}\uFE0F Senior Editor Lead</b>\\n              <div style=\\"font-size: 11px; color: #94a3b8;\\">editor@govtexamzone.com</div>\\n            </div>\\n            <span style=\\"background: rgba(37,99,235,0.2); color: #93c5fd; font-size: 11px; padding: 2px 7px; border-radius: 4px;\\">Fill Editor</span>\\n          </button>\\n\\n          <button type=\\"button\\" class=\\"author-chip-btn\\" onclick=\\"fillAuthor('amit.sharma@govtexamzone.com', 'author@2026')\\">\\n            <div>\\n              <b style=\\"color: #34d399;\\">\u270D\uFE0F Author / Contributor</b>\\n              <div style=\\"font-size: 11px; color: #94a3b8;\\">amit.sharma@govtexamzone.com</div>\\n            </div>\\n            <span style=\\"background: rgba(16,185,129,0.2); color: #6ee7b7; font-size: 11px; padding: 2px 7px; border-radius: 4px;\\">Fill Author</span>\\n          </button>\\n        </div>\\n      </div>\\n\\n      <div class=\\"portal-footer-links\\">\\n        <a href=\\"/\\">\u2190 Main Website</a>\\n        <span>\u2022</span>\\n        <a href=\\"/admin/login\\">Super Admin Desk</a>\\n      </div>\\n    </div>\\n  </div>\\n\\n  <script>\\n    const passInput = document.getElementById('password');\\n    const toggleBtn = document.getElementById('togglePasswordBtn');\\n    if (toggleBtn && passInput) {\\n      toggleBtn.addEventListener('click', () => {\\n        if (passInput.type === 'password') {\\n          passInput.type = 'text';\\n          toggleBtn.textContent = '\u{1F648}';\\n        } else {\\n          passInput.type = 'password';\\n          toggleBtn.textContent = '\u{1F441}\uFE0F';\\n        }\\n      });\\n    }\\n\\n    function fillAuthor(email, pass) {\\n      document.getElementById('identifier').value = email;\\n      document.getElementById('password').value = pass;\\n    }\\n  </script>\\n</body>\\n</html>\\n")
+    ; __append("\\">\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"identifier\\" class=\\"form-label\\">Author Email or Slug Username</label>\\n          <div class=\\"input-wrap\\">\\n            <input \\n              type=\\"text\\" \\n              id=\\"identifier\\" \\n              name=\\"identifier\\" \\n              class=\\"form-input\\" \\n              placeholder=\\"e.g. editor@odishaaspirants.com or editorial-team\\" \\n              required\\n              autocomplete=\\"username\\"\\n              autofocus\\n            >\\n          </div>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"password\\" class=\\"form-label\\">Password</label>\\n          <div class=\\"input-wrap\\">\\n            <input \\n              type=\\"password\\" \\n              id=\\"password\\" \\n              name=\\"password\\" \\n              class=\\"form-input\\" \\n              placeholder=\\"Enter your author password\\" \\n              required\\n              autocomplete=\\"current-password\\"\\n            >\\n            <button type=\\"button\\" class=\\"password-toggle-btn\\" id=\\"togglePasswordBtn\\" aria-label=\\"Toggle password visibility\\">\u{1F441}\uFE0F</button>\\n          </div>\\n        </div>\\n\\n        <button type=\\"submit\\" class=\\"btn-submit\\">\\n          <span>\u{1F680} Sign In to Author Portal</span>\\n        </button>\\n      </form>\\n\\n      <!-- Quick 1-Click Fill Chips -->\\n      <div class=\\"quick-logins-box\\">\\n        <div class=\\"quick-title\\">\\n          <span>\u26A1 Quick 1-Click Demo Logins</span>\\n          <span style=\\"font-size: 11px; text-transform: none; color: #64748b;\\">Click to populate</span>\\n        </div>\\n        <div class=\\"quick-chips-wrap\\">\\n          <button type=\\"button\\" class=\\"author-chip-btn\\" onclick=\\"fillAuthor('editor@odishaaspirants.com', 'editor@2026')\\">\\n            <div>\\n              <b style=\\"color: #60a5fa;\\">\u{1F6E1}\uFE0F Senior Editor Lead</b>\\n              <div style=\\"font-size: 11px; color: #94a3b8;\\">editor@odishaaspirants.com</div>\\n            </div>\\n            <span style=\\"background: rgba(37,99,235,0.2); color: #93c5fd; font-size: 11px; padding: 2px 7px; border-radius: 4px;\\">Fill Editor</span>\\n          </button>\\n\\n          <button type=\\"button\\" class=\\"author-chip-btn\\" onclick=\\"fillAuthor('amit.sharma@odishaaspirants.com', 'author@2026')\\">\\n            <div>\\n              <b style=\\"color: #34d399;\\">\u270D\uFE0F Author / Contributor</b>\\n              <div style=\\"font-size: 11px; color: #94a3b8;\\">amit.sharma@odishaaspirants.com</div>\\n            </div>\\n            <span style=\\"background: rgba(16,185,129,0.2); color: #6ee7b7; font-size: 11px; padding: 2px 7px; border-radius: 4px;\\">Fill Author</span>\\n          </button>\\n        </div>\\n      </div>\\n\\n      <div class=\\"portal-footer-links\\">\\n        <a href=\\"/\\">\u2190 Main Website</a>\\n        <span>\u2022</span>\\n        <a href=\\"/admin/login\\">Super Admin Desk</a>\\n      </div>\\n    </div>\\n  </div>\\n\\n  <script>\\n    const passInput = document.getElementById('password');\\n    const toggleBtn = document.getElementById('togglePasswordBtn');\\n    if (toggleBtn && passInput) {\\n      toggleBtn.addEventListener('click', () => {\\n        if (passInput.type === 'password') {\\n          passInput.type = 'text';\\n          toggleBtn.textContent = '\u{1F648}';\\n        } else {\\n          passInput.type = 'password';\\n          toggleBtn.textContent = '\u{1F441}\uFE0F';\\n        }\\n      });\\n    }\\n\\n    function fillAuthor(email, pass) {\\n      document.getElementById('identifier').value = email;\\n      document.getElementById('password').value = pass;\\n    }\\n  </script>\\n</body>\\n</html>\\n")
   }
   return __output;
 `,
@@ -79432,13 +79432,13 @@ var require_templateEngine = __commonJS({
     ; __append("<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, maximum-scale=5.0\\">\\n  <meta name=\\"theme-color\\" content=\\"#1e293b\\">\\n  <title>")
     ; __append(escapeFn( title ))
     ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"icon\\" href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' ))
     ; __append("\\">\\n  <style>\\n    *, *::before, *::after {\\n      box-sizing: border-box;\\n    }\\n\\n    html, body {\\n      margin: 0;\\n      padding: 0;\\n      width: 100%;\\n      min-height: 100vh;\\n      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif;\\n      -webkit-font-smoothing: antialiased;\\n      background-color: #090d16;\\n    }\\n\\n    body.author-login-body {\\n      display: flex;\\n      flex-direction: column;\\n      justify-content: center;\\n      align-items: center;\\n      padding: 24px 16px;\\n      position: relative;\\n      background: \\n        radial-gradient(ellipse 70% 40% at 50% -10%, rgba(37, 99, 235, 0.18), transparent),\\n        radial-gradient(circle 500px at 90% 90%, rgba(13, 148, 136, 0.08), transparent),\\n        radial-gradient(circle 400px at 10% 85%, rgba(171, 24, 61, 0.08), transparent),\\n        #090d16;\\n    }\\n\\n    .author-login-container {\\n      width: 100%;\\n      max-width: 440px;\\n      position: relative;\\n      z-index: 2;\\n    }\\n\\n    .author-login-card {\\n      background: rgba(15, 23, 42, 0.82);\\n      backdrop-filter: blur(16px);\\n      -webkit-backdrop-filter: blur(16px);\\n      border: 1px solid rgba(255, 255, 255, 0.08);\\n      border-radius: 18px;\\n      padding: 34px 28px;\\n      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);\\n    }\\n\\n    @media (max-width: 480px) {\\n      .author-login-card {\\n        padding: 26px 20px;\\n        border-radius: 14px;\\n      }\\n    }\\n\\n    .brand-header {\\n      text-align: center;\\n      margin-bottom: 26px;\\n    }\\n\\n    .brand-logo-wrap {\\n      display: inline-flex;\\n      align-items: center;\\n      justify-content: center;\\n      width: 68px;\\n      height: 68px;\\n      background: rgba(255, 255, 255, 0.04);\\n      border: 1px solid rgba(255, 255, 255, 0.1);\\n      border-radius: 16px;\\n      padding: 8px;\\n      margin-bottom: 12px;\\n    }\\n\\n    .brand-logo-wrap img {\\n      width: 100%;\\n      height: 100%;\\n      object-fit: contain;\\n    }\\n\\n    .brand-badge {\\n      display: inline-flex;\\n      align-items: center;\\n      gap: 6px;\\n      background: rgba(37, 99, 235, 0.15);\\n      border: 1px solid rgba(37, 99, 235, 0.35);\\n      color: #93c5fd;\\n      font-size: 11.5px;\\n      font-weight: 700;\\n      text-transform: uppercase;\\n      letter-spacing: 0.06em;\\n      padding: 4px 10px;\\n      border-radius: 999px;\\n      margin-bottom: 10px;\\n    }\\n\\n    .brand-title {\\n      color: #ffffff;\\n      font-size: 22px;\\n      font-weight: 800;\\n      letter-spacing: -0.02em;\\n      margin: 0 0 4px 0;\\n    }\\n\\n    .brand-sub {\\n      color: #94a3b8;\\n      font-size: 13px;\\n      margin: 0;\\n      line-height: 1.4;\\n    }\\n\\n    .alert-error {\\n      background: rgba(239, 68, 68, 0.12);\\n      border: 1px solid rgba(239, 68, 68, 0.3);\\n      color: #fca5a5;\\n      padding: 12px 14px;\\n      border-radius: 8px;\\n      font-size: 13px;\\n      line-height: 1.45;\\n      margin-bottom: 20px;\\n      display: flex;\\n      align-items: flex-start;\\n      gap: 8px;\\n    }\\n\\n    .form-group {\\n      margin-bottom: 18px;\\n    }\\n\\n    .form-label {\\n      display: block;\\n      color: #cbd5e1;\\n      font-size: 13px;\\n      font-weight: 600;\\n      margin-bottom: 6px;\\n    }\\n\\n    .input-wrap {\\n      position: relative;\\n    }\\n\\n    .form-input {\\n      width: 100%;\\n      background: rgba(30, 41, 59, 0.7);\\n      border: 1px solid rgba(255, 255, 255, 0.12);\\n      border-radius: 10px;\\n      padding: 12px 14px;\\n      font-size: 14px;\\n      color: #f8fafc;\\n      outline: none;\\n      transition: all 0.2s ease;\\n      font-family: inherit;\\n    }\\n\\n    .form-input:focus {\\n      border-color: #3b82f6;\\n      background: rgba(30, 41, 59, 0.95);\\n      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);\\n    }\\n\\n    .password-toggle-btn {\\n      position: absolute;\\n      right: 12px;\\n      top: 50%;\\n      transform: translateY(-50%);\\n      background: transparent;\\n      border: none;\\n      color: #94a3b8;\\n      cursor: pointer;\\n      padding: 4px;\\n      font-size: 16px;\\n      line-height: 1;\\n    }\\n\\n    .btn-submit {\\n      width: 100%;\\n      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);\\n      color: #ffffff;\\n      border: none;\\n      border-radius: 10px;\\n      padding: 13px 18px;\\n      font-size: 14.5px;\\n      font-weight: 700;\\n      cursor: pointer;\\n      transition: all 0.2s ease;\\n      display: flex;\\n      align-items: center;\\n      justify-content: center;\\n      gap: 8px;\\n      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);\\n      margin-top: 22px;\\n    }\\n\\n    .btn-submit:hover {\\n      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);\\n      transform: translateY(-1px);\\n      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);\\n    }\\n\\n    .quick-logins-box {\\n      margin-top: 24px;\\n      padding-top: 18px;\\n      border-top: 1px solid rgba(255, 255, 255, 0.08);\\n    }\\n\\n    .quick-title {\\n      color: #94a3b8;\\n      font-size: 11.5px;\\n      font-weight: 700;\\n      text-transform: uppercase;\\n      letter-spacing: 0.05em;\\n      margin-bottom: 10px;\\n      display: flex;\\n      align-items: center;\\n      justify-content: space-between;\\n    }\\n\\n    .quick-chips-wrap {\\n      display: flex;\\n      flex-direction: column;\\n      gap: 7px;\\n    }\\n\\n    .author-chip-btn {\\n      background: rgba(30, 41, 59, 0.5);\\n      border: 1px solid rgba(255, 255, 255, 0.07);\\n      color: #e2e8f0;\\n      border-radius: 8px;\\n      padding: 8px 12px;\\n      font-size: 12px;\\n      cursor: pointer;\\n      text-align: left;\\n      display: flex;\\n      align-items: center;\\n      justify-content: space-between;\\n      transition: all 0.15s ease;\\n      font-family: inherit;\\n    }\\n\\n    .author-chip-btn:hover {\\n      background: rgba(51, 65, 85, 0.7);\\n      border-color: rgba(59, 130, 246, 0.4);\\n      color: #ffffff;\\n    }\\n\\n    .portal-footer-links {\\n      margin-top: 22px;\\n      text-align: center;\\n      font-size: 12.5px;\\n      color: #64748b;\\n      display: flex;\\n      align-items: center;\\n      justify-content: center;\\n      gap: 14px;\\n      flex-wrap: wrap;\\n    }\\n\\n    .portal-footer-links a {\\n      color: #94a3b8;\\n      text-decoration: none;\\n      transition: color 0.15s;\\n    }\\n\\n    .portal-footer-links a:hover {\\n      color: #60a5fa;\\n    }\\n  </style>\\n</head>\\n<body class=\\"author-login-body\\">\\n  <div class=\\"author-login-container\\">\\n    <div class=\\"author-login-card\\">\\n      <div class=\\"brand-header\\">\\n        <div class=\\"brand-logo-wrap\\">\\n          <img src=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/oa-logo.svg' ))
     ; __append("\\" alt=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("\\">\\n        </div>\\n        <div>\\n          <span class=\\"brand-badge\\">\u{1F6E1}\uFE0F Editor &amp; \u270D\uFE0F Author Contributor Desk</span>\\n        </div>\\n        <h1 class=\\"brand-title\\">")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("</h1>\\n        <p class=\\"brand-sub\\">Secure workspace for Senior Editors and Author Contributors.</p>\\n      </div>\\n\\n      ")
     ;  if (typeof error !== 'undefined' && error) { 
     ; __append("\\n        <div class=\\"alert-error\\">\\n          <span style=\\"font-size: 16px;\\">\u26A0\uFE0F</span>\\n          <span>")
@@ -79447,7 +79447,7 @@ var require_templateEngine = __commonJS({
     ;  } 
     ; __append("\\n\\n      <form action=\\"/author-portal/login\\" method=\\"POST\\" id=\\"authorLoginForm\\">\\n        <input type=\\"hidden\\" name=\\"returnUrl\\" value=\\"")
     ; __append(escapeFn( returnUrl ))
-    ; __append("\\">\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"identifier\\" class=\\"form-label\\">Author Email or Slug Username</label>\\n          <div class=\\"input-wrap\\">\\n            <input \\n              type=\\"text\\" \\n              id=\\"identifier\\" \\n              name=\\"identifier\\" \\n              class=\\"form-input\\" \\n              placeholder=\\"e.g. editor@govtexamzone.com or editorial-team\\" \\n              required\\n              autocomplete=\\"username\\"\\n              autofocus\\n            >\\n          </div>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"password\\" class=\\"form-label\\">Password</label>\\n          <div class=\\"input-wrap\\">\\n            <input \\n              type=\\"password\\" \\n              id=\\"password\\" \\n              name=\\"password\\" \\n              class=\\"form-input\\" \\n              placeholder=\\"Enter your author password\\" \\n              required\\n              autocomplete=\\"current-password\\"\\n            >\\n            <button type=\\"button\\" class=\\"password-toggle-btn\\" id=\\"togglePasswordBtn\\" aria-label=\\"Toggle password visibility\\">\u{1F441}\uFE0F</button>\\n          </div>\\n        </div>\\n\\n        <button type=\\"submit\\" class=\\"btn-submit\\">\\n          <span>\u{1F680} Sign In to Author Portal</span>\\n        </button>\\n      </form>\\n\\n      <!-- Quick 1-Click Fill Chips -->\\n      <div class=\\"quick-logins-box\\">\\n        <div class=\\"quick-title\\">\\n          <span>\u26A1 Quick 1-Click Demo Logins</span>\\n          <span style=\\"font-size: 11px; text-transform: none; color: #64748b;\\">Click to populate</span>\\n        </div>\\n        <div class=\\"quick-chips-wrap\\">\\n          <button type=\\"button\\" class=\\"author-chip-btn\\" onclick=\\"fillAuthor('editor@govtexamzone.com', 'editor@2026')\\">\\n            <div>\\n              <b style=\\"color: #60a5fa;\\">\u{1F6E1}\uFE0F Senior Editor Lead</b>\\n              <div style=\\"font-size: 11px; color: #94a3b8;\\">editor@govtexamzone.com</div>\\n            </div>\\n            <span style=\\"background: rgba(37,99,235,0.2); color: #93c5fd; font-size: 11px; padding: 2px 7px; border-radius: 4px;\\">Fill Editor</span>\\n          </button>\\n\\n          <button type=\\"button\\" class=\\"author-chip-btn\\" onclick=\\"fillAuthor('amit.sharma@govtexamzone.com', 'author@2026')\\">\\n            <div>\\n              <b style=\\"color: #34d399;\\">\u270D\uFE0F Author / Contributor</b>\\n              <div style=\\"font-size: 11px; color: #94a3b8;\\">amit.sharma@govtexamzone.com</div>\\n            </div>\\n            <span style=\\"background: rgba(16,185,129,0.2); color: #6ee7b7; font-size: 11px; padding: 2px 7px; border-radius: 4px;\\">Fill Author</span>\\n          </button>\\n        </div>\\n      </div>\\n\\n      <div class=\\"portal-footer-links\\">\\n        <a href=\\"/\\">\u2190 Main Website</a>\\n        <span>\u2022</span>\\n        <a href=\\"/admin/login\\">Super Admin Desk</a>\\n      </div>\\n    </div>\\n  </div>\\n\\n  <script>\\n    const passInput = document.getElementById('password');\\n    const toggleBtn = document.getElementById('togglePasswordBtn');\\n    if (toggleBtn && passInput) {\\n      toggleBtn.addEventListener('click', () => {\\n        if (passInput.type === 'password') {\\n          passInput.type = 'text';\\n          toggleBtn.textContent = '\u{1F648}';\\n        } else {\\n          passInput.type = 'password';\\n          toggleBtn.textContent = '\u{1F441}\uFE0F';\\n        }\\n      });\\n    }\\n\\n    function fillAuthor(email, pass) {\\n      document.getElementById('identifier').value = email;\\n      document.getElementById('password').value = pass;\\n    }\\n  </script>\\n</body>\\n</html>\\n")
+    ; __append("\\">\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"identifier\\" class=\\"form-label\\">Author Email or Slug Username</label>\\n          <div class=\\"input-wrap\\">\\n            <input \\n              type=\\"text\\" \\n              id=\\"identifier\\" \\n              name=\\"identifier\\" \\n              class=\\"form-input\\" \\n              placeholder=\\"e.g. editor@odishaaspirants.com or editorial-team\\" \\n              required\\n              autocomplete=\\"username\\"\\n              autofocus\\n            >\\n          </div>\\n        </div>\\n\\n        <div class=\\"form-group\\">\\n          <label for=\\"password\\" class=\\"form-label\\">Password</label>\\n          <div class=\\"input-wrap\\">\\n            <input \\n              type=\\"password\\" \\n              id=\\"password\\" \\n              name=\\"password\\" \\n              class=\\"form-input\\" \\n              placeholder=\\"Enter your author password\\" \\n              required\\n              autocomplete=\\"current-password\\"\\n            >\\n            <button type=\\"button\\" class=\\"password-toggle-btn\\" id=\\"togglePasswordBtn\\" aria-label=\\"Toggle password visibility\\">\u{1F441}\uFE0F</button>\\n          </div>\\n        </div>\\n\\n        <button type=\\"submit\\" class=\\"btn-submit\\">\\n          <span>\u{1F680} Sign In to Author Portal</span>\\n        </button>\\n      </form>\\n\\n      <!-- Quick 1-Click Fill Chips -->\\n      <div class=\\"quick-logins-box\\">\\n        <div class=\\"quick-title\\">\\n          <span>\u26A1 Quick 1-Click Demo Logins</span>\\n          <span style=\\"font-size: 11px; text-transform: none; color: #64748b;\\">Click to populate</span>\\n        </div>\\n        <div class=\\"quick-chips-wrap\\">\\n          <button type=\\"button\\" class=\\"author-chip-btn\\" onclick=\\"fillAuthor('editor@odishaaspirants.com', 'editor@2026')\\">\\n            <div>\\n              <b style=\\"color: #60a5fa;\\">\u{1F6E1}\uFE0F Senior Editor Lead</b>\\n              <div style=\\"font-size: 11px; color: #94a3b8;\\">editor@odishaaspirants.com</div>\\n            </div>\\n            <span style=\\"background: rgba(37,99,235,0.2); color: #93c5fd; font-size: 11px; padding: 2px 7px; border-radius: 4px;\\">Fill Editor</span>\\n          </button>\\n\\n          <button type=\\"button\\" class=\\"author-chip-btn\\" onclick=\\"fillAuthor('amit.sharma@odishaaspirants.com', 'author@2026')\\">\\n            <div>\\n              <b style=\\"color: #34d399;\\">\u270D\uFE0F Author / Contributor</b>\\n              <div style=\\"font-size: 11px; color: #94a3b8;\\">amit.sharma@odishaaspirants.com</div>\\n            </div>\\n            <span style=\\"background: rgba(16,185,129,0.2); color: #6ee7b7; font-size: 11px; padding: 2px 7px; border-radius: 4px;\\">Fill Author</span>\\n          </button>\\n        </div>\\n      </div>\\n\\n      <div class=\\"portal-footer-links\\">\\n        <a href=\\"/\\">\u2190 Main Website</a>\\n        <span>\u2022</span>\\n        <a href=\\"/admin/login\\">Super Admin Desk</a>\\n      </div>\\n    </div>\\n  </div>\\n\\n  <script>\\n    const passInput = document.getElementById('password');\\n    const toggleBtn = document.getElementById('togglePasswordBtn');\\n    if (toggleBtn && passInput) {\\n      toggleBtn.addEventListener('click', () => {\\n        if (passInput.type === 'password') {\\n          passInput.type = 'text';\\n          toggleBtn.textContent = '\u{1F648}';\\n        } else {\\n          passInput.type = 'password';\\n          toggleBtn.textContent = '\u{1F441}\uFE0F';\\n        }\\n      });\\n    }\\n\\n    function fillAuthor(email, pass) {\\n      document.getElementById('identifier').value = email;\\n      document.getElementById('password').value = pass;\\n    }\\n  </script>\\n</body>\\n</html>\\n")
   }
   return __output;
 `,
@@ -79945,11 +79945,11 @@ var require_templateEngine = __commonJS({
     ; __append( include('../partials/header') )
     ; __append("\\n")
     ; __append( include('../partials/subheader') )
-    ; __append("\\n\\n<main class=\\"container\\">\\n  <!-- Breadcrumb -->\\n  <div style=\\"font-size: 13px; margin: 10px 0 14px 2px; color: #666;\\">\\n    <a href=\\"/\\" style=\\"color: var(--primary-red); font-weight: bold; text-decoration: none;\\">\u{1F3E0} Home</a>\\n    <span style=\\"margin: 0 6px; color: #999;\\">\xBB</span>\\n    <span style=\\"color: #333; font-weight: 600;\\">About Us</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px; background: #ffffff;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;\\">\\n      About Govt Exam Zone - Real-Time Government Recruitment Portal\\n    </h1>\\n\\n    <div class=\\"static-page-content\\">\\n      <h2 style=\\"color: var(--primary-red); font-size: 20px; margin-top: 0; margin-bottom: 12px;\\">Who We Are</h2>\\n      <p>\\n        <b>Govt Exam Zone (govtexamzone.com)</b> is India's dedicated public educational portal created to provide timely, accurate, and direct access to Central and State Government examination notifications, online application forms, admit cards, answer keys, syllabus, and results.\\n      </p>\\n      <p>\\n        Founded by competitive exam researchers and technology professionals, our portal eliminates misinformation by serving as an independent, transparent, and direct bridge between recruiting authorities and millions of aspirants across the country.\\n      </p>\\n\\n      <h2 style=\\"color: var(--primary-red); font-size: 20px; margin-top: 24px; margin-bottom: 12px;\\">Our Mission &amp; Purpose</h2>\\n      <p>\\n        Every year, government departments release lakhs of vacancies across <b>UPSC, SSC, Railway Recruitment Boards (RRB), State PSCs, Police Recruitment Boards, Banking (IBPS, SBI), Defense Forces, and Teaching Commissions</b>. Aspirants often struggle with cluttered portals, dead links, or misleading fake circulars. Our mission is three-fold:\\n      </p>\\n      <ul style=\\"padding-left: 20px; margin-bottom: 18px;\\">\\n        <li><b>100% Primary Source Verification:</b> Every notification is cross-referenced with official gazettes and official commission websites before publishing.</li>\\n        <li><b>Fastest Real-Time Delivery:</b> Ultra-fast high-speed cloud edge servers ensure seamless access even during peak result announcements.</li>\\n        <li><b>Zero Candidate Fee Policy:</b> Govt Exam Zone is completely free for all aspirants. We never charge money or sell candidate data.</li>\\n      </ul>\\n\\n      <h2 style=\\"color: var(--primary-red); font-size: 20px; margin-top: 24px; margin-bottom: 12px;\\">Editorial Standards &amp; Fact-Checking Policy</h2>\\n      <p>\\n        Our editorial desk follows a rigorous 4-step verification pipeline:\\n      </p>\\n      <ol style=\\"padding-left: 20px; margin-bottom: 18px;\\">\\n        <li><b>Official Gazette Tracking:</b> Only notifications published by recognized statutory authorities are tracked.</li>\\n        <li><b>Cross-Verification of Dates &amp; Eligibility:</b> Age limits, reservation criteria, and qualification clauses are verified against the original PDF bulletin.</li>\\n        <li><b>Secure Direct Links:</b> Candidates are always provided official application URLs directly connecting to government server endpoints (.gov.in / .nic.in).</li>\\n        <li><b>Institutional Accountability:</b> Every notification is verified by our dedicated examination research desk responsible for accuracy and ongoing updates directly from official gazettes.</li>\\n      </ol>\\n\\n      <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 18px; margin-top: 24px;\\">\\n        <h3 style=\\"margin-top: 0; font-size: 15px; color: #0f172a;\\">Official Communication &amp; Corrections</h3>\\n        <p style=\\"margin-bottom: 6px; font-size: 13.5px;\\">\\n          Noticed an error or wish to report a correction in any notification? Write directly to our research desk at:\\n        </p>\\n        <p style=\\"margin: 0; font-size: 13.5px;\\">\\n          <b>\u{1F4E7} Official Email:</b> <!--email_off--><a href=\\"mailto:")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com' ))
+    ; __append("\\n\\n<main class=\\"container\\">\\n  <!-- Breadcrumb -->\\n  <div style=\\"font-size: 13px; margin: 10px 0 14px 2px; color: #666;\\">\\n    <a href=\\"/\\" style=\\"color: var(--primary-red); font-weight: bold; text-decoration: none;\\">\u{1F3E0} Home</a>\\n    <span style=\\"margin: 0 6px; color: #999;\\">\xBB</span>\\n    <span style=\\"color: #333; font-weight: 600;\\">About Us</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px; background: #ffffff;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;\\">\\n      About Odisha Aspirants - Real-Time Government Recruitment Portal\\n    </h1>\\n\\n    <div class=\\"static-page-content\\">\\n      <h2 style=\\"color: var(--primary-red); font-size: 20px; margin-top: 0; margin-bottom: 12px;\\">Who We Are</h2>\\n      <p>\\n        <b>Odisha Aspirants (odishaaspirants.com)</b> is India's dedicated public educational portal created to provide timely, accurate, and direct access to Central and State Government examination notifications, online application forms, admit cards, answer keys, syllabus, and results.\\n      </p>\\n      <p>\\n        Founded by competitive exam researchers and technology professionals, our portal eliminates misinformation by serving as an independent, transparent, and direct bridge between recruiting authorities and millions of aspirants across the country.\\n      </p>\\n\\n      <h2 style=\\"color: var(--primary-red); font-size: 20px; margin-top: 24px; margin-bottom: 12px;\\">Our Mission &amp; Purpose</h2>\\n      <p>\\n        Every year, government departments release lakhs of vacancies across <b>UPSC, SSC, Railway Recruitment Boards (RRB), State PSCs, Police Recruitment Boards, Banking (IBPS, SBI), Defense Forces, and Teaching Commissions</b>. Aspirants often struggle with cluttered portals, dead links, or misleading fake circulars. Our mission is three-fold:\\n      </p>\\n      <ul style=\\"padding-left: 20px; margin-bottom: 18px;\\">\\n        <li><b>100% Primary Source Verification:</b> Every notification is cross-referenced with official gazettes and official commission websites before publishing.</li>\\n        <li><b>Fastest Real-Time Delivery:</b> Ultra-fast high-speed cloud edge servers ensure seamless access even during peak result announcements.</li>\\n        <li><b>Zero Candidate Fee Policy:</b> Odisha Aspirants is completely free for all aspirants. We never charge money or sell candidate data.</li>\\n      </ul>\\n\\n      <h2 style=\\"color: var(--primary-red); font-size: 20px; margin-top: 24px; margin-bottom: 12px;\\">Editorial Standards &amp; Fact-Checking Policy</h2>\\n      <p>\\n        Our editorial desk follows a rigorous 4-step verification pipeline:\\n      </p>\\n      <ol style=\\"padding-left: 20px; margin-bottom: 18px;\\">\\n        <li><b>Official Gazette Tracking:</b> Only notifications published by recognized statutory authorities are tracked.</li>\\n        <li><b>Cross-Verification of Dates &amp; Eligibility:</b> Age limits, reservation criteria, and qualification clauses are verified against the original PDF bulletin.</li>\\n        <li><b>Secure Direct Links:</b> Candidates are always provided official application URLs directly connecting to government server endpoints (.gov.in / .nic.in).</li>\\n        <li><b>Institutional Accountability:</b> Every notification is verified by our dedicated examination research desk responsible for accuracy and ongoing updates directly from official gazettes.</li>\\n      </ol>\\n\\n      <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 18px; margin-top: 24px;\\">\\n        <h3 style=\\"margin-top: 0; font-size: 15px; color: #0f172a;\\">Official Communication &amp; Corrections</h3>\\n        <p style=\\"margin-bottom: 6px; font-size: 13.5px;\\">\\n          Noticed an error or wish to report a correction in any notification? Write directly to our research desk at:\\n        </p>\\n        <p style=\\"margin: 0; font-size: 13.5px;\\">\\n          <b>\u{1F4E7} Official Email:</b> <!--email_off--><a href=\\"mailto:")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com' ))
     ; __append("\\" style=\\"color: var(--primary-red); font-weight: bold;\\">")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com' ))
-    ; __append("</a><!--/email_off--> | \\n          <b>\u{1F310} Portal:</b> <a href=\\"/\\">Govt Exam Zone Official</a>\\n        </p>\\n      </div>\\n    </div>\\n  </div>\\n</main>\\n\\n")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com' ))
+    ; __append("</a><!--/email_off--> | \\n          <b>\u{1F310} Portal:</b> <a href=\\"/\\">Odisha Aspirants Official</a>\\n        </p>\\n      </div>\\n    </div>\\n  </div>\\n</main>\\n\\n")
     ; __append( include('../partials/footer') )
     ; __append("\\n")
   }
@@ -79961,11 +79961,11 @@ var require_templateEngine = __commonJS({
     ; __append( include('../partials/header') )
     ; __append("\\n")
     ; __append( include('../partials/subheader') )
-    ; __append("\\n\\n<main class=\\"container\\">\\n  <!-- Breadcrumb -->\\n  <div style=\\"font-size: 13px; margin: 10px 0 14px 2px; color: #666;\\">\\n    <a href=\\"/\\" style=\\"color: var(--primary-red); font-weight: bold; text-decoration: none;\\">\u{1F3E0} Home</a>\\n    <span style=\\"margin: 0 6px; color: #999;\\">\xBB</span>\\n    <span style=\\"color: #333; font-weight: 600;\\">About Us</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px; background: #ffffff;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;\\">\\n      About Govt Exam Zone - Real-Time Government Recruitment Portal\\n    </h1>\\n\\n    <div class=\\"static-page-content\\">\\n      <h2 style=\\"color: var(--primary-red); font-size: 20px; margin-top: 0; margin-bottom: 12px;\\">Who We Are</h2>\\n      <p>\\n        <b>Govt Exam Zone (govtexamzone.com)</b> is India's dedicated public educational portal created to provide timely, accurate, and direct access to Central and State Government examination notifications, online application forms, admit cards, answer keys, syllabus, and results.\\n      </p>\\n      <p>\\n        Founded by competitive exam researchers and technology professionals, our portal eliminates misinformation by serving as an independent, transparent, and direct bridge between recruiting authorities and millions of aspirants across the country.\\n      </p>\\n\\n      <h2 style=\\"color: var(--primary-red); font-size: 20px; margin-top: 24px; margin-bottom: 12px;\\">Our Mission &amp; Purpose</h2>\\n      <p>\\n        Every year, government departments release lakhs of vacancies across <b>UPSC, SSC, Railway Recruitment Boards (RRB), State PSCs, Police Recruitment Boards, Banking (IBPS, SBI), Defense Forces, and Teaching Commissions</b>. Aspirants often struggle with cluttered portals, dead links, or misleading fake circulars. Our mission is three-fold:\\n      </p>\\n      <ul style=\\"padding-left: 20px; margin-bottom: 18px;\\">\\n        <li><b>100% Primary Source Verification:</b> Every notification is cross-referenced with official gazettes and official commission websites before publishing.</li>\\n        <li><b>Fastest Real-Time Delivery:</b> Ultra-fast high-speed cloud edge servers ensure seamless access even during peak result announcements.</li>\\n        <li><b>Zero Candidate Fee Policy:</b> Govt Exam Zone is completely free for all aspirants. We never charge money or sell candidate data.</li>\\n      </ul>\\n\\n      <h2 style=\\"color: var(--primary-red); font-size: 20px; margin-top: 24px; margin-bottom: 12px;\\">Editorial Standards &amp; Fact-Checking Policy</h2>\\n      <p>\\n        Our editorial desk follows a rigorous 4-step verification pipeline:\\n      </p>\\n      <ol style=\\"padding-left: 20px; margin-bottom: 18px;\\">\\n        <li><b>Official Gazette Tracking:</b> Only notifications published by recognized statutory authorities are tracked.</li>\\n        <li><b>Cross-Verification of Dates &amp; Eligibility:</b> Age limits, reservation criteria, and qualification clauses are verified against the original PDF bulletin.</li>\\n        <li><b>Secure Direct Links:</b> Candidates are always provided official application URLs directly connecting to government server endpoints (.gov.in / .nic.in).</li>\\n        <li><b>Institutional Accountability:</b> Every notification is verified by our dedicated examination research desk responsible for accuracy and ongoing updates directly from official gazettes.</li>\\n      </ol>\\n\\n      <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 18px; margin-top: 24px;\\">\\n        <h3 style=\\"margin-top: 0; font-size: 15px; color: #0f172a;\\">Official Communication &amp; Corrections</h3>\\n        <p style=\\"margin-bottom: 6px; font-size: 13.5px;\\">\\n          Noticed an error or wish to report a correction in any notification? Write directly to our research desk at:\\n        </p>\\n        <p style=\\"margin: 0; font-size: 13.5px;\\">\\n          <b>\u{1F4E7} Official Email:</b> <!--email_off--><a href=\\"mailto:")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com' ))
+    ; __append("\\n\\n<main class=\\"container\\">\\n  <!-- Breadcrumb -->\\n  <div style=\\"font-size: 13px; margin: 10px 0 14px 2px; color: #666;\\">\\n    <a href=\\"/\\" style=\\"color: var(--primary-red); font-weight: bold; text-decoration: none;\\">\u{1F3E0} Home</a>\\n    <span style=\\"margin: 0 6px; color: #999;\\">\xBB</span>\\n    <span style=\\"color: #333; font-weight: 600;\\">About Us</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px; background: #ffffff;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;\\">\\n      About Odisha Aspirants - Real-Time Government Recruitment Portal\\n    </h1>\\n\\n    <div class=\\"static-page-content\\">\\n      <h2 style=\\"color: var(--primary-red); font-size: 20px; margin-top: 0; margin-bottom: 12px;\\">Who We Are</h2>\\n      <p>\\n        <b>Odisha Aspirants (odishaaspirants.com)</b> is India's dedicated public educational portal created to provide timely, accurate, and direct access to Central and State Government examination notifications, online application forms, admit cards, answer keys, syllabus, and results.\\n      </p>\\n      <p>\\n        Founded by competitive exam researchers and technology professionals, our portal eliminates misinformation by serving as an independent, transparent, and direct bridge between recruiting authorities and millions of aspirants across the country.\\n      </p>\\n\\n      <h2 style=\\"color: var(--primary-red); font-size: 20px; margin-top: 24px; margin-bottom: 12px;\\">Our Mission &amp; Purpose</h2>\\n      <p>\\n        Every year, government departments release lakhs of vacancies across <b>UPSC, SSC, Railway Recruitment Boards (RRB), State PSCs, Police Recruitment Boards, Banking (IBPS, SBI), Defense Forces, and Teaching Commissions</b>. Aspirants often struggle with cluttered portals, dead links, or misleading fake circulars. Our mission is three-fold:\\n      </p>\\n      <ul style=\\"padding-left: 20px; margin-bottom: 18px;\\">\\n        <li><b>100% Primary Source Verification:</b> Every notification is cross-referenced with official gazettes and official commission websites before publishing.</li>\\n        <li><b>Fastest Real-Time Delivery:</b> Ultra-fast high-speed cloud edge servers ensure seamless access even during peak result announcements.</li>\\n        <li><b>Zero Candidate Fee Policy:</b> Odisha Aspirants is completely free for all aspirants. We never charge money or sell candidate data.</li>\\n      </ul>\\n\\n      <h2 style=\\"color: var(--primary-red); font-size: 20px; margin-top: 24px; margin-bottom: 12px;\\">Editorial Standards &amp; Fact-Checking Policy</h2>\\n      <p>\\n        Our editorial desk follows a rigorous 4-step verification pipeline:\\n      </p>\\n      <ol style=\\"padding-left: 20px; margin-bottom: 18px;\\">\\n        <li><b>Official Gazette Tracking:</b> Only notifications published by recognized statutory authorities are tracked.</li>\\n        <li><b>Cross-Verification of Dates &amp; Eligibility:</b> Age limits, reservation criteria, and qualification clauses are verified against the original PDF bulletin.</li>\\n        <li><b>Secure Direct Links:</b> Candidates are always provided official application URLs directly connecting to government server endpoints (.gov.in / .nic.in).</li>\\n        <li><b>Institutional Accountability:</b> Every notification is verified by our dedicated examination research desk responsible for accuracy and ongoing updates directly from official gazettes.</li>\\n      </ol>\\n\\n      <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 18px; margin-top: 24px;\\">\\n        <h3 style=\\"margin-top: 0; font-size: 15px; color: #0f172a;\\">Official Communication &amp; Corrections</h3>\\n        <p style=\\"margin-bottom: 6px; font-size: 13.5px;\\">\\n          Noticed an error or wish to report a correction in any notification? Write directly to our research desk at:\\n        </p>\\n        <p style=\\"margin: 0; font-size: 13.5px;\\">\\n          <b>\u{1F4E7} Official Email:</b> <!--email_off--><a href=\\"mailto:")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com' ))
     ; __append("\\" style=\\"color: var(--primary-red); font-weight: bold;\\">")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com' ))
-    ; __append("</a><!--/email_off--> | \\n          <b>\u{1F310} Portal:</b> <a href=\\"/\\">Govt Exam Zone Official</a>\\n        </p>\\n      </div>\\n    </div>\\n  </div>\\n</main>\\n\\n")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com' ))
+    ; __append("</a><!--/email_off--> | \\n          <b>\u{1F310} Portal:</b> <a href=\\"/\\">Odisha Aspirants Official</a>\\n        </p>\\n      </div>\\n    </div>\\n  </div>\\n</main>\\n\\n")
     ; __append( include('../partials/footer') )
     ; __append("\\n")
   }
@@ -79981,7 +79981,7 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList, WebApplication, and FAQPage -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@graph\\": [\\n    {\\n      \\"@type\\": \\"BreadcrumbList\\",\\n      \\"itemListElement\\": [\\n        {\\n          \\"@type\\": \\"ListItem\\",\\n          \\"position\\": 1,\\n          \\"name\\": \\"Home\\",\\n          \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -80007,7 +80007,7 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList, WebApplication, and FAQPage -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@graph\\": [\\n    {\\n      \\"@type\\": \\"BreadcrumbList\\",\\n      \\"itemListElement\\": [\\n        {\\n          \\"@type\\": \\"ListItem\\",\\n          \\"position\\": 1,\\n          \\"name\\": \\"Home\\",\\n          \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -80033,7 +80033,7 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Person & ProfilePage -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@type\\": \\"ProfilePage\\",\\n  \\"mainEntity\\": {\\n    \\"@type\\": \\"Person\\",\\n    \\"name\\": ")
     ; __append( JSON.stringify(author.name) )
@@ -80044,7 +80044,7 @@ var require_templateEngine = __commonJS({
     ; __append(",\\n    \\"image\\": ")
     ; __append( JSON.stringify(author.avatar_url.startsWith('http') ? author.avatar_url : siteDomain + author.avatar_url) )
     ; __append(",\\n    \\"worksFor\\": {\\n      \\"@type\\": \\"Organization\\",\\n      \\"name\\": ")
-    ; __append( JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone') )
+    ; __append( JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants') )
     ; __append(",\\n      \\"url\\": ")
     ; __append( JSON.stringify(siteDomain) )
     ; __append("\\n    }")
@@ -80084,7 +80084,7 @@ var require_templateEngine = __commonJS({
     ; __append("\\n            <span style=\\"background: #fef2f2; color: #991b1b; padding: 4px 10px; border-radius: 4px; border: 1px solid #fecaca; font-weight: 700;\\">\\n              \u{1F4DA} ")
     ; __append(escapeFn( posts ? posts.length : 0 ))
     ; __append(" Articles Published\\n            </span>\\n          </div>\\n\\n          <!-- Bio -->\\n          <p style=\\"margin: 0 0 16px 0; font-size: 13.5px; line-height: 1.65; color: #475569;\\">\\n            ")
-    ; __append(escapeFn( author.bio || 'Government recruitment intelligence analyst and competitive exam researcher at Govt Exam Zone.' ))
+    ; __append(escapeFn( author.bio || 'Government recruitment intelligence analyst and competitive exam researcher at Odisha Aspirants.' ))
     ; __append("\\n          </p>\\n\\n          <!-- Social Links -->\\n          <div class=\\"author-social-wrap\\">\\n            ")
     ;  if (author.telegram_url) { 
     ; __append("\\n              <a href=\\"")
@@ -80165,7 +80165,7 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Person & ProfilePage -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@type\\": \\"ProfilePage\\",\\n  \\"mainEntity\\": {\\n    \\"@type\\": \\"Person\\",\\n    \\"name\\": ")
     ; __append( JSON.stringify(author.name) )
@@ -80176,7 +80176,7 @@ var require_templateEngine = __commonJS({
     ; __append(",\\n    \\"image\\": ")
     ; __append( JSON.stringify(author.avatar_url.startsWith('http') ? author.avatar_url : siteDomain + author.avatar_url) )
     ; __append(",\\n    \\"worksFor\\": {\\n      \\"@type\\": \\"Organization\\",\\n      \\"name\\": ")
-    ; __append( JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone') )
+    ; __append( JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants') )
     ; __append(",\\n      \\"url\\": ")
     ; __append( JSON.stringify(siteDomain) )
     ; __append("\\n    }")
@@ -80216,7 +80216,7 @@ var require_templateEngine = __commonJS({
     ; __append("\\n            <span style=\\"background: #fef2f2; color: #991b1b; padding: 4px 10px; border-radius: 4px; border: 1px solid #fecaca; font-weight: 700;\\">\\n              \u{1F4DA} ")
     ; __append(escapeFn( posts ? posts.length : 0 ))
     ; __append(" Articles Published\\n            </span>\\n          </div>\\n\\n          <!-- Bio -->\\n          <p style=\\"margin: 0 0 16px 0; font-size: 13.5px; line-height: 1.65; color: #475569;\\">\\n            ")
-    ; __append(escapeFn( author.bio || 'Government recruitment intelligence analyst and competitive exam researcher at Govt Exam Zone.' ))
+    ; __append(escapeFn( author.bio || 'Government recruitment intelligence analyst and competitive exam researcher at Odisha Aspirants.' ))
     ; __append("\\n          </p>\\n\\n          <!-- Social Links -->\\n          <div class=\\"author-social-wrap\\">\\n            ")
     ;  if (author.telegram_url) { 
     ; __append("\\n              <a href=\\"")
@@ -80293,7 +80293,7 @@ var require_templateEngine = __commonJS({
     ; __append( include('../partials/header') )
     ; __append("\\n")
     ; __append( include('../partials/subheader') )
-    ; __append("\\n\\n<main class=\\"container\\">\\n  <!-- Breadcrumb -->\\n  <div style=\\"font-size: 13px; margin: 10px 0 14px 2px; color: #666;\\">\\n    <a href=\\"/\\" style=\\"color: var(--primary-red); font-weight: bold; text-decoration: none;\\">\u{1F3E0} Home</a>\\n    <span style=\\"margin: 0 6px; color: #999;\\">\xBB</span>\\n    <span style=\\"color: #333; font-weight: 600;\\">Editorial Board &amp; Verified Authors</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;\\">\\n      Govt Exam Zone Editorial Board &amp; Subject Matter Experts\\n    </h1>\\n\\n    <div style=\\"padding: 16px 20px; background: #fafafa; border-bottom: 1px solid #ddd; font-size: 13.5px; color: #555; line-height: 1.6; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;\\">\\n      <div style=\\"flex: 1; min-width: 250px;\\">\\n        Meet the recruitment intelligence researchers, examination analysts, and fact-checkers responsible for auditing and validating every government job notification, syllabus, answer key, and result published on <b>Govt Exam Zone (govtexamzone.com)</b>.\\n      </div>\\n      <div>\\n        <a href=\\"/author-portal/login\\" style=\\"display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #ffffff; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 12.5px; text-decoration: none; box-shadow: 0 2px 6px rgba(37,99,235,0.25);\\">\\n          <span>\u270D\uFE0F</span> Author &amp; Contributor Login\\n        </a>\\n      </div>\\n    </div>\\n\\n    <div class=\\"authors-directory-grid\\">\\n      ")
+    ; __append("\\n\\n<main class=\\"container\\">\\n  <!-- Breadcrumb -->\\n  <div style=\\"font-size: 13px; margin: 10px 0 14px 2px; color: #666;\\">\\n    <a href=\\"/\\" style=\\"color: var(--primary-red); font-weight: bold; text-decoration: none;\\">\u{1F3E0} Home</a>\\n    <span style=\\"margin: 0 6px; color: #999;\\">\xBB</span>\\n    <span style=\\"color: #333; font-weight: 600;\\">Editorial Board &amp; Verified Authors</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;\\">\\n      Odisha Aspirants Editorial Board &amp; Subject Matter Experts\\n    </h1>\\n\\n    <div style=\\"padding: 16px 20px; background: #fafafa; border-bottom: 1px solid #ddd; font-size: 13.5px; color: #555; line-height: 1.6; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;\\">\\n      <div style=\\"flex: 1; min-width: 250px;\\">\\n        Meet the recruitment intelligence researchers, examination analysts, and fact-checkers responsible for auditing and validating every government job notification, syllabus, answer key, and result published on <b>Odisha Aspirants (odishaaspirants.com)</b>.\\n      </div>\\n      <div>\\n        <a href=\\"/author-portal/login\\" style=\\"display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #ffffff; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 12.5px; text-decoration: none; box-shadow: 0 2px 6px rgba(37,99,235,0.25);\\">\\n          <span>\u270D\uFE0F</span> Author &amp; Contributor Login\\n        </a>\\n      </div>\\n    </div>\\n\\n    <div class=\\"authors-directory-grid\\">\\n      ")
     ;  if (authors && authors.length > 0) { 
     ; __append("\\n        ")
     ;  authors.forEach(a => { 
@@ -80337,7 +80337,7 @@ var require_templateEngine = __commonJS({
     ; __append( include('../partials/header') )
     ; __append("\\n")
     ; __append( include('../partials/subheader') )
-    ; __append("\\n\\n<main class=\\"container\\">\\n  <!-- Breadcrumb -->\\n  <div style=\\"font-size: 13px; margin: 10px 0 14px 2px; color: #666;\\">\\n    <a href=\\"/\\" style=\\"color: var(--primary-red); font-weight: bold; text-decoration: none;\\">\u{1F3E0} Home</a>\\n    <span style=\\"margin: 0 6px; color: #999;\\">\xBB</span>\\n    <span style=\\"color: #333; font-weight: 600;\\">Editorial Board &amp; Verified Authors</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;\\">\\n      Govt Exam Zone Editorial Board &amp; Subject Matter Experts\\n    </h1>\\n\\n    <div style=\\"padding: 16px 20px; background: #fafafa; border-bottom: 1px solid #ddd; font-size: 13.5px; color: #555; line-height: 1.6; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;\\">\\n      <div style=\\"flex: 1; min-width: 250px;\\">\\n        Meet the recruitment intelligence researchers, examination analysts, and fact-checkers responsible for auditing and validating every government job notification, syllabus, answer key, and result published on <b>Govt Exam Zone (govtexamzone.com)</b>.\\n      </div>\\n      <div>\\n        <a href=\\"/author-portal/login\\" style=\\"display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #ffffff; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 12.5px; text-decoration: none; box-shadow: 0 2px 6px rgba(37,99,235,0.25);\\">\\n          <span>\u270D\uFE0F</span> Author &amp; Contributor Login\\n        </a>\\n      </div>\\n    </div>\\n\\n    <div class=\\"authors-directory-grid\\">\\n      ")
+    ; __append("\\n\\n<main class=\\"container\\">\\n  <!-- Breadcrumb -->\\n  <div style=\\"font-size: 13px; margin: 10px 0 14px 2px; color: #666;\\">\\n    <a href=\\"/\\" style=\\"color: var(--primary-red); font-weight: bold; text-decoration: none;\\">\u{1F3E0} Home</a>\\n    <span style=\\"margin: 0 6px; color: #999;\\">\xBB</span>\\n    <span style=\\"color: #333; font-weight: 600;\\">Editorial Board &amp; Verified Authors</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;\\">\\n      Odisha Aspirants Editorial Board &amp; Subject Matter Experts\\n    </h1>\\n\\n    <div style=\\"padding: 16px 20px; background: #fafafa; border-bottom: 1px solid #ddd; font-size: 13.5px; color: #555; line-height: 1.6; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;\\">\\n      <div style=\\"flex: 1; min-width: 250px;\\">\\n        Meet the recruitment intelligence researchers, examination analysts, and fact-checkers responsible for auditing and validating every government job notification, syllabus, answer key, and result published on <b>Odisha Aspirants (odishaaspirants.com)</b>.\\n      </div>\\n      <div>\\n        <a href=\\"/author-portal/login\\" style=\\"display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #ffffff; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 12.5px; text-decoration: none; box-shadow: 0 2px 6px rgba(37,99,235,0.25);\\">\\n          <span>\u270D\uFE0F</span> Author &amp; Contributor Login\\n        </a>\\n      </div>\\n    </div>\\n\\n    <div class=\\"authors-directory-grid\\">\\n      ")
     ;  if (authors && authors.length > 0) { 
     ; __append("\\n        ")
     ;  authors.forEach(a => { 
@@ -80385,7 +80385,7 @@ var require_templateEngine = __commonJS({
     ; 
   const catDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 
     ; __append("\\n<!-- Schema.org JSON-LD BreadcrumbList for Category -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@type\\": \\"BreadcrumbList\\",\\n  \\"itemListElement\\": [\\n    {\\n      \\"@type\\": \\"ListItem\\",\\n      \\"position\\": 1,\\n      \\"name\\": \\"Home\\",\\n      \\"item\\": \\"")
     ; __append(escapeFn( catDomain ))
@@ -80399,7 +80399,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( catInfo.name ))
     ; __append("</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3;\\">\\n      ")
     ; __append(escapeFn( catInfo.name ))
-    ; __append(" - Govt Exam Zone 2026\\n    </h1>\\n\\n    <!-- Category Overview -->\\n    <div style=\\"padding: 14px 18px; background: #fafafa; border-bottom: 1px solid #e2e8f0; font-size: 13.5px; line-height: 1.65; color: #334155;\\">\\n      <p style=\\"margin: 0;\\">\\n        ")
+    ; __append(" - Odisha Aspirants 2026\\n    </h1>\\n\\n    <!-- Category Overview -->\\n    <div style=\\"padding: 14px 18px; background: #fafafa; border-bottom: 1px solid #e2e8f0; font-size: 13.5px; line-height: 1.65; color: #334155;\\">\\n      <p style=\\"margin: 0;\\">\\n        ")
     ; __append(escapeFn( catInfo.introEn || ('Stay informed with the latest verified ' + catInfo.name + ' notifications, official application links, and examination updates published across Central and State government commissions.') ))
     ; __append("\\n      </p>\\n    </div>\\n\\n    <ul class=\\"sarkari-box-list\\">\\n      ")
     ;  if (posts && posts.length > 0) { 
@@ -80475,7 +80475,7 @@ var require_templateEngine = __commonJS({
     ; 
   const catDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 
     ; __append("\\n<!-- Schema.org JSON-LD BreadcrumbList for Category -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@type\\": \\"BreadcrumbList\\",\\n  \\"itemListElement\\": [\\n    {\\n      \\"@type\\": \\"ListItem\\",\\n      \\"position\\": 1,\\n      \\"name\\": \\"Home\\",\\n      \\"item\\": \\"")
     ; __append(escapeFn( catDomain ))
@@ -80489,7 +80489,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( catInfo.name ))
     ; __append("</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3;\\">\\n      ")
     ; __append(escapeFn( catInfo.name ))
-    ; __append(" - Govt Exam Zone 2026\\n    </h1>\\n\\n    <!-- Category Overview -->\\n    <div style=\\"padding: 14px 18px; background: #fafafa; border-bottom: 1px solid #e2e8f0; font-size: 13.5px; line-height: 1.65; color: #334155;\\">\\n      <p style=\\"margin: 0;\\">\\n        ")
+    ; __append(" - Odisha Aspirants 2026\\n    </h1>\\n\\n    <!-- Category Overview -->\\n    <div style=\\"padding: 14px 18px; background: #fafafa; border-bottom: 1px solid #e2e8f0; font-size: 13.5px; line-height: 1.65; color: #334155;\\">\\n      <p style=\\"margin: 0;\\">\\n        ")
     ; __append(escapeFn( catInfo.introEn || ('Stay informed with the latest verified ' + catInfo.name + ' notifications, official application links, and examination updates published across Central and State government commissions.') ))
     ; __append("\\n      </p>\\n    </div>\\n\\n    <ul class=\\"sarkari-box-list\\">\\n      ")
     ;  if (posts && posts.length > 0) { 
@@ -80565,9 +80565,9 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
-  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
-  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+    : 'https://odishaaspirants.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList & ContactPage -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@graph\\": [\\n    {\\n      \\"@type\\": \\"BreadcrumbList\\",\\n      \\"itemListElement\\": [\\n        {\\n          \\"@type\\": \\"ListItem\\",\\n          \\"position\\": 1,\\n          \\"name\\": \\"Home\\",\\n          \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -80579,25 +80579,25 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( siteDomain ))
     ; __append("/contact-us\\",\\n      \\"description\\": \\"Official communication and candidate helpdesk for ")
     ; __append(escapeFn( portalName ))
-    ; __append(". Direct support at contact.govtexamzone@gmail.com.\\",\\n      \\"mainEntity\\": {\\n        \\"@type\\": \\"Organization\\",\\n        \\"name\\": \\"")
+    ; __append(". Direct support at contact@odishaaspirants.com.\\",\\n      \\"mainEntity\\": {\\n        \\"@type\\": \\"Organization\\",\\n        \\"name\\": \\"")
     ; __append(escapeFn( portalName ))
     ; __append("\\",\\n        \\"url\\": \\"")
     ; __append(escapeFn( siteDomain ))
-    ; __append("\\",\\n        \\"contactPoint\\": {\\n          \\"@type\\": \\"ContactPoint\\",\\n          \\"email\\": \\"contact.govtexamzone@gmail.com\\",\\n          \\"contactType\\": \\"Customer Support & Grievance Redressal\\",\\n          \\"areaServed\\": \\"IN\\",\\n          \\"availableLanguage\\": [\\"en\\", \\"hi\\"]\\n        }\\n      }\\n    }\\n  ]\\n}\\n</script>\\n\\n<main class=\\"container\\">\\n  <!-- Breadcrumb -->\\n  <div style=\\"font-size: 13px; margin: 10px 0 14px 2px; color: #666;\\">\\n    <a href=\\"/\\" style=\\"color: var(--primary-red); font-weight: bold; text-decoration: none;\\">\u{1F3E0} Home</a>\\n    <span style=\\"margin: 0 6px; color: #999;\\">\xBB</span>\\n    <span style=\\"color: #333; font-weight: 600;\\">Contact Us</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px; background: #ffffff;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;\\">\\n      Contact Us &amp; Candidate Support Helpdesk - ")
+    ; __append("\\",\\n        \\"contactPoint\\": {\\n          \\"@type\\": \\"ContactPoint\\",\\n          \\"email\\": \\"contact@odishaaspirants.com\\",\\n          \\"contactType\\": \\"Customer Support & Grievance Redressal\\",\\n          \\"areaServed\\": \\"IN\\",\\n          \\"availableLanguage\\": [\\"en\\", \\"hi\\"]\\n        }\\n      }\\n    }\\n  ]\\n}\\n</script>\\n\\n<main class=\\"container\\">\\n  <!-- Breadcrumb -->\\n  <div style=\\"font-size: 13px; margin: 10px 0 14px 2px; color: #666;\\">\\n    <a href=\\"/\\" style=\\"color: var(--primary-red); font-weight: bold; text-decoration: none;\\">\u{1F3E0} Home</a>\\n    <span style=\\"margin: 0 6px; color: #999;\\">\xBB</span>\\n    <span style=\\"color: #333; font-weight: 600;\\">Contact Us</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px; background: #ffffff;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;\\">\\n      Contact Us &amp; Candidate Support Helpdesk - ")
     ; __append(escapeFn( portalName ))
     ; __append("\\n    </h1>\\n\\n    <div class=\\"static-page-content\\" style=\\"padding: 22px 20px; line-height: 1.7; color: #334155;\\">\\n      <p style=\\"margin-top: 0; font-size: 14.5px;\\">\\n        Welcome to the official <b>")
     ; __append(escapeFn( portalName ))
-    ; __append("</b> candidate helpdesk. Whether you have a query regarding examination notifications, need to report a typographical discrepancy, have feedback, or wish to get in touch with our editorial research team, we are here to assist you.\\n      </p>\\n\\n      <!-- Grid Cards: Email, Real-time channels, Support desk -->\\n      <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin: 22px 0;\\">\\n        \\n        <!-- Card 1: Official Email Desk -->\\n        <div style=\\"background: #fdfae7; border: 1px solid #ffd480; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;\\">\\n          <div>\\n            <div style=\\"font-size: 24px; margin-bottom: 6px;\\">\u{1F4E7}</div>\\n            <h2 style=\\"font-size: 16px; color: #92400e; margin: 0 0 6px 0; font-weight: 700;\\">\\n              Official Support Email\\n            </h2>\\n            <p style=\\"font-size: 13px; color: #78350f; margin: 0 0 12px 0;\\">\\n              For all candidate queries, corrections, feedback, and official communication:\\n            </p>\\n            <div style=\\"background: #ffffff; border: 1px solid #fcd34d; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px;\\">\\n              <span style=\\"font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 700; display: block; margin-bottom: 2px;\\">Email Address</span>\\n              <div style=\\"font-family: monospace; font-size: 15px; font-weight: 700; color: var(--primary-red); word-break: break-all;\\">\\n                <!--email_off-->contact.govtexamzone@gmail.com<!--/email_off-->\\n              </div>\\n            </div>\\n          </div>\\n          <div style=\\"display: flex; gap: 8px; flex-wrap: wrap;\\">\\n            <!--email_off-->\\n            <a href=\\"mailto:contact.govtexamzone@gmail.com\\" class=\\"btn btn-primary btn-sm\\" style=\\"background: var(--primary-red); border-color: var(--primary-red); padding: 7px 14px; text-decoration: none; font-size: 13px; font-weight: 600;\\">\\n              \u2709\uFE0F Send Email\\n            </a>\\n            <!--/email_off-->\\n            <button type=\\"button\\" class=\\"btn btn-secondary btn-sm\\" onclick=\\"copyContactEmail()\\" id=\\"copyEmailBtn\\" style=\\"padding: 7px 14px; font-size: 13px; font-weight: 600;\\">\\n              \u{1F4CB} Copy Address\\n            </button>\\n          </div>\\n        </div>\\n\\n        <!-- Card 2: Real-Time Broadcast Channels -->\\n        <div style=\\"background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;\\">\\n          <div>\\n            <div style=\\"font-size: 24px; margin-bottom: 6px;\\">\u{1F4F2}</div>\\n            <h2 style=\\"font-size: 16px; color: #166534; margin: 0 0 6px 0; font-weight: 700;\\">\\n              Official Broadcast Channels\\n            </h2>\\n            <p style=\\"font-size: 13px; color: #15803d; margin: 0 0 12px 0;\\">\\n              Get real-time breaking alerts directly on your mobile as soon as exam notices are issued:\\n            </p>\\n            <div style=\\"display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;\\">\\n              <a href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' 
+    ; __append("</b> candidate helpdesk. Whether you have a query regarding examination notifications, need to report a typographical discrepancy, have feedback, or wish to get in touch with our editorial research team, we are here to assist you.\\n      </p>\\n\\n      <!-- Grid Cards: Email, Real-time channels, Support desk -->\\n      <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin: 22px 0;\\">\\n        \\n        <!-- Card 1: Official Email Desk -->\\n        <div style=\\"background: #fdfae7; border: 1px solid #ffd480; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;\\">\\n          <div>\\n            <div style=\\"font-size: 24px; margin-bottom: 6px;\\">\u{1F4E7}</div>\\n            <h2 style=\\"font-size: 16px; color: #92400e; margin: 0 0 6px 0; font-weight: 700;\\">\\n              Official Support Email\\n            </h2>\\n            <p style=\\"font-size: 13px; color: #78350f; margin: 0 0 12px 0;\\">\\n              For all candidate queries, corrections, feedback, and official communication:\\n            </p>\\n            <div style=\\"background: #ffffff; border: 1px solid #fcd34d; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px;\\">\\n              <span style=\\"font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 700; display: block; margin-bottom: 2px;\\">Email Address</span>\\n              <div style=\\"font-family: monospace; font-size: 15px; font-weight: 700; color: var(--primary-red); word-break: break-all;\\">\\n                <!--email_off-->contact@odishaaspirants.com<!--/email_off-->\\n              </div>\\n            </div>\\n          </div>\\n          <div style=\\"display: flex; gap: 8px; flex-wrap: wrap;\\">\\n            <!--email_off-->\\n            <a href=\\"mailto:contact@odishaaspirants.com\\" class=\\"btn btn-primary btn-sm\\" style=\\"background: var(--primary-red); border-color: var(--primary-red); padding: 7px 14px; text-decoration: none; font-size: 13px; font-weight: 600;\\">\\n              \u2709\uFE0F Send Email\\n            </a>\\n            <!--/email_off-->\\n            <button type=\\"button\\" class=\\"btn btn-secondary btn-sm\\" onclick=\\"copyContactEmail()\\" id=\\"copyEmailBtn\\" style=\\"padding: 7px 14px; font-size: 13px; font-weight: 600;\\">\\n              \u{1F4CB} Copy Address\\n            </button>\\n          </div>\\n        </div>\\n\\n        <!-- Card 2: Real-Time Broadcast Channels -->\\n        <div style=\\"background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;\\">\\n          <div>\\n            <div style=\\"font-size: 24px; margin-bottom: 6px;\\">\u{1F4F2}</div>\\n            <h2 style=\\"font-size: 16px; color: #166534; margin: 0 0 6px 0; font-weight: 700;\\">\\n              Official Broadcast Channels\\n            </h2>\\n            <p style=\\"font-size: 13px; color: #15803d; margin: 0 0 12px 0;\\">\\n              Get real-time breaking alerts directly on your mobile as soon as exam notices are issued:\\n            </p>\\n            <div style=\\"display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;\\">\\n              <a href=\\"")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' 
 ))
     ; __append("\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\" style=\\"display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; text-decoration: none; color: #0284c7; font-weight: 600; font-size: 13.5px;\\">\\n                <span style=\\"font-size: 18px;\\">\u2708\uFE0F</span>\\n                <span>Join Official Telegram Channel</span>\\n              </a>\\n              <a href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' 
 ))
-    ; __append("\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\" style=\\"display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; text-decoration: none; color: #16a34a; font-weight: 600; font-size: 13.5px;\\">\\n                <span style=\\"font-size: 18px;\\">\u{1F4AC}</span>\\n                <span>Join Official WhatsApp Channel</span>\\n              </a>\\n            </div>\\n          </div>\\n          <div style=\\"font-size: 12px; color: #15803d;\\">\\n            \u2705 100% Free &amp; Verified Government Job Alerts\\n          </div>\\n        </div>\\n\\n        <!-- Card 3: Support Hours & Guidelines -->\\n        <div style=\\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;\\">\\n          <div>\\n            <div style=\\"font-size: 24px; margin-bottom: 6px;\\">\u23F1\uFE0F</div>\\n            <h2 style=\\"font-size: 16px; color: #0f172a; margin: 0 0 6px 0; font-weight: 700;\\">\\n              Helpdesk Response Timetable\\n            </h2>\\n            <ul style=\\"padding-left: 18px; margin: 0 0 12px 0; font-size: 13px; color: #475569; line-height: 1.6;\\">\\n              <li><b>Review Timelines:</b> Within 24 to 48 business hours.</li>\\n              <li><b>Working Schedule:</b> Monday to Saturday (10:00 AM \u2013 6:00 PM IST).</li>\\n              <li><b>Queries Handled:</b> Typographical error corrections, broken official links, date verification.</li>\\n            </ul>\\n          </div>\\n          <div style=\\"background: #e2e8f0; border-radius: 4px; padding: 8px 10px; font-size: 12px; color: #334155;\\">\\n            \u{1F4A1} Quick Answer Needed? Visit our <a href=\\"/faq\\" style=\\"color: var(--primary-red); font-weight: 700;\\">FAQ Directory \u2192</a>\\n          </div>\\n        </div>\\n\\n      </div>\\n\\n      <!-- Quick Message Composer -->\\n      <div style=\\"background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 22px 20px; margin: 26px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04);\\">\\n        <h2 style=\\"color: var(--primary-red); font-size: 17px; margin-top: 0; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;\\">\\n          <span>\u{1F4DD}</span> Send a Direct Message to Our Editorial Desk\\n        </h2>\\n        <p style=\\"font-size: 13.5px; color: #64748b; margin-top: 0; margin-bottom: 18px;\\">\\n          Fill out the details below. Clicking \\"Compose Email\\" will open your email application addressed directly to our helpdesk with your message formatted.\\n        </p>\\n\\n        <form id=\\"contactHelpdeskForm\\" onsubmit=\\"handleContactSubmit(event)\\">\\n          <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;\\">\\n            <div>\\n              <label for=\\"contact_name\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Your Name *</label>\\n              <input type=\\"text\\" id=\\"contact_name\\" class=\\"form-control\\" placeholder=\\"e.g. Rahul Sharma\\" required style=\\"width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;\\">\\n            </div>\\n            <div>\\n              <label for=\\"contact_subject_type\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Reason for Contact *</label>\\n              <select id=\\"contact_subject_type\\" class=\\"form-control\\" style=\\"width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;\\">\\n                <option value=\\"Correction Request / Typo\\">Report Typo / Date Discrepancy</option>\\n                <option value=\\"General Query regarding Job Post\\">General Query regarding Job Post</option>\\n                <option value=\\"Broken Official Link Report\\">Report Broken Government Link</option>\\n                <option value=\\"Website Feedback & Suggestion\\">Website Feedback &amp; Suggestion</option>\\n                <option value=\\"Other Inquiries\\">Other Inquiries</option>\\n              </select>\\n            </div>\\n          </div>\\n\\n          <div style=\\"margin-bottom: 14px;\\">\\n            <label for=\\"contact_exam_name\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Exam Name / Notification URL (Optional)</label>\\n            <input type=\\"text\\" id=\\"contact_exam_name\\" class=\\"form-control\\" placeholder=\\"e.g. SSC CGL 2026 or Page Link\\" style=\\"width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;\\">\\n          </div>\\n\\n          <div style=\\"margin-bottom: 18px;\\">\\n            <label for=\\"contact_message\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Your Message / Description *</label>\\n            <textarea id=\\"contact_message\\" rows=\\"4\\" class=\\"form-control\\" placeholder=\\"Please describe your query or report clearly...\\" required style=\\"width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box; font-family: inherit;\\"></textarea>\\n          </div>\\n\\n          <div style=\\"display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;\\">\\n            <button type=\\"submit\\" class=\\"btn btn-primary\\" style=\\"background: var(--primary-red); border-color: var(--primary-red); padding: 10px 22px; font-size: 14.5px; font-weight: 700; cursor: pointer;\\">\\n              \u{1F680} Compose &amp; Send to Helpdesk\\n            </button>\\n            <span style=\\"font-size: 12.5px; color: #64748b;\\">\\n              Direct Email: <!--email_off-->contact.govtexamzone@gmail.com<!--/email_off-->\\n            </span>\\n          </div>\\n        </form>\\n      </div>\\n\\n      <!-- Reporting Typo Instructions -->\\n      <h2 style=\\"color: var(--primary-red); font-size: 17px; margin-top: 26px; margin-bottom: 10px;\\">\\n        \u{1F50D} Guidelines for Reporting Typographical Corrections\\n      </h2>\\n      <p style=\\"margin-top: 0; font-size: 13.5px;\\">\\n        To ensure prompt editorial review, please include the reference URL of the official government employment gazette or departmental PDF bulletin (.gov.in / .nic.in). Our research team verifies all submissions against statutory gazettes.\\n      </p>\\n\\n      <!-- Anti-Fraud & Scam Advisory -->\\n      <div style=\\"background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 16px 20px; margin-top: 26px;\\">\\n        <h3 style=\\"margin-top: 0; color: #991b1b; font-size: 15px; display: flex; align-items: center; gap: 6px;\\">\\n          <span>\u26A0\uFE0F</span> Important Anti-Fraud &amp; Candidate Security Advisory\\n        </h3>\\n        <p style=\\"margin: 0; font-size: 13.5px; color: #7f1d1d; line-height: 1.65;\\">\\n          <b>")
+    ; __append("\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\" style=\\"display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; text-decoration: none; color: #16a34a; font-weight: 600; font-size: 13.5px;\\">\\n                <span style=\\"font-size: 18px;\\">\u{1F4AC}</span>\\n                <span>Join Official WhatsApp Channel</span>\\n              </a>\\n            </div>\\n          </div>\\n          <div style=\\"font-size: 12px; color: #15803d;\\">\\n            \u2705 100% Free &amp; Verified Government Job Alerts\\n          </div>\\n        </div>\\n\\n        <!-- Card 3: Support Hours & Guidelines -->\\n        <div style=\\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;\\">\\n          <div>\\n            <div style=\\"font-size: 24px; margin-bottom: 6px;\\">\u23F1\uFE0F</div>\\n            <h2 style=\\"font-size: 16px; color: #0f172a; margin: 0 0 6px 0; font-weight: 700;\\">\\n              Helpdesk Response Timetable\\n            </h2>\\n            <ul style=\\"padding-left: 18px; margin: 0 0 12px 0; font-size: 13px; color: #475569; line-height: 1.6;\\">\\n              <li><b>Review Timelines:</b> Within 24 to 48 business hours.</li>\\n              <li><b>Working Schedule:</b> Monday to Saturday (10:00 AM \u2013 6:00 PM IST).</li>\\n              <li><b>Queries Handled:</b> Typographical error corrections, broken official links, date verification.</li>\\n            </ul>\\n          </div>\\n          <div style=\\"background: #e2e8f0; border-radius: 4px; padding: 8px 10px; font-size: 12px; color: #334155;\\">\\n            \u{1F4A1} Quick Answer Needed? Visit our <a href=\\"/faq\\" style=\\"color: var(--primary-red); font-weight: 700;\\">FAQ Directory \u2192</a>\\n          </div>\\n        </div>\\n\\n      </div>\\n\\n      <!-- Quick Message Composer -->\\n      <div style=\\"background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 22px 20px; margin: 26px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04);\\">\\n        <h2 style=\\"color: var(--primary-red); font-size: 17px; margin-top: 0; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;\\">\\n          <span>\u{1F4DD}</span> Send a Direct Message to Our Editorial Desk\\n        </h2>\\n        <p style=\\"font-size: 13.5px; color: #64748b; margin-top: 0; margin-bottom: 18px;\\">\\n          Fill out the details below. Clicking \\"Compose Email\\" will open your email application addressed directly to our helpdesk with your message formatted.\\n        </p>\\n\\n        <form id=\\"contactHelpdeskForm\\" onsubmit=\\"handleContactSubmit(event)\\">\\n          <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;\\">\\n            <div>\\n              <label for=\\"contact_name\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Your Name *</label>\\n              <input type=\\"text\\" id=\\"contact_name\\" class=\\"form-control\\" placeholder=\\"e.g. Rahul Sharma\\" required style=\\"width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;\\">\\n            </div>\\n            <div>\\n              <label for=\\"contact_subject_type\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Reason for Contact *</label>\\n              <select id=\\"contact_subject_type\\" class=\\"form-control\\" style=\\"width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;\\">\\n                <option value=\\"Correction Request / Typo\\">Report Typo / Date Discrepancy</option>\\n                <option value=\\"General Query regarding Job Post\\">General Query regarding Job Post</option>\\n                <option value=\\"Broken Official Link Report\\">Report Broken Government Link</option>\\n                <option value=\\"Website Feedback & Suggestion\\">Website Feedback &amp; Suggestion</option>\\n                <option value=\\"Other Inquiries\\">Other Inquiries</option>\\n              </select>\\n            </div>\\n          </div>\\n\\n          <div style=\\"margin-bottom: 14px;\\">\\n            <label for=\\"contact_exam_name\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Exam Name / Notification URL (Optional)</label>\\n            <input type=\\"text\\" id=\\"contact_exam_name\\" class=\\"form-control\\" placeholder=\\"e.g. SSC CGL 2026 or Page Link\\" style=\\"width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;\\">\\n          </div>\\n\\n          <div style=\\"margin-bottom: 18px;\\">\\n            <label for=\\"contact_message\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Your Message / Description *</label>\\n            <textarea id=\\"contact_message\\" rows=\\"4\\" class=\\"form-control\\" placeholder=\\"Please describe your query or report clearly...\\" required style=\\"width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box; font-family: inherit;\\"></textarea>\\n          </div>\\n\\n          <div style=\\"display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;\\">\\n            <button type=\\"submit\\" class=\\"btn btn-primary\\" style=\\"background: var(--primary-red); border-color: var(--primary-red); padding: 10px 22px; font-size: 14.5px; font-weight: 700; cursor: pointer;\\">\\n              \u{1F680} Compose &amp; Send to Helpdesk\\n            </button>\\n            <span style=\\"font-size: 12.5px; color: #64748b;\\">\\n              Direct Email: <!--email_off-->contact@odishaaspirants.com<!--/email_off-->\\n            </span>\\n          </div>\\n        </form>\\n      </div>\\n\\n      <!-- Reporting Typo Instructions -->\\n      <h2 style=\\"color: var(--primary-red); font-size: 17px; margin-top: 26px; margin-bottom: 10px;\\">\\n        \u{1F50D} Guidelines for Reporting Typographical Corrections\\n      </h2>\\n      <p style=\\"margin-top: 0; font-size: 13.5px;\\">\\n        To ensure prompt editorial review, please include the reference URL of the official government employment gazette or departmental PDF bulletin (.gov.in / .nic.in). Our research team verifies all submissions against statutory gazettes.\\n      </p>\\n\\n      <!-- Anti-Fraud & Scam Advisory -->\\n      <div style=\\"background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 16px 20px; margin-top: 26px;\\">\\n        <h3 style=\\"margin-top: 0; color: #991b1b; font-size: 15px; display: flex; align-items: center; gap: 6px;\\">\\n          <span>\u26A0\uFE0F</span> Important Anti-Fraud &amp; Candidate Security Advisory\\n        </h3>\\n        <p style=\\"margin: 0; font-size: 13.5px; color: #7f1d1d; line-height: 1.65;\\">\\n          <b>")
     ; __append(escapeFn( portalName ))
     ; __append(" is a 100% free informational portal and never asks for money, application fees, or OTPs from candidates.</b> \\n          We do not sell recruitment forms or provide appointment guarantees. If any individual contacts you demanding money claiming to represent ")
     ; __append(escapeFn( portalName ))
-    ; __append(", please recognize it as an unauthorized fraud and report it immediately to our official email (<!--email_off-->contact.govtexamzone@gmail.com<!--/email_off-->) and your local cybercrime authority.\\n        </p>\\n      </div>\\n\\n    </div>\\n  </div>\\n</main>\\n\\n<script>\\nfunction copyContactEmail() {\\n  var email = \\"contact.govtexamzone@gmail.com\\";\\n  if (navigator.clipboard && navigator.clipboard.writeText) {\\n    navigator.clipboard.writeText(email).then(function() {\\n      var btn = document.getElementById(\\"copyEmailBtn\\");\\n      if (btn) {\\n        var orig = btn.innerHTML;\\n        btn.innerHTML = \\"\u2705 Copied!\\";\\n        setTimeout(function() { btn.innerHTML = orig; }, 2000);\\n      }\\n      var toast = document.getElementById(\\"toast\\");\\n      if (toast) {\\n        toast.innerText = \\"Email copied to clipboard: \\" + email;\\n        toast.className = \\"toast-msg show\\";\\n        setTimeout(function() { toast.className = toast.className.replace(\\"show\\", \\"\\"); }, 2500);\\n      }\\n    });\\n  } else {\\n    prompt(\\"Copy email address:\\", email);\\n  }\\n}\\n\\nfunction handleContactSubmit(e) {\\n  e.preventDefault();\\n  var name = document.getElementById(\\"contact_name\\").value.trim();\\n  var reason = document.getElementById(\\"contact_subject_type\\").value;\\n  var exam = document.getElementById(\\"contact_exam_name\\").value.trim();\\n  var msg = document.getElementById(\\"contact_message\\").value.trim();\\n\\n  var subject = encodeURIComponent(\\"[\\" + reason + \\"] \\" + (exam ? \\"- \\" + exam : \\"\\") + \\" from \\" + name);\\n  var body = encodeURIComponent(\\n    \\"Dear Govt Exam Zone Helpdesk,\\\\n\\\\n\\" +\\n    msg + \\"\\\\n\\\\n\\" +\\n    (exam ? \\"Referenced Notification / URL: \\" + exam + \\"\\\\n\\" : \\"\\") +\\n    \\"Sender Name: \\" + name + \\"\\\\n\\"\\n  );\\n\\n  window.location.href = \\"mailto:contact.govtexamzone@gmail.com?subject=\\" + subject + \\"&body=\\" + body;\\n}\\n</script>\\n\\n")
+    ; __append(", please recognize it as an unauthorized fraud and report it immediately to our official email (<!--email_off-->contact@odishaaspirants.com<!--/email_off-->) and your local cybercrime authority.\\n        </p>\\n      </div>\\n\\n    </div>\\n  </div>\\n</main>\\n\\n<script>\\nfunction copyContactEmail() {\\n  var email = \\"contact@odishaaspirants.com\\";\\n  if (navigator.clipboard && navigator.clipboard.writeText) {\\n    navigator.clipboard.writeText(email).then(function() {\\n      var btn = document.getElementById(\\"copyEmailBtn\\");\\n      if (btn) {\\n        var orig = btn.innerHTML;\\n        btn.innerHTML = \\"\u2705 Copied!\\";\\n        setTimeout(function() { btn.innerHTML = orig; }, 2000);\\n      }\\n      var toast = document.getElementById(\\"toast\\");\\n      if (toast) {\\n        toast.innerText = \\"Email copied to clipboard: \\" + email;\\n        toast.className = \\"toast-msg show\\";\\n        setTimeout(function() { toast.className = toast.className.replace(\\"show\\", \\"\\"); }, 2500);\\n      }\\n    });\\n  } else {\\n    prompt(\\"Copy email address:\\", email);\\n  }\\n}\\n\\nfunction handleContactSubmit(e) {\\n  e.preventDefault();\\n  var name = document.getElementById(\\"contact_name\\").value.trim();\\n  var reason = document.getElementById(\\"contact_subject_type\\").value;\\n  var exam = document.getElementById(\\"contact_exam_name\\").value.trim();\\n  var msg = document.getElementById(\\"contact_message\\").value.trim();\\n\\n  var subject = encodeURIComponent(\\"[\\" + reason + \\"] \\" + (exam ? \\"- \\" + exam : \\"\\") + \\" from \\" + name);\\n  var body = encodeURIComponent(\\n    \\"Dear Odisha Aspirants Helpdesk,\\\\n\\\\n\\" +\\n    msg + \\"\\\\n\\\\n\\" +\\n    (exam ? \\"Referenced Notification / URL: \\" + exam + \\"\\\\n\\" : \\"\\") +\\n    \\"Sender Name: \\" + name + \\"\\\\n\\"\\n  );\\n\\n  window.location.href = \\"mailto:contact@odishaaspirants.com?subject=\\" + subject + \\"&body=\\" + body;\\n}\\n</script>\\n\\n")
     ; __append( include('../partials/footer') )
     ; __append("\\n")
   }
@@ -80613,9 +80613,9 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
-  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
-  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+    : 'https://odishaaspirants.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList & ContactPage -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@graph\\": [\\n    {\\n      \\"@type\\": \\"BreadcrumbList\\",\\n      \\"itemListElement\\": [\\n        {\\n          \\"@type\\": \\"ListItem\\",\\n          \\"position\\": 1,\\n          \\"name\\": \\"Home\\",\\n          \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -80627,25 +80627,25 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( siteDomain ))
     ; __append("/contact-us\\",\\n      \\"description\\": \\"Official communication and candidate helpdesk for ")
     ; __append(escapeFn( portalName ))
-    ; __append(". Direct support at contact.govtexamzone@gmail.com.\\",\\n      \\"mainEntity\\": {\\n        \\"@type\\": \\"Organization\\",\\n        \\"name\\": \\"")
+    ; __append(". Direct support at contact@odishaaspirants.com.\\",\\n      \\"mainEntity\\": {\\n        \\"@type\\": \\"Organization\\",\\n        \\"name\\": \\"")
     ; __append(escapeFn( portalName ))
     ; __append("\\",\\n        \\"url\\": \\"")
     ; __append(escapeFn( siteDomain ))
-    ; __append("\\",\\n        \\"contactPoint\\": {\\n          \\"@type\\": \\"ContactPoint\\",\\n          \\"email\\": \\"contact.govtexamzone@gmail.com\\",\\n          \\"contactType\\": \\"Customer Support & Grievance Redressal\\",\\n          \\"areaServed\\": \\"IN\\",\\n          \\"availableLanguage\\": [\\"en\\", \\"hi\\"]\\n        }\\n      }\\n    }\\n  ]\\n}\\n</script>\\n\\n<main class=\\"container\\">\\n  <!-- Breadcrumb -->\\n  <div style=\\"font-size: 13px; margin: 10px 0 14px 2px; color: #666;\\">\\n    <a href=\\"/\\" style=\\"color: var(--primary-red); font-weight: bold; text-decoration: none;\\">\u{1F3E0} Home</a>\\n    <span style=\\"margin: 0 6px; color: #999;\\">\xBB</span>\\n    <span style=\\"color: #333; font-weight: 600;\\">Contact Us</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px; background: #ffffff;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;\\">\\n      Contact Us &amp; Candidate Support Helpdesk - ")
+    ; __append("\\",\\n        \\"contactPoint\\": {\\n          \\"@type\\": \\"ContactPoint\\",\\n          \\"email\\": \\"contact@odishaaspirants.com\\",\\n          \\"contactType\\": \\"Customer Support & Grievance Redressal\\",\\n          \\"areaServed\\": \\"IN\\",\\n          \\"availableLanguage\\": [\\"en\\", \\"hi\\"]\\n        }\\n      }\\n    }\\n  ]\\n}\\n</script>\\n\\n<main class=\\"container\\">\\n  <!-- Breadcrumb -->\\n  <div style=\\"font-size: 13px; margin: 10px 0 14px 2px; color: #666;\\">\\n    <a href=\\"/\\" style=\\"color: var(--primary-red); font-weight: bold; text-decoration: none;\\">\u{1F3E0} Home</a>\\n    <span style=\\"margin: 0 6px; color: #999;\\">\xBB</span>\\n    <span style=\\"color: #333; font-weight: 600;\\">Contact Us</span>\\n  </div>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 30px; background: #ffffff;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;\\">\\n      Contact Us &amp; Candidate Support Helpdesk - ")
     ; __append(escapeFn( portalName ))
     ; __append("\\n    </h1>\\n\\n    <div class=\\"static-page-content\\" style=\\"padding: 22px 20px; line-height: 1.7; color: #334155;\\">\\n      <p style=\\"margin-top: 0; font-size: 14.5px;\\">\\n        Welcome to the official <b>")
     ; __append(escapeFn( portalName ))
-    ; __append("</b> candidate helpdesk. Whether you have a query regarding examination notifications, need to report a typographical discrepancy, have feedback, or wish to get in touch with our editorial research team, we are here to assist you.\\n      </p>\\n\\n      <!-- Grid Cards: Email, Real-time channels, Support desk -->\\n      <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin: 22px 0;\\">\\n        \\n        <!-- Card 1: Official Email Desk -->\\n        <div style=\\"background: #fdfae7; border: 1px solid #ffd480; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;\\">\\n          <div>\\n            <div style=\\"font-size: 24px; margin-bottom: 6px;\\">\u{1F4E7}</div>\\n            <h2 style=\\"font-size: 16px; color: #92400e; margin: 0 0 6px 0; font-weight: 700;\\">\\n              Official Support Email\\n            </h2>\\n            <p style=\\"font-size: 13px; color: #78350f; margin: 0 0 12px 0;\\">\\n              For all candidate queries, corrections, feedback, and official communication:\\n            </p>\\n            <div style=\\"background: #ffffff; border: 1px solid #fcd34d; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px;\\">\\n              <span style=\\"font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 700; display: block; margin-bottom: 2px;\\">Email Address</span>\\n              <div style=\\"font-family: monospace; font-size: 15px; font-weight: 700; color: var(--primary-red); word-break: break-all;\\">\\n                <!--email_off-->contact.govtexamzone@gmail.com<!--/email_off-->\\n              </div>\\n            </div>\\n          </div>\\n          <div style=\\"display: flex; gap: 8px; flex-wrap: wrap;\\">\\n            <!--email_off-->\\n            <a href=\\"mailto:contact.govtexamzone@gmail.com\\" class=\\"btn btn-primary btn-sm\\" style=\\"background: var(--primary-red); border-color: var(--primary-red); padding: 7px 14px; text-decoration: none; font-size: 13px; font-weight: 600;\\">\\n              \u2709\uFE0F Send Email\\n            </a>\\n            <!--/email_off-->\\n            <button type=\\"button\\" class=\\"btn btn-secondary btn-sm\\" onclick=\\"copyContactEmail()\\" id=\\"copyEmailBtn\\" style=\\"padding: 7px 14px; font-size: 13px; font-weight: 600;\\">\\n              \u{1F4CB} Copy Address\\n            </button>\\n          </div>\\n        </div>\\n\\n        <!-- Card 2: Real-Time Broadcast Channels -->\\n        <div style=\\"background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;\\">\\n          <div>\\n            <div style=\\"font-size: 24px; margin-bottom: 6px;\\">\u{1F4F2}</div>\\n            <h2 style=\\"font-size: 16px; color: #166534; margin: 0 0 6px 0; font-weight: 700;\\">\\n              Official Broadcast Channels\\n            </h2>\\n            <p style=\\"font-size: 13px; color: #15803d; margin: 0 0 12px 0;\\">\\n              Get real-time breaking alerts directly on your mobile as soon as exam notices are issued:\\n            </p>\\n            <div style=\\"display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;\\">\\n              <a href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' 
+    ; __append("</b> candidate helpdesk. Whether you have a query regarding examination notifications, need to report a typographical discrepancy, have feedback, or wish to get in touch with our editorial research team, we are here to assist you.\\n      </p>\\n\\n      <!-- Grid Cards: Email, Real-time channels, Support desk -->\\n      <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin: 22px 0;\\">\\n        \\n        <!-- Card 1: Official Email Desk -->\\n        <div style=\\"background: #fdfae7; border: 1px solid #ffd480; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;\\">\\n          <div>\\n            <div style=\\"font-size: 24px; margin-bottom: 6px;\\">\u{1F4E7}</div>\\n            <h2 style=\\"font-size: 16px; color: #92400e; margin: 0 0 6px 0; font-weight: 700;\\">\\n              Official Support Email\\n            </h2>\\n            <p style=\\"font-size: 13px; color: #78350f; margin: 0 0 12px 0;\\">\\n              For all candidate queries, corrections, feedback, and official communication:\\n            </p>\\n            <div style=\\"background: #ffffff; border: 1px solid #fcd34d; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px;\\">\\n              <span style=\\"font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 700; display: block; margin-bottom: 2px;\\">Email Address</span>\\n              <div style=\\"font-family: monospace; font-size: 15px; font-weight: 700; color: var(--primary-red); word-break: break-all;\\">\\n                <!--email_off-->contact@odishaaspirants.com<!--/email_off-->\\n              </div>\\n            </div>\\n          </div>\\n          <div style=\\"display: flex; gap: 8px; flex-wrap: wrap;\\">\\n            <!--email_off-->\\n            <a href=\\"mailto:contact@odishaaspirants.com\\" class=\\"btn btn-primary btn-sm\\" style=\\"background: var(--primary-red); border-color: var(--primary-red); padding: 7px 14px; text-decoration: none; font-size: 13px; font-weight: 600;\\">\\n              \u2709\uFE0F Send Email\\n            </a>\\n            <!--/email_off-->\\n            <button type=\\"button\\" class=\\"btn btn-secondary btn-sm\\" onclick=\\"copyContactEmail()\\" id=\\"copyEmailBtn\\" style=\\"padding: 7px 14px; font-size: 13px; font-weight: 600;\\">\\n              \u{1F4CB} Copy Address\\n            </button>\\n          </div>\\n        </div>\\n\\n        <!-- Card 2: Real-Time Broadcast Channels -->\\n        <div style=\\"background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;\\">\\n          <div>\\n            <div style=\\"font-size: 24px; margin-bottom: 6px;\\">\u{1F4F2}</div>\\n            <h2 style=\\"font-size: 16px; color: #166534; margin: 0 0 6px 0; font-weight: 700;\\">\\n              Official Broadcast Channels\\n            </h2>\\n            <p style=\\"font-size: 13px; color: #15803d; margin: 0 0 12px 0;\\">\\n              Get real-time breaking alerts directly on your mobile as soon as exam notices are issued:\\n            </p>\\n            <div style=\\"display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;\\">\\n              <a href=\\"")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' 
 ))
     ; __append("\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\" style=\\"display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; text-decoration: none; color: #0284c7; font-weight: 600; font-size: 13.5px;\\">\\n                <span style=\\"font-size: 18px;\\">\u2708\uFE0F</span>\\n                <span>Join Official Telegram Channel</span>\\n              </a>\\n              <a href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' 
 ))
-    ; __append("\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\" style=\\"display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; text-decoration: none; color: #16a34a; font-weight: 600; font-size: 13.5px;\\">\\n                <span style=\\"font-size: 18px;\\">\u{1F4AC}</span>\\n                <span>Join Official WhatsApp Channel</span>\\n              </a>\\n            </div>\\n          </div>\\n          <div style=\\"font-size: 12px; color: #15803d;\\">\\n            \u2705 100% Free &amp; Verified Government Job Alerts\\n          </div>\\n        </div>\\n\\n        <!-- Card 3: Support Hours & Guidelines -->\\n        <div style=\\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;\\">\\n          <div>\\n            <div style=\\"font-size: 24px; margin-bottom: 6px;\\">\u23F1\uFE0F</div>\\n            <h2 style=\\"font-size: 16px; color: #0f172a; margin: 0 0 6px 0; font-weight: 700;\\">\\n              Helpdesk Response Timetable\\n            </h2>\\n            <ul style=\\"padding-left: 18px; margin: 0 0 12px 0; font-size: 13px; color: #475569; line-height: 1.6;\\">\\n              <li><b>Review Timelines:</b> Within 24 to 48 business hours.</li>\\n              <li><b>Working Schedule:</b> Monday to Saturday (10:00 AM \u2013 6:00 PM IST).</li>\\n              <li><b>Queries Handled:</b> Typographical error corrections, broken official links, date verification.</li>\\n            </ul>\\n          </div>\\n          <div style=\\"background: #e2e8f0; border-radius: 4px; padding: 8px 10px; font-size: 12px; color: #334155;\\">\\n            \u{1F4A1} Quick Answer Needed? Visit our <a href=\\"/faq\\" style=\\"color: var(--primary-red); font-weight: 700;\\">FAQ Directory \u2192</a>\\n          </div>\\n        </div>\\n\\n      </div>\\n\\n      <!-- Quick Message Composer -->\\n      <div style=\\"background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 22px 20px; margin: 26px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04);\\">\\n        <h2 style=\\"color: var(--primary-red); font-size: 17px; margin-top: 0; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;\\">\\n          <span>\u{1F4DD}</span> Send a Direct Message to Our Editorial Desk\\n        </h2>\\n        <p style=\\"font-size: 13.5px; color: #64748b; margin-top: 0; margin-bottom: 18px;\\">\\n          Fill out the details below. Clicking \\"Compose Email\\" will open your email application addressed directly to our helpdesk with your message formatted.\\n        </p>\\n\\n        <form id=\\"contactHelpdeskForm\\" onsubmit=\\"handleContactSubmit(event)\\">\\n          <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;\\">\\n            <div>\\n              <label for=\\"contact_name\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Your Name *</label>\\n              <input type=\\"text\\" id=\\"contact_name\\" class=\\"form-control\\" placeholder=\\"e.g. Rahul Sharma\\" required style=\\"width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;\\">\\n            </div>\\n            <div>\\n              <label for=\\"contact_subject_type\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Reason for Contact *</label>\\n              <select id=\\"contact_subject_type\\" class=\\"form-control\\" style=\\"width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;\\">\\n                <option value=\\"Correction Request / Typo\\">Report Typo / Date Discrepancy</option>\\n                <option value=\\"General Query regarding Job Post\\">General Query regarding Job Post</option>\\n                <option value=\\"Broken Official Link Report\\">Report Broken Government Link</option>\\n                <option value=\\"Website Feedback & Suggestion\\">Website Feedback &amp; Suggestion</option>\\n                <option value=\\"Other Inquiries\\">Other Inquiries</option>\\n              </select>\\n            </div>\\n          </div>\\n\\n          <div style=\\"margin-bottom: 14px;\\">\\n            <label for=\\"contact_exam_name\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Exam Name / Notification URL (Optional)</label>\\n            <input type=\\"text\\" id=\\"contact_exam_name\\" class=\\"form-control\\" placeholder=\\"e.g. SSC CGL 2026 or Page Link\\" style=\\"width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;\\">\\n          </div>\\n\\n          <div style=\\"margin-bottom: 18px;\\">\\n            <label for=\\"contact_message\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Your Message / Description *</label>\\n            <textarea id=\\"contact_message\\" rows=\\"4\\" class=\\"form-control\\" placeholder=\\"Please describe your query or report clearly...\\" required style=\\"width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box; font-family: inherit;\\"></textarea>\\n          </div>\\n\\n          <div style=\\"display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;\\">\\n            <button type=\\"submit\\" class=\\"btn btn-primary\\" style=\\"background: var(--primary-red); border-color: var(--primary-red); padding: 10px 22px; font-size: 14.5px; font-weight: 700; cursor: pointer;\\">\\n              \u{1F680} Compose &amp; Send to Helpdesk\\n            </button>\\n            <span style=\\"font-size: 12.5px; color: #64748b;\\">\\n              Direct Email: <!--email_off-->contact.govtexamzone@gmail.com<!--/email_off-->\\n            </span>\\n          </div>\\n        </form>\\n      </div>\\n\\n      <!-- Reporting Typo Instructions -->\\n      <h2 style=\\"color: var(--primary-red); font-size: 17px; margin-top: 26px; margin-bottom: 10px;\\">\\n        \u{1F50D} Guidelines for Reporting Typographical Corrections\\n      </h2>\\n      <p style=\\"margin-top: 0; font-size: 13.5px;\\">\\n        To ensure prompt editorial review, please include the reference URL of the official government employment gazette or departmental PDF bulletin (.gov.in / .nic.in). Our research team verifies all submissions against statutory gazettes.\\n      </p>\\n\\n      <!-- Anti-Fraud & Scam Advisory -->\\n      <div style=\\"background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 16px 20px; margin-top: 26px;\\">\\n        <h3 style=\\"margin-top: 0; color: #991b1b; font-size: 15px; display: flex; align-items: center; gap: 6px;\\">\\n          <span>\u26A0\uFE0F</span> Important Anti-Fraud &amp; Candidate Security Advisory\\n        </h3>\\n        <p style=\\"margin: 0; font-size: 13.5px; color: #7f1d1d; line-height: 1.65;\\">\\n          <b>")
+    ; __append("\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\" style=\\"display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; text-decoration: none; color: #16a34a; font-weight: 600; font-size: 13.5px;\\">\\n                <span style=\\"font-size: 18px;\\">\u{1F4AC}</span>\\n                <span>Join Official WhatsApp Channel</span>\\n              </a>\\n            </div>\\n          </div>\\n          <div style=\\"font-size: 12px; color: #15803d;\\">\\n            \u2705 100% Free &amp; Verified Government Job Alerts\\n          </div>\\n        </div>\\n\\n        <!-- Card 3: Support Hours & Guidelines -->\\n        <div style=\\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;\\">\\n          <div>\\n            <div style=\\"font-size: 24px; margin-bottom: 6px;\\">\u23F1\uFE0F</div>\\n            <h2 style=\\"font-size: 16px; color: #0f172a; margin: 0 0 6px 0; font-weight: 700;\\">\\n              Helpdesk Response Timetable\\n            </h2>\\n            <ul style=\\"padding-left: 18px; margin: 0 0 12px 0; font-size: 13px; color: #475569; line-height: 1.6;\\">\\n              <li><b>Review Timelines:</b> Within 24 to 48 business hours.</li>\\n              <li><b>Working Schedule:</b> Monday to Saturday (10:00 AM \u2013 6:00 PM IST).</li>\\n              <li><b>Queries Handled:</b> Typographical error corrections, broken official links, date verification.</li>\\n            </ul>\\n          </div>\\n          <div style=\\"background: #e2e8f0; border-radius: 4px; padding: 8px 10px; font-size: 12px; color: #334155;\\">\\n            \u{1F4A1} Quick Answer Needed? Visit our <a href=\\"/faq\\" style=\\"color: var(--primary-red); font-weight: 700;\\">FAQ Directory \u2192</a>\\n          </div>\\n        </div>\\n\\n      </div>\\n\\n      <!-- Quick Message Composer -->\\n      <div style=\\"background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 22px 20px; margin: 26px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04);\\">\\n        <h2 style=\\"color: var(--primary-red); font-size: 17px; margin-top: 0; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;\\">\\n          <span>\u{1F4DD}</span> Send a Direct Message to Our Editorial Desk\\n        </h2>\\n        <p style=\\"font-size: 13.5px; color: #64748b; margin-top: 0; margin-bottom: 18px;\\">\\n          Fill out the details below. Clicking \\"Compose Email\\" will open your email application addressed directly to our helpdesk with your message formatted.\\n        </p>\\n\\n        <form id=\\"contactHelpdeskForm\\" onsubmit=\\"handleContactSubmit(event)\\">\\n          <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;\\">\\n            <div>\\n              <label for=\\"contact_name\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Your Name *</label>\\n              <input type=\\"text\\" id=\\"contact_name\\" class=\\"form-control\\" placeholder=\\"e.g. Rahul Sharma\\" required style=\\"width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;\\">\\n            </div>\\n            <div>\\n              <label for=\\"contact_subject_type\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Reason for Contact *</label>\\n              <select id=\\"contact_subject_type\\" class=\\"form-control\\" style=\\"width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;\\">\\n                <option value=\\"Correction Request / Typo\\">Report Typo / Date Discrepancy</option>\\n                <option value=\\"General Query regarding Job Post\\">General Query regarding Job Post</option>\\n                <option value=\\"Broken Official Link Report\\">Report Broken Government Link</option>\\n                <option value=\\"Website Feedback & Suggestion\\">Website Feedback &amp; Suggestion</option>\\n                <option value=\\"Other Inquiries\\">Other Inquiries</option>\\n              </select>\\n            </div>\\n          </div>\\n\\n          <div style=\\"margin-bottom: 14px;\\">\\n            <label for=\\"contact_exam_name\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Exam Name / Notification URL (Optional)</label>\\n            <input type=\\"text\\" id=\\"contact_exam_name\\" class=\\"form-control\\" placeholder=\\"e.g. SSC CGL 2026 or Page Link\\" style=\\"width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;\\">\\n          </div>\\n\\n          <div style=\\"margin-bottom: 18px;\\">\\n            <label for=\\"contact_message\\" style=\\"display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;\\">Your Message / Description *</label>\\n            <textarea id=\\"contact_message\\" rows=\\"4\\" class=\\"form-control\\" placeholder=\\"Please describe your query or report clearly...\\" required style=\\"width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box; font-family: inherit;\\"></textarea>\\n          </div>\\n\\n          <div style=\\"display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;\\">\\n            <button type=\\"submit\\" class=\\"btn btn-primary\\" style=\\"background: var(--primary-red); border-color: var(--primary-red); padding: 10px 22px; font-size: 14.5px; font-weight: 700; cursor: pointer;\\">\\n              \u{1F680} Compose &amp; Send to Helpdesk\\n            </button>\\n            <span style=\\"font-size: 12.5px; color: #64748b;\\">\\n              Direct Email: <!--email_off-->contact@odishaaspirants.com<!--/email_off-->\\n            </span>\\n          </div>\\n        </form>\\n      </div>\\n\\n      <!-- Reporting Typo Instructions -->\\n      <h2 style=\\"color: var(--primary-red); font-size: 17px; margin-top: 26px; margin-bottom: 10px;\\">\\n        \u{1F50D} Guidelines for Reporting Typographical Corrections\\n      </h2>\\n      <p style=\\"margin-top: 0; font-size: 13.5px;\\">\\n        To ensure prompt editorial review, please include the reference URL of the official government employment gazette or departmental PDF bulletin (.gov.in / .nic.in). Our research team verifies all submissions against statutory gazettes.\\n      </p>\\n\\n      <!-- Anti-Fraud & Scam Advisory -->\\n      <div style=\\"background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 16px 20px; margin-top: 26px;\\">\\n        <h3 style=\\"margin-top: 0; color: #991b1b; font-size: 15px; display: flex; align-items: center; gap: 6px;\\">\\n          <span>\u26A0\uFE0F</span> Important Anti-Fraud &amp; Candidate Security Advisory\\n        </h3>\\n        <p style=\\"margin: 0; font-size: 13.5px; color: #7f1d1d; line-height: 1.65;\\">\\n          <b>")
     ; __append(escapeFn( portalName ))
     ; __append(" is a 100% free informational portal and never asks for money, application fees, or OTPs from candidates.</b> \\n          We do not sell recruitment forms or provide appointment guarantees. If any individual contacts you demanding money claiming to represent ")
     ; __append(escapeFn( portalName ))
-    ; __append(", please recognize it as an unauthorized fraud and report it immediately to our official email (<!--email_off-->contact.govtexamzone@gmail.com<!--/email_off-->) and your local cybercrime authority.\\n        </p>\\n      </div>\\n\\n    </div>\\n  </div>\\n</main>\\n\\n<script>\\nfunction copyContactEmail() {\\n  var email = \\"contact.govtexamzone@gmail.com\\";\\n  if (navigator.clipboard && navigator.clipboard.writeText) {\\n    navigator.clipboard.writeText(email).then(function() {\\n      var btn = document.getElementById(\\"copyEmailBtn\\");\\n      if (btn) {\\n        var orig = btn.innerHTML;\\n        btn.innerHTML = \\"\u2705 Copied!\\";\\n        setTimeout(function() { btn.innerHTML = orig; }, 2000);\\n      }\\n      var toast = document.getElementById(\\"toast\\");\\n      if (toast) {\\n        toast.innerText = \\"Email copied to clipboard: \\" + email;\\n        toast.className = \\"toast-msg show\\";\\n        setTimeout(function() { toast.className = toast.className.replace(\\"show\\", \\"\\"); }, 2500);\\n      }\\n    });\\n  } else {\\n    prompt(\\"Copy email address:\\", email);\\n  }\\n}\\n\\nfunction handleContactSubmit(e) {\\n  e.preventDefault();\\n  var name = document.getElementById(\\"contact_name\\").value.trim();\\n  var reason = document.getElementById(\\"contact_subject_type\\").value;\\n  var exam = document.getElementById(\\"contact_exam_name\\").value.trim();\\n  var msg = document.getElementById(\\"contact_message\\").value.trim();\\n\\n  var subject = encodeURIComponent(\\"[\\" + reason + \\"] \\" + (exam ? \\"- \\" + exam : \\"\\") + \\" from \\" + name);\\n  var body = encodeURIComponent(\\n    \\"Dear Govt Exam Zone Helpdesk,\\\\n\\\\n\\" +\\n    msg + \\"\\\\n\\\\n\\" +\\n    (exam ? \\"Referenced Notification / URL: \\" + exam + \\"\\\\n\\" : \\"\\") +\\n    \\"Sender Name: \\" + name + \\"\\\\n\\"\\n  );\\n\\n  window.location.href = \\"mailto:contact.govtexamzone@gmail.com?subject=\\" + subject + \\"&body=\\" + body;\\n}\\n</script>\\n\\n")
+    ; __append(", please recognize it as an unauthorized fraud and report it immediately to our official email (<!--email_off-->contact@odishaaspirants.com<!--/email_off-->) and your local cybercrime authority.\\n        </p>\\n      </div>\\n\\n    </div>\\n  </div>\\n</main>\\n\\n<script>\\nfunction copyContactEmail() {\\n  var email = \\"contact@odishaaspirants.com\\";\\n  if (navigator.clipboard && navigator.clipboard.writeText) {\\n    navigator.clipboard.writeText(email).then(function() {\\n      var btn = document.getElementById(\\"copyEmailBtn\\");\\n      if (btn) {\\n        var orig = btn.innerHTML;\\n        btn.innerHTML = \\"\u2705 Copied!\\";\\n        setTimeout(function() { btn.innerHTML = orig; }, 2000);\\n      }\\n      var toast = document.getElementById(\\"toast\\");\\n      if (toast) {\\n        toast.innerText = \\"Email copied to clipboard: \\" + email;\\n        toast.className = \\"toast-msg show\\";\\n        setTimeout(function() { toast.className = toast.className.replace(\\"show\\", \\"\\"); }, 2500);\\n      }\\n    });\\n  } else {\\n    prompt(\\"Copy email address:\\", email);\\n  }\\n}\\n\\nfunction handleContactSubmit(e) {\\n  e.preventDefault();\\n  var name = document.getElementById(\\"contact_name\\").value.trim();\\n  var reason = document.getElementById(\\"contact_subject_type\\").value;\\n  var exam = document.getElementById(\\"contact_exam_name\\").value.trim();\\n  var msg = document.getElementById(\\"contact_message\\").value.trim();\\n\\n  var subject = encodeURIComponent(\\"[\\" + reason + \\"] \\" + (exam ? \\"- \\" + exam : \\"\\") + \\" from \\" + name);\\n  var body = encodeURIComponent(\\n    \\"Dear Odisha Aspirants Helpdesk,\\\\n\\\\n\\" +\\n    msg + \\"\\\\n\\\\n\\" +\\n    (exam ? \\"Referenced Notification / URL: \\" + exam + \\"\\\\n\\" : \\"\\") +\\n    \\"Sender Name: \\" + name + \\"\\\\n\\"\\n  );\\n\\n  window.location.href = \\"mailto:contact@odishaaspirants.com?subject=\\" + subject + \\"&body=\\" + body;\\n}\\n</script>\\n\\n")
     ; __append( include('../partials/footer') )
     ; __append("\\n")
   }
@@ -80680,18 +80680,18 @@ var require_templateEngine = __commonJS({
     ; __append("\\",\\n  \\"hiringOrganization\\": {\\n    \\"@type\\": \\"Organization\\",\\n    \\"name\\": \\"")
     ; __append(escapeFn( (post.department || 'Government Recruitment Board').replace(/"/g, '\\\\"') ))
     ; __append("\\",\\n    \\"sameAs\\": \\"")
-    ; __append(escapeFn( post.official_website_url || ((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://govtexamzone.com') 
+    ; __append(escapeFn( post.official_website_url || ((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://odishaaspirants.com') 
 ))
     ; __append("\\"\\n  },\\n  \\"author\\": {\\n    \\"@type\\": \\"Organization\\",\\n    \\"name\\": ")
-    ; __append( JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone') )
+    ; __append( JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants') )
     ; __append(",\\n    \\"url\\": ")
-    ; __append( JSON.stringify(((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://govtexamzone.com')) 
+    ; __append( JSON.stringify(((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://odishaaspirants.com')) 
 )
     ; __append("\\n  },\\n  \\"jobLocation\\": {\\n    \\"@type\\": \\"Place\\",\\n    \\"address\\": {\\n      \\"@type\\": \\"PostalAddress\\",\\n      \\"addressCountry\\": \\"IN\\"\\n    }\\n  },\\n  \\"employmentType\\": \\"FULL_TIME\\"\\n}\\n</script>\\n\\n<!-- Schema.org JSON-LD BreadcrumbList -->\\n<script type=\\"application/ld+json\\">\\n")
     ; 
   const detailDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 
     ; __append("\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@type\\": \\"BreadcrumbList\\",\\n  \\"itemListElement\\": [\\n    {\\n      \\"@type\\": \\"ListItem\\",\\n      \\"position\\": 1,\\n      \\"name\\": \\"Home\\",\\n      \\"item\\": \\"")
     ; __append(escapeFn( detailDomain ))
@@ -80722,7 +80722,7 @@ var require_templateEngine = __commonJS({
     ; __append("</h1>\\n\\n            <div class=\\"gez-article-meta\\">\\n              <span class=\\"gez-meta-byline\\">\\n                by <a href=\\"")
     ; __append(escapeFn( author.slug ? '/author/' + author.slug : '/authors' ))
     ; __append("\\">")
-    ; __append(escapeFn( author.name || 'Govt Exam Zone Team' ))
+    ; __append(escapeFn( author.name || 'Odisha Aspirants Team' ))
     ; __append("</a>\\n              </span>\\n              <span class=\\"gez-meta-date\\">\\n                <svg width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"2.2\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" aria-hidden=\\"true\\">\\n                  <rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"/>\\n                  <line x1=\\"16\\" y1=\\"2\\" x2=\\"16\\" y2=\\"6\\"/>\\n                  <line x1=\\"8\\" y1=\\"2\\" x2=\\"8\\" y2=\\"6\\"/>\\n                  <line x1=\\"3\\" y1=\\"10\\" x2=\\"21\\" y2=\\"10\\"/>\\n                </svg>\\n                ")
     ; __append(escapeFn( post.post_date || formatDate(post.created_at) ))
     ; __append("\\n              </span>\\n              ")
@@ -80735,7 +80735,7 @@ var require_templateEngine = __commonJS({
     ; __append( include('../partials/detail-body') )
     ; __append("\\n          </div>\\n\\n          <!-- Social Share Bar (WhatsApp & Telegram) -->\\n          ")
     ; 
-            const sharePageUrl = typeof fullUrl !== 'undefined' ? fullUrl : ('https://govtexamzone.com/post/' + post.slug);
+            const sharePageUrl = typeof fullUrl !== 'undefined' ? fullUrl : ('https://odishaaspirants.com/post/' + post.slug);
           
     ; __append("\\n          <div class=\\"gez-share-bar\\">\\n            <span class=\\"gez-share-label\\">Share:</span>\\n            <a\\n              href=\\"https://api.whatsapp.com/send?text=")
     ; __append(escapeFn( encodeURIComponent(post.title + ' - ' + sharePageUrl) ))
@@ -80744,7 +80744,7 @@ var require_templateEngine = __commonJS({
     ; __append("&text=")
     ; __append(escapeFn( encodeURIComponent(post.title) ))
     ; __append("\\"\\n              target=\\"_blank\\"\\n              rel=\\"noopener noreferrer\\"\\n              class=\\"gez-share-btn gez-share-tg\\"\\n            >\\n              Telegram\\n            </a>\\n          </div>\\n\\n          <!-- Join Community Alerts CTA Box -->\\n          <div class=\\"gez-cta-box\\">\\n            <h3>Get Instant Govt Exam &amp; Result Alerts</h3>\\n            <p>Join our official Telegram &amp; WhatsApp channels for fastest job notifications, admit cards, and cutoff updates.</p>\\n            <div style=\\"display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;\\">\\n              <a href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' 
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' 
 ))
     ; __append("\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\" class=\\"gez-btn-cta\\" style=\\"background: #229ED9;\\">\\n                \u2708\uFE0F Join Telegram Channel\\n              </a>\\n              <a href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' 
@@ -80843,7 +80843,7 @@ var require_templateEngine = __commonJS({
     ; __append("\\n\\n    <div class=\\"detail-dates-strip\\">\\n      <span class=\\"info-label\\">Post Date / Update : </span><b class=\\"important-val-postdate\\">")
     ; __append(escapeFn( post.post_date || formatDate(post.created_at) ))
     ; __append("</b>\\n    </div>\\n\\n    <!-- Social Connect Strip (Only Telegram & WhatsApp on Post Details) -->\\n    <div class=\\"social-bar\\" style=\\"margin: 12px 0 14px 0;\\">\\n      <a href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' 
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' 
 ))
     ; __append("\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\" class=\\"social-btn telegram\\">Join Telegram Channel</a>\\n      <a href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' 
@@ -80907,18 +80907,18 @@ var require_templateEngine = __commonJS({
     ; __append("\\",\\n  \\"hiringOrganization\\": {\\n    \\"@type\\": \\"Organization\\",\\n    \\"name\\": \\"")
     ; __append(escapeFn( (post.department || 'Government Recruitment Board').replace(/"/g, '\\\\"') ))
     ; __append("\\",\\n    \\"sameAs\\": \\"")
-    ; __append(escapeFn( post.official_website_url || ((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://govtexamzone.com') 
+    ; __append(escapeFn( post.official_website_url || ((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://odishaaspirants.com') 
 ))
     ; __append("\\"\\n  },\\n  \\"author\\": {\\n    \\"@type\\": \\"Organization\\",\\n    \\"name\\": ")
-    ; __append( JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone') )
+    ; __append( JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants') )
     ; __append(",\\n    \\"url\\": ")
-    ; __append( JSON.stringify(((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://govtexamzone.com')) 
+    ; __append( JSON.stringify(((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://odishaaspirants.com')) 
 )
     ; __append("\\n  },\\n  \\"jobLocation\\": {\\n    \\"@type\\": \\"Place\\",\\n    \\"address\\": {\\n      \\"@type\\": \\"PostalAddress\\",\\n      \\"addressCountry\\": \\"IN\\"\\n    }\\n  },\\n  \\"employmentType\\": \\"FULL_TIME\\"\\n}\\n</script>\\n\\n<!-- Schema.org JSON-LD BreadcrumbList -->\\n<script type=\\"application/ld+json\\">\\n")
     ; 
   const detailDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 
     ; __append("\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@type\\": \\"BreadcrumbList\\",\\n  \\"itemListElement\\": [\\n    {\\n      \\"@type\\": \\"ListItem\\",\\n      \\"position\\": 1,\\n      \\"name\\": \\"Home\\",\\n      \\"item\\": \\"")
     ; __append(escapeFn( detailDomain ))
@@ -80949,7 +80949,7 @@ var require_templateEngine = __commonJS({
     ; __append("</h1>\\n\\n            <div class=\\"gez-article-meta\\">\\n              <span class=\\"gez-meta-byline\\">\\n                by <a href=\\"")
     ; __append(escapeFn( author.slug ? '/author/' + author.slug : '/authors' ))
     ; __append("\\">")
-    ; __append(escapeFn( author.name || 'Govt Exam Zone Team' ))
+    ; __append(escapeFn( author.name || 'Odisha Aspirants Team' ))
     ; __append("</a>\\n              </span>\\n              <span class=\\"gez-meta-date\\">\\n                <svg width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"2.2\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" aria-hidden=\\"true\\">\\n                  <rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"/>\\n                  <line x1=\\"16\\" y1=\\"2\\" x2=\\"16\\" y2=\\"6\\"/>\\n                  <line x1=\\"8\\" y1=\\"2\\" x2=\\"8\\" y2=\\"6\\"/>\\n                  <line x1=\\"3\\" y1=\\"10\\" x2=\\"21\\" y2=\\"10\\"/>\\n                </svg>\\n                ")
     ; __append(escapeFn( post.post_date || formatDate(post.created_at) ))
     ; __append("\\n              </span>\\n              ")
@@ -80962,7 +80962,7 @@ var require_templateEngine = __commonJS({
     ; __append( include('../partials/detail-body') )
     ; __append("\\n          </div>\\n\\n          <!-- Social Share Bar (WhatsApp & Telegram) -->\\n          ")
     ; 
-            const sharePageUrl = typeof fullUrl !== 'undefined' ? fullUrl : ('https://govtexamzone.com/post/' + post.slug);
+            const sharePageUrl = typeof fullUrl !== 'undefined' ? fullUrl : ('https://odishaaspirants.com/post/' + post.slug);
           
     ; __append("\\n          <div class=\\"gez-share-bar\\">\\n            <span class=\\"gez-share-label\\">Share:</span>\\n            <a\\n              href=\\"https://api.whatsapp.com/send?text=")
     ; __append(escapeFn( encodeURIComponent(post.title + ' - ' + sharePageUrl) ))
@@ -80971,7 +80971,7 @@ var require_templateEngine = __commonJS({
     ; __append("&text=")
     ; __append(escapeFn( encodeURIComponent(post.title) ))
     ; __append("\\"\\n              target=\\"_blank\\"\\n              rel=\\"noopener noreferrer\\"\\n              class=\\"gez-share-btn gez-share-tg\\"\\n            >\\n              Telegram\\n            </a>\\n          </div>\\n\\n          <!-- Join Community Alerts CTA Box -->\\n          <div class=\\"gez-cta-box\\">\\n            <h3>Get Instant Govt Exam &amp; Result Alerts</h3>\\n            <p>Join our official Telegram &amp; WhatsApp channels for fastest job notifications, admit cards, and cutoff updates.</p>\\n            <div style=\\"display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;\\">\\n              <a href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' 
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' 
 ))
     ; __append("\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\" class=\\"gez-btn-cta\\" style=\\"background: #229ED9;\\">\\n                \u2708\uFE0F Join Telegram Channel\\n              </a>\\n              <a href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' 
@@ -81070,7 +81070,7 @@ var require_templateEngine = __commonJS({
     ; __append("\\n\\n    <div class=\\"detail-dates-strip\\">\\n      <span class=\\"info-label\\">Post Date / Update : </span><b class=\\"important-val-postdate\\">")
     ; __append(escapeFn( post.post_date || formatDate(post.created_at) ))
     ; __append("</b>\\n    </div>\\n\\n    <!-- Social Connect Strip (Only Telegram & WhatsApp on Post Details) -->\\n    <div class=\\"social-bar\\" style=\\"margin: 12px 0 14px 0;\\">\\n      <a href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' 
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' 
 ))
     ; __append("\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\" class=\\"social-btn telegram\\">Join Telegram Channel</a>\\n      <a href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' 
@@ -81115,9 +81115,9 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
-  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
-  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+    : 'https://odishaaspirants.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@type\\": \\"BreadcrumbList\\",\\n  \\"itemListElement\\": [\\n    {\\n      \\"@type\\": \\"ListItem\\",\\n      \\"position\\": 1,\\n      \\"name\\": \\"Home\\",\\n      \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -81153,9 +81153,9 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
-  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
-  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+    : 'https://odishaaspirants.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@type\\": \\"BreadcrumbList\\",\\n  \\"itemListElement\\": [\\n    {\\n      \\"@type\\": \\"ListItem\\",\\n      \\"position\\": 1,\\n      \\"name\\": \\"Home\\",\\n      \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -81227,9 +81227,9 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
-  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
-  const supportEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+    : 'https://odishaaspirants.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants';
+  const supportEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList & FAQPage -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@graph\\": [\\n    {\\n      \\"@type\\": \\"BreadcrumbList\\",\\n      \\"itemListElement\\": [\\n        {\\n          \\"@type\\": \\"ListItem\\",\\n          \\"position\\": 1,\\n          \\"name\\": \\"Home\\",\\n          \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -81239,7 +81239,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( portalName ))
     ; __append(" and what services are provided?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"")
     ; __append(escapeFn( portalName ))
-    ; __append(" (govtexamzone.com) is an independent public educational and recruitment information portal. We provide authentic, prompt alerts for Central and State Government Jobs (Sarkari Naukri), Exam Notifications, Online Application Forms, Hall Tickets/Admit Cards, Official Answer Keys, Syllabus, and Exam Results.\\"\\n          }\\n        },\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"Are notifications and services on ")
+    ; __append(" (odishaaspirants.com) is an independent public educational and recruitment information portal. We provide authentic, prompt alerts for Central and State Government Jobs (Sarkari Naukri), Exam Notifications, Online Application Forms, Hall Tickets/Admit Cards, Official Answer Keys, Syllabus, and Exam Results.\\"\\n          }\\n        },\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"Are notifications and services on ")
     ; __append(escapeFn( portalName ))
     ; __append(" completely free?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"Yes, 100% free. ")
     ; __append(escapeFn( portalName ))
@@ -81263,7 +81263,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( portalName ))
     ; __append(" and what services are provided?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            <b>")
     ; __append(escapeFn( portalName ))
-    ; __append(" (govtexamzone.com)</b> is an independent public educational portal designed to help job aspirants track Indian Government Jobs (Sarkari Naukri), competitive exam alerts, online application forms, admit cards, answer keys, syllabus, and results across all Central and State government commissions.\\n          </div>\\n        </details>\\n\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q2: Are all alerts and notifications on ")
+    ; __append(" (odishaaspirants.com)</b> is an independent public educational portal designed to help job aspirants track Indian Government Jobs (Sarkari Naukri), competitive exam alerts, online application forms, admit cards, answer keys, syllabus, and results across all Central and State government commissions.\\n          </div>\\n        </details>\\n\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q2: Are all alerts and notifications on ")
     ; __append(escapeFn( portalName ))
     ; __append(" free of charge?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            <b>Yes, completely 100% free.</b> ")
     ; __append(escapeFn( portalName ))
@@ -81274,7 +81274,7 @@ var require_templateEngine = __commonJS({
     ; __append(" an official government website?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            No. ")
     ; __append(escapeFn( portalName ))
     ; __append(" is an <b>independent public educational news portal</b>. We are not affiliated with, sponsored by, or operated by any government department or recruitment commission. All information is published solely for educational and guidance purposes.\\n          </div>\\n        </details>\\n      </div>\\n\\n      <!-- Category 2: Online Application & Eligibility -->\\n      <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 26px 0 14px 0; border-bottom: 2px solid #fee2e2; padding-bottom: 6px; display: flex; align-items: center; gap: 8px;\\">\\n        <span>\u{1F4DD}</span> 2. Online Application Forms &amp; Eligibility\\n      </h2>\\n\\n      <div class=\\"faq-accordion-group\\" style=\\"display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;\\">\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q5: How can I apply online for a government recruitment vacancy?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            Follow these simple steps:\\n            <ol style=\\"margin: 8px 0 0 18px; padding-left: 0;\\">\\n              <li>Open the desired post from the <b>Latest Jobs</b> category.</li>\\n              <li>Read the detailed educational qualification, age limits, post vacancy table, and fee structure.</li>\\n              <li>Navigate to the <b>Important Links</b> table at the bottom of the article.</li>\\n              <li>Click on the <b>Apply Online (Registration / Login)</b> link to access the official government application portal directly.</li>\\n            </ol>\\n          </div>\\n        </details>\\n\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q6: How do I calculate my age as on the notification cutoff date?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            In government exams, age is calculated as on the specific reference cutoff date specified in the official notification (usually 1st January, 1st July, or 1st August). Your Date of Birth as printed on your 10th / High School Certificate is taken as conclusive legal proof.\\n          </div>\\n        </details>\\n      </div>\\n\\n      <!-- Category 3: Admit Cards & Exam Results -->\\n      <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 26px 0 14px 0; border-bottom: 2px solid #fee2e2; padding-bottom: 6px; display: flex; align-items: center; gap: 8px;\\">\\n        <span>\u{1F3AB}</span> 3. Admit Cards &amp; Examination Results\\n      </h2>\\n\\n      <div class=\\"faq-accordion-group\\" style=\\"display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;\\">\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q7: How can I download my Admit Card or Hall Ticket?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            Go to the <b>Admit Card</b> section on our homepage. Click on your respective examination link and choose an active server link (e.g. Server I, Server II). Enter your Application Number / Roll Number and Date of Birth / Password to generate and print your official hall ticket.\\n          </div>\\n        </details>\\n\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q8: What should I do if the official result or admit card link is not opening?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            When results or hall tickets are announced for major exams (e.g. SSC CGL, UP Police, Railway ALP, CTET), lakhs of candidates access the official servers simultaneously, causing temporary slowdowns. Try refreshing after a few minutes, check alternate mirror links provided in our table, or access the portal during non-peak hours.\\n          </div>\\n        </details>\\n      </div>\\n\\n      <!-- Category 4: Alerts & Helpdesk -->\\n      <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 26px 0 14px 0; border-bottom: 2px solid #fee2e2; padding-bottom: 6px; display: flex; align-items: center; gap: 8px;\\">\\n        <span>\u{1F514}</span> 4. Real-Time Alerts &amp; Candidate Support\\n      </h2>\\n\\n      <div class=\\"faq-accordion-group\\" style=\\"display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;\\">\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q9: How can I receive instant alerts as soon as a new notification is released?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            Join our official verified social channels:\\n            <ul style=\\"margin: 8px 0 0 18px; padding-left: 0;\\">\\n              <li><a href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' 
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' 
 ))
     ; __append("\\" target=\\"_blank\\" rel=\\"noopener\\" style=\\"color: #0284c7; font-weight: bold;\\">\u2708\uFE0F Join Official Telegram Channel</a></li>\\n              <li><a href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' 
@@ -81299,9 +81299,9 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
-  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
-  const supportEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+    : 'https://odishaaspirants.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants';
+  const supportEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList & FAQPage -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@graph\\": [\\n    {\\n      \\"@type\\": \\"BreadcrumbList\\",\\n      \\"itemListElement\\": [\\n        {\\n          \\"@type\\": \\"ListItem\\",\\n          \\"position\\": 1,\\n          \\"name\\": \\"Home\\",\\n          \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -81311,7 +81311,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( portalName ))
     ; __append(" and what services are provided?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"")
     ; __append(escapeFn( portalName ))
-    ; __append(" (govtexamzone.com) is an independent public educational and recruitment information portal. We provide authentic, prompt alerts for Central and State Government Jobs (Sarkari Naukri), Exam Notifications, Online Application Forms, Hall Tickets/Admit Cards, Official Answer Keys, Syllabus, and Exam Results.\\"\\n          }\\n        },\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"Are notifications and services on ")
+    ; __append(" (odishaaspirants.com) is an independent public educational and recruitment information portal. We provide authentic, prompt alerts for Central and State Government Jobs (Sarkari Naukri), Exam Notifications, Online Application Forms, Hall Tickets/Admit Cards, Official Answer Keys, Syllabus, and Exam Results.\\"\\n          }\\n        },\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"Are notifications and services on ")
     ; __append(escapeFn( portalName ))
     ; __append(" completely free?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"Yes, 100% free. ")
     ; __append(escapeFn( portalName ))
@@ -81335,7 +81335,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( portalName ))
     ; __append(" and what services are provided?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            <b>")
     ; __append(escapeFn( portalName ))
-    ; __append(" (govtexamzone.com)</b> is an independent public educational portal designed to help job aspirants track Indian Government Jobs (Sarkari Naukri), competitive exam alerts, online application forms, admit cards, answer keys, syllabus, and results across all Central and State government commissions.\\n          </div>\\n        </details>\\n\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q2: Are all alerts and notifications on ")
+    ; __append(" (odishaaspirants.com)</b> is an independent public educational portal designed to help job aspirants track Indian Government Jobs (Sarkari Naukri), competitive exam alerts, online application forms, admit cards, answer keys, syllabus, and results across all Central and State government commissions.\\n          </div>\\n        </details>\\n\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q2: Are all alerts and notifications on ")
     ; __append(escapeFn( portalName ))
     ; __append(" free of charge?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            <b>Yes, completely 100% free.</b> ")
     ; __append(escapeFn( portalName ))
@@ -81346,7 +81346,7 @@ var require_templateEngine = __commonJS({
     ; __append(" an official government website?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            No. ")
     ; __append(escapeFn( portalName ))
     ; __append(" is an <b>independent public educational news portal</b>. We are not affiliated with, sponsored by, or operated by any government department or recruitment commission. All information is published solely for educational and guidance purposes.\\n          </div>\\n        </details>\\n      </div>\\n\\n      <!-- Category 2: Online Application & Eligibility -->\\n      <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 26px 0 14px 0; border-bottom: 2px solid #fee2e2; padding-bottom: 6px; display: flex; align-items: center; gap: 8px;\\">\\n        <span>\u{1F4DD}</span> 2. Online Application Forms &amp; Eligibility\\n      </h2>\\n\\n      <div class=\\"faq-accordion-group\\" style=\\"display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;\\">\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q5: How can I apply online for a government recruitment vacancy?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            Follow these simple steps:\\n            <ol style=\\"margin: 8px 0 0 18px; padding-left: 0;\\">\\n              <li>Open the desired post from the <b>Latest Jobs</b> category.</li>\\n              <li>Read the detailed educational qualification, age limits, post vacancy table, and fee structure.</li>\\n              <li>Navigate to the <b>Important Links</b> table at the bottom of the article.</li>\\n              <li>Click on the <b>Apply Online (Registration / Login)</b> link to access the official government application portal directly.</li>\\n            </ol>\\n          </div>\\n        </details>\\n\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q6: How do I calculate my age as on the notification cutoff date?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            In government exams, age is calculated as on the specific reference cutoff date specified in the official notification (usually 1st January, 1st July, or 1st August). Your Date of Birth as printed on your 10th / High School Certificate is taken as conclusive legal proof.\\n          </div>\\n        </details>\\n      </div>\\n\\n      <!-- Category 3: Admit Cards & Exam Results -->\\n      <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 26px 0 14px 0; border-bottom: 2px solid #fee2e2; padding-bottom: 6px; display: flex; align-items: center; gap: 8px;\\">\\n        <span>\u{1F3AB}</span> 3. Admit Cards &amp; Examination Results\\n      </h2>\\n\\n      <div class=\\"faq-accordion-group\\" style=\\"display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;\\">\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q7: How can I download my Admit Card or Hall Ticket?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            Go to the <b>Admit Card</b> section on our homepage. Click on your respective examination link and choose an active server link (e.g. Server I, Server II). Enter your Application Number / Roll Number and Date of Birth / Password to generate and print your official hall ticket.\\n          </div>\\n        </details>\\n\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q8: What should I do if the official result or admit card link is not opening?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            When results or hall tickets are announced for major exams (e.g. SSC CGL, UP Police, Railway ALP, CTET), lakhs of candidates access the official servers simultaneously, causing temporary slowdowns. Try refreshing after a few minutes, check alternate mirror links provided in our table, or access the portal during non-peak hours.\\n          </div>\\n        </details>\\n      </div>\\n\\n      <!-- Category 4: Alerts & Helpdesk -->\\n      <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 26px 0 14px 0; border-bottom: 2px solid #fee2e2; padding-bottom: 6px; display: flex; align-items: center; gap: 8px;\\">\\n        <span>\u{1F514}</span> 4. Real-Time Alerts &amp; Candidate Support\\n      </h2>\\n\\n      <div class=\\"faq-accordion-group\\" style=\\"display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;\\">\\n        <details class=\\"faq-details\\" style=\\"border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;\\">\\n          <summary style=\\"font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;\\">\\n            Q9: How can I receive instant alerts as soon as a new notification is released?\\n          </summary>\\n          <div style=\\"padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n            Join our official verified social channels:\\n            <ul style=\\"margin: 8px 0 0 18px; padding-left: 0;\\">\\n              <li><a href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' 
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' 
 ))
     ; __append("\\" target=\\"_blank\\" rel=\\"noopener\\" style=\\"color: #0284c7; font-weight: bold;\\">\u2708\uFE0F Join Official Telegram Channel</a></li>\\n              <li><a href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' 
@@ -81371,7 +81371,7 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList, WebApplication, and FAQPage -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@graph\\": [\\n    {\\n      \\"@type\\": \\"BreadcrumbList\\",\\n      \\"itemListElement\\": [\\n        {\\n          \\"@type\\": \\"ListItem\\",\\n          \\"position\\": 1,\\n          \\"name\\": \\"Home\\",\\n          \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -81381,7 +81381,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( siteDomain ))
     ; __append("/tools/image-resizer\\"\\n        }\\n      ]\\n    },\\n    {\\n      \\"@type\\": \\"WebApplication\\",\\n      \\"name\\": \\"Government Exam Photo & Signature Resizer and Name/Date Maker 2026\\",\\n      \\"url\\": \\"")
     ; __append(escapeFn( siteDomain ))
-    ; __append("/tools/image-resizer\\",\\n      \\"applicationCategory\\": \\"MultimediaApplication\\",\\n      \\"operatingSystem\\": \\"All\\",\\n      \\"browserRequirements\\": \\"Requires JavaScript. Requires HTML5 Canvas.\\",\\n      \\"description\\": \\"Free online interactive image resizer, compressor (20-50 KB), and Date of Photo (DOP) maker for Sarkari online exam application forms.\\",\\n      \\"offers\\": {\\n        \\"@type\\": \\"Offer\\",\\n        \\"price\\": \\"0\\",\\n        \\"priceCurrency\\": \\"INR\\"\\n      }\\n    },\\n    {\\n      \\"@type\\": \\"FAQPage\\",\\n      \\"mainEntity\\": [\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"Is my photo uploaded or saved on any server?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"No. Your photo and signature are processed 100% locally in your own browser using HTML5 Canvas technology. No image data is ever transferred, uploaded, or stored on our servers, ensuring complete candidate privacy.\\"\\n          }\\n        },\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"How to add Date and Name on photo for UP Police and SSC forms?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"Simply check the box 'Add White Strip with Name & Date of Photo' in the left controls panel, enter your full name and Date of Photo (e.g., DD/MM/YYYY), and click 'Generate Resized Image'. The tool will automatically place the compliant white strip with black typography at the bottom of the photo.\\"\\n          }\\n        },\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"What is the recommended file format for Sarkari exam uploads?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"Almost all government portals require JPG or JPEG format. Our interactive resizer automatically outputs high-clarity JPEG files with customizable compression to hit the exact 20 KB to 50 KB requirement.\\"\\n          }\\n        }\\n      ]\\n    }\\n  ]\\n}\\n</script>\\n\\n<main class=\\"container tool-page-container\\">\\n  <!-- SEO & AdSense Compliant Breadcrumb -->\\n  <nav class=\\"tool-page-breadcrumb\\" aria-label=\\"Breadcrumb\\">\\n    <a href=\\"/\\">\u{1F3E0} Home</a>\\n    <span class=\\"crumb-sep\\">\xBB</span>\\n    <span>Candidate Utilities</span>\\n    <span class=\\"crumb-sep\\">\xBB</span>\\n    <span class=\\"crumb-active\\">Interactive Photo Resizer &amp; Name Maker</span>\\n  </nav>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 25px;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16.5px; line-height: 1.35; padding: 12px 18px;\\">\\n      Govt Exam Online Photo &amp; Signature Resizer / Name on Photo Tool 2026\\n    </h1>\\n\\n    <div style=\\"padding: 22px 25px;\\">\\n      <p style=\\"font-size: 14.5px; color: #374151; line-height: 1.65; margin-bottom: 20px;\\">\\n        Use this free online utility to crop, resize, compress to <b>20-50 KB / 10-20 KB</b>, and optionally add <b>Candidate Name &amp; Date of Photo (DOP)</b> to your passport photograph or signature for SSC, UPSC, UP Police, Railway, Banking, and State PSC online application forms.\\n      </p>\\n\\n      <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;\\">\\n        <!-- Left: Controls -->\\n        <div style=\\"background: #fdfae7; border: 2px solid #ffd480; padding: 20px; border-radius: 6px;\\">\\n          <h3 style=\\"color: var(--primary-red); margin-top: 0; font-size: 16px; margin-bottom: 15px;\\">\\n            1. Select File &amp; Preset\\n          </h3>\\n\\n          <div class=\\"form-group\\" style=\\"margin-bottom: 15px;\\">\\n            <label style=\\"display: block; font-weight: bold; margin-bottom: 5px;\\">Select Image File (JPG/PNG):</label>\\n            <input type=\\"file\\" id=\\"imageInput\\" accept=\\"image/*\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n          </div>\\n\\n          <div class=\\"form-group\\" style=\\"margin-bottom: 15px;\\">\\n            <label style=\\"display: block; font-weight: bold; margin-bottom: 5px;\\">Target Preset:</label>\\n            <select id=\\"presetSelect\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n              <option value=\\"passport\\">Passport Photograph (350 x 450 px, ~20-50 KB)</option>\\n              <option value=\\"signature\\">Candidate Signature (400 x 200 px, ~10-20 KB)</option>\\n              <option value=\\"custom\\">Custom Dimensions</option>\\n            </select>\\n          </div>\\n\\n          <div id=\\"customDimensions\\" style=\\"display: none; margin-bottom: 15px; grid-template-columns: 1fr 1fr; gap: 10px;\\">\\n            <div>\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Width (px):</label>\\n              <input type=\\"number\\" id=\\"customWidth\\" value=\\"350\\" class=\\"form-control\\">\\n            </div>\\n            <div>\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Height (px):</label>\\n              <input type=\\"number\\" id=\\"customHeight\\" value=\\"450\\" class=\\"form-control\\">\\n            </div>\\n          </div>\\n\\n          <hr style=\\"border: none; border-top: 1px solid #ffd480; margin: 15px 0;\\">\\n\\n          <h3 style=\\"color: #0000a0; font-size: 15px; margin-bottom: 10px;\\">\\n            2. Name &amp; Date on Photo (Optional)\\n          </h3>\\n          <p style=\\"font-size: 12px; color: #666; margin-bottom: 10px;\\">\\n            Required for UP Police, SSC, and special recruitment forms.\\n          </p>\\n\\n          <div style=\\"margin-bottom: 12px;\\">\\n            <label style=\\"display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: bold; font-size: 13.5px;\\">\\n              <input type=\\"checkbox\\" id=\\"addNameDate\\">\\n              <span>Add White Strip with Name &amp; Date of Photo</span>\\n            </label>\\n          </div>\\n\\n          <div id=\\"nameDateFields\\" style=\\"display: none; margin-bottom: 15px;\\">\\n            <div style=\\"margin-bottom: 10px;\\">\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Candidate Name (Uppercase):</label>\\n              <input type=\\"text\\" id=\\"candidateName\\" placeholder=\\"e.g. AMIT KUMAR\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n            </div>\\n            <div>\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Date of Photo (DOP):</label>\\n              <input type=\\"text\\" id=\\"photoDate\\" placeholder=\\"e.g. 03/10/2026\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n            </div>\\n          </div>\\n\\n          <div style=\\"margin-bottom: 20px;\\">\\n            <label style=\\"display: block; font-weight: bold; margin-bottom: 5px;\\">Quality / Compression:</label>\\n            <input type=\\"range\\" id=\\"qualityRange\\" min=\\"0.3\\" max=\\"1.0\\" step=\\"0.05\\" value=\\"0.85\\" style=\\"width: 100%;\\">\\n            <div style=\\"display: flex; justify-content: space-between; font-size: 11px; color: #666;\\">\\n              <span>Smaller File Size (Lower KB)</span>\\n              <span>Higher Quality</span>\\n            </div>\\n          </div>\\n\\n          <button type=\\"button\\" id=\\"processBtn\\" style=\\"width: 100%; background: var(--primary-red); color: #fff; font-weight: bold; font-size: 16px; padding: 12px; border: none; border-radius: 4px; cursor: pointer;\\">\\n            \u26A1 Generate Resized Image\\n          </button>\\n        </div>\\n\\n        <!-- Right: Preview & Download -->\\n        <div style=\\"background: #f8fafc; border: 2px dashed #cbd5e1; padding: 20px; border-radius: 6px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px;\\">\\n          <h3 style=\\"color: #1e293b; margin-top: 0; font-size: 16px; margin-bottom: 15px;\\">\\n            Live Image Preview\\n          </h3>\\n\\n          <div id=\\"previewContainer\\" style=\\"margin-bottom: 15px; max-width: 100%; overflow: auto;\\">\\n            <canvas id=\\"outputCanvas\\" style=\\"max-width: 100%; border: 1px solid #94a3b8; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1);\\"></canvas>\\n          </div>\\n\\n          <div id=\\"fileInfo\\" style=\\"font-size: 13px; font-weight: bold; color: #0284c7; margin-bottom: 15px; display: none;\\">\\n            Estimated Size: <span id=\\"sizeText\\">0 KB</span> | Dimensions: <span id=\\"dimText\\">0 x 0 px</span>\\n          </div>\\n\\n          <a id=\\"downloadBtn\\" href=\\"#\\" download=\\"gez_resized_photo.jpg\\" style=\\"display: none; background: #10b981; color: #fff; font-weight: bold; font-size: 16px; padding: 10px 24px; border-radius: 4px; text-decoration: none;\\">\\n            \u2B07\uFE0F Download Resized Image\\n          </a>\\n\\n          <p id=\\"placeholderText\\" style=\\"color: #94a3b8; font-size: 13.5px;\\">\\n            Upload an image from the left panel and click \\"Generate Resized Image\\" to preview here.\\n          </div>\\n        </div>\\n\\n        <!-- Rich Guide & AdSense Compliant Information -->\\n        <div style=\\"border-top: 1px solid #e2e8f0; padding-top: 25px; margin-top: 25px; color: #334155; line-height: 1.7; font-size: 14px;\\">\\n          <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 0 0 12px 0;\\">\\n            \u{1F4D6} How to Resize Photograph &amp; Signature in 4 Easy Steps\\n          </h2>\\n          <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 22px;\\">\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 1: Choose File</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Click \\"Select Image File\\" and choose your scanned photo or signature (JPG, JPEG, or PNG).</div>\\n            </div>\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 2: Select Preset</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Pick Passport (350x450 px) or Signature (400x200 px), or enter your custom width &amp; height.</div>\\n            </div>\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 3: Add Name &amp; Date</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Check the box if required (for UP Police, SSC) to automatically print the name &amp; DOP white strip.</div>\\n            </div>\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 4: Download</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Click \\"Generate Resized Image\\", check the live preview &amp; KB size, then hit \\"Download Resized Image\\".</div>\\n            </div>\\n          </div>\\n\\n          <div style=\\"background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 16px 20px; margin-bottom: 22px;\\">\\n            <h3 style=\\"color: #166534; font-size: 15px; margin: 0 0 6px 0;\\">\\n              \u{1F512} 100% Client-Side Privacy Guarantee\\n            </h3>\\n            <p style=\\"margin: 0; font-size: 13px; color: #1e3a24; line-height: 1.6;\\">\\n              Your personal photos and signatures are confidential. All resizing, cropping, and text rendering operations run <b>locally inside your web browser</b> via HTML5 Canvas. No image data is ever uploaded to, processed on, or stored in our cloud servers.\\n            </p>\\n          </div>\\n\\n          <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 24px 0 12px 0;\\">\\n            \u2753 Frequently Asked Questions (Image Resizer &amp; Name Maker)\\n          </h2>\\n          <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 16px 20px;\\">\\n            <h3 style=\\"font-size: 14.5px; margin: 0 0 6px 0; color: #0f172a;\\">Q1: How can I decrease the file size if it exceeds 50 KB?</h3>\\n            <p style=\\"margin: 0 0 14px 0; color: #475569; font-size: 13.5px;\\">\\n              Use the \\"Quality / Compression\\" slider in the left panel. Sliding the control towards \\"Smaller File Size (Lower KB)\\" reduces file weight while preserving image clarity.\\n            </p>\\n\\n            <h3 style=\\"font-size: 14.5px; margin: 0 0 6px 0; color: #0f172a;\\">Q2: What is Date of Photo (DOP) requirement?</h3>\\n            <p style=\\"margin: 0; color: #475569; font-size: 13.5px;\\">\\n              Commissions such as UP Police specify that photographs must not be more than 3 months old. Printing the date on the photo verifies that the photograph is recent and complies with official examination standards.\\n            </p>\\n          </div>\\n        </div>\\n      </div>\\n    </div>\\n  </div>\\n</main>\\n\\n<script>\\ndocument.addEventListener('DOMContentLoaded', function() {\\n  const imageInput = document.getElementById('imageInput');\\n  const presetSelect = document.getElementById('presetSelect');\\n  const customDimensions = document.getElementById('customDimensions');\\n  const customWidth = document.getElementById('customWidth');\\n  const customHeight = document.getElementById('customHeight');\\n  const addNameDate = document.getElementById('addNameDate');\\n  const nameDateFields = document.getElementById('nameDateFields');\\n  const candidateName = document.getElementById('candidateName');\\n  const photoDate = document.getElementById('photoDate');\\n  const qualityRange = document.getElementById('qualityRange');\\n  const processBtn = document.getElementById('processBtn');\\n  const canvas = document.getElementById('outputCanvas');\\n  const ctx = canvas.getContext('2d');\\n  const downloadBtn = document.getElementById('downloadBtn');\\n  const placeholderText = document.getElementById('placeholderText');\\n  const fileInfo = document.getElementById('fileInfo');\\n  const sizeText = document.getElementById('sizeText');\\n  const dimText = document.getElementById('dimText');\\n\\n  let loadedImage = null;\\n\\n  // Preset toggle\\n  presetSelect.addEventListener('change', function() {\\n    if (this.value === 'custom') {\\n      customDimensions.style.display = 'grid';\\n    } else {\\n      customDimensions.style.display = 'none';\\n    }\\n  });\\n\\n  // Name & Date toggle\\n  addNameDate.addEventListener('change', function() {\\n    nameDateFields.style.display = this.checked ? 'block' : 'none';\\n  });\\n\\n  // Load image\\n  imageInput.addEventListener('change', function(e) {\\n    const file = e.target.files[0];\\n    if (!file) return;\\n\\n    const reader = new FileReader();\\n    reader.onload = function(evt) {\\n      const img = new Image();\\n      img.onload = function() {\\n        loadedImage = img;\\n        renderImage();\\n      };\\n      img.src = evt.target.result;\\n    };\\n    reader.readAsDataURL(file);\\n  });\\n\\n  processBtn.addEventListener('click', renderImage);\\n  qualityRange.addEventListener('input', renderImage);\\n\\n  function renderImage() {\\n    if (!loadedImage) {\\n      alert('Please select an image file first.');\\n      return;\\n    }\\n\\n    let targetW = 350;\\n    let targetH = 450;\\n\\n    const preset = presetSelect.value;\\n    if (preset === 'signature') {\\n      targetW = 400;\\n      targetH = 200;\\n    } else if (preset === 'custom') {\\n      targetW = parseInt(customWidth.value, 10) || 350;\\n      targetH = parseInt(customHeight.value, 10) || 450;\\n    }\\n\\n    canvas.width = targetW;\\n    canvas.height = targetH;\\n\\n    // Clear and draw background\\n    ctx.fillStyle = '#ffffff';\\n    ctx.fillRect(0, 0, targetW, targetH);\\n\\n    // Draw main image\\n    let imgDrawH = targetH;\\n    const shouldAddStrip = addNameDate.checked && preset !== 'signature';\\n\\n    if (shouldAddStrip) {\\n      imgDrawH = Math.floor(targetH * 0.78);\\n    }\\n\\n    ctx.drawImage(loadedImage, 0, 0, targetW, imgDrawH);\\n\\n    // Draw white bottom strip with Name and Date\\n    if (shouldAddStrip) {\\n      const stripY = imgDrawH;\\n      const stripH = targetH - stripY;\\n\\n      ctx.fillStyle = '#ffffff';\\n      ctx.fillRect(0, stripY, targetW, stripH);\\n\\n      ctx.strokeStyle = '#333333';\\n      ctx.lineWidth = 1.5;\\n      ctx.beginPath();\\n      ctx.moveTo(0, stripY);\\n      ctx.lineTo(targetW, stripY);\\n      ctx.stroke();\\n\\n      ctx.fillStyle = '#000000';\\n      ctx.textAlign = 'center';\\n\\n      const name = (candidateName.value || 'CANDIDATE NAME').toUpperCase();\\n      const date = (photoDate.value || 'DOP: 01/10/2026').toUpperCase();\\n\\n      const fontSize = Math.max(12, Math.floor(targetW / 18));\\n      ctx.font = \`bold \${fontSize}px Arial, sans-serif\`;\\n      ctx.fillText(name, targetW / 2, stripY + (stripH * 0.42));\\n\\n      ctx.font = \`bold \${fontSize - 1}px Arial, sans-serif\`;\\n      ctx.fillText(date.startsWith('DOP') ? date : \`DOP: \${date}\`, targetW / 2, stripY + (stripH * 0.82));\\n    }\\n\\n    // Convert to JPEG with quality\\n    const quality = parseFloat(qualityRange.value);\\n    const dataUrl = canvas.toDataURL('image/jpeg', quality);\\n\\n    downloadBtn.href = dataUrl;\\n    downloadBtn.style.display = 'inline-block';\\n    placeholderText.style.display = 'none';\\n\\n    // Calculate approximate size\\n    const base64Len = dataUrl.length - 'data:image/jpeg;base64,'.length;\\n    const approxBytes = Math.ceil(base64Len * 0.75);\\n    const approxKB = (approxBytes / 1024).toFixed(1);\\n\\n    sizeText.textContent = \`\${approxKB} KB\`;\\n    dimText.textContent = \`\${targetW} x \${targetH} px\`;\\n    fileInfo.style.display = 'block';\\n  }\\n});\\n</script>\\n\\n")
+    ; __append("/tools/image-resizer\\",\\n      \\"applicationCategory\\": \\"MultimediaApplication\\",\\n      \\"operatingSystem\\": \\"All\\",\\n      \\"browserRequirements\\": \\"Requires JavaScript. Requires HTML5 Canvas.\\",\\n      \\"description\\": \\"Free online interactive image resizer, compressor (20-50 KB), and Date of Photo (DOP) maker for Sarkari online exam application forms.\\",\\n      \\"offers\\": {\\n        \\"@type\\": \\"Offer\\",\\n        \\"price\\": \\"0\\",\\n        \\"priceCurrency\\": \\"INR\\"\\n      }\\n    },\\n    {\\n      \\"@type\\": \\"FAQPage\\",\\n      \\"mainEntity\\": [\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"Is my photo uploaded or saved on any server?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"No. Your photo and signature are processed 100% locally in your own browser using HTML5 Canvas technology. No image data is ever transferred, uploaded, or stored on our servers, ensuring complete candidate privacy.\\"\\n          }\\n        },\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"How to add Date and Name on photo for UP Police and SSC forms?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"Simply check the box 'Add White Strip with Name & Date of Photo' in the left controls panel, enter your full name and Date of Photo (e.g., DD/MM/YYYY), and click 'Generate Resized Image'. The tool will automatically place the compliant white strip with black typography at the bottom of the photo.\\"\\n          }\\n        },\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"What is the recommended file format for Sarkari exam uploads?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"Almost all government portals require JPG or JPEG format. Our interactive resizer automatically outputs high-clarity JPEG files with customizable compression to hit the exact 20 KB to 50 KB requirement.\\"\\n          }\\n        }\\n      ]\\n    }\\n  ]\\n}\\n</script>\\n\\n<main class=\\"container tool-page-container\\">\\n  <!-- SEO & AdSense Compliant Breadcrumb -->\\n  <nav class=\\"tool-page-breadcrumb\\" aria-label=\\"Breadcrumb\\">\\n    <a href=\\"/\\">\u{1F3E0} Home</a>\\n    <span class=\\"crumb-sep\\">\xBB</span>\\n    <span>Candidate Utilities</span>\\n    <span class=\\"crumb-sep\\">\xBB</span>\\n    <span class=\\"crumb-active\\">Interactive Photo Resizer &amp; Name Maker</span>\\n  </nav>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 25px;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16.5px; line-height: 1.35; padding: 12px 18px;\\">\\n      Govt Exam Online Photo &amp; Signature Resizer / Name on Photo Tool 2026\\n    </h1>\\n\\n    <div style=\\"padding: 22px 25px;\\">\\n      <p style=\\"font-size: 14.5px; color: #374151; line-height: 1.65; margin-bottom: 20px;\\">\\n        Use this free online utility to crop, resize, compress to <b>20-50 KB / 10-20 KB</b>, and optionally add <b>Candidate Name &amp; Date of Photo (DOP)</b> to your passport photograph or signature for SSC, UPSC, UP Police, Railway, Banking, and State PSC online application forms.\\n      </p>\\n\\n      <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;\\">\\n        <!-- Left: Controls -->\\n        <div style=\\"background: #fdfae7; border: 2px solid #ffd480; padding: 20px; border-radius: 6px;\\">\\n          <h3 style=\\"color: var(--primary-red); margin-top: 0; font-size: 16px; margin-bottom: 15px;\\">\\n            1. Select File &amp; Preset\\n          </h3>\\n\\n          <div class=\\"form-group\\" style=\\"margin-bottom: 15px;\\">\\n            <label style=\\"display: block; font-weight: bold; margin-bottom: 5px;\\">Select Image File (JPG/PNG):</label>\\n            <input type=\\"file\\" id=\\"imageInput\\" accept=\\"image/*\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n          </div>\\n\\n          <div class=\\"form-group\\" style=\\"margin-bottom: 15px;\\">\\n            <label style=\\"display: block; font-weight: bold; margin-bottom: 5px;\\">Target Preset:</label>\\n            <select id=\\"presetSelect\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n              <option value=\\"passport\\">Passport Photograph (350 x 450 px, ~20-50 KB)</option>\\n              <option value=\\"signature\\">Candidate Signature (400 x 200 px, ~10-20 KB)</option>\\n              <option value=\\"custom\\">Custom Dimensions</option>\\n            </select>\\n          </div>\\n\\n          <div id=\\"customDimensions\\" style=\\"display: none; margin-bottom: 15px; grid-template-columns: 1fr 1fr; gap: 10px;\\">\\n            <div>\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Width (px):</label>\\n              <input type=\\"number\\" id=\\"customWidth\\" value=\\"350\\" class=\\"form-control\\">\\n            </div>\\n            <div>\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Height (px):</label>\\n              <input type=\\"number\\" id=\\"customHeight\\" value=\\"450\\" class=\\"form-control\\">\\n            </div>\\n          </div>\\n\\n          <hr style=\\"border: none; border-top: 1px solid #ffd480; margin: 15px 0;\\">\\n\\n          <h3 style=\\"color: #0000a0; font-size: 15px; margin-bottom: 10px;\\">\\n            2. Name &amp; Date on Photo (Optional)\\n          </h3>\\n          <p style=\\"font-size: 12px; color: #666; margin-bottom: 10px;\\">\\n            Required for UP Police, SSC, and special recruitment forms.\\n          </p>\\n\\n          <div style=\\"margin-bottom: 12px;\\">\\n            <label style=\\"display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: bold; font-size: 13.5px;\\">\\n              <input type=\\"checkbox\\" id=\\"addNameDate\\">\\n              <span>Add White Strip with Name &amp; Date of Photo</span>\\n            </label>\\n          </div>\\n\\n          <div id=\\"nameDateFields\\" style=\\"display: none; margin-bottom: 15px;\\">\\n            <div style=\\"margin-bottom: 10px;\\">\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Candidate Name (Uppercase):</label>\\n              <input type=\\"text\\" id=\\"candidateName\\" placeholder=\\"e.g. AMIT KUMAR\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n            </div>\\n            <div>\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Date of Photo (DOP):</label>\\n              <input type=\\"text\\" id=\\"photoDate\\" placeholder=\\"e.g. 03/10/2026\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n            </div>\\n          </div>\\n\\n          <div style=\\"margin-bottom: 20px;\\">\\n            <label style=\\"display: block; font-weight: bold; margin-bottom: 5px;\\">Quality / Compression:</label>\\n            <input type=\\"range\\" id=\\"qualityRange\\" min=\\"0.3\\" max=\\"1.0\\" step=\\"0.05\\" value=\\"0.85\\" style=\\"width: 100%;\\">\\n            <div style=\\"display: flex; justify-content: space-between; font-size: 11px; color: #666;\\">\\n              <span>Smaller File Size (Lower KB)</span>\\n              <span>Higher Quality</span>\\n            </div>\\n          </div>\\n\\n          <button type=\\"button\\" id=\\"processBtn\\" style=\\"width: 100%; background: var(--primary-red); color: #fff; font-weight: bold; font-size: 16px; padding: 12px; border: none; border-radius: 4px; cursor: pointer;\\">\\n            \u26A1 Generate Resized Image\\n          </button>\\n        </div>\\n\\n        <!-- Right: Preview & Download -->\\n        <div style=\\"background: #f8fafc; border: 2px dashed #cbd5e1; padding: 20px; border-radius: 6px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px;\\">\\n          <h3 style=\\"color: #1e293b; margin-top: 0; font-size: 16px; margin-bottom: 15px;\\">\\n            Live Image Preview\\n          </h3>\\n\\n          <div id=\\"previewContainer\\" style=\\"margin-bottom: 15px; max-width: 100%; overflow: auto;\\">\\n            <canvas id=\\"outputCanvas\\" style=\\"max-width: 100%; border: 1px solid #94a3b8; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1);\\"></canvas>\\n          </div>\\n\\n          <div id=\\"fileInfo\\" style=\\"font-size: 13px; font-weight: bold; color: #0284c7; margin-bottom: 15px; display: none;\\">\\n            Estimated Size: <span id=\\"sizeText\\">0 KB</span> | Dimensions: <span id=\\"dimText\\">0 x 0 px</span>\\n          </div>\\n\\n          <a id=\\"downloadBtn\\" href=\\"#\\" download=\\"oa_resized_photo.jpg\\" style=\\"display: none; background: #10b981; color: #fff; font-weight: bold; font-size: 16px; padding: 10px 24px; border-radius: 4px; text-decoration: none;\\">\\n            \u2B07\uFE0F Download Resized Image\\n          </a>\\n\\n          <p id=\\"placeholderText\\" style=\\"color: #94a3b8; font-size: 13.5px;\\">\\n            Upload an image from the left panel and click \\"Generate Resized Image\\" to preview here.\\n          </div>\\n        </div>\\n\\n        <!-- Rich Guide & AdSense Compliant Information -->\\n        <div style=\\"border-top: 1px solid #e2e8f0; padding-top: 25px; margin-top: 25px; color: #334155; line-height: 1.7; font-size: 14px;\\">\\n          <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 0 0 12px 0;\\">\\n            \u{1F4D6} How to Resize Photograph &amp; Signature in 4 Easy Steps\\n          </h2>\\n          <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 22px;\\">\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 1: Choose File</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Click \\"Select Image File\\" and choose your scanned photo or signature (JPG, JPEG, or PNG).</div>\\n            </div>\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 2: Select Preset</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Pick Passport (350x450 px) or Signature (400x200 px), or enter your custom width &amp; height.</div>\\n            </div>\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 3: Add Name &amp; Date</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Check the box if required (for UP Police, SSC) to automatically print the name &amp; DOP white strip.</div>\\n            </div>\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 4: Download</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Click \\"Generate Resized Image\\", check the live preview &amp; KB size, then hit \\"Download Resized Image\\".</div>\\n            </div>\\n          </div>\\n\\n          <div style=\\"background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 16px 20px; margin-bottom: 22px;\\">\\n            <h3 style=\\"color: #166534; font-size: 15px; margin: 0 0 6px 0;\\">\\n              \u{1F512} 100% Client-Side Privacy Guarantee\\n            </h3>\\n            <p style=\\"margin: 0; font-size: 13px; color: #1e3a24; line-height: 1.6;\\">\\n              Your personal photos and signatures are confidential. All resizing, cropping, and text rendering operations run <b>locally inside your web browser</b> via HTML5 Canvas. No image data is ever uploaded to, processed on, or stored in our cloud servers.\\n            </p>\\n          </div>\\n\\n          <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 24px 0 12px 0;\\">\\n            \u2753 Frequently Asked Questions (Image Resizer &amp; Name Maker)\\n          </h2>\\n          <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 16px 20px;\\">\\n            <h3 style=\\"font-size: 14.5px; margin: 0 0 6px 0; color: #0f172a;\\">Q1: How can I decrease the file size if it exceeds 50 KB?</h3>\\n            <p style=\\"margin: 0 0 14px 0; color: #475569; font-size: 13.5px;\\">\\n              Use the \\"Quality / Compression\\" slider in the left panel. Sliding the control towards \\"Smaller File Size (Lower KB)\\" reduces file weight while preserving image clarity.\\n            </p>\\n\\n            <h3 style=\\"font-size: 14.5px; margin: 0 0 6px 0; color: #0f172a;\\">Q2: What is Date of Photo (DOP) requirement?</h3>\\n            <p style=\\"margin: 0; color: #475569; font-size: 13.5px;\\">\\n              Commissions such as UP Police specify that photographs must not be more than 3 months old. Printing the date on the photo verifies that the photograph is recent and complies with official examination standards.\\n            </p>\\n          </div>\\n        </div>\\n      </div>\\n    </div>\\n  </div>\\n</main>\\n\\n<script>\\ndocument.addEventListener('DOMContentLoaded', function() {\\n  const imageInput = document.getElementById('imageInput');\\n  const presetSelect = document.getElementById('presetSelect');\\n  const customDimensions = document.getElementById('customDimensions');\\n  const customWidth = document.getElementById('customWidth');\\n  const customHeight = document.getElementById('customHeight');\\n  const addNameDate = document.getElementById('addNameDate');\\n  const nameDateFields = document.getElementById('nameDateFields');\\n  const candidateName = document.getElementById('candidateName');\\n  const photoDate = document.getElementById('photoDate');\\n  const qualityRange = document.getElementById('qualityRange');\\n  const processBtn = document.getElementById('processBtn');\\n  const canvas = document.getElementById('outputCanvas');\\n  const ctx = canvas.getContext('2d');\\n  const downloadBtn = document.getElementById('downloadBtn');\\n  const placeholderText = document.getElementById('placeholderText');\\n  const fileInfo = document.getElementById('fileInfo');\\n  const sizeText = document.getElementById('sizeText');\\n  const dimText = document.getElementById('dimText');\\n\\n  let loadedImage = null;\\n\\n  // Preset toggle\\n  presetSelect.addEventListener('change', function() {\\n    if (this.value === 'custom') {\\n      customDimensions.style.display = 'grid';\\n    } else {\\n      customDimensions.style.display = 'none';\\n    }\\n  });\\n\\n  // Name & Date toggle\\n  addNameDate.addEventListener('change', function() {\\n    nameDateFields.style.display = this.checked ? 'block' : 'none';\\n  });\\n\\n  // Load image\\n  imageInput.addEventListener('change', function(e) {\\n    const file = e.target.files[0];\\n    if (!file) return;\\n\\n    const reader = new FileReader();\\n    reader.onload = function(evt) {\\n      const img = new Image();\\n      img.onload = function() {\\n        loadedImage = img;\\n        renderImage();\\n      };\\n      img.src = evt.target.result;\\n    };\\n    reader.readAsDataURL(file);\\n  });\\n\\n  processBtn.addEventListener('click', renderImage);\\n  qualityRange.addEventListener('input', renderImage);\\n\\n  function renderImage() {\\n    if (!loadedImage) {\\n      alert('Please select an image file first.');\\n      return;\\n    }\\n\\n    let targetW = 350;\\n    let targetH = 450;\\n\\n    const preset = presetSelect.value;\\n    if (preset === 'signature') {\\n      targetW = 400;\\n      targetH = 200;\\n    } else if (preset === 'custom') {\\n      targetW = parseInt(customWidth.value, 10) || 350;\\n      targetH = parseInt(customHeight.value, 10) || 450;\\n    }\\n\\n    canvas.width = targetW;\\n    canvas.height = targetH;\\n\\n    // Clear and draw background\\n    ctx.fillStyle = '#ffffff';\\n    ctx.fillRect(0, 0, targetW, targetH);\\n\\n    // Draw main image\\n    let imgDrawH = targetH;\\n    const shouldAddStrip = addNameDate.checked && preset !== 'signature';\\n\\n    if (shouldAddStrip) {\\n      imgDrawH = Math.floor(targetH * 0.78);\\n    }\\n\\n    ctx.drawImage(loadedImage, 0, 0, targetW, imgDrawH);\\n\\n    // Draw white bottom strip with Name and Date\\n    if (shouldAddStrip) {\\n      const stripY = imgDrawH;\\n      const stripH = targetH - stripY;\\n\\n      ctx.fillStyle = '#ffffff';\\n      ctx.fillRect(0, stripY, targetW, stripH);\\n\\n      ctx.strokeStyle = '#333333';\\n      ctx.lineWidth = 1.5;\\n      ctx.beginPath();\\n      ctx.moveTo(0, stripY);\\n      ctx.lineTo(targetW, stripY);\\n      ctx.stroke();\\n\\n      ctx.fillStyle = '#000000';\\n      ctx.textAlign = 'center';\\n\\n      const name = (candidateName.value || 'CANDIDATE NAME').toUpperCase();\\n      const date = (photoDate.value || 'DOP: 01/10/2026').toUpperCase();\\n\\n      const fontSize = Math.max(12, Math.floor(targetW / 18));\\n      ctx.font = \`bold \${fontSize}px Arial, sans-serif\`;\\n      ctx.fillText(name, targetW / 2, stripY + (stripH * 0.42));\\n\\n      ctx.font = \`bold \${fontSize - 1}px Arial, sans-serif\`;\\n      ctx.fillText(date.startsWith('DOP') ? date : \`DOP: \${date}\`, targetW / 2, stripY + (stripH * 0.82));\\n    }\\n\\n    // Convert to JPEG with quality\\n    const quality = parseFloat(qualityRange.value);\\n    const dataUrl = canvas.toDataURL('image/jpeg', quality);\\n\\n    downloadBtn.href = dataUrl;\\n    downloadBtn.style.display = 'inline-block';\\n    placeholderText.style.display = 'none';\\n\\n    // Calculate approximate size\\n    const base64Len = dataUrl.length - 'data:image/jpeg;base64,'.length;\\n    const approxBytes = Math.ceil(base64Len * 0.75);\\n    const approxKB = (approxBytes / 1024).toFixed(1);\\n\\n    sizeText.textContent = \`\${approxKB} KB\`;\\n    dimText.textContent = \`\${targetW} x \${targetH} px\`;\\n    fileInfo.style.display = 'block';\\n  }\\n});\\n</script>\\n\\n")
     ; __append( include('../partials/footer') )
     ; __append("\\n")
   }
@@ -81397,7 +81397,7 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList, WebApplication, and FAQPage -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@graph\\": [\\n    {\\n      \\"@type\\": \\"BreadcrumbList\\",\\n      \\"itemListElement\\": [\\n        {\\n          \\"@type\\": \\"ListItem\\",\\n          \\"position\\": 1,\\n          \\"name\\": \\"Home\\",\\n          \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -81407,7 +81407,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( siteDomain ))
     ; __append("/tools/image-resizer\\"\\n        }\\n      ]\\n    },\\n    {\\n      \\"@type\\": \\"WebApplication\\",\\n      \\"name\\": \\"Government Exam Photo & Signature Resizer and Name/Date Maker 2026\\",\\n      \\"url\\": \\"")
     ; __append(escapeFn( siteDomain ))
-    ; __append("/tools/image-resizer\\",\\n      \\"applicationCategory\\": \\"MultimediaApplication\\",\\n      \\"operatingSystem\\": \\"All\\",\\n      \\"browserRequirements\\": \\"Requires JavaScript. Requires HTML5 Canvas.\\",\\n      \\"description\\": \\"Free online interactive image resizer, compressor (20-50 KB), and Date of Photo (DOP) maker for Sarkari online exam application forms.\\",\\n      \\"offers\\": {\\n        \\"@type\\": \\"Offer\\",\\n        \\"price\\": \\"0\\",\\n        \\"priceCurrency\\": \\"INR\\"\\n      }\\n    },\\n    {\\n      \\"@type\\": \\"FAQPage\\",\\n      \\"mainEntity\\": [\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"Is my photo uploaded or saved on any server?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"No. Your photo and signature are processed 100% locally in your own browser using HTML5 Canvas technology. No image data is ever transferred, uploaded, or stored on our servers, ensuring complete candidate privacy.\\"\\n          }\\n        },\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"How to add Date and Name on photo for UP Police and SSC forms?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"Simply check the box 'Add White Strip with Name & Date of Photo' in the left controls panel, enter your full name and Date of Photo (e.g., DD/MM/YYYY), and click 'Generate Resized Image'. The tool will automatically place the compliant white strip with black typography at the bottom of the photo.\\"\\n          }\\n        },\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"What is the recommended file format for Sarkari exam uploads?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"Almost all government portals require JPG or JPEG format. Our interactive resizer automatically outputs high-clarity JPEG files with customizable compression to hit the exact 20 KB to 50 KB requirement.\\"\\n          }\\n        }\\n      ]\\n    }\\n  ]\\n}\\n</script>\\n\\n<main class=\\"container tool-page-container\\">\\n  <!-- SEO & AdSense Compliant Breadcrumb -->\\n  <nav class=\\"tool-page-breadcrumb\\" aria-label=\\"Breadcrumb\\">\\n    <a href=\\"/\\">\u{1F3E0} Home</a>\\n    <span class=\\"crumb-sep\\">\xBB</span>\\n    <span>Candidate Utilities</span>\\n    <span class=\\"crumb-sep\\">\xBB</span>\\n    <span class=\\"crumb-active\\">Interactive Photo Resizer &amp; Name Maker</span>\\n  </nav>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 25px;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16.5px; line-height: 1.35; padding: 12px 18px;\\">\\n      Govt Exam Online Photo &amp; Signature Resizer / Name on Photo Tool 2026\\n    </h1>\\n\\n    <div style=\\"padding: 22px 25px;\\">\\n      <p style=\\"font-size: 14.5px; color: #374151; line-height: 1.65; margin-bottom: 20px;\\">\\n        Use this free online utility to crop, resize, compress to <b>20-50 KB / 10-20 KB</b>, and optionally add <b>Candidate Name &amp; Date of Photo (DOP)</b> to your passport photograph or signature for SSC, UPSC, UP Police, Railway, Banking, and State PSC online application forms.\\n      </p>\\n\\n      <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;\\">\\n        <!-- Left: Controls -->\\n        <div style=\\"background: #fdfae7; border: 2px solid #ffd480; padding: 20px; border-radius: 6px;\\">\\n          <h3 style=\\"color: var(--primary-red); margin-top: 0; font-size: 16px; margin-bottom: 15px;\\">\\n            1. Select File &amp; Preset\\n          </h3>\\n\\n          <div class=\\"form-group\\" style=\\"margin-bottom: 15px;\\">\\n            <label style=\\"display: block; font-weight: bold; margin-bottom: 5px;\\">Select Image File (JPG/PNG):</label>\\n            <input type=\\"file\\" id=\\"imageInput\\" accept=\\"image/*\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n          </div>\\n\\n          <div class=\\"form-group\\" style=\\"margin-bottom: 15px;\\">\\n            <label style=\\"display: block; font-weight: bold; margin-bottom: 5px;\\">Target Preset:</label>\\n            <select id=\\"presetSelect\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n              <option value=\\"passport\\">Passport Photograph (350 x 450 px, ~20-50 KB)</option>\\n              <option value=\\"signature\\">Candidate Signature (400 x 200 px, ~10-20 KB)</option>\\n              <option value=\\"custom\\">Custom Dimensions</option>\\n            </select>\\n          </div>\\n\\n          <div id=\\"customDimensions\\" style=\\"display: none; margin-bottom: 15px; grid-template-columns: 1fr 1fr; gap: 10px;\\">\\n            <div>\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Width (px):</label>\\n              <input type=\\"number\\" id=\\"customWidth\\" value=\\"350\\" class=\\"form-control\\">\\n            </div>\\n            <div>\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Height (px):</label>\\n              <input type=\\"number\\" id=\\"customHeight\\" value=\\"450\\" class=\\"form-control\\">\\n            </div>\\n          </div>\\n\\n          <hr style=\\"border: none; border-top: 1px solid #ffd480; margin: 15px 0;\\">\\n\\n          <h3 style=\\"color: #0000a0; font-size: 15px; margin-bottom: 10px;\\">\\n            2. Name &amp; Date on Photo (Optional)\\n          </h3>\\n          <p style=\\"font-size: 12px; color: #666; margin-bottom: 10px;\\">\\n            Required for UP Police, SSC, and special recruitment forms.\\n          </p>\\n\\n          <div style=\\"margin-bottom: 12px;\\">\\n            <label style=\\"display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: bold; font-size: 13.5px;\\">\\n              <input type=\\"checkbox\\" id=\\"addNameDate\\">\\n              <span>Add White Strip with Name &amp; Date of Photo</span>\\n            </label>\\n          </div>\\n\\n          <div id=\\"nameDateFields\\" style=\\"display: none; margin-bottom: 15px;\\">\\n            <div style=\\"margin-bottom: 10px;\\">\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Candidate Name (Uppercase):</label>\\n              <input type=\\"text\\" id=\\"candidateName\\" placeholder=\\"e.g. AMIT KUMAR\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n            </div>\\n            <div>\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Date of Photo (DOP):</label>\\n              <input type=\\"text\\" id=\\"photoDate\\" placeholder=\\"e.g. 03/10/2026\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n            </div>\\n          </div>\\n\\n          <div style=\\"margin-bottom: 20px;\\">\\n            <label style=\\"display: block; font-weight: bold; margin-bottom: 5px;\\">Quality / Compression:</label>\\n            <input type=\\"range\\" id=\\"qualityRange\\" min=\\"0.3\\" max=\\"1.0\\" step=\\"0.05\\" value=\\"0.85\\" style=\\"width: 100%;\\">\\n            <div style=\\"display: flex; justify-content: space-between; font-size: 11px; color: #666;\\">\\n              <span>Smaller File Size (Lower KB)</span>\\n              <span>Higher Quality</span>\\n            </div>\\n          </div>\\n\\n          <button type=\\"button\\" id=\\"processBtn\\" style=\\"width: 100%; background: var(--primary-red); color: #fff; font-weight: bold; font-size: 16px; padding: 12px; border: none; border-radius: 4px; cursor: pointer;\\">\\n            \u26A1 Generate Resized Image\\n          </button>\\n        </div>\\n\\n        <!-- Right: Preview & Download -->\\n        <div style=\\"background: #f8fafc; border: 2px dashed #cbd5e1; padding: 20px; border-radius: 6px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px;\\">\\n          <h3 style=\\"color: #1e293b; margin-top: 0; font-size: 16px; margin-bottom: 15px;\\">\\n            Live Image Preview\\n          </h3>\\n\\n          <div id=\\"previewContainer\\" style=\\"margin-bottom: 15px; max-width: 100%; overflow: auto;\\">\\n            <canvas id=\\"outputCanvas\\" style=\\"max-width: 100%; border: 1px solid #94a3b8; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1);\\"></canvas>\\n          </div>\\n\\n          <div id=\\"fileInfo\\" style=\\"font-size: 13px; font-weight: bold; color: #0284c7; margin-bottom: 15px; display: none;\\">\\n            Estimated Size: <span id=\\"sizeText\\">0 KB</span> | Dimensions: <span id=\\"dimText\\">0 x 0 px</span>\\n          </div>\\n\\n          <a id=\\"downloadBtn\\" href=\\"#\\" download=\\"gez_resized_photo.jpg\\" style=\\"display: none; background: #10b981; color: #fff; font-weight: bold; font-size: 16px; padding: 10px 24px; border-radius: 4px; text-decoration: none;\\">\\n            \u2B07\uFE0F Download Resized Image\\n          </a>\\n\\n          <p id=\\"placeholderText\\" style=\\"color: #94a3b8; font-size: 13.5px;\\">\\n            Upload an image from the left panel and click \\"Generate Resized Image\\" to preview here.\\n          </div>\\n        </div>\\n\\n        <!-- Rich Guide & AdSense Compliant Information -->\\n        <div style=\\"border-top: 1px solid #e2e8f0; padding-top: 25px; margin-top: 25px; color: #334155; line-height: 1.7; font-size: 14px;\\">\\n          <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 0 0 12px 0;\\">\\n            \u{1F4D6} How to Resize Photograph &amp; Signature in 4 Easy Steps\\n          </h2>\\n          <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 22px;\\">\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 1: Choose File</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Click \\"Select Image File\\" and choose your scanned photo or signature (JPG, JPEG, or PNG).</div>\\n            </div>\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 2: Select Preset</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Pick Passport (350x450 px) or Signature (400x200 px), or enter your custom width &amp; height.</div>\\n            </div>\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 3: Add Name &amp; Date</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Check the box if required (for UP Police, SSC) to automatically print the name &amp; DOP white strip.</div>\\n            </div>\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 4: Download</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Click \\"Generate Resized Image\\", check the live preview &amp; KB size, then hit \\"Download Resized Image\\".</div>\\n            </div>\\n          </div>\\n\\n          <div style=\\"background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 16px 20px; margin-bottom: 22px;\\">\\n            <h3 style=\\"color: #166534; font-size: 15px; margin: 0 0 6px 0;\\">\\n              \u{1F512} 100% Client-Side Privacy Guarantee\\n            </h3>\\n            <p style=\\"margin: 0; font-size: 13px; color: #1e3a24; line-height: 1.6;\\">\\n              Your personal photos and signatures are confidential. All resizing, cropping, and text rendering operations run <b>locally inside your web browser</b> via HTML5 Canvas. No image data is ever uploaded to, processed on, or stored in our cloud servers.\\n            </p>\\n          </div>\\n\\n          <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 24px 0 12px 0;\\">\\n            \u2753 Frequently Asked Questions (Image Resizer &amp; Name Maker)\\n          </h2>\\n          <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 16px 20px;\\">\\n            <h3 style=\\"font-size: 14.5px; margin: 0 0 6px 0; color: #0f172a;\\">Q1: How can I decrease the file size if it exceeds 50 KB?</h3>\\n            <p style=\\"margin: 0 0 14px 0; color: #475569; font-size: 13.5px;\\">\\n              Use the \\"Quality / Compression\\" slider in the left panel. Sliding the control towards \\"Smaller File Size (Lower KB)\\" reduces file weight while preserving image clarity.\\n            </p>\\n\\n            <h3 style=\\"font-size: 14.5px; margin: 0 0 6px 0; color: #0f172a;\\">Q2: What is Date of Photo (DOP) requirement?</h3>\\n            <p style=\\"margin: 0; color: #475569; font-size: 13.5px;\\">\\n              Commissions such as UP Police specify that photographs must not be more than 3 months old. Printing the date on the photo verifies that the photograph is recent and complies with official examination standards.\\n            </p>\\n          </div>\\n        </div>\\n      </div>\\n    </div>\\n  </div>\\n</main>\\n\\n<script>\\ndocument.addEventListener('DOMContentLoaded', function() {\\n  const imageInput = document.getElementById('imageInput');\\n  const presetSelect = document.getElementById('presetSelect');\\n  const customDimensions = document.getElementById('customDimensions');\\n  const customWidth = document.getElementById('customWidth');\\n  const customHeight = document.getElementById('customHeight');\\n  const addNameDate = document.getElementById('addNameDate');\\n  const nameDateFields = document.getElementById('nameDateFields');\\n  const candidateName = document.getElementById('candidateName');\\n  const photoDate = document.getElementById('photoDate');\\n  const qualityRange = document.getElementById('qualityRange');\\n  const processBtn = document.getElementById('processBtn');\\n  const canvas = document.getElementById('outputCanvas');\\n  const ctx = canvas.getContext('2d');\\n  const downloadBtn = document.getElementById('downloadBtn');\\n  const placeholderText = document.getElementById('placeholderText');\\n  const fileInfo = document.getElementById('fileInfo');\\n  const sizeText = document.getElementById('sizeText');\\n  const dimText = document.getElementById('dimText');\\n\\n  let loadedImage = null;\\n\\n  // Preset toggle\\n  presetSelect.addEventListener('change', function() {\\n    if (this.value === 'custom') {\\n      customDimensions.style.display = 'grid';\\n    } else {\\n      customDimensions.style.display = 'none';\\n    }\\n  });\\n\\n  // Name & Date toggle\\n  addNameDate.addEventListener('change', function() {\\n    nameDateFields.style.display = this.checked ? 'block' : 'none';\\n  });\\n\\n  // Load image\\n  imageInput.addEventListener('change', function(e) {\\n    const file = e.target.files[0];\\n    if (!file) return;\\n\\n    const reader = new FileReader();\\n    reader.onload = function(evt) {\\n      const img = new Image();\\n      img.onload = function() {\\n        loadedImage = img;\\n        renderImage();\\n      };\\n      img.src = evt.target.result;\\n    };\\n    reader.readAsDataURL(file);\\n  });\\n\\n  processBtn.addEventListener('click', renderImage);\\n  qualityRange.addEventListener('input', renderImage);\\n\\n  function renderImage() {\\n    if (!loadedImage) {\\n      alert('Please select an image file first.');\\n      return;\\n    }\\n\\n    let targetW = 350;\\n    let targetH = 450;\\n\\n    const preset = presetSelect.value;\\n    if (preset === 'signature') {\\n      targetW = 400;\\n      targetH = 200;\\n    } else if (preset === 'custom') {\\n      targetW = parseInt(customWidth.value, 10) || 350;\\n      targetH = parseInt(customHeight.value, 10) || 450;\\n    }\\n\\n    canvas.width = targetW;\\n    canvas.height = targetH;\\n\\n    // Clear and draw background\\n    ctx.fillStyle = '#ffffff';\\n    ctx.fillRect(0, 0, targetW, targetH);\\n\\n    // Draw main image\\n    let imgDrawH = targetH;\\n    const shouldAddStrip = addNameDate.checked && preset !== 'signature';\\n\\n    if (shouldAddStrip) {\\n      imgDrawH = Math.floor(targetH * 0.78);\\n    }\\n\\n    ctx.drawImage(loadedImage, 0, 0, targetW, imgDrawH);\\n\\n    // Draw white bottom strip with Name and Date\\n    if (shouldAddStrip) {\\n      const stripY = imgDrawH;\\n      const stripH = targetH - stripY;\\n\\n      ctx.fillStyle = '#ffffff';\\n      ctx.fillRect(0, stripY, targetW, stripH);\\n\\n      ctx.strokeStyle = '#333333';\\n      ctx.lineWidth = 1.5;\\n      ctx.beginPath();\\n      ctx.moveTo(0, stripY);\\n      ctx.lineTo(targetW, stripY);\\n      ctx.stroke();\\n\\n      ctx.fillStyle = '#000000';\\n      ctx.textAlign = 'center';\\n\\n      const name = (candidateName.value || 'CANDIDATE NAME').toUpperCase();\\n      const date = (photoDate.value || 'DOP: 01/10/2026').toUpperCase();\\n\\n      const fontSize = Math.max(12, Math.floor(targetW / 18));\\n      ctx.font = \`bold \${fontSize}px Arial, sans-serif\`;\\n      ctx.fillText(name, targetW / 2, stripY + (stripH * 0.42));\\n\\n      ctx.font = \`bold \${fontSize - 1}px Arial, sans-serif\`;\\n      ctx.fillText(date.startsWith('DOP') ? date : \`DOP: \${date}\`, targetW / 2, stripY + (stripH * 0.82));\\n    }\\n\\n    // Convert to JPEG with quality\\n    const quality = parseFloat(qualityRange.value);\\n    const dataUrl = canvas.toDataURL('image/jpeg', quality);\\n\\n    downloadBtn.href = dataUrl;\\n    downloadBtn.style.display = 'inline-block';\\n    placeholderText.style.display = 'none';\\n\\n    // Calculate approximate size\\n    const base64Len = dataUrl.length - 'data:image/jpeg;base64,'.length;\\n    const approxBytes = Math.ceil(base64Len * 0.75);\\n    const approxKB = (approxBytes / 1024).toFixed(1);\\n\\n    sizeText.textContent = \`\${approxKB} KB\`;\\n    dimText.textContent = \`\${targetW} x \${targetH} px\`;\\n    fileInfo.style.display = 'block';\\n  }\\n});\\n</script>\\n\\n")
+    ; __append("/tools/image-resizer\\",\\n      \\"applicationCategory\\": \\"MultimediaApplication\\",\\n      \\"operatingSystem\\": \\"All\\",\\n      \\"browserRequirements\\": \\"Requires JavaScript. Requires HTML5 Canvas.\\",\\n      \\"description\\": \\"Free online interactive image resizer, compressor (20-50 KB), and Date of Photo (DOP) maker for Sarkari online exam application forms.\\",\\n      \\"offers\\": {\\n        \\"@type\\": \\"Offer\\",\\n        \\"price\\": \\"0\\",\\n        \\"priceCurrency\\": \\"INR\\"\\n      }\\n    },\\n    {\\n      \\"@type\\": \\"FAQPage\\",\\n      \\"mainEntity\\": [\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"Is my photo uploaded or saved on any server?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"No. Your photo and signature are processed 100% locally in your own browser using HTML5 Canvas technology. No image data is ever transferred, uploaded, or stored on our servers, ensuring complete candidate privacy.\\"\\n          }\\n        },\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"How to add Date and Name on photo for UP Police and SSC forms?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"Simply check the box 'Add White Strip with Name & Date of Photo' in the left controls panel, enter your full name and Date of Photo (e.g., DD/MM/YYYY), and click 'Generate Resized Image'. The tool will automatically place the compliant white strip with black typography at the bottom of the photo.\\"\\n          }\\n        },\\n        {\\n          \\"@type\\": \\"Question\\",\\n          \\"name\\": \\"What is the recommended file format for Sarkari exam uploads?\\",\\n          \\"acceptedAnswer\\": {\\n            \\"@type\\": \\"Answer\\",\\n            \\"text\\": \\"Almost all government portals require JPG or JPEG format. Our interactive resizer automatically outputs high-clarity JPEG files with customizable compression to hit the exact 20 KB to 50 KB requirement.\\"\\n          }\\n        }\\n      ]\\n    }\\n  ]\\n}\\n</script>\\n\\n<main class=\\"container tool-page-container\\">\\n  <!-- SEO & AdSense Compliant Breadcrumb -->\\n  <nav class=\\"tool-page-breadcrumb\\" aria-label=\\"Breadcrumb\\">\\n    <a href=\\"/\\">\u{1F3E0} Home</a>\\n    <span class=\\"crumb-sep\\">\xBB</span>\\n    <span>Candidate Utilities</span>\\n    <span class=\\"crumb-sep\\">\xBB</span>\\n    <span class=\\"crumb-active\\">Interactive Photo Resizer &amp; Name Maker</span>\\n  </nav>\\n\\n  <div class=\\"sarkari-box\\" style=\\"margin-bottom: 25px;\\">\\n    <h1 class=\\"sarkari-box-header\\" style=\\"margin: 0; font-size: 16.5px; line-height: 1.35; padding: 12px 18px;\\">\\n      Govt Exam Online Photo &amp; Signature Resizer / Name on Photo Tool 2026\\n    </h1>\\n\\n    <div style=\\"padding: 22px 25px;\\">\\n      <p style=\\"font-size: 14.5px; color: #374151; line-height: 1.65; margin-bottom: 20px;\\">\\n        Use this free online utility to crop, resize, compress to <b>20-50 KB / 10-20 KB</b>, and optionally add <b>Candidate Name &amp; Date of Photo (DOP)</b> to your passport photograph or signature for SSC, UPSC, UP Police, Railway, Banking, and State PSC online application forms.\\n      </p>\\n\\n      <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;\\">\\n        <!-- Left: Controls -->\\n        <div style=\\"background: #fdfae7; border: 2px solid #ffd480; padding: 20px; border-radius: 6px;\\">\\n          <h3 style=\\"color: var(--primary-red); margin-top: 0; font-size: 16px; margin-bottom: 15px;\\">\\n            1. Select File &amp; Preset\\n          </h3>\\n\\n          <div class=\\"form-group\\" style=\\"margin-bottom: 15px;\\">\\n            <label style=\\"display: block; font-weight: bold; margin-bottom: 5px;\\">Select Image File (JPG/PNG):</label>\\n            <input type=\\"file\\" id=\\"imageInput\\" accept=\\"image/*\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n          </div>\\n\\n          <div class=\\"form-group\\" style=\\"margin-bottom: 15px;\\">\\n            <label style=\\"display: block; font-weight: bold; margin-bottom: 5px;\\">Target Preset:</label>\\n            <select id=\\"presetSelect\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n              <option value=\\"passport\\">Passport Photograph (350 x 450 px, ~20-50 KB)</option>\\n              <option value=\\"signature\\">Candidate Signature (400 x 200 px, ~10-20 KB)</option>\\n              <option value=\\"custom\\">Custom Dimensions</option>\\n            </select>\\n          </div>\\n\\n          <div id=\\"customDimensions\\" style=\\"display: none; margin-bottom: 15px; grid-template-columns: 1fr 1fr; gap: 10px;\\">\\n            <div>\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Width (px):</label>\\n              <input type=\\"number\\" id=\\"customWidth\\" value=\\"350\\" class=\\"form-control\\">\\n            </div>\\n            <div>\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Height (px):</label>\\n              <input type=\\"number\\" id=\\"customHeight\\" value=\\"450\\" class=\\"form-control\\">\\n            </div>\\n          </div>\\n\\n          <hr style=\\"border: none; border-top: 1px solid #ffd480; margin: 15px 0;\\">\\n\\n          <h3 style=\\"color: #0000a0; font-size: 15px; margin-bottom: 10px;\\">\\n            2. Name &amp; Date on Photo (Optional)\\n          </h3>\\n          <p style=\\"font-size: 12px; color: #666; margin-bottom: 10px;\\">\\n            Required for UP Police, SSC, and special recruitment forms.\\n          </p>\\n\\n          <div style=\\"margin-bottom: 12px;\\">\\n            <label style=\\"display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: bold; font-size: 13.5px;\\">\\n              <input type=\\"checkbox\\" id=\\"addNameDate\\">\\n              <span>Add White Strip with Name &amp; Date of Photo</span>\\n            </label>\\n          </div>\\n\\n          <div id=\\"nameDateFields\\" style=\\"display: none; margin-bottom: 15px;\\">\\n            <div style=\\"margin-bottom: 10px;\\">\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Candidate Name (Uppercase):</label>\\n              <input type=\\"text\\" id=\\"candidateName\\" placeholder=\\"e.g. AMIT KUMAR\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n            </div>\\n            <div>\\n              <label style=\\"font-size: 12px; font-weight: bold;\\">Date of Photo (DOP):</label>\\n              <input type=\\"text\\" id=\\"photoDate\\" placeholder=\\"e.g. 03/10/2026\\" class=\\"form-control\\" style=\\"background:#fff;\\">\\n            </div>\\n          </div>\\n\\n          <div style=\\"margin-bottom: 20px;\\">\\n            <label style=\\"display: block; font-weight: bold; margin-bottom: 5px;\\">Quality / Compression:</label>\\n            <input type=\\"range\\" id=\\"qualityRange\\" min=\\"0.3\\" max=\\"1.0\\" step=\\"0.05\\" value=\\"0.85\\" style=\\"width: 100%;\\">\\n            <div style=\\"display: flex; justify-content: space-between; font-size: 11px; color: #666;\\">\\n              <span>Smaller File Size (Lower KB)</span>\\n              <span>Higher Quality</span>\\n            </div>\\n          </div>\\n\\n          <button type=\\"button\\" id=\\"processBtn\\" style=\\"width: 100%; background: var(--primary-red); color: #fff; font-weight: bold; font-size: 16px; padding: 12px; border: none; border-radius: 4px; cursor: pointer;\\">\\n            \u26A1 Generate Resized Image\\n          </button>\\n        </div>\\n\\n        <!-- Right: Preview & Download -->\\n        <div style=\\"background: #f8fafc; border: 2px dashed #cbd5e1; padding: 20px; border-radius: 6px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px;\\">\\n          <h3 style=\\"color: #1e293b; margin-top: 0; font-size: 16px; margin-bottom: 15px;\\">\\n            Live Image Preview\\n          </h3>\\n\\n          <div id=\\"previewContainer\\" style=\\"margin-bottom: 15px; max-width: 100%; overflow: auto;\\">\\n            <canvas id=\\"outputCanvas\\" style=\\"max-width: 100%; border: 1px solid #94a3b8; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1);\\"></canvas>\\n          </div>\\n\\n          <div id=\\"fileInfo\\" style=\\"font-size: 13px; font-weight: bold; color: #0284c7; margin-bottom: 15px; display: none;\\">\\n            Estimated Size: <span id=\\"sizeText\\">0 KB</span> | Dimensions: <span id=\\"dimText\\">0 x 0 px</span>\\n          </div>\\n\\n          <a id=\\"downloadBtn\\" href=\\"#\\" download=\\"oa_resized_photo.jpg\\" style=\\"display: none; background: #10b981; color: #fff; font-weight: bold; font-size: 16px; padding: 10px 24px; border-radius: 4px; text-decoration: none;\\">\\n            \u2B07\uFE0F Download Resized Image\\n          </a>\\n\\n          <p id=\\"placeholderText\\" style=\\"color: #94a3b8; font-size: 13.5px;\\">\\n            Upload an image from the left panel and click \\"Generate Resized Image\\" to preview here.\\n          </div>\\n        </div>\\n\\n        <!-- Rich Guide & AdSense Compliant Information -->\\n        <div style=\\"border-top: 1px solid #e2e8f0; padding-top: 25px; margin-top: 25px; color: #334155; line-height: 1.7; font-size: 14px;\\">\\n          <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 0 0 12px 0;\\">\\n            \u{1F4D6} How to Resize Photograph &amp; Signature in 4 Easy Steps\\n          </h2>\\n          <div style=\\"display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 22px;\\">\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 1: Choose File</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Click \\"Select Image File\\" and choose your scanned photo or signature (JPG, JPEG, or PNG).</div>\\n            </div>\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 2: Select Preset</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Pick Passport (350x450 px) or Signature (400x200 px), or enter your custom width &amp; height.</div>\\n            </div>\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 3: Add Name &amp; Date</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Check the box if required (for UP Police, SSC) to automatically print the name &amp; DOP white strip.</div>\\n            </div>\\n            <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;\\">\\n              <div style=\\"font-weight: 800; color: var(--primary-red); margin-bottom: 4px;\\">Step 4: Download</div>\\n              <div style=\\"font-size: 13px; color: #475569;\\">Click \\"Generate Resized Image\\", check the live preview &amp; KB size, then hit \\"Download Resized Image\\".</div>\\n            </div>\\n          </div>\\n\\n          <div style=\\"background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 16px 20px; margin-bottom: 22px;\\">\\n            <h3 style=\\"color: #166534; font-size: 15px; margin: 0 0 6px 0;\\">\\n              \u{1F512} 100% Client-Side Privacy Guarantee\\n            </h3>\\n            <p style=\\"margin: 0; font-size: 13px; color: #1e3a24; line-height: 1.6;\\">\\n              Your personal photos and signatures are confidential. All resizing, cropping, and text rendering operations run <b>locally inside your web browser</b> via HTML5 Canvas. No image data is ever uploaded to, processed on, or stored in our cloud servers.\\n            </p>\\n          </div>\\n\\n          <h2 style=\\"color: var(--primary-red); font-size: 18px; margin: 24px 0 12px 0;\\">\\n            \u2753 Frequently Asked Questions (Image Resizer &amp; Name Maker)\\n          </h2>\\n          <div style=\\"background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 16px 20px;\\">\\n            <h3 style=\\"font-size: 14.5px; margin: 0 0 6px 0; color: #0f172a;\\">Q1: How can I decrease the file size if it exceeds 50 KB?</h3>\\n            <p style=\\"margin: 0 0 14px 0; color: #475569; font-size: 13.5px;\\">\\n              Use the \\"Quality / Compression\\" slider in the left panel. Sliding the control towards \\"Smaller File Size (Lower KB)\\" reduces file weight while preserving image clarity.\\n            </p>\\n\\n            <h3 style=\\"font-size: 14.5px; margin: 0 0 6px 0; color: #0f172a;\\">Q2: What is Date of Photo (DOP) requirement?</h3>\\n            <p style=\\"margin: 0; color: #475569; font-size: 13.5px;\\">\\n              Commissions such as UP Police specify that photographs must not be more than 3 months old. Printing the date on the photo verifies that the photograph is recent and complies with official examination standards.\\n            </p>\\n          </div>\\n        </div>\\n      </div>\\n    </div>\\n  </div>\\n</main>\\n\\n<script>\\ndocument.addEventListener('DOMContentLoaded', function() {\\n  const imageInput = document.getElementById('imageInput');\\n  const presetSelect = document.getElementById('presetSelect');\\n  const customDimensions = document.getElementById('customDimensions');\\n  const customWidth = document.getElementById('customWidth');\\n  const customHeight = document.getElementById('customHeight');\\n  const addNameDate = document.getElementById('addNameDate');\\n  const nameDateFields = document.getElementById('nameDateFields');\\n  const candidateName = document.getElementById('candidateName');\\n  const photoDate = document.getElementById('photoDate');\\n  const qualityRange = document.getElementById('qualityRange');\\n  const processBtn = document.getElementById('processBtn');\\n  const canvas = document.getElementById('outputCanvas');\\n  const ctx = canvas.getContext('2d');\\n  const downloadBtn = document.getElementById('downloadBtn');\\n  const placeholderText = document.getElementById('placeholderText');\\n  const fileInfo = document.getElementById('fileInfo');\\n  const sizeText = document.getElementById('sizeText');\\n  const dimText = document.getElementById('dimText');\\n\\n  let loadedImage = null;\\n\\n  // Preset toggle\\n  presetSelect.addEventListener('change', function() {\\n    if (this.value === 'custom') {\\n      customDimensions.style.display = 'grid';\\n    } else {\\n      customDimensions.style.display = 'none';\\n    }\\n  });\\n\\n  // Name & Date toggle\\n  addNameDate.addEventListener('change', function() {\\n    nameDateFields.style.display = this.checked ? 'block' : 'none';\\n  });\\n\\n  // Load image\\n  imageInput.addEventListener('change', function(e) {\\n    const file = e.target.files[0];\\n    if (!file) return;\\n\\n    const reader = new FileReader();\\n    reader.onload = function(evt) {\\n      const img = new Image();\\n      img.onload = function() {\\n        loadedImage = img;\\n        renderImage();\\n      };\\n      img.src = evt.target.result;\\n    };\\n    reader.readAsDataURL(file);\\n  });\\n\\n  processBtn.addEventListener('click', renderImage);\\n  qualityRange.addEventListener('input', renderImage);\\n\\n  function renderImage() {\\n    if (!loadedImage) {\\n      alert('Please select an image file first.');\\n      return;\\n    }\\n\\n    let targetW = 350;\\n    let targetH = 450;\\n\\n    const preset = presetSelect.value;\\n    if (preset === 'signature') {\\n      targetW = 400;\\n      targetH = 200;\\n    } else if (preset === 'custom') {\\n      targetW = parseInt(customWidth.value, 10) || 350;\\n      targetH = parseInt(customHeight.value, 10) || 450;\\n    }\\n\\n    canvas.width = targetW;\\n    canvas.height = targetH;\\n\\n    // Clear and draw background\\n    ctx.fillStyle = '#ffffff';\\n    ctx.fillRect(0, 0, targetW, targetH);\\n\\n    // Draw main image\\n    let imgDrawH = targetH;\\n    const shouldAddStrip = addNameDate.checked && preset !== 'signature';\\n\\n    if (shouldAddStrip) {\\n      imgDrawH = Math.floor(targetH * 0.78);\\n    }\\n\\n    ctx.drawImage(loadedImage, 0, 0, targetW, imgDrawH);\\n\\n    // Draw white bottom strip with Name and Date\\n    if (shouldAddStrip) {\\n      const stripY = imgDrawH;\\n      const stripH = targetH - stripY;\\n\\n      ctx.fillStyle = '#ffffff';\\n      ctx.fillRect(0, stripY, targetW, stripH);\\n\\n      ctx.strokeStyle = '#333333';\\n      ctx.lineWidth = 1.5;\\n      ctx.beginPath();\\n      ctx.moveTo(0, stripY);\\n      ctx.lineTo(targetW, stripY);\\n      ctx.stroke();\\n\\n      ctx.fillStyle = '#000000';\\n      ctx.textAlign = 'center';\\n\\n      const name = (candidateName.value || 'CANDIDATE NAME').toUpperCase();\\n      const date = (photoDate.value || 'DOP: 01/10/2026').toUpperCase();\\n\\n      const fontSize = Math.max(12, Math.floor(targetW / 18));\\n      ctx.font = \`bold \${fontSize}px Arial, sans-serif\`;\\n      ctx.fillText(name, targetW / 2, stripY + (stripH * 0.42));\\n\\n      ctx.font = \`bold \${fontSize - 1}px Arial, sans-serif\`;\\n      ctx.fillText(date.startsWith('DOP') ? date : \`DOP: \${date}\`, targetW / 2, stripY + (stripH * 0.82));\\n    }\\n\\n    // Convert to JPEG with quality\\n    const quality = parseFloat(qualityRange.value);\\n    const dataUrl = canvas.toDataURL('image/jpeg', quality);\\n\\n    downloadBtn.href = dataUrl;\\n    downloadBtn.style.display = 'inline-block';\\n    placeholderText.style.display = 'none';\\n\\n    // Calculate approximate size\\n    const base64Len = dataUrl.length - 'data:image/jpeg;base64,'.length;\\n    const approxBytes = Math.ceil(base64Len * 0.75);\\n    const approxKB = (approxBytes / 1024).toFixed(1);\\n\\n    sizeText.textContent = \`\${approxKB} KB\`;\\n    dimText.textContent = \`\${targetW} x \${targetH} px\`;\\n    fileInfo.style.display = 'block';\\n  }\\n});\\n</script>\\n\\n")
     ; __append( include('../partials/footer') )
     ; __append("\\n")
   }
@@ -81467,13 +81467,13 @@ var require_templateEngine = __commonJS({
     ;  }) 
     ; __append("\\n  </section>\\n  ")
     ;  } 
-    ; __append("\\n\\n  <!-- HOMEPAGE FAQ SECTION WITH SCHEMA.ORG STRUCTURED DATA -->\\n  <section class=\\"homepage-faq-section\\" style=\\"margin: 25px 0 10px 0;\\">\\n    <div class=\\"sarkari-box\\" style=\\"background: #ffffff; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06);\\">\\n      <div class=\\"sarkari-box-header\\" style=\\"text-align: left; padding: 12px 18px; font-size: 15px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;\\">\\n        <span>\u2753 Frequently Asked Questions (FAQ) - Govt Exam Zone</span>\\n        <a href=\\"/faq\\" style=\\"font-size: 12.5px; color: #fff; text-decoration: underline; font-weight: normal;\\">View All FAQs \u2192</a>\\n      </div>\\n      \\n      <div style=\\"padding: 16px 18px;\\">\\n        <div style=\\"display: flex; flex-direction: column; gap: 8px;\\">\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q1: What is Govt Exam Zone (govtexamzone.com) and what information is provided?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Govt Exam Zone is an independent educational news and candidate notification portal. We provide fastest live updates for Central and State Government Jobs (Sarkari Naukri), Online Application Forms, Exam Dates, Admit Cards, Official Answer Keys, and Results across UPSC, SSC, Railways, State Police, Banking, and Teaching recruitment exams.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q2: Are all government job alerts and services on Govt Exam Zone free?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Yes, 100% free. We never charge candidates any registration fees, subscription costs, or guidance charges. All notification briefs, syllabus documents, cutoff marks, and direct official links are completely free for all aspirants.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q3: How are recruitment notifications verified on this website?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Our dedicated editorial desk cross-checks all circulars directly with official government employment gazettes (Employment News) and statutory commission portals (SSC, UPSC, RRB, State PSCs, NTA). Every post includes direct links to the official PDF notification for complete transparency.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q4: How do I apply online for the latest government vacancies?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Click on the notification of your interest in the \\"Latest Jobs\\" box. Review the eligibility requirements, age limit, and cutoff dates. In the \\"Important Links\\" section at the bottom, click \\"Apply Online\\" to navigate securely to the official department application portal.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q5: How can I download Admit Cards and check Examination Results?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Visit the \\"Admit Card\\" or \\"Result\\" category on our homepage. Click on your exam name and choose an active server download link. Enter your Registration Number or Roll Number and Date of Birth to access your hall ticket or scorecard directly from the official portal.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q6: How can I receive real-time notifications on my mobile phone?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Join our official verified <a href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' 
+    ; __append("\\n\\n  <!-- HOMEPAGE FAQ SECTION WITH SCHEMA.ORG STRUCTURED DATA -->\\n  <section class=\\"homepage-faq-section\\" style=\\"margin: 25px 0 10px 0;\\">\\n    <div class=\\"sarkari-box\\" style=\\"background: #ffffff; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06);\\">\\n      <div class=\\"sarkari-box-header\\" style=\\"text-align: left; padding: 12px 18px; font-size: 15px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;\\">\\n        <span>\u2753 Frequently Asked Questions (FAQ) - Odisha Aspirants</span>\\n        <a href=\\"/faq\\" style=\\"font-size: 12.5px; color: #fff; text-decoration: underline; font-weight: normal;\\">View All FAQs \u2192</a>\\n      </div>\\n      \\n      <div style=\\"padding: 16px 18px;\\">\\n        <div style=\\"display: flex; flex-direction: column; gap: 8px;\\">\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q1: What is Odisha Aspirants (odishaaspirants.com) and what information is provided?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Odisha Aspirants is an independent educational news and candidate notification portal. We provide fastest live updates for Central and State Government Jobs (Sarkari Naukri), Online Application Forms, Exam Dates, Admit Cards, Official Answer Keys, and Results across UPSC, SSC, Railways, State Police, Banking, and Teaching recruitment exams.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q2: Are all government job alerts and services on Odisha Aspirants free?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Yes, 100% free. We never charge candidates any registration fees, subscription costs, or guidance charges. All notification briefs, syllabus documents, cutoff marks, and direct official links are completely free for all aspirants.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q3: How are recruitment notifications verified on this website?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Our dedicated editorial desk cross-checks all circulars directly with official government employment gazettes (Employment News) and statutory commission portals (SSC, UPSC, RRB, State PSCs, NTA). Every post includes direct links to the official PDF notification for complete transparency.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q4: How do I apply online for the latest government vacancies?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Click on the notification of your interest in the \\"Latest Jobs\\" box. Review the eligibility requirements, age limit, and cutoff dates. In the \\"Important Links\\" section at the bottom, click \\"Apply Online\\" to navigate securely to the official department application portal.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q5: How can I download Admit Cards and check Examination Results?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Visit the \\"Admit Card\\" or \\"Result\\" category on our homepage. Click on your exam name and choose an active server download link. Enter your Registration Number or Roll Number and Date of Birth to access your hall ticket or scorecard directly from the official portal.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q6: How can I receive real-time notifications on my mobile phone?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Join our official verified <a href=\\"")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' 
 ))
     ; __append("\\" target=\\"_blank\\" rel=\\"noopener\\" style=\\"color: #0284c7; font-weight: bold;\\">Telegram Channel</a> and <a href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' 
 ))
-    ; __append("\\" target=\\"_blank\\" rel=\\"noopener\\" style=\\"color: #16a34a; font-weight: bold;\\">WhatsApp Channel</a> for instant alerts as soon as an exam notification is released.\\n            </div>\\n          </details>\\n        </div>\\n      </div>\\n\\n      <div class=\\"sarkari-box-footer\\" style=\\"text-align: center; padding: 10px 16px; background: #f8fafc; border-top: 1px solid #e2e8f0;\\">\\n        <a href=\\"/faq\\" style=\\"color: var(--primary-red); font-weight: 700; text-decoration: none; font-size: 13.5px;\\">\\n          \u{1F4D6} Have more questions? Read our Complete Frequently Asked Questions (FAQ) Directory \u2192\\n        </a>\\n      </div>\\n    </div>\\n  </section>\\n\\n  <!-- Schema.org JSON-LD FAQPage for Homepage Rich Snippets -->\\n  <script type=\\"application/ld+json\\">\\n  {\\n    \\"@context\\": \\"https://schema.org\\",\\n    \\"@type\\": \\"FAQPage\\",\\n    \\"mainEntity\\": [\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"What is Govt Exam Zone (govtexamzone.com) and what information is provided?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Govt Exam Zone is an independent educational news and candidate notification portal providing fastest live updates for Central and State Government Jobs (Sarkari Naukri), Online Application Forms, Exam Dates, Admit Cards, Official Answer Keys, and Results.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"Are all government job alerts and services on Govt Exam Zone free?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Yes, 100% free. We never charge candidates any registration fees, subscription costs, or guidance charges. All notification briefs, syllabus documents, cutoff marks, and direct official links are completely free.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How are recruitment notifications verified on this website?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Our dedicated editorial desk cross-checks all circulars directly with official government employment gazettes (Employment News) and statutory commission portals (SSC, UPSC, RRB, State PSCs, NTA). Every post includes direct links to the official PDF notification.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How do I apply online for the latest government vacancies?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Click on the notification of your interest in the Latest Jobs box. Review the eligibility requirements, age limit, and cutoff dates. In the Important Links section at the bottom, click Apply Online to navigate securely to the official department application portal.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How can I download Admit Cards and check Examination Results?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Visit the Admit Card or Result category on our homepage. Click on your exam name and choose an active server download link. Enter your Registration Number or Roll Number and Date of Birth to access your hall ticket or scorecard directly.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How can I receive real-time notifications on my mobile phone?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Join our official verified Telegram Channel and WhatsApp Channel for instant alerts as soon as an exam notification is released.\\"\\n        }\\n      }\\n    ]\\n  }\\n  </script>\\n</main>\\n\\n")
+    ; __append("\\" target=\\"_blank\\" rel=\\"noopener\\" style=\\"color: #16a34a; font-weight: bold;\\">WhatsApp Channel</a> for instant alerts as soon as an exam notification is released.\\n            </div>\\n          </details>\\n        </div>\\n      </div>\\n\\n      <div class=\\"sarkari-box-footer\\" style=\\"text-align: center; padding: 10px 16px; background: #f8fafc; border-top: 1px solid #e2e8f0;\\">\\n        <a href=\\"/faq\\" style=\\"color: var(--primary-red); font-weight: 700; text-decoration: none; font-size: 13.5px;\\">\\n          \u{1F4D6} Have more questions? Read our Complete Frequently Asked Questions (FAQ) Directory \u2192\\n        </a>\\n      </div>\\n    </div>\\n  </section>\\n\\n  <!-- Schema.org JSON-LD FAQPage for Homepage Rich Snippets -->\\n  <script type=\\"application/ld+json\\">\\n  {\\n    \\"@context\\": \\"https://schema.org\\",\\n    \\"@type\\": \\"FAQPage\\",\\n    \\"mainEntity\\": [\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"What is Odisha Aspirants (odishaaspirants.com) and what information is provided?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Odisha Aspirants is an independent educational news and candidate notification portal providing fastest live updates for Central and State Government Jobs (Sarkari Naukri), Online Application Forms, Exam Dates, Admit Cards, Official Answer Keys, and Results.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"Are all government job alerts and services on Odisha Aspirants free?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Yes, 100% free. We never charge candidates any registration fees, subscription costs, or guidance charges. All notification briefs, syllabus documents, cutoff marks, and direct official links are completely free.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How are recruitment notifications verified on this website?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Our dedicated editorial desk cross-checks all circulars directly with official government employment gazettes (Employment News) and statutory commission portals (SSC, UPSC, RRB, State PSCs, NTA). Every post includes direct links to the official PDF notification.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How do I apply online for the latest government vacancies?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Click on the notification of your interest in the Latest Jobs box. Review the eligibility requirements, age limit, and cutoff dates. In the Important Links section at the bottom, click Apply Online to navigate securely to the official department application portal.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How can I download Admit Cards and check Examination Results?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Visit the Admit Card or Result category on our homepage. Click on your exam name and choose an active server download link. Enter your Registration Number or Roll Number and Date of Birth to access your hall ticket or scorecard directly.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How can I receive real-time notifications on my mobile phone?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Join our official verified Telegram Channel and WhatsApp Channel for instant alerts as soon as an exam notification is released.\\"\\n        }\\n      }\\n    ]\\n  }\\n  </script>\\n</main>\\n\\n")
     ; __append( include('../partials/footer') )
     ; __append("\\n")
   }
@@ -81533,13 +81533,13 @@ var require_templateEngine = __commonJS({
     ;  }) 
     ; __append("\\n  </section>\\n  ")
     ;  } 
-    ; __append("\\n\\n  <!-- HOMEPAGE FAQ SECTION WITH SCHEMA.ORG STRUCTURED DATA -->\\n  <section class=\\"homepage-faq-section\\" style=\\"margin: 25px 0 10px 0;\\">\\n    <div class=\\"sarkari-box\\" style=\\"background: #ffffff; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06);\\">\\n      <div class=\\"sarkari-box-header\\" style=\\"text-align: left; padding: 12px 18px; font-size: 15px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;\\">\\n        <span>\u2753 Frequently Asked Questions (FAQ) - Govt Exam Zone</span>\\n        <a href=\\"/faq\\" style=\\"font-size: 12.5px; color: #fff; text-decoration: underline; font-weight: normal;\\">View All FAQs \u2192</a>\\n      </div>\\n      \\n      <div style=\\"padding: 16px 18px;\\">\\n        <div style=\\"display: flex; flex-direction: column; gap: 8px;\\">\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q1: What is Govt Exam Zone (govtexamzone.com) and what information is provided?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Govt Exam Zone is an independent educational news and candidate notification portal. We provide fastest live updates for Central and State Government Jobs (Sarkari Naukri), Online Application Forms, Exam Dates, Admit Cards, Official Answer Keys, and Results across UPSC, SSC, Railways, State Police, Banking, and Teaching recruitment exams.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q2: Are all government job alerts and services on Govt Exam Zone free?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Yes, 100% free. We never charge candidates any registration fees, subscription costs, or guidance charges. All notification briefs, syllabus documents, cutoff marks, and direct official links are completely free for all aspirants.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q3: How are recruitment notifications verified on this website?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Our dedicated editorial desk cross-checks all circulars directly with official government employment gazettes (Employment News) and statutory commission portals (SSC, UPSC, RRB, State PSCs, NTA). Every post includes direct links to the official PDF notification for complete transparency.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q4: How do I apply online for the latest government vacancies?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Click on the notification of your interest in the \\"Latest Jobs\\" box. Review the eligibility requirements, age limit, and cutoff dates. In the \\"Important Links\\" section at the bottom, click \\"Apply Online\\" to navigate securely to the official department application portal.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q5: How can I download Admit Cards and check Examination Results?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Visit the \\"Admit Card\\" or \\"Result\\" category on our homepage. Click on your exam name and choose an active server download link. Enter your Registration Number or Roll Number and Date of Birth to access your hall ticket or scorecard directly from the official portal.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q6: How can I receive real-time notifications on my mobile phone?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Join our official verified <a href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' 
+    ; __append("\\n\\n  <!-- HOMEPAGE FAQ SECTION WITH SCHEMA.ORG STRUCTURED DATA -->\\n  <section class=\\"homepage-faq-section\\" style=\\"margin: 25px 0 10px 0;\\">\\n    <div class=\\"sarkari-box\\" style=\\"background: #ffffff; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06);\\">\\n      <div class=\\"sarkari-box-header\\" style=\\"text-align: left; padding: 12px 18px; font-size: 15px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;\\">\\n        <span>\u2753 Frequently Asked Questions (FAQ) - Odisha Aspirants</span>\\n        <a href=\\"/faq\\" style=\\"font-size: 12.5px; color: #fff; text-decoration: underline; font-weight: normal;\\">View All FAQs \u2192</a>\\n      </div>\\n      \\n      <div style=\\"padding: 16px 18px;\\">\\n        <div style=\\"display: flex; flex-direction: column; gap: 8px;\\">\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q1: What is Odisha Aspirants (odishaaspirants.com) and what information is provided?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Odisha Aspirants is an independent educational news and candidate notification portal. We provide fastest live updates for Central and State Government Jobs (Sarkari Naukri), Online Application Forms, Exam Dates, Admit Cards, Official Answer Keys, and Results across UPSC, SSC, Railways, State Police, Banking, and Teaching recruitment exams.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q2: Are all government job alerts and services on Odisha Aspirants free?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Yes, 100% free. We never charge candidates any registration fees, subscription costs, or guidance charges. All notification briefs, syllabus documents, cutoff marks, and direct official links are completely free for all aspirants.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q3: How are recruitment notifications verified on this website?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Our dedicated editorial desk cross-checks all circulars directly with official government employment gazettes (Employment News) and statutory commission portals (SSC, UPSC, RRB, State PSCs, NTA). Every post includes direct links to the official PDF notification for complete transparency.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q4: How do I apply online for the latest government vacancies?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Click on the notification of your interest in the \\"Latest Jobs\\" box. Review the eligibility requirements, age limit, and cutoff dates. In the \\"Important Links\\" section at the bottom, click \\"Apply Online\\" to navigate securely to the official department application portal.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q5: How can I download Admit Cards and check Examination Results?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Visit the \\"Admit Card\\" or \\"Result\\" category on our homepage. Click on your exam name and choose an active server download link. Enter your Registration Number or Roll Number and Date of Birth to access your hall ticket or scorecard directly from the official portal.\\n            </div>\\n          </details>\\n\\n          <details style=\\"border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;\\">\\n            <summary style=\\"font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;\\">\\n              Q6: How can I receive real-time notifications on my mobile phone?\\n            </summary>\\n            <div style=\\"padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;\\">\\n              Join our official verified <a href=\\"")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/odishaaspirantsofficial' 
 ))
     ; __append("\\" target=\\"_blank\\" rel=\\"noopener\\" style=\\"color: #0284c7; font-weight: bold;\\">Telegram Channel</a> and <a href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' 
 ))
-    ; __append("\\" target=\\"_blank\\" rel=\\"noopener\\" style=\\"color: #16a34a; font-weight: bold;\\">WhatsApp Channel</a> for instant alerts as soon as an exam notification is released.\\n            </div>\\n          </details>\\n        </div>\\n      </div>\\n\\n      <div class=\\"sarkari-box-footer\\" style=\\"text-align: center; padding: 10px 16px; background: #f8fafc; border-top: 1px solid #e2e8f0;\\">\\n        <a href=\\"/faq\\" style=\\"color: var(--primary-red); font-weight: 700; text-decoration: none; font-size: 13.5px;\\">\\n          \u{1F4D6} Have more questions? Read our Complete Frequently Asked Questions (FAQ) Directory \u2192\\n        </a>\\n      </div>\\n    </div>\\n  </section>\\n\\n  <!-- Schema.org JSON-LD FAQPage for Homepage Rich Snippets -->\\n  <script type=\\"application/ld+json\\">\\n  {\\n    \\"@context\\": \\"https://schema.org\\",\\n    \\"@type\\": \\"FAQPage\\",\\n    \\"mainEntity\\": [\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"What is Govt Exam Zone (govtexamzone.com) and what information is provided?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Govt Exam Zone is an independent educational news and candidate notification portal providing fastest live updates for Central and State Government Jobs (Sarkari Naukri), Online Application Forms, Exam Dates, Admit Cards, Official Answer Keys, and Results.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"Are all government job alerts and services on Govt Exam Zone free?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Yes, 100% free. We never charge candidates any registration fees, subscription costs, or guidance charges. All notification briefs, syllabus documents, cutoff marks, and direct official links are completely free.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How are recruitment notifications verified on this website?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Our dedicated editorial desk cross-checks all circulars directly with official government employment gazettes (Employment News) and statutory commission portals (SSC, UPSC, RRB, State PSCs, NTA). Every post includes direct links to the official PDF notification.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How do I apply online for the latest government vacancies?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Click on the notification of your interest in the Latest Jobs box. Review the eligibility requirements, age limit, and cutoff dates. In the Important Links section at the bottom, click Apply Online to navigate securely to the official department application portal.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How can I download Admit Cards and check Examination Results?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Visit the Admit Card or Result category on our homepage. Click on your exam name and choose an active server download link. Enter your Registration Number or Roll Number and Date of Birth to access your hall ticket or scorecard directly.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How can I receive real-time notifications on my mobile phone?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Join our official verified Telegram Channel and WhatsApp Channel for instant alerts as soon as an exam notification is released.\\"\\n        }\\n      }\\n    ]\\n  }\\n  </script>\\n</main>\\n\\n")
+    ; __append("\\" target=\\"_blank\\" rel=\\"noopener\\" style=\\"color: #16a34a; font-weight: bold;\\">WhatsApp Channel</a> for instant alerts as soon as an exam notification is released.\\n            </div>\\n          </details>\\n        </div>\\n      </div>\\n\\n      <div class=\\"sarkari-box-footer\\" style=\\"text-align: center; padding: 10px 16px; background: #f8fafc; border-top: 1px solid #e2e8f0;\\">\\n        <a href=\\"/faq\\" style=\\"color: var(--primary-red); font-weight: 700; text-decoration: none; font-size: 13.5px;\\">\\n          \u{1F4D6} Have more questions? Read our Complete Frequently Asked Questions (FAQ) Directory \u2192\\n        </a>\\n      </div>\\n    </div>\\n  </section>\\n\\n  <!-- Schema.org JSON-LD FAQPage for Homepage Rich Snippets -->\\n  <script type=\\"application/ld+json\\">\\n  {\\n    \\"@context\\": \\"https://schema.org\\",\\n    \\"@type\\": \\"FAQPage\\",\\n    \\"mainEntity\\": [\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"What is Odisha Aspirants (odishaaspirants.com) and what information is provided?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Odisha Aspirants is an independent educational news and candidate notification portal providing fastest live updates for Central and State Government Jobs (Sarkari Naukri), Online Application Forms, Exam Dates, Admit Cards, Official Answer Keys, and Results.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"Are all government job alerts and services on Odisha Aspirants free?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Yes, 100% free. We never charge candidates any registration fees, subscription costs, or guidance charges. All notification briefs, syllabus documents, cutoff marks, and direct official links are completely free.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How are recruitment notifications verified on this website?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Our dedicated editorial desk cross-checks all circulars directly with official government employment gazettes (Employment News) and statutory commission portals (SSC, UPSC, RRB, State PSCs, NTA). Every post includes direct links to the official PDF notification.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How do I apply online for the latest government vacancies?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Click on the notification of your interest in the Latest Jobs box. Review the eligibility requirements, age limit, and cutoff dates. In the Important Links section at the bottom, click Apply Online to navigate securely to the official department application portal.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How can I download Admit Cards and check Examination Results?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Visit the Admit Card or Result category on our homepage. Click on your exam name and choose an active server download link. Enter your Registration Number or Roll Number and Date of Birth to access your hall ticket or scorecard directly.\\"\\n        }\\n      },\\n      {\\n        \\"@type\\": \\"Question\\",\\n        \\"name\\": \\"How can I receive real-time notifications on my mobile phone?\\",\\n        \\"acceptedAnswer\\": {\\n          \\"@type\\": \\"Answer\\",\\n          \\"text\\": \\"Join our official verified Telegram Channel and WhatsApp Channel for instant alerts as soon as an exam notification is released.\\"\\n        }\\n      }\\n    ]\\n  }\\n  </script>\\n</main>\\n\\n")
     ; __append( include('../partials/footer') )
     ; __append("\\n")
   }
@@ -81555,7 +81555,7 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList, HowTo, and FAQPage -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@graph\\": [\\n    {\\n      \\"@type\\": \\"BreadcrumbList\\",\\n      \\"itemListElement\\": [\\n        {\\n          \\"@type\\": \\"ListItem\\",\\n          \\"position\\": 1,\\n          \\"name\\": \\"Home\\",\\n          \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -81579,7 +81579,7 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList, HowTo, and FAQPage -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@graph\\": [\\n    {\\n      \\"@type\\": \\"BreadcrumbList\\",\\n      \\"itemListElement\\": [\\n        {\\n          \\"@type\\": \\"ListItem\\",\\n          \\"position\\": 1,\\n          \\"name\\": \\"Home\\",\\n          \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -81603,9 +81603,9 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
-  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
-  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+    : 'https://odishaaspirants.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@type\\": \\"BreadcrumbList\\",\\n  \\"itemListElement\\": [\\n    {\\n      \\"@type\\": \\"ListItem\\",\\n      \\"position\\": 1,\\n      \\"name\\": \\"Home\\",\\n      \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -81653,9 +81653,9 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
-  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
-  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+    : 'https://odishaaspirants.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@type\\": \\"BreadcrumbList\\",\\n  \\"itemListElement\\": [\\n    {\\n      \\"@type\\": \\"ListItem\\",\\n      \\"position\\": 1,\\n      \\"name\\": \\"Home\\",\\n      \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -81811,9 +81811,9 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
-  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
-  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+    : 'https://odishaaspirants.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@type\\": \\"BreadcrumbList\\",\\n  \\"itemListElement\\": [\\n    {\\n      \\"@type\\": \\"ListItem\\",\\n      \\"position\\": 1,\\n      \\"name\\": \\"Home\\",\\n      \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -81855,9 +81855,9 @@ var require_templateEngine = __commonJS({
     ; 
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-    : 'https://govtexamzone.com';
-  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
-  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+    : 'https://odishaaspirants.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com';
 
     ; __append("\\n\\n<!-- Schema.org JSON-LD Structured Data: BreadcrumbList -->\\n<script type=\\"application/ld+json\\">\\n{\\n  \\"@context\\": \\"https://schema.org\\",\\n  \\"@type\\": \\"BreadcrumbList\\",\\n  \\"itemListElement\\": [\\n    {\\n      \\"@type\\": \\"ListItem\\",\\n      \\"position\\": 1,\\n      \\"name\\": \\"Home\\",\\n      \\"item\\": \\"")
     ; __append(escapeFn( siteDomain ))
@@ -81961,17 +81961,17 @@ var require_templateEngine = __commonJS({
   const pubBase = typeof publicBase !== 'undefined' ? publicBase : '';
 
     ; __append("\\n<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, viewport-fit=cover\\">\\n  <meta name=\\"robots\\" content=\\"noindex, nofollow, noarchive\\">\\n  <meta name=\\"theme-color\\" content=\\"#0f172a\\">\\n  <title>")
-    ; __append(escapeFn( title || 'Govt Exam Zone - Professional Admin Console' ))
+    ; __append(escapeFn( title || 'Odisha Aspirants - Professional Admin Console' ))
     ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"stylesheet\\" href=\\"/css/admin.css?v=20261125a\\">\\n  <link rel=\\"icon\\" href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' ))
     ; __append("\\">\\n</head>\\n<body class=\\"admin-body\\">\\n\\n<div class=\\"admin-app-layout\\">\\n  <!-- Mobile Sidebar Overlay Backdrop -->\\n  <div class=\\"sidebar-backdrop\\" id=\\"sidebarBackdrop\\"></div>\\n\\n  <!-- Professional Dark Sidebar -->\\n  <aside class=\\"admin-sidebar\\" id=\\"adminSidebar\\">\\n    <!-- Brand Header -->\\n    <div class=\\"sidebar-brand\\">\\n      <a href=\\"")
     ; __append(escapeFn( baseAdmin || '/' ))
     ; __append("\\" class=\\"brand-link\\">\\n        <img src=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/oa-logo.svg' ))
     ; __append("\\" alt=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("\\" class=\\"brand-logo\\" width=\\"36\\" height=\\"36\\" style=\\"object-fit: contain;\\">\\n        <div class=\\"brand-info\\">\\n          <span class=\\"brand-title\\">")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("</span>\\n          <span class=\\"brand-subtitle\\">\\n            <span class=\\"status-pulse-dot\\"></span> Admin Console Pro\\n          </span>\\n        </div>\\n      </a>\\n      <button type=\\"button\\" class=\\"sidebar-close-btn\\" id=\\"sidebarCloseBtn\\" aria-label=\\"Close Sidebar\\">\u2715</button>\\n    </div>\\n\\n    <!-- Navigation Menu -->\\n    <div class=\\"sidebar-nav-container\\">\\n      <div class=\\"nav-section-title\\">CORE MANAGEMENT</div>\\n      <nav class=\\"sidebar-nav\\">\\n        <a href=\\"")
     ; __append(escapeFn( baseAdmin || '/' ))
     ; __append("\\" class=\\"nav-item ")
@@ -82012,7 +82012,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( baseAdmin ))
     ; __append("/settings\\" class=\\"nav-item ")
     ; __append(escapeFn( typeof currentPath !== 'undefined' && currentPath === '/admin/settings' ? 'active' : '' ))
-    ; __append("\\">\\n          <span class=\\"nav-icon\\">\u2699\uFE0F</span>\\n          <span class=\\"nav-text\\">Global Settings</span>\\n        </a>\\n      </nav>\\n    </div>\\n\\n    <!-- Sidebar Footer: System Status & User Card -->\\n    <div class=\\"sidebar-footer\\">\\n      <div class=\\"system-status-chip\\">\\n        <div class=\\"status-indicator\\">\\n          <span class=\\"ping-circle\\"></span>\\n          <span class=\\"ping-core\\"></span>\\n        </div>\\n        <div class=\\"status-texts\\">\\n          <div class=\\"status-line\\">Cloudflare D1 &amp; R2</div>\\n          <div class=\\"status-sub\\">PM2 Daemon Online</div>\\n        </div>\\n      </div>\\n\\n      <div class=\\"sidebar-user-row\\">\\n        <div class=\\"user-avatar\\">GEZ</div>\\n        <div class=\\"user-meta\\">\\n          <span class=\\"user-name\\">Admin Portal</span>\\n          <span class=\\"user-role\\">Super Administrator</span>\\n        </div>\\n        <a href=\\"")
+    ; __append("\\">\\n          <span class=\\"nav-icon\\">\u2699\uFE0F</span>\\n          <span class=\\"nav-text\\">Global Settings</span>\\n        </a>\\n      </nav>\\n    </div>\\n\\n    <!-- Sidebar Footer: System Status & User Card -->\\n    <div class=\\"sidebar-footer\\">\\n      <div class=\\"system-status-chip\\">\\n        <div class=\\"status-indicator\\">\\n          <span class=\\"ping-circle\\"></span>\\n          <span class=\\"ping-core\\"></span>\\n        </div>\\n        <div class=\\"status-texts\\">\\n          <div class=\\"status-line\\">Cloudflare D1 &amp; R2</div>\\n          <div class=\\"status-sub\\">PM2 Daemon Online</div>\\n        </div>\\n      </div>\\n\\n      <div class=\\"sidebar-user-row\\">\\n        <div class=\\"user-avatar\\">OA</div>\\n        <div class=\\"user-meta\\">\\n          <span class=\\"user-name\\">Admin Portal</span>\\n          <span class=\\"user-role\\">Super Administrator</span>\\n        </div>\\n        <a href=\\"")
     ; __append(escapeFn( baseAdmin ))
     ; __append("/logout\\" class=\\"sidebar-logout-btn\\" title=\\"Logout from Admin\\">\\n          \u{1F6AA}\\n        </a>\\n      </div>\\n    </div>\\n  </aside>\\n\\n  <!-- Main View Area -->\\n  <div class=\\"admin-main-viewport\\">\\n    <!-- Topbar Header -->\\n    <header class=\\"admin-topbar\\">\\n      <div class=\\"topbar-left\\">\\n        <button type=\\"button\\" class=\\"mobile-toggle-btn\\" id=\\"sidebarToggleBtn\\" aria-label=\\"Open Sidebar\\">\\n          \u2630\\n        </button>\\n        <div class=\\"topbar-breadcrumb\\">\\n          <span class=\\"crumb-root\\">Console</span>\\n          <span class=\\"crumb-separator\\">/</span>\\n          <span class=\\"crumb-current\\">\\n            ")
     ;  if (typeof currentPath === 'undefined' || currentPath === '/admin') { 
@@ -82054,17 +82054,17 @@ var require_templateEngine = __commonJS({
   const pubBase = typeof publicBase !== 'undefined' ? publicBase : '';
 
     ; __append("\\n<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, viewport-fit=cover\\">\\n  <meta name=\\"robots\\" content=\\"noindex, nofollow, noarchive\\">\\n  <meta name=\\"theme-color\\" content=\\"#0f172a\\">\\n  <title>")
-    ; __append(escapeFn( title || 'Govt Exam Zone - Professional Admin Console' ))
+    ; __append(escapeFn( title || 'Odisha Aspirants - Professional Admin Console' ))
     ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"stylesheet\\" href=\\"/css/admin.css?v=20261125a\\">\\n  <link rel=\\"icon\\" href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' ))
     ; __append("\\">\\n</head>\\n<body class=\\"admin-body\\">\\n\\n<div class=\\"admin-app-layout\\">\\n  <!-- Mobile Sidebar Overlay Backdrop -->\\n  <div class=\\"sidebar-backdrop\\" id=\\"sidebarBackdrop\\"></div>\\n\\n  <!-- Professional Dark Sidebar -->\\n  <aside class=\\"admin-sidebar\\" id=\\"adminSidebar\\">\\n    <!-- Brand Header -->\\n    <div class=\\"sidebar-brand\\">\\n      <a href=\\"")
     ; __append(escapeFn( baseAdmin || '/' ))
     ; __append("\\" class=\\"brand-link\\">\\n        <img src=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/oa-logo.svg' ))
     ; __append("\\" alt=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("\\" class=\\"brand-logo\\" width=\\"36\\" height=\\"36\\" style=\\"object-fit: contain;\\">\\n        <div class=\\"brand-info\\">\\n          <span class=\\"brand-title\\">")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("</span>\\n          <span class=\\"brand-subtitle\\">\\n            <span class=\\"status-pulse-dot\\"></span> Admin Console Pro\\n          </span>\\n        </div>\\n      </a>\\n      <button type=\\"button\\" class=\\"sidebar-close-btn\\" id=\\"sidebarCloseBtn\\" aria-label=\\"Close Sidebar\\">\u2715</button>\\n    </div>\\n\\n    <!-- Navigation Menu -->\\n    <div class=\\"sidebar-nav-container\\">\\n      <div class=\\"nav-section-title\\">CORE MANAGEMENT</div>\\n      <nav class=\\"sidebar-nav\\">\\n        <a href=\\"")
     ; __append(escapeFn( baseAdmin || '/' ))
     ; __append("\\" class=\\"nav-item ")
@@ -82105,7 +82105,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( baseAdmin ))
     ; __append("/settings\\" class=\\"nav-item ")
     ; __append(escapeFn( typeof currentPath !== 'undefined' && currentPath === '/admin/settings' ? 'active' : '' ))
-    ; __append("\\">\\n          <span class=\\"nav-icon\\">\u2699\uFE0F</span>\\n          <span class=\\"nav-text\\">Global Settings</span>\\n        </a>\\n      </nav>\\n    </div>\\n\\n    <!-- Sidebar Footer: System Status & User Card -->\\n    <div class=\\"sidebar-footer\\">\\n      <div class=\\"system-status-chip\\">\\n        <div class=\\"status-indicator\\">\\n          <span class=\\"ping-circle\\"></span>\\n          <span class=\\"ping-core\\"></span>\\n        </div>\\n        <div class=\\"status-texts\\">\\n          <div class=\\"status-line\\">Cloudflare D1 &amp; R2</div>\\n          <div class=\\"status-sub\\">PM2 Daemon Online</div>\\n        </div>\\n      </div>\\n\\n      <div class=\\"sidebar-user-row\\">\\n        <div class=\\"user-avatar\\">GEZ</div>\\n        <div class=\\"user-meta\\">\\n          <span class=\\"user-name\\">Admin Portal</span>\\n          <span class=\\"user-role\\">Super Administrator</span>\\n        </div>\\n        <a href=\\"")
+    ; __append("\\">\\n          <span class=\\"nav-icon\\">\u2699\uFE0F</span>\\n          <span class=\\"nav-text\\">Global Settings</span>\\n        </a>\\n      </nav>\\n    </div>\\n\\n    <!-- Sidebar Footer: System Status & User Card -->\\n    <div class=\\"sidebar-footer\\">\\n      <div class=\\"system-status-chip\\">\\n        <div class=\\"status-indicator\\">\\n          <span class=\\"ping-circle\\"></span>\\n          <span class=\\"ping-core\\"></span>\\n        </div>\\n        <div class=\\"status-texts\\">\\n          <div class=\\"status-line\\">Cloudflare D1 &amp; R2</div>\\n          <div class=\\"status-sub\\">PM2 Daemon Online</div>\\n        </div>\\n      </div>\\n\\n      <div class=\\"sidebar-user-row\\">\\n        <div class=\\"user-avatar\\">OA</div>\\n        <div class=\\"user-meta\\">\\n          <span class=\\"user-name\\">Admin Portal</span>\\n          <span class=\\"user-role\\">Super Administrator</span>\\n        </div>\\n        <a href=\\"")
     ; __append(escapeFn( baseAdmin ))
     ; __append("/logout\\" class=\\"sidebar-logout-btn\\" title=\\"Logout from Admin\\">\\n          \u{1F6AA}\\n        </a>\\n      </div>\\n    </div>\\n  </aside>\\n\\n  <!-- Main View Area -->\\n  <div class=\\"admin-main-viewport\\">\\n    <!-- Topbar Header -->\\n    <header class=\\"admin-topbar\\">\\n      <div class=\\"topbar-left\\">\\n        <button type=\\"button\\" class=\\"mobile-toggle-btn\\" id=\\"sidebarToggleBtn\\" aria-label=\\"Open Sidebar\\">\\n          \u2630\\n        </button>\\n        <div class=\\"topbar-breadcrumb\\">\\n          <span class=\\"crumb-root\\">Console</span>\\n          <span class=\\"crumb-separator\\">/</span>\\n          <span class=\\"crumb-current\\">\\n            ")
     ;  if (typeof currentPath === 'undefined' || currentPath === '/admin') { 
@@ -82189,15 +82189,15 @@ var require_templateEngine = __commonJS({
   function __append(s) { if (s !== undefined && s !== null) __output += s }
   with (locals || {}) {
     ; __append("<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, viewport-fit=cover\\">\\n  <meta name=\\"theme-color\\" content=\\"#0f172a\\">\\n  <title>")
-    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Author Workspace - Govt Exam Zone' ))
+    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Author Workspace - Odisha Aspirants' ))
     ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"stylesheet\\" href=\\"/css/admin.css?v=20261124d\\">\\n  <link rel=\\"icon\\" href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' ))
     ; __append("\\">\\n  <style>\\n    /* Author Portal Dedicated Accents */\\n    .author-badge-strip {\\n      background: #eff6ff;\\n      border: 1px solid #bfdbfe;\\n      color: #1e40af;\\n      padding: 3px 8px;\\n      border-radius: 999px;\\n      font-size: 11px;\\n      font-weight: 700;\\n      display: inline-flex;\\n      align-items: center;\\n      gap: 4px;\\n    }\\n  </style>\\n</head>\\n<body class=\\"admin-body\\">\\n\\n<div class=\\"admin-app-layout\\">\\n  <!-- Mobile Sidebar Overlay Backdrop -->\\n  <div class=\\"sidebar-backdrop\\" id=\\"sidebarBackdrop\\"></div>\\n\\n  <!-- Author Workspace Sidebar -->\\n  <aside class=\\"admin-sidebar\\" id=\\"adminSidebar\\">\\n    <!-- Brand Header -->\\n    <div class=\\"sidebar-brand\\">\\n      <a href=\\"/author-portal\\" class=\\"brand-link\\">\\n        <img src=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/oa-logo.svg' ))
     ; __append("\\" alt=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("\\" class=\\"brand-logo\\" width=\\"36\\" height=\\"36\\" style=\\"object-fit: contain;\\">\\n        <div class=\\"brand-info\\">\\n          <span class=\\"brand-title\\">")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("</span>\\n          <span class=\\"brand-subtitle\\" style=\\"color: ")
     ; __append(escapeFn( (typeof isEditor !== 'undefined' && isEditor) ? '#34d399' : '#60a5fa' ))
     ; __append(";\\">\\n            <span class=\\"status-pulse-dot\\" style=\\"background: ")
@@ -82254,15 +82254,15 @@ var require_templateEngine = __commonJS({
   function __append(s) { if (s !== undefined && s !== null) __output += s }
   with (locals || {}) {
     ; __append("<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, viewport-fit=cover\\">\\n  <meta name=\\"theme-color\\" content=\\"#0f172a\\">\\n  <title>")
-    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Author Workspace - Govt Exam Zone' ))
+    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Author Workspace - Odisha Aspirants' ))
     ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"stylesheet\\" href=\\"/css/admin.css?v=20261124d\\">\\n  <link rel=\\"icon\\" href=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' ))
     ; __append("\\">\\n  <style>\\n    /* Author Portal Dedicated Accents */\\n    .author-badge-strip {\\n      background: #eff6ff;\\n      border: 1px solid #bfdbfe;\\n      color: #1e40af;\\n      padding: 3px 8px;\\n      border-radius: 999px;\\n      font-size: 11px;\\n      font-weight: 700;\\n      display: inline-flex;\\n      align-items: center;\\n      gap: 4px;\\n    }\\n  </style>\\n</head>\\n<body class=\\"admin-body\\">\\n\\n<div class=\\"admin-app-layout\\">\\n  <!-- Mobile Sidebar Overlay Backdrop -->\\n  <div class=\\"sidebar-backdrop\\" id=\\"sidebarBackdrop\\"></div>\\n\\n  <!-- Author Workspace Sidebar -->\\n  <aside class=\\"admin-sidebar\\" id=\\"adminSidebar\\">\\n    <!-- Brand Header -->\\n    <div class=\\"sidebar-brand\\">\\n      <a href=\\"/author-portal\\" class=\\"brand-link\\">\\n        <img src=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/gez-logo.svg' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/oa-logo.svg' ))
     ; __append("\\" alt=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("\\" class=\\"brand-logo\\" width=\\"36\\" height=\\"36\\" style=\\"object-fit: contain;\\">\\n        <div class=\\"brand-info\\">\\n          <span class=\\"brand-title\\">")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("</span>\\n          <span class=\\"brand-subtitle\\" style=\\"color: ")
     ; __append(escapeFn( (typeof isEditor !== 'undefined' && isEditor) ? '#34d399' : '#60a5fa' ))
     ; __append(";\\">\\n            <span class=\\"status-pulse-dot\\" style=\\"background: ")
@@ -82913,7 +82913,7 @@ var require_templateEngine = __commonJS({
     ; __append( settings.ad_bottom_code )
     ; __append("\\n  </div>\\n")
     ;  } 
-    ; __append("\\n\\n<!-- Footer Section -->\\n<footer class=\\"site-footer\\">\\n  <div class=\\"container\\">\\n    <div class=\\"footer-seo-content\\">\\n      <h3>Govt Exam Zone : Government Jobs 2026 Latest Online Form, Results, Admit Card</h3>\\n      <p>\\n        India has witnessed a high demand for Government jobs for many decades. People prefer Government jobs as their primary career option considering the wide variety of benefits, job stability, pension prospects, and public service authority associated with these jobs. Government service is a dream for millions of aspirants across the nation. GovtExamZone.com (govtexamzone.com) provides verified, prompt notifications for all central and state government recruitment exams.\\n      </p>\\n\\n      <h3>Exams for Government Jobs in India</h3>\\n      <p>\\n        Government examinations are conducted for various positions across state and central departments including <b>UPSC, SSC, Railway Recruitment Boards (RRB), State PSCs, Police Recruitment, Banking (IBPS, SBI, RBI), Defense (Army, Navy, Air Force), Teaching (CTET, UPTET, Super TET), NTA, and Board Examinations</b>. Candidates can apply based on their educational qualifications ranging from 10th Pass, 12th Intermediate, ITI, Polytechnic Diploma, to Graduate and Post Graduate degrees.\\n      </p>\\n\\n      ")
+    ; __append("\\n\\n<!-- Footer Section -->\\n<footer class=\\"site-footer\\">\\n  <div class=\\"container\\">\\n    <div class=\\"footer-seo-content\\">\\n      <h3>Odisha Aspirants : Government Jobs 2026 Latest Online Form, Results, Admit Card</h3>\\n      <p>\\n        India has witnessed a high demand for Government jobs for many decades. People prefer Government jobs as their primary career option considering the wide variety of benefits, job stability, pension prospects, and public service authority associated with these jobs. Government service is a dream for millions of aspirants across the nation. OdishaAspirants.com (odishaaspirants.com) provides verified, prompt notifications for all central and state government recruitment exams.\\n      </p>\\n\\n      <h3>Exams for Government Jobs in India</h3>\\n      <p>\\n        Government examinations are conducted for various positions across state and central departments including <b>UPSC, SSC, Railway Recruitment Boards (RRB), State PSCs, Police Recruitment, Banking (IBPS, SBI, RBI), Defense (Army, Navy, Air Force), Teaching (CTET, UPTET, Super TET), NTA, and Board Examinations</b>. Candidates can apply based on their educational qualifications ranging from 10th Pass, 12th Intermediate, ITI, Polytechnic Diploma, to Graduate and Post Graduate degrees.\\n      </p>\\n\\n      ")
     ;  if (false) { /* Hidden for now as requested: Useful Candidate Utilities & Tools */ 
     ; __append("\\n      <h3>Useful Candidate Utilities &amp; Tools</h3>\\n      <p>\\n        <a href=\\"/tools/age-calculator\\" style=\\"font-weight: bold; color: #ab183d;\\">Government Exam Age Calculator</a> | \\n        <a href=\\"/tools/photo-resizer\\" style=\\"font-weight: bold; color: #ab183d;\\">Photo &amp; Signature Resizer Guide</a> | \\n        <a href=\\"/tools/image-resizer\\" style=\\"font-weight: bold; color: #ab183d;\\">Interactive Photo Resizer &amp; Name Maker</a> |\\n        <a href=\\"/category/certificate-verification\\" style=\\"font-weight: bold; color: #ab183d;\\">Online Certificate Verification</a>\\n      </p>\\n      ")
     ;  } 
@@ -82946,12 +82946,12 @@ var require_templateEngine = __commonJS({
         const currentYear = new Date().getFullYear();
         let copyText = (typeof settings !== 'undefined' && settings.copyright_text) 
           ? settings.copyright_text 
-          : '\xA9 ' + currentYear + ' govtexamzone.com. All Rights Reserved.';
+          : '\xA9 ' + currentYear + ' odishaaspirants.com. All Rights Reserved.';
         copyText = copyText.replace(/\\{year\\}/gi, currentYear).replace(/\\b20\\d\\d\\b/g, currentYear).replace(/Cloudflare\\s*D1\\s*&\\s*R2\\s*Powered\\.?/gi, '').trim();
       
     ; __append("\\n      <p style=\\"margin-top: 8px;\\">\\n        ")
     ; __append(escapeFn( copyText ))
-    ; __append("\\n      </p>\\n      <p style=\\"font-size: 11.5px; color: #888; margin-top: 5px;\\">\\n        Disclaimer: Govt Exam Zone (govtexamzone.com) is an independent public information service portal. We are not affiliated with any government agency or department. All information is sourced directly from official government examination notifications.\\n      </p>\\n    </div>\\n  </div>\\n</footer>\\n</div><!-- /pageContentWrapper -->\\n\\n<!-- Global Toast Notification -->\\n<div id=\\"toast\\" class=\\"toast-msg\\">Link copied to clipboard!</div>\\n\\n<script src=\\"/js/main.js?v=20261125b\\"></script>\\n\\n")
+    ; __append("\\n      </p>\\n      <p style=\\"font-size: 11.5px; color: #888; margin-top: 5px;\\">\\n        Disclaimer: Odisha Aspirants (odishaaspirants.com) is an independent public information service portal. We are not affiliated with any government agency or department. All information is sourced directly from official government examination notifications.\\n      </p>\\n    </div>\\n  </div>\\n</footer>\\n</div><!-- /pageContentWrapper -->\\n\\n<!-- Global Toast Notification -->\\n<div id=\\"toast\\" class=\\"toast-msg\\">Link copied to clipboard!</div>\\n\\n<script src=\\"/js/main.js?v=20261125b\\"></script>\\n\\n")
     ;  if (typeof settings !== 'undefined' && settings.footer_custom_code) { 
     ; __append("\\n  <!-- Webmaster Custom Footer Code -->\\n  ")
     ; __append( settings.footer_custom_code )
@@ -82969,7 +82969,7 @@ var require_templateEngine = __commonJS({
     ; __append( settings.ad_bottom_code )
     ; __append("\\n  </div>\\n")
     ;  } 
-    ; __append("\\n\\n<!-- Footer Section -->\\n<footer class=\\"site-footer\\">\\n  <div class=\\"container\\">\\n    <div class=\\"footer-seo-content\\">\\n      <h3>Govt Exam Zone : Government Jobs 2026 Latest Online Form, Results, Admit Card</h3>\\n      <p>\\n        India has witnessed a high demand for Government jobs for many decades. People prefer Government jobs as their primary career option considering the wide variety of benefits, job stability, pension prospects, and public service authority associated with these jobs. Government service is a dream for millions of aspirants across the nation. GovtExamZone.com (govtexamzone.com) provides verified, prompt notifications for all central and state government recruitment exams.\\n      </p>\\n\\n      <h3>Exams for Government Jobs in India</h3>\\n      <p>\\n        Government examinations are conducted for various positions across state and central departments including <b>UPSC, SSC, Railway Recruitment Boards (RRB), State PSCs, Police Recruitment, Banking (IBPS, SBI, RBI), Defense (Army, Navy, Air Force), Teaching (CTET, UPTET, Super TET), NTA, and Board Examinations</b>. Candidates can apply based on their educational qualifications ranging from 10th Pass, 12th Intermediate, ITI, Polytechnic Diploma, to Graduate and Post Graduate degrees.\\n      </p>\\n\\n      ")
+    ; __append("\\n\\n<!-- Footer Section -->\\n<footer class=\\"site-footer\\">\\n  <div class=\\"container\\">\\n    <div class=\\"footer-seo-content\\">\\n      <h3>Odisha Aspirants : Government Jobs 2026 Latest Online Form, Results, Admit Card</h3>\\n      <p>\\n        India has witnessed a high demand for Government jobs for many decades. People prefer Government jobs as their primary career option considering the wide variety of benefits, job stability, pension prospects, and public service authority associated with these jobs. Government service is a dream for millions of aspirants across the nation. OdishaAspirants.com (odishaaspirants.com) provides verified, prompt notifications for all central and state government recruitment exams.\\n      </p>\\n\\n      <h3>Exams for Government Jobs in India</h3>\\n      <p>\\n        Government examinations are conducted for various positions across state and central departments including <b>UPSC, SSC, Railway Recruitment Boards (RRB), State PSCs, Police Recruitment, Banking (IBPS, SBI, RBI), Defense (Army, Navy, Air Force), Teaching (CTET, UPTET, Super TET), NTA, and Board Examinations</b>. Candidates can apply based on their educational qualifications ranging from 10th Pass, 12th Intermediate, ITI, Polytechnic Diploma, to Graduate and Post Graduate degrees.\\n      </p>\\n\\n      ")
     ;  if (false) { /* Hidden for now as requested: Useful Candidate Utilities & Tools */ 
     ; __append("\\n      <h3>Useful Candidate Utilities &amp; Tools</h3>\\n      <p>\\n        <a href=\\"/tools/age-calculator\\" style=\\"font-weight: bold; color: #ab183d;\\">Government Exam Age Calculator</a> | \\n        <a href=\\"/tools/photo-resizer\\" style=\\"font-weight: bold; color: #ab183d;\\">Photo &amp; Signature Resizer Guide</a> | \\n        <a href=\\"/tools/image-resizer\\" style=\\"font-weight: bold; color: #ab183d;\\">Interactive Photo Resizer &amp; Name Maker</a> |\\n        <a href=\\"/category/certificate-verification\\" style=\\"font-weight: bold; color: #ab183d;\\">Online Certificate Verification</a>\\n      </p>\\n      ")
     ;  } 
@@ -83002,12 +83002,12 @@ var require_templateEngine = __commonJS({
         const currentYear = new Date().getFullYear();
         let copyText = (typeof settings !== 'undefined' && settings.copyright_text) 
           ? settings.copyright_text 
-          : '\xA9 ' + currentYear + ' govtexamzone.com. All Rights Reserved.';
+          : '\xA9 ' + currentYear + ' odishaaspirants.com. All Rights Reserved.';
         copyText = copyText.replace(/\\{year\\}/gi, currentYear).replace(/\\b20\\d\\d\\b/g, currentYear).replace(/Cloudflare\\s*D1\\s*&\\s*R2\\s*Powered\\.?/gi, '').trim();
       
     ; __append("\\n      <p style=\\"margin-top: 8px;\\">\\n        ")
     ; __append(escapeFn( copyText ))
-    ; __append("\\n      </p>\\n      <p style=\\"font-size: 11.5px; color: #888; margin-top: 5px;\\">\\n        Disclaimer: Govt Exam Zone (govtexamzone.com) is an independent public information service portal. We are not affiliated with any government agency or department. All information is sourced directly from official government examination notifications.\\n      </p>\\n    </div>\\n  </div>\\n</footer>\\n</div><!-- /pageContentWrapper -->\\n\\n<!-- Global Toast Notification -->\\n<div id=\\"toast\\" class=\\"toast-msg\\">Link copied to clipboard!</div>\\n\\n<script src=\\"/js/main.js?v=20261125b\\"></script>\\n\\n")
+    ; __append("\\n      </p>\\n      <p style=\\"font-size: 11.5px; color: #888; margin-top: 5px;\\">\\n        Disclaimer: Odisha Aspirants (odishaaspirants.com) is an independent public information service portal. We are not affiliated with any government agency or department. All information is sourced directly from official government examination notifications.\\n      </p>\\n    </div>\\n  </div>\\n</footer>\\n</div><!-- /pageContentWrapper -->\\n\\n<!-- Global Toast Notification -->\\n<div id=\\"toast\\" class=\\"toast-msg\\">Link copied to clipboard!</div>\\n\\n<script src=\\"/js/main.js?v=20261125b\\"></script>\\n\\n")
     ;  if (typeof settings !== 'undefined' && settings.footer_custom_code) { 
     ; __append("\\n  <!-- Webmaster Custom Footer Code -->\\n  ")
     ; __append( settings.footer_custom_code )
@@ -83021,37 +83021,37 @@ var require_templateEngine = __commonJS({
   function __append(s) { if (s !== undefined && s !== null) __output += s }
   with (locals || {}) {
     ; __append("<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">\\n  <title>")
-    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Govt Exam Zone : Latest Govt Jobs, Admit Card, Results 2026 | WWW.GOVTEXAMZONE.COM' ))
+    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Odisha Aspirants : Latest Govt Jobs, Admit Card, Results 2026 | WWW.ODISHAASPIRANTS.COM' ))
     ; __append("</title>\\n  \\n  ")
     ; 
     const siteBase = (typeof settings !== 'undefined' && settings.site_domain) 
       ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-      : 'https://govtexamzone.com';
+      : 'https://odishaaspirants.com';
     const pagePath = (typeof currentPath !== 'undefined' && currentPath !== '/') ? currentPath : '';
     const canonicalUrl = typeof fullUrl !== 'undefined' ? fullUrl : (siteBase + pagePath);
     const logoAbsolute = (typeof post !== 'undefined' && post && post.thumbnail && post.thumbnail.trim())
       ? (post.thumbnail.trim().startsWith('http') ? post.thumbnail.trim() : siteBase + post.thumbnail.trim())
       : ((typeof settings !== 'undefined' && settings.site_logo) 
           ? (settings.site_logo.startsWith('http') ? settings.site_logo : siteBase + settings.site_logo) 
-          : siteBase + '/images/gez-logo.svg');
+          : siteBase + '/images/oa-logo.svg');
     const activeMetaDesc = (typeof metaDescription !== 'undefined' && metaDescription) 
       ? metaDescription 
       : ((typeof settings !== 'undefined' && settings.meta_description) 
           ? settings.meta_description 
-          : 'Govt Exam Zone (govtexamzone.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.');
+          : 'Odisha Aspirants (odishaaspirants.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.');
   
     ; __append("\\n  <!-- Primary Meta Tags -->\\n  <meta name=\\"title\\" content=\\"")
-    ; __append(escapeFn( typeof title !== 'undefined' ? title : ((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title + ' : Latest Govt Jobs & Results 2026' : 'Govt Exam Zone : Latest Govt Jobs & Results 2026') ))
+    ; __append(escapeFn( typeof title !== 'undefined' ? title : ((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title + ' : Latest Govt Jobs & Results 2026' : 'Odisha Aspirants : Latest Govt Jobs & Results 2026') ))
     ; __append("\\">\\n  <meta name=\\"description\\" content=\\"")
     ; __append(escapeFn( activeMetaDesc ))
     ; __append("\\">\\n  <meta name=\\"keywords\\" content=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.meta_keywords) ? settings.meta_keywords : 'Govt Exam Zone, govtexamzone, govtexamzone.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.meta_keywords) ? settings.meta_keywords : 'Odisha Aspirants, odishaaspirants, odishaaspirants.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' ))
     ; __append("\\">\\n  <meta name=\\"author\\" content=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("\\">\\n  <meta name=\\"robots\\" content=\\"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1\\">\\n  <link rel=\\"canonical\\" href=\\"")
     ; __append(escapeFn( canonicalUrl ))
     ; __append("\\">\\n  <link rel=\\"alternate\\" type=\\"application/rss+xml\\" title=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append(" RSS Feed\\" href=\\"/feed\\">\\n  ")
     ;  if (typeof settings !== 'undefined' && settings.google_site_verification) { 
     ; __append("\\n  <meta name=\\"google-site-verification\\" content=\\"")
@@ -83069,29 +83069,29 @@ var require_templateEngine = __commonJS({
     ; __append("\\">\\n  <meta property=\\"og:url\\" content=\\"")
     ; __append(escapeFn( canonicalUrl ))
     ; __append("\\">\\n  <meta property=\\"og:title\\" content=\\"")
-    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Govt Exam Zone : Latest Govt Jobs & Results 2026' ))
+    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Odisha Aspirants : Latest Govt Jobs & Results 2026' ))
     ; __append("\\">\\n  <meta property=\\"og:description\\" content=\\"")
     ; __append(escapeFn( activeMetaDesc ))
     ; __append("\\">\\n  <meta property=\\"og:image\\" content=\\"")
     ; __append(escapeFn( logoAbsolute ))
     ; __append("\\">\\n  <meta property=\\"og:site_name\\" content=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
-    ; __append("\\">\\n  <meta property=\\"og:locale\\" content=\\"en_IN\\">\\n\\n  <!-- Twitter Meta Tags -->\\n  <meta name=\\"twitter:card\\" content=\\"summary_large_image\\">\\n  <meta name=\\"twitter:site\\" content=\\"@govtexamzone\\">\\n  <meta name=\\"twitter:url\\" content=\\"")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
+    ; __append("\\">\\n  <meta property=\\"og:locale\\" content=\\"en_IN\\">\\n\\n  <!-- Twitter Meta Tags -->\\n  <meta name=\\"twitter:card\\" content=\\"summary_large_image\\">\\n  <meta name=\\"twitter:site\\" content=\\"@odishaaspirants\\">\\n  <meta name=\\"twitter:url\\" content=\\"")
     ; __append(escapeFn( canonicalUrl ))
     ; __append("\\">\\n  <meta name=\\"twitter:title\\" content=\\"")
-    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Govt Exam Zone : Latest Govt Jobs & Results 2026' ))
+    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Odisha Aspirants : Latest Govt Jobs & Results 2026' ))
     ; __append("\\">\\n  <meta name=\\"twitter:description\\" content=\\"")
     ; __append(escapeFn( activeMetaDesc ))
     ; __append("\\">\\n  <meta name=\\"twitter:image\\" content=\\"")
     ; __append(escapeFn( logoAbsolute ))
     ; __append("\\">\\n\\n  <!-- Mobile & PWA Theme -->\\n  <meta name=\\"theme-color\\" content=\\"#ab183d\\">\\n  <meta name=\\"apple-mobile-web-app-capable\\" content=\\"yes\\">\\n  <meta name=\\"apple-mobile-web-app-status-bar-style\\" content=\\"black-translucent\\">\\n  <meta name=\\"apple-mobile-web-app-title\\" content=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("\\">\\n  <link rel=\\"manifest\\" href=\\"/manifest.json\\">\\n  ")
     ; 
     const hasCustomFaviconSetting = typeof settings !== 'undefined' && typeof settings.site_favicon === 'string';
     const activeFavicon = hasCustomFaviconSetting
       ? settings.site_favicon.trim()
-      : '/images/gez-logo.svg';
+      : '/images/oa-logo.svg';
   
     ; __append("\\n  ")
     ;  if (activeFavicon) { 
@@ -83114,8 +83114,8 @@ var require_templateEngine = __commonJS({
     ; __append("\\n  ")
     ;  }); 
     ; __append("\\n\\n  <!-- JSON-LD Schema.org Structured Data: WebSite -->\\n  <script type=\\"application/ld+json\\">\\n  {\\n    \\"@context\\": \\"https://schema.org\\",\\n    \\"@type\\": \\"WebSite\\",\\n    \\"name\\": \\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
-    ; __append("\\",\\n    \\"alternateName\\": [\\"GovtExamZone\\", \\"Govt Exam Zone Official\\", \\"GEZ Official\\"],\\n    \\"url\\": \\"")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
+    ; __append("\\",\\n    \\"alternateName\\": [\\"OdishaAspirants\\", \\"Odisha Aspirants Official\\", \\"Odisha Aspirants Official\\"],\\n    \\"url\\": \\"")
     ; __append(escapeFn( siteBase ))
     ; __append("\\",\\n    \\"potentialAction\\": {\\n      \\"@type\\": \\"SearchAction\\",\\n      \\"target\\": \\"")
     ; __append(escapeFn( siteBase ))
@@ -83132,13 +83132,13 @@ var require_templateEngine = __commonJS({
     }
   
     ; __append("\\n  {\\n    \\"@context\\": \\"https://schema.org\\",\\n    \\"@type\\": \\"Organization\\",\\n    \\"name\\": \\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("\\",\\n    \\"url\\": \\"")
     ; __append(escapeFn( siteBase ))
     ; __append("\\",\\n    \\"logo\\": \\"")
     ; __append(escapeFn( logoAbsolute ))
     ; __append("\\",\\n    \\"contactPoint\\": {\\n      \\"@type\\": \\"ContactPoint\\",\\n      \\"email\\": \\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com' ))
     ; __append("\\",\\n      \\"contactType\\": \\"Customer Support\\",\\n      \\"areaServed\\": \\"IN\\",\\n      \\"availableLanguage\\": [\\"en\\", \\"hi\\"]\\n    }")
     ;  if (socialLinks.length > 0) { 
     ; __append(",\\n    \\"sameAs\\": ")
@@ -83176,17 +83176,17 @@ var require_templateEngine = __commonJS({
     ; __append("\\n</head>\\n<body>\\n\\n<!-- Sticky Header Wrapper: Freezes Entire Header & Navigation at Top on Scroll -->\\n<div class=\\"site-header-sticky-wrapper\\" id=\\"siteHeaderStickyWrapper\\">\\n  <!-- Header Section -->\\n  <header class=\\"site-header\\">\\n    <div class=\\"container\\">\\n      <div class=\\"header-inner\\">\\n        ")
     ;  if (typeof settings !== 'undefined' && settings.site_logo && settings.site_logo.trim()) { 
     ; __append("\\n        <a href=\\"/\\" class=\\"header-logo\\" title=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append(" Official Portal\\">\\n          <img src=\\"")
     ; __append(escapeFn( settings.site_logo ))
     ; __append("\\" alt=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append(" Emblem Logo\\" width=\\"110\\" height=\\"110\\">\\n        </a>\\n        ")
     ;  } 
     ; __append("\\n        <div class=\\"header-text\\">\\n          <h1 class=\\"header-title\\"><a href=\\"/\\">")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title.toUpperCase() : 'GOVT EXAM ZONE' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title.toUpperCase() : 'ODISHA ASPIRANTS' ))
     ; __append("</a></h1>\\n          <div class=\\"header-subtitle\\">")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.header_subtitle) ? settings.header_subtitle : 'WWW.GOVTEXAMZONE.COM' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.header_subtitle) ? settings.header_subtitle : 'WWW.ODISHAASPIRANTS.COM' ))
     ; __append("</div>\\n        </div>\\n      </div>\\n    </div>\\n  </header>\\n\\n<!-- Main Navigation Menu -->\\n<nav class=\\"main-nav\\" id=\\"mainNavigation\\">\\n  <div class=\\"container nav-inner-container\\">\\n    <!-- Mobile Navigation Topbar (Left: 3-line Menu, Right: Search Icon) -->\\n    <div class=\\"mobile-nav-bar\\">\\n      <button type=\\"button\\" class=\\"nav-toggle-btn\\" id=\\"mobileMenuToggle\\" aria-label=\\"Toggle navigation\\" aria-expanded=\\"false\\">\\n        <span class=\\"toggle-icon\\">\u2630</span>\\n      </button>\\n\\n      <button type=\\"button\\" class=\\"mobile-quick-search-btn\\" id=\\"mobileSearchBtn\\" title=\\"Search Exams, Jobs...\\" aria-label=\\"Search\\">\\n        <span class=\\"search-btn-icon\\">\u{1F50D}</span>\\n      </button>\\n    </div>\\n\\n    <!-- Navigation Menu List -->\\n    <ul class=\\"nav-menu\\" id=\\"primaryNavMenu\\">\\n      ")
     ; 
         const cur = typeof currentPath !== 'undefined' ? currentPath : '';
@@ -83240,7 +83240,7 @@ var require_templateEngine = __commonJS({
     ;  } 
     ; __append("\\n      <!-- Header Menu Search Function with Search Icon -->\\n      <li class=\\"nav-search-item\\">\\n        <div class=\\"header-search-wrap\\">\\n          <form action=\\"/search\\" method=\\"GET\\" class=\\"header-search-form\\" id=\\"headerNavSearchForm\\">\\n            <span class=\\"header-search-icon\\" aria-hidden=\\"true\\">\u{1F50D}</span>\\n            <input \\n              type=\\"text\\" \\n              name=\\"q\\" \\n              id=\\"live-search-input\\" \\n              placeholder=\\"Search Exams, Jobs...\\" \\n              autocomplete=\\"off\\"\\n              value=\\"")
     ; __append(escapeFn( typeof query !== 'undefined' ? query : '' ))
-    ; __append("\\"\\n              aria-label=\\"Search Govt Exam Zone\\"\\n            >\\n            <button type=\\"submit\\" class=\\"header-search-btn\\">Search</button>\\n          </form>\\n          <div id=\\"search-results-dropdown\\" class=\\"header-search-results\\" style=\\"display: none;\\"></div>\\n        </div>\\n      </li>\\n    </ul>\\n  </div>\\n</nav>\\n</div>\\n<!-- Spacer to offset fixed header height so page content starts cleanly below -->\\n<div class=\\"site-header-spacer\\" id=\\"siteHeaderSpacer\\"></div>\\n<script>\\n(function() {\\n  function syncHeaderSpacer() {\\n    var wrapper = document.getElementById('siteHeaderStickyWrapper');\\n    var spacer = document.getElementById('siteHeaderSpacer');\\n    if (wrapper && spacer) {\\n      spacer.style.height = wrapper.offsetHeight + 'px';\\n    }\\n  }\\n  syncHeaderSpacer();\\n  window.addEventListener('resize', syncHeaderSpacer, { passive: true });\\n  window.addEventListener('load', syncHeaderSpacer, { passive: true });\\n})();\\n</script>\\n\\n<!-- Main Page Content Wrapper (Swappable for instant fluctuation-free transitions) -->\\n<div id=\\"pageContentWrapper\\">\\n")
+    ; __append("\\"\\n              aria-label=\\"Search Odisha Aspirants\\"\\n            >\\n            <button type=\\"submit\\" class=\\"header-search-btn\\">Search</button>\\n          </form>\\n          <div id=\\"search-results-dropdown\\" class=\\"header-search-results\\" style=\\"display: none;\\"></div>\\n        </div>\\n      </li>\\n    </ul>\\n  </div>\\n</nav>\\n</div>\\n<!-- Spacer to offset fixed header height so page content starts cleanly below -->\\n<div class=\\"site-header-spacer\\" id=\\"siteHeaderSpacer\\"></div>\\n<script>\\n(function() {\\n  function syncHeaderSpacer() {\\n    var wrapper = document.getElementById('siteHeaderStickyWrapper');\\n    var spacer = document.getElementById('siteHeaderSpacer');\\n    if (wrapper && spacer) {\\n      spacer.style.height = wrapper.offsetHeight + 'px';\\n    }\\n  }\\n  syncHeaderSpacer();\\n  window.addEventListener('resize', syncHeaderSpacer, { passive: true });\\n  window.addEventListener('load', syncHeaderSpacer, { passive: true });\\n})();\\n</script>\\n\\n<!-- Main Page Content Wrapper (Swappable for instant fluctuation-free transitions) -->\\n<div id=\\"pageContentWrapper\\">\\n")
   }
   return __output;
 `,
@@ -83248,37 +83248,37 @@ var require_templateEngine = __commonJS({
   function __append(s) { if (s !== undefined && s !== null) __output += s }
   with (locals || {}) {
     ; __append("<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">\\n  <title>")
-    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Govt Exam Zone : Latest Govt Jobs, Admit Card, Results 2026 | WWW.GOVTEXAMZONE.COM' ))
+    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Odisha Aspirants : Latest Govt Jobs, Admit Card, Results 2026 | WWW.ODISHAASPIRANTS.COM' ))
     ; __append("</title>\\n  \\n  ")
     ; 
     const siteBase = (typeof settings !== 'undefined' && settings.site_domain) 
       ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\\/$/, '') : 'https://' + settings.site_domain.replace(/\\/$/, ''))
-      : 'https://govtexamzone.com';
+      : 'https://odishaaspirants.com';
     const pagePath = (typeof currentPath !== 'undefined' && currentPath !== '/') ? currentPath : '';
     const canonicalUrl = typeof fullUrl !== 'undefined' ? fullUrl : (siteBase + pagePath);
     const logoAbsolute = (typeof post !== 'undefined' && post && post.thumbnail && post.thumbnail.trim())
       ? (post.thumbnail.trim().startsWith('http') ? post.thumbnail.trim() : siteBase + post.thumbnail.trim())
       : ((typeof settings !== 'undefined' && settings.site_logo) 
           ? (settings.site_logo.startsWith('http') ? settings.site_logo : siteBase + settings.site_logo) 
-          : siteBase + '/images/gez-logo.svg');
+          : siteBase + '/images/oa-logo.svg');
     const activeMetaDesc = (typeof metaDescription !== 'undefined' && metaDescription) 
       ? metaDescription 
       : ((typeof settings !== 'undefined' && settings.meta_description) 
           ? settings.meta_description 
-          : 'Govt Exam Zone (govtexamzone.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.');
+          : 'Odisha Aspirants (odishaaspirants.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.');
   
     ; __append("\\n  <!-- Primary Meta Tags -->\\n  <meta name=\\"title\\" content=\\"")
-    ; __append(escapeFn( typeof title !== 'undefined' ? title : ((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title + ' : Latest Govt Jobs & Results 2026' : 'Govt Exam Zone : Latest Govt Jobs & Results 2026') ))
+    ; __append(escapeFn( typeof title !== 'undefined' ? title : ((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title + ' : Latest Govt Jobs & Results 2026' : 'Odisha Aspirants : Latest Govt Jobs & Results 2026') ))
     ; __append("\\">\\n  <meta name=\\"description\\" content=\\"")
     ; __append(escapeFn( activeMetaDesc ))
     ; __append("\\">\\n  <meta name=\\"keywords\\" content=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.meta_keywords) ? settings.meta_keywords : 'Govt Exam Zone, govtexamzone, govtexamzone.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.meta_keywords) ? settings.meta_keywords : 'Odisha Aspirants, odishaaspirants, odishaaspirants.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' ))
     ; __append("\\">\\n  <meta name=\\"author\\" content=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("\\">\\n  <meta name=\\"robots\\" content=\\"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1\\">\\n  <link rel=\\"canonical\\" href=\\"")
     ; __append(escapeFn( canonicalUrl ))
     ; __append("\\">\\n  <link rel=\\"alternate\\" type=\\"application/rss+xml\\" title=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append(" RSS Feed\\" href=\\"/feed\\">\\n  ")
     ;  if (typeof settings !== 'undefined' && settings.google_site_verification) { 
     ; __append("\\n  <meta name=\\"google-site-verification\\" content=\\"")
@@ -83296,29 +83296,29 @@ var require_templateEngine = __commonJS({
     ; __append("\\">\\n  <meta property=\\"og:url\\" content=\\"")
     ; __append(escapeFn( canonicalUrl ))
     ; __append("\\">\\n  <meta property=\\"og:title\\" content=\\"")
-    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Govt Exam Zone : Latest Govt Jobs & Results 2026' ))
+    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Odisha Aspirants : Latest Govt Jobs & Results 2026' ))
     ; __append("\\">\\n  <meta property=\\"og:description\\" content=\\"")
     ; __append(escapeFn( activeMetaDesc ))
     ; __append("\\">\\n  <meta property=\\"og:image\\" content=\\"")
     ; __append(escapeFn( logoAbsolute ))
     ; __append("\\">\\n  <meta property=\\"og:site_name\\" content=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
-    ; __append("\\">\\n  <meta property=\\"og:locale\\" content=\\"en_IN\\">\\n\\n  <!-- Twitter Meta Tags -->\\n  <meta name=\\"twitter:card\\" content=\\"summary_large_image\\">\\n  <meta name=\\"twitter:site\\" content=\\"@govtexamzone\\">\\n  <meta name=\\"twitter:url\\" content=\\"")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
+    ; __append("\\">\\n  <meta property=\\"og:locale\\" content=\\"en_IN\\">\\n\\n  <!-- Twitter Meta Tags -->\\n  <meta name=\\"twitter:card\\" content=\\"summary_large_image\\">\\n  <meta name=\\"twitter:site\\" content=\\"@odishaaspirants\\">\\n  <meta name=\\"twitter:url\\" content=\\"")
     ; __append(escapeFn( canonicalUrl ))
     ; __append("\\">\\n  <meta name=\\"twitter:title\\" content=\\"")
-    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Govt Exam Zone : Latest Govt Jobs & Results 2026' ))
+    ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Odisha Aspirants : Latest Govt Jobs & Results 2026' ))
     ; __append("\\">\\n  <meta name=\\"twitter:description\\" content=\\"")
     ; __append(escapeFn( activeMetaDesc ))
     ; __append("\\">\\n  <meta name=\\"twitter:image\\" content=\\"")
     ; __append(escapeFn( logoAbsolute ))
     ; __append("\\">\\n\\n  <!-- Mobile & PWA Theme -->\\n  <meta name=\\"theme-color\\" content=\\"#ab183d\\">\\n  <meta name=\\"apple-mobile-web-app-capable\\" content=\\"yes\\">\\n  <meta name=\\"apple-mobile-web-app-status-bar-style\\" content=\\"black-translucent\\">\\n  <meta name=\\"apple-mobile-web-app-title\\" content=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("\\">\\n  <link rel=\\"manifest\\" href=\\"/manifest.json\\">\\n  ")
     ; 
     const hasCustomFaviconSetting = typeof settings !== 'undefined' && typeof settings.site_favicon === 'string';
     const activeFavicon = hasCustomFaviconSetting
       ? settings.site_favicon.trim()
-      : '/images/gez-logo.svg';
+      : '/images/oa-logo.svg';
   
     ; __append("\\n  ")
     ;  if (activeFavicon) { 
@@ -83341,8 +83341,8 @@ var require_templateEngine = __commonJS({
     ; __append("\\n  ")
     ;  }); 
     ; __append("\\n\\n  <!-- JSON-LD Schema.org Structured Data: WebSite -->\\n  <script type=\\"application/ld+json\\">\\n  {\\n    \\"@context\\": \\"https://schema.org\\",\\n    \\"@type\\": \\"WebSite\\",\\n    \\"name\\": \\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
-    ; __append("\\",\\n    \\"alternateName\\": [\\"GovtExamZone\\", \\"Govt Exam Zone Official\\", \\"GEZ Official\\"],\\n    \\"url\\": \\"")
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
+    ; __append("\\",\\n    \\"alternateName\\": [\\"OdishaAspirants\\", \\"Odisha Aspirants Official\\", \\"Odisha Aspirants Official\\"],\\n    \\"url\\": \\"")
     ; __append(escapeFn( siteBase ))
     ; __append("\\",\\n    \\"potentialAction\\": {\\n      \\"@type\\": \\"SearchAction\\",\\n      \\"target\\": \\"")
     ; __append(escapeFn( siteBase ))
@@ -83359,13 +83359,13 @@ var require_templateEngine = __commonJS({
     }
   
     ; __append("\\n  {\\n    \\"@context\\": \\"https://schema.org\\",\\n    \\"@type\\": \\"Organization\\",\\n    \\"name\\": \\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append("\\",\\n    \\"url\\": \\"")
     ; __append(escapeFn( siteBase ))
     ; __append("\\",\\n    \\"logo\\": \\"")
     ; __append(escapeFn( logoAbsolute ))
     ; __append("\\",\\n    \\"contactPoint\\": {\\n      \\"@type\\": \\"ContactPoint\\",\\n      \\"email\\": \\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact@odishaaspirants.com' ))
     ; __append("\\",\\n      \\"contactType\\": \\"Customer Support\\",\\n      \\"areaServed\\": \\"IN\\",\\n      \\"availableLanguage\\": [\\"en\\", \\"hi\\"]\\n    }")
     ;  if (socialLinks.length > 0) { 
     ; __append(",\\n    \\"sameAs\\": ")
@@ -83403,17 +83403,17 @@ var require_templateEngine = __commonJS({
     ; __append("\\n</head>\\n<body>\\n\\n<!-- Sticky Header Wrapper: Freezes Entire Header & Navigation at Top on Scroll -->\\n<div class=\\"site-header-sticky-wrapper\\" id=\\"siteHeaderStickyWrapper\\">\\n  <!-- Header Section -->\\n  <header class=\\"site-header\\">\\n    <div class=\\"container\\">\\n      <div class=\\"header-inner\\">\\n        ")
     ;  if (typeof settings !== 'undefined' && settings.site_logo && settings.site_logo.trim()) { 
     ; __append("\\n        <a href=\\"/\\" class=\\"header-logo\\" title=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append(" Official Portal\\">\\n          <img src=\\"")
     ; __append(escapeFn( settings.site_logo ))
     ; __append("\\" alt=\\"")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants' ))
     ; __append(" Emblem Logo\\" width=\\"110\\" height=\\"110\\">\\n        </a>\\n        ")
     ;  } 
     ; __append("\\n        <div class=\\"header-text\\">\\n          <h1 class=\\"header-title\\"><a href=\\"/\\">")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title.toUpperCase() : 'GOVT EXAM ZONE' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title.toUpperCase() : 'ODISHA ASPIRANTS' ))
     ; __append("</a></h1>\\n          <div class=\\"header-subtitle\\">")
-    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.header_subtitle) ? settings.header_subtitle : 'WWW.GOVTEXAMZONE.COM' ))
+    ; __append(escapeFn( (typeof settings !== 'undefined' && settings.header_subtitle) ? settings.header_subtitle : 'WWW.ODISHAASPIRANTS.COM' ))
     ; __append("</div>\\n        </div>\\n      </div>\\n    </div>\\n  </header>\\n\\n<!-- Main Navigation Menu -->\\n<nav class=\\"main-nav\\" id=\\"mainNavigation\\">\\n  <div class=\\"container nav-inner-container\\">\\n    <!-- Mobile Navigation Topbar (Left: 3-line Menu, Right: Search Icon) -->\\n    <div class=\\"mobile-nav-bar\\">\\n      <button type=\\"button\\" class=\\"nav-toggle-btn\\" id=\\"mobileMenuToggle\\" aria-label=\\"Toggle navigation\\" aria-expanded=\\"false\\">\\n        <span class=\\"toggle-icon\\">\u2630</span>\\n      </button>\\n\\n      <button type=\\"button\\" class=\\"mobile-quick-search-btn\\" id=\\"mobileSearchBtn\\" title=\\"Search Exams, Jobs...\\" aria-label=\\"Search\\">\\n        <span class=\\"search-btn-icon\\">\u{1F50D}</span>\\n      </button>\\n    </div>\\n\\n    <!-- Navigation Menu List -->\\n    <ul class=\\"nav-menu\\" id=\\"primaryNavMenu\\">\\n      ")
     ; 
         const cur = typeof currentPath !== 'undefined' ? currentPath : '';
@@ -83467,7 +83467,7 @@ var require_templateEngine = __commonJS({
     ;  } 
     ; __append("\\n      <!-- Header Menu Search Function with Search Icon -->\\n      <li class=\\"nav-search-item\\">\\n        <div class=\\"header-search-wrap\\">\\n          <form action=\\"/search\\" method=\\"GET\\" class=\\"header-search-form\\" id=\\"headerNavSearchForm\\">\\n            <span class=\\"header-search-icon\\" aria-hidden=\\"true\\">\u{1F50D}</span>\\n            <input \\n              type=\\"text\\" \\n              name=\\"q\\" \\n              id=\\"live-search-input\\" \\n              placeholder=\\"Search Exams, Jobs...\\" \\n              autocomplete=\\"off\\"\\n              value=\\"")
     ; __append(escapeFn( typeof query !== 'undefined' ? query : '' ))
-    ; __append("\\"\\n              aria-label=\\"Search Govt Exam Zone\\"\\n            >\\n            <button type=\\"submit\\" class=\\"header-search-btn\\">Search</button>\\n          </form>\\n          <div id=\\"search-results-dropdown\\" class=\\"header-search-results\\" style=\\"display: none;\\"></div>\\n        </div>\\n      </li>\\n    </ul>\\n  </div>\\n</nav>\\n</div>\\n<!-- Spacer to offset fixed header height so page content starts cleanly below -->\\n<div class=\\"site-header-spacer\\" id=\\"siteHeaderSpacer\\"></div>\\n<script>\\n(function() {\\n  function syncHeaderSpacer() {\\n    var wrapper = document.getElementById('siteHeaderStickyWrapper');\\n    var spacer = document.getElementById('siteHeaderSpacer');\\n    if (wrapper && spacer) {\\n      spacer.style.height = wrapper.offsetHeight + 'px';\\n    }\\n  }\\n  syncHeaderSpacer();\\n  window.addEventListener('resize', syncHeaderSpacer, { passive: true });\\n  window.addEventListener('load', syncHeaderSpacer, { passive: true });\\n})();\\n</script>\\n\\n<!-- Main Page Content Wrapper (Swappable for instant fluctuation-free transitions) -->\\n<div id=\\"pageContentWrapper\\">\\n")
+    ; __append("\\"\\n              aria-label=\\"Search Odisha Aspirants\\"\\n            >\\n            <button type=\\"submit\\" class=\\"header-search-btn\\">Search</button>\\n          </form>\\n          <div id=\\"search-results-dropdown\\" class=\\"header-search-results\\" style=\\"display: none;\\"></div>\\n        </div>\\n      </li>\\n    </ul>\\n  </div>\\n</nav>\\n</div>\\n<!-- Spacer to offset fixed header height so page content starts cleanly below -->\\n<div class=\\"site-header-spacer\\" id=\\"siteHeaderSpacer\\"></div>\\n<script>\\n(function() {\\n  function syncHeaderSpacer() {\\n    var wrapper = document.getElementById('siteHeaderStickyWrapper');\\n    var spacer = document.getElementById('siteHeaderSpacer');\\n    if (wrapper && spacer) {\\n      spacer.style.height = wrapper.offsetHeight + 'px';\\n    }\\n  }\\n  syncHeaderSpacer();\\n  window.addEventListener('resize', syncHeaderSpacer, { passive: true });\\n  window.addEventListener('load', syncHeaderSpacer, { passive: true });\\n})();\\n</script>\\n\\n<!-- Main Page Content Wrapper (Swappable for instant fluctuation-free transitions) -->\\n<div id=\\"pageContentWrapper\\">\\n")
   }
   return __output;
 `,
@@ -83780,7 +83780,7 @@ var require_server = __commonJS({
     }
     app2.get("/favicon.ico", (req, res) => {
       const icoPath = path.resolve("public/favicon.ico");
-      const svgPath = path.resolve("public/images/gez-logo.svg");
+      const svgPath = path.resolve("public/images/oa-logo.svg");
       const fs = __require("node:fs");
       if (fs.existsSync(icoPath)) return res.sendFile(icoPath);
       if (fs.existsSync(svgPath)) return res.sendFile(svgPath);
@@ -83867,8 +83867,8 @@ var require_server = __commonJS({
     app2.use((req, res) => {
       res.status(404);
       res.render("pages/error", {
-        title: "404 - Page Not Found | Govt Exam Zone",
-        message: "The page you are looking for does not exist on Govt Exam Zone."
+        title: "404 - Page Not Found | Odisha Aspirants",
+        message: "The page you are looking for does not exist on Odisha Aspirants."
       }, (renderErr, html) => {
         if (renderErr) {
           return res.type("text/html").send("<h1>404 - Page Not Found</h1>");
@@ -83880,7 +83880,7 @@ var require_server = __commonJS({
       console.error("Server Error:", err);
       res.status(500);
       res.render("pages/error", {
-        title: "500 - Server Error | Govt Exam Zone",
+        title: "500 - Server Error | Odisha Aspirants",
         message: err.message || "An internal error occurred. Please try again later."
       }, (renderErr, html) => {
         if (renderErr) {
@@ -83893,7 +83893,7 @@ var require_server = __commonJS({
     if (typeof WebSocketPair === "undefined" && !globalThis.__CF_ENV__ && !globalThis.__CF_PAGES__) {
       app2.listen(PORT, () => {
         console.log(`=======================================================`);
-        console.log(`\u2705 Govt Exam Zone Server running on http://localhost:${PORT}`);
+        console.log(`\u2705 Odisha Aspirants Server running on http://localhost:${PORT}`);
         console.log(`\u{1F512} Admin Panel available at http://localhost:${PORT}/admin`);
         console.log(`   Default credentials: user=${config.admin.username}, pass=${config.admin.password}`);
         console.log(`\u{1F4BE} Cloudflare D1 Database: ${d1.isCloudflareD1 ? "Connected (Remote)" : "Active (Local SQLite emulation)"}`);
@@ -83904,7 +83904,7 @@ var require_server = __commonJS({
     if (typeof WebSocketPair === "undefined" && !globalThis.__CF_ENV__ && !globalThis.__CF_PAGES__) {
       (async function initDatabase() {
         try {
-          console.log("\u{1F680} Initializing Govt Exam Zone Portal DB...");
+          console.log("\u{1F680} Initializing Odisha Aspirants Portal DB...");
           await d1.init();
           console.log("\u2705 Database schema verified and active.");
           if (!d1.isNativeD1) {
@@ -84032,7 +84032,7 @@ var worker_default = {
       }
       const url = new URL(request.url);
       const reqHost = (request.headers.get("x-forwarded-host") || request.headers.get("host") || url.hostname || "").split(",")[0].split(":")[0].trim().toLowerCase();
-      const adminSubdomain = (env2?.ADMIN_SUBDOMAIN || "setup.govtexamzone.com").trim().toLowerCase();
+      const adminSubdomain = (env2?.ADMIN_SUBDOMAIN || "setup.odishaaspirants.com").trim().toLowerCase();
       const isSetupSubdomain = Boolean(reqHost && reqHost === adminSubdomain);
       if (url.pathname.startsWith("/uploads/")) {
         const fileKey = decodeURIComponent(url.pathname.replace(/^\/uploads\//, ""));
@@ -84073,7 +84073,7 @@ var worker_default = {
       }
       if (url.pathname === "/favicon.ico" && env2 && env2.ASSETS) {
         try {
-          const fallbackRes = await env2.ASSETS.fetch(new Request(new URL("/images/gez-logo.svg", request.url), request));
+          const fallbackRes = await env2.ASSETS.fetch(new Request(new URL("/images/oa-logo.svg", request.url), request));
           if (fallbackRes && fallbackRes.status !== 404) {
             return fallbackRes;
           }
@@ -84084,7 +84084,7 @@ var worker_default = {
     } catch (err) {
       console.error("Worker fetch exception:", err);
       return new Response(
-        "Govt Exam Zone - Worker Exception:\n" + (err.stack || err.message || String(err)),
+        "Odisha Aspirants - Worker Exception:\n" + (err.stack || err.message || String(err)),
         {
           status: 500,
           headers: { "content-type": "text/plain; charset=utf-8" }

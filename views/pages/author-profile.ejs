@@ -4,7 +4,7 @@
 <%
   const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
     ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
-    : 'https://govtexamzone.com';
+    : 'https://odishaaspirants.com';
 %>
 
 <!-- Schema.org JSON-LD Person & ProfilePage -->
@@ -20,7 +20,7 @@
     "image": <%- JSON.stringify(author.avatar_url.startsWith('http') ? author.avatar_url : siteDomain + author.avatar_url) %>,
     "worksFor": {
       "@type": "Organization",
-      "name": <%- JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone') %>,
+      "name": <%- JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Odisha Aspirants') %>,
       "url": <%- JSON.stringify(siteDomain) %>
     }<% if (author.telegram_url || author.twitter_url || author.linkedin_url) { %>,
     "sameAs": [
@@ -96,7 +96,7 @@
 
           <!-- Bio -->
           <p style="margin: 0 0 16px 0; font-size: 13.5px; line-height: 1.65; color: #475569;">
-            <%= author.bio || 'Government recruitment intelligence analyst and competitive exam researcher at Govt Exam Zone.' %>
+            <%= author.bio || 'Government recruitment intelligence analyst and competitive exam researcher at Odisha Aspirants.' %>
           </p>
 
           <!-- Social Links -->
