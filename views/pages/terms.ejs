@@ -1,0 +1,113 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<%
+  const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
+    ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
+    : 'https://govtexamzone.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+%>
+
+<!-- Schema.org JSON-LD Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "<%= siteDomain %>"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Terms and Conditions",
+      "item": "<%= siteDomain %>/terms-conditions"
+    }
+  ]
+}
+</script>
+
+<main class="container">
+  <!-- Breadcrumb -->
+  <div style="font-size: 13px; margin: 10px 0 14px 2px; color: #666;">
+    <a href="/" style="color: var(--primary-red); font-weight: bold; text-decoration: none;">🏠 Home</a>
+    <span style="margin: 0 6px; color: #999;">»</span>
+    <span style="color: #333; font-weight: 600;">Terms &amp; Conditions</span>
+  </div>
+
+  <div class="sarkari-box" style="margin-bottom: 30px; background: #ffffff;">
+    <h1 class="sarkari-box-header" style="margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;">
+      Terms and Conditions of Use - <%= portalName %>
+    </h1>
+
+    <div class="static-page-content" style="padding: 22px 20px; line-height: 1.7; color: #334155;">
+      <p style="font-size: 13px; color: #64748b; margin-top: 0; margin-bottom: 18px;">
+        <b>Effective Date:</b> 1st January 2026 | <b>Last Updated:</b> <%= new Date().getFullYear() %>
+      </p>
+
+      <p>
+        Welcome to <b><%= portalName %></b> (accessible at <a href="<%= siteDomain %>" style="color: var(--primary-red); font-weight: bold;"><%= siteDomain %></a>). By accessing, browsing, or utilizing this website, you agree to comply with and be bound by the following Terms and Conditions of Use. If you disagree with any part of these terms, please do not use our website.
+      </p>
+
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 24px; margin-bottom: 10px;">
+        1. Informational &amp; Educational Purpose Only
+      </h2>
+      <p>
+        <%= portalName %> is an independent public educational and recruitment information portal. Our sole purpose is to provide timely summaries, alerts, syllabus briefs, and direct official links for Central and State Government examinations, recruitment circulars, answer keys, and results. We are <b>not</b> a government recruiting body, commission, or statutory agency.
+      </p>
+
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 24px; margin-bottom: 10px;">
+        2. Zero User Data Collection &amp; 100% Free Service
+      </h2>
+      <p>
+        Our services are completely free for all competitive examination candidates. We do not collect user profiles, charge registration fees, or sell user records. The only third-party technical services functioning on this website are <b>Google AdSense</b> (for advertising) and <b>Google Analytics</b> (for anonymous web traffic metrics), as detailed in our <a href="/privacy-policy" style="color: var(--primary-red); font-weight: bold;">Privacy Policy</a>.
+      </p>
+
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 24px; margin-bottom: 10px;">
+        3. Mandatory Candidate Verification
+      </h2>
+      <p>
+        While our editorial research desk takes great care to verify all information from official government gazettes and departmental circulars, candidates are strictly required to verify all eligibility criteria, cutoff dates, vacancies, and fee requirements directly from the official notification PDF released by the conducting commission before applying or paying fees.
+      </p>
+
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 24px; margin-bottom: 10px;">
+        4. External Government Hyperlinks
+      </h2>
+      <p>
+        <%= portalName %> provides outgoing hyperlinks to official government websites (.gov.in / .nic.in). We do not control, operate, or maintain external servers and shall not be held liable for external server downtime, technical submission errors, or third-party payment gateway failures occurring on official commission portals.
+      </p>
+
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 24px; margin-bottom: 10px;">
+        5. Intellectual Property &amp; Fair Use
+      </h2>
+      <p>
+        All official department names, logos, emblems, and examination acronyms (such as UPSC, SSC, RRB, NTA, IBPS, CBSE, State PSCs) are the trademarks of their respective government authorities and are referenced strictly under fair use doctrine for public informational and identification purposes. Original compilation text and website layout are protected under applicable copyright laws.
+      </p>
+
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 24px; margin-bottom: 10px;">
+        6. Limitation of Liability
+      </h2>
+      <p>
+        In no event shall <%= portalName %>, its administrators, or editorial contributors be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use information provided on this portal.
+      </p>
+
+      <!-- Legal Contact Card -->
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 16px 20px; margin-top: 26px;">
+        <h3 style="margin-top: 0; font-size: 15px; color: #0f172a;">
+          ⚖️ Inquiries &amp; Legal Communication
+        </h3>
+        <p style="margin: 0; font-size: 14px;">
+          For any inquiries regarding these terms of use, please write directly to our desk at: 
+          <!--email_off--><a href="mailto:<%= officialEmail %>" style="color: var(--primary-red); font-weight: bold; text-decoration: underline;"><%= officialEmail %></a><!--/email_off-->
+        </p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

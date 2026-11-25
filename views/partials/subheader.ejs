@@ -1,0 +1,37 @@
+
+<div class="container">
+  <% if (typeof settings !== 'undefined' && settings.notice_banner_active === '1' && settings.notice_banner_text) { %>
+    <!-- Top Urgent Notice Bar -->
+    <div class="urgent-notice-bar" style="background-color: <%= settings.notice_banner_bg || '#dc2626' %>; color: #ffffff; padding: 10px 16px; font-weight: 700; text-align: center; font-size: 0.95rem; border-radius: 6px; margin: 10px 0; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <span style="font-size: 1.1rem; line-height: 1;">📢</span>
+      <% if (settings.notice_banner_url) { %>
+        <a href="<%= settings.notice_banner_url %>" style="color: #ffffff; text-decoration: underline; text-underline-offset: 3px;" target="_blank" rel="noopener noreferrer"><%= settings.notice_banner_text %></a>
+      <% } else { %>
+        <span><%= settings.notice_banner_text %></span>
+      <% } %>
+    </div>
+  <% } %>
+
+  <!-- 8 Highlight Color Badges Grid -->
+  <% if (typeof badges !== 'undefined' && badges && badges.length > 0) { %>
+    <div class="badges-grid">
+      <% badges.forEach(b => { %>
+        <a href="<%= b.url %>" class="badge-card" style="background-color: <%= b.bg_color %>;">
+          <div>
+            <div class="badge-title"><%= b.title %></div>
+            <% if (b.subtitle) { %>
+              <div class="badge-subtitle"><%= b.subtitle %></div>
+            <% } %>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+  <% } %>
+
+  <% if (typeof settings !== 'undefined' && settings.ads_active === '1' && settings.ad_top_code) { %>
+    <!-- Top Banner Ad Slot -->
+    <div class="ad-slot-container ad-top-slot" style="margin: 12px auto; text-align: center; overflow: hidden; max-width: 100%;">
+      <%- settings.ad_top_code %>
+    </div>
+  <% } %>
+</div>

@@ -1,0 +1,80 @@
+<% if (typeof settings !== 'undefined' && settings.ads_active === '1' && settings.ad_bottom_code) { %>
+  <!-- Bottom Banner Ad Slot -->
+  <div class="container ad-slot-container ad-bottom-slot" style="margin: 16px auto; text-align: center; overflow: hidden; max-width: 100%;">
+    <%- settings.ad_bottom_code %>
+  </div>
+<% } %>
+
+<!-- Footer Section -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-seo-content">
+      <h3>Govt Exam Zone : Government Jobs 2026 Latest Online Form, Results, Admit Card</h3>
+      <p>
+        India has witnessed a high demand for Government jobs for many decades. People prefer Government jobs as their primary career option considering the wide variety of benefits, job stability, pension prospects, and public service authority associated with these jobs. Government service is a dream for millions of aspirants across the nation. GovtExamZone.com (govtexamzone.com) provides verified, prompt notifications for all central and state government recruitment exams.
+      </p>
+
+      <h3>Exams for Government Jobs in India</h3>
+      <p>
+        Government examinations are conducted for various positions across state and central departments including <b>UPSC, SSC, Railway Recruitment Boards (RRB), State PSCs, Police Recruitment, Banking (IBPS, SBI, RBI), Defense (Army, Navy, Air Force), Teaching (CTET, UPTET, Super TET), NTA, and Board Examinations</b>. Candidates can apply based on their educational qualifications ranging from 10th Pass, 12th Intermediate, ITI, Polytechnic Diploma, to Graduate and Post Graduate degrees.
+      </p>
+
+      <% if (false) { /* Hidden for now as requested: Useful Candidate Utilities & Tools */ %>
+      <h3>Useful Candidate Utilities &amp; Tools</h3>
+      <p>
+        <a href="/tools/age-calculator" style="font-weight: bold; color: #ab183d;">Government Exam Age Calculator</a> | 
+        <a href="/tools/photo-resizer" style="font-weight: bold; color: #ab183d;">Photo &amp; Signature Resizer Guide</a> | 
+        <a href="/tools/image-resizer" style="font-weight: bold; color: #ab183d;">Interactive Photo Resizer &amp; Name Maker</a> |
+        <a href="/category/certificate-verification" style="font-weight: bold; color: #ab183d;">Online Certificate Verification</a>
+      </p>
+      <% } %>
+    </div>
+
+    <div class="footer-bottom">
+      <%
+        const isFooterCatShown = (slug) => typeof visibleCategories === 'undefined' || visibleCategories[slug] !== false;
+      %>
+      <div class="footer-links">
+        <a href="/">Home</a> |
+        <a href="/about-us">About Us</a> |
+        <a href="/faq">FAQ</a> |
+        <% if (isFooterCatShown('latest-jobs')) { %><a href="/category/latest-jobs">Latest Jobs</a> |<% } %>
+        <% if (isFooterCatShown('result')) { %><a href="/category/result">Results</a> |<% } %>
+        <% if (isFooterCatShown('admit-card')) { %><a href="/category/admit-card">Admit Card</a> |<% } %>
+        <% if (isFooterCatShown('answer-key')) { %><a href="/category/answer-key">Answer Key</a> |<% } %>
+        <% if (isFooterCatShown('syllabus')) { %><a href="/category/syllabus">Syllabus</a> |<% } %>
+        <a href="/contact-us">Contact Us</a> |
+        <a href="/terms-conditions">Terms of Use</a> |
+        <a href="/disclaimer">Disclaimer</a> |
+        <a href="/privacy-policy">Privacy Policy</a>
+      </div>
+
+      <% 
+        const currentYear = new Date().getFullYear();
+        let copyText = (typeof settings !== 'undefined' && settings.copyright_text) 
+          ? settings.copyright_text 
+          : '© ' + currentYear + ' govtexamzone.com. All Rights Reserved.';
+        copyText = copyText.replace(/\{year\}/gi, currentYear).replace(/\b20\d\d\b/g, currentYear).replace(/Cloudflare\s*D1\s*&\s*R2\s*Powered\.?/gi, '').trim();
+      %>
+      <p style="margin-top: 8px;">
+        <%= copyText %>
+      </p>
+      <p style="font-size: 11.5px; color: #888; margin-top: 5px;">
+        Disclaimer: Govt Exam Zone (govtexamzone.com) is an independent public information service portal. We are not affiliated with any government agency or department. All information is sourced directly from official government examination notifications.
+      </p>
+    </div>
+  </div>
+</footer>
+</div><!-- /pageContentWrapper -->
+
+<!-- Global Toast Notification -->
+<div id="toast" class="toast-msg">Link copied to clipboard!</div>
+
+<script src="/js/main.js?v=20261125b"></script>
+
+<% if (typeof settings !== 'undefined' && settings.footer_custom_code) { %>
+  <!-- Webmaster Custom Footer Code -->
+  <%- settings.footer_custom_code %>
+<% } %>
+</body>
+</html>

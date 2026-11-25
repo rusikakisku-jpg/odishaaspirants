@@ -1,0 +1,161 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<%
+  const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
+    ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
+    : 'https://govtexamzone.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+%>
+
+<!-- Schema.org JSON-LD Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "<%= siteDomain %>"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Privacy Policy",
+      "item": "<%= siteDomain %>/privacy-policy"
+    }
+  ]
+}
+</script>
+
+<main class="container">
+  <!-- Breadcrumb -->
+  <div style="font-size: 13px; margin: 10px 0 14px 2px; color: #666;">
+    <a href="/" style="color: var(--primary-red); font-weight: bold; text-decoration: none;">🏠 Home</a>
+    <span style="margin: 0 6px; color: #999;">»</span>
+    <span style="color: #333; font-weight: 600;">Privacy Policy</span>
+  </div>
+
+  <div class="sarkari-box" style="margin-bottom: 30px; background: #ffffff;">
+    <h1 class="sarkari-box-header" style="margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;">
+      Privacy Policy - <%= portalName %>
+    </h1>
+
+    <div class="static-page-content" style="padding: 22px 20px; line-height: 1.7; color: #334155;">
+      <p style="font-size: 13px; color: #64748b; margin-top: 0; margin-bottom: 18px;">
+        <b>Effective Date:</b> 1st January 2026 | <b>Last Updated:</b> <%= new Date().getFullYear() %>
+      </p>
+
+      <p>
+        At <b><%= portalName %></b> (accessible at <a href="<%= siteDomain %>" style="color: var(--primary-red); font-weight: bold;"><%= siteDomain %></a>), safeguarding the privacy of our visitors is one of our utmost priorities. This comprehensive Privacy Policy document details our transparent data handling practices, explains our complete non-collection of personal user information, and describes the technical cookies utilized solely by our trusted third-party partners (Google AdSense and Google Analytics).
+      </p>
+
+      <!-- Section 1: Zero Personal Data Collection -->
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 16px 20px; margin: 20px 0;">
+        <h2 style="color: #166534; font-size: 17px; margin-top: 0; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <span>🛡️</span> 1. Strict Zero Personal Data Collection Policy
+        </h2>
+        <p style="margin: 0; font-size: 14px; color: #14532d;">
+          <b><%= portalName %> does NOT collect, store, sell, trade, or share any personal user data.</b> 
+          We operate purely as an open, public educational information service. Visiting candidates are <b>never</b> required to create accounts, register profiles, enter phone numbers, upload identity documents, or submit financial payment details. You can freely browse all latest government job notifications, admit cards, answer keys, syllabus circulars, and exam results without providing any personal information whatsoever.
+        </p>
+      </div>
+
+      <!-- Section 2: Google AdSense and DoubleClick DART Cookies -->
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 26px; margin-bottom: 10px;">
+        2. Google AdSense &amp; Advertising Cookies
+      </h2>
+      <p>
+        To keep this educational portal 100% free for all competitive examination aspirants across India, we utilize <b>Google AdSense</b> to display relevant third-party advertisements.
+      </p>
+      <ul style="padding-left: 22px; margin-bottom: 14px;">
+        <li><b>Third-Party Advertising:</b> Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites across the Internet.</li>
+        <li><b>Google DoubleClick DART Cookie:</b> Google's use of advertising cookies enables it and its certified advertising partners to serve targeted, non-intrusive advertisements to users based on their browsing interests across the web.</li>
+        <li><b>User Opt-Out Mechanism:</b> Visitors have full control and may opt out of personalized advertising at any time by visiting the official Google Ads Settings: 
+          <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" style="color: #0284c7; font-weight: bold;">https://adssettings.google.com/</a>.
+        </li>
+        <li><b>Network Advertising Initiative:</b> Alternatively, users can opt out of third-party vendor cookies for personalized advertising by visiting the Network Advertising Initiative (NAI) or Digital Advertising Alliance opt-out portal: 
+          <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" style="color: #0284c7; font-weight: bold;">https://www.aboutads.info/choices/</a>.
+        </li>
+      </ul>
+
+      <!-- Section 3: Google Analytics -->
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 26px; margin-bottom: 10px;">
+        3. Google Analytics &amp; Web Traffic Metrics
+      </h2>
+      <p>
+        We employ <b>Google Analytics</b>, an industry-standard web analytics service offered by Google LLC, strictly to understand aggregated, anonymous website traffic trends.
+      </p>
+      <ul style="padding-left: 22px; margin-bottom: 14px;">
+        <li><b>What is Tracked:</b> Google Analytics collects purely anonymous statistical metrics such as pageviews, duration on page, approximate country/city-level location, browser type, and operating system.</li>
+        <li><b>No Personally Identifiable Information:</b> IP anonymization is active. Google Analytics does NOT track or store candidate names, phone numbers, email addresses, or precise device identities.</li>
+        <li><b>How to Opt-Out:</b> You can prevent your non-personal browsing data from being utilized by Google Analytics by installing the official Google Analytics Opt-out Browser Add-on: 
+          <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style="color: #0284c7; font-weight: bold;">https://tools.google.com/dlpage/gaoptout</a>.
+        </li>
+      </ul>
+
+      <!-- Section 4: Standard Web Server Log Files -->
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 26px; margin-bottom: 10px;">
+        4. Standard Server Log Files (Security &amp; DDoS Protection)
+      </h2>
+      <p>
+        Like virtually all reputable web services globally, <%= portalName %> utilizes standard web server log files provided by secure cloud server infrastructure. These automated logs record technical information such as anonymized IP addresses, browser user-agent types, referring/exit URLs, and access timestamps. This technical information is used exclusively for:
+      </p>
+      <ul style="padding-left: 22px; margin-bottom: 14px;">
+        <li>Preventing distributed denial-of-service (DDoS) attacks and server overload.</li>
+        <li>Detecting malicious automated scrapers and bad-faith bots.</li>
+        <li>Ensuring high website uptime and optimal page load speeds for candidates.</li>
+      </ul>
+      <p>
+        These logs are never linked to any personally identifiable information and are automatically cycled and purged.
+      </p>
+
+      <!-- Section 5: External Official Government Links -->
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 26px; margin-bottom: 10px;">
+        5. External Government Department Links
+      </h2>
+      <p>
+        Our notifications provide direct outgoing hyperlinks to official government recruitment commissions (e.g., <code>ssc.gov.in</code>, <code>upsc.gov.in</code>, <code>rrbcdg.gov.in</code>, <code>nta.ac.in</code>). Please be advised that once you click an external link and leave <%= portalName %>, you are visiting an independent third-party server governed by its own privacy statement and terms of service. We encourage candidates to review the privacy policies of any external destination website.
+      </p>
+
+      <!-- Section 6: Children's Online Privacy Protection -->
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 26px; margin-bottom: 10px;">
+        6. Children's Privacy Protection (COPPA Compliance)
+      </h2>
+      <p>
+        Protecting the privacy of minors is paramount. <%= portalName %> publishes general educational and public employment examination circulars and does not knowingly collect, solicit, or maintain any personal information from children under the age of 13.
+      </p>
+
+      <!-- Section 7: User Consent & Policy Updates -->
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 26px; margin-bottom: 10px;">
+        7. Consent &amp; Policy Updates
+      </h2>
+      <p>
+        By accessing and utilizing <%= portalName %> (<%= siteDomain %>), you hereby acknowledge and consent to this Privacy Policy. Any necessary updates will be posted directly on this page with an updated timestamp.
+      </p>
+
+      <!-- Section 8: Official Privacy & Grievance Contact -->
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 18px 20px; margin-top: 26px;">
+        <h3 style="margin-top: 0; font-size: 15px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+          <span>✉️</span> Official Privacy &amp; Data Protection Contact
+        </h3>
+        <p style="margin-bottom: 8px; font-size: 14px;">
+          If you have any questions, require clarification regarding our privacy standards, or wish to communicate with our data administration desk, please contact us directly:
+        </p>
+        <p style="margin: 0; font-size: 14.5px;">
+          <b>📧 Official Contact Email:</b> 
+          <!--email_off--><a href="mailto:<%= officialEmail %>" style="color: var(--primary-red); font-weight: bold; text-decoration: underline;"><%= officialEmail %></a><!--/email_off-->
+        </p>
+        <p style="margin: 6px 0 0 0; font-size: 13px; color: #64748b;">
+          Expected response timeframe: Within 24 to 48 business hours.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

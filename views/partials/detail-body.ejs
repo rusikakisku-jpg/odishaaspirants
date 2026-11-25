@@ -1,0 +1,339 @@
+<%
+  const _isBlogMode = (typeof settings !== 'undefined' && settings.post_detail_layout === 'blog_2col');
+  const _hasRichArticle = Boolean(post.article_content && post.article_content.trim());
+  const _hasDates = Boolean(importantDates && importantDates.length > 0);
+  const _hasFees = Boolean(applicationFee && applicationFee.length > 0);
+  const _hasAnyLink = Boolean(
+    post.apply_online_url ||
+    post.notification_pdf ||
+    post.admit_card_url ||
+    post.result_url ||
+    post.official_website_url ||
+    (links && links.length > 0)
+  );
+%>
+
+<!-- Post Featured Thumbnail Image (if provided) -->
+<% if (post.thumbnail && post.thumbnail.trim()) { %>
+  <div class="post-featured-thumb" style="margin: 0 0 18px 0; text-align: center;">
+    <img src="<%= post.thumbnail.trim() %>" alt="<%= post.title %>" loading="lazy" style="max-width: 100%; height: auto; max-height: 440px; border-radius: 8px; border: 1px solid #e2e8f0; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+  </div>
+<% } %>
+
+<!-- Short Information -->
+<% if (post.short_desc) { %>
+  <% if (_isBlogMode) { %>
+    <div class="gez-summary-box">
+      <div class="gez-summary-badge"><%= catInfo.name %> Overview</div>
+      <p style="margin: 0;"><%= post.short_desc %></p>
+    </div>
+  <% } else { %>
+    <div class="detail-short-info">
+      <%= post.short_desc %>
+    </div>
+  <% } %>
+<% } %>
+
+<!-- Optional Full Blog Article / Detailed Editorial Content -->
+<% if (_hasRichArticle) { %>
+  <div class="gez-article-content" id="article-content">
+    <%- post.article_content %>
+  </div>
+<% } %>
+
+<!-- 2-Column Info Grid: Important Dates & Application Fee -->
+<% if (!_isBlogMode || _hasDates || _hasFees || !_hasRichArticle) { %>
+<div class="detail-info-grid">
+  <!-- Important Dates -->
+  <div class="info-card" id="dates">
+    <div class="info-card-header"><%= post.category === 'syllabus' ? 'Important Exam & Syllabus Dates' : (post.category === 'admit-card' ? 'Important Dates & Exam Schedule' : (post.category === 'result' ? 'Important Dates & Result Schedule' : 'Important Dates')) %></div>
+    <div class="info-card-body">
+      <% if (_hasDates) { %>
+        <ul>
+          <% importantDates.forEach(item => { %>
+            <li>
+              <span class="info-label"><%= item.event %> : </span>
+              <b class="important-val-date"><%= item.date %></b>
+            </li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p style="color:#666;">No date schedule available.</p>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Application Fee -->
+  <div class="info-card" id="fees">
+    <div class="info-card-header red"><%= post.category === 'syllabus' ? 'Application / Download Fee' : (post.category === 'admit-card' ? 'Admit Card / Download Fee' : (post.category === 'result' ? 'Result Checking Fee' : 'Application Fee')) %></div>
+    <div class="info-card-body">
+      <% if (_hasFees) { %>
+        <ul>
+          <% applicationFee.forEach(item => { %>
+            <li>
+              <span class="info-label"><%= item.category %> : </span>
+              <b class="important-val-fee"><%= item.fee %></b>
+            </li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p style="color:#666;">No fee details available.</p>
+      <% } %>
+    </div>
+  </div>
+</div>
+<% } %>
+
+<!-- Age Limit Details -->
+<%
+  const hasCategoryAges = Boolean(ageLimit && Array.isArray(ageLimit.categories) && ageLimit.categories.length > 0);
+  const hasLegacyAges = Boolean(ageLimit && (ageLimit.min_age || ageLimit.max_age || ageLimit.relaxation));
+%>
+<% if (hasCategoryAges || hasLegacyAges) { %>
+  <div class="info-card" style="margin-bottom: 20px;" id="agelimit">
+    <div class="info-card-header" style="background: #006400;">
+      <%= post.category === 'syllabus' ? 'Age Limit & Eligibility Overview ' : (post.category === 'admit-card' ? 'Age Limit & Eligibility Criteria ' : 'Age Limit Details ') %><%= ageLimit.as_on ? `(as on ${ageLimit.as_on})` : '' %>
+    </div>
+    <div class="info-card-body">
+      <ul>
+        <% if (hasCategoryAges) { %>
+          <% ageLimit.categories.forEach(item => { %>
+            <%
+              const rangeParts = [];
+              if (item.min_age) rangeParts.push('Min: ' + item.min_age);
+              if (item.max_age) rangeParts.push('Max: ' + item.max_age);
+            %>
+            <li>
+              <span class="info-label"><%= item.category %> : </span>
+              <b class="important-val-text"><%= rangeParts.join(' | ') %></b>
+            </li>
+          <% }) %>
+        <% } else { %>
+          <% if (ageLimit.min_age) { %>
+            <li><span class="info-label">Minimum Age : </span><b class="important-val-text"><%= ageLimit.min_age %></b></li>
+          <% } %>
+          <% if (ageLimit.max_age) { %>
+            <li><span class="info-label">Maximum Age : </span><b class="important-val-text"><%= ageLimit.max_age %></b></li>
+          <% } %>
+        <% } %>
+        <% if (ageLimit.relaxation) { %>
+          <li><span class="info-label">Age Relaxation : </span><b class="important-val-text"><%= ageLimit.relaxation %></b></li>
+        <% } %>
+        <% if (false) { /* Hidden for now as requested */ %>
+        <li style="margin-top: 5px;">
+          <a href="/tools/age-calculator" target="_blank" style="color: #0000a0; font-weight: bold;">
+            👉 Calculate Your Exact Age Using Online Age Calculator
+          </a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+<% } %>
+
+<!-- Vacancy Details Table -->
+<div id="vacancies">
+<% if (vacancyDetails && vacancyDetails.length > 0) { %>
+  <div style="text-align: center; margin: 15px 0 5px 0;">
+    <h2 style="color: var(--primary-red); font-size: 20px;">
+      <%= post.category === 'syllabus' ? 'Selection Process & Exam Pattern Details' : (post.category === 'admit-card' ? 'Exam Scheme & Selection Details' : (post.category === 'result' ? 'Result & Post Overview' : ('Vacancy Details : ' + (post.total_vacancy ? post.total_vacancy : '')))) %>
+    </h2>
+  </div>
+
+  <div class="table-responsive">
+    <table class="detail-table">
+      <thead>
+        <tr>
+          <th style="width: 30%;"><%= post.category === 'syllabus' ? 'Exam Stage / Paper' : (post.category === 'admit-card' ? 'Post / Exam Stage' : 'Post Name') %></th>
+          <th style="width: 20%;"><%= post.category === 'syllabus' ? 'Pattern & Duration' : (post.category === 'admit-card' ? 'Exam Pattern' : 'Total Post') %></th>
+          <th style="width: 50%;"><%= post.category === 'syllabus' ? 'Syllabus & Subject Scheme' : (post.category === 'admit-card' ? 'Eligibility & Selection Criteria' : 'Eligibility Criteria') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% vacancyDetails.forEach(v => { %>
+          <tr>
+            <td><b class="important-val-text"><%= v.post_name %></b></td>
+            <td style="text-align: center; font-weight: 800; font-size: 16.5px; color: #0000a0;"><%= v.total_post %></td>
+            <td><%= v.eligibility %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+<% } %>
+</div>
+
+<!-- Category-wise Vacancy Distribution Table -->
+<%
+  const isCustomCatTable = Boolean(
+    categoryDetails &&
+    !Array.isArray(categoryDetails) &&
+    Array.isArray(categoryDetails.columns) &&
+    categoryDetails.columns.length > 0 &&
+    Array.isArray(categoryDetails.rows) &&
+    categoryDetails.rows.length > 0
+  );
+  const isLegacyCatTable = Boolean(Array.isArray(categoryDetails) && categoryDetails.length > 0);
+%>
+<% if (isCustomCatTable || isLegacyCatTable) { %>
+  <div style="text-align: center; margin: 15px 0 5px 0;">
+    <h3 style="color: #2b547e; font-size: 18px;">
+      <%= post.category === 'syllabus' ? 'Category-Wise Minimum Qualifying Marks Standards' : 'Category Wise Vacancy Details' %>
+    </h3>
+  </div>
+  <div class="table-responsive">
+    <table class="detail-table table-wide">
+      <% if (isCustomCatTable) { %>
+        <thead>
+          <tr style="background: #2b547e;">
+            <% categoryDetails.columns.forEach(col => { %>
+              <th><%= col %></th>
+            <% }) %>
+          </tr>
+        </thead>
+        <tbody>
+          <% categoryDetails.rows.forEach(row => { %>
+            <tr style="text-align: center;">
+              <% categoryDetails.columns.forEach((col, idx) => { %>
+                <%
+                  const cellVal = (Array.isArray(row) && row[idx] !== undefined && row[idx] !== '') ? row[idx] : '-';
+                  const isFirstCol = idx === 0;
+                  const isTotalCol = idx === categoryDetails.columns.length - 1 && /total|standard/i.test(String(col || ''));
+                %>
+                <td style="<%= isFirstCol ? 'text-align: left; font-weight: bold;' : (isTotalCol ? 'font-weight: bold; color: var(--primary-red);' : '') %>"><%= cellVal %></td>
+              <% }) %>
+            </tr>
+          <% }) %>
+        </tbody>
+      <% } else { %>
+        <thead>
+          <tr style="background: #2b547e;">
+            <th><%= post.category === 'syllabus' ? 'Stage / Paper' : 'Post Name' %></th>
+            <th>UR / Gen</th>
+            <th>EWS</th>
+            <th>OBC</th>
+            <th>SC</th>
+            <th>ST</th>
+            <th><%= post.category === 'syllabus' ? 'Standard' : 'Total' %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% categoryDetails.forEach(c => { %>
+            <tr style="text-align: center;">
+              <td style="text-align: left; font-weight: bold;"><%= c.post_name %></td>
+              <td><%= c.ur || '-' %></td>
+              <td><%= c.ews || '-' %></td>
+              <td><%= c.obc || '-' %></td>
+              <td><%= c.sc || '-' %></td>
+              <td><%= c.st || '-' %></td>
+              <td style="font-weight: bold; color: var(--primary-red);"><%= c.total || '-' %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      <% } %>
+    </table>
+  </div>
+<% } %>
+
+<!-- How to Apply Instructions -->
+<div id="howto">
+<% if (post.how_to_apply && post.how_to_apply.trim()) { %>
+  <div style="margin: 20px 0;">
+    <h3 style="color: var(--primary-red); font-size: 18px; margin-bottom: 8px;">
+      <%= post.category === 'syllabus' ? 'How to Check & Download ' + post.title + ' :' : (post.category === 'admit-card' ? 'How to Download ' + post.title + ' :' : (post.category === 'result' ? 'How to Check ' + post.title + ' :' : 'How to Fill ' + post.title + ' Online Form:')) %>
+    </h3>
+    <div class="how-to-apply-box">
+      <%= post.how_to_apply %>
+    </div>
+  </div>
+<% } %>
+</div>
+
+<!-- Useful Important Links Table -->
+<% if (!_isBlogMode || _hasAnyLink || !_hasRichArticle) { %>
+<div style="text-align: center; margin: 16px 0; color: #c62828; font-weight: bold; font-size: 16px;">
+  <%= post.category === 'syllabus' ? 'Candidates Can Download the Complete Syllabus & Exam Pattern PDF Below' : (post.category === 'admit-card' ? 'Candidates Can Download Admit Card / Hall Ticket from the Links Below' : (post.category === 'result' ? 'Candidates Can Check Result / Scorecard from the Links Below' : 'Interested Candidates Can Read the Full Notification Before Apply Online')) %>
+</div>
+
+<div id="links" style="text-align: center; margin: 25px 0 10px 0;">
+  <h2 class="useful-links-heading">Some Useful Important Links</h2>
+</div>
+
+<div class="table-responsive links-table-responsive">
+  <table class="detail-table links-table">
+    <tbody>
+      <!-- Apply Online -->
+      <% if (post.apply_online_url) { %>
+        <tr>
+          <td style="font-weight: bold; color: #006400;">Apply Online</td>
+          <td style="text-align: center;">
+            <a href="<%= post.apply_online_url %>" target="_blank" class="useful-link-text">Click Here</a>
+          </td>
+        </tr>
+      <% } %>
+
+      <!-- Download Official Notification -->
+      <% if (post.notification_pdf) { %>
+        <tr>
+          <td style="font-weight: bold; color: #b71c1c;">Download Notification (PDF)</td>
+          <td style="text-align: center;">
+            <a href="<%= post.notification_pdf %>" target="_blank" class="useful-link-text">Click Here</a>
+          </td>
+        </tr>
+      <% } %>
+
+      <!-- Admit Card Link -->
+      <% if (post.admit_card_url) { %>
+        <tr>
+          <td style="font-weight: bold; color: #0000a0;">Download Admit Card</td>
+          <td style="text-align: center;">
+            <a href="<%= post.admit_card_url %>" target="_blank" class="useful-link-text">Click Here</a>
+          </td>
+        </tr>
+      <% } %>
+
+      <!-- Result Link -->
+      <% if (post.result_url) { %>
+        <tr>
+          <td style="font-weight: bold; color: #0000a0;">Download Result</td>
+          <td style="text-align: center;">
+            <a href="<%= post.result_url %>" target="_blank" class="useful-link-text">Click Here</a>
+          </td>
+        </tr>
+      <% } %>
+
+      <!-- Custom Additional Links -->
+      <% if (links && links.length > 0) { %>
+        <% links.forEach(link => { %>
+          <tr>
+            <td style="font-weight: bold;"><%= link.label %></td>
+            <td style="text-align: center;">
+              <a href="<%= link.url %>" target="_blank" class="useful-link-text"><%= link.btn_text || 'Click Here' %></a>
+            </td>
+          </tr>
+        <% }) %>
+      <% } %>
+
+      <% if (!_isBlogMode) { %>
+      <!-- Photo Resizer Specs Tool Link -->
+      <tr>
+        <td style="font-weight: bold;">Check Photo &amp; Signature Upload Specs</td>
+        <td style="text-align: center;">
+          <a href="/tools/photo-resizer" target="_blank" class="useful-link-text">View Guide</a>
+        </td>
+      </tr>
+      <% } %>
+
+      <!-- Official Website -->
+      <% if (post.official_website_url) { %>
+        <tr>
+          <td style="font-weight: bold;">Official Website</td>
+          <td style="text-align: center;">
+            <a href="<%= post.official_website_url %>" target="_blank" class="useful-link-text">Click Here</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+<% } %>

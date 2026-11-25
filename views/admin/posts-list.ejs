@@ -1,0 +1,110 @@
+<%- include('../partials/admin-nav', { currentPath: '/admin/posts' }) %>
+
+<div class="admin-card">
+  <div class="admin-card-header">
+    <div>
+      <h2>All Examination &amp; Job Notifications (<%= posts ? posts.length : 0 %>)</h2>
+      <div style="font-size: 12.5px; color: #64748b; margin-top: 2px;">Search, filter, update or delete notifications across all 8 Govt Exam Zone categories</div>
+    </div>
+    <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/new" class="btn btn-primary">➕ Create New Post</a>
+  </div>
+
+  <% if (typeof success !== 'undefined' && success === 'created') { %>
+    <div style="background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
+      ✅ Notification successfully created and published live on Govt Exam Zone!
+    </div>
+  <% } else if (typeof success !== 'undefined' && success === 'updated') { %>
+    <div style="background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
+      ✅ Notification successfully updated!
+    </div>
+  <% } else if (typeof success !== 'undefined' && success === 'deleted') { %>
+    <div style="background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
+      🗑️ Notification deleted successfully!
+    </div>
+  <% } %>
+
+  <!-- Filters Bar -->
+  <form method="GET" action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts" class="admin-filter-form" style="display: flex; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid #e2e8f0; align-items: center;">
+    <input 
+      type="text" 
+      name="search" 
+      class="form-control" 
+      style="max-width: 340px;" 
+      placeholder="🔍 Search title or department..." 
+      value="<%= search %>"
+    >
+    <select name="category" class="form-control" style="max-width: 230px;">
+      <option value="">All Categories (8)</option>
+      <% Object.keys(categories).forEach(key => { %>
+        <option value="<%= key %>" <%= selectedCategory === key ? 'selected' : '' %>>
+          <%= categories[key].name %>
+        </option>
+      <% }) %>
+    </select>
+    <button type="submit" class="btn btn-primary btn-sm" style="padding: 9px 16px;">Filter Results</button>
+    <% if (search || selectedCategory) { %>
+      <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts" class="btn btn-secondary btn-sm" style="padding: 8px 14px;">Reset</a>
+    <% } %>
+  </form>
+
+  <div style="overflow-x: auto;">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th style="width: 50px;">ID</th>
+          <th>Notification Title</th>
+          <th style="width: 140px;">Category</th>
+          <th>Department</th>
+          <th style="width: 130px;">Last Date</th>
+          <th style="width: 90px;">Status</th>
+          <th style="width: 170px; text-align: right;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (posts && posts.length > 0) { %>
+          <% posts.forEach(post => { %>
+            <tr>
+              <td style="font-weight: 600; color: #64748b;">#<%= post.id %></td>
+              <td>
+                <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/post/<%= post.slug %>" target="_blank" style="font-weight: 600; color: #0f172a; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                  <span><%= post.title %></span>
+                  <span style="font-size: 11px; color: #94a3b8;">↗</span>
+                </a>
+                <% if (post.is_featured) { %>
+                  <span style="background: #fef08a; color: #854d0e; padding: 1px 6px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-top: 3px; display: inline-block;">★ FEATURED</span>
+                <% } %>
+              </td>
+              <td>
+                <span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 11.5px; font-weight: 700; text-transform: capitalize; display: inline-block;">
+                  <%= post.category %>
+                </span>
+              </td>
+              <td style="font-size: 13px; color: #475569;"><%= post.department || '-' %></td>
+              <td style="font-size: 12.5px; color: #c62828; font-weight: 600;"><%= post.last_date || '-' %></td>
+              <td>
+                <span style="background: <%= post.status === 'active' ? '#ecfdf5' : '#fffbeb' %>; color: <%= post.status === 'active' ? '#059669' : '#d97706' %>; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700;">
+                  ● <%= post.status %>
+                </span>
+              </td>
+              <td style="text-align: right; white-space: nowrap;">
+                <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/post/<%= post.slug %>" target="_blank" class="btn btn-secondary btn-sm" style="margin-right: 3px;">View</a>
+                <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/edit/<%= post.id %>" class="btn btn-secondary btn-sm" style="margin-right: 3px;">Edit</a>
+                <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/delete/<%= post.id %>" method="POST" style="display: inline-block;" onsubmit="return confirm('Permanently delete this notification?');">
+                  <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan="7" style="text-align: center; padding: 35px; color: #64748b;">
+              No notifications found matching your search criteria.
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../partials/admin-footer') %>

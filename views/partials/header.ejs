@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title !== 'undefined' ? title : 'Govt Exam Zone : Latest Govt Jobs, Admit Card, Results 2026 | WWW.GOVTEXAMZONE.COM' %></title>
+  
+  <%
+    const siteBase = (typeof settings !== 'undefined' && settings.site_domain) 
+      ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
+      : 'https://govtexamzone.com';
+    const pagePath = (typeof currentPath !== 'undefined' && currentPath !== '/') ? currentPath : '';
+    const canonicalUrl = typeof fullUrl !== 'undefined' ? fullUrl : (siteBase + pagePath);
+    const logoAbsolute = (typeof post !== 'undefined' && post && post.thumbnail && post.thumbnail.trim())
+      ? (post.thumbnail.trim().startsWith('http') ? post.thumbnail.trim() : siteBase + post.thumbnail.trim())
+      : ((typeof settings !== 'undefined' && settings.site_logo) 
+          ? (settings.site_logo.startsWith('http') ? settings.site_logo : siteBase + settings.site_logo) 
+          : siteBase + '/images/gez-logo.svg');
+    const activeMetaDesc = (typeof metaDescription !== 'undefined' && metaDescription) 
+      ? metaDescription 
+      : ((typeof settings !== 'undefined' && settings.meta_description) 
+          ? settings.meta_description 
+          : 'Govt Exam Zone (govtexamzone.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.');
+  %>
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="<%= typeof title !== 'undefined' ? title : ((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title + ' : Latest Govt Jobs & Results 2026' : 'Govt Exam Zone : Latest Govt Jobs & Results 2026') %>">
+  <meta name="description" content="<%= activeMetaDesc %>">
+  <meta name="keywords" content="<%= (typeof settings !== 'undefined' && settings.meta_keywords) ? settings.meta_keywords : 'Govt Exam Zone, govtexamzone, govtexamzone.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' %>">
+  <meta name="author" content="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="<%= canonicalUrl %>">
+  <link rel="alternate" type="application/rss+xml" title="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %> RSS Feed" href="/feed">
+  <% if (typeof settings !== 'undefined' && settings.google_site_verification) { %>
+  <meta name="google-site-verification" content="<%= settings.google_site_verification %>">
+  <% } %>
+  <% if (typeof settings !== 'undefined' && settings.adsense_client_id) { %>
+  <!-- Google AdSense Account Verification for Instant Approval -->
+  <meta name="google-adsense-account" content="<%= settings.adsense_client_id %>">
+  <% } %>
+
+  <!-- Open Graph / Facebook Meta Tags -->
+  <meta property="og:type" content="<%= typeof post !== 'undefined' ? 'article' : 'website' %>">
+  <meta property="og:url" content="<%= canonicalUrl %>">
+  <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : 'Govt Exam Zone : Latest Govt Jobs & Results 2026' %>">
+  <meta property="og:description" content="<%= activeMetaDesc %>">
+  <meta property="og:image" content="<%= logoAbsolute %>">
+  <meta property="og:site_name" content="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@govtexamzone">
+  <meta name="twitter:url" content="<%= canonicalUrl %>">
+  <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? title : 'Govt Exam Zone : Latest Govt Jobs & Results 2026' %>">
+  <meta name="twitter:description" content="<%= activeMetaDesc %>">
+  <meta name="twitter:image" content="<%= logoAbsolute %>">
+
+  <!-- Mobile & PWA Theme -->
+  <meta name="theme-color" content="#ab183d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>">
+  <link rel="manifest" href="/manifest.json">
+  <%
+    const hasCustomFaviconSetting = typeof settings !== 'undefined' && typeof settings.site_favicon === 'string';
+    const activeFavicon = hasCustomFaviconSetting
+      ? settings.site_favicon.trim()
+      : '/images/gez-logo.svg';
+  %>
+  <% if (activeFavicon) { %>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" href="<%= activeFavicon %>">
+  <link rel="shortcut icon" href="<%= activeFavicon %>">
+  <link rel="apple-touch-icon" href="<%= activeFavicon %>">
+  <% } %>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- High-Speed Menu Prefetching for Instant Navigation -->
+  <% ['latest-jobs', 'result', 'admit-card', 'answer-key', 'syllabus'].forEach(catSlug => { %>
+    <% if (typeof visibleCategories === 'undefined' || visibleCategories[catSlug] !== false) { %>
+  <link rel="prefetch" href="/category/<%= catSlug %>">
+    <% } %>
+  <% }); %>
+
+  <!-- JSON-LD Schema.org Structured Data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>",
+    "alternateName": ["GovtExamZone", "Govt Exam Zone Official", "GEZ Official"],
+    "url": "<%= siteBase %>",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "<%= siteBase %>/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD Schema.org Structured Data: Organization -->
+  <script type="application/ld+json">
+  <%
+    const socialLinks = [];
+    if (typeof settings !== 'undefined') {
+      if (settings.telegram_url) socialLinks.push(settings.telegram_url);
+      if (settings.whatsapp_url) socialLinks.push(settings.whatsapp_url);
+      if (settings.youtube_url) socialLinks.push(settings.youtube_url);
+      if (settings.twitter_url) socialLinks.push(settings.twitter_url);
+      if (settings.instagram_url) socialLinks.push(settings.instagram_url);
+      if (settings.facebook_url) socialLinks.push(settings.facebook_url);
+    }
+  %>
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>",
+    "url": "<%= siteBase %>",
+    "logo": "<%= logoAbsolute %>",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "<%= (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com' %>",
+      "contactType": "Customer Support",
+      "areaServed": "IN",
+      "availableLanguage": ["en", "hi"]
+    }<% if (socialLinks.length > 0) { %>,
+    "sameAs": <%- JSON.stringify(socialLinks) %>
+    <% } %>
+  }
+  </script>
+
+  <%
+    const rawGaId = (typeof settings !== 'undefined' && settings.google_analytics_id) ? String(settings.google_analytics_id).trim() : '';
+    const gaMatch = rawGaId.match(/\b(G|GT|UA|AW)-[A-Z0-9-]+\b/i);
+    const activeGaId = gaMatch ? gaMatch[0].toUpperCase() : rawGaId.replace(/[<>"'\s]/g, '');
+  %>
+  <% if (activeGaId) { %>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= activeGaId %>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.__GA_MEASUREMENT_ID = '<%= activeGaId %>';
+    gtag('js', new Date());
+    gtag('config', '<%= activeGaId %>');
+  </script>
+  <% } %>
+
+  <% if (typeof settings !== 'undefined' && settings.adsense_client_id) { %>
+  <!-- Google AdSense Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%= settings.adsense_client_id %>" crossorigin="anonymous"></script>
+  <% } %>
+
+  <% if (typeof settings !== 'undefined' && settings.header_custom_code) { %>
+  <!-- Webmaster Custom Header Code -->
+  <%- settings.header_custom_code %>
+  <% } %>
+</head>
+<body>
+
+<!-- Sticky Header Wrapper: Freezes Entire Header & Navigation at Top on Scroll -->
+<div class="site-header-sticky-wrapper" id="siteHeaderStickyWrapper">
+  <!-- Header Section -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <% if (typeof settings !== 'undefined' && settings.site_logo && settings.site_logo.trim()) { %>
+        <a href="/" class="header-logo" title="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %> Official Portal">
+          <img src="<%= settings.site_logo %>" alt="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %> Emblem Logo" width="110" height="110">
+        </a>
+        <% } %>
+        <div class="header-text">
+          <h1 class="header-title"><a href="/"><%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title.toUpperCase() : 'GOVT EXAM ZONE' %></a></h1>
+          <div class="header-subtitle"><%= (typeof settings !== 'undefined' && settings.header_subtitle) ? settings.header_subtitle : 'WWW.GOVTEXAMZONE.COM' %></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!-- Main Navigation Menu -->
+<nav class="main-nav" id="mainNavigation">
+  <div class="container nav-inner-container">
+    <!-- Mobile Navigation Topbar (Left: 3-line Menu, Right: Search Icon) -->
+    <div class="mobile-nav-bar">
+      <button type="button" class="nav-toggle-btn" id="mobileMenuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="toggle-icon">☰</span>
+      </button>
+
+      <button type="button" class="mobile-quick-search-btn" id="mobileSearchBtn" title="Search Exams, Jobs..." aria-label="Search">
+        <span class="search-btn-icon">🔍</span>
+      </button>
+    </div>
+
+    <!-- Navigation Menu List -->
+    <ul class="nav-menu" id="primaryNavMenu">
+      <%
+        const cur = typeof currentPath !== 'undefined' ? currentPath : '';
+        const isCatShown = (slug) => typeof visibleCategories === 'undefined' || visibleCategories[slug] !== false;
+      %>
+      <li>
+        <a href="/" class="<%= cur === '/' ? 'active' : '' %>">
+          <span class="menu-icon">🏠</span>
+          <span class="menu-label">Home</span>
+          <span class="menu-chevron">›</span>
+        </a>
+      </li>
+      <% if (isCatShown('latest-jobs')) { %>
+      <li>
+        <a href="/category/latest-jobs" class="<%= cur.includes('latest-jobs') ? 'active' : '' %>">
+          <span class="menu-icon">💼</span>
+          <span class="menu-label">Latest Jobs</span>
+          <span class="menu-chevron">›</span>
+        </a>
+      </li>
+      <% } %>
+      <% if (isCatShown('result')) { %>
+      <li>
+        <a href="/category/result" class="<%= cur.includes('result') ? 'active' : '' %>">
+          <span class="menu-icon">🏆</span>
+          <span class="menu-label">Results</span>
+          <span class="menu-chevron">›</span>
+        </a>
+      </li>
+      <% } %>
+      <% if (isCatShown('admit-card')) { %>
+      <li>
+        <a href="/category/admit-card" class="<%= cur.includes('admit-card') ? 'active' : '' %>">
+          <span class="menu-icon">🎫</span>
+          <span class="menu-label">Admit Card</span>
+          <span class="menu-chevron">›</span>
+        </a>
+      </li>
+      <% } %>
+      <% if (isCatShown('answer-key')) { %>
+      <li>
+        <a href="/category/answer-key" class="<%= cur.includes('answer-key') ? 'active' : '' %>">
+          <span class="menu-icon">🔑</span>
+          <span class="menu-label">Answer Key</span>
+          <span class="menu-chevron">›</span>
+        </a>
+      </li>
+      <% } %>
+      <% if (isCatShown('syllabus')) { %>
+      <li>
+        <a href="/category/syllabus" class="<%= cur.includes('syllabus') ? 'active' : '' %>">
+          <span class="menu-icon">📚</span>
+          <span class="menu-label">Syllabus</span>
+          <span class="menu-chevron">›</span>
+        </a>
+      </li>
+      <% } %>
+      <% if (false) { /* Hidden for now as requested: Candidate Utilities & Tools */ %>
+      <li class="nav-dropdown-item <%= cur.includes('/tools/') ? 'active' : '' %>" id="moreDropdownItem">
+        <a href="javascript:void(0)" class="nav-dropdown-toggle <%= cur.includes('/tools/') ? 'active' : '' %>" id="moreDropdownToggle" aria-haspopup="true" aria-expanded="false" role="button">
+          <span class="menu-icon">⚡</span>
+          <span class="menu-label">More</span>
+          <span class="dropdown-caret" aria-hidden="true">▼</span>
+          <span class="menu-chevron">›</span>
+        </a>
+        <ul class="nav-dropdown-menu" id="moreDropdownMenu" role="menu">
+          <li>
+            <a href="/tools/age-calculator" class="<%= cur.includes('age-calculator') ? 'active' : '' %>" role="menuitem">
+              <span class="dropdown-item-icon">🧮</span>
+              <span class="dropdown-item-text">Government Exam Age Calculator</span>
+            </a>
+          </li>
+          <li>
+            <a href="/tools/photo-resizer" class="<%= cur.includes('photo-resizer') ? 'active' : '' %>" role="menuitem">
+              <span class="dropdown-item-icon">📐</span>
+              <span class="dropdown-item-text">Photo &amp; Signature Resizer Guide</span>
+            </a>
+          </li>
+          <li>
+            <a href="/tools/image-resizer" class="<%= cur.includes('image-resizer') ? 'active' : '' %>" role="menuitem">
+              <span class="dropdown-item-icon">🖼️</span>
+              <span class="dropdown-item-text">Interactive Photo Resizer &amp; Name Maker</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <% } %>
+      <!-- Header Menu Search Function with Search Icon -->
+      <li class="nav-search-item">
+        <div class="header-search-wrap">
+          <form action="/search" method="GET" class="header-search-form" id="headerNavSearchForm">
+            <span class="header-search-icon" aria-hidden="true">🔍</span>
+            <input 
+              type="text" 
+              name="q" 
+              id="live-search-input" 
+              placeholder="Search Exams, Jobs..." 
+              autocomplete="off"
+              value="<%= typeof query !== 'undefined' ? query : '' %>"
+              aria-label="Search Govt Exam Zone"
+            >
+            <button type="submit" class="header-search-btn">Search</button>
+          </form>
+          <div id="search-results-dropdown" class="header-search-results" style="display: none;"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+<!-- Spacer to offset fixed header height so page content starts cleanly below -->
+<div class="site-header-spacer" id="siteHeaderSpacer"></div>
+<script>
+(function() {
+  function syncHeaderSpacer() {
+    var wrapper = document.getElementById('siteHeaderStickyWrapper');
+    var spacer = document.getElementById('siteHeaderSpacer');
+    if (wrapper && spacer) {
+      spacer.style.height = wrapper.offsetHeight + 'px';
+    }
+  }
+  syncHeaderSpacer();
+  window.addEventListener('resize', syncHeaderSpacer, { passive: true });
+  window.addEventListener('load', syncHeaderSpacer, { passive: true });
+})();
+</script>
+
+<!-- Main Page Content Wrapper (Swappable for instant fluctuation-free transitions) -->
+<div id="pageContentWrapper">

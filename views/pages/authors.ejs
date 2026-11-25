@@ -1,0 +1,78 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<main class="container">
+  <!-- Breadcrumb -->
+  <div style="font-size: 13px; margin: 10px 0 14px 2px; color: #666;">
+    <a href="/" style="color: var(--primary-red); font-weight: bold; text-decoration: none;">🏠 Home</a>
+    <span style="margin: 0 6px; color: #999;">»</span>
+    <span style="color: #333; font-weight: 600;">Editorial Board &amp; Verified Authors</span>
+  </div>
+
+  <div class="sarkari-box" style="margin-bottom: 30px;">
+    <h1 class="sarkari-box-header" style="margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;">
+      Govt Exam Zone Editorial Board &amp; Subject Matter Experts
+    </h1>
+
+    <div style="padding: 16px 20px; background: #fafafa; border-bottom: 1px solid #ddd; font-size: 13.5px; color: #555; line-height: 1.6; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+      <div style="flex: 1; min-width: 250px;">
+        Meet the recruitment intelligence researchers, examination analysts, and fact-checkers responsible for auditing and validating every government job notification, syllabus, answer key, and result published on <b>Govt Exam Zone (govtexamzone.com)</b>.
+      </div>
+      <div>
+        <a href="/author-portal/login" style="display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #ffffff; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 12.5px; text-decoration: none; box-shadow: 0 2px 6px rgba(37,99,235,0.25);">
+          <span>✍️</span> Author &amp; Contributor Login
+        </a>
+      </div>
+    </div>
+
+    <div class="authors-directory-grid">
+      <% if (authors && authors.length > 0) { %>
+        <% authors.forEach(a => { %>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 12px;">
+                <img 
+                  src="<%= a.avatar_url || '/images/default-avatar.svg' %>" 
+                  alt="<%= a.name %>" 
+                  style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid #e2e8f0;"
+                >
+                <div>
+                  <h3 style="margin: 0 0 3px 0; font-size: 17px; color: #0f172a; font-weight: 700;">
+                    <a href="/author/<%= a.slug %>" style="color: inherit; text-decoration: none;">
+                      <%= a.name %>
+                    </a>
+                  </h3>
+                  <div style="font-size: 12.5px; font-weight: 600; color: #ab183d;">
+                    <%= a.role %>
+                  </div>
+                  <% if (a.qualification) { %>
+                    <div style="font-size: 11.5px; color: #64748b; margin-top: 2px;">
+                      🎓 <%= a.qualification %>
+                    </div>
+                  <% } %>
+                </div>
+              </div>
+
+              <p style="font-size: 13px; color: #475569; line-height: 1.55; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                <%= a.bio %>
+              </p>
+            </div>
+
+            <div style="border-top: 1px solid #f1f5f9; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 12px; color: #64748b; font-weight: 600;">
+                📚 <%= typeof a.postCount !== 'undefined' ? a.postCount : '' %> Articles
+              </span>
+              <a href="/author/<%= a.slug %>" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 12.5px; font-weight: 600; text-decoration: none;">
+                View Profile &amp; Posts →
+              </a>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p style="color: #64748b;">No author profiles listed.</p>
+      <% } %>
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

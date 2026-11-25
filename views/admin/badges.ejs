@@ -1,0 +1,145 @@
+<%- include('../partials/admin-nav', { currentPath: '/admin/badges' }) %>
+
+<div class="admin-card">
+  <div class="admin-card-header">
+    <div>
+      <h2>Manage 8 Quick Highlight Badges (<%= badges ? badges.length : 0 %>)</h2>
+      <div style="font-size: 12.5px; color: #64748b; margin-top: 2px;">
+        These colorful cards appear prominently on the homepage above the 3-column categories.
+      </div>
+    </div>
+    <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/" target="_blank" class="btn btn-secondary btn-sm">👁️ View on Homepage</a>
+  </div>
+
+  <% if (typeof saved !== 'undefined' && saved) { %>
+    <div style="background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
+      ✅ Badge successfully saved and updated on the homepage!
+    </div>
+  <% } %>
+
+  <% if (typeof deleted !== 'undefined' && deleted) { %>
+    <div style="background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
+      🗑️ Badge deleted successfully!
+    </div>
+  <% } %>
+
+  <!-- Add New Badge Box -->
+  <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px 20px; margin-bottom: 25px;">
+    <h3 style="margin-top: 0; margin-bottom: 12px; font-size: 15px; color: #1e293b;">
+      ➕ Add New Quick Badge
+    </h3>
+    <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/badges/save" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Badge Title *</label>
+          <input type="text" name="title" class="form-control" placeholder="e.g. SSC CGL 2026" required>
+        </div>
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Subtitle (Optional)</label>
+          <input type="text" name="subtitle" class="form-control" placeholder="e.g. Apply Online">
+        </div>
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Target Link URL *</label>
+          <input type="text" name="url" class="form-control" placeholder="/post/slug or https://..." required>
+        </div>
+        <div class="form-group" style="max-width: 110px;">
+          <label style="font-size: 12.5px; font-weight: 600;">Background</label>
+          <input type="color" name="bg_color" value="#ab183d" style="width: 100%; height: 38px; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; padding: 2px;">
+        </div>
+        <div class="form-group" style="max-width: 90px;">
+          <label style="font-size: 12.5px; font-weight: 600;">Order</label>
+          <input type="number" name="display_order" class="form-control" value="<%= (badges ? badges.length : 0) + 1 %>">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm" style="padding: 8px 18px;">
+        + Create Badge
+      </button>
+    </form>
+  </div>
+
+  <!-- Badges Grid -->
+  <div class="badges-admin-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-bottom: 30px;">
+    <% if (badges && badges.length > 0) { %>
+      <% badges.forEach((b, idx) => { %>
+        <div class="badge-edit-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <!-- Live Preview -->
+            <div id="preview-box-<%= b.id %>" style="background: <%= b.bg_color %>; color: #fff; padding: 12px; border-radius: 6px; text-align: center; font-weight: bold; margin-bottom: 14px; min-height: 58px; display: flex; flex-direction: column; justify-content: center; transition: background 0.2s ease;">
+              <div id="preview-title-<%= b.id %>" style="font-size: 14px;"><%= b.title %></div>
+              <small id="preview-sub-<%= b.id %>" style="opacity: 0.9; font-size: 11.5px; font-weight: normal;"><%= b.subtitle || '' %></small>
+            </div>
+
+            <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/badges/save" method="POST" id="form-badge-<%= b.id %>">
+              <input type="hidden" name="id" value="<%= b.id %>">
+              
+              <div class="form-group" style="margin-bottom: 10px;">
+                <label style="font-size: 11.5px; font-weight: 600; color: #475569;">Title</label>
+                <input 
+                  type="text" 
+                  name="title" 
+                  class="form-control" 
+                  value="<%= b.title %>" 
+                  required
+                  oninput="document.getElementById('preview-title-<%= b.id %>').textContent = this.value || 'Badge Title';"
+                >
+              </div>
+
+              <div class="form-group" style="margin-bottom: 10px;">
+                <label style="font-size: 11.5px; font-weight: 600; color: #475569;">Subtitle</label>
+                <input 
+                  type="text" 
+                  name="subtitle" 
+                  class="form-control" 
+                  value="<%= b.subtitle || '' %>"
+                  oninput="document.getElementById('preview-sub-<%= b.id %>').textContent = this.value;"
+                >
+              </div>
+
+              <div class="form-group" style="margin-bottom: 10px;">
+                <label style="font-size: 11.5px; font-weight: 600; color: #475569;">Link URL</label>
+                <input type="text" name="url" class="form-control" value="<%= b.url %>" required>
+              </div>
+
+              <div class="form-row" style="margin-bottom: 12px;">
+                <div class="form-group" style="flex: 1;">
+                  <label style="font-size: 11.5px; font-weight: 600; color: #475569;">Color</label>
+                  <input 
+                    type="color" 
+                    name="bg_color" 
+                    value="<%= b.bg_color %>" 
+                    style="width: 100%; height: 36px; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; padding: 2px;"
+                    onchange="document.getElementById('preview-box-<%= b.id %>').style.background = this.value;"
+                  >
+                </div>
+                <div class="form-group" style="width: 85px;">
+                  <label style="font-size: 11.5px; font-weight: 600; color: #475569;">Order</label>
+                  <input type="number" name="display_order" class="form-control" value="<%= b.display_order %>">
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 8px;">
+                <button type="submit" class="btn btn-primary btn-sm" style="flex: 1; padding: 7px 12px;">
+                  💾 Save Badge
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div style="margin-top: 10px; border-top: 1px solid #f1f5f9; padding-top: 10px; text-align: right;">
+            <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/badges/delete/<%= b.id %>" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete badge &quot;<%= b.title %>&quot;?');">
+              <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 11.5px;">
+                🗑️ Delete
+              </button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <div style="grid-column: 1 / -1; padding: 30px; text-align: center; color: #64748b; background: #f8fafc; border-radius: 8px;">
+        No badges created yet. Use the form above to add your first quick badge!
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<%- include('../partials/admin-footer') %>

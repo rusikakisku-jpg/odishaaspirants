@@ -1,0 +1,29 @@
+{
+  "name": "govtexamzone",
+  "version": "1.0.1",
+  "description": "Govt Exam Zone - Full-Stack Recruitment Portal",
+  "main": "worker.mjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "node scripts/buildPages.js",
+    "deploy": "wrangler deploy",
+    "seed": "node src/db/seed.js",
+    "tunnel": "cloudflared tunnel --url http://localhost:3000 --no-autoupdate",
+    "start:public": "node server.js & cloudflared tunnel --url http://localhost:3000 --no-autoupdate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.650.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.5",
+    "ejs": "^6.0.1",
+    "esbuild": "^0.28.2",
+    "express": "^5.2.1",
+    "multer": "^2.4.0",
+    "sql.js": "^1.14.2"
+  }
+}

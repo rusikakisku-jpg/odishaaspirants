@@ -1,0 +1,43 @@
+    </div> <!-- /admin-container -->
+  </div> <!-- /admin-main-viewport -->
+</div> <!-- /admin-app-layout -->
+
+<%
+  const navPath = typeof currentPath !== 'undefined' ? currentPath : '/admin';
+  const baseAdmin = typeof adminBase !== 'undefined' ? adminBase : '/admin';
+  const isHomeActive = navPath === '/admin' || navPath === '/admin/dashboard';
+  const isPostsActive = navPath === '/admin/posts' || navPath.startsWith('/admin/posts/edit');
+  const isNewPostActive = navPath === '/admin/posts/new';
+  const isSettingsActive = navPath === '/admin/settings';
+%>
+<!-- Mobile App-Style Fixed Bottom Navigation Bar -->
+<nav class="admin-mobile-bottom-nav" aria-label="Admin Mobile Navigation">
+  <a href="<%= baseAdmin || '/' %>" class="bottom-nav-item <%= isHomeActive ? 'active' : '' %>">
+    <span class="bottom-nav-icon">📊</span>
+    <span class="bottom-nav-label">Home</span>
+  </a>
+
+  <a href="<%= baseAdmin %>/posts" class="bottom-nav-item <%= isPostsActive ? 'active' : '' %>">
+    <span class="bottom-nav-icon">📝</span>
+    <span class="bottom-nav-label">Posts</span>
+  </a>
+
+  <a href="<%= baseAdmin %>/posts/new" class="bottom-nav-item bottom-nav-fab-wrap <%= isNewPostActive ? 'active' : '' %>">
+    <span class="bottom-nav-fab">＋</span>
+    <span class="bottom-nav-label">New Post</span>
+  </a>
+
+  <a href="<%= baseAdmin %>/settings" class="bottom-nav-item <%= isSettingsActive ? 'active' : '' %>">
+    <span class="bottom-nav-icon">⚙️</span>
+    <span class="bottom-nav-label">Settings</span>
+  </a>
+
+  <button type="button" class="bottom-nav-item bottom-nav-menu-btn" id="bottomMenuTrigger" aria-label="Open Full Menu">
+    <span class="bottom-nav-icon">☰</span>
+    <span class="bottom-nav-label">Menu</span>
+  </button>
+</nav>
+
+<script src="/js/admin.js?v=20261125b"></script>
+</body>
+</html>

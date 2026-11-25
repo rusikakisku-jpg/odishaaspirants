@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="150" height="150">
+  <defs>
+    <radialGradient id="goldGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff8d6"/>
+      <stop offset="60%" stop-color="#f5b300"/>
+      <stop offset="100%" stop-color="#c68400"/>
+    </radialGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f5f5f5"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Ring -->
+  <circle cx="80" cy="80" r="76" fill="#ab183d" stroke="#f5b300" stroke-width="4"/>
+  <circle cx="80" cy="80" r="70" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 2"/>
+  
+  <!-- Inner White Disc -->
+  <circle cx="80" cy="80" r="66" fill="url(#shieldGrad)" filter="url(#dropShadow)"/>
+
+  <!-- Top Arc Banner -->
+  <path d="M 22 80 A 58 58 0 0 1 138 80" fill="none" stroke="#ab183d" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Core Monogram GEZ -->
+  <text x="38" y="92" font-family="Arial Black, Impact, sans-serif" font-size="32" font-weight="900" fill="#ab183d">G</text>
+  <text x="68" y="92" font-family="Arial Black, Impact, sans-serif" font-size="32" font-weight="900" fill="#f5b300" stroke="#ab183d" stroke-width="1">E</text>
+  <text x="98" y="92" font-family="Arial Black, Impact, sans-serif" font-size="32" font-weight="900" fill="#ab183d">Z</text>
+
+  <!-- Bottom Curved Ribbon -->
+  <path d="M 18 118 Q 80 148 142 118 L 137 134 Q 80 162 23 134 Z" fill="#ab183d" stroke="#f5b300" stroke-width="1.5"/>
+  <text x="80" y="132" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">GOVT EXAM ZONE</text>
+  
+  <!-- Top Stars -->
+  <polygon points="80,24 82,30 88,30 83,34 85,40 80,36 75,40 77,34 72,30 78,30" fill="#f5b300"/>
+  <polygon points="56,30 57,34 61,34 58,37 59,41 56,38 53,41 54,37 51,34 55,34" fill="#f5b300"/>
+  <polygon points="104,30 105,34 109,34 106,37 107,41 104,38 101,41 102,37 99,34 103,34" fill="#f5b300"/>
+</svg>

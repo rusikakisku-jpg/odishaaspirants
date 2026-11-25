@@ -1,0 +1,395 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<%
+  const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
+    ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
+    : 'https://govtexamzone.com';
+%>
+
+<!-- Schema.org JSON-LD Structured Data: BreadcrumbList, WebApplication, and FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "<%= siteDomain %>"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Candidate Utilities",
+          "item": "<%= siteDomain %>"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Interactive Photo Resizer & Name Maker",
+          "item": "<%= siteDomain %>/tools/image-resizer"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Government Exam Photo & Signature Resizer and Name/Date Maker 2026",
+      "url": "<%= siteDomain %>/tools/image-resizer",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
+      "description": "Free online interactive image resizer, compressor (20-50 KB), and Date of Photo (DOP) maker for Sarkari online exam application forms.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is my photo uploaded or saved on any server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Your photo and signature are processed 100% locally in your own browser using HTML5 Canvas technology. No image data is ever transferred, uploaded, or stored on our servers, ensuring complete candidate privacy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to add Date and Name on photo for UP Police and SSC forms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply check the box 'Add White Strip with Name & Date of Photo' in the left controls panel, enter your full name and Date of Photo (e.g., DD/MM/YYYY), and click 'Generate Resized Image'. The tool will automatically place the compliant white strip with black typography at the bottom of the photo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the recommended file format for Sarkari exam uploads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Almost all government portals require JPG or JPEG format. Our interactive resizer automatically outputs high-clarity JPEG files with customizable compression to hit the exact 20 KB to 50 KB requirement."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<main class="container tool-page-container">
+  <!-- SEO & AdSense Compliant Breadcrumb -->
+  <nav class="tool-page-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">🏠 Home</a>
+    <span class="crumb-sep">»</span>
+    <span>Candidate Utilities</span>
+    <span class="crumb-sep">»</span>
+    <span class="crumb-active">Interactive Photo Resizer &amp; Name Maker</span>
+  </nav>
+
+  <div class="sarkari-box" style="margin-bottom: 25px;">
+    <h1 class="sarkari-box-header" style="margin: 0; font-size: 16.5px; line-height: 1.35; padding: 12px 18px;">
+      Govt Exam Online Photo &amp; Signature Resizer / Name on Photo Tool 2026
+    </h1>
+
+    <div style="padding: 22px 25px;">
+      <p style="font-size: 14.5px; color: #374151; line-height: 1.65; margin-bottom: 20px;">
+        Use this free online utility to crop, resize, compress to <b>20-50 KB / 10-20 KB</b>, and optionally add <b>Candidate Name &amp; Date of Photo (DOP)</b> to your passport photograph or signature for SSC, UPSC, UP Police, Railway, Banking, and State PSC online application forms.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;">
+        <!-- Left: Controls -->
+        <div style="background: #fdfae7; border: 2px solid #ffd480; padding: 20px; border-radius: 6px;">
+          <h3 style="color: var(--primary-red); margin-top: 0; font-size: 16px; margin-bottom: 15px;">
+            1. Select File &amp; Preset
+          </h3>
+
+          <div class="form-group" style="margin-bottom: 15px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">Select Image File (JPG/PNG):</label>
+            <input type="file" id="imageInput" accept="image/*" class="form-control" style="background:#fff;">
+          </div>
+
+          <div class="form-group" style="margin-bottom: 15px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">Target Preset:</label>
+            <select id="presetSelect" class="form-control" style="background:#fff;">
+              <option value="passport">Passport Photograph (350 x 450 px, ~20-50 KB)</option>
+              <option value="signature">Candidate Signature (400 x 200 px, ~10-20 KB)</option>
+              <option value="custom">Custom Dimensions</option>
+            </select>
+          </div>
+
+          <div id="customDimensions" style="display: none; margin-bottom: 15px; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div>
+              <label style="font-size: 12px; font-weight: bold;">Width (px):</label>
+              <input type="number" id="customWidth" value="350" class="form-control">
+            </div>
+            <div>
+              <label style="font-size: 12px; font-weight: bold;">Height (px):</label>
+              <input type="number" id="customHeight" value="450" class="form-control">
+            </div>
+          </div>
+
+          <hr style="border: none; border-top: 1px solid #ffd480; margin: 15px 0;">
+
+          <h3 style="color: #0000a0; font-size: 15px; margin-bottom: 10px;">
+            2. Name &amp; Date on Photo (Optional)
+          </h3>
+          <p style="font-size: 12px; color: #666; margin-bottom: 10px;">
+            Required for UP Police, SSC, and special recruitment forms.
+          </p>
+
+          <div style="margin-bottom: 12px;">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: bold; font-size: 13.5px;">
+              <input type="checkbox" id="addNameDate">
+              <span>Add White Strip with Name &amp; Date of Photo</span>
+            </label>
+          </div>
+
+          <div id="nameDateFields" style="display: none; margin-bottom: 15px;">
+            <div style="margin-bottom: 10px;">
+              <label style="font-size: 12px; font-weight: bold;">Candidate Name (Uppercase):</label>
+              <input type="text" id="candidateName" placeholder="e.g. AMIT KUMAR" class="form-control" style="background:#fff;">
+            </div>
+            <div>
+              <label style="font-size: 12px; font-weight: bold;">Date of Photo (DOP):</label>
+              <input type="text" id="photoDate" placeholder="e.g. 03/10/2026" class="form-control" style="background:#fff;">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">Quality / Compression:</label>
+            <input type="range" id="qualityRange" min="0.3" max="1.0" step="0.05" value="0.85" style="width: 100%;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; color: #666;">
+              <span>Smaller File Size (Lower KB)</span>
+              <span>Higher Quality</span>
+            </div>
+          </div>
+
+          <button type="button" id="processBtn" style="width: 100%; background: var(--primary-red); color: #fff; font-weight: bold; font-size: 16px; padding: 12px; border: none; border-radius: 4px; cursor: pointer;">
+            ⚡ Generate Resized Image
+          </button>
+        </div>
+
+        <!-- Right: Preview & Download -->
+        <div style="background: #f8fafc; border: 2px dashed #cbd5e1; padding: 20px; border-radius: 6px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px;">
+          <h3 style="color: #1e293b; margin-top: 0; font-size: 16px; margin-bottom: 15px;">
+            Live Image Preview
+          </h3>
+
+          <div id="previewContainer" style="margin-bottom: 15px; max-width: 100%; overflow: auto;">
+            <canvas id="outputCanvas" style="max-width: 100%; border: 1px solid #94a3b8; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1);"></canvas>
+          </div>
+
+          <div id="fileInfo" style="font-size: 13px; font-weight: bold; color: #0284c7; margin-bottom: 15px; display: none;">
+            Estimated Size: <span id="sizeText">0 KB</span> | Dimensions: <span id="dimText">0 x 0 px</span>
+          </div>
+
+          <a id="downloadBtn" href="#" download="gez_resized_photo.jpg" style="display: none; background: #10b981; color: #fff; font-weight: bold; font-size: 16px; padding: 10px 24px; border-radius: 4px; text-decoration: none;">
+            ⬇️ Download Resized Image
+          </a>
+
+          <p id="placeholderText" style="color: #94a3b8; font-size: 13.5px;">
+            Upload an image from the left panel and click "Generate Resized Image" to preview here.
+          </div>
+        </div>
+
+        <!-- Rich Guide & AdSense Compliant Information -->
+        <div style="border-top: 1px solid #e2e8f0; padding-top: 25px; margin-top: 25px; color: #334155; line-height: 1.7; font-size: 14px;">
+          <h2 style="color: var(--primary-red); font-size: 18px; margin: 0 0 12px 0;">
+            📖 How to Resize Photograph &amp; Signature in 4 Easy Steps
+          </h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 22px;">
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;">
+              <div style="font-weight: 800; color: var(--primary-red); margin-bottom: 4px;">Step 1: Choose File</div>
+              <div style="font-size: 13px; color: #475569;">Click "Select Image File" and choose your scanned photo or signature (JPG, JPEG, or PNG).</div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;">
+              <div style="font-weight: 800; color: var(--primary-red); margin-bottom: 4px;">Step 2: Select Preset</div>
+              <div style="font-size: 13px; color: #475569;">Pick Passport (350x450 px) or Signature (400x200 px), or enter your custom width &amp; height.</div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;">
+              <div style="font-weight: 800; color: var(--primary-red); margin-bottom: 4px;">Step 3: Add Name &amp; Date</div>
+              <div style="font-size: 13px; color: #475569;">Check the box if required (for UP Police, SSC) to automatically print the name &amp; DOP white strip.</div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px;">
+              <div style="font-weight: 800; color: var(--primary-red); margin-bottom: 4px;">Step 4: Download</div>
+              <div style="font-size: 13px; color: #475569;">Click "Generate Resized Image", check the live preview &amp; KB size, then hit "Download Resized Image".</div>
+            </div>
+          </div>
+
+          <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 16px 20px; margin-bottom: 22px;">
+            <h3 style="color: #166534; font-size: 15px; margin: 0 0 6px 0;">
+              🔒 100% Client-Side Privacy Guarantee
+            </h3>
+            <p style="margin: 0; font-size: 13px; color: #1e3a24; line-height: 1.6;">
+              Your personal photos and signatures are confidential. All resizing, cropping, and text rendering operations run <b>locally inside your web browser</b> via HTML5 Canvas. No image data is ever uploaded to, processed on, or stored in our cloud servers.
+            </p>
+          </div>
+
+          <h2 style="color: var(--primary-red); font-size: 18px; margin: 24px 0 12px 0;">
+            ❓ Frequently Asked Questions (Image Resizer &amp; Name Maker)
+          </h2>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 16px 20px;">
+            <h3 style="font-size: 14.5px; margin: 0 0 6px 0; color: #0f172a;">Q1: How can I decrease the file size if it exceeds 50 KB?</h3>
+            <p style="margin: 0 0 14px 0; color: #475569; font-size: 13.5px;">
+              Use the "Quality / Compression" slider in the left panel. Sliding the control towards "Smaller File Size (Lower KB)" reduces file weight while preserving image clarity.
+            </p>
+
+            <h3 style="font-size: 14.5px; margin: 0 0 6px 0; color: #0f172a;">Q2: What is Date of Photo (DOP) requirement?</h3>
+            <p style="margin: 0; color: #475569; font-size: 13.5px;">
+              Commissions such as UP Police specify that photographs must not be more than 3 months old. Printing the date on the photo verifies that the photograph is recent and complies with official examination standards.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const imageInput = document.getElementById('imageInput');
+  const presetSelect = document.getElementById('presetSelect');
+  const customDimensions = document.getElementById('customDimensions');
+  const customWidth = document.getElementById('customWidth');
+  const customHeight = document.getElementById('customHeight');
+  const addNameDate = document.getElementById('addNameDate');
+  const nameDateFields = document.getElementById('nameDateFields');
+  const candidateName = document.getElementById('candidateName');
+  const photoDate = document.getElementById('photoDate');
+  const qualityRange = document.getElementById('qualityRange');
+  const processBtn = document.getElementById('processBtn');
+  const canvas = document.getElementById('outputCanvas');
+  const ctx = canvas.getContext('2d');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const placeholderText = document.getElementById('placeholderText');
+  const fileInfo = document.getElementById('fileInfo');
+  const sizeText = document.getElementById('sizeText');
+  const dimText = document.getElementById('dimText');
+
+  let loadedImage = null;
+
+  // Preset toggle
+  presetSelect.addEventListener('change', function() {
+    if (this.value === 'custom') {
+      customDimensions.style.display = 'grid';
+    } else {
+      customDimensions.style.display = 'none';
+    }
+  });
+
+  // Name & Date toggle
+  addNameDate.addEventListener('change', function() {
+    nameDateFields.style.display = this.checked ? 'block' : 'none';
+  });
+
+  // Load image
+  imageInput.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(evt) {
+      const img = new Image();
+      img.onload = function() {
+        loadedImage = img;
+        renderImage();
+      };
+      img.src = evt.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  processBtn.addEventListener('click', renderImage);
+  qualityRange.addEventListener('input', renderImage);
+
+  function renderImage() {
+    if (!loadedImage) {
+      alert('Please select an image file first.');
+      return;
+    }
+
+    let targetW = 350;
+    let targetH = 450;
+
+    const preset = presetSelect.value;
+    if (preset === 'signature') {
+      targetW = 400;
+      targetH = 200;
+    } else if (preset === 'custom') {
+      targetW = parseInt(customWidth.value, 10) || 350;
+      targetH = parseInt(customHeight.value, 10) || 450;
+    }
+
+    canvas.width = targetW;
+    canvas.height = targetH;
+
+    // Clear and draw background
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, targetW, targetH);
+
+    // Draw main image
+    let imgDrawH = targetH;
+    const shouldAddStrip = addNameDate.checked && preset !== 'signature';
+
+    if (shouldAddStrip) {
+      imgDrawH = Math.floor(targetH * 0.78);
+    }
+
+    ctx.drawImage(loadedImage, 0, 0, targetW, imgDrawH);
+
+    // Draw white bottom strip with Name and Date
+    if (shouldAddStrip) {
+      const stripY = imgDrawH;
+      const stripH = targetH - stripY;
+
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, stripY, targetW, stripH);
+
+      ctx.strokeStyle = '#333333';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(0, stripY);
+      ctx.lineTo(targetW, stripY);
+      ctx.stroke();
+
+      ctx.fillStyle = '#000000';
+      ctx.textAlign = 'center';
+
+      const name = (candidateName.value || 'CANDIDATE NAME').toUpperCase();
+      const date = (photoDate.value || 'DOP: 01/10/2026').toUpperCase();
+
+      const fontSize = Math.max(12, Math.floor(targetW / 18));
+      ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+      ctx.fillText(name, targetW / 2, stripY + (stripH * 0.42));
+
+      ctx.font = `bold ${fontSize - 1}px Arial, sans-serif`;
+      ctx.fillText(date.startsWith('DOP') ? date : `DOP: ${date}`, targetW / 2, stripY + (stripH * 0.82));
+    }
+
+    // Convert to JPEG with quality
+    const quality = parseFloat(qualityRange.value);
+    const dataUrl = canvas.toDataURL('image/jpeg', quality);
+
+    downloadBtn.href = dataUrl;
+    downloadBtn.style.display = 'inline-block';
+    placeholderText.style.display = 'none';
+
+    // Calculate approximate size
+    const base64Len = dataUrl.length - 'data:image/jpeg;base64,'.length;
+    const approxBytes = Math.ceil(base64Len * 0.75);
+    const approxKB = (approxBytes / 1024).toFixed(1);
+
+    sizeText.textContent = `${approxKB} KB`;
+    dimText.textContent = `${targetW} x ${targetH} px`;
+    fileInfo.style.display = 'block';
+  }
+});
+</script>
+
+<%- include('../partials/footer') %>

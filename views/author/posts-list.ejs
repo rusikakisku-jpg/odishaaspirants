@@ -1,0 +1,131 @@
+<%- include('../partials/author-nav', { currentPath: '/author-portal/posts' }) %>
+
+<div class="admin-card">
+  <div class="admin-card-header">
+    <div>
+      <h2><%= (typeof isEditor !== 'undefined' && isEditor) ? 'Editorial Oversight — All Articles (' + (posts ? posts.length : 0) + ')' : 'My Authored Articles &amp; Notifications (' + (posts ? posts.length : 0) + ')' %></h2>
+      <div style="font-size: 12.5px; color: #64748b; margin-top: 2px;">
+        <%= (typeof isEditor !== 'undefined' && isEditor) ? 'Review, update, and manage recruitment notifications submitted across all authors' : 'All recruitment alerts, results, and notifications attributed to ' + author.name %>
+      </div>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <a href="/" target="_blank" class="btn btn-secondary btn-sm">🌐 Live Website</a>
+      <a href="/author-portal/posts/new" class="btn btn-primary btn-sm" style="background: <%= (typeof isEditor !== 'undefined' && isEditor) ? '#059669' : '#2563eb' %>; border-color: <%= (typeof isEditor !== 'undefined' && isEditor) ? '#047857' : '#1d4ed8' %>;">➕ Write New Article</a>
+    </div>
+  </div>
+
+  <% if (typeof success !== 'undefined' && success) { %>
+    <div style="background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
+      ✅ <%= success === 'created' ? 'Article published successfully and linked to your profile!' : (success === 'updated' ? 'Article successfully updated!' : 'Action completed successfully!') %>
+    </div>
+  <% } %>
+
+  <!-- Filters Row -->
+  <form action="/author-portal/posts" method="GET" style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 200px;">
+      <input 
+        type="text" 
+        name="search" 
+        class="form-control" 
+        placeholder="🔍 Search my articles by title, dept..." 
+        value="<%= typeof search !== 'undefined' ? search : '' %>"
+      >
+    </div>
+
+    <div style="min-width: 170px;">
+      <select name="category" class="form-control" onchange="this.form.submit()">
+        <option value="">All Categories</option>
+        <% Object.keys(categories).forEach(key => { %>
+          <option value="<%= key %>" <%= (typeof selectedCategory !== 'undefined' && selectedCategory === key) ? 'selected' : '' %>>
+            <%= categories[key].name %>
+          </option>
+        <% }) %>
+      </select>
+    </div>
+
+    <div style="min-width: 130px;">
+      <select name="status" class="form-control" onchange="this.form.submit()">
+        <option value="">All Status</option>
+        <option value="active" <%= (typeof selectedStatus !== 'undefined' && selectedStatus === 'active') ? 'selected' : '' %>>Active</option>
+        <option value="draft" <%= (typeof selectedStatus !== 'undefined' && selectedStatus === 'draft') ? 'selected' : '' %>>Draft</option>
+        <option value="archived" <%= (typeof selectedStatus !== 'undefined' && selectedStatus === 'archived') ? 'selected' : '' %>>Archived</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-secondary btn-sm" style="padding: 0 16px;">Filter</button>
+    <% if (search || selectedCategory || selectedStatus) { %>
+      <a href="/author-portal/posts" class="btn btn-secondary btn-sm" style="display: flex; align-items: center;">Clear</a>
+    <% } %>
+  </form>
+
+  <!-- Table -->
+  <div style="overflow-x: auto;">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Notification Title &amp; Department</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Views</th>
+          <th>Date</th>
+          <th style="text-align: right; width: 140px;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (posts && posts.length > 0) { %>
+          <% posts.forEach(post => { %>
+            <tr>
+              <td style="color: #64748b; font-size: 12px; font-weight: 600;">#<%= post.id %></td>
+              <td>
+                <div style="font-weight: 700; color: #1e293b; font-size: 14px;">
+                  <a href="/author-portal/posts/edit/<%= post.id %>" style="color: inherit; text-decoration: none;">
+                    <%= post.title %>
+                  </a>
+                </div>
+                <% if (post.department) { %>
+                  <div style="font-size: 12px; color: #64748b;"><%= post.department %></div>
+                <% } %>
+                <div style="font-size: 11px; color: #94a3b8; font-family: monospace;">/post/<%= post.slug %></div>
+              </td>
+              <td>
+                <span class="badge" style="background: #eff6ff; color: #1d4ed8; font-weight: 700;">
+                  <%= (categories[post.category] && categories[post.category].name) ? categories[post.category].name : post.category %>
+                </span>
+              </td>
+              <td>
+                <% if (post.status === 'active') { %>
+                  <span style="display: inline-block; padding: 3px 8px; background: #dcfce7; color: #166534; font-size: 11.5px; font-weight: 700; border-radius: 4px;">Live</span>
+                <% } else if (post.status === 'draft') { %>
+                  <span style="display: inline-block; padding: 3px 8px; background: #fef3c7; color: #92400e; font-size: 11.5px; font-weight: 700; border-radius: 4px;">Draft</span>
+                <% } else { %>
+                  <span style="display: inline-block; padding: 3px 8px; background: #f1f5f9; color: #475569; font-size: 11.5px; font-weight: 700; border-radius: 4px;"><%= post.status %></span>
+                <% } %>
+              </td>
+              <td>
+                <span style="font-weight: 700; color: #0284c7; font-size: 13px;"><%= post.views || 0 %></span>
+              </td>
+              <td style="font-size: 12px; color: #64748b; white-space: nowrap;">
+                <%= post.post_date || formatDate(post.created_at) %>
+              </td>
+              <td style="text-align: right; white-space: nowrap;">
+                <a href="/post/<%= post.slug %>" target="_blank" class="btn btn-secondary btn-sm" title="View Public Post">👁️</a>
+                <a href="/author-portal/posts/edit/<%= post.id %>" class="btn btn-secondary btn-sm" title="Edit Article">✏️ Edit</a>
+              </td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan="7" style="text-align: center; padding: 40px 20px; color: #64748b;">
+              <div style="font-size: 32px; margin-bottom: 8px;">🔍</div>
+              <div style="font-weight: 600; font-size: 15px; color: #1e293b; margin-bottom: 4px;">No matching articles found</div>
+              <p style="margin: 0; font-size: 13px;">Try adjusting your search criteria or create a new article.</p>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../partials/author-footer') %>

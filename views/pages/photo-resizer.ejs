@@ -1,0 +1,239 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<%
+  const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
+    ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
+    : 'https://govtexamzone.com';
+%>
+
+<!-- Schema.org JSON-LD Structured Data: BreadcrumbList, HowTo, and FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "<%= siteDomain %>"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Candidate Utilities",
+          "item": "<%= siteDomain %>"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Photo & Signature Resizer Dimensions Guide",
+          "item": "<%= siteDomain %>/tools/photo-resizer"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to Resize Photo and Signature for Government Exam Online Forms",
+      "description": "Step-by-step guide to preparing passport photographs, digital signatures, and thumb impressions within official KB file size and pixel dimensions for SSC, UPSC, Railway, and Police recruitment.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Capture or Scan Photograph with Plain Background",
+          "text": "Take a passport-size photo against a plain white or light-colored background with both ears visible and neutral expression."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Sign with Black/Blue Pen on Clean White Paper",
+          "text": "Sign clearly in running handwriting within a 4 cm x 2 cm box without touching borders or using all-capital letters."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Resize and Compress to Prescribed Dimensions",
+          "text": "Use the online image resizer tool to adjust dimensions to 350x450 pixels (20-50 KB for photos) and 400x200 pixels (10-20 KB for signatures)."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the standard photo size in KB for SSC and UPSC forms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For SSC and UPSC online forms, passport photographs must be in JPG/JPEG format with file size strictly between 20 KB and 50 KB, and dimensions of 3.5 cm x 4.5 cm (approximately 350 x 450 pixels)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I sign in ALL CAPITAL letters on Government Exam application forms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Signatures in ALL CAPITAL / BLOCK letters are strictly invalid and lead to outright form rejection across SSC, UPSC, Banking, and Railway examinations. Signatures must always be in regular running handwriting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is spectacle or eyewear allowed in Government exam photos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most exam commissions (including SSC New OTR Rules) mandate photos WITHOUT spectacles. If spectacles are worn, there must be no glare or reflection on the lenses, and eyes must be fully visible. Caps, hats, and tinted glasses are strictly forbidden."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<main class="container tool-page-container">
+  <!-- SEO & AdSense Compliant Breadcrumb -->
+  <nav class="tool-page-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">🏠 Home</a>
+    <span class="crumb-sep">»</span>
+    <span>Candidate Utilities</span>
+    <span class="crumb-sep">»</span>
+    <span class="crumb-active">Photo &amp; Signature Resizer Guide</span>
+  </nav>
+
+  <div class="sarkari-box" style="margin-bottom: 25px;">
+    <h1 class="sarkari-box-header" style="margin: 0; font-size: 16.5px; line-height: 1.35; padding: 12px 18px;">
+      Govt Exam Online Form Photo &amp; Signature Dimensions Guide 2026
+    </h1>
+
+    <div style="padding: 22px 25px; font-size: 14px; line-height: 1.7; color: #334155;">
+      <!-- Direct Action Card linking to Interactive Tool -->
+      <div style="background: linear-gradient(135deg, #fdf2f4 0%, #fff1f2 100%); border: 2px solid #fecdd3; border-radius: 8px; padding: 16px 20px; margin-bottom: 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+        <div>
+          <div style="font-weight: 800; font-size: 15.5px; color: var(--primary-red); margin-bottom: 3px;">
+            ⚡ Need to Crop, Resize, or Add Name/Date to Your Photo Right Now?
+          </div>
+          <div style="font-size: 13px; color: #475569;">
+            Use our 100% free online interactive tool to adjust dimensions, compress KB, and generate ready-to-upload files instantly.
+          </div>
+        </div>
+        <a href="/tools/image-resizer" style="background: var(--primary-red); color: #ffffff !important; padding: 9px 18px; border-radius: 4px; font-weight: 700; font-size: 13.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(171, 24, 61, 0.25);">
+          <span>Open Interactive Tool</span> →
+        </a>
+      </div>
+
+      <h2 style="color: var(--primary-red); font-size: 18px; margin: 0 0 12px 0;">
+        Standard Dimension Specifications Across Government Recruitment Forms
+      </h2>
+      <p style="margin-bottom: 16px;">
+        Most Indian recruitment boards (such as <b>Staff Selection Commission (SSC), UPSC, Railway Recruitment Boards (RRB), State Police Boards, and Banking IBPS/SBI</b>) utilize automated image processing filters. Uploading images with invalid dimensions or excessive file sizes will prevent form submission or cause disqualification during verification:
+      </p>
+
+      <div class="table-responsive" style="margin: 18px 0 24px 0;">
+        <table class="detail-table">
+          <thead>
+            <tr style="background: #2b547e; color: #fff;">
+              <th style="width: 25%;">Document Type</th>
+              <th style="width: 22%;">Allowed File Size</th>
+              <th style="width: 28%;">Dimensions (Width x Height)</th>
+              <th style="width: 25%;">Background &amp; Format</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Passport Photograph</b></td>
+              <td><b style="color: #c62828;">20 KB to 50 KB</b></td>
+              <td>3.5 cm x 4.5 cm (350 x 450 px)</td>
+              <td>Plain White or Light Background, JPG/JPEG</td>
+            </tr>
+            <tr>
+              <td><b>Candidate Signature</b></td>
+              <td><b style="color: #c62828;">10 KB to 20 KB</b></td>
+              <td>4.0 cm x 2.0 cm (400 x 200 px)</td>
+              <td>Black / Blue ink on Plain White Paper, JPG</td>
+            </tr>
+            <tr>
+              <td><b>Left Thumb Impression</b></td>
+              <td><b style="color: #c62828;">10 KB to 50 KB</b></td>
+              <td>3.5 cm x 3.5 cm (300 x 300 px)</td>
+              <td>Clear Blue/Black Stamp on White Paper, JPG</td>
+            </tr>
+            <tr>
+              <td><b>Educational Marksheets / Certificates</b></td>
+              <td><b style="color: #c62828;">100 KB to 300 KB</b></td>
+              <td>A4 Standard (Scanned 150 - 200 DPI)</td>
+              <td>PDF or JPEG Document format</td>
+            </tr>
+            <tr>
+              <td><b>Identity Proof (Aadhaar / PAN)</b></td>
+              <td><b style="color: #c62828;">50 KB to 200 KB</b></td>
+              <td>Clear Legible Scan (Both Sides)</td>
+              <td>PDF or JPG Document</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Exam Specific Guidelines -->
+      <h2 style="color: var(--primary-red); font-size: 18px; margin: 24px 0 12px 0;">
+        📋 Board-Specific Upload Guidelines (2026 Examination Rules)
+      </h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin-bottom: 22px;">
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 16px;">
+          <h3 style="font-size: 15px; color: #1e293b; margin: 0 0 8px 0;">🏛️ SSC (Staff Selection Commission) OTR Rules</h3>
+          <ul style="padding-left: 18px; margin: 0; font-size: 13px; color: #475569; line-height: 1.6;">
+            <li>Live webcam capture through SSC Application is required for new registration.</li>
+            <li>Plain light background behind the candidate is mandatory.</li>
+            <li>Signature must be 10 KB to 20 KB (4.0 cm x 2.0 cm).</li>
+          </ul>
+        </div>
+
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 16px;">
+          <h3 style="font-size: 15px; color: #1e293b; margin: 0 0 8px 0;">👮 UP Police &amp; State Police Recruitment</h3>
+          <ul style="padding-left: 18px; margin: 0; font-size: 13px; color: #475569; line-height: 1.6;">
+            <li>Candidate's <b>Full Name &amp; Date of Photo (DOP)</b> printed at the bottom strip of the photograph.</li>
+            <li>Photo must not be older than 3 to 6 months from the notification date.</li>
+            <li>Both ears and neck should be clearly visible.</li>
+          </ul>
+        </div>
+
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 16px;">
+          <h3 style="font-size: 15px; color: #1e293b; margin: 0 0 8px 0;">🚆 Railway RRB (NTPC / Group D / ALP)</h3>
+          <ul style="padding-left: 18px; margin: 0; font-size: 13px; color: #475569; line-height: 1.6;">
+            <li>Photo size strictly 30 KB to 70 KB in JPG format.</li>
+            <li>Signature must be 30 KB to 70 KB on white paper with black/blue ink.</li>
+            <li>Selfie photos or tilted images are directly rejected by the RRB scrutiny portal.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background: #e8f5e9; border: 1px solid #81c784; padding: 16px 20px; border-radius: 6px; margin-top: 18px;">
+        <h3 style="color: #2e7d32; font-size: 15px; margin: 0 0 8px 0;">💡 Top 5 Rules to Prevent Online Application Rejection:</h3>
+        <ol style="padding-left: 20px; margin: 0; font-size: 13.5px; line-height: 1.65; color: #1f2937;">
+          <li><b>No Caps or Dark Spectacles:</b> Do not wear caps, hats, dark sunglasses, or medical masks in your uploaded photograph.</li>
+          <li><b>Frontal View Only:</b> Profile view or tilted photos are invalid. Both eyes and ears must look straight into the camera lens.</li>
+          <li><b>No Capital Letter Signatures:</b> Signature must be in your regular running handwriting. Signatures in ALL CAPITAL letters are rejected.</li>
+          <li><b>High Contrast:</b> Signature must be signed on clean, unlined white paper with black or blue fountain/gel/ball pen.</li>
+          <li><b>Check File Size (KB):</b> Verify file size using your computer file properties before uploading. Use our <a href="/tools/image-resizer" style="color: #2e7d32; font-weight: bold; text-decoration: underline;">Interactive Resizer Tool</a> if your file is oversized.</li>
+        </ol>
+      </div>
+
+      <!-- FAQ Section -->
+      <h2 style="color: var(--primary-red); font-size: 18px; margin: 25px 0 12px 0;">
+        ❓ Frequently Asked Questions (Photo &amp; Signature Specs)
+      </h2>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 16px 20px;">
+        <h3 style="font-size: 14.5px; margin: 0 0 6px 0; color: #0f172a;">Q1: Can I take a photo using my smartphone?</h3>
+        <p style="margin: 0 0 14px 0; color: #475569; font-size: 13.5px;">
+          Yes. Stand 3-4 feet in front of a well-lit white wall, avoid shadows on your face, and take a photo using your smartphone rear camera. Then crop and resize to 350x450 px (20-50 KB) using our online tool.
+        </p>
+
+        <h3 style="font-size: 14.5px; margin: 0 0 6px 0; color: #0f172a;">Q2: What happens if my signature file is 25 KB and the portal allows max 20 KB?</h3>
+        <p style="margin: 0; color: #475569; font-size: 13.5px;">
+          The recruitment portal upload script will reject the file with an error stating "File size exceeds allowed limit". Use our <a href="/tools/image-resizer" style="color: var(--primary-red); font-weight: bold;">Interactive Image Resizer</a> to compress the image to under 20 KB with zero loss of legibility.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

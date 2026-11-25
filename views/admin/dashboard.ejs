@@ -1,0 +1,449 @@
+<%- include('../partials/admin-nav', { currentPath: '/admin' }) %>
+
+<!-- Welcome Banner -->
+<div class="admin-welcome-banner" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 12px; padding: 22px 26px; margin-bottom: 24px; color: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+  <div>
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+      <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.3);">
+        ● System Operational
+      </span>
+      <span style="color: #94a3b8; font-size: 12px;">Cloudflare D1 &amp; R2 Architecture</span>
+    </div>
+    <h1 style="font-size: 22px; font-weight: 800; margin: 0 0 6px 0; letter-spacing: -0.5px;">
+      Govt Exam Zone Administrative Suite
+    </h1>
+    <p style="color: #94a3b8; font-size: 13.5px; margin: 0;">
+      Real-time management for Govt Exam Zone recruitments, results, admit cards, Cloudflare D1 SQL database and R2 storage.
+    </p>
+  </div>
+  <div class="admin-welcome-actions" style="display: flex; gap: 10px; flex-wrap: wrap;">
+    <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/new" class="btn btn-primary" style="padding: 10px 18px; font-size: 13.5px;">
+      ➕ Create New Post
+    </a>
+    <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/" target="_blank" class="btn btn-secondary" style="background: rgba(255,255,255,0.1); color: #ffffff; border-color: rgba(255,255,255,0.2);">
+      🌐 View Live Portal
+    </a>
+  </div>
+</div>
+
+<!-- 4 Modern Stat Cards -->
+<div class="stats-grid">
+  <div class="stat-card">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <h3>Total Notifications</h3>
+        <div class="stat-val"><%= totalPosts %></div>
+        <div class="stat-sub" style="color: #0284c7; font-weight: 600;">
+          Across 8 Active Categories
+        </div>
+      </div>
+      <div style="width: 44px; height: 44px; border-radius: 10px; background: #e0f2fe; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+        📝
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <h3>Cloudflare D1 SQL</h3>
+        <div class="stat-val" style="font-size: 20px; color: #0284c7; padding-top: 4px;">
+          <%= d1Mode %>
+        </div>
+        <div class="stat-sub" style="color: #10b981; font-weight: 600;">
+          ● Serverless SQL Active
+        </div>
+      </div>
+      <div style="width: 44px; height: 44px; border-radius: 10px; background: #f0fdf4; color: #16a34a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+        💾
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <h3>Cloudflare R2 Storage</h3>
+        <div class="stat-val" style="font-size: 20px; color: #10b981; padding-top: 4px;">
+          <%= r2Mode %>
+        </div>
+        <div class="stat-sub" style="color: #64748b; font-weight: 600;">
+          <%= uploadsCount %> Files / PDFs Uploaded
+        </div>
+      </div>
+      <div style="width: 44px; height: 44px; border-radius: 10px; background: #ecfdf5; color: #059669; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+        ☁️
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <h3>Process Manager</h3>
+        <div class="stat-val" style="font-size: 20px; color: #8b5cf6; padding-top: 4px;">
+          PM2 Online
+        </div>
+        <div class="stat-sub" style="color: #8b5cf6; font-weight: 600;">
+          ● High Availability Daemon
+        </div>
+      </div>
+      <div style="width: 44px; height: 44px; border-radius: 10px; background: #f5f3ff; color: #7c3aed; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+        🚀
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Quick Action Shortcuts Bar -->
+<div class="admin-card" style="padding: 16px 20px; margin-bottom: 24px; background: #ffffff;">
+  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+    <div style="font-weight: 700; font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 6px;">
+      ⚡ Quick Management Actions:
+    </div>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/new" class="btn btn-primary btn-sm">➕ New Post</a>
+      <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/badges" class="btn btn-secondary btn-sm">🎨 8 Color Badges</a>
+      <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/marquees" class="btn btn-secondary btn-sm">📢 Live Tickers</a>
+      <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/settings#section-categories" class="btn btn-secondary btn-sm">📂 Category Show/Hide</a>
+      <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/r2" class="btn btn-secondary btn-sm">☁️ R2 Uploads</a>
+      <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/d1" class="btn btn-secondary btn-sm">💾 D1 SQL Console</a>
+    </div>
+  </div>
+</div>
+
+<%
+  const statsData = (typeof analytics !== 'undefined' && analytics) ? analytics : {};
+  const todayViews = Number(statsData.todayViews || 0);
+  const yesterdayViews = Number(statsData.yesterdayViews || 0);
+  const todayPostsViewed = Number(statsData.todayPostsViewed || 0);
+  const totalViewsAll = Number(statsData.totalViews || 0);
+  const weekViewsTotal = Number(statsData.weekViewsTotal || 0);
+  const maxDailyViews = Math.max(1, Number(statsData.maxDailyViews || 1));
+  const dailyTrend = Array.isArray(statsData.dailyTrend) ? statsData.dailyTrend : [];
+  const topPostsOverall = Array.isArray(statsData.topPostsOverall) ? statsData.topPostsOverall : [];
+  const topPostsToday = Array.isArray(statsData.topPostsToday) ? statsData.topPostsToday : [];
+  const categoryViews = Array.isArray(statsData.categoryViews) ? statsData.categoryViews : [];
+  const topOverallLeader = topPostsOverall[0] || null;
+  const maxOverallViews = Math.max(1, Number(topOverallLeader ? topOverallLeader.views : 1));
+  const maxTodayPostViews = Math.max(1, Number(topPostsToday[0] ? topPostsToday[0].today_views : 1));
+
+  let deltaPctText = 'Live Today';
+  let deltaClass = 'analytics-delta-neutral';
+  if (yesterdayViews > 0) {
+    const pct = Math.round(((todayViews - yesterdayViews) / yesterdayViews) * 100);
+    deltaPctText = (pct >= 0 ? '▲ +' : '▼ ') + pct + '% vs yest.';
+    deltaClass = pct >= 0 ? 'analytics-delta-up' : 'analytics-delta-down';
+  } else if (todayViews > 0) {
+    deltaPctText = '▲ Active Today';
+    deltaClass = 'analytics-delta-up';
+  }
+%>
+
+<!-- Views & Traffic KPI Cards -->
+<div class="analytics-kpi-grid" id="viewsAnalyticsSection">
+  <div class="analytics-kpi-card">
+    <div class="analytics-kpi-top">
+      <div>
+        <div class="analytics-kpi-label">Today's Views (IST)</div>
+        <div class="analytics-kpi-value"><%= todayViews.toLocaleString('en-IN') %></div>
+      </div>
+      <div class="analytics-kpi-icon" style="background: #ffe4e6; color: #be123c;">👁️</div>
+    </div>
+    <div class="analytics-kpi-meta">
+      <span class="analytics-delta-pill <%= deltaClass %>"><%= deltaPctText %></span>
+      <span>Yest: <%= yesterdayViews.toLocaleString('en-IN') %></span>
+    </div>
+  </div>
+
+  <div class="analytics-kpi-card">
+    <div class="analytics-kpi-top">
+      <div>
+        <div class="analytics-kpi-label">Posts Viewed Today</div>
+        <div class="analytics-kpi-value"><%= todayPostsViewed.toLocaleString('en-IN') %></div>
+      </div>
+      <div class="analytics-kpi-icon" style="background: #e0f2fe; color: #0284c7;">📄</div>
+    </div>
+    <div class="analytics-kpi-meta">
+      <span style="color: #0369a1;">Out of <%= totalPosts %> total posts</span>
+    </div>
+  </div>
+
+  <div class="analytics-kpi-card">
+    <div class="analytics-kpi-top">
+      <div>
+        <div class="analytics-kpi-label">Total Lifetime Views</div>
+        <div class="analytics-kpi-value"><%= totalViewsAll.toLocaleString('en-IN') %></div>
+      </div>
+      <div class="analytics-kpi-icon" style="background: #ecfdf5; color: #059669;">🔥</div>
+    </div>
+    <div class="analytics-kpi-meta">
+      <span style="color: #059669;">7-Day Total: <%= weekViewsTotal.toLocaleString('en-IN') %></span>
+    </div>
+  </div>
+
+  <div class="analytics-kpi-card">
+    <div class="analytics-kpi-top">
+      <div style="min-width: 0; flex: 1;">
+        <div class="analytics-kpi-label">#1 Top Post Views</div>
+        <div class="analytics-kpi-value"><%= topOverallLeader ? Number(topOverallLeader.views || 0).toLocaleString('en-IN') : '0' %></div>
+      </div>
+      <div class="analytics-kpi-icon" style="background: #fef9c3; color: #ca8a04;">🏆</div>
+    </div>
+    <div class="analytics-kpi-meta" style="overflow: hidden;">
+      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: block;" title="<%= topOverallLeader ? topOverallLeader.title : '' %>">
+        <%= topOverallLeader ? topOverallLeader.title : 'No views recorded yet' %>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- Graphical Charts Row: 7-Day Trend Bar Chart + Category Views Breakdown -->
+<div class="analytics-charts-grid">
+  <!-- 7-Day Views Graphic Chart -->
+  <div class="admin-card">
+    <div class="admin-card-header">
+      <div>
+        <h2>📊 Daily Post Views Graphic (Last 7 Days - IST)</h2>
+        <div style="font-size: 12.5px; color: #64748b; margin-top: 2px;">
+          Real-time daily views across all posts (<%= statsData.todayIst || '' %>)
+        </div>
+      </div>
+      <span class="analytics-delta-pill analytics-delta-up">7D: <%= weekViewsTotal.toLocaleString('en-IN') %> Views</span>
+    </div>
+
+    <div class="chart-bars-stage" role="img" aria-label="Last 7 days post views bar chart">
+      <% dailyTrend.forEach(day => { %>
+        <%
+          const pctHeight = day.views > 0 ? Math.max(8, Math.round((day.views / maxDailyViews) * 100)) : 4;
+        %>
+        <div class="chart-bar-col <%= day.isToday ? 'is-today' : '' %>" title="<%= day.fullLabel %>: <%= day.views %> views (<%= day.postsRead %> posts viewed)">
+          <span class="chart-bar-count"><%= day.views.toLocaleString('en-IN') %></span>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="height: <%= pctHeight %>%;"></div>
+          </div>
+          <span class="chart-bar-label"><%= day.label %></span>
+        </div>
+      <% }) %>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 10px; font-size: 11.5px; color: #64748b;">
+      <span>Hover/tap any bar for exact views &amp; unique posts read that day</span>
+      <span><strong style="color: #ab183d;">■</strong> Today &nbsp;|&nbsp; <strong style="color: #1d4ed8;">■</strong> Past Days</span>
+    </div>
+  </div>
+
+  <!-- Category Views Share Graphic -->
+  <div class="admin-card">
+    <div class="admin-card-header">
+      <div>
+        <h2>📈 Views by Category</h2>
+        <div style="font-size: 12.5px; color: #64748b; margin-top: 2px;">Traffic share across exam sections</div>
+      </div>
+      <span style="font-size: 12px; font-weight: 700; color: #475569;"><%= totalViewsAll.toLocaleString('en-IN') %> Total</span>
+    </div>
+
+    <div class="cat-share-list">
+      <% if (categoryViews.length > 0) { %>
+        <% categoryViews.slice(0, 8).forEach(cv => { %>
+          <%
+            const cvCount = Number(cv.total_views || 0);
+            const sharePct = totalViewsAll > 0 ? Math.round((cvCount / totalViewsAll) * 100) : 0;
+            const barWidth = cvCount > 0 ? Math.max(4, sharePct) : 2;
+            const catTitle = (categories[cv.category] && categories[cv.category].name) ? categories[cv.category].name : cv.category;
+          %>
+          <div class="cat-share-row">
+            <div class="cat-share-meta">
+              <span class="cat-share-name"><%= catTitle %> <small style="color: #94a3b8; font-weight: 500;">(<%= cv.post_count %> posts)</small></span>
+              <span class="cat-share-nums"><%= cvCount.toLocaleString('en-IN') %> (<%= sharePct %>%)</span>
+            </div>
+            <div class="cat-share-bar-bg">
+              <div class="cat-share-bar-fill" style="width: <%= barWidth %>%;"></div>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <div style="padding: 25px; text-align: center; color: #64748b; font-size: 13px;">No category traffic recorded yet.</div>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<!-- Detailed Top Posts Breakdown: Today vs All-Time -->
+<div class="analytics-top-grid">
+  <!-- Today's Most Viewed Posts -->
+  <div class="admin-card">
+    <div class="admin-card-header">
+      <div>
+        <h2>🔥 Today's Most Viewed Posts</h2>
+        <div style="font-size: 12.5px; color: #64748b; margin-top: 2px;">
+          Posts getting maximum clicks today (<%= todayPostsViewed %> active today)
+        </div>
+      </div>
+      <span class="analytics-delta-pill today-hot" style="background: #ffe4e6; color: #be123c;"><%= todayViews.toLocaleString('en-IN') %> Today</span>
+    </div>
+
+    <% if (topPostsToday.length > 0) { %>
+      <div class="top-post-list">
+        <% topPostsToday.forEach((p, idx) => { %>
+          <% const barPct = Math.max(6, Math.round((Number(p.today_views || 0) / maxTodayPostViews) * 100)); %>
+          <div class="top-post-item">
+            <div class="top-post-head">
+              <div class="top-post-title-wrap">
+                <span class="top-rank-badge <%= idx < 3 ? ('rank-' + (idx + 1)) : '' %>">#<%= idx + 1 %></span>
+                <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/post/<%= p.slug %>" target="_blank" class="top-post-title"><%= p.title %></a>
+              </div>
+              <span class="top-post-views-pill today-hot">+<%= Number(p.today_views || 0).toLocaleString('en-IN') %> today</span>
+            </div>
+            <div class="top-post-foot">
+              <div class="top-post-meter-bg">
+                <div class="top-post-meter-fill today-fill" style="width: <%= barPct %>%;"></div>
+              </div>
+              <span style="white-space: nowrap;">Total: <%= Number(p.total_views || 0).toLocaleString('en-IN') %></span>
+              <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/edit/<%= p.id %>" style="color: #0284c7; font-weight: 700; text-decoration: none;">Edit</a>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <div style="background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 26px 16px; text-align: center; color: #64748b; font-size: 13px;">
+        <strong>No post visits recorded for today yet.</strong><br>
+        <span style="font-size: 12px;">Jaise hi visitors post open karenge, aaj ke top viewed posts yahan live show honge.</span>
+      </div>
+    <% } %>
+  </div>
+
+  <!-- All-Time Most Viewed Posts -->
+  <div class="admin-card">
+    <div class="admin-card-header">
+      <div>
+        <h2>🏆 Highest Viewed Posts (All-Time)</h2>
+        <div style="font-size: 12.5px; color: #64748b; margin-top: 2px;">Most popular notifications ranked by total views</div>
+      </div>
+      <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts" class="btn btn-secondary btn-sm">All Posts</a>
+    </div>
+
+    <% if (topPostsOverall.length > 0) { %>
+      <div class="top-post-list">
+        <% topPostsOverall.forEach((p, idx) => { %>
+          <% const barPct = Number(p.views || 0) > 0 ? Math.max(5, Math.round((Number(p.views || 0) / maxOverallViews) * 100)) : 2; %>
+          <div class="top-post-item">
+            <div class="top-post-head">
+              <div class="top-post-title-wrap">
+                <span class="top-rank-badge <%= idx < 3 ? ('rank-' + (idx + 1)) : '' %>">
+                  <%= idx === 0 ? '🥇' : (idx === 1 ? '🥈' : (idx === 2 ? '🥉' : ('#' + (idx + 1)))) %>
+                </span>
+                <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/post/<%= p.slug %>" target="_blank" class="top-post-title"><%= p.title %></a>
+              </div>
+              <span class="top-post-views-pill"><%= Number(p.views || 0).toLocaleString('en-IN') %> views</span>
+            </div>
+            <div class="top-post-foot">
+              <div class="top-post-meter-bg">
+                <div class="top-post-meter-fill" style="width: <%= barPct %>%;"></div>
+              </div>
+              <% if (Number(p.today_views || 0) > 0) { %>
+                <span style="color: #be123c; font-weight: 700; white-space: nowrap;">+<%= p.today_views %> today</span>
+              <% } else { %>
+                <span style="text-transform: capitalize; white-space: nowrap;"><%= p.category %></span>
+              <% } %>
+              <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/edit/<%= p.id %>" style="color: #0284c7; font-weight: 700; text-decoration: none;">Edit</a>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <div style="background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 26px 16px; text-align: center; color: #64748b; font-size: 13px;">
+        No posts found yet.
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<!-- Category Distribution -->
+<div class="admin-card">
+  <div class="admin-card-header">
+    <h2>Post Distribution Across Categories</h2>
+    <span style="font-size: 12.5px; color: #64748b;">Live Counts</span>
+  </div>
+  <div class="admin-cat-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px;">
+    <% categoriesCount.forEach(cat => { %>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 14px; border-radius: 8px; text-align: center; transition: all 0.15s ease;">
+        <div style="font-weight: 800; color: var(--admin-primary); font-size: 22px; line-height: 1.1;"><%= cat.count %></div>
+        <div style="font-size: 12px; font-weight: 600; color: #475569; text-transform: capitalize; margin-top: 4px;"><%= cat.category %></div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<!-- Recent Posts Table -->
+<div class="admin-card">
+  <div class="admin-card-header">
+    <div>
+      <h2>Recent Job &amp; Result Notifications</h2>
+      <div style="font-size: 12.5px; color: #64748b; margin-top: 2px;">Latest published recruitments and examination updates</div>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts" class="btn btn-secondary btn-sm">View All (<%= totalPosts %>)</a>
+      <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/new" class="btn btn-primary btn-sm">+ Add Post</a>
+    </div>
+  </div>
+
+  <div style="overflow-x: auto;">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th style="width: 50px;">ID</th>
+          <th>Notification Title</th>
+          <th style="width: 140px;">Category</th>
+          <th style="width: 180px;">Post Date</th>
+          <th style="width: 70px;">Views</th>
+          <th style="width: 90px;">Status</th>
+          <th style="width: 160px; text-align: right;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (recentPosts && recentPosts.length > 0) { %>
+          <% recentPosts.forEach(post => { %>
+            <tr>
+              <td style="font-weight: 600; color: #64748b;">#<%= post.id %></td>
+              <td>
+                <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/post/<%= post.slug %>" target="_blank" style="font-weight: 600; color: #0f172a; text-decoration: none; display: flex; align-items: center; gap: 6px;">
+                  <span><%= post.title %></span>
+                  <span style="font-size: 11px; color: #94a3b8;">↗</span>
+                </a>
+                <% if (post.department) { %>
+                  <div style="font-size: 11.5px; color: #64748b; margin-top: 2px;"><%= post.department %></div>
+                <% } %>
+              </td>
+              <td>
+                <span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 11.5px; font-weight: 700; text-transform: capitalize; display: inline-block;">
+                  <%= post.category %>
+                </span>
+              </td>
+              <td style="font-size: 12.5px; color: #64748b;"><%= post.post_date || post.created_at %></td>
+              <td style="font-weight: 600;"><%= post.views %></td>
+              <td>
+                <span style="background: <%= post.status === 'active' ? '#ecfdf5' : '#fffbeb' %>; color: <%= post.status === 'active' ? '#059669' : '#d97706' %>; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700;">
+                  ● <%= post.status %>
+                </span>
+              </td>
+              <td style="text-align: right; white-space: nowrap;">
+                <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/edit/<%= post.id %>" class="btn btn-secondary btn-sm" style="margin-right: 4px;">Edit</a>
+                <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/delete/<%= post.id %>" method="POST" style="display: inline-block;" onsubmit="return confirm('Permanently delete this notification?');">
+                  <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan="7" style="text-align: center; padding: 30px; color: #64748b;">
+              No notifications found in the database. Click "+ Create New Post" to add one.
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../partials/admin-footer') %>

@@ -1,0 +1,194 @@
+<%
+  const baseAdmin = typeof adminBase !== 'undefined' ? adminBase : '/admin';
+  const pubBase = typeof publicBase !== 'undefined' ? publicBase : '';
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#0f172a">
+  <title><%= title || 'Govt Exam Zone - Professional Admin Console' %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css?v=20261125a">
+  <link rel="icon" href="<%= (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/gez-logo.svg' %>">
+</head>
+<body class="admin-body">
+
+<div class="admin-app-layout">
+  <!-- Mobile Sidebar Overlay Backdrop -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <!-- Professional Dark Sidebar -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <!-- Brand Header -->
+    <div class="sidebar-brand">
+      <a href="<%= baseAdmin || '/' %>" class="brand-link">
+        <img src="<%= (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/gez-logo.svg' %>" alt="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>" class="brand-logo" width="36" height="36" style="object-fit: contain;">
+        <div class="brand-info">
+          <span class="brand-title"><%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %></span>
+          <span class="brand-subtitle">
+            <span class="status-pulse-dot"></span> Admin Console Pro
+          </span>
+        </div>
+      </a>
+      <button type="button" class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close Sidebar">✕</button>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="sidebar-nav-container">
+      <div class="nav-section-title">CORE MANAGEMENT</div>
+      <nav class="sidebar-nav">
+        <a href="<%= baseAdmin || '/' %>" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath === '/admin' ? 'active' : '' %>">
+          <span class="nav-icon">📊</span>
+          <span class="nav-text">Dashboard</span>
+        </a>
+        <a href="<%= baseAdmin %>/posts" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath === '/admin/posts' ? 'active' : '' %>">
+          <span class="nav-icon">📝</span>
+          <span class="nav-text">All Notifications</span>
+        </a>
+        <a href="<%= baseAdmin %>/posts/new" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath === '/admin/posts/new' ? 'active' : '' %>">
+          <span class="nav-icon">➕</span>
+          <span class="nav-text">Create Post</span>
+          <span class="nav-badge new">New</span>
+        </a>
+        <a href="<%= baseAdmin %>/authors" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath.startsWith('/admin/authors') ? 'active' : '' %>">
+          <span class="nav-icon">✍️</span>
+          <span class="nav-text">Authors &amp; Team</span>
+        </a>
+        <a href="<%= pubBase %>/author-portal/login" target="_blank" class="nav-item">
+          <span class="nav-icon">🚀</span>
+          <span class="nav-text">Author Portal ↗</span>
+        </a>
+      </nav>
+
+      <div class="nav-section-title">HOMEPAGE UI CONTROLS</div>
+      <nav class="sidebar-nav">
+        <a href="<%= baseAdmin %>/badges" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath === '/admin/badges' ? 'active' : '' %>">
+          <span class="nav-icon">🎨</span>
+          <span class="nav-text">8 Color Badges</span>
+          <span class="nav-badge">8</span>
+        </a>
+        <a href="<%= baseAdmin %>/marquees" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath === '/admin/marquees' ? 'active' : '' %>">
+          <span class="nav-icon">📢</span>
+          <span class="nav-text">Flash Tickers</span>
+          <span class="nav-badge">Live</span>
+        </a>
+        <a href="<%= baseAdmin %>/settings#section-categories" class="nav-item">
+          <span class="nav-icon">📂</span>
+          <span class="nav-text">Category Show/Hide</span>
+        </a>
+      </nav>
+
+      <div class="nav-section-title">CLOUD INFRASTRUCTURE</div>
+      <nav class="sidebar-nav">
+        <a href="<%= baseAdmin %>/r2" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath === '/admin/r2' ? 'active' : '' %>">
+          <span class="nav-icon">☁️</span>
+          <span class="nav-text">Cloudflare R2</span>
+          <span class="nav-badge storage">Storage</span>
+        </a>
+        <a href="<%= baseAdmin %>/d1" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath === '/admin/d1' ? 'active' : '' %>">
+          <span class="nav-icon">💾</span>
+          <span class="nav-text">Cloudflare D1</span>
+          <span class="nav-badge db">SQL</span>
+        </a>
+      </nav>
+
+      <div class="nav-section-title">PORTAL SETTINGS</div>
+      <nav class="sidebar-nav">
+        <a href="<%= baseAdmin %>/settings" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath === '/admin/settings' ? 'active' : '' %>">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-text">Global Settings</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Sidebar Footer: System Status & User Card -->
+    <div class="sidebar-footer">
+      <div class="system-status-chip">
+        <div class="status-indicator">
+          <span class="ping-circle"></span>
+          <span class="ping-core"></span>
+        </div>
+        <div class="status-texts">
+          <div class="status-line">Cloudflare D1 &amp; R2</div>
+          <div class="status-sub">PM2 Daemon Online</div>
+        </div>
+      </div>
+
+      <div class="sidebar-user-row">
+        <div class="user-avatar">GEZ</div>
+        <div class="user-meta">
+          <span class="user-name">Admin Portal</span>
+          <span class="user-role">Super Administrator</span>
+        </div>
+        <a href="<%= baseAdmin %>/logout" class="sidebar-logout-btn" title="Logout from Admin">
+          🚪
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main View Area -->
+  <div class="admin-main-viewport">
+    <!-- Topbar Header -->
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button type="button" class="mobile-toggle-btn" id="sidebarToggleBtn" aria-label="Open Sidebar">
+          ☰
+        </button>
+        <div class="topbar-breadcrumb">
+          <span class="crumb-root">Console</span>
+          <span class="crumb-separator">/</span>
+          <span class="crumb-current">
+            <% if (typeof currentPath === 'undefined' || currentPath === '/admin') { %>
+              Dashboard Overview
+            <% } else if (currentPath === '/admin/posts') { %>
+              All Notifications
+            <% } else if (currentPath === '/admin/posts/new') { %>
+              Create Notification
+            <% } else if (currentPath === '/admin/badges') { %>
+              8 Highlight Badges
+            <% } else if (currentPath === '/admin/marquees') { %>
+              Flash Marquees
+            <% } else if (currentPath === '/admin/r2') { %>
+              Cloudflare R2 Storage
+            <% } else if (currentPath === '/admin/d1') { %>
+              Cloudflare D1 SQL
+            <% } else if (currentPath === '/admin/settings') { %>
+              Portal Settings
+            <% } else if (currentPath.startsWith('/admin/authors')) { %>
+              Authors &amp; Team
+            <% } else if (currentPath.startsWith('/admin/posts/edit')) { %>
+              Edit Notification
+            <% } else { %>
+              Management
+            <% } %>
+          </span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Live Clock -->
+        <div class="live-clock-pill" id="liveClockPill">
+          🕒 <span id="clockTime">--:--:--</span>
+        </div>
+
+        <!-- View Live Site Button -->
+        <a href="<%= pubBase %>/" target="_blank" class="topbar-btn live-site-btn">
+          <span>🌐 <span class="topbar-btn-label">View Public Site</span></span>
+          <span class="btn-arrow">↗</span>
+        </a>
+
+        <!-- Logout Action -->
+        <a href="<%= baseAdmin %>/logout" class="topbar-btn logout-btn">
+          <span>🚪 <span class="topbar-btn-label">Logout</span></span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Page Content Container -->
+    <div class="admin-container">

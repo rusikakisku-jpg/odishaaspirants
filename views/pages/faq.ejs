@@ -1,0 +1,285 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<%
+  const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
+    ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
+    : 'https://govtexamzone.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
+  const supportEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+%>
+
+<!-- Schema.org JSON-LD Structured Data: BreadcrumbList & FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "<%= siteDomain %>"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Frequently Asked Questions (FAQ)",
+          "item": "<%= siteDomain %>/faq"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is <%= portalName %> and what services are provided?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<%= portalName %> (govtexamzone.com) is an independent public educational and recruitment information portal. We provide authentic, prompt alerts for Central and State Government Jobs (Sarkari Naukri), Exam Notifications, Online Application Forms, Hall Tickets/Admit Cards, Official Answer Keys, Syllabus, and Exam Results."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are notifications and services on <%= portalName %> completely free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 100% free. <%= portalName %> does not charge any registration fees, subscription charges, or consultation fees from candidates. All job summaries, cutoff dates, and direct official government links are publicly accessible free of cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does <%= portalName %> verify job notifications before publishing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every notification published on <%= portalName %> is rigorously cross-checked with official Government Gazettes (Employment News / Rozgar Samachar) and authorized departmental websites (such as UPSC, SSC, Railway Recruitment Boards, State PSCs, NTA, and Banking portals). We always provide direct links to the official PDF notification document."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I apply online for a government recruitment vacancy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To apply for a job: 1) Open the specific post on our portal; 2) Review the essential eligibility criteria, age limits, vacancy details, and application fees; 3) Scroll to the 'Important Links' table; 4) Click on the 'Apply Online' button, which redirects you securely to the authorized official government application portal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I download my Exam Admit Card / Hall Ticket?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Visit the 'Admit Card' section on our homepage or menu. Select your exam notification and click on the available server download link. You will be redirected to the official department portal where you can enter your Registration Number / Roll Number and Date of Birth to download and print your hall ticket."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are examination results published on <%= portalName %>?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When an official recruitment commission announces results, our editorial team immediately verifies the selection list or merit list and provides direct download links (Server I, Server II) to the official result PDF and cutoff marks notice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if an official application or result server is running slow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "During peak hours or final dates, official government servers often experience heavy traffic. We recommend clearing your browser cache, attempting access during non-peak hours (early morning or late night), or using our alternate server links provided in the notification table."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is <%= portalName %> an official government agency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. <%= portalName %> is an independent educational news and candidate advisory portal. We are not affiliated with or endorsed by any government agency or recruitment board. We source all information from official public circulars for the convenience of candidates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I get instant notifications for new Sarkari jobs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Candidates can join our official verified Telegram Channel and WhatsApp Channel (linked in the top header) to receive instant real-time alerts whenever a new vacancy circular or result is announced."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I report an error or suggest a correction in a post?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We maintain strict editorial accuracy. If you notice any typographical error or discrepancy in dates, please write directly to our editorial research desk at <%= supportEmail %> or visit our Contact Us page. Corrections are verified and updated immediately."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<main class="container">
+  <!-- Breadcrumb -->
+  <div style="font-size: 13px; margin: 10px 0 14px 2px; color: #666;">
+    <a href="/" style="color: var(--primary-red); font-weight: bold; text-decoration: none;">🏠 Home</a>
+    <span style="margin: 0 6px; color: #999;">»</span>
+    <span style="color: #333; font-weight: 600;">Frequently Asked Questions (FAQ)</span>
+  </div>
+
+  <div class="sarkari-box" style="margin-bottom: 30px; background: #ffffff;">
+    <h1 class="sarkari-box-header" style="margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;">
+      Frequently Asked Questions (FAQ) - <%= portalName %> Candidate Helpdesk
+    </h1>
+
+    <div class="static-page-content" style="padding: 22px 20px;">
+      <p style="margin-top: 0; font-size: 14.5px; line-height: 1.6; color: #334155;">
+        Welcome to the <b><%= portalName %></b> Candidate Helpdesk and Frequently Asked Questions directory. Here you will find clear, transparent answers regarding government recruitment notifications, online application procedures, admit cards, answer keys, results, and fact-checking policies.
+      </p>
+
+      <!-- Category 1: General Information & Transparency -->
+      <h2 style="color: var(--primary-red); font-size: 18px; margin: 26px 0 14px 0; border-bottom: 2px solid #fee2e2; padding-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+        <span>🌐</span> 1. General Information &amp; Portal Policy
+      </h2>
+
+      <div class="faq-accordion-group" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+        <details class="faq-details" style="border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;">
+          <summary style="font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;">
+            Q1: What is <%= portalName %> and what services are provided?
+          </summary>
+          <div style="padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;">
+            <b><%= portalName %> (govtexamzone.com)</b> is an independent public educational portal designed to help job aspirants track Indian Government Jobs (Sarkari Naukri), competitive exam alerts, online application forms, admit cards, answer keys, syllabus, and results across all Central and State government commissions.
+          </div>
+        </details>
+
+        <details class="faq-details" style="border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;">
+          <summary style="font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;">
+            Q2: Are all alerts and notifications on <%= portalName %> free of charge?
+          </summary>
+          <div style="padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;">
+            <b>Yes, completely 100% free.</b> <%= portalName %> does not charge any registration fees, subscription fees, or consultation charges from candidates. All informational summaries, cutoff dates, and official government links are accessible to the public at no cost.
+          </div>
+        </details>
+
+        <details class="faq-details" style="border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;">
+          <summary style="font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;">
+            Q3: How does <%= portalName %> verify job notifications before publishing?
+          </summary>
+          <div style="padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;">
+            Our dedicated research desk adheres to a strict <b>Primary-Source Verification Policy</b>. Every notification is cross-verified with official government gazettes (Employment News / Rozgar Samachar) and authorized departmental portals (such as UPSC, SSC, Railway Recruitment Boards, State PSCs, NTA, and Banking boards). We always attach the official PDF notification for candidate verification.
+          </div>
+        </details>
+
+        <details class="faq-details" style="border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;">
+          <summary style="font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;">
+            Q4: Is <%= portalName %> an official government website?
+          </summary>
+          <div style="padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;">
+            No. <%= portalName %> is an <b>independent public educational news portal</b>. We are not affiliated with, sponsored by, or operated by any government department or recruitment commission. All information is published solely for educational and guidance purposes.
+          </div>
+        </details>
+      </div>
+
+      <!-- Category 2: Online Application & Eligibility -->
+      <h2 style="color: var(--primary-red); font-size: 18px; margin: 26px 0 14px 0; border-bottom: 2px solid #fee2e2; padding-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+        <span>📝</span> 2. Online Application Forms &amp; Eligibility
+      </h2>
+
+      <div class="faq-accordion-group" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+        <details class="faq-details" style="border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;">
+          <summary style="font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;">
+            Q5: How can I apply online for a government recruitment vacancy?
+          </summary>
+          <div style="padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;">
+            Follow these simple steps:
+            <ol style="margin: 8px 0 0 18px; padding-left: 0;">
+              <li>Open the desired post from the <b>Latest Jobs</b> category.</li>
+              <li>Read the detailed educational qualification, age limits, post vacancy table, and fee structure.</li>
+              <li>Navigate to the <b>Important Links</b> table at the bottom of the article.</li>
+              <li>Click on the <b>Apply Online (Registration / Login)</b> link to access the official government application portal directly.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="faq-details" style="border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;">
+          <summary style="font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;">
+            Q6: How do I calculate my age as on the notification cutoff date?
+          </summary>
+          <div style="padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;">
+            In government exams, age is calculated as on the specific reference cutoff date specified in the official notification (usually 1st January, 1st July, or 1st August). Your Date of Birth as printed on your 10th / High School Certificate is taken as conclusive legal proof.
+          </div>
+        </details>
+      </div>
+
+      <!-- Category 3: Admit Cards & Exam Results -->
+      <h2 style="color: var(--primary-red); font-size: 18px; margin: 26px 0 14px 0; border-bottom: 2px solid #fee2e2; padding-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+        <span>🎫</span> 3. Admit Cards &amp; Examination Results
+      </h2>
+
+      <div class="faq-accordion-group" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+        <details class="faq-details" style="border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;">
+          <summary style="font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;">
+            Q7: How can I download my Admit Card or Hall Ticket?
+          </summary>
+          <div style="padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;">
+            Go to the <b>Admit Card</b> section on our homepage. Click on your respective examination link and choose an active server link (e.g. Server I, Server II). Enter your Application Number / Roll Number and Date of Birth / Password to generate and print your official hall ticket.
+          </div>
+        </details>
+
+        <details class="faq-details" style="border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;">
+          <summary style="font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;">
+            Q8: What should I do if the official result or admit card link is not opening?
+          </summary>
+          <div style="padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;">
+            When results or hall tickets are announced for major exams (e.g. SSC CGL, UP Police, Railway ALP, CTET), lakhs of candidates access the official servers simultaneously, causing temporary slowdowns. Try refreshing after a few minutes, check alternate mirror links provided in our table, or access the portal during non-peak hours.
+          </div>
+        </details>
+      </div>
+
+      <!-- Category 4: Alerts & Helpdesk -->
+      <h2 style="color: var(--primary-red); font-size: 18px; margin: 26px 0 14px 0; border-bottom: 2px solid #fee2e2; padding-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+        <span>🔔</span> 4. Real-Time Alerts &amp; Candidate Support
+      </h2>
+
+      <div class="faq-accordion-group" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+        <details class="faq-details" style="border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;">
+          <summary style="font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;">
+            Q9: How can I receive instant alerts as soon as a new notification is released?
+          </summary>
+          <div style="padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;">
+            Join our official verified social channels:
+            <ul style="margin: 8px 0 0 18px; padding-left: 0;">
+              <li><a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' %>" target="_blank" rel="noopener" style="color: #0284c7; font-weight: bold;">✈️ Join Official Telegram Channel</a></li>
+              <li><a href="<%= (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' %>" target="_blank" rel="noopener" style="color: #16a34a; font-weight: bold;">💬 Join Official WhatsApp Channel</a></li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-details" style="border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; overflow: hidden;">
+          <summary style="font-weight: 700; color: #0f172a; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none;">
+            Q10: How do I report a factual error or request a correction?
+          </summary>
+          <div style="padding: 14px 16px; color: #334155; font-size: 14px; line-height: 1.65; background: #ffffff; border-top: 1px solid #e2e8f0;">
+            We appreciate candidate vigilance. If you notice any discrepancy in dates, vacancy numbers, or eligibility clauses, please email our editorial desk directly at <!--email_off--><a href="mailto:<%= supportEmail %>" style="color: var(--primary-red); font-weight: bold;"><%= supportEmail %></a><!--/email_off--> or visit our <a href="/contact-us" style="color: var(--primary-red); font-weight: bold;">Contact Us</a> desk.
+          </div>
+        </details>
+      </div>
+
+      <!-- Quick Links Card -->
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 18px 20px; margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px;">
+        <div>
+          <div style="font-weight: 700; color: #1e3a8a; font-size: 15px; margin-bottom: 3px;">Still have questions or need assistance?</div>
+          <div style="font-size: 13.5px; color: #3b82f6;">Our editorial team is here to assist candidates with verified examination information.</div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <a href="/contact-us" class="btn btn-primary btn-sm" style="background: #1d4ed8; border-color: #1e40af; padding: 8px 16px; font-weight: 600;">Contact Helpdesk</a>
+          <a href="/about-us" class="btn btn-secondary btn-sm" style="padding: 8px 16px; font-weight: 600;">About Our Team</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

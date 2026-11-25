@@ -1,0 +1,403 @@
+<%- include('../partials/admin-nav', { currentPath: post ? '' : '/admin/posts/new' }) %>
+
+<div class="admin-card">
+  <div class="admin-card-header">
+    <h2><%= post ? 'Edit Notification: ' + post.title : 'Create New Govt Exam Zone Notification' %></h2>
+    <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts" class="btn btn-secondary btn-sm">← Back to Posts</a>
+  </div>
+
+  <form action="<%= action %>" method="POST" enctype="multipart/form-data">
+    <!-- Row 1: Title & Category -->
+    <div class="form-row">
+      <div class="form-group" style="grid-column: span 2;">
+        <label for="title">Post Title *</label>
+        <input 
+          type="text" 
+          id="title" 
+          name="title" 
+          class="form-control" 
+          placeholder="e.g. SSC CGL 2026 Online Form Apply Online" 
+          value="<%= post ? post.title : '' %>" 
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category *</label>
+        <select id="category" name="category" class="form-control" required>
+          <% Object.keys(categories).forEach(key => { %>
+            <option value="<%= key %>" <%= post && post.category === key ? 'selected' : '' %>>
+              <%= categories[key].name %>
+            </option>
+          <% }) %>
+        </select>
+      </div>
+    </div>
+
+    <%- include('../partials/post-category-history') %>
+
+    <!-- Row 2: Department, Dates -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="department">Department / Board</label>
+        <input 
+          type="text" 
+          id="department" 
+          name="department" 
+          class="form-control" 
+          placeholder="e.g. Staff Selection Commission (SSC)" 
+          value="<%= post ? post.department : '' %>"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="post_date">Post Date / Update Text</label>
+        <input 
+          type="text" 
+          id="post_date" 
+          name="post_date" 
+          class="form-control" 
+          placeholder="e.g. 24 September 2026 | 10:15 AM" 
+          value="<%= post ? post.post_date : '' %>"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="last_date">Last Date</label>
+        <input 
+          type="text" 
+          id="last_date" 
+          name="last_date" 
+          class="form-control" 
+          placeholder="e.g. 25/10/2026" 
+          value="<%= post ? post.last_date : '' %>"
+        >
+      </div>
+    </div>
+
+    <!-- Short Description -->
+    <div class="form-group">
+      <label for="short_desc">Short Information</label>
+      <textarea 
+        id="short_desc" 
+        name="short_desc" 
+        class="form-control" 
+        rows="3" 
+        placeholder="Brief overview of recruitment or exam results..."
+      ><%= post ? post.short_desc : '' %></textarea>
+    </div>
+
+    <!-- Total Vacancies -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="total_vacancy">Total Vacancies Badge</label>
+        <input 
+          type="text" 
+          id="total_vacancy" 
+          name="total_vacancy" 
+          class="form-control" 
+          placeholder="e.g. 17,727 Posts" 
+          value="<%= post ? post.total_vacancy : '' %>"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="slug">Custom URL Slug (Leave blank for auto)</label>
+        <input 
+          type="text" 
+          id="slug" 
+          name="slug" 
+          class="form-control" 
+          placeholder="ssc-cgl-2026-online-form" 
+          value="<%= post ? post.slug : '' %>"
+        >
+      </div>
+    </div>
+
+    <!-- Post Thumbnail / Featured Image -->
+    <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+        <div>
+          <h3 style="margin: 0; font-size: 15px; color: #1e293b;">🖼️ Post Thumbnail / Featured Image (Optional)</h3>
+          <small style="color: #64748b;">Displayed on the post page &amp; used for WhatsApp/Telegram/Google social share previews (OG Image)</small>
+        </div>
+        <button type="button" id="removeThumbBtn" class="btn btn-sm" style="background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; font-size: 11.5px; font-weight: 600;">
+          🗑️ Remove Thumbnail
+        </button>
+      </div>
+      <% const hasThumb = Boolean(post && post.thumbnail && post.thumbnail.trim()); %>
+      <div class="form-row" style="align-items: center;">
+        <div class="form-group" style="max-width: 160px; margin-bottom: 0;">
+          <div style="width: 140px; height: 84px; background: #ffffff; border: 1px dashed #94a3b8; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; text-align: center;">
+            <img id="thumbPreviewImg" src="<%= hasThumb ? post.thumbnail : '' %>" alt="Post Thumbnail Preview" style="width: 100%; height: 100%; object-fit: cover; display: <%= hasThumb ? 'block' : 'none' %>;">
+            <span id="thumbNoImgText" style="font-size: 11px; color: #64748b; font-weight: 600; display: <%= hasThumb ? 'none' : 'inline-block' %>;">No Thumbnail</span>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 0;">
+          <label style="font-size: 12px; font-weight: 600; color: #475569;">Upload Thumbnail Image (to R2)</label>
+          <input type="file" id="thumbnail_file" name="thumbnail_file" class="form-control" accept="image/png,image/jpeg,image/webp,image/svg+xml" style="padding: 6px;">
+        </div>
+        <div class="form-group" style="margin-bottom: 0;">
+          <label for="thumbnail_url" style="font-size: 12px; font-weight: 600; color: #475569;">Or Paste Thumbnail Image URL</label>
+          <input type="text" id="thumbnail_url" name="thumbnail_url" class="form-control" placeholder="https://... or /uploads/..." value="<%= hasThumb ? post.thumbnail : '' %>">
+        </div>
+      </div>
+    </div>
+
+    <!-- Cloudflare R2 Document Upload & Link Section -->
+    <div style="background: #f0fdf4; border: 1px solid #86efac; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+      <h3 style="color: #166534; font-size: 15px; margin-top: 0; margin-bottom: 12px;">
+        ☁️ Documents &amp; External Links (R2 File Upload or Direct Web URL)
+      </h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Notification PDF (URL or File)</label>
+          <input 
+            type="text" 
+            name="notification_pdf_url" 
+            class="form-control" 
+            placeholder="https://... or /uploads/..." 
+            value="<%= post && post.notification_pdf ? post.notification_pdf : '' %>"
+          >
+          <div style="margin-top: 6px;">
+            <small style="color: #475569; font-size: 11.5px;">Or Upload PDF/Doc to R2:</small>
+            <input type="file" name="notification_file" class="form-control" style="margin-top: 2px;" accept=".pdf,.doc,.docx,.jpg,.png">
+          </div>
+          <% if (post && post.notification_pdf) { %>
+            <div style="font-size: 11px; margin-top: 4px; color: #166534;">
+              Active File/URL: <a href="<%= post.notification_pdf %>" target="_blank">View Notification</a>
+            </div>
+          <% } %>
+        </div>
+
+        <div class="form-group">
+          <label>Admit Card (URL or File)</label>
+          <input 
+            type="text" 
+            name="admit_card_url" 
+            class="form-control" 
+            placeholder="https://..." 
+            value="<%= post && post.admit_card_url ? post.admit_card_url : '' %>"
+          >
+          <div style="margin-top: 6px;">
+            <small style="color: #475569; font-size: 11.5px;">Or Upload Admit Card to R2:</small>
+            <input type="file" name="admit_card_file" class="form-control" style="margin-top: 2px;" accept=".pdf,.doc,.docx">
+          </div>
+          <% if (post && post.admit_card_url) { %>
+            <div style="font-size: 11px; margin-top: 4px;">
+              Active File/URL: <a href="<%= post.admit_card_url %>" target="_blank">View Admit Card</a>
+            </div>
+          <% } %>
+        </div>
+
+        <div class="form-group">
+          <label>Result (URL or File)</label>
+          <input 
+            type="text" 
+            name="result_url" 
+            class="form-control" 
+            placeholder="https://..." 
+            value="<%= post && post.result_url ? post.result_url : '' %>"
+          >
+          <div style="margin-top: 6px;">
+            <small style="color: #475569; font-size: 11.5px;">Or Upload Result to R2:</small>
+            <input type="file" name="result_file" class="form-control" style="margin-top: 2px;" accept=".pdf,.doc,.docx">
+          </div>
+          <% if (post && post.result_url) { %>
+            <div style="font-size: 11px; margin-top: 4px;">
+              Active File/URL: <a href="<%= post.result_url %>" target="_blank">View Result</a>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual Interactive Builder: Important Dates -->
+    <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h3 style="margin: 0; font-size: 15px; color: #1e293b;">📅 Important Dates Schedule</h3>
+        <button type="button" id="btn-add-date" class="btn btn-secondary btn-sm">+ Add Date Row</button>
+      </div>
+      <div id="dates-rows-container" style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px;"></div>
+      <input type="hidden" id="important_dates" name="important_dates" value="<%= post ? (post.important_dates || '[]') : '[]' %>">
+    </div>
+
+    <!-- Visual Interactive Builder: Application Fee -->
+    <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h3 style="margin: 0; font-size: 15px; color: #1e293b;">💳 Application Fee Details</h3>
+        <button type="button" id="btn-add-fee" class="btn btn-secondary btn-sm">+ Add Fee Row</button>
+      </div>
+      <div id="fee-rows-container" style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px;"></div>
+      <input type="hidden" id="application_fee" name="application_fee" value="<%= post ? (post.application_fee || '[]') : '[]' %>">
+    </div>
+
+    <!-- Visual Interactive Builder: Vacancy Details -->
+    <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h3 style="margin: 0; font-size: 15px; color: #1e293b;">📋 Vacancy Details &amp; Eligibility</h3>
+        <button type="button" id="btn-add-vac" class="btn btn-secondary btn-sm">+ Add Vacancy Row</button>
+      </div>
+      <div id="vac-rows-container" style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px;"></div>
+      <input type="hidden" id="vacancy_details" name="vacancy_details" value="<%= post ? (post.vacancy_details || '[]') : '[]' %>">
+    </div>
+
+    <!-- Visual Interactive Builder: Category-Wise Vacancy Details -->
+    <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+        <div>
+          <h3 style="margin: 0; font-size: 15px; color: #1e293b;">📊 Category-Wise Vacancy Distribution</h3>
+          <small style="color: #64748b;">Create unlimited rows &amp; columns — rename, add, or remove any column header or row</small>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button type="button" id="btn-add-cat-col" class="btn btn-secondary btn-sm">+ Add Column</button>
+          <button type="button" id="btn-add-cat" class="btn btn-primary btn-sm">+ Add Row</button>
+        </div>
+      </div>
+      <div id="cat-rows-container" style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px;"></div>
+      <input type="hidden" id="category_details" name="category_details" value="<%= post ? (post.category_details || '[]') : '[]' %>">
+    </div>
+
+    <!-- Visual Interactive Builder: Category-Wise Age Limit Details -->
+    <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+        <div>
+          <h3 style="margin: 0; font-size: 15px; color: #1e293b;">👤 Age Limit Details (Category-Wise)</h3>
+          <small style="color: #64748b;">Add category-wise Minimum &amp; Maximum age limit rows just like Application Fee Details</small>
+        </div>
+        <button type="button" id="btn-add-age" class="btn btn-secondary btn-sm">+ Add Age Row</button>
+      </div>
+      <div class="form-row" style="margin-bottom: 12px;">
+        <div class="form-group" style="margin-bottom: 0;">
+          <label for="age_as_on">Age Limit (As on Date)</label>
+          <input type="text" id="age_as_on" class="form-control" placeholder="e.g. 01/08/2026">
+        </div>
+        <div class="form-group" style="margin-bottom: 0;">
+          <label for="age_relaxation">Extra Age Relaxation Note (Optional)</label>
+          <input type="text" id="age_relaxation" class="form-control" placeholder="e.g. Age Relaxation Extra as per Rules">
+        </div>
+      </div>
+      <div id="age-rows-container" style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px;"></div>
+      <input type="hidden" id="age_limit" name="age_limit" value="<%= post ? (post.age_limit || '{}') : '{}' %>">
+    </div>
+
+    <!-- How to Apply -->
+    <div class="form-group">
+      <label for="how_to_apply">How to Apply Steps</label>
+      <textarea 
+        id="how_to_apply" 
+        name="how_to_apply" 
+        class="form-control" 
+        rows="4" 
+      ><%= post ? post.how_to_apply : '1. Candidate Can Apply Online From Official Portal.\n2. Read Notification Carefully Before Filling Form.\n3. Keep Ready Photo, Sign & ID Proof.\n4. Pay Exam Fee and Print Final Application Form.' %></textarea>
+    </div>
+
+    <!-- Optional Full Blog Article / Detailed Editorial Content (TinyMCE 6 Rich Text Editor) -->
+    <div style="background: #f0f9ff; border: 1px solid #bae6fd; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; margin-bottom: 10px;">
+        <div>
+          <label for="article_content" style="margin: 0; font-size: 15px; font-weight: 700; color: #0369a1;">📝 Full Blog Article / TinyMCE Editor (Optional)</label>
+          <div style="font-size: 12px; color: #475569; margin-top: 2px;">
+            Write your full blog post visually with tables, headings, links, images &amp; FAQs — works cleanly in both <strong>Classic Sarkari</strong> and <strong>2-Column Blog</strong> layouts!
+          </div>
+        </div>
+        <button type="button" id="toggleArticleModeBtn" class="btn btn-secondary btn-sm" style="white-space: nowrap;">
+          💻 HTML Code
+        </button>
+      </div>
+      <textarea 
+        id="article_content" 
+        name="article_content" 
+        data-upload-url="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/r2/upload-json"
+        class="form-control" 
+        rows="12" 
+        placeholder="Write full blog article content here..."
+        style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px;"
+      ><%= post && post.article_content ? post.article_content : '' %></textarea>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.2/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <!-- Visual Interactive Builder: Some Useful Important Links -->
+    <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <div>
+          <h3 style="margin: 0; font-size: 15px; color: #1e293b;">🔗 Some Useful Important Links (Custom Links Table)</h3>
+          <small style="color: #64748b;">Add custom download links, Server 1 / Server 2, answer key, mock test, syllabus, etc.</small>
+        </div>
+        <button type="button" id="btn-add-link" class="btn btn-secondary btn-sm">+ Add Link Row</button>
+      </div>
+      <div id="links-rows-container" style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px;"></div>
+      <input type="hidden" id="links" name="links" value="<%= post ? (post.links || '[]') : '[]' %>">
+    </div>
+
+    <!-- Direct External Links -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="apply_online_url">Apply Online URL</label>
+        <input 
+          type="url" 
+          id="apply_online_url" 
+          name="apply_online_url" 
+          class="form-control" 
+          placeholder="https://ssc.gov.in" 
+          value="<%= post ? post.apply_online_url : '' %>"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="official_website_url">Official Website URL</label>
+        <input 
+          type="url" 
+          id="official_website_url" 
+          name="official_website_url" 
+          class="form-control" 
+          placeholder="https://ssc.gov.in" 
+          value="<%= post ? post.official_website_url : '' %>"
+        >
+      </div>
+    </div>
+
+    <!-- Status & Options -->
+    <div class="form-row" style="align-items: center; margin-top: 10px;">
+      <div class="form-group">
+        <label for="author_id">Assigned Author / Fact-Checker *</label>
+        <select id="author_id" name="author_id" class="form-control">
+          <% if (typeof authors !== 'undefined' && authors && authors.length > 0) { %>
+            <% authors.forEach(a => { %>
+              <option value="<%= a.id %>" <%= (post && post.author_id == a.id) || (!post && a.id == 1) ? 'selected' : '' %>>
+                <%= a.name %> (<%= a.role %>)
+              </option>
+            <% }) %>
+          <% } else { %>
+            <option value="1">Govt Exam Zone Editorial Team</option>
+          <% } %>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Publication Status</label>
+        <select id="status" name="status" class="form-control">
+          <option value="active" <%= post && post.status === 'active' ? 'selected' : '' %>>Active (Published)</option>
+          <option value="draft" <%= post && post.status === 'draft' ? 'selected' : '' %>>Draft</option>
+          <option value="archived" <%= post && post.status === 'archived' ? 'selected' : '' %>>Archived</option>
+        </select>
+      </div>
+
+      <div class="form-group" style="padding-top: 25px;">
+        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+          <input type="checkbox" name="is_featured" value="1" <%= post && post.is_featured ? 'checked' : '' %>>
+          <span>Mark as Featured Post</span>
+        </label>
+      </div>
+    </div>
+
+    <div style="margin-top: 25px;">
+      <button type="submit" class="btn btn-primary" style="font-size: 16px; padding: 10px 25px;">
+        💾 <%= post ? 'Update Notification' : 'Publish Notification' %>
+      </button>
+      <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts" class="btn btn-secondary" style="margin-left: 10px;">Cancel</a>
+    </div>
+  </form>
+</div>
+
+<%- include('../partials/admin-footer') %>

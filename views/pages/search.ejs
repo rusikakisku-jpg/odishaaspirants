@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<main class="container">
+  <!-- Breadcrumb -->
+  <div style="font-size: 13px; margin: 10px 0 12px 2px; color: #666;">
+    <a href="/" style="color: var(--primary-red); font-weight: bold; text-decoration: none;">🏠 Home</a>
+    <span style="margin: 0 6px; color: #999;">»</span>
+    <span style="color: #333; font-weight: 600;">Search Results</span>
+  </div>
+
+  <div class="sarkari-box" style="margin-bottom: 30px;">
+    <div class="sarkari-box-header">
+      Search Results <%= query ? `: "${query}"` : '' %>
+    </div>
+
+    <div style="padding: 12px 18px; background: #fafafa; border-bottom: 1px solid #ddd; font-size: 13.5px; color: #555; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+      <div>Search Query: <b><%= query || 'All' %></b></div>
+      <div style="font-weight: bold; color: var(--primary-red); font-size: 13px; background: #ffebee; padding: 2px 8px; border-radius: 4px;">
+        Found: <%= posts ? posts.length : 0 %> Results
+      </div>
+    </div>
+
+    <ul class="sarkari-box-list">
+      <% if (posts && posts.length > 0) { %>
+        <% posts.forEach(post => { %>
+          <li>
+            <span class="list-chevron">›</span>
+            <div style="flex: 1;">
+              <a href="/post/<%= post.slug %>" style="font-weight: bold; color: var(--link-blue); font-size: 14.5px;">
+                <%= post.title %>
+              </a>
+              <span class="tag-badge tag-blue" style="text-transform: capitalize; margin-left: 6px;"><%= post.category %></span>
+              <% if (post.department) { %>
+                <span style="color: #666; font-size: 12.5px;"> • <%= post.department %></span>
+              <% } %>
+              <% if (post.last_date) { %>
+                <span class="tag-badge tag-green" style="margin-left: 6px;">Last Date: <%= post.last_date %></span>
+              <% } %>
+            </div>
+            <% if (post.post_date) { %>
+              <span style="color: #888; font-size: 12px; white-space: nowrap; margin-left: 8px;"><%= post.post_date %></span>
+            <% } %>
+          </li>
+        <% }) %>
+      <% } else { %>
+        <li style="padding: 30px; text-align: center; color: #666; display: block;">
+          <p style="font-size: 16px; margin-bottom: 10px; font-weight: bold; color: var(--primary-red);">No results found for "<%= query %>".</p>
+          <p style="font-size: 13px;">Try searching for keywords like <b>SSC, UP Police, Railway, Result, 2026</b> or browse our main categories above.</p>
+        </li>
+      <% } %>
+    </ul>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

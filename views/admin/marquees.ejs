@@ -1,0 +1,134 @@
+<%- include('../partials/admin-nav', { currentPath: '/admin/marquees' }) %>
+
+<div class="admin-card">
+  <div class="admin-card-header">
+    <div>
+      <h2>Manage Scrolling Tickers / Marquees (<%= marquees ? marquees.length : 0 %>)</h2>
+      <div style="font-size: 12.5px; color: #64748b; margin-top: 2px;">
+        These announcement tickers scroll horizontally across the homepage banner with breaking news and quick links.
+      </div>
+    </div>
+    <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/" target="_blank" class="btn btn-secondary btn-sm">👁️ View on Homepage</a>
+  </div>
+
+  <% if (typeof saved !== 'undefined' && saved) { %>
+    <div style="background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
+      ✅ Marquee ticker saved successfully and active on homepage!
+    </div>
+  <% } %>
+
+  <% if (typeof deleted !== 'undefined' && deleted) { %>
+    <div style="background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
+      🗑️ Marquee ticker deleted successfully!
+    </div>
+  <% } %>
+
+  <!-- Add New Marquee Form -->
+  <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px 20px; margin-bottom: 25px;">
+    <h3 style="margin-top: 0; margin-bottom: 12px; font-size: 15px; color: #1e293b;">+ Add New Marquee Ticker</h3>
+    <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/marquees/save" method="POST">
+      <div class="form-row">
+        <div class="form-group" style="grid-column: span 2;">
+          <label style="font-size: 12.5px; font-weight: 600;">Ticker Announcement Text *</label>
+          <input type="text" name="title" class="form-control" placeholder="e.g. SSC CGL 2026 Tier 1 Result Declared | | Download Merit List" required>
+        </div>
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Target URL *</label>
+          <input type="text" name="url" class="form-control" placeholder="/category/result or https://..." required>
+        </div>
+        <div class="form-group" style="max-width: 100px;">
+          <label style="font-size: 12.5px; font-weight: 600;">Display Order</label>
+          <input type="number" name="display_order" class="form-control" value="<%= (marquees ? marquees.length : 0) + 1 %>">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm" style="padding: 8px 18px;">+ Add Ticker</button>
+    </form>
+  </div>
+
+  <!-- Existing Marquees Table -->
+  <div style="overflow-x: auto;">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th style="width: 70px;">Order</th>
+          <th>Ticker Text</th>
+          <th style="width: 220px;">Target Link</th>
+          <th style="width: 160px; text-align: right;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (marquees && marquees.length > 0) { %>
+          <% marquees.forEach(m => { %>
+            <tr id="row-view-<%= m.id %>">
+              <td><span style="font-weight: 700; color: #1e293b;"><%= m.display_order %></span></td>
+              <td><b><%= m.title %></b></td>
+              <td><a href="<%= m.url %>" target="_blank" style="color: #ab183d; word-break: break-all;"><%= m.url %></a></td>
+              <td style="text-align: right;">
+                <button type="button" class="btn btn-secondary btn-sm" style="padding: 4px 10px;" onclick="toggleMarqueeEdit('<%= m.id %>')">
+                  ✏️ Edit
+                </button>
+                <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/marquees/delete/<%= m.id %>" method="POST" style="display:inline-block; margin-left: 4px;" onsubmit="return confirm('Delete this marquee?');">
+                  <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 8px;">🗑️</button>
+                </form>
+              </td>
+            </tr>
+
+            <!-- Edit Form Row (Hidden by default) -->
+            <tr id="row-edit-<%= m.id %>" style="display: none; background: #fdfae7;">
+              <td colspan="4" style="padding: 15px;">
+                <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/marquees/save" method="POST">
+                  <input type="hidden" name="id" value="<%= m.id %>">
+                  <div style="font-weight: 700; font-size: 13px; margin-bottom: 8px; color: #b45309;">
+                    ✏️ Editing Marquee #<%= m.id %>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group" style="grid-column: span 2;">
+                      <label style="font-size: 12px; font-weight: 600;">Ticker Text</label>
+                      <input type="text" name="title" class="form-control" value="<%= m.title %>" required>
+                    </div>
+                    <div class="form-group">
+                      <label style="font-size: 12px; font-weight: 600;">Target URL</label>
+                      <input type="text" name="url" class="form-control" value="<%= m.url %>" required>
+                    </div>
+                    <div class="form-group" style="max-width: 90px;">
+                      <label style="font-size: 12px; font-weight: 600;">Order</label>
+                      <input type="number" name="display_order" class="form-control" value="<%= m.display_order %>">
+                    </div>
+                  </div>
+                  <div style="margin-top: 10px; display: flex; gap: 8px;">
+                    <button type="submit" class="btn btn-primary btn-sm" style="padding: 6px 16px;">💾 Save Changes</button>
+                    <button type="button" class="btn btn-secondary btn-sm" style="padding: 6px 12px;" onclick="toggleMarqueeEdit('<%= m.id %>')">Cancel</button>
+                  </div>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan="4" style="text-align: center; color: #64748b; padding: 25px;">
+              No marquees found. Add one using the form above!
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+function toggleMarqueeEdit(id) {
+  const editRow = document.getElementById('row-edit-' + id);
+  const viewRow = document.getElementById('row-view-' + id);
+  if (editRow) {
+    if (editRow.style.display === 'none') {
+      editRow.style.display = 'table-row';
+      if (viewRow) viewRow.style.background = '#fef3c7';
+    } else {
+      editRow.style.display = 'none';
+      if (viewRow) viewRow.style.background = '';
+    }
+  }
+}
+</script>
+
+<%- include('../partials/admin-footer') %>

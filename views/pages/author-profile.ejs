@@ -1,0 +1,171 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<%
+  const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
+    ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
+    : 'https://govtexamzone.com';
+%>
+
+<!-- Schema.org JSON-LD Person & ProfilePage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": <%- JSON.stringify(author.name) %>,
+    "jobTitle": <%- JSON.stringify(author.role || 'Recruitment Analyst') %>,
+    "description": <%- JSON.stringify(author.bio || '') %>,
+    "image": <%- JSON.stringify(author.avatar_url.startsWith('http') ? author.avatar_url : siteDomain + author.avatar_url) %>,
+    "worksFor": {
+      "@type": "Organization",
+      "name": <%- JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone') %>,
+      "url": <%- JSON.stringify(siteDomain) %>
+    }<% if (author.telegram_url || author.twitter_url || author.linkedin_url) { %>,
+    "sameAs": [
+      <% const socials = [];
+         if (author.telegram_url) socials.push(author.telegram_url);
+         if (author.twitter_url) socials.push(author.twitter_url);
+         if (author.linkedin_url) socials.push(author.linkedin_url);
+      %>
+      <%- socials.map(s => JSON.stringify(s)).join(', ') %>
+    ]
+    <% } %>
+  }
+}
+</script>
+
+<main class="container">
+  <!-- Breadcrumb -->
+  <div style="font-size: 13px; margin: 10px 0 14px 2px; color: #666;">
+    <a href="/" style="color: var(--primary-red); font-weight: bold; text-decoration: none;">🏠 Home</a>
+    <span style="margin: 0 6px; color: #999;">»</span>
+    <a href="/authors" style="color: var(--primary-red); text-decoration: none;">Authors</a>
+    <span style="margin: 0 6px; color: #999;">»</span>
+    <span style="color: #333; font-weight: 600;"><%= author.name %></span>
+  </div>
+
+  <!-- Author Profile Card -->
+  <div class="sarkari-box" style="margin-bottom: 24px; background: #ffffff;">
+    <div class="sarkari-box-header" style="text-align: left; padding: 12px 20px;">
+      Verified Author Profile &amp; Editorial Bio
+    </div>
+
+    <div class="author-profile-card">
+      <div class="author-profile-flex">
+        <!-- Avatar -->
+        <div class="author-profile-avatar-wrap">
+          <img 
+            src="<%= author.avatar_url || '/images/default-avatar.svg' %>" 
+            alt="<%= author.name %>" 
+            style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 4px solid #f1f5f9; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"
+          >
+          <div style="margin-top: 8px;">
+            <span style="background: #dcfce7; color: #166534; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; display: inline-flex; align-items: center; gap: 4px;">
+              <span>✓</span> Verified Fact-Checker
+            </span>
+          </div>
+        </div>
+
+        <!-- Info Details -->
+        <div class="author-profile-info">
+          <h1 style="margin: 0 0 6px 0; font-size: 24px; color: #0f172a; font-weight: 800;">
+            <%= author.name %>
+          </h1>
+          <div style="font-size: 14px; font-weight: 700; color: #ab183d; margin-bottom: 10px;">
+            💼 <%= author.role || 'Senior Recruitment Analyst' %>
+          </div>
+
+          <!-- Credentials Pills -->
+          <div class="author-credentials-wrap">
+            <% if (author.qualification) { %>
+              <span style="background: #f1f5f9; color: #334155; padding: 4px 10px; border-radius: 4px; border: 1px solid #e2e8f0;">
+                🎓 <b>Qualification:</b> <%= author.qualification %>
+              </span>
+            <% } %>
+            <% if (author.experience) { %>
+              <span style="background: #f1f5f9; color: #334155; padding: 4px 10px; border-radius: 4px; border: 1px solid #e2e8f0;">
+                ⭐ <b>Experience:</b> <%= author.experience %>
+              </span>
+            <% } %>
+            <span style="background: #fef2f2; color: #991b1b; padding: 4px 10px; border-radius: 4px; border: 1px solid #fecaca; font-weight: 700;">
+              📚 <%= posts ? posts.length : 0 %> Articles Published
+            </span>
+          </div>
+
+          <!-- Bio -->
+          <p style="margin: 0 0 16px 0; font-size: 13.5px; line-height: 1.65; color: #475569;">
+            <%= author.bio || 'Government recruitment intelligence analyst and competitive exam researcher at Govt Exam Zone.' %>
+          </p>
+
+          <!-- Social Links -->
+          <div class="author-social-wrap">
+            <% if (author.telegram_url) { %>
+              <a href="<%= author.telegram_url %>" target="_blank" rel="noopener noreferrer" style="background: #0088cc; color: #fff; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+                ✈️ Telegram
+              </a>
+            <% } %>
+            <% if (author.twitter_url) { %>
+              <a href="<%= author.twitter_url %>" target="_blank" rel="noopener noreferrer" style="background: #000; color: #fff; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+                🐦 Twitter / X
+              </a>
+            <% } %>
+            <% if (author.linkedin_url) { %>
+              <a href="<%= author.linkedin_url %>" target="_blank" rel="noopener noreferrer" style="background: #0a66c2; color: #fff; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+                💼 LinkedIn
+              </a>
+            <% } %>
+            <% if (author.email) { %>
+              <a href="mailto:<%= author.email %>" style="background: #475569; color: #fff; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+                ✉️ <%= author.email %>
+              </a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Author's Published Posts -->
+  <div class="sarkari-box" style="margin-bottom: 30px;">
+    <div class="sarkari-box-header" style="text-align: left; padding: 12px 20px;">
+      Recent Notifications &amp; Articles Published by <%= author.name %> (<%= posts ? posts.length : 0 %>)
+    </div>
+
+    <ul class="sarkari-box-list">
+      <% if (posts && posts.length > 0) { %>
+        <% posts.forEach(post => { %>
+          <li>
+            <span class="list-chevron">›</span>
+            <div style="flex: 1;">
+              <a href="/post/<%= post.slug %>" style="font-weight: bold; color: var(--link-blue); font-size: 14.5px;">
+                <%= post.title %>
+              </a>
+              <% if (post.department) { %>
+                <span style="color: #666; font-size: 12.5px;"> (<%= post.department %>)</span>
+              <% } %>
+              <% if (post.category) { %>
+                <span style="background: #e2e8f0; color: #334155; font-size: 11px; padding: 2px 7px; border-radius: 3px; font-weight: 600; margin-left: 6px; text-transform: uppercase;">
+                  <%= post.category %>
+                </span>
+              <% } %>
+              <% if (post.last_date) { %>
+                <span class="tag-badge tag-green" style="margin-left: 6px;">Last Date: <%= post.last_date %></span>
+              <% } %>
+              <div style="font-size: 12px; color: #888; margin-top: 3px;">
+                🕒 Published on <%= post.post_date || (post.created_at ? new Date(post.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : '2026') %>
+              </div>
+            </div>
+          </li>
+        <% }) %>
+      <% } else { %>
+        <li style="padding: 24px; text-align: center; color: #64748b;">
+          No notifications published by this author yet.
+        </li>
+      <% } %>
+    </ul>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /api
+Disallow: /api/*
+
+Crawl-delay: 1
+
+Sitemap: https://govtexamzone.com/sitemap.xml

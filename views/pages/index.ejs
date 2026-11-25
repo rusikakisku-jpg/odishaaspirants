@@ -1,0 +1,182 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<main class="container">
+  <%
+    const isBoxVisible = (slug) => typeof visibleCategories === 'undefined' || visibleCategories[slug] !== false;
+    const homeCategoryBoxes = [
+      { slug: 'latest-jobs', title: 'Latest Jobs', moreLabel: 'View More Latest Jobs →', emptyText: 'No jobs posted yet.', items: latestJobs },
+      { slug: 'admit-card', title: 'Admit Card', moreLabel: 'View More Admit Card →', emptyText: 'No admit cards available yet.', items: admitCards },
+      { slug: 'answer-key', title: 'Answer Key', moreLabel: 'View More Answer Key →', emptyText: 'No answer keys available yet.', items: answerKeys },
+      { slug: 'result', title: 'Result', moreLabel: 'View More Result →', emptyText: 'No results available yet.', items: results },
+      { slug: 'syllabus', title: 'Syllabus', moreLabel: 'View More Syllabus →', emptyText: 'No syllabus updates posted yet.', items: syllabi },
+      { slug: 'certificate-verification', title: 'Certificate Verification', moreLabel: 'View More Verification →', emptyText: 'No verification services listed.', items: verifications },
+      { slug: 'admission', title: 'Admission', moreLabel: 'View More Admission →', emptyText: 'No admission forms available yet.', items: admissions },
+      { slug: 'important', title: 'Important', moreLabel: 'View More Important →', emptyText: 'No updates listed.', items: importants }
+    ].filter(box => isBoxVisible(box.slug));
+  %>
+
+  <!-- DYNAMIC VISIBLE CATEGORY BOXES -->
+  <% if (homeCategoryBoxes.length > 0) { %>
+  <section class="content-grid-3">
+    <% homeCategoryBoxes.forEach(box => { %>
+      <div class="sarkari-box" data-category-box="<%= box.slug %>">
+        <div class="sarkari-box-header">
+          <a href="/category/<%= box.slug %>"><%= box.title %></a>
+        </div>
+        <ul class="sarkari-box-list">
+          <% if (box.items && box.items.length > 0) { %>
+            <% box.items.forEach(post => { %>
+              <li>
+                <span class="list-chevron">›</span>
+                <div>
+                  <a href="/post/<%= post.slug %>"><%= post.title %></a>
+                </div>
+              </li>
+            <% }) %>
+          <% } else { %>
+            <li><%= box.emptyText %></li>
+          <% } %>
+        </ul>
+        <div class="sarkari-box-footer">
+          <a href="/category/<%= box.slug %>"><%= box.moreLabel %></a>
+        </div>
+      </div>
+    <% }) %>
+  </section>
+  <% } %>
+
+  <!-- HOMEPAGE FAQ SECTION WITH SCHEMA.ORG STRUCTURED DATA -->
+  <section class="homepage-faq-section" style="margin: 25px 0 10px 0;">
+    <div class="sarkari-box" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+      <div class="sarkari-box-header" style="text-align: left; padding: 12px 18px; font-size: 15px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+        <span>❓ Frequently Asked Questions (FAQ) - Govt Exam Zone</span>
+        <a href="/faq" style="font-size: 12.5px; color: #fff; text-decoration: underline; font-weight: normal;">View All FAQs →</a>
+      </div>
+      
+      <div style="padding: 16px 18px;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <details style="border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;">
+            <summary style="font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;">
+              Q1: What is Govt Exam Zone (govtexamzone.com) and what information is provided?
+            </summary>
+            <div style="padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;">
+              Govt Exam Zone is an independent educational news and candidate notification portal. We provide fastest live updates for Central and State Government Jobs (Sarkari Naukri), Online Application Forms, Exam Dates, Admit Cards, Official Answer Keys, and Results across UPSC, SSC, Railways, State Police, Banking, and Teaching recruitment exams.
+            </div>
+          </details>
+
+          <details style="border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;">
+            <summary style="font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;">
+              Q2: Are all government job alerts and services on Govt Exam Zone free?
+            </summary>
+            <div style="padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;">
+              Yes, 100% free. We never charge candidates any registration fees, subscription costs, or guidance charges. All notification briefs, syllabus documents, cutoff marks, and direct official links are completely free for all aspirants.
+            </div>
+          </details>
+
+          <details style="border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;">
+            <summary style="font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;">
+              Q3: How are recruitment notifications verified on this website?
+            </summary>
+            <div style="padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;">
+              Our dedicated editorial desk cross-checks all circulars directly with official government employment gazettes (Employment News) and statutory commission portals (SSC, UPSC, RRB, State PSCs, NTA). Every post includes direct links to the official PDF notification for complete transparency.
+            </div>
+          </details>
+
+          <details style="border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;">
+            <summary style="font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;">
+              Q4: How do I apply online for the latest government vacancies?
+            </summary>
+            <div style="padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;">
+              Click on the notification of your interest in the "Latest Jobs" box. Review the eligibility requirements, age limit, and cutoff dates. In the "Important Links" section at the bottom, click "Apply Online" to navigate securely to the official department application portal.
+            </div>
+          </details>
+
+          <details style="border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;">
+            <summary style="font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;">
+              Q5: How can I download Admit Cards and check Examination Results?
+            </summary>
+            <div style="padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;">
+              Visit the "Admit Card" or "Result" category on our homepage. Click on your exam name and choose an active server download link. Enter your Registration Number or Roll Number and Date of Birth to access your hall ticket or scorecard directly from the official portal.
+            </div>
+          </details>
+
+          <details style="border: 1px solid #e2e8f0; border-radius: 5px; background: #f8fafc; overflow: hidden;">
+            <summary style="font-weight: 700; color: #0f172a; padding: 11px 14px; cursor: pointer; user-select: none; background: #f1f5f9; outline: none; font-size: 14px;">
+              Q6: How can I receive real-time notifications on my mobile phone?
+            </summary>
+            <div style="padding: 12px 14px; color: #334155; font-size: 13.5px; line-height: 1.6; background: #ffffff; border-top: 1px solid #e2e8f0;">
+              Join our official verified <a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' %>" target="_blank" rel="noopener" style="color: #0284c7; font-weight: bold;">Telegram Channel</a> and <a href="<%= (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' %>" target="_blank" rel="noopener" style="color: #16a34a; font-weight: bold;">WhatsApp Channel</a> for instant alerts as soon as an exam notification is released.
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="sarkari-box-footer" style="text-align: center; padding: 10px 16px; background: #f8fafc; border-top: 1px solid #e2e8f0;">
+        <a href="/faq" style="color: var(--primary-red); font-weight: 700; text-decoration: none; font-size: 13.5px;">
+          📖 Have more questions? Read our Complete Frequently Asked Questions (FAQ) Directory →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema.org JSON-LD FAQPage for Homepage Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Govt Exam Zone (govtexamzone.com) and what information is provided?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Govt Exam Zone is an independent educational news and candidate notification portal providing fastest live updates for Central and State Government Jobs (Sarkari Naukri), Online Application Forms, Exam Dates, Admit Cards, Official Answer Keys, and Results."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are all government job alerts and services on Govt Exam Zone free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, 100% free. We never charge candidates any registration fees, subscription costs, or guidance charges. All notification briefs, syllabus documents, cutoff marks, and direct official links are completely free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are recruitment notifications verified on this website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our dedicated editorial desk cross-checks all circulars directly with official government employment gazettes (Employment News) and statutory commission portals (SSC, UPSC, RRB, State PSCs, NTA). Every post includes direct links to the official PDF notification."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I apply online for the latest government vacancies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Click on the notification of your interest in the Latest Jobs box. Review the eligibility requirements, age limit, and cutoff dates. In the Important Links section at the bottom, click Apply Online to navigate securely to the official department application portal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I download Admit Cards and check Examination Results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Visit the Admit Card or Result category on our homepage. Click on your exam name and choose an active server download link. Enter your Registration Number or Roll Number and Date of Birth to access your hall ticket or scorecard directly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I receive real-time notifications on my mobile phone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Join our official verified Telegram Channel and WhatsApp Channel for instant alerts as soon as an exam notification is released."
+        }
+      }
+    ]
+  }
+  </script>
+</main>
+
+<%- include('../partials/footer') %>

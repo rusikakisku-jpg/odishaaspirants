@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ab183d" />
+      <stop offset="100%" stop-color="#780b26" />
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="url(#avatarGrad)" stroke="#ffffff" stroke-width="3" />
+  <!-- Silhouette Head -->
+  <circle cx="60" cy="45" r="22" fill="#ffffff" />
+  <!-- Silhouette Shoulders/Body -->
+  <path d="M26 102 C28 78, 44 70, 60 70 C76 70, 92 78, 94 102 Z" fill="#ffffff" />
+</svg>

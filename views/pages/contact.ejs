@@ -1,0 +1,265 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<%
+  const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
+    ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
+    : 'https://govtexamzone.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+%>
+
+<!-- Schema.org JSON-LD Structured Data: BreadcrumbList & ContactPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "<%= siteDomain %>"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact Us",
+          "item": "<%= siteDomain %>/contact-us"
+        }
+      ]
+    },
+    {
+      "@type": "ContactPage",
+      "name": "Contact Us & Candidate Helpdesk - <%= portalName %>",
+      "url": "<%= siteDomain %>/contact-us",
+      "description": "Official communication and candidate helpdesk for <%= portalName %>. Direct support at contact.govtexamzone@gmail.com.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "<%= portalName %>",
+        "url": "<%= siteDomain %>",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "contact.govtexamzone@gmail.com",
+          "contactType": "Customer Support & Grievance Redressal",
+          "areaServed": "IN",
+          "availableLanguage": ["en", "hi"]
+        }
+      }
+    }
+  ]
+}
+</script>
+
+<main class="container">
+  <!-- Breadcrumb -->
+  <div style="font-size: 13px; margin: 10px 0 14px 2px; color: #666;">
+    <a href="/" style="color: var(--primary-red); font-weight: bold; text-decoration: none;">🏠 Home</a>
+    <span style="margin: 0 6px; color: #999;">»</span>
+    <span style="color: #333; font-weight: 600;">Contact Us</span>
+  </div>
+
+  <div class="sarkari-box" style="margin-bottom: 30px; background: #ffffff;">
+    <h1 class="sarkari-box-header" style="margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;">
+      Contact Us &amp; Candidate Support Helpdesk - <%= portalName %>
+    </h1>
+
+    <div class="static-page-content" style="padding: 22px 20px; line-height: 1.7; color: #334155;">
+      <p style="margin-top: 0; font-size: 14.5px;">
+        Welcome to the official <b><%= portalName %></b> candidate helpdesk. Whether you have a query regarding examination notifications, need to report a typographical discrepancy, have feedback, or wish to get in touch with our editorial research team, we are here to assist you.
+      </p>
+
+      <!-- Grid Cards: Email, Real-time channels, Support desk -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin: 22px 0;">
+        
+        <!-- Card 1: Official Email Desk -->
+        <div style="background: #fdfae7; border: 1px solid #ffd480; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 24px; margin-bottom: 6px;">📧</div>
+            <h2 style="font-size: 16px; color: #92400e; margin: 0 0 6px 0; font-weight: 700;">
+              Official Support Email
+            </h2>
+            <p style="font-size: 13px; color: #78350f; margin: 0 0 12px 0;">
+              For all candidate queries, corrections, feedback, and official communication:
+            </p>
+            <div style="background: #ffffff; border: 1px solid #fcd34d; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px;">
+              <span style="font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 700; display: block; margin-bottom: 2px;">Email Address</span>
+              <div style="font-family: monospace; font-size: 15px; font-weight: 700; color: var(--primary-red); word-break: break-all;">
+                <!--email_off-->contact.govtexamzone@gmail.com<!--/email_off-->
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <!--email_off-->
+            <a href="mailto:contact.govtexamzone@gmail.com" class="btn btn-primary btn-sm" style="background: var(--primary-red); border-color: var(--primary-red); padding: 7px 14px; text-decoration: none; font-size: 13px; font-weight: 600;">
+              ✉️ Send Email
+            </a>
+            <!--/email_off-->
+            <button type="button" class="btn btn-secondary btn-sm" onclick="copyContactEmail()" id="copyEmailBtn" style="padding: 7px 14px; font-size: 13px; font-weight: 600;">
+              📋 Copy Address
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Real-Time Broadcast Channels -->
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 24px; margin-bottom: 6px;">📲</div>
+            <h2 style="font-size: 16px; color: #166534; margin: 0 0 6px 0; font-weight: 700;">
+              Official Broadcast Channels
+            </h2>
+            <p style="font-size: 13px; color: #15803d; margin: 0 0 12px 0;">
+              Get real-time breaking alerts directly on your mobile as soon as exam notices are issued:
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+              <a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' %>" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; text-decoration: none; color: #0284c7; font-weight: 600; font-size: 13.5px;">
+                <span style="font-size: 18px;">✈️</span>
+                <span>Join Official Telegram Channel</span>
+              </a>
+              <a href="<%= (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' %>" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; text-decoration: none; color: #16a34a; font-weight: 600; font-size: 13.5px;">
+                <span style="font-size: 18px;">💬</span>
+                <span>Join Official WhatsApp Channel</span>
+              </a>
+            </div>
+          </div>
+          <div style="font-size: 12px; color: #15803d;">
+            ✅ 100% Free &amp; Verified Government Job Alerts
+          </div>
+        </div>
+
+        <!-- Card 3: Support Hours & Guidelines -->
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 24px; margin-bottom: 6px;">⏱️</div>
+            <h2 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; font-weight: 700;">
+              Helpdesk Response Timetable
+            </h2>
+            <ul style="padding-left: 18px; margin: 0 0 12px 0; font-size: 13px; color: #475569; line-height: 1.6;">
+              <li><b>Review Timelines:</b> Within 24 to 48 business hours.</li>
+              <li><b>Working Schedule:</b> Monday to Saturday (10:00 AM – 6:00 PM IST).</li>
+              <li><b>Queries Handled:</b> Typographical error corrections, broken official links, date verification.</li>
+            </ul>
+          </div>
+          <div style="background: #e2e8f0; border-radius: 4px; padding: 8px 10px; font-size: 12px; color: #334155;">
+            💡 Quick Answer Needed? Visit our <a href="/faq" style="color: var(--primary-red); font-weight: 700;">FAQ Directory →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Message Composer -->
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 22px 20px; margin: 26px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+        <h2 style="color: var(--primary-red); font-size: 17px; margin-top: 0; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+          <span>📝</span> Send a Direct Message to Our Editorial Desk
+        </h2>
+        <p style="font-size: 13.5px; color: #64748b; margin-top: 0; margin-bottom: 18px;">
+          Fill out the details below. Clicking "Compose Email" will open your email application addressed directly to our helpdesk with your message formatted.
+        </p>
+
+        <form id="contactHelpdeskForm" onsubmit="handleContactSubmit(event)">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;">
+            <div>
+              <label for="contact_name" style="display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;">Your Name *</label>
+              <input type="text" id="contact_name" class="form-control" placeholder="e.g. Rahul Sharma" required style="width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;">
+            </div>
+            <div>
+              <label for="contact_subject_type" style="display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;">Reason for Contact *</label>
+              <select id="contact_subject_type" class="form-control" style="width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;">
+                <option value="Correction Request / Typo">Report Typo / Date Discrepancy</option>
+                <option value="General Query regarding Job Post">General Query regarding Job Post</option>
+                <option value="Broken Official Link Report">Report Broken Government Link</option>
+                <option value="Website Feedback & Suggestion">Website Feedback &amp; Suggestion</option>
+                <option value="Other Inquiries">Other Inquiries</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <label for="contact_exam_name" style="display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;">Exam Name / Notification URL (Optional)</label>
+            <input type="text" id="contact_exam_name" class="form-control" placeholder="e.g. SSC CGL 2026 or Page Link" style="width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box;">
+          </div>
+
+          <div style="margin-bottom: 18px;">
+            <label for="contact_message" style="display: block; font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 5px;">Your Message / Description *</label>
+            <textarea id="contact_message" rows="4" class="form-control" placeholder="Please describe your query or report clearly..." required style="width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 14px; box-sizing: border-box; font-family: inherit;"></textarea>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <button type="submit" class="btn btn-primary" style="background: var(--primary-red); border-color: var(--primary-red); padding: 10px 22px; font-size: 14.5px; font-weight: 700; cursor: pointer;">
+              🚀 Compose &amp; Send to Helpdesk
+            </button>
+            <span style="font-size: 12.5px; color: #64748b;">
+              Direct Email: <!--email_off-->contact.govtexamzone@gmail.com<!--/email_off-->
+            </span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Reporting Typo Instructions -->
+      <h2 style="color: var(--primary-red); font-size: 17px; margin-top: 26px; margin-bottom: 10px;">
+        🔍 Guidelines for Reporting Typographical Corrections
+      </h2>
+      <p style="margin-top: 0; font-size: 13.5px;">
+        To ensure prompt editorial review, please include the reference URL of the official government employment gazette or departmental PDF bulletin (.gov.in / .nic.in). Our research team verifies all submissions against statutory gazettes.
+      </p>
+
+      <!-- Anti-Fraud & Scam Advisory -->
+      <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 16px 20px; margin-top: 26px;">
+        <h3 style="margin-top: 0; color: #991b1b; font-size: 15px; display: flex; align-items: center; gap: 6px;">
+          <span>⚠️</span> Important Anti-Fraud &amp; Candidate Security Advisory
+        </h3>
+        <p style="margin: 0; font-size: 13.5px; color: #7f1d1d; line-height: 1.65;">
+          <b><%= portalName %> is a 100% free informational portal and never asks for money, application fees, or OTPs from candidates.</b> 
+          We do not sell recruitment forms or provide appointment guarantees. If any individual contacts you demanding money claiming to represent <%= portalName %>, please recognize it as an unauthorized fraud and report it immediately to our official email (<!--email_off-->contact.govtexamzone@gmail.com<!--/email_off-->) and your local cybercrime authority.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<script>
+function copyContactEmail() {
+  var email = "contact.govtexamzone@gmail.com";
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(email).then(function() {
+      var btn = document.getElementById("copyEmailBtn");
+      if (btn) {
+        var orig = btn.innerHTML;
+        btn.innerHTML = "✅ Copied!";
+        setTimeout(function() { btn.innerHTML = orig; }, 2000);
+      }
+      var toast = document.getElementById("toast");
+      if (toast) {
+        toast.innerText = "Email copied to clipboard: " + email;
+        toast.className = "toast-msg show";
+        setTimeout(function() { toast.className = toast.className.replace("show", ""); }, 2500);
+      }
+    });
+  } else {
+    prompt("Copy email address:", email);
+  }
+}
+
+function handleContactSubmit(e) {
+  e.preventDefault();
+  var name = document.getElementById("contact_name").value.trim();
+  var reason = document.getElementById("contact_subject_type").value;
+  var exam = document.getElementById("contact_exam_name").value.trim();
+  var msg = document.getElementById("contact_message").value.trim();
+
+  var subject = encodeURIComponent("[" + reason + "] " + (exam ? "- " + exam : "") + " from " + name);
+  var body = encodeURIComponent(
+    "Dear Govt Exam Zone Helpdesk,\n\n" +
+    msg + "\n\n" +
+    (exam ? "Referenced Notification / URL: " + exam + "\n" : "") +
+    "Sender Name: " + name + "\n"
+  );
+
+  window.location.href = "mailto:contact.govtexamzone@gmail.com?subject=" + subject + "&body=" + body;
+}
+</script>
+
+<%- include('../partials/footer') %>

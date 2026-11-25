@@ -1,0 +1,324 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<!-- Schema.org JSON-LD Structured Data for Google Job Indexing -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "<%= post.title.replace(/"/g, '\\"') %>",
+  "description": "<%= (post.short_desc || post.title).replace(/"/g, '\\"') %>",
+  "datePosted": "<%= post.created_at ? new Date(post.created_at).toISOString() : new Date().toISOString() %>",
+  <% 
+    let validDate = new Date(new Date().getFullYear() + 1, 11, 31, 23, 59, 59).toISOString();
+    if (post.last_date) {
+      try {
+        const parsed = new Date(post.last_date);
+        if (!isNaN(parsed.getTime())) {
+          validDate = parsed.toISOString();
+        }
+      } catch(e) {}
+    }
+  %>
+  "validThrough": "<%= validDate %>",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "<%= (post.department || 'Government Recruitment Board').replace(/"/g, '\\"') %>",
+    "sameAs": "<%= post.official_website_url || ((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://govtexamzone.com') %>"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": <%- JSON.stringify((typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone') %>,
+    "url": <%- JSON.stringify(((typeof settings !== 'undefined' && settings.site_domain) ? (settings.site_domain.startsWith('http') ? settings.site_domain : 'https://' + settings.site_domain) : 'https://govtexamzone.com')) %>
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  },
+  "employmentType": "FULL_TIME"
+}
+</script>
+
+<!-- Schema.org JSON-LD BreadcrumbList -->
+<script type="application/ld+json">
+<%
+  const detailDomain = (typeof settings !== 'undefined' && settings.site_domain) 
+    ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
+    : 'https://govtexamzone.com';
+%>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "<%= detailDomain %>"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "<%= (catInfo.name || post.category).replace(/"/g, '\\"') %>",
+      "item": "<%= detailDomain %>/category/<%= post.category %>"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "<%= post.title.replace(/"/g, '\\"') %>"
+    }
+  ]
+}
+</script>
+
+<% const activeDetailLayout = (typeof settings !== 'undefined' && settings.post_detail_layout === 'blog_2col') ? 'blog_2col' : 'classic'; %>
+
+<% if (activeDetailLayout === 'blog_2col') { %>
+<!-- ============================================================
+     MODE 2: MODERN 2-COLUMN EDITORIAL BLOG LAYOUT (CBTRank Style)
+     ============================================================ -->
+<main class="gez-blog-page-main">
+  <div class="gez-blog-main-container">
+    <div class="gez-blog-layout">
+
+      <!-- Left Main Article Area -->
+      <div class="gez-blog-content-area">
+        <article class="gez-article-wrap">
+          <!-- Breadcrumb -->
+          <div class="detail-breadcrumb" style="margin-bottom: 12px;">
+            <a href="/">Home</a> »
+            <a href="/category/<%= post.category %>"><%= catInfo.name %></a> »
+            <span><%= post.title %></span>
+          </div>
+
+          <!-- Editorial Article Header -->
+          <header class="gez-article-header">
+            <div class="gez-article-cats">
+              <a href="/category/<%= post.category %>" class="gez-article-cat-tag"><%= catInfo.name %></a>
+            </div>
+
+            <h1 class="gez-article-title"><%= post.title %></h1>
+
+            <div class="gez-article-meta">
+              <span class="gez-meta-byline">
+                by <a href="<%= author.slug ? '/author/' + author.slug : '/authors' %>"><%= author.name || 'Govt Exam Zone Team' %></a>
+              </span>
+              <span class="gez-meta-date">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                <%= post.post_date || formatDate(post.created_at) %>
+              </span>
+              <% if (post.department) { %>
+                <span class="gez-meta-dept">🏛️ <%= post.department %></span>
+              <% } %>
+            </div>
+          </header>
+
+          <!-- Full Article & Structured Details Body -->
+          <div class="gez-article-body">
+            <%- include('../partials/detail-body') %>
+          </div>
+
+          <!-- Social Share Bar (WhatsApp & Telegram) -->
+          <%
+            const sharePageUrl = typeof fullUrl !== 'undefined' ? fullUrl : ('https://govtexamzone.com/post/' + post.slug);
+          %>
+          <div class="gez-share-bar">
+            <span class="gez-share-label">Share:</span>
+            <a
+              href="https://api.whatsapp.com/send?text=<%= encodeURIComponent(post.title + ' - ' + sharePageUrl) %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="gez-share-btn gez-share-wa"
+            >
+              WhatsApp
+            </a>
+            <a
+              href="https://t.me/share/url?url=<%= encodeURIComponent(sharePageUrl) %>&text=<%= encodeURIComponent(post.title) %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="gez-share-btn gez-share-tg"
+            >
+              Telegram
+            </a>
+          </div>
+
+          <!-- Join Community Alerts CTA Box -->
+          <div class="gez-cta-box">
+            <h3>Get Instant Govt Exam &amp; Result Alerts</h3>
+            <p>Join our official Telegram &amp; WhatsApp channels for fastest job notifications, admit cards, and cutoff updates.</p>
+            <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+              <a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' %>" target="_blank" rel="noopener noreferrer" class="gez-btn-cta" style="background: #229ED9;">
+                ✈️ Join Telegram Channel
+              </a>
+              <a href="<%= (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' %>" target="_blank" rel="noopener noreferrer" class="gez-btn-cta" style="background: #16a34a;">
+                💬 Join WhatsApp Channel
+              </a>
+            </div>
+          </div>
+
+          <!-- Related Category Posts -->
+          <% if (relatedPosts && relatedPosts.length > 0) { %>
+            <div style="margin-top: 28px; border-top: 1px solid #e2e8f0; padding-top: 18px;">
+              <h3 style="color: #0f172a; font-size: 16.5px; font-weight: 800; margin-bottom: 12px;">More <%= catInfo.name %> Updates</h3>
+              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+                <% relatedPosts.forEach(rel => { %>
+                  <li style="padding: 8px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <a href="/post/<%= rel.slug %>" style="font-weight: 700; color: #1d4ed8; font-size: 13.5px; text-decoration: none;"><%= rel.title %></a>
+                    <% if (rel.post_date) { %>
+                      <span style="font-size: 11.5px; color: #64748b; white-space: nowrap;"><%= rel.post_date %></span>
+                    <% } %>
+                  </li>
+                <% }) %>
+              </ul>
+            </div>
+          <% } %>
+        </article>
+      </div>
+
+      <!-- Right Sidebar (320px) -->
+      <aside class="gez-blog-sidebar">
+        <!-- Search Widget -->
+        <div class="gez-widget">
+          <h3 class="gez-widget-title">Search</h3>
+          <form action="/search" method="GET" class="gez-sidebar-search-form">
+            <input
+              type="search"
+              name="q"
+              class="gez-sidebar-search-input"
+              placeholder="Search jobs, admit card, results..."
+              required
+            >
+            <button type="submit" class="gez-sidebar-search-btn" aria-label="Submit Search">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Recent Posts Widget -->
+        <% if (typeof recentPosts !== 'undefined' && recentPosts && recentPosts.length > 0) { %>
+        <div class="gez-widget">
+          <h3 class="gez-widget-title">Recent Posts</h3>
+          <ul class="gez-sidebar-posts-list">
+            <% recentPosts.forEach(p => { %>
+              <li class="gez-sidebar-post-item">
+                <div class="gez-sidebar-post-badge">
+                  <%= (categories[p.category] && categories[p.category].name) ? categories[p.category].name : p.category %>
+                </div>
+                <a href="/post/<%= p.slug %>" class="gez-sidebar-post-title"><%= p.title %></a>
+                <span class="gez-sidebar-post-date"><%= p.post_date || formatDate(p.created_at) %></span>
+              </li>
+            <% }) %>
+          </ul>
+        </div>
+        <% } %>
+
+        <!-- Popular Posts Widget -->
+        <% if (typeof popularPosts !== 'undefined' && popularPosts && popularPosts.length > 0) { %>
+        <div class="gez-widget">
+          <h3 class="gez-widget-title">Popular Posts</h3>
+          <ul class="gez-sidebar-posts-list">
+            <% popularPosts.forEach(p => { %>
+              <li class="gez-sidebar-post-item">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 3px;">
+                  <span class="gez-sidebar-post-badge" style="margin-bottom: 0;">
+                    <%= (categories[p.category] && categories[p.category].name) ? categories[p.category].name : p.category %>
+                  </span>
+                  <span style="font-size: 11px; color: #64748b; font-weight: 600;">👁️ <%= p.views || 0 %></span>
+                </div>
+                <a href="/post/<%= p.slug %>" class="gez-sidebar-post-title"><%= p.title %></a>
+                <span class="gez-sidebar-post-date"><%= p.post_date || formatDate(p.created_at) %></span>
+              </li>
+            <% }) %>
+          </ul>
+        </div>
+        <% } %>
+
+        <!-- Categories Widget -->
+        <div class="gez-widget">
+          <h3 class="gez-widget-title">Categories</h3>
+          <ul class="gez-sidebar-cat-list">
+            <%
+              const countMap = {};
+              if (typeof categoryCounts !== 'undefined' && Array.isArray(categoryCounts)) {
+                categoryCounts.forEach(c => { countMap[c.category] = c.count; });
+              }
+            %>
+            <% Object.keys(categories).forEach(catKey => { %>
+              <% if (typeof visibleCategories === 'undefined' || visibleCategories[catKey] !== false) { %>
+                <li class="gez-sidebar-cat-item">
+                  <a href="/category/<%= catKey %>" class="gez-sidebar-cat-link"><%= categories[catKey].name %></a>
+                  <span class="gez-sidebar-cat-count"><%= countMap[catKey] || 0 %></span>
+                </li>
+              <% } %>
+            <% }) %>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<% } else { %>
+<!-- ============================================================
+     MODE 1: CLASSIC SARKARI SINGLE-COLUMN LAYOUT (Default)
+     ============================================================ -->
+<main class="container detail-page-container">
+  <article class="post-detail-wrapper">
+    <!-- Breadcrumb -->
+    <div class="detail-breadcrumb">
+      <a href="/">Home</a> » 
+      <a href="/category/<%= post.category %>"><%= catInfo.name %></a> » 
+      <span><%= post.title %></span>
+    </div>
+
+    <!-- Title and Dept -->
+    <h1 class="detail-post-title"><%= post.title %></h1>
+    <% if (post.department) { %>
+      <div class="detail-dept-name"><%= post.department %></div>
+    <% } %>
+
+    <div class="detail-dates-strip">
+      <span class="info-label">Post Date / Update : </span><b class="important-val-postdate"><%= post.post_date || formatDate(post.created_at) %></b>
+    </div>
+
+    <!-- Social Connect Strip (Only Telegram & WhatsApp on Post Details) -->
+    <div class="social-bar" style="margin: 12px 0 14px 0;">
+      <a href="<%= (typeof settings !== 'undefined' && settings.telegram_url) ? settings.telegram_url : 'https://t.me/govtexamzoneofficial' %>" target="_blank" rel="noopener noreferrer" class="social-btn telegram">Join Telegram Channel</a>
+      <a href="<%= (typeof settings !== 'undefined' && settings.whatsapp_url) ? settings.whatsapp_url : 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' %>" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp">WhatsApp Channel</a>
+    </div>
+
+    <%- include('../partials/detail-body') %>
+
+    <!-- Related Posts -->
+    <% if (relatedPosts && relatedPosts.length > 0) { %>
+      <div style="margin-top: 30px; border-top: 2px solid #ddd; padding-top: 15px;">
+        <h3 style="color: var(--primary-red); margin-bottom: 10px;">More <%= catInfo.name %> Updates:</h3>
+        <ul style="list-style: square; padding-left: 25px; line-height: 1.8;">
+          <% relatedPosts.forEach(rel => { %>
+            <li>
+              <a href="/post/<%= rel.slug %>" style="font-weight: 600;"><%= rel.title %></a>
+              <% if (rel.post_date) { %>
+                <span style="font-size: 12px; color: #777;"> - <%= rel.post_date %></span>
+              <% } %>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+    <% } %>
+  </article>
+</main>
+<% } %>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,1111 @@
+<%- include('../partials/admin-nav', { currentPath: '/admin/settings' }) %>
+
+<div class="admin-card">
+  <!-- Page Header -->
+  <div class="admin-card-header" style="flex-wrap: wrap; gap: 12px;">
+    <div>
+      <h2>⚙️ Portal Master Settings &amp; Configuration</h2>
+      <div style="font-size: 13px; color: #64748b; margin-top: 2px;">
+        Comprehensive controls for branding, social channels, helpdesk, SEO, announcement banner, ads, and webmaster scripts.
+      </div>
+    </div>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/" target="_blank" class="btn btn-secondary btn-sm">🌐 View Live Website</a>
+      <button type="submit" form="masterSettingsForm" class="btn btn-primary btn-sm" style="padding: 8px 18px; font-weight: 700;">
+        💾 Save All Settings
+      </button>
+    </div>
+  </div>
+
+  <!-- Success Notification -->
+  <% if (typeof saved !== 'undefined' && saved) { %>
+    <div style="background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 14px 18px; border-radius: 8px; margin-bottom: 24px; font-weight: 600; display: flex; align-items: center; gap: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+      <span style="font-size: 18px;">✅</span>
+      <span>Portal settings successfully saved and instantly synchronized across the entire website!</span>
+    </div>
+  <% } %>
+
+  <!-- Section Quick Navigation Pills -->
+  <div class="settings-nav-pills" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 26px; border-bottom: 1px solid #e2e8f0; padding-bottom: 14px;">
+    <a href="#section-branding" class="settings-pill active">🌐 General &amp; Branding</a>
+    <a href="#section-layout" class="settings-pill">📰 Post Page Layout</a>
+    <a href="#section-categories" class="settings-pill">📂 Category Visibility</a>
+    <a href="#section-social" class="settings-pill">📲 Social Communities</a>
+    <a href="#section-helpdesk" class="settings-pill">✉️ Contact &amp; Helpdesk</a>
+    <a href="#section-seo" class="settings-pill">🚀 SEO &amp; Analytics</a>
+    <a href="#section-announcement" class="settings-pill">📢 Urgent Alert Bar</a>
+    <a href="#section-adsense" class="settings-pill">💰 AdSense &amp; Ads</a>
+    <a href="#section-scripts" class="settings-pill">🛠️ Custom Scripts</a>
+  </div>
+
+  <form id="masterSettingsForm" action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/settings/save" method="POST" enctype="multipart/form-data">
+    
+    <!-- 1. General & Brand Identity -->
+    <div id="section-branding" class="settings-group-card">
+      <div class="settings-group-header">
+        <span class="settings-group-icon">🌐</span>
+        <div>
+          <h3 class="settings-group-title">1. General &amp; Brand Identity</h3>
+          <p class="settings-group-desc">Configure website name, logo tagline, domain URL, and copyright attribution.</p>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="site_title">Portal Brand Name *</label>
+          <input 
+            type="text" 
+            id="site_title" 
+            name="site_title" 
+            class="form-control" 
+            value="<%= settings.site_title || 'Govt Exam Zone' %>" 
+            placeholder="Govt Exam Zone"
+            required
+          >
+          <small class="field-hint">Primary portal name displayed in top header and browser titles.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="header_subtitle">Header Subtitle (Logo Tag)</label>
+          <input 
+            type="text" 
+            id="header_subtitle" 
+            name="header_subtitle" 
+            class="form-control" 
+            value="<%= settings.header_subtitle || 'WWW.GOVTEXAMZONE.COM' %>" 
+            placeholder="WWW.GOVTEXAMZONE.COM"
+          >
+          <small class="field-hint">Subtitle displayed below the main logo in the red header bar.</small>
+        </div>
+      </div>
+
+      <!-- Website Logo & Favicon Box -->
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px; margin: 18px 0;">
+        <h4 style="margin: 0 0 14px 0; color: #1e293b; font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+          <span>🖼️</span> Website Logo &amp; Favicon Management
+        </h4>
+
+        <div class="form-row">
+          <!-- Logo Management -->
+          <div class="form-group" style="flex: 1; min-width: 280px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label for="site_logo" style="margin-bottom: 0;">Website Main Logo</label>
+              <button 
+                type="button" 
+                id="removeLogoBtn" 
+                class="btn btn-sm" 
+                style="background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;"
+                title="Remove logo so header shows clean text title only"
+              >
+                🗑️ Delete / Remove Logo
+              </button>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 10px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px;">
+              <div id="logoPreviewBox" style="width: 70px; height: 70px; background: #ab183d; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 5px; flex-shrink: 0; color: #fff; font-size: 11px; text-align: center;">
+                <% if (settings.site_logo && settings.site_logo.trim()) { %>
+                  <img id="logoPreviewImg" src="<%= settings.site_logo %>" alt="Current Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                  <span id="logoNoLogoText" style="font-size: 11px; font-weight: 600; color: #cbd5e1; display: none;">No Logo<br>(Text Only)</span>
+                <% } else { %>
+                  <img id="logoPreviewImg" src="" alt="Current Logo" style="max-width: 100%; max-height: 100%; object-fit: contain; display: none;">
+                  <span id="logoNoLogoText" style="font-size: 11px; font-weight: 600; color: #cbd5e1; display: inline-block;">No Logo<br>(Text Only)</span>
+                <% } %>
+              </div>
+              <div style="font-size: 12px; color: #475569; overflow: hidden; flex: 1;">
+                <div style="font-weight: 700; color: #1e293b; margin-bottom: 2px;">Header Logo Status</div>
+                <div id="logoPathText" style="word-break: break-all; font-family: monospace; color: <%= (settings.site_logo && settings.site_logo.trim()) ? '#0284c7' : '#dc2626' %>;">
+                  <%= (settings.site_logo && settings.site_logo.trim()) ? settings.site_logo : 'No logo active (Header displays text title only)' %>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 8px;">
+              <label style="font-size: 12px; font-weight: 600; color: #475569;">Upload New Logo File</label>
+              <input 
+                type="file" 
+                id="site_logo_file" 
+                name="site_logo_file" 
+                class="form-control" 
+                accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                style="padding: 6px;"
+              >
+            </div>
+
+            <div>
+              <label for="site_logo" style="font-size: 12px; font-weight: 600; color: #475569;">Or Direct Logo URL / Relative Path</label>
+              <input 
+                type="text" 
+                id="site_logo" 
+                name="site_logo" 
+                class="form-control" 
+                value="<%= settings.site_logo || '' %>" 
+                placeholder="Leave empty for no logo, or enter image path (e.g. /images/logo.png)"
+              >
+              <small class="field-hint">Leave blank or click "Delete / Remove Logo" above if you don't want any logo in the header. To add a logo, upload a file or enter a path.</small>
+            </div>
+          </div>
+
+          <!-- Favicon Management -->
+          <div class="form-group" style="flex: 1; min-width: 280px;">
+            <%
+              const activeFaviconVal = (typeof settings.site_favicon === 'string') ? settings.site_favicon : '/images/gez-logo.svg';
+              const hasFaviconVal = Boolean(activeFaviconVal && activeFaviconVal.trim());
+            %>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label for="site_favicon" style="margin-bottom: 0;">Website Browser Favicon</label>
+              <button 
+                type="button" 
+                id="removeFaviconBtn" 
+                class="btn btn-sm" 
+                style="background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;"
+                title="Remove custom browser favicon"
+              >
+                🗑️ Delete / Remove Favicon
+              </button>
+            </div>
+            <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 10px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px;">
+              <div style="width: 70px; height: 70px; background: #ffffff; border: 1px dashed #94a3b8; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 5px; flex-shrink: 0; text-align: center;">
+                <% if (hasFaviconVal) { %>
+                  <img id="faviconPreviewImg" src="<%= activeFaviconVal %>" alt="Current Favicon" style="width: 36px; height: 36px; object-fit: contain;">
+                  <span id="faviconNoIconText" style="font-size: 10.5px; font-weight: 600; color: #94a3b8; display: none;">No<br>Favicon</span>
+                <% } else { %>
+                  <img id="faviconPreviewImg" src="" alt="Current Favicon" style="width: 36px; height: 36px; object-fit: contain; display: none;">
+                  <span id="faviconNoIconText" style="font-size: 10.5px; font-weight: 600; color: #94a3b8; display: inline-block;">No<br>Favicon</span>
+                <% } %>
+              </div>
+              <div style="font-size: 12px; color: #475569; overflow: hidden; flex: 1;">
+                <div style="font-weight: 700; color: #1e293b; margin-bottom: 2px;">Active Browser Tab Icon</div>
+                <div id="faviconPathText" style="word-break: break-all; font-family: monospace; color: <%= hasFaviconVal ? '#0284c7' : '#dc2626' %>;">
+                  <%= hasFaviconVal ? activeFaviconVal : 'No custom favicon active (Browser default)' %>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 8px;">
+              <label style="font-size: 12px; font-weight: 600; color: #475569;">Upload New Favicon File</label>
+              <input 
+                type="file" 
+                id="site_favicon_file" 
+                name="site_favicon_file" 
+                class="form-control" 
+                accept="image/x-icon,image/png,image/svg+xml,image/jpeg,image/webp"
+                style="padding: 6px;"
+              >
+            </div>
+
+            <div>
+              <label for="site_favicon" style="font-size: 12px; font-weight: 600; color: #475569;">Or Direct Favicon URL / Relative Path</label>
+              <input 
+                type="text" 
+                id="site_favicon" 
+                name="site_favicon" 
+                class="form-control" 
+                value="<%= activeFaviconVal %>" 
+                placeholder="Leave empty for no custom favicon, or enter /images/gez-logo.svg"
+              >
+              <small class="field-hint">ICO, PNG, or SVG format (recommended 32x32 or 48x48). Click "Delete / Remove Favicon" above to clear it cleanly.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row" style="margin-top: 14px;">
+        <div class="form-group">
+          <label for="site_tagline">Portal Tagline / Slogan</label>
+          <input 
+            type="text" 
+            id="site_tagline" 
+            name="site_tagline" 
+            class="form-control" 
+            value="<%= settings.site_tagline || 'Latest Govt Jobs, Admit Card, Results 2026' %>" 
+            placeholder="Latest Govt Jobs, Admit Card, Results 2026"
+          >
+          <small class="field-hint">Used in SEO title suffixes and social link shares.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="site_domain">Primary Domain URL</label>
+          <input 
+            type="text" 
+            id="site_domain" 
+            name="site_domain" 
+            class="form-control" 
+            value="<%= settings.site_domain || 'https://govtexamzone.com' %>" 
+            placeholder="https://govtexamzone.com"
+          >
+          <small class="field-hint">Canonical domain used for generating sitemaps and share links.</small>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top: 14px;">
+        <label for="copyright_text">Footer Copyright Notice</label>
+        <input 
+          type="text" 
+          id="copyright_text" 
+          name="copyright_text" 
+          class="form-control" 
+          value="<%= settings.copyright_text || '© {year} govtexamzone.com. All Rights Reserved.' %>" 
+          placeholder="© {year} govtexamzone.com. All Rights Reserved."
+        >
+        <small class="field-hint">Fetched from backend settings on every page. Use <code>{year}</code> or any <code>20xx</code> year — it automatically updates to the current year on the live website.</small>
+      </div>
+    </div>
+
+
+    <!-- 1B. Full Post / Blog Detail Page Layout Configuration -->
+    <div id="section-layout" class="settings-group-card">
+      <div class="settings-group-header">
+        <span class="settings-group-icon">📰</span>
+        <div>
+          <h3 class="settings-group-title">Post / Full Blog Detail Page Layout (2 UI Modes)</h3>
+          <p class="settings-group-desc">Choose how full post/blog detail pages display on the frontend. Both Classic Sarkari posts and rich Blog articles automatically adapt to your selected layout.</p>
+        </div>
+      </div>
+
+      <% const activeLayout = (settings.post_detail_layout === 'blog_2col') ? 'blog_2col' : 'classic'; %>
+      <div class="layout-selector-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <!-- Option 1: Classic Sarkari Single-Column -->
+        <label class="layout-option-card <%= activeLayout === 'classic' ? 'selected' : '' %>" for="layout_classic">
+          <input 
+            type="radio" 
+            id="layout_classic" 
+            name="post_detail_layout" 
+            value="classic" 
+            <%= activeLayout === 'classic' ? 'checked' : '' %>
+            style="display: none;"
+          >
+          <div class="layout-card-top">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="layout-radio-dot"></span>
+              <strong style="font-size: 14.5px; color: #0f172a;">Classic Sarkari Single-Column</strong>
+            </div>
+            <span class="layout-badge classic-badge">Default Style</span>
+          </div>
+          <div class="layout-wireframe">
+            <div style="width: 100%; height: 10px; background: #ab183d; border-radius: 3px; margin-bottom: 6px;"></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 6px;">
+              <div style="height: 20px; background: #e2e8f0; border-radius: 3px;"></div>
+              <div style="height: 20px; background: #e2e8f0; border-radius: 3px;"></div>
+            </div>
+            <div style="width: 100%; height: 22px; background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 3px;"></div>
+          </div>
+          <p class="layout-card-desc">
+            Traditional centered single-column layout with full-width Important Dates, Application Fee, Vacancy tables, and Links.
+          </p>
+        </label>
+
+        <!-- Option 2: 2-Column Blog Layout with Sidebar -->
+        <label class="layout-option-card <%= activeLayout === 'blog_2col' ? 'selected' : '' %>" for="layout_blog_2col">
+          <input 
+            type="radio" 
+            id="layout_blog_2col" 
+            name="post_detail_layout" 
+            value="blog_2col" 
+            <%= activeLayout === 'blog_2col' ? 'checked' : '' %>
+            style="display: none;"
+          >
+          <div class="layout-card-top">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="layout-radio-dot"></span>
+              <strong style="font-size: 14.5px; color: #0f172a;">2-Column Blog + Sidebar Layout</strong>
+            </div>
+            <span class="layout-badge blog-badge">CBTRank Style</span>
+          </div>
+          <div class="layout-wireframe" style="display: grid; grid-template-columns: 2fr 1fr; gap: 6px;">
+            <div>
+              <div style="width: 70%; height: 8px; background: #0066ff; border-radius: 2px; margin-bottom: 5px;"></div>
+              <div style="width: 100%; height: 18px; background: #e2e8f0; border-radius: 3px; margin-bottom: 5px;"></div>
+              <div style="width: 100%; height: 24px; background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 3px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="height: 12px; background: #dbeafe; border-radius: 2px;"></div>
+              <div style="height: 20px; background: #e2e8f0; border-radius: 2px;"></div>
+              <div style="height: 20px; background: #e2e8f0; border-radius: 2px;"></div>
+            </div>
+          </div>
+          <p class="layout-card-desc">
+            Modern 2-column magazine layout: Full blog/post content on the left + Right sidebar with Search, Recent Posts, Popular Posts &amp; Share bar.
+          </p>
+        </label>
+      </div>
+    </div>
+
+    <!-- 1C. Frontend Category Visibility Controls -->
+    <div id="section-categories" class="settings-group-card">
+      <input type="hidden" name="has_category_visibility_ui" value="1">
+      <div class="settings-group-header" style="justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <span class="settings-group-icon">📂</span>
+          <div>
+            <h3 class="settings-group-title">Category Visibility Control (Show / Hide Sections on Website)</h3>
+            <p class="settings-group-desc">Uncheck any category with 0 posts to hide its box from Homepage, Header Navigation, Footer, Sidebar &amp; Sitemap.</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button type="button" id="btnHideEmptyCats" class="btn btn-secondary btn-sm">🙈 Hide All 0-Post Categories</button>
+          <button type="button" id="btnShowAllCats" class="btn btn-secondary btn-sm">👁️ Show All 8 Categories</button>
+        </div>
+      </div>
+
+      <%
+        const _hiddenSet = new Set(Array.isArray(typeof hiddenCategories !== 'undefined' ? hiddenCategories : []) ? hiddenCategories : []);
+        const _countMap = (typeof categoryCountMap !== 'undefined' && categoryCountMap) ? categoryCountMap : {};
+        const _autoHideEmpty = settings.auto_hide_empty_categories === '1';
+      %>
+      <label style="display: flex; align-items: center; gap: 10px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; cursor: pointer;">
+        <input type="checkbox" name="auto_hide_empty_categories" value="1" id="autoHideEmptyCheckbox" <%= _autoHideEmpty ? 'checked' : '' %> style="width: 17px; height: 17px; cursor: pointer;">
+        <div>
+          <strong style="font-size: 13.5px; color: #1e3a8a;">⚡ Automatically Hide Any Category With 0 Active Posts</strong>
+          <div style="font-size: 12px; color: #475569;">When enabled, empty categories stay hidden automatically and reappear automatically as soon as you publish a post in them.</div>
+        </div>
+      </label>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+        <% Object.keys(categories || {}).forEach(catKey => { %>
+          <%
+            const countVal = Number(_countMap[catKey] || 0);
+            const isChecked = !_hiddenSet.has(catKey);
+          %>
+          <label class="cat-vis-card" data-post-count="<%= countVal %>" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; border: 1.5px solid <%= isChecked ? '#86efac' : '#fecaca' %>; background: <%= isChecked ? '#f0fdf4' : '#fef2f2' %>; border-radius: 8px; cursor: pointer;">
+            <div style="min-width: 0;">
+              <div style="font-weight: 700; font-size: 13.5px; color: #0f172a;"><%= categories[catKey].name %></div>
+              <div style="font-size: 11.5px; font-weight: 600; color: <%= countVal > 0 ? '#15803d' : '#b45309' %>; margin-top: 2px;">
+                <%= countVal %> active <%= countVal === 1 ? 'post' : 'posts' %>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+              <span class="cat-vis-status-label" style="font-size: 11px; font-weight: 700; color: <%= isChecked ? '#166534' : '#991b1b' %>;">
+                <%= isChecked ? 'Visible' : 'Hidden' %>
+              </span>
+              <input type="checkbox" name="visible_categories" value="<%= catKey %>" class="cat-vis-checkbox" <%= isChecked ? 'checked' : '' %> style="width: 17px; height: 17px; cursor: pointer;">
+            </div>
+          </label>
+        <% }) %>
+      </div>
+    </div>
+
+
+    <!-- 2. Social Media & Community Channels -->
+    <div id="section-social" class="settings-group-card">
+      <div class="settings-group-header">
+        <span class="settings-group-icon">📲</span>
+        <div>
+          <h3 class="settings-group-title">2. Social Media &amp; Community Channels</h3>
+          <p class="settings-group-desc">Connect official Telegram, WhatsApp, YouTube, and social media handles.</p>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="telegram_url">✈️ Official Telegram Channel Link *</label>
+          <input 
+            type="text" 
+            id="telegram_url" 
+            name="telegram_url" 
+            class="form-control" 
+            value="<%= settings.telegram_url || 'https://t.me/govtexamzoneofficial' %>" 
+            placeholder="https://t.me/govtexamzoneofficial"
+            required
+          >
+          <small class="field-hint">Connected to top "Join Telegram Channel" button and mobile drawer.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="whatsapp_url">💬 Official WhatsApp Channel Link *</label>
+          <input 
+            type="text" 
+            id="whatsapp_url" 
+            name="whatsapp_url" 
+            class="form-control" 
+            value="<%= settings.whatsapp_url || 'https://whatsapp.com/channel/0029VbBps5S7dmeYQLDLyB10' %>" 
+            placeholder="https://whatsapp.com/channel/..."
+            required
+          >
+          <small class="field-hint">Connected to top "WhatsApp Channel" button and mobile drawer.</small>
+        </div>
+      </div>
+
+      <div class="form-row" style="margin-top: 14px;">
+        <div class="form-group">
+          <label for="youtube_url">▶️ Official YouTube Channel</label>
+          <input 
+            type="text" 
+            id="youtube_url" 
+            name="youtube_url" 
+            class="form-control" 
+            value="<%= settings.youtube_url || '' %>" 
+            placeholder="https://youtube.com/@govtexamzone"
+          >
+          <small class="field-hint">Official video channel link.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="twitter_url">🐦 Official Twitter / X Link</label>
+          <input 
+            type="text" 
+            id="twitter_url" 
+            name="twitter_url" 
+            class="form-control" 
+            value="<%= settings.twitter_url || '' %>" 
+            placeholder="https://x.com/govtexamzone"
+          >
+          <small class="field-hint">Official Twitter / X handle URL.</small>
+        </div>
+      </div>
+
+      <div class="form-row" style="margin-top: 14px;">
+        <div class="form-group">
+          <label for="instagram_url">📷 Official Instagram Profile</label>
+          <input 
+            type="text" 
+            id="instagram_url" 
+            name="instagram_url" 
+            class="form-control" 
+            value="<%= settings.instagram_url || '' %>" 
+            placeholder="https://instagram.com/govtexamzone"
+          >
+          <small class="field-hint">Official Instagram page URL.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="facebook_url">📘 Official Facebook Page</label>
+          <input 
+            type="text" 
+            id="facebook_url" 
+            name="facebook_url" 
+            class="form-control" 
+            value="<%= settings.facebook_url || '' %>" 
+            placeholder="https://facebook.com/govtexamzone"
+          >
+          <small class="field-hint">Official Facebook page link.</small>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 3. Contact & Helpdesk Information -->
+    <div id="section-helpdesk" class="settings-group-card">
+      <div class="settings-group-header">
+        <span class="settings-group-icon">✉️</span>
+        <div>
+          <h3 class="settings-group-title">3. Contact &amp; Candidate Helpdesk</h3>
+          <p class="settings-group-desc">Displayed on Contact Us page and candidate feedback channels.</p>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="contact_email">✉️ Official Support / Helpdesk Email</label>
+          <input 
+            type="email" 
+            id="contact_email" 
+            name="contact_email" 
+            class="form-control" 
+            value="<%= settings.contact_email || 'contact.govtexamzone@gmail.com' %>" 
+            placeholder="contact.govtexamzone@gmail.com"
+          >
+          <small class="field-hint">Primary email for candidate feedback, corrections, and DMCA notices.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="contact_phone">📞 Helpline / Telephone Number (Optional)</label>
+          <input 
+            type="text" 
+            id="contact_phone" 
+            name="contact_phone" 
+            class="form-control" 
+            value="<%= settings.contact_phone || '' %>" 
+            placeholder="e.g. +91-XXXXX-XXXXX (10 AM - 6 PM)"
+          >
+          <small class="field-hint">Helpdesk telephone number or working hours guidance.</small>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top: 14px;">
+        <label for="office_address">📍 Office / Correspondence Address</label>
+        <textarea 
+          id="office_address" 
+          name="office_address" 
+          class="form-control" 
+          rows="2" 
+          placeholder="e.g. Govt Exam Zone Media & Edu Services, New Delhi, India"
+        ><%= settings.office_address || '' %></textarea>
+        <small class="field-hint">Displayed on the Contact Us / About information section.</small>
+      </div>
+    </div>
+
+
+    <!-- 4. SEO & Search Console Configuration -->
+    <div id="section-seo" class="settings-group-card">
+      <div class="settings-group-header">
+        <span class="settings-group-icon">🚀</span>
+        <div>
+          <h3 class="settings-group-title">4. Search Engine Optimization (SEO) &amp; Webmaster</h3>
+          <p class="settings-group-desc">Search engine metadata, Google Search Console verification, and Analytics tracking.</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="meta_description">Default Meta Description</label>
+        <textarea 
+          id="meta_description" 
+          name="meta_description" 
+          class="form-control" 
+          rows="3" 
+          placeholder="Govt Exam Zone provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card..."
+        ><%= settings.meta_description || 'Govt Exam Zone (govtexamzone.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.' %></textarea>
+        <small class="field-hint">Used for search engine summary snippets on homepage and search results.</small>
+      </div>
+
+      <div class="form-group" style="margin-top: 14px;">
+        <label for="meta_keywords">Default Meta Keywords</label>
+        <input 
+          type="text" 
+          id="meta_keywords" 
+          name="meta_keywords" 
+          class="form-control" 
+          value="<%= settings.meta_keywords || 'Govt Exam Zone, govtexamzone, govtexamzone.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment' %>" 
+          placeholder="Govt Exam Zone, Govt Jobs 2026, Admit Card, Results..."
+        >
+        <small class="field-hint">Comma-separated keywords for meta tags.</small>
+      </div>
+
+      <div class="form-row" style="margin-top: 14px;">
+        <div class="form-group">
+          <label for="google_site_verification">Google Search Console Verification Tag</label>
+          <input 
+            type="text" 
+            id="google_site_verification" 
+            name="google_site_verification" 
+            class="form-control" 
+            value="<%= settings.google_site_verification || '' %>" 
+            placeholder="e.g. abcdef1234567890xyz"
+          >
+          <small class="field-hint">Enter your verification string (content attribute of google-site-verification meta tag).</small>
+        </div>
+
+        <div class="form-group">
+          <label for="google_analytics_id">Google Analytics Tracking ID (GA4)</label>
+          <input 
+            type="text" 
+            id="google_analytics_id" 
+            name="google_analytics_id" 
+            class="form-control" 
+            value="<%= settings.google_analytics_id || '' %>" 
+            placeholder="e.g. G-XXXXXXXXXX"
+          >
+          <small class="field-hint">Enter your GA4 Measurement ID (e.g. <code>G-XXXXXXXXXX</code>). Automatically tracks both direct loads and seamless SPA page views across all public pages.</small>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 5. Top Urgent Notice / Announcement Bar -->
+    <div id="section-announcement" class="settings-group-card">
+      <div class="settings-group-header">
+        <span class="settings-group-icon">📢</span>
+        <div>
+          <h3 class="settings-group-title">5. Top Urgent Announcement Alert Bar</h3>
+          <p class="settings-group-desc">Displays a high-priority breaking news banner at the very top of all pages.</p>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group" style="max-width: 200px;">
+          <label for="notice_banner_active">Alert Bar Status</label>
+          <select id="notice_banner_active" name="notice_banner_active" class="form-control">
+            <option value="0" <%= (!settings.notice_banner_active || settings.notice_banner_active === '0') ? 'selected' : '' %>>Disabled (Hidden)</option>
+            <option value="1" <%= (settings.notice_banner_active === '1') ? 'selected' : '' %>>Enabled (Active)</option>
+          </select>
+          <small class="field-hint">Turn on/off the alert strip.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="notice_banner_bg">Banner Background Color</label>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <input 
+              type="color" 
+              id="notice_banner_bg" 
+              name="notice_banner_bg" 
+              value="<%= settings.notice_banner_bg || '#ab183d' %>" 
+              style="width: 48px; height: 38px; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; padding: 2px;"
+            >
+            <span style="font-size: 13px; color: #64748b;">(Red, Orange, Navy or Custom)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row" style="margin-top: 14px;">
+        <div class="form-group" style="flex: 2;">
+          <label for="notice_banner_text">Urgent Announcement Headline</label>
+          <input 
+            type="text" 
+            id="notice_banner_text" 
+            name="notice_banner_text" 
+            class="form-control" 
+            value="<%= settings.notice_banner_text || '' %>" 
+            placeholder="e.g. 🚨 SSC CGL 2026 Online Application Last Date Extended! Apply Now"
+          >
+          <small class="field-hint">Short, urgent headline shown in bold white text.</small>
+        </div>
+
+        <div class="form-group" style="flex: 1;">
+          <label for="notice_banner_url">Target Link URL (Optional)</label>
+          <input 
+            type="text" 
+            id="notice_banner_url" 
+            name="notice_banner_url" 
+            class="form-control" 
+            value="<%= settings.notice_banner_url || '' %>" 
+            placeholder="e.g. /post/ssc-cgl-2026-online-form"
+          >
+          <small class="field-hint">Clicking the alert banner directs users here.</small>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 6. Google AdSense & Monetization -->
+    <div id="section-adsense" class="settings-group-card">
+      <div class="settings-group-header">
+        <span class="settings-group-icon">💰</span>
+        <div>
+          <h3 class="settings-group-title">6. Google AdSense &amp; Monetization</h3>
+          <p class="settings-group-desc">Manage publisher client IDs and custom advertisement code slots.</p>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="adsense_client_id">Google AdSense Publisher ID</label>
+          <input 
+            type="text" 
+            id="adsense_client_id" 
+            name="adsense_client_id" 
+            class="form-control" 
+            value="<%= settings.adsense_client_id || '' %>" 
+            placeholder="e.g. ca-pub-XXXXXXXXXXXXXXXX"
+          >
+          <small class="field-hint">Automatically injects the official AdSense script tag in the page head.</small>
+        </div>
+
+        <div class="form-group" style="max-width: 220px;">
+          <label for="ads_active">Site-Wide Ads Status</label>
+          <select id="ads_active" name="ads_active" class="form-control">
+            <option value="1" <%= (settings.ads_active !== '0') ? 'selected' : '' %>>Active (Show Ads)</option>
+            <option value="0" <%= (settings.ads_active === '0') ? 'selected' : '' %>>Disabled (Hide Ads)</option>
+          </select>
+          <small class="field-hint">Master switch to pause or resume advertisements.</small>
+        </div>
+      </div>
+
+      <div class="form-row" style="margin-top: 14px;">
+        <div class="form-group">
+          <label for="ad_top_code">Header / Top Banner Ad Script (HTML)</label>
+          <textarea 
+            id="ad_top_code" 
+            name="ad_top_code" 
+            class="form-control code-editor" 
+            rows="3" 
+            placeholder="<!-- Paste responsive AdSense or partner banner code here -->"
+          ><%= settings.ad_top_code || '' %></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="ad_bottom_code">Footer / In-Content Ad Script (HTML)</label>
+          <textarea 
+            id="ad_bottom_code" 
+            name="ad_bottom_code" 
+            class="form-control code-editor" 
+            rows="3" 
+            placeholder="<!-- Paste in-article or footer ad unit code here -->"
+          ><%= settings.ad_bottom_code || '' %></textarea>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 7. Advanced Custom Scripts & Webmaster Injection -->
+    <div id="section-scripts" class="settings-group-card">
+      <div class="settings-group-header">
+        <span class="settings-group-icon">🛠️</span>
+        <div>
+          <h3 class="settings-group-title">7. Webmaster Custom Script Injection</h3>
+          <p class="settings-group-desc">Inject raw HTML, tracking pixels, meta verification, or custom CSS safely.</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="header_custom_code">Custom Header Code (Injected inside &lt;head&gt;)</label>
+        <textarea 
+          id="header_custom_code" 
+          name="header_custom_code" 
+          class="form-control code-editor" 
+          rows="4" 
+          placeholder="<!-- e.g. Custom CSS <style>...</style>, Microsoft Clarity, Meta Pixel -->"
+        ><%= settings.header_custom_code || '' %></textarea>
+        <small class="field-hint">Code injected right before the closing &lt;/head&gt; tag on all public pages.</small>
+      </div>
+
+      <div class="form-group" style="margin-top: 14px;">
+        <label for="footer_custom_code">Custom Footer Code (Injected before &lt;/body&gt;)</label>
+        <textarea 
+          id="footer_custom_code" 
+          name="footer_custom_code" 
+          class="form-control code-editor" 
+          rows="4" 
+          placeholder="<!-- e.g. Live chat widget, visitor counter, external tracking script -->"
+        ><%= settings.footer_custom_code || '' %></textarea>
+        <small class="field-hint">Code injected right before the closing &lt;/body&gt; tag on all public pages.</small>
+      </div>
+    </div>
+
+    <!-- Bottom Save Action Bar -->
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; margin-top: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); flex-wrap: wrap; gap: 12px;">
+      <div>
+        <span style="font-weight: 700; color: #0f172a; font-size: 14.5px;">Ready to update portal configuration?</span>
+        <div style="font-size: 12px; color: #64748b; margin-top: 2px;">Changes take effect immediately across all desktop and mobile devices.</div>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') || '/' %>" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-primary" style="padding: 10px 28px; font-size: 15px; font-weight: 700;">
+          💾 Save All Settings
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<style>
+  .settings-group-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    scroll-margin-top: 80px;
+  }
+
+  .settings-group-header {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 14px;
+  }
+
+  .settings-group-icon {
+    font-size: 24px;
+    background: #f8fafc;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    line-height: 1;
+  }
+
+  .settings-group-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .settings-group-desc {
+    margin: 4px 0 0 0;
+    font-size: 12.5px;
+    color: #64748b;
+  }
+
+  .field-hint {
+    display: block;
+    font-size: 11.5px;
+    color: #64748b;
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+
+  .code-editor {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    background: #0f172a !important;
+    color: #38bdf8 !important;
+    border: 1px solid #334155 !important;
+  }
+
+  .code-editor::placeholder {
+    color: #64748b !important;
+  }
+
+  .settings-pill {
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    transition: all 0.15s ease;
+  }
+
+  .settings-pill:hover, .settings-pill:focus {
+    background: #ab183d;
+    color: #ffffff;
+  }
+
+  .layout-option-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    margin: 0;
+  }
+
+  .layout-option-card:hover {
+    border-color: #94a3b8;
+    background: #ffffff;
+  }
+
+  .layout-option-card.selected {
+    border-color: #0066ff;
+    background: #eff6ff;
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.12);
+  }
+
+  .layout-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .layout-radio-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #94a3b8;
+    background: #ffffff;
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .layout-option-card.selected .layout-radio-dot {
+    border-color: #0066ff;
+    background: #0066ff;
+    box-shadow: inset 0 0 0 3px #ffffff;
+  }
+
+  .layout-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 9999px;
+  }
+
+  .classic-badge {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+
+  .blog-badge {
+    background: #dbeafe;
+    color: #1e40af;
+  }
+
+  .layout-wireframe {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 8px;
+  }
+
+  .layout-card-desc {
+    margin: 0;
+    font-size: 12.5px;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 600px) {
+    .settings-group-card {
+      padding: 16px 14px;
+    }
+    .settings-nav-pills {
+      gap: 6px;
+      flex-wrap: nowrap !important;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 10px !important;
+    }
+    .settings-nav-pills::-webkit-scrollbar {
+      display: none;
+    }
+    .settings-pill {
+      font-size: 11.5px;
+      padding: 6px 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+  }
+</style>
+
+<script>
+  /**
+   * Wire live file preview, URL preview, and remove button for branding assets.
+   */
+  function setupMediaAssetControl(opts) {
+    const fileInput = document.getElementById(opts.fileId);
+    const previewImg = document.getElementById(opts.imgId);
+    const textInput = document.getElementById(opts.textId);
+    const pathText = document.getElementById(opts.pathId);
+    const emptyText = document.getElementById(opts.emptyId);
+    const removeBtn = document.getElementById(opts.removeBtnId);
+
+    if (fileInput && previewImg) {
+      fileInput.addEventListener('change', function(e) {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          previewImg.src = evt.target.result;
+          previewImg.style.display = 'block';
+          if (emptyText) emptyText.style.display = 'none';
+          if (pathText) {
+            pathText.style.color = '#0284c7';
+            pathText.textContent = 'Selected: ' + file.name + ' (will upload on save)';
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    if (textInput && previewImg) {
+      textInput.addEventListener('input', function() {
+        const val = this.value.trim();
+        if (val) {
+          previewImg.src = val;
+          previewImg.style.display = 'block';
+          if (emptyText) emptyText.style.display = 'none';
+          if (pathText) {
+            pathText.style.color = '#0284c7';
+            pathText.textContent = val;
+          }
+        } else {
+          previewImg.src = '';
+          previewImg.style.display = 'none';
+          if (emptyText) emptyText.style.display = 'inline-block';
+          if (pathText) {
+            pathText.style.color = '#dc2626';
+            pathText.textContent = opts.emptyStatus;
+          }
+        }
+      });
+    }
+
+    if (removeBtn && textInput) {
+      removeBtn.addEventListener('click', function() {
+        textInput.value = '';
+        if (fileInput) fileInput.value = '';
+        if (previewImg) {
+          previewImg.src = '';
+          previewImg.style.display = 'none';
+        }
+        if (emptyText) emptyText.style.display = 'inline-block';
+        if (pathText) {
+          pathText.style.color = '#dc2626';
+          pathText.textContent = opts.clearedStatus;
+        }
+      });
+    }
+  }
+
+  setupMediaAssetControl({
+    fileId: 'site_logo_file',
+    imgId: 'logoPreviewImg',
+    textId: 'site_logo',
+    pathId: 'logoPathText',
+    emptyId: 'logoNoLogoText',
+    removeBtnId: 'removeLogoBtn',
+    emptyStatus: 'No logo active (Header displays text title only)',
+    clearedStatus: 'Logo cleared. Click "Save All Settings" below to apply changes.'
+  });
+
+  setupMediaAssetControl({
+    fileId: 'site_favicon_file',
+    imgId: 'faviconPreviewImg',
+    textId: 'site_favicon',
+    pathId: 'faviconPathText',
+    emptyId: 'faviconNoIconText',
+    removeBtnId: 'removeFaviconBtn',
+    emptyStatus: 'No custom favicon active (Browser default)',
+    clearedStatus: 'Favicon cleared. Click "Save All Settings" below to apply changes.'
+  });
+
+  // Interactive visual selection for Post Layout cards
+  document.querySelectorAll('.layout-option-card input[type="radio"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      document.querySelectorAll('.layout-option-card').forEach(function(card) {
+        card.classList.remove('selected');
+      });
+      if (this.checked) {
+        this.closest('.layout-option-card').classList.add('selected');
+      }
+    });
+  });
+
+  // Category Visibility quick actions & live card styling
+  function syncCatVisCard(cb) {
+    const card = cb.closest('.cat-vis-card');
+    if (!card) return;
+    const statusLabel = card.querySelector('.cat-vis-status-label');
+    if (cb.checked) {
+      card.style.borderColor = '#86efac';
+      card.style.background = '#f0fdf4';
+      if (statusLabel) { statusLabel.textContent = 'Visible'; statusLabel.style.color = '#166534'; }
+    } else {
+      card.style.borderColor = '#fecaca';
+      card.style.background = '#fef2f2';
+      if (statusLabel) { statusLabel.textContent = 'Hidden'; statusLabel.style.color = '#991b1b'; }
+    }
+  }
+
+  document.querySelectorAll('.cat-vis-checkbox').forEach(function(cb) {
+    cb.addEventListener('change', function() { syncCatVisCard(cb); });
+  });
+
+  const btnHideEmptyCats = document.getElementById('btnHideEmptyCats');
+  if (btnHideEmptyCats) {
+    btnHideEmptyCats.addEventListener('click', function() {
+      document.querySelectorAll('.cat-vis-card').forEach(function(card) {
+        const count = parseInt(card.getAttribute('data-post-count') || '0', 10);
+        const cb = card.querySelector('.cat-vis-checkbox');
+        if (cb && count === 0) {
+          cb.checked = false;
+          syncCatVisCard(cb);
+        }
+      });
+    });
+  }
+
+  const btnShowAllCats = document.getElementById('btnShowAllCats');
+  if (btnShowAllCats) {
+    btnShowAllCats.addEventListener('click', function() {
+      document.querySelectorAll('.cat-vis-checkbox').forEach(function(cb) {
+        cb.checked = true;
+        syncCatVisCard(cb);
+      });
+    });
+  }
+</script>
+
+<%- include('../partials/admin-footer') %>

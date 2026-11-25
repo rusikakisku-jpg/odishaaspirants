@@ -1,0 +1,24 @@
+name = "govtexamzone"
+pages_build_output_dir = "./dist"
+compatibility_date = "2025-09-01"
+compatibility_flags = [
+  "nodejs_compat",
+  "enable_nodejs_http_modules",
+  "enable_nodejs_http_server_modules",
+  "allow_eval_during_startup"
+]
+
+[vars]
+NODE_ENV = "production"
+ADMIN_USERNAME = "admin"
+ADMIN_SUBDOMAIN = "setup.govtexamzone.com"
+PUBLIC_SITE_URL = "https://govtexamzone.com"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "govtexamzone-db"
+database_id = "ce83a546-323f-467b-8748-4fe6be6a3e12"
+
+[[r2_buckets]]
+binding = "STORAGE_BUCKET"
+bucket_name = "govtexamzone-files"

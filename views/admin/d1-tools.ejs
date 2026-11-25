@@ -1,0 +1,82 @@
+<%- include('../partials/admin-nav', { currentPath: '/admin/d1' }) %>
+
+<div class="admin-card">
+  <div class="admin-card-header">
+    <h2>Cloudflare D1 Database Management Console</h2>
+  </div>
+
+  <div style="background: <%= isCloudflareD1 ? '#f0fdf4' : '#f0f9ff' %>; border: 1px solid <%= isCloudflareD1 ? '#86efac' : '#bae6fd' %>; padding: 15px; border-radius: 6px; margin-bottom: 25px;">
+    <h3 style="margin-top: 0; color: <%= isCloudflareD1 ? '#166534' : '#0369a1' %>; font-size: 16px;">
+      <%= isCloudflareD1 ? '⚡ Connected to Cloudflare D1 Serverless SQL Database' : '💻 Local SQLite Engine (Cloudflare D1 Syntax Emulation Active)' %>
+    </h3>
+    <p style="font-size: 13.5px; margin: 6px 0; color: #334155;">
+      <b>Database ID:</b> <%= databaseId %> | 
+      <b>Driver:</b> <%= isCloudflareD1 ? 'Cloudflare REST API Client' : 'SQLite WebAssembly / Local Database Engine' %>
+    </p>
+    <% if (!isCloudflareD1) { %>
+      <div style="font-size: 12px; color: #64748b; margin-top: 8px;">
+        To connect directly to your remote Cloudflare D1 database, set <code>CF_ACCOUNT_ID</code>, <code>CF_D1_DATABASE_ID</code>, and <code>CF_API_TOKEN</code> in your <code>.env</code> file.
+      </div>
+    <% } %>
+  </div>
+
+  <!-- Table Stats -->
+  <h3 style="font-size: 16px; margin-bottom: 12px;">Database Tables &amp; Row Counts</h3>
+  <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;">
+    <% tableStats.forEach(t => { %>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px 16px; border-radius: 6px; min-width: 130px;">
+        <div style="font-weight: bold; font-size: 18px; color: var(--admin-primary);"><%= t.count %></div>
+        <div style="font-size: 12px; color: #64748b;">Table: <code><%= t.name %></code></div>
+      </div>
+    <% }) %>
+  </div>
+
+  <!-- SQL Query Runner -->
+  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 18px; margin-bottom: 20px;">
+    <h3 style="margin-top: 0; font-size: 15px;">Run SQL Query against D1 Database</h3>
+    <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/d1/query" method="POST">
+      <div class="form-group">
+        <textarea name="sql_query" class="form-control" rows="3" style="font-family: monospace; font-size: 13.5px;" placeholder="SELECT id, title, category, views FROM posts ORDER BY id DESC LIMIT 10;"><%= typeof sqlQuery !== 'undefined' ? sqlQuery : 'SELECT id, title, category, views FROM posts ORDER BY id DESC LIMIT 5;' %></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Execute Query</button>
+    </form>
+  </div>
+
+  <!-- Query Results -->
+  <% if (typeof queryError !== 'undefined' && queryError) { %>
+    <div class="alert alert-danger">
+      <b>Query Error:</b> <%= queryError %>
+    </div>
+  <% } %>
+
+  <% if (typeof queryResult !== 'undefined' && queryResult) { %>
+    <h3 style="font-size: 15px; margin-bottom: 10px;">Query Result (<%= queryResult.length %> row(s))</h3>
+    <div style="overflow-x: auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px;">
+      <% if (queryResult.length > 0 && typeof queryResult[0] === 'object') { %>
+        <table class="admin-table d1-sql-table">
+          <thead>
+            <tr>
+              <% Object.keys(queryResult[0]).forEach(k => { %>
+                <th><%= k %></th>
+              <% }) %>
+            </tr>
+          </thead>
+          <tbody>
+            <% queryResult.forEach(row => { %>
+              <tr>
+                <% Object.keys(row).forEach(k => { %>
+                  <td><%= typeof row[k] === 'object' ? JSON.stringify(row[k]) : row[k] %></td>
+                <% }) %>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <pre style="margin: 0; font-size: 13px; white-space: pre-wrap; word-break: break-word;"><%= JSON.stringify(queryResult, null, 2) %></pre>
+      <% } %>
+    </div>
+  <% } %>
+
+</div>
+
+<%- include('../partials/admin-footer') %>

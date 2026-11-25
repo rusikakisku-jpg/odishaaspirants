@@ -1,0 +1,42 @@
+    </div> <!-- /admin-container -->
+  </div> <!-- /admin-main-viewport -->
+</div> <!-- /admin-app-layout -->
+
+<%
+  const authPath = typeof currentPath !== 'undefined' ? currentPath : '/author-portal';
+  const isAuthHome = authPath === '/author-portal' || authPath === '/author-portal/dashboard';
+  const isAuthPosts = authPath === '/author-portal/posts' || authPath.startsWith('/author-portal/posts/edit');
+  const isAuthNew = authPath === '/author-portal/posts/new';
+  const isAuthProfile = authPath === '/author-portal/profile';
+%>
+<!-- Mobile App-Style Fixed Bottom Navigation Bar (Author Portal) -->
+<nav class="admin-mobile-bottom-nav author-bottom-nav" aria-label="Author Mobile Navigation">
+  <a href="/author-portal" class="bottom-nav-item <%= isAuthHome ? 'active' : '' %>">
+    <span class="bottom-nav-icon">📊</span>
+    <span class="bottom-nav-label">Home</span>
+  </a>
+
+  <a href="/author-portal/posts" class="bottom-nav-item <%= isAuthPosts ? 'active' : '' %>">
+    <span class="bottom-nav-icon">📝</span>
+    <span class="bottom-nav-label">Articles</span>
+  </a>
+
+  <a href="/author-portal/posts/new" class="bottom-nav-item bottom-nav-fab-wrap <%= isAuthNew ? 'active' : '' %>">
+    <span class="bottom-nav-fab" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);">＋</span>
+    <span class="bottom-nav-label">Write</span>
+  </a>
+
+  <a href="/author-portal/profile" class="bottom-nav-item <%= isAuthProfile ? 'active' : '' %>">
+    <span class="bottom-nav-icon">👤</span>
+    <span class="bottom-nav-label">Profile</span>
+  </a>
+
+  <button type="button" class="bottom-nav-item bottom-nav-menu-btn" id="bottomMenuTrigger" aria-label="Open Full Menu">
+    <span class="bottom-nav-icon">☰</span>
+    <span class="bottom-nav-label">Menu</span>
+  </button>
+</nav>
+
+<script src="/js/admin.js?v=20261125b"></script>
+</body>
+</html>

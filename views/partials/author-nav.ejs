@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0f172a">
+  <title><%= typeof title !== 'undefined' ? title : 'Author Workspace - Govt Exam Zone' %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css?v=20261124d">
+  <link rel="icon" href="<%= (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/gez-logo.svg' %>">
+  <style>
+    /* Author Portal Dedicated Accents */
+    .author-badge-strip {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+  </style>
+</head>
+<body class="admin-body">
+
+<div class="admin-app-layout">
+  <!-- Mobile Sidebar Overlay Backdrop -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <!-- Author Workspace Sidebar -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <!-- Brand Header -->
+    <div class="sidebar-brand">
+      <a href="/author-portal" class="brand-link">
+        <img src="<%= (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/gez-logo.svg' %>" alt="<%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %>" class="brand-logo" width="36" height="36" style="object-fit: contain;">
+        <div class="brand-info">
+          <span class="brand-title"><%= (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone' %></span>
+          <span class="brand-subtitle" style="color: <%= (typeof isEditor !== 'undefined' && isEditor) ? '#34d399' : '#60a5fa' %>;">
+            <span class="status-pulse-dot" style="background: <%= (typeof isEditor !== 'undefined' && isEditor) ? '#10b981' : '#3b82f6' %>;"></span> <%= (typeof isEditor !== 'undefined' && isEditor) ? 'Editor Desk Pro' : 'Author Desk Pro' %>
+          </span>
+        </div>
+      </a>
+      <button type="button" class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close Sidebar">✕</button>
+    </div>
+
+    <!-- Logged In Author Info Card in Sidebar -->
+    <div style="padding: 14px 16px; margin: 10px 14px 14px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; display: flex; align-items: center; gap: 10px;">
+      <img src="<%= (typeof author !== 'undefined' && author.avatar_url) ? author.avatar_url : '/images/default-avatar.svg' %>" alt="<%= (typeof author !== 'undefined') ? author.name : 'Author' %>" style="width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid <%= (typeof isEditor !== 'undefined' && isEditor) ? '#10b981' : '#3b82f6' %>;">
+      <div style="overflow: hidden; flex: 1;">
+        <div style="color: #ffffff; font-weight: 700; font-size: 13.5px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+          <%= typeof author !== 'undefined' ? author.name : 'Author' %>
+        </div>
+        <div style="color: <%= (typeof isEditor !== 'undefined' && isEditor) ? '#6ee7b7' : '#94a3b8' %>; font-size: 11px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-weight: 600;">
+          <%= typeof author !== 'undefined' ? (author.role || ((typeof isEditor !== 'undefined' && isEditor) ? 'Senior Editor' : 'Contributor')) : 'Contributor' %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="sidebar-nav-container">
+      <div class="nav-section-title"><%= (typeof isEditor !== 'undefined' && isEditor) ? 'EDITORIAL WORKSPACE' : 'AUTHOR WORKSPACE' %></div>
+      <nav class="sidebar-nav">
+        <a href="/author-portal" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath === '/author-portal' ? 'active' : '' %>">
+          <span class="nav-icon"><%= (typeof isEditor !== 'undefined' && isEditor) ? '🛡️' : '📊' %></span>
+          <span class="nav-text"><%= (typeof isEditor !== 'undefined' && isEditor) ? 'Editor Dashboard' : 'Author Dashboard' %></span>
+        </a>
+        <a href="/author-portal/posts" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath === '/author-portal/posts' ? 'active' : '' %>">
+          <span class="nav-icon">📝</span>
+          <span class="nav-text"><%= (typeof isEditor !== 'undefined' && isEditor) ? 'All Articles (Review & Edit)' : 'My Articles' %></span>
+        </a>
+        <a href="/author-portal/posts/new" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath === '/author-portal/posts/new' ? 'active' : '' %>">
+          <span class="nav-icon">➕</span>
+          <span class="nav-text">Write New Post</span>
+          <span class="nav-badge new" style="background: <%= (typeof isEditor !== 'undefined' && isEditor) ? '#059669' : '#2563eb' %>;">New</span>
+        </a>
+        <a href="/author-portal/profile" class="nav-item <%= typeof currentPath !== 'undefined' && currentPath === '/author-portal/profile' ? 'active' : '' %>">
+          <span class="nav-icon">👤</span>
+          <span class="nav-text">Profile &amp; Password</span>
+        </a>
+      </nav>
+
+      <div class="nav-section-title">QUICK LINKS</div>
+      <nav class="sidebar-nav">
+        <a href="/" target="_blank" class="nav-item">
+          <span class="nav-icon">🌐</span>
+          <span class="nav-text">Live Website</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+      <div class="sidebar-user-row">
+        <div class="user-avatar" style="background: linear-gradient(135deg, #2563eb, #1d4ed8);">
+          <%= typeof author !== 'undefined' && author.name ? author.name.charAt(0) : 'A' %>
+        </div>
+        <div class="user-meta">
+          <span class="user-name"><%= typeof author !== 'undefined' ? author.name : 'Author' %></span>
+          <span class="user-role">Verified Fact-Checker</span>
+        </div>
+        <a href="/author-portal/logout" class="sidebar-logout-btn" title="Logout from Author Portal">
+          🚪
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main View Area -->
+  <div class="admin-main-viewport">
+    <!-- Topbar Header -->
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button type="button" class="mobile-toggle-btn" id="sidebarToggleBtn" aria-label="Toggle Sidebar Menu">
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </button>
+        <div class="topbar-breadcrumb">
+          <span class="crumb-root"><%= (typeof isEditor !== 'undefined' && isEditor) ? 'Editor Workspace' : 'Author Workspace' %></span>
+          <span class="crumb-separator">/</span>
+          <span class="crumb-current"><%= typeof author !== 'undefined' ? author.name : 'Dashboard' %></span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="author-badge-strip" style="<%= (typeof isEditor !== 'undefined' && isEditor) ? 'background:#ecfdf5; border-color:#a7f3d0; color:#065f46;' : '' %>">
+            <span><%= (typeof isEditor !== 'undefined' && isEditor) ? '🛡️ Senior Editor' : '✍️ Verified Author' %></span>
+          </span>
+          <a href="/" target="_blank" class="topbar-action-btn view-site-btn" style="text-decoration: none;">
+            <span>🌐 View Site</span>
+          </a>
+          <a href="/author-portal/logout" class="topbar-action-btn" title="Logout" style="text-decoration: none; color: #ef4444;">
+            <span>🚪 Logout</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="admin-container">

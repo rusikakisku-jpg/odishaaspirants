@@ -1,0 +1,87 @@
+<%- include('../partials/admin-nav', { currentPath: '/admin/r2' }) %>
+
+<div class="admin-card">
+  <div class="admin-card-header">
+    <h2>Cloudflare R2 Object Storage Manager</h2>
+  </div>
+
+  <div style="background: <%= isR2Configured ? '#f0fdf4' : '#fffbeb' %>; border: 1px solid <%= isR2Configured ? '#86efac' : '#fde68a' %>; padding: 15px; border-radius: 6px; margin-bottom: 25px;">
+    <h3 style="margin-top: 0; color: <%= isR2Configured ? '#166534' : '#92400e' %>; font-size: 16px;">
+      <%= isR2Configured ? '✅ Cloudflare R2 Remote Storage is ACTIVE' : 'ℹ️ Running in Local Storage Fallback Mode' %>
+    </h3>
+    <p style="font-size: 13.5px; margin: 6px 0; color: #334155;">
+      <b>Bucket Name:</b> <%= bucketName %> | 
+      <b>Public Domain:</b> <%= publicUrl || 'Default R2 /uploads' %> |
+      <b>Status:</b> <%= isR2Configured ? 'Connected to Cloudflare S3 Endpoint' : 'Files saved to /uploads directory' %>
+    </p>
+    <% if (!isR2Configured) { %>
+      <div style="font-size: 12px; color: #64748b; margin-top: 8px;">
+        To connect your live Cloudflare R2 bucket, provide <code>R2_ACCOUNT_ID</code>, <code>R2_ACCESS_KEY_ID</code>, <code>R2_SECRET_ACCESS_KEY</code>, and <code>R2_BUCKET_NAME</code> in your <code>.env</code> file.
+      </div>
+    <% } %>
+  </div>
+
+  <!-- Direct File Upload Form -->
+  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 18px; margin-bottom: 25px;">
+    <h3 style="margin-top: 0; font-size: 15px;">Upload Document / PDF to Storage</h3>
+    <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/r2/upload" method="POST" enctype="multipart/form-data" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+      <input type="file" name="file" class="form-control" style="max-width: 380px;" required accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp">
+      <button type="submit" class="btn btn-primary">Upload to Storage</button>
+    </form>
+  </div>
+
+  <!-- Uploaded Files List -->
+  <h3 style="font-size: 16px; margin-bottom: 12px;">Stored Files (<%= uploads ? uploads.length : 0 %>)</h3>
+  <div class="admin-table-responsive" style="overflow-x: auto;">
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>File Name</th>
+        <th>Storage Type</th>
+        <th>Size</th>
+        <th>Uploaded At</th>
+        <th style="text-align: right;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (uploads && uploads.length > 0) { %>
+        <% uploads.forEach(u => { %>
+          <tr>
+            <td><%= u.id %></td>
+            <td>
+              <a href="<%= u.file_url %>" target="_blank" style="font-weight: 600; color: #0f172a;">
+                <%= u.original_name %>
+              </a>
+              <div style="font-size: 11px; color: #64748b;"><%= u.file_key %></div>
+            </td>
+            <td>
+              <span style="background: <%= u.storage_type === 'r2' ? '#dcfce7' : '#f1f5f9' %>; color: <%= u.storage_type === 'r2' ? '#15803d' : '#475569' %>; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 11px;">
+                <%= u.storage_type.toUpperCase() %>
+              </span>
+            </td>
+            <td><%= u.file_size ? (u.file_size / 1024).toFixed(1) + ' KB' : '-' %></td>
+            <td><%= u.created_at %></td>
+            <td style="text-align: right; white-space: nowrap;">
+              <button type="button" class="btn btn-sm btn-secondary" onclick="copyToClipboard('<%= u.file_url %>')">Copy URL</button>
+              <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/r2/delete" method="POST" style="display: inline-block;" onsubmit="return confirm('Delete this file from storage?');">
+                <input type="hidden" name="id" value="<%= u.id %>">
+                <input type="hidden" name="file_key" value="<%= u.file_key %>">
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr>
+          <td colspan="6" style="text-align: center; padding: 25px; color: #64748b;">
+            No documents uploaded yet.
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<%- include('../partials/admin-footer') %>

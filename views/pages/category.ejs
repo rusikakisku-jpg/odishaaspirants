@@ -1,0 +1,97 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<%
+  const catDomain = (typeof settings !== 'undefined' && settings.site_domain) 
+    ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
+    : 'https://govtexamzone.com';
+%>
+<!-- Schema.org JSON-LD BreadcrumbList for Category -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "<%= catDomain %>"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "<%= catInfo.name.replace(/"/g, '\\"') %>",
+      "item": "<%= catDomain %>/category/<%= catInfo.slug || categorySlug %>"
+    }
+  ]
+}
+</script>
+
+<main class="container">
+  <!-- Breadcrumb -->
+  <div style="font-size: 13px; margin: 10px 0 12px 2px; color: #666;">
+    <a href="/" style="color: var(--primary-red); font-weight: bold; text-decoration: none;">🏠 Home</a>
+    <span style="margin: 0 6px; color: #999;">»</span>
+    <span style="color: #333; font-weight: 600;"><%= catInfo.name %></span>
+  </div>
+
+  <div class="sarkari-box" style="margin-bottom: 30px;">
+    <h1 class="sarkari-box-header" style="margin: 0; font-size: 16px; line-height: 1.3;">
+      <%= catInfo.name %> - Govt Exam Zone 2026
+    </h1>
+
+    <!-- Category Overview -->
+    <div style="padding: 14px 18px; background: #fafafa; border-bottom: 1px solid #e2e8f0; font-size: 13.5px; line-height: 1.65; color: #334155;">
+      <p style="margin: 0;">
+        <%= catInfo.introEn || ('Stay informed with the latest verified ' + catInfo.name + ' notifications, official application links, and examination updates published across Central and State government commissions.') %>
+      </p>
+    </div>
+
+    <ul class="sarkari-box-list">
+      <% if (posts && posts.length > 0) { %>
+        <% posts.forEach(post => { %>
+          <li>
+            <span class="list-chevron">›</span>
+            <div style="flex: 1;">
+              <a href="/post/<%= post.slug %>" style="font-weight: bold; color: var(--link-blue); font-size: 14.5px;">
+                <%= post.title %>
+              </a>
+              <% if (post.department) { %>
+                <span style="color: #666; font-size: 12.5px;"> (<%= post.department %>)</span>
+              <% } %>
+              <% if (post.last_date) { %>
+                <span class="tag-badge tag-green" style="margin-left: 6px;">Last Date: <%= post.last_date %></span>
+              <% } %>
+            </div>
+          </li>
+        <% }) %>
+      <% } else { %>
+        <li style="padding: 20px; text-align: center; color: #666;">
+          No notifications found in this category.
+        </li>
+      <% } %>
+    </ul>
+
+    <!-- Pagination -->
+    <% if (totalPages > 1) { %>
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; padding: 15px; border-top: 1px solid #eee;">
+        <% if (currentPage > 1) { %>
+          <a href="/category/<%= categorySlug %>?page=<%= currentPage - 1 %>" style="padding: 6px 12px; background: #eee; border-radius: 3px; font-weight: bold;">« Previous</a>
+        <% } %>
+
+        <% for (let i = 1; i <= totalPages; i++) { %>
+          <a href="/category/<%= categorySlug %>?page=<%= i %>" style="padding: 6px 12px; border-radius: 3px; font-weight: bold; <%= i === currentPage ? 'background: var(--primary-red); color: #fff;' : 'background: #eee; color: #333;' %>">
+            <%= i %>
+          </a>
+        <% } %>
+
+        <% if (currentPage < totalPages) { %>
+          <a href="/category/<%= categorySlug %>?page=<%= currentPage + 1 %>" style="padding: 6px 12px; background: #eee; border-radius: 3px; font-weight: bold;">Next »</a>
+        <% } %>
+      </div>
+    <% } %>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

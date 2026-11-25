@@ -1,0 +1,253 @@
+<%- include('../partials/admin-nav', { currentPath: '/admin/authors' }) %>
+
+<div class="admin-card">
+  <div class="admin-card-header">
+    <div>
+      <h2>Manage Editorial Team &amp; Authors (<%= authors ? authors.length : 0 %>)</h2>
+      <div style="font-size: 12.5px; color: #64748b; margin-top: 2px;">
+        Manage internal editorial staff, authors, and contributors for recruitment alerts creation and verification.
+      </div>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/author-portal/login" target="_blank" class="btn btn-secondary btn-sm">🛡️ Open Author/Editor Portal</a>
+    </div>
+  </div>
+
+  <% if (typeof success !== 'undefined' && success) { %>
+    <div style="background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
+      ✅ <%= success === 'created' ? 'Author successfully created!' : (success === 'updated' ? 'Author profile successfully updated!' : 'Changes saved successfully!') %>
+    </div>
+  <% } %>
+
+  <!-- Add New Author Form Card -->
+  <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px 20px; margin-bottom: 25px;">
+    <h3 style="margin-top: 0; margin-bottom: 14px; font-size: 15px; color: #1e293b; display: flex; align-items: center; gap: 6px;">
+      <span>➕</span> Add New Author / Editorial Member
+    </h3>
+    <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/authors/new" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Full Name *</label>
+          <input type="text" name="name" class="form-control" placeholder="e.g. Priya Sharma" required>
+        </div>
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Slug (URL Identifier)</label>
+          <input type="text" name="slug" class="form-control" placeholder="e.g. priya-sharma (auto-generated if empty)">
+        </div>
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Role / Professional Title *</label>
+          <input type="text" name="role" class="form-control" placeholder="e.g. Senior Exam Analyst &amp; SSC Specialist" required>
+        </div>
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Official Email</label>
+          <input type="email" name="email" class="form-control" placeholder="e.g. priya@govtexamzone.com">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Qualification</label>
+          <input type="text" name="qualification" class="form-control" placeholder="e.g. M.A. Public Administration, UGC NET">
+        </div>
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Experience</label>
+          <input type="text" name="experience" class="form-control" placeholder="e.g. 6+ Years Recruitment Reporting">
+        </div>
+        <div class="form-group" style="grid-column: span 2;">
+          <label style="font-size: 12.5px; font-weight: 600;">Avatar Image URL</label>
+          <input type="text" name="avatar_url" class="form-control" placeholder="/images/default-avatar.svg or external image URL" value="/images/default-avatar.svg">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="font-size: 12.5px; font-weight: 600;">Short Bio / Verification Statement *</label>
+        <textarea name="bio" class="form-control" rows="2" placeholder="Brief professional overview of their background, domain expertise, and fact-checking role." required></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Twitter / X Profile URL</label>
+          <input type="url" name="twitter_url" class="form-control" placeholder="https://twitter.com/...">
+        </div>
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">LinkedIn Profile URL</label>
+          <input type="url" name="linkedin_url" class="form-control" placeholder="https://linkedin.com/in/...">
+        </div>
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Telegram Profile URL</label>
+          <input type="url" name="telegram_url" class="form-control" placeholder="https://t.me/...">
+        </div>
+        <div class="form-group">
+          <label style="font-size: 12.5px; font-weight: 600;">Login Password</label>
+          <input type="text" name="password" class="form-control" placeholder="Default: author@2026" value="author@2026">
+        </div>
+        <div class="form-group" style="display: flex; align-items: flex-end; padding-bottom: 8px;">
+          <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; font-weight: 600;">
+            <input type="checkbox" name="is_active" value="1" checked>
+            <span>Active &amp; Visible</span>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-sm" style="padding: 8px 20px;">
+        + Save New Author
+      </button>
+    </form>
+  </div>
+
+  <!-- Authors List Table -->
+  <div style="overflow-x: auto;">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th style="width: 60px;">Avatar</th>
+          <th>Author Name &amp; Slug</th>
+          <th>Role &amp; Qualification</th>
+          <th>Posts</th>
+          <th>Status</th>
+          <th style="text-align: right; width: 140px;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (authors && authors.length > 0) { %>
+          <% authors.forEach(a => { %>
+            <tr>
+              <td>
+                <img src="<%= a.avatar_url || '/images/default-avatar.svg' %>" alt="<%= a.name %>" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid #e2e8f0;">
+              </td>
+              <td>
+                <div style="font-weight: 700; color: #1e293b; font-size: 14px;"><%= a.name %></div>
+                <div style="font-size: 12px; color: #64748b; font-family: monospace;">/author/<%= a.slug %></div>
+                <% if (a.email) { %>
+                  <div style="font-size: 11.5px; color: #64748b;">📧 <%= a.email %></div>
+                <% } %>
+              </td>
+              <td>
+                <div style="font-weight: 600; color: #ab183d; font-size: 13px;"><%= a.role %></div>
+                <% if (a.qualification || a.experience) { %>
+                  <div style="font-size: 12px; color: #475569;">
+                    <%= a.qualification ? a.qualification : '' %>
+                    <%= (a.qualification && a.experience) ? ' • ' : '' %>
+                    <%= a.experience ? a.experience : '' %>
+                  </div>
+                <% } %>
+              </td>
+              <td>
+                <span class="badge" style="background: #eff6ff; color: #1d4ed8; font-weight: 700; padding: 4px 8px; border-radius: 4px; font-size: 12px;">
+                  <%= a.post_count || 0 %> Posts
+                </span>
+              </td>
+              <td>
+                <% if (a.is_active) { %>
+                  <span style="display: inline-block; padding: 3px 8px; background: #dcfce7; color: #166534; font-size: 11.5px; font-weight: 700; border-radius: 4px;">Active</span>
+                <% } else { %>
+                  <span style="display: inline-block; padding: 3px 8px; background: #fee2e2; color: #991b1b; font-size: 11.5px; font-weight: 700; border-radius: 4px;">Disabled</span>
+                <% } %>
+              </td>
+              <td style="text-align: right; white-space: nowrap;">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleEditAuthor('<%= a.id %>')" title="Edit Author Profile">✏️ Edit</button>
+              </td>
+            </tr>
+
+            <!-- Inline Edit Form Row -->
+            <tr id="edit-row-<%= a.id %>" style="display: none; background: #fdfefe;">
+              <td colspan="6" style="padding: 16px 20px; border-top: 1px dashed #cbd5e1; border-bottom: 2px solid #cbd5e1;">
+                <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/authors/edit/<%= a.id %>" method="POST">
+                  <h4 style="margin: 0 0 12px 0; font-size: 14px; color: #1e293b;">✏️ Edit Profile: <%= a.name %></h4>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label style="font-size: 12px; font-weight: 600;">Full Name *</label>
+                      <input type="text" name="name" class="form-control" value="<%= a.name %>" required>
+                    </div>
+                    <div class="form-group">
+                      <label style="font-size: 12px; font-weight: 600;">Slug *</label>
+                      <input type="text" name="slug" class="form-control" value="<%= a.slug %>" required>
+                    </div>
+                    <div class="form-group">
+                      <label style="font-size: 12px; font-weight: 600;">Role / Title *</label>
+                      <input type="text" name="role" class="form-control" value="<%= a.role %>" required>
+                    </div>
+                    <div class="form-group">
+                      <label style="font-size: 12px; font-weight: 600;">Official Email</label>
+                      <input type="email" name="email" class="form-control" value="<%= a.email || '' %>">
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label style="font-size: 12px; font-weight: 600;">Qualification</label>
+                      <input type="text" name="qualification" class="form-control" value="<%= a.qualification || '' %>">
+                    </div>
+                    <div class="form-group">
+                      <label style="font-size: 12px; font-weight: 600;">Experience</label>
+                      <input type="text" name="experience" class="form-control" value="<%= a.experience || '' %>">
+                    </div>
+                    <div class="form-group" style="grid-column: span 2;">
+                      <label style="font-size: 12px; font-weight: 600;">Avatar Image URL</label>
+                      <input type="text" name="avatar_url" class="form-control" value="<%= a.avatar_url || '/images/default-avatar.svg' %>">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label style="font-size: 12px; font-weight: 600;">Bio / Verification Statement *</label>
+                    <textarea name="bio" class="form-control" rows="3" required><%= a.bio || '' %></textarea>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label style="font-size: 12px; font-weight: 600;">Twitter / X</label>
+                      <input type="url" name="twitter_url" class="form-control" value="<%= a.twitter_url || '' %>">
+                    </div>
+                    <div class="form-group">
+                      <label style="font-size: 12px; font-weight: 600;">LinkedIn</label>
+                      <input type="url" name="linkedin_url" class="form-control" value="<%= a.linkedin_url || '' %>">
+                    </div>
+                    <div class="form-group">
+                      <label style="font-size: 12px; font-weight: 600;">Telegram</label>
+                      <input type="url" name="telegram_url" class="form-control" value="<%= a.telegram_url || '' %>">
+                    </div>
+                    <div class="form-group">
+                      <label style="font-size: 12px; font-weight: 600;">Reset Password</label>
+                      <input type="password" name="password" class="form-control" placeholder="Leave blank to keep unchanged">
+                    </div>
+                    <div class="form-group" style="display: flex; align-items: flex-end; padding-bottom: 8px;">
+                      <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 12.5px; font-weight: 600;">
+                        <input type="checkbox" name="is_active" value="1" <%= a.is_active ? 'checked' : '' %>>
+                        <span>Active Profile</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; gap: 8px;">
+                    <button type="submit" class="btn btn-primary btn-sm">💾 Update Author</button>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="toggleEditAuthor('<%= a.id %>')">Cancel</button>
+                  </div>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan="6" style="text-align: center; padding: 30px; color: #64748b;">
+              No authors found. Please create one using the form above.
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  function toggleEditAuthor(id) {
+    const row = document.getElementById('edit-row-' + id);
+    if (!row) return;
+    if (row.style.display === 'none' || !row.style.display) {
+      row.style.display = 'table-row';
+    } else {
+      row.style.display = 'none';
+    }
+  }
+</script>
+
+<%- include('../partials/admin-footer') %>

@@ -1,0 +1,110 @@
+<%- include('../partials/header') %>
+<%- include('../partials/subheader') %>
+
+<%
+  const siteDomain = (typeof settings !== 'undefined' && settings.site_domain) 
+    ? (settings.site_domain.startsWith('http') ? settings.site_domain.replace(/\/$/, '') : 'https://' + settings.site_domain.replace(/\/$/, ''))
+    : 'https://govtexamzone.com';
+  const portalName = (typeof settings !== 'undefined' && settings.site_title) ? settings.site_title : 'Govt Exam Zone';
+  const officialEmail = (typeof settings !== 'undefined' && settings.contact_email) ? settings.contact_email : 'contact.govtexamzone@gmail.com';
+%>
+
+<!-- Schema.org JSON-LD Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "<%= siteDomain %>"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Disclaimer Policy",
+      "item": "<%= siteDomain %>/disclaimer"
+    }
+  ]
+}
+</script>
+
+<main class="container">
+  <!-- Breadcrumb -->
+  <div style="font-size: 13px; margin: 10px 0 14px 2px; color: #666;">
+    <a href="/" style="color: var(--primary-red); font-weight: bold; text-decoration: none;">🏠 Home</a>
+    <span style="margin: 0 6px; color: #999;">»</span>
+    <span style="color: #333; font-weight: 600;">Disclaimer Policy</span>
+  </div>
+
+  <div class="sarkari-box" style="margin-bottom: 30px; background: #ffffff;">
+    <h1 class="sarkari-box-header" style="margin: 0; font-size: 16px; line-height: 1.3; text-align: left; padding: 14px 20px;">
+      Legal &amp; Non-Affiliation Disclaimer - <%= portalName %>
+    </h1>
+
+    <div class="static-page-content" style="padding: 22px 20px; line-height: 1.7; color: #334155;">
+      
+      <!-- Primary Non-Affiliation Box -->
+      <div style="background: #fef2f2; border: 1px solid #fecaca; padding: 18px 20px; border-radius: 6px; margin-bottom: 22px;">
+        <h2 style="margin-top: 0; color: #991b1b; font-size: 16px; display: flex; align-items: center; gap: 8px;">
+          <span>⚠️</span> Important Public Notice &amp; Non-Affiliation Disclosure
+        </h2>
+        <p style="margin: 0; font-size: 14px; color: #7f1d1d; line-height: 1.65;">
+          <b><%= portalName %> (<%= siteDomain %>) is an independent, non-governmental educational information service portal.</b> 
+          We are NOT affiliated with, associated with, sponsored by, authorized by, or in any way officially connected with the Union Public Service Commission (UPSC), Staff Selection Commission (SSC), Railway Recruitment Boards (RRB), National Testing Agency (NTA), Institute of Banking Personnel Selection (IBPS), or any Central or State Government department or recruitment board.
+        </p>
+      </div>
+
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 24px; margin-bottom: 10px;">
+        1. Purpose &amp; Scope of Information
+      </h2>
+      <p>
+        The notifications, exam syllabus, admit card alerts, answer keys, cutoff marks, and result announcements published on this website are aggregated and summarized strictly for general educational and informational purposes for candidate convenience. All material is derived from publicly accessible government employment gazettes (Employment News / Rozgar Samachar) and authorized statutory commission websites (.gov.in / .nic.in).
+      </p>
+
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 24px; margin-bottom: 10px;">
+        2. Candidate Advisory &amp; Official Gazette Verification
+      </h2>
+      <p>
+        Candidates are strictly advised to double-check and verify all dates, eligibility conditions, reservation criteria, and application guidelines from the official notification PDF bulletin released by the respective recruiting commission prior to submitting any online application form or depositing examination fees. In the event of any contradiction between information on this website and official government circulars, the official government bulletin shall always supersede and prevail.
+      </p>
+
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 24px; margin-bottom: 10px;">
+        3. Strict Anti-Fraud Warning: No Fees Charged
+      </h2>
+      <p>
+        <%= portalName %> does not charge registration fees, sell employment application forms, provide coaching, or promise government appointments. If you receive any communication, email, or telephone call demanding payments claiming to represent <%= portalName %>, please recognize it as an unauthorized scam and report it immediately.
+      </p>
+
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 24px; margin-bottom: 10px;">
+        4. Third-Party Services &amp; Advertising
+      </h2>
+      <p>
+        This portal displays advertisements served by <b>Google AdSense</b> and measures traffic via <b>Google Analytics</b>. We do not collect or harvest candidate personal data. Please review our <a href="/privacy-policy" style="color: var(--primary-red); font-weight: bold;">Privacy Policy</a> for complete details on advertising cookies and opt-out procedures.
+      </p>
+
+      <h2 style="color: var(--primary-red); font-size: 18px; margin-top: 24px; margin-bottom: 10px;">
+        5. Trademarks &amp; Copyright Notice
+      </h2>
+      <p>
+        All official department names, acronyms, and organizational insignia belong to their respective statutory bodies. Their mention on this portal is strictly descriptive for accurate candidate guidance.
+      </p>
+
+      <!-- Correction Notice Card -->
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 16px 20px; margin-top: 26px;">
+        <h3 style="margin-top: 0; font-size: 15px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+          <span>📝</span> Report a Discrepancy or Correction
+        </h3>
+        <p style="margin: 0; font-size: 14px;">
+          If you observe any discrepancy in dates, eligibility clauses, or links, please notify our editorial research desk immediately at: 
+          <!--email_off--><a href="mailto:<%= officialEmail %>" style="color: var(--primary-red); font-weight: bold; text-decoration: underline;"><%= officialEmail %></a><!--/email_off-->
+        </p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
