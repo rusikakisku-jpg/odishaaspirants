@@ -927,7 +927,7 @@ router.get('/settings', async (req, res, next) => {
       contact_phone: '',
       office_address: '',
       meta_description: 'Odisha Aspirants (odishaaspirants.com) provides fastest live updates for Government Jobs 2026, Latest Online Forms, Admit Card, Answer Key, Syllabus & Results across UPSC, SSC, Railways, State Police & Banking.',
-      meta_keywords: 'Odisha Aspirants, odishaaspirants, odishaaspirants.com, Govt Jobs 2026, Latest Online Form, Admit Card, Exam Zone, SSC CGL 2026, UP Police, Railway Recruitment',
+      meta_keywords: 'Odisha Aspirants, odishaaspirants, odishaaspirants.com, Odisha Govt Jobs 2026, Latest Online Form, Admit Card, OPSC, OSSC, OSSSC, Odisha Police, Railway Recruitment',
       google_site_verification: '',
       google_analytics_id: '',
       notice_banner_active: '0',
