@@ -1381,15 +1381,19 @@ a:hover, a:focus {
     filter: brightness(1.08);
   }
 
-  /* Mobile Header Search Item inside drawer */
+  /* Mobile Header Search Item (Only shown when Search icon is clicked) */
   .nav-search-item {
     order: -1;
     margin-left: 0 !important;
     padding: 10px 14px;
     background: #090d16;
     border-bottom: 1px solid #1e293b !important;
-    display: block;
+    display: none;
     width: 100%;
+  }
+
+  .nav-menu.search-only .nav-search-item {
+    display: block;
   }
 
   .header-search-wrap {
