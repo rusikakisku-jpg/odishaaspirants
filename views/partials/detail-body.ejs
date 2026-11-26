@@ -1,6 +1,7 @@
 <%
   const _isBlogMode = (typeof settings !== 'undefined' && settings.post_detail_layout === 'blog_2col');
   const _hasRichArticle = Boolean(post.article_content && post.article_content.trim());
+  const _showSarkariSections = (!_isBlogMode || !_hasRichArticle);
   const _hasDates = Boolean(importantDates && importantDates.length > 0);
   const _hasFees = Boolean(applicationFee && applicationFee.length > 0);
   const _hasAnyLink = Boolean(
@@ -34,13 +35,14 @@
   <% } %>
 <% } %>
 
-<!-- Optional Full Blog Article / Detailed Editorial Content -->
-<% if (_hasRichArticle) { %>
+<!-- Optional Full Blog Article / Detailed Editorial Content (Shown ONLY in 2-Column Blog Layout) -->
+<% if (_isBlogMode && _hasRichArticle) { %>
   <div class="gez-article-content" id="article-content">
     <%- post.article_content %>
   </div>
 <% } %>
 
+<% if (_showSarkariSections) { %>
 <!-- 2-Column Info Grid: Important Dates & Application Fee -->
 <% if (!_isBlogMode || _hasDates || _hasFees || !_hasRichArticle) { %>
 <div class="detail-info-grid">
@@ -336,4 +338,5 @@
     </tbody>
   </table>
 </div>
+<% } %>
 <% } %>
