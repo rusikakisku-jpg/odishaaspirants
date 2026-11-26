@@ -53,7 +53,7 @@
               <a href="<%= u.file_url %>" target="_blank" style="font-weight: 600; color: #0f172a;">
                 <%= u.original_name %>
               </a>
-              <div style="font-size: 11px; color: #64748b;"><%= u.file_key %></div>
+              <div style="font-size: 11px; color: #64748b; word-break: break-all;"><%= u.file_url %></div>
             </td>
             <td>
               <span style="background: <%= u.storage_type === 'r2' ? '#dcfce7' : '#f1f5f9' %>; color: <%= u.storage_type === 'r2' ? '#15803d' : '#475569' %>; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 11px;">
@@ -63,7 +63,7 @@
             <td><%= u.file_size ? (u.file_size / 1024).toFixed(1) + ' KB' : '-' %></td>
             <td><%= u.created_at %></td>
             <td style="text-align: right; white-space: nowrap;">
-              <button type="button" class="btn btn-sm btn-secondary" onclick="copyToClipboard('<%= u.file_url %>')">Copy URL</button>
+              <button type="button" class="btn btn-sm btn-secondary" data-url="<%= u.file_url %>" onclick="copyToClipboard(this.dataset.url)">Copy URL</button>
               <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/r2/delete" method="POST" style="display: inline-block;" onsubmit="return confirm('Delete this file from storage?');">
                 <input type="hidden" name="id" value="<%= u.id %>">
                 <input type="hidden" name="file_key" value="<%= u.file_key %>">

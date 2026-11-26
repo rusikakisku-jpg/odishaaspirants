@@ -6,7 +6,7 @@ const r2 = require('../storage/r2Client');
 const config = require('../config/env');
 const { requireAuth, setAuthCookie, clearAuthCookie } = require('../middleware/auth');
 const { hashPassword } = require('../middleware/authorAuth');
-const { getAdminBase, getPublicBase, getAdminUrl, isAdminSubdomainRequest } = require('../utils/adminHost');
+const { getAdminBase, getPublicBase, getAdminUrl, isAdminSubdomainRequest, getPublicOrigin, toAbsoluteAssetUrl } = require('../utils/adminHost');
 const { saveUploadedAsset } = require('../utils/uploadHelper');
 const { getIstDateString } = require('../utils/viewTracker');
 const {
@@ -765,8 +765,17 @@ router.post('/marquees/delete/:id', async (req, res, next) => {
 // Cloudflare R2 Object Storage Manager
 router.get('/r2', async (req, res, next) => {
   try {
-    const uploads = await d1.prepare('SELECT * FROM uploads ORDER BY id DESC LIMIT 50').all();
-    const r2Files = await r2.listFiles();
+    const rawUploads = await d1.prepare('SELECT * FROM uploads ORDER BY id DESC LIMIT 50').all();
+    const rawR2Files = await r2.listFiles();
+    const uploads = (rawUploads || []).map(u => ({
+      ...u,
+      file_url: toAbsoluteAssetUrl(u.file_url, req, res.locals.settings)
+    }));
+    const r2Files = (rawR2Files || []).map(f => ({
+      ...f,
+      fileUrl: toAbsoluteAssetUrl(f.fileUrl, req, res.locals.settings)
+    }));
+    const resolvedOrigin = getPublicOrigin(req, res.locals.settings);
 
     res.render('admin/r2-manager', {
       title: 'Cloudflare R2 Object Storage Manager',
@@ -774,7 +783,7 @@ router.get('/r2', async (req, res, next) => {
       r2Files,
       isR2Configured: r2.isR2Configured,
       bucketName: config.cloudflare.r2.bucketName,
-      publicUrl: config.cloudflare.r2.publicUrl
+      publicUrl: config.cloudflare.r2.publicUrl || (resolvedOrigin ? `${resolvedOrigin}/uploads` : '')
     });
   } catch (err) {
     next(err);
@@ -787,11 +796,7 @@ router.post('/r2/upload', upload.single('file'), async (req, res, next) => {
     if (!req.file) {
       return res.redirect(getAdminUrl(req, '/r2'));
     }
-    const uploadRes = await r2.uploadFile(req.file.buffer, req.file.originalname, req.file.mimetype);
-    await d1.prepare(`
-      INSERT INTO uploads (original_name, file_key, file_url, storage_type, mime_type, file_size)
-      VALUES (?, ?, ?, ?, ?, ?)
-    `).bind(uploadRes.originalName, uploadRes.fileKey, uploadRes.fileUrl, uploadRes.storageType, uploadRes.mimeType, uploadRes.size).run();
+    await saveUploadedAsset(req.file, req, res.locals.settings);
 
     res.redirect(getAdminUrl(req, '/r2'));
   } catch (err) {
@@ -805,11 +810,7 @@ router.post('/r2/upload-json', upload.single('file'), async (req, res) => {
     if (!req.file) {
       return res.status(400).json({ error: 'No image file provided' });
     }
-    const uploadRes = await r2.uploadFile(req.file.buffer, req.file.originalname, req.file.mimetype);
-    await d1.prepare(`
-      INSERT INTO uploads (original_name, file_key, file_url, storage_type, mime_type, file_size)
-      VALUES (?, ?, ?, ?, ?, ?)
-    `).bind(uploadRes.originalName, uploadRes.fileKey, uploadRes.fileUrl, uploadRes.storageType, uploadRes.mimeType, uploadRes.size).run();
+    const uploadRes = await saveUploadedAsset(req.file, req, res.locals.settings);
 
     res.json({ success: true, location: uploadRes.fileUrl, url: uploadRes.fileUrl });
   } catch (err) {

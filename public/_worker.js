@@ -75174,13 +75174,43 @@ var require_adminHost = __commonJS({
       const normalized = subPath.startsWith("/") ? subPath : `/${subPath}`;
       return `${base}${normalized}`;
     }
+    function getPublicOrigin(req, siteSettings) {
+      const host = getRequestHost(req);
+      if (host && (host === "localhost" || host === "127.0.0.1" || host.endsWith(".local"))) {
+        const rawHost = req.headers && (req.headers["x-forwarded-host"] || req.headers.host) || host;
+        const proto = isHttpsRequest(req) ? "https" : "http";
+        return `${proto}://${String(rawHost).split(",")[0].trim()}`;
+      }
+      const settingDomain = siteSettings && siteSettings.site_domain ? String(siteSettings.site_domain).trim() : "";
+      if (settingDomain) {
+        return (settingDomain.startsWith("http") ? settingDomain : `https://${settingDomain}`).replace(/\/+$/, "");
+      }
+      if (config.admin && config.admin.publicSiteUrl) {
+        return config.admin.publicSiteUrl.replace(/\/+$/, "");
+      }
+      if (host) {
+        return `${isHttpsRequest(req) ? "https" : "http"}://${host}`;
+      }
+      return "";
+    }
+    function toAbsoluteAssetUrl(fileUrl, req, siteSettings) {
+      if (!fileUrl) return "";
+      const trimmed = String(fileUrl).trim();
+      if (/^https?:\/\//i.test(trimmed)) return trimmed;
+      const origin = getPublicOrigin(req, siteSettings);
+      if (!origin) return trimmed;
+      const normalizedPath = trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+      return `${origin}${normalizedPath}`;
+    }
     module.exports = {
       getRequestHost,
       isAdminSubdomainRequest,
       isHttpsRequest,
       getAdminBase,
       getPublicBase,
-      getAdminUrl
+      getAdminUrl,
+      getPublicOrigin,
+      toAbsoluteAssetUrl
     };
   }
 });
@@ -75253,8 +75283,10 @@ var require_uploadHelper = __commonJS({
   "src/utils/uploadHelper.js"(exports, module) {
     var d1 = require_d1Client();
     var r2 = require_r2Client();
-    async function saveUploadedAsset(file) {
+    var { toAbsoluteAssetUrl } = require_adminHost();
+    async function saveUploadedAsset(file, req = null, siteSettings = null) {
       const uploadRes = await r2.uploadFile(file.buffer, file.originalname, file.mimetype);
+      uploadRes.fileUrl = toAbsoluteAssetUrl(uploadRes.fileUrl, req, siteSettings);
       await d1.prepare(`
     INSERT INTO uploads (original_name, file_key, file_url, storage_type, mime_type, file_size)
     VALUES (?, ?, ?, ?, ?, ?)
@@ -75285,7 +75317,7 @@ var require_adminRoutes = __commonJS({
     var config = require_env();
     var { requireAuth, setAuthCookie, clearAuthCookie } = require_auth();
     var { hashPassword } = require_authorAuth();
-    var { getAdminBase, getPublicBase, getAdminUrl, isAdminSubdomainRequest } = require_adminHost();
+    var { getAdminBase, getPublicBase, getAdminUrl, isAdminSubdomainRequest, getPublicOrigin, toAbsoluteAssetUrl } = require_adminHost();
     var { saveUploadedAsset } = require_uploadHelper();
     var { getIstDateString } = require_viewTracker();
     var {
@@ -76014,15 +76046,24 @@ var require_adminRoutes = __commonJS({
     });
     router.get("/r2", async (req, res, next) => {
       try {
-        const uploads = await d1.prepare("SELECT * FROM uploads ORDER BY id DESC LIMIT 50").all();
-        const r2Files = await r2.listFiles();
+        const rawUploads = await d1.prepare("SELECT * FROM uploads ORDER BY id DESC LIMIT 50").all();
+        const rawR2Files = await r2.listFiles();
+        const uploads = (rawUploads || []).map((u) => ({
+          ...u,
+          file_url: toAbsoluteAssetUrl(u.file_url, req, res.locals.settings)
+        }));
+        const r2Files = (rawR2Files || []).map((f) => ({
+          ...f,
+          fileUrl: toAbsoluteAssetUrl(f.fileUrl, req, res.locals.settings)
+        }));
+        const resolvedOrigin = getPublicOrigin(req, res.locals.settings);
         res.render("admin/r2-manager", {
           title: "Cloudflare R2 Object Storage Manager",
           uploads,
           r2Files,
           isR2Configured: r2.isR2Configured,
           bucketName: config.cloudflare.r2.bucketName,
-          publicUrl: config.cloudflare.r2.publicUrl
+          publicUrl: config.cloudflare.r2.publicUrl || (resolvedOrigin ? `${resolvedOrigin}/uploads` : "")
         });
       } catch (err) {
         next(err);
@@ -76033,11 +76074,7 @@ var require_adminRoutes = __commonJS({
         if (!req.file) {
           return res.redirect(getAdminUrl(req, "/r2"));
         }
-        const uploadRes = await r2.uploadFile(req.file.buffer, req.file.originalname, req.file.mimetype);
-        await d1.prepare(`
-      INSERT INTO uploads (original_name, file_key, file_url, storage_type, mime_type, file_size)
-      VALUES (?, ?, ?, ?, ?, ?)
-    `).bind(uploadRes.originalName, uploadRes.fileKey, uploadRes.fileUrl, uploadRes.storageType, uploadRes.mimeType, uploadRes.size).run();
+        await saveUploadedAsset(req.file, req, res.locals.settings);
         res.redirect(getAdminUrl(req, "/r2"));
       } catch (err) {
         next(err);
@@ -76048,11 +76085,7 @@ var require_adminRoutes = __commonJS({
         if (!req.file) {
           return res.status(400).json({ error: "No image file provided" });
         }
-        const uploadRes = await r2.uploadFile(req.file.buffer, req.file.originalname, req.file.mimetype);
-        await d1.prepare(`
-      INSERT INTO uploads (original_name, file_key, file_url, storage_type, mime_type, file_size)
-      VALUES (?, ?, ?, ?, ?, ?)
-    `).bind(uploadRes.originalName, uploadRes.fileKey, uploadRes.fileUrl, uploadRes.storageType, uploadRes.mimeType, uploadRes.size).run();
+        const uploadRes = await saveUploadedAsset(req.file, req, res.locals.settings);
         res.json({ success: true, location: uploadRes.fileUrl, url: uploadRes.fileUrl });
       } catch (err) {
         res.status(500).json({ error: err.message || "Image upload failed" });
@@ -76883,11 +76916,7 @@ var require_authorRoutes = __commonJS({
         if (!req.file) {
           return res.status(400).json({ error: "No image file provided" });
         }
-        const uploadRes = await r2.uploadFile(req.file.buffer, req.file.originalname, req.file.mimetype);
-        await d1.prepare(`
-      INSERT INTO uploads (original_name, file_key, file_url, storage_type, mime_type, file_size)
-      VALUES (?, ?, ?, ?, ?, ?)
-    `).bind(uploadRes.originalName, uploadRes.fileKey, uploadRes.fileUrl, uploadRes.storageType, uploadRes.mimeType, uploadRes.size).run();
+        const uploadRes = await saveUploadedAsset(req.file, req, res.locals.settings);
         res.json({ success: true, location: uploadRes.fileUrl, url: uploadRes.fileUrl });
       } catch (err) {
         res.status(500).json({ error: err.message || "Image upload failed" });
@@ -78791,8 +78820,8 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( u.file_url ))
     ; __append("\\" target=\\"_blank\\" style=\\"font-weight: 600; color: #0f172a;\\">\\n                ")
     ; __append(escapeFn( u.original_name ))
-    ; __append("\\n              </a>\\n              <div style=\\"font-size: 11px; color: #64748b;\\">")
-    ; __append(escapeFn( u.file_key ))
+    ; __append("\\n              </a>\\n              <div style=\\"font-size: 11px; color: #64748b; word-break: break-all;\\">")
+    ; __append(escapeFn( u.file_url ))
     ; __append("</div>\\n            </td>\\n            <td>\\n              <span style=\\"background: ")
     ; __append(escapeFn( u.storage_type === 'r2' ? '#dcfce7' : '#f1f5f9' ))
     ; __append("; color: ")
@@ -78803,9 +78832,9 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( u.file_size ? (u.file_size / 1024).toFixed(1) + ' KB' : '-' ))
     ; __append("</td>\\n            <td>")
     ; __append(escapeFn( u.created_at ))
-    ; __append("</td>\\n            <td style=\\"text-align: right; white-space: nowrap;\\">\\n              <button type=\\"button\\" class=\\"btn btn-sm btn-secondary\\" onclick=\\"copyToClipboard('")
+    ; __append("</td>\\n            <td style=\\"text-align: right; white-space: nowrap;\\">\\n              <button type=\\"button\\" class=\\"btn btn-sm btn-secondary\\" data-url=\\"")
     ; __append(escapeFn( u.file_url ))
-    ; __append("')\\">Copy URL</button>\\n              <form action=\\"")
+    ; __append("\\" onclick=\\"copyToClipboard(this.dataset.url)\\">Copy URL</button>\\n              <form action=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/r2/delete\\" method=\\"POST\\" style=\\"display: inline-block;\\" onsubmit=\\"return confirm('Delete this file from storage?');\\">\\n                <input type=\\"hidden\\" name=\\"id\\" value=\\"")
     ; __append(escapeFn( u.id ))
@@ -78859,8 +78888,8 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( u.file_url ))
     ; __append("\\" target=\\"_blank\\" style=\\"font-weight: 600; color: #0f172a;\\">\\n                ")
     ; __append(escapeFn( u.original_name ))
-    ; __append("\\n              </a>\\n              <div style=\\"font-size: 11px; color: #64748b;\\">")
-    ; __append(escapeFn( u.file_key ))
+    ; __append("\\n              </a>\\n              <div style=\\"font-size: 11px; color: #64748b; word-break: break-all;\\">")
+    ; __append(escapeFn( u.file_url ))
     ; __append("</div>\\n            </td>\\n            <td>\\n              <span style=\\"background: ")
     ; __append(escapeFn( u.storage_type === 'r2' ? '#dcfce7' : '#f1f5f9' ))
     ; __append("; color: ")
@@ -78871,9 +78900,9 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( u.file_size ? (u.file_size / 1024).toFixed(1) + ' KB' : '-' ))
     ; __append("</td>\\n            <td>")
     ; __append(escapeFn( u.created_at ))
-    ; __append("</td>\\n            <td style=\\"text-align: right; white-space: nowrap;\\">\\n              <button type=\\"button\\" class=\\"btn btn-sm btn-secondary\\" onclick=\\"copyToClipboard('")
+    ; __append("</td>\\n            <td style=\\"text-align: right; white-space: nowrap;\\">\\n              <button type=\\"button\\" class=\\"btn btn-sm btn-secondary\\" data-url=\\"")
     ; __append(escapeFn( u.file_url ))
-    ; __append("')\\">Copy URL</button>\\n              <form action=\\"")
+    ; __append("\\" onclick=\\"copyToClipboard(this.dataset.url)\\">Copy URL</button>\\n              <form action=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/r2/delete\\" method=\\"POST\\" style=\\"display: inline-block;\\" onsubmit=\\"return confirm('Delete this file from storage?');\\">\\n                <input type=\\"hidden\\" name=\\"id\\" value=\\"")
     ; __append(escapeFn( u.id ))
