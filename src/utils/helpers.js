@@ -54,49 +54,49 @@ const CATEGORIES = {
   'latest-jobs': {
     name: 'Latest Jobs',
     slug: 'latest-jobs',
-    color: '#ab183d',
+    color: '#0b4f6c',
     introEn: 'Welcome to Odisha Aspirants — your dedicated source for verified government job notifications across India. Stay informed about the latest Central and State Government vacancies, online application procedures, eligibility criteria, and last dates to apply. Whether you are preparing for UPSC, SSC, Railway (RRB), Banking, Defence, Teaching, or State Police recruitment, our editorial desk cross-checks all circulars directly with official government gazettes to deliver authentic, timely alerts.'
   },
   'admit-card': {
     name: 'Admit Card',
     slug: 'admit-card',
-    color: '#ab183d',
+    color: '#0b4f6c',
     introEn: 'Welcome to Odisha Aspirants — your instant access point for government exam admit cards and hall tickets nationwide. Stay updated on upcoming preliminary, mains, skill tests, and physical examination schedules conducted by major recruitment commissions. Find direct server download links, exam city intimation slips, and step-by-step instructions to print your official hall ticket without server delays.'
   },
   'result': {
     name: 'Results',
     slug: 'result',
-    color: '#ab183d',
+    color: '#0b4f6c',
     introEn: 'Welcome to Odisha Aspirants — track your competitive examination results with total speed and authenticity. We bring you prompt announcements for tier-wise written examinations, cutoff marks, selection lists, and final merit rankings across Central and State government boards. Check your scorecards and download official result PDF documents directly through fast, reliable mirror links.'
   },
   'syllabus': {
     name: 'Syllabus',
     slug: 'syllabus',
-    color: '#ab183d',
+    color: '#0b4f6c',
     introEn: 'Welcome to Odisha Aspirants — download official, comprehensive examination syllabi and test patterns for competitive examinations throughout India. A winning preparation strategy starts with complete clarity on subject-wise weightage, marking schemes, and time duration. Download detailed, verified PDF syllabi for SSC, UPSC, Railway (RRB NTPC, ALP, Group D), Police, and State Commission exams.'
   },
   'answer-key': {
     name: 'Answer Key',
     slug: 'answer-key',
-    color: '#ab183d',
+    color: '#0b4f6c',
     introEn: 'Welcome to Odisha Aspirants — verify your answers with official provisional and final answer keys released by government recruiting authorities. Calculate your estimated scores, download candidate response sheets, and access official objection windows before deadlines. We provide direct links to commission dispute portals for SSC, RRB, Police, NTA, and State Board exams.'
   },
   'admission': {
     name: 'Admission',
     slug: 'admission',
-    color: '#ab183d',
+    color: '#0b4f6c',
     introEn: 'Welcome to Odisha Aspirants — your guide for premier entrance examinations, admission registration forms, counselling schedules, and university allotments across India. Discover verified circulars for NTA NEET, JEE Main, CUET, Polytechnic, ITI, B.Ed, and Central University programmes with complete eligibility and direct apply access.'
   },
   'certificate-verification': {
     name: 'Certificate Verification',
     slug: 'certificate-verification',
-    color: '#ab183d',
+    color: '#0b4f6c',
     introEn: 'Welcome to Odisha Aspirants — authentic information and direct links for document verification, e-certificates, and public digital identity services. Access authorized portals for Aadhaar updates, PAN Card applications, Caste/Income certificate verification, and DigiLocker credentials essential for government job verification rounds.'
   },
   'important': {
     name: 'Important',
     slug: 'important',
-    color: '#ab183d',
+    color: '#0b4f6c',
     introEn: 'Welcome to Odisha Aspirants — track critical candidate advisories, One-Time Registration (OTR) procedures, government scholarship programs, and student welfare initiatives. Stay ahead with timely updates on SSC OTR, State Commission OTRs, National Scholarship Portals, and major administrative recruitment notifications.'
   }
 };

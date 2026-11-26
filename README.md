@@ -9,7 +9,7 @@ Designed with strict attention to recruitment exam information architecture, den
 ## 🌟 Key Features
 
 ### 1. Authentic Government Recruitment Portal UI
-- **Official Header**: Crimson/Maroon `#ab183d` banner with custom SVG logo emblem and subtitle `WWW.ODISHAASPIRANTS.COM`.
+- **Official Header**: Royal Peacock Blue `#0b4f6c` banner with custom SVG logo emblem and subtitle `WWW.ODISHAASPIRANTS.COM`.
 - **Sticky Header & Menu**: Fixed header navigation with smooth scrolling, dropdown menus, and zero content jumping.
 - **Marquee Tickers**: Scrolling alert tickers with alternate bounce direction for urgent exam updates.
 - **Iconic Color Badges**: 2x4 responsive highlight grid for high-priority exams (SSC, UPSC, UP Police, Railway RRB, Banking, etc.).

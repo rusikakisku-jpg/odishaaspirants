@@ -160,8 +160,8 @@ document.addEventListener('DOMContentLoaded', function() {
           const data = await res.json();
 
           if (data.success && data.results && data.results.length > 0) {
-            let html = '<div class="live-search-card" style="background:#fff; border:2px solid #ab183d; box-shadow:0 4px 12px rgba(0,0,0,0.15); border-radius:4px; max-height:350px; overflow-y:auto; text-align:left;">';
-            html += '<div style="background:#ab183d; color:#fff; padding:6px 12px; font-weight:bold; font-size:13px;">Quick Search Results (' + data.results.length + ')</div>';
+            let html = '<div class="live-search-card" style="background:#fff; border:2px solid #0b4f6c; box-shadow:0 4px 12px rgba(0,0,0,0.15); border-radius:4px; max-height:350px; overflow-y:auto; text-align:left;">';
+            html += '<div style="background:#0b4f6c; color:#fff; padding:6px 12px; font-weight:bold; font-size:13px;">Quick Search Results (' + data.results.length + ')</div>';
             
             data.results.forEach(item => {
               html += `
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </a>
               `;
             });
-            html += `<a href="/search?q=${encodeURIComponent(q)}" style="display:block; text-align:center; padding:8px; background:#f4f4f4; color:#ab183d; font-weight:bold; font-size:12.5px;">View All Results →</a>`;
+            html += `<a href="/search?q=${encodeURIComponent(q)}" style="display:block; text-align:center; padding:8px; background:#f4f4f4; color:#0b4f6c; font-weight:bold; font-size:12.5px;">View All Results →</a>`;
             html += '</div>';
 
             searchResultsDropdown.innerHTML = html;

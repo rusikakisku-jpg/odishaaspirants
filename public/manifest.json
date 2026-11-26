@@ -3,8 +3,8 @@
   "short_name": "OdishaAspirants",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ab183d",
-  "theme_color": "#ab183d",
+  "background_color": "#0b4f6c",
+  "theme_color": "#0b4f6c",
   "description": "Odisha Aspirants provides fastest live updates for Odisha Aspirants 2026, Govt Jobs, Latest Online Forms, Admit Card & Results.",
   "icons": [
     {

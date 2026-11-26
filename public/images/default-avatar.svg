@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
   <defs>
     <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ab183d" />
-      <stop offset="100%" stop-color="#780b26" />
+      <stop offset="0%" stop-color="#0b4f6c" />
+      <stop offset="100%" stop-color="#062f42" />
     </linearGradient>
   </defs>
   <circle cx="60" cy="60" r="58" fill="url(#avatarGrad)" stroke="#ffffff" stroke-width="3" />

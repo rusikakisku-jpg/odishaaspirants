@@ -683,7 +683,7 @@ router.get('/badges', async (req, res, next) => {
 router.post('/badges/save', async (req, res, next) => {
   try {
     const { id, title, subtitle, url, bg_color, display_order } = req.body;
-    const finalColor = (bg_color && bg_color.startsWith('#')) ? bg_color : '#ab183d';
+    const finalColor = (bg_color && bg_color.startsWith('#')) ? bg_color : '#0b4f6c';
     const finalOrder = parseInt(display_order, 10) || 1;
     const finalTitle = title ? title.trim() : 'Badge';
     const finalSubtitle = subtitle ? subtitle.trim() : null;
@@ -933,7 +933,7 @@ router.get('/settings', async (req, res, next) => {
       notice_banner_active: '0',
       notice_banner_text: '',
       notice_banner_url: '',
-      notice_banner_bg: '#ab183d',
+      notice_banner_bg: '#0b4f6c',
       adsense_client_id: '',
       ads_active: '1',
       ad_top_code: '',

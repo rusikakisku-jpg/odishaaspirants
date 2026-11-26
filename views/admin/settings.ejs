@@ -102,7 +102,7 @@
             </div>
 
             <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 10px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px;">
-              <div id="logoPreviewBox" style="width: 70px; height: 70px; background: #ab183d; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 5px; flex-shrink: 0; color: #fff; font-size: 11px; text-align: center;">
+              <div id="logoPreviewBox" style="width: 70px; height: 70px; background: #0b4f6c; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 5px; flex-shrink: 0; color: #fff; font-size: 11px; text-align: center;">
                 <% if (settings.site_logo && settings.site_logo.trim()) { %>
                   <img id="logoPreviewImg" src="<%= settings.site_logo %>" alt="Current Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                   <span id="logoNoLogoText" style="font-size: 11px; font-weight: 600; color: #cbd5e1; display: none;">No Logo<br>(Text Only)</span>
@@ -282,7 +282,7 @@
             <span class="layout-badge classic-badge">Default Style</span>
           </div>
           <div class="layout-wireframe">
-            <div style="width: 100%; height: 10px; background: #ab183d; border-radius: 3px; margin-bottom: 6px;"></div>
+            <div style="width: 100%; height: 10px; background: #0b4f6c; border-radius: 3px; margin-bottom: 6px;"></div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 6px;">
               <div style="height: 20px; background: #e2e8f0; border-radius: 3px;"></div>
               <div style="height: 20px; background: #e2e8f0; border-radius: 3px;"></div>
@@ -627,7 +627,7 @@
               type="color" 
               id="notice_banner_bg" 
               name="notice_banner_bg" 
-              value="<%= settings.notice_banner_bg || '#ab183d' %>" 
+              value="<%= settings.notice_banner_bg || '#0b4f6c' %>" 
               style="width: 48px; height: 38px; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; padding: 2px;"
             >
             <span style="font-size: 13px; color: #64748b;">(Red, Orange, Navy or Custom)</span>
@@ -851,7 +851,7 @@
   }
 
   .settings-pill:hover, .settings-pill:focus {
-    background: #ab183d;
+    background: #0b4f6c;
     color: #ffffff;
   }
 

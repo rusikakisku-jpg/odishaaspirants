@@ -3,12 +3,12 @@
    ========================================================================== */
 
 :root {
-  --primary-red: #ab183d;
-  --primary-red-hover: #8f0d2e;
-  --nav-black: #000000;
-  --box-border: #d2691e;
+  --primary-red: #0b4f6c;
+  --primary-red-hover: #083b52;
+  --nav-black: #0f172a;
+  --box-border: #0284c7;
   --link-blue: #0c1cae;
-  --link-hover: #ab183d;
+  --link-hover: #0b4f6c;
   --text-dark: #212121;
   --bg-light: #fefefe;
   --max-width: 1040px;
@@ -91,7 +91,7 @@ a:hover, a:focus {
 .site-header {
   background-color: var(--primary-red);
   padding: 15px 0;
-  border-bottom: 3px solid #6b0c24;
+  border-bottom: 3px solid #052c3d;
 }
 
 .header-inner {
@@ -270,7 +270,7 @@ a:hover, a:focus {
 
 .nav-dropdown-menu a:hover,
 .nav-dropdown-menu a.active {
-  background-color: #fff1f2 !important;
+  background-color: #f0f9ff !important;
   color: var(--primary-red) !important;
 }
 
@@ -561,7 +561,7 @@ a:hover, a:focus {
   text-align: center;
   font-size: 20px;
   font-weight: 700;
-  border-bottom: 1px solid #7c0d29;
+  border-bottom: 1px solid #07364a;
 }
 
 .sarkari-box-header a {
@@ -956,7 +956,7 @@ a:hover, a:focus {
 .links-table .action-btn:hover,
 .links-table .useful-link-text:hover,
 .links-table a:hover {
-  color: #ab183d !important;
+  color: #0b4f6c !important;
   text-decoration: none !important;
   background: transparent !important;
   box-shadow: none !important;
@@ -1220,7 +1220,7 @@ a:hover, a:focus {
   .nav-menu a:active {
     background: #1e293b;
     color: #ffffff;
-    border-left-color: #ab183d;
+    border-left-color: #0b4f6c;
     padding-left: 18px;
     transform: none !important;
   }
@@ -1228,7 +1228,7 @@ a:hover, a:focus {
   .nav-menu a.active {
     background: #1e293b;
     color: #ffffff;
-    border-left-color: #ab183d;
+    border-left-color: #0b4f6c;
     font-weight: 700;
   }
 
@@ -1265,7 +1265,7 @@ a:hover, a:focus {
 
   .nav-menu a:hover .menu-chevron,
   .nav-menu a.active .menu-chevron {
-    color: #ab183d;
+    color: #0b4f6c;
     transform: none !important;
   }
 
@@ -1838,7 +1838,7 @@ a:hover, a:focus {
   .links-table .action-btn:hover,
   .links-table .useful-link-text:hover,
   .links-table a:hover {
-    color: #ab183d !important;
+    color: #0b4f6c !important;
     text-decoration: none !important;
     background: transparent !important;
     box-shadow: none !important;
@@ -1917,14 +1917,14 @@ html {
 /* Enhanced Header with Gold Accent Line */
 .site-header {
   border-bottom: 3px solid #f5b300;
-  box-shadow: 0 4px 12px rgba(171, 24, 61, 0.2);
+  box-shadow: 0 4px 12px rgba(11, 79, 108, 0.2);
 }
 
 /* Navigation with Elevation */
 .main-nav {
   position: relative;
   box-shadow: 0 3px 10px rgba(0,0,0,0.35);
-  border-bottom: 2px solid #ab183d;
+  border-bottom: 2px solid #0b4f6c;
 }
 
 /* Blinking NEW Tags */
@@ -2031,7 +2031,7 @@ html {
 }
 
 .sarkari-box-header {
-  background: linear-gradient(180deg, #ab183d 0%, #8c0f2f 100%);
+  background: linear-gradient(180deg, #0b4f6c 0%, #07374c 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2075,7 +2075,7 @@ html {
 }
 
 .list-chevron {
-  color: #ab183d;
+  color: #0b4f6c;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
@@ -2121,7 +2121,7 @@ html {
   color: #ffffff !important;
   border-color: var(--primary-red);
   text-decoration: none;
-  box-shadow: 0 2px 6px rgba(171, 24, 61, 0.3);
+  box-shadow: 0 2px 6px rgba(11, 79, 108, 0.3);
 }
 
 /* Floating Action Connect Buttons */

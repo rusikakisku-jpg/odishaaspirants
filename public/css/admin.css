@@ -4,10 +4,10 @@
    ========================================================================== */
 
 :root {
-  --admin-primary: #ab183d;
-  --admin-primary-hover: #8f0d2e;
-  --admin-primary-light: #fff1f2;
-  --admin-primary-ring: rgba(171, 24, 61, 0.18);
+  --admin-primary: #0b4f6c;
+  --admin-primary-hover: #083b52;
+  --admin-primary-light: #f0f9ff;
+  --admin-primary-ring: rgba(11, 79, 108, 0.18);
 
   --admin-sidebar-bg: #0f172a;
   --admin-sidebar-surface: #1e293b;
@@ -205,7 +205,7 @@ body.admin-body {
 }
 
 .nav-item.active {
-  background: linear-gradient(90deg, rgba(171, 24, 61, 0.28) 0%, rgba(171, 24, 61, 0.05) 100%);
+  background: linear-gradient(90deg, rgba(11, 79, 108, 0.28) 0%, rgba(11, 79, 108, 0.05) 100%);
   color: #ffffff;
   border-left: 3px solid var(--admin-primary);
 }
@@ -323,7 +323,7 @@ body.admin-body {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--admin-primary) 0%, #e11d48 100%);
+  background: linear-gradient(135deg, var(--admin-primary) 0%, #0ea5e9 100%);
   color: #ffffff;
   font-weight: 700;
   font-size: 12px;
@@ -532,7 +532,7 @@ body.admin-body {
   background: #e2e8f0;
 }
 
-.stat-card:nth-child(1)::before { background: linear-gradient(90deg, #ab183d, #e11d48); }
+.stat-card:nth-child(1)::before { background: linear-gradient(90deg, #0b4f6c, #0ea5e9); }
 .stat-card:nth-child(2)::before { background: linear-gradient(90deg, #0284c7, #38bdf8); }
 .stat-card:nth-child(3)::before { background: linear-gradient(90deg, #10b981, #34d399); }
 .stat-card:nth-child(4)::before { background: linear-gradient(90deg, #8b5cf6, #c084fc); }
@@ -614,7 +614,7 @@ body.admin-body {
 .btn-primary { 
   background: var(--admin-primary); 
   color: #ffffff; 
-  box-shadow: 0 2px 6px rgba(171, 24, 61, 0.25);
+  box-shadow: 0 2px 6px rgba(11, 79, 108, 0.25);
 }
 .btn-primary:hover { 
   background: var(--admin-primary-hover); 
@@ -1045,7 +1045,7 @@ body.admin-body {
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--admin-primary) 0%, #e11d48 100%);
+    background: linear-gradient(135deg, var(--admin-primary) 0%, #0ea5e9 100%);
     color: #ffffff;
     font-size: 22px;
     font-weight: 700;
@@ -1053,7 +1053,7 @@ body.admin-body {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 14px rgba(171, 24, 61, 0.35);
+    box-shadow: 0 4px 14px rgba(11, 79, 108, 0.35);
     border: 3px solid #ffffff;
   }
 
@@ -1518,12 +1518,12 @@ body.admin-body {
 }
 
 .chart-bar-col.is-today .chart-bar-fill {
-  background: linear-gradient(180deg, #e11d48 0%, #ab183d 100%);
-  box-shadow: 0 4px 12px rgba(171, 24, 61, 0.3);
+  background: linear-gradient(180deg, #0ea5e9 0%, #0b4f6c 100%);
+  box-shadow: 0 4px 12px rgba(11, 79, 108, 0.3);
 }
 
 .chart-bar-col.is-today .chart-bar-count {
-  color: #ab183d;
+  color: #0b4f6c;
 }
 
 .chart-bar-col:hover .chart-bar-fill {
@@ -1541,7 +1541,7 @@ body.admin-body {
 }
 
 .chart-bar-col.is-today .chart-bar-label {
-  color: #ab183d;
+  color: #0b4f6c;
   font-weight: 800;
 }
 
@@ -1592,7 +1592,7 @@ body.admin-body {
 .cat-share-bar-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #ab183d 0%, #ec4899 100%);
+  background: linear-gradient(90deg, #0b4f6c 0%, #0284c7 100%);
 }
 
 .analytics-top-grid {
@@ -1714,7 +1714,7 @@ body.admin-body {
 }
 
 .top-post-meter-fill.today-fill {
-  background: linear-gradient(90deg, #e11d48 0%, #fb7185 100%);
+  background: linear-gradient(90deg, #0ea5e9 0%, #38bdf8 100%);
 }
 
 @media screen and (max-width: 1024px) {

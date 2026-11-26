@@ -15,21 +15,21 @@
   </defs>
 
   <!-- Outer Ring -->
-  <circle cx="80" cy="80" r="76" fill="#ab183d" stroke="#f5b300" stroke-width="4"/>
+  <circle cx="80" cy="80" r="76" fill="#0b4f6c" stroke="#f5b300" stroke-width="4"/>
   <circle cx="80" cy="80" r="70" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 2"/>
   
   <!-- Inner White Disc -->
   <circle cx="80" cy="80" r="66" fill="url(#shieldGrad)" filter="url(#dropShadow)"/>
 
   <!-- Top Arc Banner -->
-  <path d="M 22 80 A 58 58 0 0 1 138 80" fill="none" stroke="#ab183d" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 22 80 A 58 58 0 0 1 138 80" fill="none" stroke="#0b4f6c" stroke-width="6" stroke-linecap="round"/>
   
   <!-- Core Monogram OA -->
-  <text x="48" y="92" font-family="Arial Black, Impact, sans-serif" font-size="34" font-weight="900" fill="#ab183d">O</text>
-  <text x="86" y="92" font-family="Arial Black, Impact, sans-serif" font-size="34" font-weight="900" fill="#f5b300" stroke="#ab183d" stroke-width="1">A</text>
+  <text x="48" y="92" font-family="Arial Black, Impact, sans-serif" font-size="34" font-weight="900" fill="#0b4f6c">O</text>
+  <text x="86" y="92" font-family="Arial Black, Impact, sans-serif" font-size="34" font-weight="900" fill="#f5b300" stroke="#0b4f6c" stroke-width="1">A</text>
 
   <!-- Bottom Curved Ribbon -->
-  <path d="M 18 118 Q 80 148 142 118 L 137 134 Q 80 162 23 134 Z" fill="#ab183d" stroke="#f5b300" stroke-width="1.5"/>
+  <path d="M 18 118 Q 80 148 142 118 L 137 134 Q 80 162 23 134 Z" fill="#0b4f6c" stroke="#f5b300" stroke-width="1.5"/>
   <text x="80" y="132" font-family="Arial, sans-serif" font-size="7.8" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="0.4">ODISHA ASPIRANTS</text>
   
   <!-- Top Stars -->
