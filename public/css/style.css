@@ -359,7 +359,7 @@ a:hover, a:focus {
 }
 
 .header-search-btn:hover {
-  background: #8e1030;
+  background: #083b52;
 }
 
 .header-search-results {
@@ -1165,14 +1165,21 @@ a:hover, a:focus {
     display: inline-block;
   }
 
-  /* Mobile Dropdown Drawer */
+  /* Mobile Dropdown Drawer (Overlays content so opening/closing never shifts header spacer height) */
   .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100001;
     display: flex;
     flex-direction: column;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     background: #0f172a;
     transition: max-height 0.18s ease-out, opacity 0.15s ease, visibility 0.18s ease;
     will-change: max-height, opacity;
@@ -1189,6 +1196,21 @@ a:hover, a:focus {
     -webkit-overflow-scrolling: touch;
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Dedicated Search-Only mode when mobile Search icon is clicked (does not open side menu links) */
+  .nav-menu.active.search-only {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .nav-menu.search-only > li:not(.nav-search-item) {
+    display: none !important;
+  }
+
+  .mobile-quick-search-btn.active {
+    color: #bae6fd !important;
   }
 
   .nav-menu li {

@@ -75,7 +75,7 @@
   <% } %>
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/css/style.css?v=20261126a">
+  <link rel="stylesheet" href="/css/style.css?v=20261126b">
 
   <!-- High-Speed Menu Prefetching for Instant Navigation -->
   <% ['latest-jobs', 'result', 'admit-card', 'answer-key', 'syllabus'].forEach(catSlug => { %>
@@ -188,7 +188,7 @@
         <span class="toggle-icon">☰</span>
       </button>
 
-      <button type="button" class="mobile-quick-search-btn" id="mobileSearchBtn" title="Search Exams, Jobs..." aria-label="Search">
+      <button type="button" class="mobile-quick-search-btn" id="mobileSearchBtn" title="Search Exams, Jobs..." aria-label="Search" aria-expanded="false">
         <span class="search-btn-icon">🔍</span>
       </button>
     </div>
@@ -311,10 +311,17 @@
   function syncHeaderSpacer() {
     var wrapper = document.getElementById('siteHeaderStickyWrapper');
     var spacer = document.getElementById('siteHeaderSpacer');
-    if (wrapper && spacer) {
+    if (!wrapper || !spacer) return;
+    if (window.innerWidth <= 900) {
+      var siteHeader = wrapper.querySelector('.site-header');
+      var mobileNavBar = wrapper.querySelector('.mobile-nav-bar');
+      var collapsedHeight = (siteHeader ? siteHeader.offsetHeight : 0) + (mobileNavBar ? mobileNavBar.offsetHeight : 0);
+      spacer.style.height = (collapsedHeight > 0 ? collapsedHeight : wrapper.offsetHeight) + 'px';
+    } else {
       spacer.style.height = wrapper.offsetHeight + 'px';
     }
   }
+  window.__syncHeaderSpacer = syncHeaderSpacer;
   syncHeaderSpacer();
   window.addEventListener('resize', syncHeaderSpacer, { passive: true });
   window.addEventListener('load', syncHeaderSpacer, { passive: true });

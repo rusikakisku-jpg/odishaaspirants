@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const toggleBtn = document.getElementById('mobileMenuToggle') || document.querySelector('.nav-toggle-btn');
   const navMenu = document.getElementById('primaryNavMenu') || document.querySelector('.nav-menu');
   const mainNav = document.getElementById('mainNavigation') || document.querySelector('.main-nav');
+  const mobileSearchBtn = document.getElementById('mobileSearchBtn');
 
   let openMenu = () => {};
   let closeMenu = () => {};
@@ -12,24 +13,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleText = toggleBtn.querySelector('.toggle-text');
 
     openMenu = function() {
+      navMenu.classList.remove('search-only');
       navMenu.classList.add('active');
       toggleBtn.classList.add('active');
       toggleBtn.setAttribute('aria-expanded', 'true');
       if (toggleIcon) toggleIcon.textContent = '✕';
       if (toggleText) toggleText.textContent = 'CLOSE';
+      if (mobileSearchBtn) {
+        mobileSearchBtn.classList.remove('active');
+        mobileSearchBtn.setAttribute('aria-expanded', 'false');
+      }
+      if (typeof window.__syncHeaderSpacer === 'function') window.__syncHeaderSpacer();
     };
 
     closeMenu = function() {
-      navMenu.classList.remove('active');
+      navMenu.classList.remove('active', 'search-only');
       toggleBtn.classList.remove('active');
       toggleBtn.setAttribute('aria-expanded', 'false');
       if (toggleIcon) toggleIcon.textContent = '☰';
       if (toggleText) toggleText.textContent = 'MENU';
+      if (mobileSearchBtn) {
+        mobileSearchBtn.classList.remove('active');
+        mobileSearchBtn.setAttribute('aria-expanded', 'false');
+      }
+      const searchDropdown = document.getElementById('search-results-dropdown');
+      if (searchDropdown) {
+        searchDropdown.style.display = 'none';
+      }
+      if (typeof window.__syncHeaderSpacer === 'function') window.__syncHeaderSpacer();
     };
 
     toggleBtn.addEventListener('click', function(e) {
       e.stopPropagation();
-      if (navMenu.classList.contains('active')) {
+      if (navMenu.classList.contains('active') && !navMenu.classList.contains('search-only')) {
         closeMenu();
       } else {
         openMenu();
@@ -56,9 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navMenu.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
         if (link.classList.contains('nav-dropdown-toggle')) return;
-        navMenu.classList.remove('active');
-        toggleBtn.classList.remove('active');
-        toggleBtn.setAttribute('aria-expanded', 'false');
+        closeMenu();
       });
     });
 
@@ -119,20 +133,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Mobile Quick Search Button Handler
-  const mobileSearchBtn = document.getElementById('mobileSearchBtn');
+  // Mobile Quick Search Button Handler (Opens compact Search-only bar without opening side menu)
   if (mobileSearchBtn && navMenu) {
     mobileSearchBtn.addEventListener('click', function(e) {
       e.stopPropagation();
-      if (!navMenu.classList.contains('active')) {
-        openMenu();
+      const isSearchOpen = navMenu.classList.contains('active') && navMenu.classList.contains('search-only');
+      if (isSearchOpen) {
+        closeMenu();
+        return;
       }
+      // Reset menu toggle button state so side menu bar stays closed
+      if (toggleBtn) {
+        toggleBtn.classList.remove('active');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        const toggleIcon = toggleBtn.querySelector('.toggle-icon');
+        const toggleText = toggleBtn.querySelector('.toggle-text');
+        if (toggleIcon) toggleIcon.textContent = '☰';
+        if (toggleText) toggleText.textContent = 'MENU';
+      }
+      navMenu.classList.add('active', 'search-only');
+      mobileSearchBtn.classList.add('active');
+      mobileSearchBtn.setAttribute('aria-expanded', 'true');
+      if (typeof window.__syncHeaderSpacer === 'function') window.__syncHeaderSpacer();
       const searchBox = document.getElementById('live-search-input');
       if (searchBox) {
         setTimeout(() => {
           searchBox.focus();
           searchBox.select();
-        }, 250);
+        }, 120);
       }
     });
   }
