@@ -81989,7 +81989,7 @@ var require_templateEngine = __commonJS({
 
     ; __append("\\n<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, viewport-fit=cover\\">\\n  <meta name=\\"robots\\" content=\\"noindex, nofollow, noarchive\\">\\n  <meta name=\\"theme-color\\" content=\\"#0f172a\\">\\n  <title>")
     ; __append(escapeFn( title || 'Odisha Aspirants - Professional Admin Console' ))
-    ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"stylesheet\\" href=\\"/css/admin.css?v=20261125a\\">\\n  <link rel=\\"icon\\" href=\\"")
+    ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"stylesheet\\" href=\\"/css/admin.css?v=20261126a\\">\\n  <link rel=\\"icon\\" href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' ))
     ; __append("\\">\\n</head>\\n<body class=\\"admin-body\\">\\n\\n<div class=\\"admin-app-layout\\">\\n  <!-- Mobile Sidebar Overlay Backdrop -->\\n  <div class=\\"sidebar-backdrop\\" id=\\"sidebarBackdrop\\"></div>\\n\\n  <!-- Professional Dark Sidebar -->\\n  <aside class=\\"admin-sidebar\\" id=\\"adminSidebar\\">\\n    <!-- Brand Header -->\\n    <div class=\\"sidebar-brand\\">\\n      <a href=\\"")
     ; __append(escapeFn( baseAdmin || '/' ))
@@ -82082,7 +82082,7 @@ var require_templateEngine = __commonJS({
 
     ; __append("\\n<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, viewport-fit=cover\\">\\n  <meta name=\\"robots\\" content=\\"noindex, nofollow, noarchive\\">\\n  <meta name=\\"theme-color\\" content=\\"#0f172a\\">\\n  <title>")
     ; __append(escapeFn( title || 'Odisha Aspirants - Professional Admin Console' ))
-    ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"stylesheet\\" href=\\"/css/admin.css?v=20261125a\\">\\n  <link rel=\\"icon\\" href=\\"")
+    ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"stylesheet\\" href=\\"/css/admin.css?v=20261126a\\">\\n  <link rel=\\"icon\\" href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' ))
     ; __append("\\">\\n</head>\\n<body class=\\"admin-body\\">\\n\\n<div class=\\"admin-app-layout\\">\\n  <!-- Mobile Sidebar Overlay Backdrop -->\\n  <div class=\\"sidebar-backdrop\\" id=\\"sidebarBackdrop\\"></div>\\n\\n  <!-- Professional Dark Sidebar -->\\n  <aside class=\\"admin-sidebar\\" id=\\"adminSidebar\\">\\n    <!-- Brand Header -->\\n    <div class=\\"sidebar-brand\\">\\n      <a href=\\"")
     ; __append(escapeFn( baseAdmin || '/' ))
@@ -82217,7 +82217,7 @@ var require_templateEngine = __commonJS({
   with (locals || {}) {
     ; __append("<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, viewport-fit=cover\\">\\n  <meta name=\\"theme-color\\" content=\\"#0f172a\\">\\n  <title>")
     ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Author Workspace - Odisha Aspirants' ))
-    ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"stylesheet\\" href=\\"/css/admin.css?v=20261124d\\">\\n  <link rel=\\"icon\\" href=\\"")
+    ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"stylesheet\\" href=\\"/css/admin.css?v=20261126a\\">\\n  <link rel=\\"icon\\" href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' ))
     ; __append("\\">\\n  <style>\\n    /* Author Portal Dedicated Accents */\\n    .author-badge-strip {\\n      background: #eff6ff;\\n      border: 1px solid #bfdbfe;\\n      color: #1e40af;\\n      padding: 3px 8px;\\n      border-radius: 999px;\\n      font-size: 11px;\\n      font-weight: 700;\\n      display: inline-flex;\\n      align-items: center;\\n      gap: 4px;\\n    }\\n  </style>\\n</head>\\n<body class=\\"admin-body\\">\\n\\n<div class=\\"admin-app-layout\\">\\n  <!-- Mobile Sidebar Overlay Backdrop -->\\n  <div class=\\"sidebar-backdrop\\" id=\\"sidebarBackdrop\\"></div>\\n\\n  <!-- Author Workspace Sidebar -->\\n  <aside class=\\"admin-sidebar\\" id=\\"adminSidebar\\">\\n    <!-- Brand Header -->\\n    <div class=\\"sidebar-brand\\">\\n      <a href=\\"/author-portal\\" class=\\"brand-link\\">\\n        <img src=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/oa-logo.svg' ))
@@ -82282,7 +82282,7 @@ var require_templateEngine = __commonJS({
   with (locals || {}) {
     ; __append("<!DOCTYPE html>\\n<html lang=\\"en\\">\\n<head>\\n  <meta charset=\\"UTF-8\\">\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, viewport-fit=cover\\">\\n  <meta name=\\"theme-color\\" content=\\"#0f172a\\">\\n  <title>")
     ; __append(escapeFn( typeof title !== 'undefined' ? title : 'Author Workspace - Odisha Aspirants' ))
-    ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"stylesheet\\" href=\\"/css/admin.css?v=20261124d\\">\\n  <link rel=\\"icon\\" href=\\"")
+    ; __append("</title>\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.googleapis.com\\">\\n  <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" crossorigin>\\n  <link href=\\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap\\" rel=\\"stylesheet\\">\\n  <link rel=\\"stylesheet\\" href=\\"/css/admin.css?v=20261126a\\">\\n  <link rel=\\"icon\\" href=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_favicon) ? settings.site_favicon : '/images/oa-logo.svg' ))
     ; __append("\\">\\n  <style>\\n    /* Author Portal Dedicated Accents */\\n    .author-badge-strip {\\n      background: #eff6ff;\\n      border: 1px solid #bfdbfe;\\n      color: #1e40af;\\n      padding: 3px 8px;\\n      border-radius: 999px;\\n      font-size: 11px;\\n      font-weight: 700;\\n      display: inline-flex;\\n      align-items: center;\\n      gap: 4px;\\n    }\\n  </style>\\n</head>\\n<body class=\\"admin-body\\">\\n\\n<div class=\\"admin-app-layout\\">\\n  <!-- Mobile Sidebar Overlay Backdrop -->\\n  <div class=\\"sidebar-backdrop\\" id=\\"sidebarBackdrop\\"></div>\\n\\n  <!-- Author Workspace Sidebar -->\\n  <aside class=\\"admin-sidebar\\" id=\\"adminSidebar\\">\\n    <!-- Brand Header -->\\n    <div class=\\"sidebar-brand\\">\\n      <a href=\\"/author-portal\\" class=\\"brand-link\\">\\n        <img src=\\"")
     ; __append(escapeFn( (typeof settings !== 'undefined' && settings.site_logo) ? settings.site_logo : '/images/oa-logo.svg' ))
@@ -82978,7 +82978,7 @@ var require_templateEngine = __commonJS({
       
     ; __append("\\n      <p style=\\"margin-top: 8px;\\">\\n        ")
     ; __append(escapeFn( copyText ))
-    ; __append("\\n      </p>\\n      <p style=\\"font-size: 11.5px; color: #888; margin-top: 5px;\\">\\n        Disclaimer: Odisha Aspirants (odishaaspirants.com) is an independent public information service portal. We are not affiliated with any government agency or department. All information is sourced directly from official government examination notifications.\\n      </p>\\n    </div>\\n  </div>\\n</footer>\\n</div><!-- /pageContentWrapper -->\\n\\n<!-- Global Toast Notification -->\\n<div id=\\"toast\\" class=\\"toast-msg\\">Link copied to clipboard!</div>\\n\\n<script src=\\"/js/main.js?v=20261125b\\"></script>\\n\\n")
+    ; __append("\\n      </p>\\n      <p style=\\"font-size: 11.5px; color: #888; margin-top: 5px;\\">\\n        Disclaimer: Odisha Aspirants (odishaaspirants.com) is an independent public information service portal. We are not affiliated with any government agency or department. All information is sourced directly from official government examination notifications.\\n      </p>\\n    </div>\\n  </div>\\n</footer>\\n</div><!-- /pageContentWrapper -->\\n\\n<!-- Global Toast Notification -->\\n<div id=\\"toast\\" class=\\"toast-msg\\">Link copied to clipboard!</div>\\n\\n<script src=\\"/js/main.js?v=20261126a\\"></script>\\n\\n")
     ;  if (typeof settings !== 'undefined' && settings.footer_custom_code) { 
     ; __append("\\n  <!-- Webmaster Custom Footer Code -->\\n  ")
     ; __append( settings.footer_custom_code )
@@ -83034,7 +83034,7 @@ var require_templateEngine = __commonJS({
       
     ; __append("\\n      <p style=\\"margin-top: 8px;\\">\\n        ")
     ; __append(escapeFn( copyText ))
-    ; __append("\\n      </p>\\n      <p style=\\"font-size: 11.5px; color: #888; margin-top: 5px;\\">\\n        Disclaimer: Odisha Aspirants (odishaaspirants.com) is an independent public information service portal. We are not affiliated with any government agency or department. All information is sourced directly from official government examination notifications.\\n      </p>\\n    </div>\\n  </div>\\n</footer>\\n</div><!-- /pageContentWrapper -->\\n\\n<!-- Global Toast Notification -->\\n<div id=\\"toast\\" class=\\"toast-msg\\">Link copied to clipboard!</div>\\n\\n<script src=\\"/js/main.js?v=20261125b\\"></script>\\n\\n")
+    ; __append("\\n      </p>\\n      <p style=\\"font-size: 11.5px; color: #888; margin-top: 5px;\\">\\n        Disclaimer: Odisha Aspirants (odishaaspirants.com) is an independent public information service portal. We are not affiliated with any government agency or department. All information is sourced directly from official government examination notifications.\\n      </p>\\n    </div>\\n  </div>\\n</footer>\\n</div><!-- /pageContentWrapper -->\\n\\n<!-- Global Toast Notification -->\\n<div id=\\"toast\\" class=\\"toast-msg\\">Link copied to clipboard!</div>\\n\\n<script src=\\"/js/main.js?v=20261126a\\"></script>\\n\\n")
     ;  if (typeof settings !== 'undefined' && settings.footer_custom_code) { 
     ; __append("\\n  <!-- Webmaster Custom Footer Code -->\\n  ")
     ; __append( settings.footer_custom_code )
@@ -83130,7 +83130,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( activeFavicon ))
     ; __append("\\">\\n  ")
     ;  } 
-    ; __append("\\n\\n  <!-- Stylesheet -->\\n  <link rel=\\"stylesheet\\" href=\\"/css/style.css\\">\\n\\n  <!-- High-Speed Menu Prefetching for Instant Navigation -->\\n  ")
+    ; __append("\\n\\n  <!-- Stylesheet -->\\n  <link rel=\\"stylesheet\\" href=\\"/css/style.css?v=20261126a\\">\\n\\n  <!-- High-Speed Menu Prefetching for Instant Navigation -->\\n  ")
     ;  ['latest-jobs', 'result', 'admit-card', 'answer-key', 'syllabus'].forEach(catSlug => { 
     ; __append("\\n    ")
     ;  if (typeof visibleCategories === 'undefined' || visibleCategories[catSlug] !== false) { 
@@ -83357,7 +83357,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( activeFavicon ))
     ; __append("\\">\\n  ")
     ;  } 
-    ; __append("\\n\\n  <!-- Stylesheet -->\\n  <link rel=\\"stylesheet\\" href=\\"/css/style.css\\">\\n\\n  <!-- High-Speed Menu Prefetching for Instant Navigation -->\\n  ")
+    ; __append("\\n\\n  <!-- Stylesheet -->\\n  <link rel=\\"stylesheet\\" href=\\"/css/style.css?v=20261126a\\">\\n\\n  <!-- High-Speed Menu Prefetching for Instant Navigation -->\\n  ")
     ;  ['latest-jobs', 'result', 'admit-card', 'answer-key', 'syllabus'].forEach(catSlug => { 
     ; __append("\\n    ")
     ;  if (typeof visibleCategories === 'undefined' || visibleCategories[catSlug] !== false) { 
