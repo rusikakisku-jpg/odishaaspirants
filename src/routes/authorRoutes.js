@@ -27,6 +27,7 @@ router.use(async (req, res, next) => {
     await d1.init();
   } catch (initErr) {}
   res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+  res.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
   res.locals.currentPath = (req.originalUrl || '/author-portal').split('?')[0].replace(/\/$/, '') || '/author-portal';
   try {
     const sRows = await d1.prepare('SELECT * FROM settings').all();

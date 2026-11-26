@@ -35,6 +35,8 @@ CREATE TABLE IF NOT EXISTS posts (
 CREATE INDEX IF NOT EXISTS idx_posts_category ON posts(category);
 CREATE INDEX IF NOT EXISTS idx_posts_slug ON posts(slug);
 CREATE INDEX IF NOT EXISTS idx_posts_status ON posts(status);
+CREATE INDEX IF NOT EXISTS idx_posts_status_id ON posts(status, id DESC);
+CREATE INDEX IF NOT EXISTS idx_posts_cat_status_id ON posts(category, status, id DESC);
 CREATE INDEX IF NOT EXISTS idx_posts_author ON posts(author_id);
 CREATE INDEX IF NOT EXISTS idx_posts_created ON posts(created_at DESC);
 
@@ -68,6 +70,8 @@ CREATE TABLE IF NOT EXISTS marquees (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE INDEX IF NOT EXISTS idx_marquees_active_order ON marquees(is_active, display_order, id);
+
 CREATE TABLE IF NOT EXISTS badges (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT NOT NULL,
@@ -77,6 +81,8 @@ CREATE TABLE IF NOT EXISTS badges (
     display_order INTEGER DEFAULT 0,
     is_active INTEGER DEFAULT 1
 );
+
+CREATE INDEX IF NOT EXISTS idx_badges_active_order ON badges(is_active, display_order, id);
 
 CREATE TABLE IF NOT EXISTS uploads (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -4,7 +4,11 @@ Disallow: /admin
 Disallow: /admin/*
 Disallow: /api
 Disallow: /api/*
-
-Crawl-delay: 1
+Disallow: /author-portal
+Disallow: /author-portal/*
+Disallow: /editor-portal
+Disallow: /editor-portal/*
+Disallow: /editor
+Disallow: /author
 
 Sitemap: https://odishaaspirants.com/sitemap.xml

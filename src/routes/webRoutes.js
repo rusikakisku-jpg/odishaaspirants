@@ -239,11 +239,11 @@ router.get('/post/:slug', async (req, res, next) => {
     const links = safeJsonParse(post.links, []);
 
     const author = authorRow || {
-      name: 'Odisha Aspirants Editorial Team',
-      slug: 'editorial-team',
+      name: 'Mangal',
+      slug: 'mangal',
       role: 'Senior Recruitment Analyst & Fact-Checker Lead',
       avatar_url: '/images/default-avatar.svg',
-      bio: 'The official editorial and verification desk of Odisha Aspirants.'
+      bio: 'Verified recruitment researcher and content editor at Odisha Aspirants.'
     };
 
     res.set('Cache-Control', 'public, max-age=30, s-maxage=60, stale-while-revalidate=120');
@@ -292,6 +292,7 @@ router.get('/search', async (req, res, next) => {
     res.render('pages/search', {
       title: `Search: ${query || 'Government Jobs 2026'} - Odisha Aspirants`,
       metaDescription: `Search results for "${query || 'Govt Jobs'}" across latest government vacancies, admit cards, and results at Odisha Aspirants.`,
+      metaRobots: 'noindex, follow',
       query,
       posts
     });
@@ -328,7 +329,7 @@ router.get('/tools/image-resizer', (req, res) => {
 router.get('/sitemap.xml', async (req, res) => {
   try {
     const posts = await d1.prepare(
-      "SELECT slug, category, updated_at FROM posts WHERE status = 'active' ORDER BY id DESC LIMIT 1000"
+      "SELECT slug, category, updated_at FROM posts WHERE status = 'active' ORDER BY id DESC LIMIT 5000"
     ).all();
 
     const baseDomain = (res.locals.settings?.site_domain || '').trim();
@@ -434,8 +435,12 @@ Disallow: /admin
 Disallow: /admin/*
 Disallow: /api
 Disallow: /api/*
-
-Crawl-delay: 1
+Disallow: /author-portal
+Disallow: /author-portal/*
+Disallow: /editor-portal
+Disallow: /editor-portal/*
+Disallow: /editor
+Disallow: /author
 
 Sitemap: ${host}/sitemap.xml
 `);

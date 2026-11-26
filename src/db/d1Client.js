@@ -106,11 +106,15 @@ const CORE_INDEXES = [
   `CREATE INDEX IF NOT EXISTS idx_posts_category ON posts(category)`,
   `CREATE INDEX IF NOT EXISTS idx_posts_slug ON posts(slug)`,
   `CREATE INDEX IF NOT EXISTS idx_posts_status ON posts(status)`,
+  `CREATE INDEX IF NOT EXISTS idx_posts_status_id ON posts(status, id DESC)`,
+  `CREATE INDEX IF NOT EXISTS idx_posts_cat_status_id ON posts(category, status, id DESC)`,
   `CREATE INDEX IF NOT EXISTS idx_posts_author ON posts(author_id)`,
   `CREATE INDEX IF NOT EXISTS idx_posts_created ON posts(created_at)`,
   `CREATE INDEX IF NOT EXISTS idx_authors_slug ON authors(slug)`,
   `CREATE INDEX IF NOT EXISTS idx_daily_views_date ON post_daily_views(view_date)`,
-  `CREATE INDEX IF NOT EXISTS idx_post_categories_cat_bump ON post_categories(category, bumped_at DESC)`
+  `CREATE INDEX IF NOT EXISTS idx_post_categories_cat_bump ON post_categories(category, bumped_at DESC)`,
+  `CREATE INDEX IF NOT EXISTS idx_badges_active_order ON badges(is_active, display_order, id)`,
+  `CREATE INDEX IF NOT EXISTS idx_marquees_active_order ON marquees(is_active, display_order, id)`
 ];
 
 const EMBEDDED_SCHEMA_SQL = CORE_TABLES.concat(CORE_INDEXES).join(';\n\n') + ';';
@@ -348,8 +352,18 @@ class D1Client {
             console.warn('D1 create table notice:', tableErr.message);
           }
         }
+      }
 
-        // 2. Create indexes independently
+      // 2. Verify and create indexes independently when any core/composite index is missing
+      let allExpectedIndexesExist = false;
+      try {
+        const idxCountRow = await nativeD1.prepare(
+          "SELECT COUNT(*) as count FROM sqlite_master WHERE type='index' AND name IN ('idx_posts_status_id','idx_posts_cat_status_id','idx_badges_active_order','idx_marquees_active_order')"
+        ).first();
+        allExpectedIndexesExist = Boolean(idxCountRow && idxCountRow.count >= 4);
+      } catch (idxChkErr) {}
+
+      if (!allCoreTablesExist || !allExpectedIndexesExist) {
         for (const indexSql of CORE_INDEXES) {
           try {
             if (typeof nativeD1.prepare === 'function') {

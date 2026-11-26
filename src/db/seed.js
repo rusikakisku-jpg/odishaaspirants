@@ -48,8 +48,8 @@ async function seedDatabase() {
     if (!authorCount || authorCount.count === 0) {
       const initialAuthors = [
         {
-          name: 'Odisha Aspirants Editorial Team',
-          slug: 'editorial-team',
+          name: 'Mangal',
+          slug: 'mangal',
           role: 'Senior Recruitment Analyst & Fact-Checker Lead',
           email: 'editor@odishaaspirants.com',
           bio: 'The official editorial and verification desk of Odisha Aspirants. Our research team meticulously verifies all central and state government job notifications, admit cards, answer keys, and results directly from official gazettes and commissions.',
@@ -73,7 +73,7 @@ async function seedDatabase() {
 
       for (const a of initialAuthors) {
         const { hashPassword } = require('../middleware/authorAuth');
-        const defaultPassword = a.slug === 'editorial-team' ? 'editor@2026' : 'author@2026';
+        const defaultPassword = (a.slug === 'mangal' || a.slug === 'editorial-team') ? 'editor@2026' : 'author@2026';
         const passwordHash = hashPassword(defaultPassword);
         await d1.prepare(`
           INSERT INTO authors (name, slug, role, email, password_hash, bio, qualification, experience, avatar_url, telegram_url, is_active)
