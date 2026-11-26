@@ -145,6 +145,9 @@ class D1Client {
   }
 
   async init() {
+    // Prevent re-entrant deadlock when seedDatabase() calls d1.init() during runNativeSchema()
+    if (this._inNativeSchema) return;
+
     // 1. Native Cloudflare D1 Binding check (when running on Cloudflare Workers)
     const nativeD1 = this.getNativeD1();
     if (nativeD1) {
@@ -318,43 +321,57 @@ class D1Client {
   }
 
   async runNativeSchema() {
+    if (this._inNativeSchema) return;
+    this._inNativeSchema = true;
     try {
       const nativeD1 = this.getNativeD1();
       if (!nativeD1) return;
 
-      // 1. Create each table independently so one failure never blocks the others
-      for (const tableSql of CORE_TABLES) {
-        try {
-          if (typeof nativeD1.prepare === 'function') {
-            await nativeD1.prepare(tableSql).run();
-          } else if (typeof nativeD1.exec === 'function') {
-            await nativeD1.exec(tableSql);
-          }
-        } catch (tableErr) {
-          console.warn('D1 create table notice:', tableErr.message);
-        }
-      }
+      // 1. Verify if all 8 core tables already exist; skip redundant DDL statements when already created
+      let allCoreTablesExist = false;
+      try {
+        const tblCountRow = await nativeD1.prepare(
+          "SELECT COUNT(*) as count FROM sqlite_master WHERE type='table' AND name IN ('posts','authors','marquees','badges','uploads','settings','post_daily_views','post_categories')"
+        ).first();
+        allCoreTablesExist = Boolean(tblCountRow && tblCountRow.count >= 8);
+      } catch (chkErr) {}
 
-      // 2. Create indexes independently
-      for (const indexSql of CORE_INDEXES) {
-        try {
-          if (typeof nativeD1.prepare === 'function') {
-            await nativeD1.prepare(indexSql).run();
-          } else if (typeof nativeD1.exec === 'function') {
-            await nativeD1.exec(indexSql);
+      if (!allCoreTablesExist) {
+        for (const tableSql of CORE_TABLES) {
+          try {
+            if (typeof nativeD1.prepare === 'function') {
+              await nativeD1.prepare(tableSql).run();
+            } else if (typeof nativeD1.exec === 'function') {
+              await nativeD1.exec(tableSql);
+            }
+          } catch (tableErr) {
+            console.warn('D1 create table notice:', tableErr.message);
           }
-        } catch (idxErr) {}
+        }
+
+        // 2. Create indexes independently
+        for (const indexSql of CORE_INDEXES) {
+          try {
+            if (typeof nativeD1.prepare === 'function') {
+              await nativeD1.prepare(indexSql).run();
+            } else if (typeof nativeD1.exec === 'function') {
+              await nativeD1.exec(indexSql);
+            }
+          } catch (idxErr) {}
+        }
       }
 
       console.log('✅ Native Cloudflare D1 tables and indexes verified.');
 
       // 2b. Safe column migration for existing Native D1 tables
-      try {
-        await nativeD1.prepare('ALTER TABLE posts ADD COLUMN article_content TEXT').run();
-      } catch (colErr) {}
-      try {
-        await nativeD1.prepare('ALTER TABLE posts ADD COLUMN thumbnail TEXT').run();
-      } catch (colErr) {}
+      if (!allCoreTablesExist) {
+        try {
+          await nativeD1.prepare('ALTER TABLE posts ADD COLUMN article_content TEXT').run();
+        } catch (colErr) {}
+        try {
+          await nativeD1.prepare('ALTER TABLE posts ADD COLUMN thumbnail TEXT').run();
+        } catch (colErr) {}
+      }
       try {
         await nativeD1.prepare(`
           INSERT OR IGNORE INTO post_categories (post_id, category, display_title, bumped_at)
@@ -378,8 +395,19 @@ class D1Client {
       } catch (seedCheckErr) {
         console.warn('D1 auto-seed notice:', seedCheckErr.message);
       }
+
+      // 4. Sync post_categories after any initial seed so homepage categories render immediately
+      try {
+        await nativeD1.prepare(`
+          INSERT OR IGNORE INTO post_categories (post_id, category, display_title, bumped_at)
+          SELECT id, category, title, COALESCE(created_at, CURRENT_TIMESTAMP)
+          FROM posts WHERE category IS NOT NULL AND category != ''
+        `).run();
+      } catch (pcSyncErr) {}
     } catch (err) {
       console.warn('⚠️ Warning during native D1 schema check:', err.message);
+    } finally {
+      this._inNativeSchema = false;
     }
   }
 

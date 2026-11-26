@@ -27314,9 +27314,11 @@ var require_seed = __commonJS({
   "src/db/seed.js"(exports, module) {
     var d1 = require_d1Client();
     async function seedDatabase() {
-      await d1.init();
+      if (!d1._inNativeSchema && !d1.nativeSchemaRun) {
+        await d1.init();
+      }
       console.log("\u{1F331} Seeding initial Odisha Aspirants database...");
-      if (d1.CORE_TABLES && Array.isArray(d1.CORE_TABLES)) {
+      if (!d1._inNativeSchema && d1.CORE_TABLES && Array.isArray(d1.CORE_TABLES)) {
         for (const sql of d1.CORE_TABLES) {
           try {
             await d1.prepare(sql).run();
@@ -28345,6 +28347,7 @@ var require_d1Client = __commonJS({
         return null;
       }
       async init() {
+        if (this._inNativeSchema) return;
         const nativeD1 = this.getNativeD1();
         if (nativeD1) {
           if (this.nativeSchemaRun) return;
@@ -28498,38 +28501,52 @@ var require_d1Client = __commonJS({
         }
       }
       async runNativeSchema() {
+        if (this._inNativeSchema) return;
+        this._inNativeSchema = true;
         try {
           const nativeD1 = this.getNativeD1();
           if (!nativeD1) return;
-          for (const tableSql of CORE_TABLES) {
-            try {
-              if (typeof nativeD1.prepare === "function") {
-                await nativeD1.prepare(tableSql).run();
-              } else if (typeof nativeD1.exec === "function") {
-                await nativeD1.exec(tableSql);
-              }
-            } catch (tableErr) {
-              console.warn("D1 create table notice:", tableErr.message);
-            }
+          let allCoreTablesExist = false;
+          try {
+            const tblCountRow = await nativeD1.prepare(
+              "SELECT COUNT(*) as count FROM sqlite_master WHERE type='table' AND name IN ('posts','authors','marquees','badges','uploads','settings','post_daily_views','post_categories')"
+            ).first();
+            allCoreTablesExist = Boolean(tblCountRow && tblCountRow.count >= 8);
+          } catch (chkErr) {
           }
-          for (const indexSql of CORE_INDEXES) {
-            try {
-              if (typeof nativeD1.prepare === "function") {
-                await nativeD1.prepare(indexSql).run();
-              } else if (typeof nativeD1.exec === "function") {
-                await nativeD1.exec(indexSql);
+          if (!allCoreTablesExist) {
+            for (const tableSql of CORE_TABLES) {
+              try {
+                if (typeof nativeD1.prepare === "function") {
+                  await nativeD1.prepare(tableSql).run();
+                } else if (typeof nativeD1.exec === "function") {
+                  await nativeD1.exec(tableSql);
+                }
+              } catch (tableErr) {
+                console.warn("D1 create table notice:", tableErr.message);
               }
-            } catch (idxErr) {
+            }
+            for (const indexSql of CORE_INDEXES) {
+              try {
+                if (typeof nativeD1.prepare === "function") {
+                  await nativeD1.prepare(indexSql).run();
+                } else if (typeof nativeD1.exec === "function") {
+                  await nativeD1.exec(indexSql);
+                }
+              } catch (idxErr) {
+              }
             }
           }
           console.log("\u2705 Native Cloudflare D1 tables and indexes verified.");
-          try {
-            await nativeD1.prepare("ALTER TABLE posts ADD COLUMN article_content TEXT").run();
-          } catch (colErr) {
-          }
-          try {
-            await nativeD1.prepare("ALTER TABLE posts ADD COLUMN thumbnail TEXT").run();
-          } catch (colErr) {
+          if (!allCoreTablesExist) {
+            try {
+              await nativeD1.prepare("ALTER TABLE posts ADD COLUMN article_content TEXT").run();
+            } catch (colErr) {
+            }
+            try {
+              await nativeD1.prepare("ALTER TABLE posts ADD COLUMN thumbnail TEXT").run();
+            } catch (colErr) {
+            }
           }
           try {
             await nativeD1.prepare(`
@@ -28553,8 +28570,18 @@ var require_d1Client = __commonJS({
           } catch (seedCheckErr) {
             console.warn("D1 auto-seed notice:", seedCheckErr.message);
           }
+          try {
+            await nativeD1.prepare(`
+          INSERT OR IGNORE INTO post_categories (post_id, category, display_title, bumped_at)
+          SELECT id, category, title, COALESCE(created_at, CURRENT_TIMESTAMP)
+          FROM posts WHERE category IS NOT NULL AND category != ''
+        `).run();
+          } catch (pcSyncErr) {
+          }
         } catch (err) {
           console.warn("\u26A0\uFE0F Warning during native D1 schema check:", err.message);
+        } finally {
+          this._inNativeSchema = false;
         }
       }
       prepare(sql) {

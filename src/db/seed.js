@@ -1,12 +1,14 @@
 const d1 = require('./d1Client');
 
 async function seedDatabase() {
-  await d1.init();
+  if (!d1._inNativeSchema && !d1.nativeSchemaRun) {
+    await d1.init();
+  }
 
   console.log('🌱 Seeding initial Odisha Aspirants database...');
 
-  // 0. Ensure all core tables exist before querying or inserting
-  if (d1.CORE_TABLES && Array.isArray(d1.CORE_TABLES)) {
+  // 0. Ensure all core tables exist before querying or inserting (already ensured if inside runNativeSchema)
+  if (!d1._inNativeSchema && d1.CORE_TABLES && Array.isArray(d1.CORE_TABLES)) {
     for (const sql of d1.CORE_TABLES) {
       try {
         await d1.prepare(sql).run();
