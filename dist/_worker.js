@@ -83130,7 +83130,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( activeFavicon ))
     ; __append("\\">\\n  ")
     ;  } 
-    ; __append("\\n\\n  <!-- Stylesheet -->\\n  <link rel=\\"stylesheet\\" href=\\"/css/style.css?v=20261126c\\">\\n\\n  <!-- High-Speed Menu Prefetching for Instant Navigation -->\\n  ")
+    ; __append("\\n\\n  <!-- Stylesheet -->\\n  <link rel=\\"stylesheet\\" href=\\"/css/style.css?v=20261126d\\">\\n\\n  <!-- High-Speed Menu Prefetching for Instant Navigation -->\\n  ")
     ;  ['latest-jobs', 'result', 'admit-card', 'answer-key', 'syllabus'].forEach(catSlug => { 
     ; __append("\\n    ")
     ;  if (typeof visibleCategories === 'undefined' || visibleCategories[catSlug] !== false) { 
@@ -83357,7 +83357,7 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( activeFavicon ))
     ; __append("\\">\\n  ")
     ;  } 
-    ; __append("\\n\\n  <!-- Stylesheet -->\\n  <link rel=\\"stylesheet\\" href=\\"/css/style.css?v=20261126c\\">\\n\\n  <!-- High-Speed Menu Prefetching for Instant Navigation -->\\n  ")
+    ; __append("\\n\\n  <!-- Stylesheet -->\\n  <link rel=\\"stylesheet\\" href=\\"/css/style.css?v=20261126d\\">\\n\\n  <!-- High-Speed Menu Prefetching for Instant Navigation -->\\n  ")
     ;  ['latest-jobs', 'result', 'admit-card', 'answer-key', 'syllabus'].forEach(catSlug => { 
     ; __append("\\n    ")
     ;  if (typeof visibleCategories === 'undefined' || visibleCategories[catSlug] !== false) { 

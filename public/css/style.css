@@ -543,7 +543,7 @@ a:hover, a:focus {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  margin-bottom: 25px;
+  margin: 16px 0 25px 0;
 }
 
 .sarkari-box {
