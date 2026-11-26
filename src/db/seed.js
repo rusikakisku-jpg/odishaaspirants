@@ -57,17 +57,6 @@ async function seedDatabase() {
           experience: '10+ Years Competitive Exams Analysis',
           avatar_url: '/images/default-avatar.svg',
           telegram_url: 'https://t.me/odishaaspirantsofficial'
-        },
-        {
-          name: 'Amit Kumar Sharma',
-          slug: 'amit-sharma',
-          role: 'Technical Recruitment & Engineering Exam Specialist',
-          email: 'amit.sharma@odishaaspirants.com',
-          bio: 'Exam researcher specializing in technical recruitments across SSC JE, Railway RRB ALP/Technician, Defence CDS/NDA, and state engineering service examinations.',
-          qualification: 'B.Tech (Mechanical Engineering), GATE Qualified',
-          experience: '7+ Years Recruitment Guidance',
-          avatar_url: '/images/default-avatar.svg',
-          telegram_url: 'https://t.me/odishaaspirantsofficial'
         }
       ];
 
@@ -89,7 +78,7 @@ async function seedDatabase() {
       const authorsWithoutPass = await d1.prepare("SELECT id, slug, email FROM authors WHERE password_hash IS NULL OR password_hash = ''").all();
       if (authorsWithoutPass && authorsWithoutPass.length > 0) {
         for (const a of authorsWithoutPass) {
-          const defPass = (a.slug === 'editorial-team' || a.email === 'editor@odishaaspirants.com') ? 'editor@2026' : 'author@2026';
+          const defPass = (a.slug === 'mangal' || a.slug === 'editorial-team' || a.email === 'editor@odishaaspirants.com') ? 'editor@2026' : 'author@2026';
           const pHash = hashPassword(defPass);
           await d1.prepare('UPDATE authors SET password_hash = ? WHERE id = ?').bind(pHash, a.id).run();
         }
