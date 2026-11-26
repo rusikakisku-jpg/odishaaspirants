@@ -15,6 +15,11 @@ const {
   cleanupPostRelations,
   fetchAllCategoryCounts
 } = require('../utils/postCategoryManager');
+const {
+  buildDraftPreviewUrl,
+  buildPreviewPostFromBody,
+  renderPostPreview
+} = require('../utils/previewToken');
 const { slugify, CATEGORIES, safeJsonParse, formatDate } = require('../utils/helpers');
 
 // Multer memory storage for direct R2 streaming
@@ -259,6 +264,7 @@ router.get('/', async (req, res, next) => {
 router.get('/posts', async (req, res, next) => {
   try {
     const category = req.query.category || '';
+    const status = req.query.status || '';
     const search = req.query.search || '';
 
     let query = 'SELECT * FROM posts WHERE 1=1';
@@ -268,6 +274,10 @@ router.get('/posts', async (req, res, next) => {
       query += ' AND category = ?';
       params.push(category);
     }
+    if (status) {
+      query += ' AND status = ?';
+      params.push(status);
+    }
     if (search) {
       query += ' AND (title LIKE ? OR department LIKE ?)';
       params.push(`%${search}%`, `%${search}%`);
@@ -275,13 +285,19 @@ router.get('/posts', async (req, res, next) => {
 
     query += ' ORDER BY id DESC LIMIT 100';
 
-    const posts = await d1.prepare(query).bind(...params).all();
+    const rawPosts = await d1.prepare(query).bind(...params).all();
+    const publicBase = res.locals.publicBase || '';
+    const posts = (rawPosts || []).map(p => ({
+      ...p,
+      previewUrl: buildDraftPreviewUrl(p, publicBase)
+    }));
 
     res.render('admin/posts-list', {
       title: 'Manage Posts - Odisha Aspirants Admin',
       posts,
       categories: CATEGORIES,
       selectedCategory: category,
+      selectedStatus: status,
       search,
       formatDate,
       success: req.query.success || ''
@@ -402,7 +418,8 @@ router.post('/posts/new', upload.fields([
     });
     globalThis.__invalidateCategoryCache?.();
 
-    res.redirect(getAdminUrl(req, '/posts?success=created'));
+    const redirectFlag = (status === 'draft') ? 'draft' : ((status === 'active') ? 'published' : 'created');
+    res.redirect(getAdminUrl(req, `/posts?success=${redirectFlag}`));
   } catch (err) {
     next(err);
   }
@@ -528,7 +545,56 @@ router.post('/posts/edit/:id', upload.fields([
     });
     globalThis.__invalidateCategoryCache?.();
 
-    res.redirect(getAdminUrl(req, '/posts?success=updated'));
+    const redirectFlag = (status === 'draft') ? 'draft' : ((status === 'active' && currentPost.status !== 'active') ? 'published' : 'updated');
+    res.redirect(getAdminUrl(req, `/posts?success=${redirectFlag}`));
+  } catch (err) {
+    next(err);
+  }
+});
+
+// Live Unsaved Draft Preview (Admin Form)
+router.post('/posts/preview', upload.fields([
+  { name: 'thumbnail_file', maxCount: 1 },
+  { name: 'notification_file', maxCount: 1 },
+  { name: 'admit_card_file', maxCount: 1 },
+  { name: 'result_file', maxCount: 1 }
+]), async (req, res, next) => {
+  try {
+    const previewPost = buildPreviewPostFromBody(req.body, 1);
+    const editId = previewPost.id ? `/posts/edit/${previewPost.id}` : '/posts/new';
+    return await renderPostPreview(req, res, {
+      post: previewPost,
+      editUrl: getAdminUrl(req, editId),
+      backUrl: getAdminUrl(req, '/posts'),
+      publishUrl: previewPost.id ? getAdminUrl(req, `/posts/publish/${previewPost.id}`) : ''
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// Saved Draft Preview (Admin)
+router.get('/posts/preview/:id', async (req, res, next) => {
+  try {
+    const post = await d1.prepare('SELECT * FROM posts WHERE id = ?').bind(req.params.id).first();
+    if (!post) return res.status(404).send('Post not found');
+    return await renderPostPreview(req, res, {
+      post,
+      editUrl: getAdminUrl(req, `/posts/edit/${post.id}`),
+      backUrl: getAdminUrl(req, '/posts'),
+      publishUrl: post.status !== 'active' ? getAdminUrl(req, `/posts/publish/${post.id}`) : ''
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// One-Click Publish After Review (Admin)
+router.post('/posts/publish/:id', async (req, res, next) => {
+  try {
+    await d1.prepare("UPDATE posts SET status = 'active', updated_at = CURRENT_TIMESTAMP WHERE id = ?").bind(req.params.id).run();
+    globalThis.__invalidateCategoryCache?.();
+    res.redirect(getAdminUrl(req, '/posts?success=published'));
   } catch (err) {
     next(err);
   }

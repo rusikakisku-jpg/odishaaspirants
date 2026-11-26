@@ -606,11 +606,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  window.__syncAllBuilders = syncAllBuilders;
   postForm.addEventListener('submit', syncAllBuilders);
-  const submitBtn = postForm.querySelector('button[type="submit"]');
-  if (submitBtn) {
-    submitBtn.addEventListener('click', syncAllBuilders);
-  }
+  postForm.querySelectorAll('button[type="submit"], button[data-preview-btn]').forEach(btn => {
+    btn.addEventListener('click', syncAllBuilders);
+  });
 
   // Category History & Preserved Section Titles Controller
   const historyPanel = document.getElementById('categoryHistoryPanel');

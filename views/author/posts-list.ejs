@@ -15,8 +15,8 @@
   </div>
 
   <% if (typeof success !== 'undefined' && success) { %>
-    <div style="background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
-      ✅ <%= success === 'created' ? 'Article published successfully and linked to your profile!' : (success === 'updated' ? 'Article successfully updated!' : 'Action completed successfully!') %>
+    <div style="background: <%= success === 'draft' ? '#fef3c7' : '#dcfce7' %>; border: 1px solid <%= success === 'draft' ? '#fcd34d' : '#86efac' %>; color: <%= success === 'draft' ? '#92400e' : '#166534' %>; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
+      <%= success === 'draft' ? '📝 Article saved as Draft! Click Preview to review before publishing live.' : (success === 'published' || success === 'created' ? '🚀 Article published live and linked to your profile!' : (success === 'updated' ? '✅ Article successfully updated!' : '✅ Action completed successfully!')) %>
     </div>
   <% } %>
 
@@ -109,7 +109,14 @@
                 <%= post.post_date || formatDate(post.created_at) %>
               </td>
               <td style="text-align: right; white-space: nowrap;">
-                <a href="/post/<%= post.slug %>" target="_blank" class="btn btn-secondary btn-sm" title="View Public Post">👁️</a>
+                <% if (post.status !== 'active') { %>
+                  <a href="<%= post.previewUrl || ('/author-portal/posts/preview/' + post.id) %>" target="_blank" class="btn btn-secondary btn-sm" style="background: #e0f2fe; color: #0369a1; border-color: #bae6fd;" title="Preview Draft">👁️ Preview</a>
+                  <form action="/author-portal/posts/publish/<%= post.id %>" method="POST" style="display: inline-block;" onsubmit="return confirm('Publish this article live now?');">
+                    <button type="submit" class="btn btn-primary btn-sm" style="background: #16a34a; border-color: #15803d;" title="Publish Live">🚀 Publish</button>
+                  </form>
+                <% } else { %>
+                  <a href="/post/<%= post.slug %>" target="_blank" class="btn btn-secondary btn-sm" title="View Public Post">👁️</a>
+                <% } %>
                 <a href="/author-portal/posts/edit/<%= post.id %>" class="btn btn-secondary btn-sm" title="Edit Article">✏️ Edit</a>
               </td>
             </tr>

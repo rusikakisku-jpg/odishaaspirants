@@ -67,7 +67,7 @@ router.get('/posts', async (req, res) => {
 router.get('/posts/:slug', async (req, res) => {
   try {
     const { slug } = req.params;
-    const post = await d1.prepare('SELECT * FROM posts WHERE slug = ?').bind(slug).first();
+    const post = await d1.prepare("SELECT * FROM posts WHERE slug = ? AND status = 'active'").bind(slug).first();
 
     if (!post) {
       return res.status(404).json({ success: false, error: 'Post not found' });

@@ -28825,6 +28825,144 @@ var require_viewTracker = __commonJS({
   }
 });
 
+// src/utils/adminHost.js
+var require_adminHost = __commonJS({
+  "src/utils/adminHost.js"(exports, module) {
+    var config = require_env();
+    function getRequestHost(req) {
+      if (!req) return "";
+      const raw = req.headers && (req.headers["x-forwarded-host"] || req.headers.host) || req.hostname || "";
+      return String(raw).split(",")[0].split(":")[0].trim().toLowerCase();
+    }
+    function isAdminSubdomainRequest(req) {
+      const host = getRequestHost(req);
+      const configured = config.admin && config.admin.subdomain || "setup.odishaaspirants.com";
+      return Boolean(host && host === configured.toLowerCase());
+    }
+    function isHttpsRequest(req) {
+      if (!req) return false;
+      const proto = String(req.headers && req.headers["x-forwarded-proto"] || req.protocol || "").toLowerCase();
+      return Boolean(req.secure || proto === "https");
+    }
+    function getAdminBase(req) {
+      return isAdminSubdomainRequest(req) ? "" : "/admin";
+    }
+    function getPublicBase(req) {
+      return isAdminSubdomainRequest(req) ? config.admin && config.admin.publicSiteUrl || "https://odishaaspirants.com" : "";
+    }
+    function getAdminUrl(req, subPath = "") {
+      const base = getAdminBase(req);
+      if (!subPath || subPath === "/") {
+        return base || "/";
+      }
+      const normalized = subPath.startsWith("/") ? subPath : `/${subPath}`;
+      return `${base}${normalized}`;
+    }
+    function getPublicOrigin(req, siteSettings) {
+      const host = getRequestHost(req);
+      if (host && (host === "localhost" || host === "127.0.0.1" || host.endsWith(".local"))) {
+        const rawHost = req.headers && (req.headers["x-forwarded-host"] || req.headers.host) || host;
+        const proto = isHttpsRequest(req) ? "https" : "http";
+        return `${proto}://${String(rawHost).split(",")[0].trim()}`;
+      }
+      const settingDomain = siteSettings && siteSettings.site_domain ? String(siteSettings.site_domain).trim() : "";
+      if (settingDomain) {
+        return (settingDomain.startsWith("http") ? settingDomain : `https://${settingDomain}`).replace(/\/+$/, "");
+      }
+      if (config.admin && config.admin.publicSiteUrl) {
+        return config.admin.publicSiteUrl.replace(/\/+$/, "");
+      }
+      if (host) {
+        return `${isHttpsRequest(req) ? "https" : "http"}://${host}`;
+      }
+      return "";
+    }
+    function toAbsoluteAssetUrl(fileUrl, req, siteSettings) {
+      if (!fileUrl) return "";
+      const trimmed = String(fileUrl).trim();
+      if (/^https?:\/\//i.test(trimmed)) return trimmed;
+      const origin = getPublicOrigin(req, siteSettings);
+      if (!origin) return trimmed;
+      const normalizedPath = trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+      return `${origin}${normalizedPath}`;
+    }
+    module.exports = {
+      getRequestHost,
+      isAdminSubdomainRequest,
+      isHttpsRequest,
+      getAdminBase,
+      getPublicBase,
+      getAdminUrl,
+      getPublicOrigin,
+      toAbsoluteAssetUrl
+    };
+  }
+});
+
+// src/middleware/auth.js
+var require_auth = __commonJS({
+  "src/middleware/auth.js"(exports, module) {
+    var crypto6 = __require("node:crypto");
+    var config = require_env();
+    var { getAdminUrl, isHttpsRequest } = require_adminHost();
+    function getAllValidTokens() {
+      const secret = config.server.sessionSecret;
+      const validUsers = [
+        (config.admin.username || "admin").toLowerCase(),
+        "admin",
+        "odishaaspirants",
+        "odishaaspirantsadmin",
+        "odishaaspirantsofficial",
+        "admin@odishaaspirants.com"
+      ];
+      return validUsers.map((u) => crypto6.createHmac("sha256", secret).update(u).digest("hex"));
+    }
+    function getExpectedToken() {
+      const secret = config.server.sessionSecret;
+      const username = (config.admin.username || "admin").toLowerCase();
+      return crypto6.createHmac("sha256", secret).update(username).digest("hex");
+    }
+    function requireAuth(req, res, next) {
+      const token = req.cookies?.sr_admin_token;
+      const validTokens = getAllValidTokens();
+      if (token && validTokens.includes(token)) {
+        req.isAdmin = true;
+        res.locals.isAdmin = true;
+        return next();
+      }
+      if (req.xhr || req.headers.accept?.indexOf("json") > -1) {
+        return res.status(401).json({ error: "Unauthorized: Admin authentication required" });
+      }
+      res.redirect(getAdminUrl(req, "/login"));
+    }
+    function setAuthCookie(res, req) {
+      const token = getExpectedToken();
+      res.cookie("sr_admin_token", token, {
+        httpOnly: true,
+        secure: isHttpsRequest(req),
+        maxAge: 7 * 24 * 60 * 60 * 1e3,
+        // 7 days
+        sameSite: "lax",
+        path: "/"
+      });
+    }
+    function clearAuthCookie(res, req) {
+      res.clearCookie("sr_admin_token", {
+        httpOnly: true,
+        secure: isHttpsRequest(req),
+        sameSite: "lax",
+        path: "/"
+      });
+    }
+    module.exports = {
+      getAllValidTokens,
+      requireAuth,
+      setAuthCookie,
+      clearAuthCookie
+    };
+  }
+});
+
 // src/utils/postCategoryManager.js
 var require_postCategoryManager = __commonJS({
   "src/utils/postCategoryManager.js"(exports, module) {
@@ -29031,6 +29169,169 @@ var require_postCategoryManager = __commonJS({
   }
 });
 
+// src/utils/previewToken.js
+var require_previewToken = __commonJS({
+  "src/utils/previewToken.js"(exports, module) {
+    var crypto6 = __require("node:crypto");
+    var d1 = require_d1Client();
+    var config = require_env();
+    var { getAllValidTokens } = require_auth();
+    var { getAuthorFromToken } = require_authorAuth();
+    var {
+      CATEGORIES,
+      safeJsonParse,
+      formatDate,
+      formatPrettyDate,
+      slugify
+    } = require_helpers();
+    var {
+      fetchRelatedCategoryPosts,
+      fetchAllCategoryCounts,
+      getVisibleCategoriesMap
+    } = require_postCategoryManager();
+    function signPreviewToken(post) {
+      if (!post || !post.id || !post.slug) return "";
+      const secret = config.server.sessionSecret || "odishaaspirants_secret_key_cloudflare_d1_r2";
+      return crypto6.createHmac("sha256", secret).update(`draft-preview:${post.id}:${post.slug}`).digest("hex").slice(0, 24);
+    }
+    function verifyPreviewToken(post, token) {
+      if (!post || !token || typeof token !== "string") return false;
+      const expected = signPreviewToken(post);
+      if (!expected || expected.length !== token.length) return false;
+      try {
+        return crypto6.timingSafeEqual(Buffer.from(expected), Buffer.from(token));
+      } catch (e) {
+        return false;
+      }
+    }
+    function buildDraftPreviewUrl(post, publicBase = "") {
+      if (!post || !post.slug) return "";
+      if (post.status === "active") {
+        return `${publicBase}/post/${post.slug}`;
+      }
+      const token = signPreviewToken(post);
+      return `${publicBase}/post/${post.slug}?preview=${encodeURIComponent(token)}`;
+    }
+    async function canPreviewPost(req, post) {
+      if (!post) return false;
+      if (post.status === "active") return true;
+      const queryToken = req.query && req.query.preview ? String(req.query.preview).trim() : "";
+      if (queryToken && verifyPreviewToken(post, queryToken)) {
+        return true;
+      }
+      const adminToken = req.cookies?.sr_admin_token;
+      if (adminToken && getAllValidTokens().includes(adminToken)) {
+        return true;
+      }
+      const authorToken = req.cookies?.gez_author_token;
+      if (authorToken) {
+        const author = await getAuthorFromToken(authorToken);
+        if (author) {
+          const isEditor = Boolean(
+            author.id === 1 || author.role && (author.role.toLowerCase().includes("editor") || author.role.toLowerCase().includes("lead")) || author.slug === "editorial-team"
+          );
+          if (isEditor || Number(post.author_id) === Number(author.id)) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+    function buildPreviewPostFromBody(body = {}, fallbackAuthorId = 1) {
+      const title = (body.title || "").trim() || "Untitled Draft Preview";
+      const category = body.category && CATEGORIES[body.category] ? body.category : "latest-jobs";
+      return {
+        id: body.post_id ? parseInt(body.post_id, 10) || 0 : 0,
+        title,
+        slug: body.slug ? slugify(body.slug) : slugify(title),
+        category,
+        department: (body.department || "").trim() || null,
+        post_date: (body.post_date || "").trim() || formatDate(/* @__PURE__ */ new Date()),
+        last_date: (body.last_date || "").trim() || null,
+        short_desc: (body.short_desc || "").trim() || null,
+        total_vacancy: (body.total_vacancy || "").trim() || null,
+        important_dates: body.important_dates || "[]",
+        application_fee: body.application_fee || "[]",
+        age_limit: body.age_limit || "{}",
+        vacancy_details: body.vacancy_details || "[]",
+        category_details: body.category_details || "[]",
+        how_to_apply: body.how_to_apply || null,
+        article_content: body.article_content || null,
+        thumbnail: (body.thumbnail_url || "").trim() || null,
+        links: body.links || "[]",
+        notification_pdf: (body.notification_pdf_url || "").trim() || null,
+        admit_card_url: (body.admit_card_url || "").trim() || null,
+        result_url: (body.result_url || "").trim() || null,
+        apply_online_url: (body.apply_online_url || "").trim() || null,
+        official_website_url: (body.official_website_url || "").trim() || null,
+        views: 0,
+        is_featured: body.is_featured ? 1 : 0,
+        status: body.status || "draft",
+        author_id: body.author_id ? parseInt(body.author_id, 10) || fallbackAuthorId : fallbackAuthorId,
+        created_at: (/* @__PURE__ */ new Date()).toISOString()
+      };
+    }
+    async function renderPostPreview(req, res, { post, editUrl = "", backUrl = "", publishUrl = "" }) {
+      res.set("Cache-Control", "no-store, no-cache, must-revalidate, private");
+      res.set("X-Robots-Tag", "noindex, nofollow, noarchive");
+      res.locals.categories = CATEGORIES;
+      res.locals.formatDate = formatDate;
+      res.locals.formatPrettyDate = formatPrettyDate;
+      res.locals.safeJsonParse = safeJsonParse;
+      res.locals.currentPath = `/post/${post.slug || "preview"}`;
+      const excludeId = post.id || 0;
+      const [relatedPosts, authorRow, recentPosts, popularPosts, categoryCounts] = await Promise.all([
+        fetchRelatedCategoryPosts(post.category, excludeId, 8),
+        d1.prepare("SELECT * FROM authors WHERE id = ?").bind(post.author_id || 1).first(),
+        d1.prepare("SELECT id, title, slug, category, post_date, created_at FROM posts WHERE status = 'active' AND id != ? ORDER BY id DESC LIMIT 5").bind(excludeId).all(),
+        d1.prepare("SELECT id, title, slug, category, post_date, views, created_at FROM posts WHERE status = 'active' ORDER BY views DESC, id DESC LIMIT 5").all(),
+        fetchAllCategoryCounts()
+      ]);
+      res.locals.visibleCategories = getVisibleCategoriesMap(res.locals.settings || {}, categoryCounts || []);
+      const siteTitle = res.locals.settings && res.locals.settings.site_title ? res.locals.settings.site_title : "Odisha Aspirants";
+      const author = authorRow || {
+        name: "Mangal",
+        slug: "mangal",
+        role: "Senior Recruitment Analyst & Fact-Checker Lead",
+        avatar_url: "/images/default-avatar.svg",
+        bio: `Verified recruitment researcher and content editor at ${siteTitle}.`
+      };
+      return res.render("pages/detail", {
+        title: `[PREVIEW] ${post.title} - ${siteTitle}`,
+        metaDescription: post.short_desc ? post.short_desc.replace(/\s+/g, " ").trim() : post.title,
+        metaRobots: "noindex, nofollow",
+        isDraftPreview: true,
+        previewStatus: post.status || "draft",
+        previewEditUrl: editUrl,
+        previewBackUrl: backUrl,
+        previewPublishUrl: publishUrl,
+        post,
+        author,
+        catInfo: CATEGORIES[post.category] || { name: "Notification", slug: post.category },
+        importantDates: safeJsonParse(post.important_dates, []),
+        applicationFee: safeJsonParse(post.application_fee, []),
+        ageLimit: safeJsonParse(post.age_limit, {}),
+        vacancyDetails: safeJsonParse(post.vacancy_details, []),
+        categoryDetails: safeJsonParse(post.category_details, []),
+        links: safeJsonParse(post.links, []),
+        relatedPosts: relatedPosts || [],
+        recentPosts: recentPosts || [],
+        popularPosts: popularPosts || [],
+        categoryCounts: categoryCounts || [],
+        fullUrl: `${req.protocol}://${req.get("host")}${req.originalUrl}`
+      });
+    }
+    module.exports = {
+      signPreviewToken,
+      verifyPreviewToken,
+      buildDraftPreviewUrl,
+      canPreviewPost,
+      buildPreviewPostFromBody,
+      renderPostPreview
+    };
+  }
+});
+
 // src/routes/webRoutes.js
 var require_webRoutes = __commonJS({
   "src/routes/webRoutes.js"(exports, module) {
@@ -29039,6 +29340,7 @@ var require_webRoutes = __commonJS({
     var d1 = require_d1Client();
     var { CATEGORIES, safeJsonParse, formatDate, formatPrettyDate } = require_helpers();
     var { recordPostView } = require_viewTracker();
+    var { canPreviewPost } = require_previewToken();
     var {
       fetchCategoryPosts,
       countCategoryPosts,
@@ -29224,7 +29526,20 @@ var require_webRoutes = __commonJS({
             message: "The job or result notification you are looking for does not exist or has been removed."
           });
         }
-        await recordPostView(post.id, req);
+        const isDraftPreview = post.status !== "active";
+        if (isDraftPreview) {
+          const allowedPreview = await canPreviewPost(req, post);
+          if (!allowedPreview) {
+            return res.status(404).render("pages/error", {
+              title: "Post Not Found | Odisha Aspirants",
+              message: "The job or result notification you are looking for does not exist or has been removed."
+            });
+          }
+          res.set("Cache-Control", "no-store, no-cache, must-revalidate, private");
+          res.set("X-Robots-Tag", "noindex, nofollow, noarchive");
+        } else {
+          await recordPostView(post.id, req);
+        }
         const [relatedPosts, authorRow, recentPosts, popularPosts, categoryCounts] = await Promise.all([
           fetchRelatedCategoryPosts(post.category, post.id, 8),
           d1.prepare("SELECT * FROM authors WHERE id = ?").bind(post.author_id || 1).first(),
@@ -29249,10 +29564,15 @@ var require_webRoutes = __commonJS({
           avatar_url: "/images/default-avatar.svg",
           bio: "Verified recruitment researcher and content editor at Odisha Aspirants."
         };
-        res.set("Cache-Control", "public, max-age=30, s-maxage=60, stale-while-revalidate=120");
+        if (!isDraftPreview) {
+          res.set("Cache-Control", "public, max-age=30, s-maxage=60, stale-while-revalidate=120");
+        }
         res.render("pages/detail", {
-          title: `${post.title} - Odisha Aspirants | WWW.ODISHAASPIRANTS.COM`,
+          title: `${isDraftPreview ? "[PREVIEW] " : ""}${post.title} - Odisha Aspirants | WWW.ODISHAASPIRANTS.COM`,
           metaDescription: post.short_desc ? post.short_desc.replace(/\s+/g, " ").trim() : `${post.title}. Check notification details, eligibility criteria, application process, and official links at Odisha Aspirants.`,
+          metaRobots: isDraftPreview ? "noindex, nofollow" : void 0,
+          isDraftPreview,
+          previewStatus: post.status,
           post,
           author,
           catInfo: CATEGORIES[post.category] || { name: "Notification", slug: post.category },
@@ -75141,143 +75461,6 @@ var require_r2Client = __commonJS({
   }
 });
 
-// src/utils/adminHost.js
-var require_adminHost = __commonJS({
-  "src/utils/adminHost.js"(exports, module) {
-    var config = require_env();
-    function getRequestHost(req) {
-      if (!req) return "";
-      const raw = req.headers && (req.headers["x-forwarded-host"] || req.headers.host) || req.hostname || "";
-      return String(raw).split(",")[0].split(":")[0].trim().toLowerCase();
-    }
-    function isAdminSubdomainRequest(req) {
-      const host = getRequestHost(req);
-      const configured = config.admin && config.admin.subdomain || "setup.odishaaspirants.com";
-      return Boolean(host && host === configured.toLowerCase());
-    }
-    function isHttpsRequest(req) {
-      if (!req) return false;
-      const proto = String(req.headers && req.headers["x-forwarded-proto"] || req.protocol || "").toLowerCase();
-      return Boolean(req.secure || proto === "https");
-    }
-    function getAdminBase(req) {
-      return isAdminSubdomainRequest(req) ? "" : "/admin";
-    }
-    function getPublicBase(req) {
-      return isAdminSubdomainRequest(req) ? config.admin && config.admin.publicSiteUrl || "https://odishaaspirants.com" : "";
-    }
-    function getAdminUrl(req, subPath = "") {
-      const base = getAdminBase(req);
-      if (!subPath || subPath === "/") {
-        return base || "/";
-      }
-      const normalized = subPath.startsWith("/") ? subPath : `/${subPath}`;
-      return `${base}${normalized}`;
-    }
-    function getPublicOrigin(req, siteSettings) {
-      const host = getRequestHost(req);
-      if (host && (host === "localhost" || host === "127.0.0.1" || host.endsWith(".local"))) {
-        const rawHost = req.headers && (req.headers["x-forwarded-host"] || req.headers.host) || host;
-        const proto = isHttpsRequest(req) ? "https" : "http";
-        return `${proto}://${String(rawHost).split(",")[0].trim()}`;
-      }
-      const settingDomain = siteSettings && siteSettings.site_domain ? String(siteSettings.site_domain).trim() : "";
-      if (settingDomain) {
-        return (settingDomain.startsWith("http") ? settingDomain : `https://${settingDomain}`).replace(/\/+$/, "");
-      }
-      if (config.admin && config.admin.publicSiteUrl) {
-        return config.admin.publicSiteUrl.replace(/\/+$/, "");
-      }
-      if (host) {
-        return `${isHttpsRequest(req) ? "https" : "http"}://${host}`;
-      }
-      return "";
-    }
-    function toAbsoluteAssetUrl(fileUrl, req, siteSettings) {
-      if (!fileUrl) return "";
-      const trimmed = String(fileUrl).trim();
-      if (/^https?:\/\//i.test(trimmed)) return trimmed;
-      const origin = getPublicOrigin(req, siteSettings);
-      if (!origin) return trimmed;
-      const normalizedPath = trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
-      return `${origin}${normalizedPath}`;
-    }
-    module.exports = {
-      getRequestHost,
-      isAdminSubdomainRequest,
-      isHttpsRequest,
-      getAdminBase,
-      getPublicBase,
-      getAdminUrl,
-      getPublicOrigin,
-      toAbsoluteAssetUrl
-    };
-  }
-});
-
-// src/middleware/auth.js
-var require_auth = __commonJS({
-  "src/middleware/auth.js"(exports, module) {
-    var crypto6 = __require("node:crypto");
-    var config = require_env();
-    var { getAdminUrl, isHttpsRequest } = require_adminHost();
-    function getAllValidTokens() {
-      const secret = config.server.sessionSecret;
-      const validUsers = [
-        (config.admin.username || "admin").toLowerCase(),
-        "admin",
-        "odishaaspirants",
-        "odishaaspirantsadmin",
-        "odishaaspirantsofficial",
-        "admin@odishaaspirants.com"
-      ];
-      return validUsers.map((u) => crypto6.createHmac("sha256", secret).update(u).digest("hex"));
-    }
-    function getExpectedToken() {
-      const secret = config.server.sessionSecret;
-      const username = (config.admin.username || "admin").toLowerCase();
-      return crypto6.createHmac("sha256", secret).update(username).digest("hex");
-    }
-    function requireAuth(req, res, next) {
-      const token = req.cookies?.sr_admin_token;
-      const validTokens = getAllValidTokens();
-      if (token && validTokens.includes(token)) {
-        req.isAdmin = true;
-        res.locals.isAdmin = true;
-        return next();
-      }
-      if (req.xhr || req.headers.accept?.indexOf("json") > -1) {
-        return res.status(401).json({ error: "Unauthorized: Admin authentication required" });
-      }
-      res.redirect(getAdminUrl(req, "/login"));
-    }
-    function setAuthCookie(res, req) {
-      const token = getExpectedToken();
-      res.cookie("sr_admin_token", token, {
-        httpOnly: true,
-        secure: isHttpsRequest(req),
-        maxAge: 7 * 24 * 60 * 60 * 1e3,
-        // 7 days
-        sameSite: "lax",
-        path: "/"
-      });
-    }
-    function clearAuthCookie(res, req) {
-      res.clearCookie("sr_admin_token", {
-        httpOnly: true,
-        secure: isHttpsRequest(req),
-        sameSite: "lax",
-        path: "/"
-      });
-    }
-    module.exports = {
-      requireAuth,
-      setAuthCookie,
-      clearAuthCookie
-    };
-  }
-});
-
 // src/utils/uploadHelper.js
 var require_uploadHelper = __commonJS({
   "src/utils/uploadHelper.js"(exports, module) {
@@ -75326,6 +75509,11 @@ var require_adminRoutes = __commonJS({
       cleanupPostRelations,
       fetchAllCategoryCounts
     } = require_postCategoryManager();
+    var {
+      buildDraftPreviewUrl,
+      buildPreviewPostFromBody,
+      renderPostPreview
+    } = require_previewToken();
     var { slugify, CATEGORIES, safeJsonParse, formatDate } = require_helpers();
     var upload = multer({
       storage: multer.memoryStorage(),
@@ -75540,6 +75728,7 @@ var require_adminRoutes = __commonJS({
     router.get("/posts", async (req, res, next) => {
       try {
         const category = req.query.category || "";
+        const status = req.query.status || "";
         const search = req.query.search || "";
         let query = "SELECT * FROM posts WHERE 1=1";
         const params = [];
@@ -75547,17 +75736,27 @@ var require_adminRoutes = __commonJS({
           query += " AND category = ?";
           params.push(category);
         }
+        if (status) {
+          query += " AND status = ?";
+          params.push(status);
+        }
         if (search) {
           query += " AND (title LIKE ? OR department LIKE ?)";
           params.push(`%${search}%`, `%${search}%`);
         }
         query += " ORDER BY id DESC LIMIT 100";
-        const posts = await d1.prepare(query).bind(...params).all();
+        const rawPosts = await d1.prepare(query).bind(...params).all();
+        const publicBase = res.locals.publicBase || "";
+        const posts = (rawPosts || []).map((p) => ({
+          ...p,
+          previewUrl: buildDraftPreviewUrl(p, publicBase)
+        }));
         res.render("admin/posts-list", {
           title: "Manage Posts - Odisha Aspirants Admin",
           posts,
           categories: CATEGORIES,
           selectedCategory: category,
+          selectedStatus: status,
           search,
           formatDate,
           success: req.query.success || ""
@@ -75689,7 +75888,8 @@ var require_adminRoutes = __commonJS({
           body: req.body
         });
         globalThis.__invalidateCategoryCache?.();
-        res.redirect(getAdminUrl(req, "/posts?success=created"));
+        const redirectFlag = status === "draft" ? "draft" : status === "active" ? "published" : "created";
+        res.redirect(getAdminUrl(req, `/posts?success=${redirectFlag}`));
       } catch (err) {
         next(err);
       }
@@ -75821,7 +76021,50 @@ var require_adminRoutes = __commonJS({
           body: req.body
         });
         globalThis.__invalidateCategoryCache?.();
-        res.redirect(getAdminUrl(req, "/posts?success=updated"));
+        const redirectFlag = status === "draft" ? "draft" : status === "active" && currentPost.status !== "active" ? "published" : "updated";
+        res.redirect(getAdminUrl(req, `/posts?success=${redirectFlag}`));
+      } catch (err) {
+        next(err);
+      }
+    });
+    router.post("/posts/preview", upload.fields([
+      { name: "thumbnail_file", maxCount: 1 },
+      { name: "notification_file", maxCount: 1 },
+      { name: "admit_card_file", maxCount: 1 },
+      { name: "result_file", maxCount: 1 }
+    ]), async (req, res, next) => {
+      try {
+        const previewPost = buildPreviewPostFromBody(req.body, 1);
+        const editId = previewPost.id ? `/posts/edit/${previewPost.id}` : "/posts/new";
+        return await renderPostPreview(req, res, {
+          post: previewPost,
+          editUrl: getAdminUrl(req, editId),
+          backUrl: getAdminUrl(req, "/posts"),
+          publishUrl: previewPost.id ? getAdminUrl(req, `/posts/publish/${previewPost.id}`) : ""
+        });
+      } catch (err) {
+        next(err);
+      }
+    });
+    router.get("/posts/preview/:id", async (req, res, next) => {
+      try {
+        const post = await d1.prepare("SELECT * FROM posts WHERE id = ?").bind(req.params.id).first();
+        if (!post) return res.status(404).send("Post not found");
+        return await renderPostPreview(req, res, {
+          post,
+          editUrl: getAdminUrl(req, `/posts/edit/${post.id}`),
+          backUrl: getAdminUrl(req, "/posts"),
+          publishUrl: post.status !== "active" ? getAdminUrl(req, `/posts/publish/${post.id}`) : ""
+        });
+      } catch (err) {
+        next(err);
+      }
+    });
+    router.post("/posts/publish/:id", async (req, res, next) => {
+      try {
+        await d1.prepare("UPDATE posts SET status = 'active', updated_at = CURRENT_TIMESTAMP WHERE id = ?").bind(req.params.id).run();
+        globalThis.__invalidateCategoryCache?.();
+        res.redirect(getAdminUrl(req, "/posts?success=published"));
       } catch (err) {
         next(err);
       }
@@ -76323,6 +76566,11 @@ var require_authorRoutes = __commonJS({
     var { slugify, CATEGORIES, safeJsonParse, formatDate } = require_helpers();
     var { saveUploadedAsset } = require_uploadHelper();
     var { getPostCategoryMap, syncPostCategoriesOnSave } = require_postCategoryManager();
+    var {
+      buildDraftPreviewUrl,
+      buildPreviewPostFromBody,
+      renderPostPreview
+    } = require_previewToken();
     var upload = multer({
       storage: multer.memoryStorage(),
       limits: { fileSize: 25 * 1024 * 1024 }
@@ -76515,7 +76763,11 @@ var require_authorRoutes = __commonJS({
           params.push(`%${search}%`, `%${search}%`);
         }
         query += " ORDER BY " + (isEditor ? "p.id" : "id") + " DESC LIMIT 100";
-        const posts = await d1.prepare(query).bind(...params).all();
+        const rawPosts = await d1.prepare(query).bind(...params).all();
+        const posts = (rawPosts || []).map((p) => ({
+          ...p,
+          previewUrl: buildDraftPreviewUrl(p, "")
+        }));
         const allAuthors = isEditor ? await d1.prepare("SELECT id, name FROM authors ORDER BY name ASC").all() : [];
         res.render("author/posts-list", {
           title: isEditor ? "All Articles & Submissions - Editorial Desk" : "My Published & Draft Articles - Author Workspace",
@@ -76523,7 +76775,7 @@ var require_authorRoutes = __commonJS({
           isEditor,
           allAuthors,
           selectedAuthor: authorFilter,
-          posts: posts || [],
+          posts,
           categories: CATEGORIES,
           selectedCategory: category,
           selectedStatus: status,
@@ -76653,7 +76905,8 @@ var require_authorRoutes = __commonJS({
           body: req.body
         });
         globalThis.__invalidateCategoryCache?.();
-        res.redirect("/author-portal/posts?success=created");
+        const redirectFlag = postStatus === "draft" ? "draft" : "published";
+        res.redirect(`/author-portal/posts?success=${redirectFlag}`);
       } catch (err) {
         next(err);
       }
@@ -76824,7 +77077,58 @@ var require_authorRoutes = __commonJS({
           body: req.body
         });
         globalThis.__invalidateCategoryCache?.();
-        res.redirect("/author-portal/posts?success=updated");
+        const redirectFlag = postStatus === "draft" ? "draft" : postStatus === "active" && currentPost.status !== "active" ? "published" : "updated";
+        res.redirect(`/author-portal/posts?success=${redirectFlag}`);
+      } catch (err) {
+        next(err);
+      }
+    });
+    router.post("/posts/preview", upload.fields([
+      { name: "thumbnail_file", maxCount: 1 },
+      { name: "notification_file", maxCount: 1 },
+      { name: "admit_card_file", maxCount: 1 },
+      { name: "result_file", maxCount: 1 }
+    ]), async (req, res, next) => {
+      try {
+        const previewPost = buildPreviewPostFromBody(req.body, req.author.id);
+        const editUrl = previewPost.id ? `/author-portal/posts/edit/${previewPost.id}` : "/author-portal/posts/new";
+        return await renderPostPreview(req, res, {
+          post: previewPost,
+          editUrl,
+          backUrl: "/author-portal/posts",
+          publishUrl: previewPost.id ? `/author-portal/posts/publish/${previewPost.id}` : ""
+        });
+      } catch (err) {
+        next(err);
+      }
+    });
+    router.get("/posts/preview/:id", async (req, res, next) => {
+      try {
+        const post = await d1.prepare("SELECT * FROM posts WHERE id = ?").bind(req.params.id).first();
+        if (!post) return res.status(404).send("Article not found.");
+        if (!req.isEditor && post.author_id !== req.author.id) {
+          return res.status(403).send("Access Denied: You are not authorized to preview articles written by another author.");
+        }
+        return await renderPostPreview(req, res, {
+          post,
+          editUrl: `/author-portal/posts/edit/${post.id}`,
+          backUrl: "/author-portal/posts",
+          publishUrl: post.status !== "active" ? `/author-portal/posts/publish/${post.id}` : ""
+        });
+      } catch (err) {
+        next(err);
+      }
+    });
+    router.post("/posts/publish/:id", async (req, res, next) => {
+      try {
+        const post = await d1.prepare("SELECT * FROM posts WHERE id = ?").bind(req.params.id).first();
+        if (!post) return res.status(404).send("Article not found.");
+        if (!req.isEditor && post.author_id !== req.author.id) {
+          return res.status(403).send("Access Denied: You cannot publish articles belonging to another author.");
+        }
+        await d1.prepare("UPDATE posts SET status = 'active', updated_at = CURRENT_TIMESTAMP WHERE id = ?").bind(post.id).run();
+        globalThis.__invalidateCategoryCache?.();
+        res.redirect("/author-portal/posts?success=published");
       } catch (err) {
         next(err);
       }
@@ -76985,7 +77289,7 @@ var require_apiRoutes = __commonJS({
     router.get("/posts/:slug", async (req, res) => {
       try {
         const { slug } = req.params;
-        const post = await d1.prepare("SELECT * FROM posts WHERE slug = ?").bind(slug).first();
+        const post = await d1.prepare("SELECT * FROM posts WHERE slug = ? AND status = 'active'").bind(slug).first();
         if (!post) {
           return res.status(404).json({ success: false, error: "Post not found" });
         }
@@ -78362,7 +78666,13 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts\\" class=\\"btn btn-secondary btn-sm\\">\u2190 Back to Posts</a>\\n  </div>\\n\\n  <form action=\\"")
     ; __append(escapeFn( action ))
-    ; __append("\\" method=\\"POST\\" enctype=\\"multipart/form-data\\">\\n    <!-- Row 1: Title & Category -->\\n    <div class=\\"form-row\\">\\n      <div class=\\"form-group\\" style=\\"grid-column: span 2;\\">\\n        <label for=\\"title\\">Post Title *</label>\\n        <input \\n          type=\\"text\\" \\n          id=\\"title\\" \\n          name=\\"title\\" \\n          class=\\"form-control\\" \\n          placeholder=\\"e.g. SSC CGL 2026 Online Form Apply Online\\" \\n          value=\\"")
+    ; __append("\\" method=\\"POST\\" enctype=\\"multipart/form-data\\">\\n    ")
+    ;  if (post && post.id) { 
+    ; __append("\\n      <input type=\\"hidden\\" name=\\"post_id\\" value=\\"")
+    ; __append(escapeFn( post.id ))
+    ; __append("\\">\\n    ")
+    ;  } 
+    ; __append("\\n    <!-- Row 1: Title & Category -->\\n    <div class=\\"form-row\\">\\n      <div class=\\"form-group\\" style=\\"grid-column: span 2;\\">\\n        <label for=\\"title\\">Post Title *</label>\\n        <input \\n          type=\\"text\\" \\n          id=\\"title\\" \\n          name=\\"title\\" \\n          class=\\"form-control\\" \\n          placeholder=\\"e.g. SSC CGL 2026 Online Form Apply Online\\" \\n          value=\\"")
     ; __append(escapeFn( post ? post.title : '' ))
     ; __append("\\" \\n          required\\n        >\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"category\\">Category *</label>\\n        <select id=\\"category\\" name=\\"category\\" class=\\"form-control\\" required>\\n          ")
     ;  Object.keys(categories).forEach(key => { 
@@ -78462,19 +78772,21 @@ var require_templateEngine = __commonJS({
     ;  } else { 
     ; __append("\\n            <option value=\\"1\\">Mangal</option>\\n          ")
     ;  } 
-    ; __append("\\n        </select>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"status\\">Publication Status</label>\\n        <select id=\\"status\\" name=\\"status\\" class=\\"form-control\\">\\n          <option value=\\"active\\" ")
+    ; __append("\\n        </select>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"status\\">Publication Status</label>\\n        <select id=\\"status\\" name=\\"status\\" class=\\"form-control\\">\\n          <option value=\\"draft\\" ")
+    ; __append(escapeFn( (post && post.status === 'draft') || !post ? 'selected' : '' ))
+    ; __append(">Draft (Review Before Publish)</option>\\n          <option value=\\"active\\" ")
     ; __append(escapeFn( post && post.status === 'active' ? 'selected' : '' ))
-    ; __append(">Active (Published)</option>\\n          <option value=\\"draft\\" ")
-    ; __append(escapeFn( post && post.status === 'draft' ? 'selected' : '' ))
-    ; __append(">Draft</option>\\n          <option value=\\"archived\\" ")
+    ; __append(">Published (Active Live)</option>\\n          <option value=\\"archived\\" ")
     ; __append(escapeFn( post && post.status === 'archived' ? 'selected' : '' ))
     ; __append(">Archived</option>\\n        </select>\\n      </div>\\n\\n      <div class=\\"form-group\\" style=\\"padding-top: 25px;\\">\\n        <label style=\\"display: flex; align-items: center; gap: 8px; cursor: pointer;\\">\\n          <input type=\\"checkbox\\" name=\\"is_featured\\" value=\\"1\\" ")
     ; __append(escapeFn( post && post.is_featured ? 'checked' : '' ))
-    ; __append(">\\n          <span>Mark as Featured Post</span>\\n        </label>\\n      </div>\\n    </div>\\n\\n    <div style=\\"margin-top: 25px;\\">\\n      <button type=\\"submit\\" class=\\"btn btn-primary\\" style=\\"font-size: 16px; padding: 10px 25px;\\">\\n        \u{1F4BE} ")
-    ; __append(escapeFn( post ? 'Update Notification' : 'Publish Notification' ))
+    ; __append(">\\n          <span>Mark as Featured Post</span>\\n        </label>\\n      </div>\\n    </div>\\n\\n    <div style=\\"margin-top: 25px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;\\">\\n      <button type=\\"submit\\" onclick=\\"document.getElementById('status').value='draft'\\" class=\\"btn btn-secondary\\" style=\\"background: #f59e0b; border-color: #d97706; color: #ffffff; font-size: 15px; padding: 10px 20px; font-weight: 700;\\">\\n        \u{1F4DD} Save as Draft\\n      </button>\\n      <button type=\\"button\\" data-preview-btn=\\"1\\" onclick=\\"previewPostDraft(this, '")
+    ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
+    ; __append("/posts/preview')\\" class=\\"btn btn-secondary\\" style=\\"background: #0284c7; border-color: #0369a1; color: #ffffff; font-size: 15px; padding: 10px 20px; font-weight: 700;\\">\\n        \u{1F441}\uFE0F Preview Draft\\n      </button>\\n      <button type=\\"submit\\" onclick=\\"document.getElementById('status').value='active'\\" class=\\"btn btn-primary\\" style=\\"background: #16a34a; border-color: #15803d; font-size: 15px; padding: 10px 22px; font-weight: 700;\\">\\n        \u{1F680} ")
+    ; __append(escapeFn( (post && post.status === 'active') ? 'Update & Keep Published' : 'Publish Live' ))
     ; __append("\\n      </button>\\n      <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
-    ; __append("/posts\\" class=\\"btn btn-secondary\\" style=\\"margin-left: 10px;\\">Cancel</a>\\n    </div>\\n  </form>\\n</div>\\n\\n")
+    ; __append("/posts\\" class=\\"btn btn-secondary\\">Cancel</a>\\n    </div>\\n    <script>\\n      function previewPostDraft(btn, previewAction) {\\n        var form = btn && btn.closest('form');\\n        if (!form) return;\\n        if (typeof window.__syncAllBuilders === 'function') {\\n          window.__syncAllBuilders();\\n        }\\n        var origAction = form.getAttribute('action');\\n        var origTarget = form.getAttribute('target');\\n        form.setAttribute('action', previewAction);\\n        form.setAttribute('target', '_blank');\\n        HTMLFormElement.prototype.submit.call(form);\\n        setTimeout(function() {\\n          if (origAction) form.setAttribute('action', origAction);\\n          if (origTarget) form.setAttribute('target', origTarget);\\n          else form.removeAttribute('target');\\n        }, 150);\\n      }\\n    </script>\\n  </form>\\n</div>\\n\\n")
     ; __append( include('../partials/admin-footer') )
     ; __append("\\n")
   }
@@ -78490,7 +78802,13 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts\\" class=\\"btn btn-secondary btn-sm\\">\u2190 Back to Posts</a>\\n  </div>\\n\\n  <form action=\\"")
     ; __append(escapeFn( action ))
-    ; __append("\\" method=\\"POST\\" enctype=\\"multipart/form-data\\">\\n    <!-- Row 1: Title & Category -->\\n    <div class=\\"form-row\\">\\n      <div class=\\"form-group\\" style=\\"grid-column: span 2;\\">\\n        <label for=\\"title\\">Post Title *</label>\\n        <input \\n          type=\\"text\\" \\n          id=\\"title\\" \\n          name=\\"title\\" \\n          class=\\"form-control\\" \\n          placeholder=\\"e.g. SSC CGL 2026 Online Form Apply Online\\" \\n          value=\\"")
+    ; __append("\\" method=\\"POST\\" enctype=\\"multipart/form-data\\">\\n    ")
+    ;  if (post && post.id) { 
+    ; __append("\\n      <input type=\\"hidden\\" name=\\"post_id\\" value=\\"")
+    ; __append(escapeFn( post.id ))
+    ; __append("\\">\\n    ")
+    ;  } 
+    ; __append("\\n    <!-- Row 1: Title & Category -->\\n    <div class=\\"form-row\\">\\n      <div class=\\"form-group\\" style=\\"grid-column: span 2;\\">\\n        <label for=\\"title\\">Post Title *</label>\\n        <input \\n          type=\\"text\\" \\n          id=\\"title\\" \\n          name=\\"title\\" \\n          class=\\"form-control\\" \\n          placeholder=\\"e.g. SSC CGL 2026 Online Form Apply Online\\" \\n          value=\\"")
     ; __append(escapeFn( post ? post.title : '' ))
     ; __append("\\" \\n          required\\n        >\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"category\\">Category *</label>\\n        <select id=\\"category\\" name=\\"category\\" class=\\"form-control\\" required>\\n          ")
     ;  Object.keys(categories).forEach(key => { 
@@ -78590,19 +78908,21 @@ var require_templateEngine = __commonJS({
     ;  } else { 
     ; __append("\\n            <option value=\\"1\\">Mangal</option>\\n          ")
     ;  } 
-    ; __append("\\n        </select>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"status\\">Publication Status</label>\\n        <select id=\\"status\\" name=\\"status\\" class=\\"form-control\\">\\n          <option value=\\"active\\" ")
+    ; __append("\\n        </select>\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"status\\">Publication Status</label>\\n        <select id=\\"status\\" name=\\"status\\" class=\\"form-control\\">\\n          <option value=\\"draft\\" ")
+    ; __append(escapeFn( (post && post.status === 'draft') || !post ? 'selected' : '' ))
+    ; __append(">Draft (Review Before Publish)</option>\\n          <option value=\\"active\\" ")
     ; __append(escapeFn( post && post.status === 'active' ? 'selected' : '' ))
-    ; __append(">Active (Published)</option>\\n          <option value=\\"draft\\" ")
-    ; __append(escapeFn( post && post.status === 'draft' ? 'selected' : '' ))
-    ; __append(">Draft</option>\\n          <option value=\\"archived\\" ")
+    ; __append(">Published (Active Live)</option>\\n          <option value=\\"archived\\" ")
     ; __append(escapeFn( post && post.status === 'archived' ? 'selected' : '' ))
     ; __append(">Archived</option>\\n        </select>\\n      </div>\\n\\n      <div class=\\"form-group\\" style=\\"padding-top: 25px;\\">\\n        <label style=\\"display: flex; align-items: center; gap: 8px; cursor: pointer;\\">\\n          <input type=\\"checkbox\\" name=\\"is_featured\\" value=\\"1\\" ")
     ; __append(escapeFn( post && post.is_featured ? 'checked' : '' ))
-    ; __append(">\\n          <span>Mark as Featured Post</span>\\n        </label>\\n      </div>\\n    </div>\\n\\n    <div style=\\"margin-top: 25px;\\">\\n      <button type=\\"submit\\" class=\\"btn btn-primary\\" style=\\"font-size: 16px; padding: 10px 25px;\\">\\n        \u{1F4BE} ")
-    ; __append(escapeFn( post ? 'Update Notification' : 'Publish Notification' ))
+    ; __append(">\\n          <span>Mark as Featured Post</span>\\n        </label>\\n      </div>\\n    </div>\\n\\n    <div style=\\"margin-top: 25px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;\\">\\n      <button type=\\"submit\\" onclick=\\"document.getElementById('status').value='draft'\\" class=\\"btn btn-secondary\\" style=\\"background: #f59e0b; border-color: #d97706; color: #ffffff; font-size: 15px; padding: 10px 20px; font-weight: 700;\\">\\n        \u{1F4DD} Save as Draft\\n      </button>\\n      <button type=\\"button\\" data-preview-btn=\\"1\\" onclick=\\"previewPostDraft(this, '")
+    ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
+    ; __append("/posts/preview')\\" class=\\"btn btn-secondary\\" style=\\"background: #0284c7; border-color: #0369a1; color: #ffffff; font-size: 15px; padding: 10px 20px; font-weight: 700;\\">\\n        \u{1F441}\uFE0F Preview Draft\\n      </button>\\n      <button type=\\"submit\\" onclick=\\"document.getElementById('status').value='active'\\" class=\\"btn btn-primary\\" style=\\"background: #16a34a; border-color: #15803d; font-size: 15px; padding: 10px 22px; font-weight: 700;\\">\\n        \u{1F680} ")
+    ; __append(escapeFn( (post && post.status === 'active') ? 'Update & Keep Published' : 'Publish Live' ))
     ; __append("\\n      </button>\\n      <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
-    ; __append("/posts\\" class=\\"btn btn-secondary\\" style=\\"margin-left: 10px;\\">Cancel</a>\\n    </div>\\n  </form>\\n</div>\\n\\n")
+    ; __append("/posts\\" class=\\"btn btn-secondary\\">Cancel</a>\\n    </div>\\n    <script>\\n      function previewPostDraft(btn, previewAction) {\\n        var form = btn && btn.closest('form');\\n        if (!form) return;\\n        if (typeof window.__syncAllBuilders === 'function') {\\n          window.__syncAllBuilders();\\n        }\\n        var origAction = form.getAttribute('action');\\n        var origTarget = form.getAttribute('target');\\n        form.setAttribute('action', previewAction);\\n        form.setAttribute('target', '_blank');\\n        HTMLFormElement.prototype.submit.call(form);\\n        setTimeout(function() {\\n          if (origAction) form.setAttribute('action', origAction);\\n          if (origTarget) form.setAttribute('target', origTarget);\\n          else form.removeAttribute('target');\\n        }, 150);\\n      }\\n    </script>\\n  </form>\\n</div>\\n\\n")
     ; __append( include('../partials/admin-footer') )
     ; __append("\\n")
   }
@@ -78617,18 +78937,20 @@ var require_templateEngine = __commonJS({
     ; __append(")</h2>\\n      <div style=\\"font-size: 12.5px; color: #64748b; margin-top: 2px;\\">Search, filter, update or delete notifications across all 8 Odisha Aspirants categories</div>\\n    </div>\\n    <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts/new\\" class=\\"btn btn-primary\\">\u2795 Create New Post</a>\\n  </div>\\n\\n  ")
-    ;  if (typeof success !== 'undefined' && success === 'created') { 
-    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 Notification successfully created and published live on Odisha Aspirants!\\n    </div>\\n  ")
+    ;  if (typeof success !== 'undefined' && success === 'draft') { 
+    ; __append("\\n    <div style=\\"background: #fef3c7; border: 1px solid #fcd34d; color: #92400e; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u{1F4DD} Post saved as <strong>Draft</strong>! Click <strong>Preview</strong> below to review how it looks before publishing live.\\n    </div>\\n  ")
+    ;  } else if (typeof success !== 'undefined' && (success === 'published' || success === 'created')) { 
+    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u{1F680} Post published live successfully on Odisha Aspirants!\\n    </div>\\n  ")
     ;  } else if (typeof success !== 'undefined' && success === 'updated') { 
-    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 Notification successfully updated!\\n    </div>\\n  ")
+    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 Post successfully updated!\\n    </div>\\n  ")
     ;  } else if (typeof success !== 'undefined' && success === 'deleted') { 
-    ; __append("\\n    <div style=\\"background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u{1F5D1}\uFE0F Notification deleted successfully!\\n    </div>\\n  ")
+    ; __append("\\n    <div style=\\"background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u{1F5D1}\uFE0F Post deleted successfully!\\n    </div>\\n  ")
     ;  } 
     ; __append("\\n\\n  <!-- Filters Bar -->\\n  <form method=\\"GET\\" action=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
-    ; __append("/posts\\" class=\\"admin-filter-form\\" style=\\"display: flex; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid #e2e8f0; align-items: center;\\">\\n    <input \\n      type=\\"text\\" \\n      name=\\"search\\" \\n      class=\\"form-control\\" \\n      style=\\"max-width: 340px;\\" \\n      placeholder=\\"\u{1F50D} Search title or department...\\" \\n      value=\\"")
+    ; __append("/posts\\" class=\\"admin-filter-form\\" style=\\"display: flex; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid #e2e8f0; align-items: center;\\">\\n    <input \\n      type=\\"text\\" \\n      name=\\"search\\" \\n      class=\\"form-control\\" \\n      style=\\"max-width: 300px;\\" \\n      placeholder=\\"\u{1F50D} Search title or department...\\" \\n      value=\\"")
     ; __append(escapeFn( search ))
-    ; __append("\\"\\n    >\\n    <select name=\\"category\\" class=\\"form-control\\" style=\\"max-width: 230px;\\">\\n      <option value=\\"\\">All Categories (8)</option>\\n      ")
+    ; __append("\\"\\n    >\\n    <select name=\\"category\\" class=\\"form-control\\" style=\\"max-width: 210px;\\">\\n      <option value=\\"\\">All Categories (8)</option>\\n      ")
     ;  Object.keys(categories).forEach(key => { 
     ; __append("\\n        <option value=\\"")
     ; __append(escapeFn( key ))
@@ -78638,8 +78960,14 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( categories[key].name ))
     ; __append("\\n        </option>\\n      ")
     ;  }) 
-    ; __append("\\n    </select>\\n    <button type=\\"submit\\" class=\\"btn btn-primary btn-sm\\" style=\\"padding: 9px 16px;\\">Filter Results</button>\\n    ")
-    ;  if (search || selectedCategory) { 
+    ; __append("\\n    </select>\\n    <select name=\\"status\\" class=\\"form-control\\" style=\\"max-width: 170px;\\" onchange=\\"this.form.submit()\\">\\n      <option value=\\"\\">All Status</option>\\n      <option value=\\"active\\" ")
+    ; __append(escapeFn( (typeof selectedStatus !== 'undefined' && selectedStatus === 'active') ? 'selected' : '' ))
+    ; __append(">Published (Active)</option>\\n      <option value=\\"draft\\" ")
+    ; __append(escapeFn( (typeof selectedStatus !== 'undefined' && selectedStatus === 'draft') ? 'selected' : '' ))
+    ; __append(">Draft</option>\\n      <option value=\\"archived\\" ")
+    ; __append(escapeFn( (typeof selectedStatus !== 'undefined' && selectedStatus === 'archived') ? 'selected' : '' ))
+    ; __append(">Archived</option>\\n    </select>\\n    <button type=\\"submit\\" class=\\"btn btn-primary btn-sm\\" style=\\"padding: 9px 16px;\\">Filter Results</button>\\n    ")
+    ;  if (search || selectedCategory || (typeof selectedStatus !== 'undefined' && selectedStatus)) { 
     ; __append("\\n      <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts\\" class=\\"btn btn-secondary btn-sm\\" style=\\"padding: 8px 14px;\\">Reset</a>\\n    ")
@@ -78651,9 +78979,7 @@ var require_templateEngine = __commonJS({
     ; __append("\\n            <tr>\\n              <td style=\\"font-weight: 600; color: #64748b;\\">#")
     ; __append(escapeFn( post.id ))
     ; __append("</td>\\n              <td>\\n                <a href=\\"")
-    ; __append(escapeFn( (typeof publicBase !== 'undefined' ? publicBase : '') ))
-    ; __append("/post/")
-    ; __append(escapeFn( post.slug ))
+    ; __append(escapeFn( post.status === 'active' ? ((typeof publicBase !== 'undefined' ? publicBase : '') + '/post/' + post.slug) : (post.previewUrl || ((typeof adminBase !== 'undefined' ? adminBase : '/admin') + '/posts/preview/' + post.id)) ))
     ; __append("\\" target=\\"_blank\\" style=\\"font-weight: 600; color: #0f172a; text-decoration: none; display: flex; align-items: center; gap: 5px;\\">\\n                  <span>")
     ; __append(escapeFn( post.title ))
     ; __append("</span>\\n                  <span style=\\"font-size: 11px; color: #94a3b8;\\">\u2197</span>\\n                </a>\\n                ")
@@ -78671,12 +78997,24 @@ var require_templateEngine = __commonJS({
     ; __append("; color: ")
     ; __append(escapeFn( post.status === 'active' ? '#059669' : '#d97706' ))
     ; __append("; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700;\\">\\n                  \u25CF ")
-    ; __append(escapeFn( post.status ))
-    ; __append("\\n                </span>\\n              </td>\\n              <td style=\\"text-align: right; white-space: nowrap;\\">\\n                <a href=\\"")
+    ; __append(escapeFn( post.status === 'active' ? 'Published' : (post.status === 'draft' ? 'Draft' : post.status) ))
+    ; __append("\\n                </span>\\n              </td>\\n              <td style=\\"text-align: right; white-space: nowrap;\\">\\n                ")
+    ;  if (post.status !== 'active') { 
+    ; __append("\\n                  <a href=\\"")
+    ; __append(escapeFn( post.previewUrl || ((typeof adminBase !== 'undefined' ? adminBase : '/admin') + '/posts/preview/' + post.id) ))
+    ; __append("\\" target=\\"_blank\\" class=\\"btn btn-secondary btn-sm\\" style=\\"margin-right: 3px; background: #e0f2fe; color: #0369a1; border-color: #bae6fd;\\">\u{1F441}\uFE0F Preview</a>\\n                  <form action=\\"")
+    ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
+    ; __append("/posts/publish/")
+    ; __append(escapeFn( post.id ))
+    ; __append("\\" method=\\"POST\\" style=\\"display: inline-block; margin-right: 3px;\\" onsubmit=\\"return confirm('Publish this post live now?');\\">\\n                    <button type=\\"submit\\" class=\\"btn btn-primary btn-sm\\" style=\\"background: #16a34a; border-color: #15803d;\\">\u{1F680} Publish</button>\\n                  </form>\\n                ")
+    ;  } else { 
+    ; __append("\\n                  <a href=\\"")
     ; __append(escapeFn( (typeof publicBase !== 'undefined' ? publicBase : '') ))
     ; __append("/post/")
     ; __append(escapeFn( post.slug ))
-    ; __append("\\" target=\\"_blank\\" class=\\"btn btn-secondary btn-sm\\" style=\\"margin-right: 3px;\\">View</a>\\n                <a href=\\"")
+    ; __append("\\" target=\\"_blank\\" class=\\"btn btn-secondary btn-sm\\" style=\\"margin-right: 3px;\\">View</a>\\n                ")
+    ;  } 
+    ; __append("\\n                <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts/edit/")
     ; __append(escapeFn( post.id ))
@@ -78705,18 +79043,20 @@ var require_templateEngine = __commonJS({
     ; __append(")</h2>\\n      <div style=\\"font-size: 12.5px; color: #64748b; margin-top: 2px;\\">Search, filter, update or delete notifications across all 8 Odisha Aspirants categories</div>\\n    </div>\\n    <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts/new\\" class=\\"btn btn-primary\\">\u2795 Create New Post</a>\\n  </div>\\n\\n  ")
-    ;  if (typeof success !== 'undefined' && success === 'created') { 
-    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 Notification successfully created and published live on Odisha Aspirants!\\n    </div>\\n  ")
+    ;  if (typeof success !== 'undefined' && success === 'draft') { 
+    ; __append("\\n    <div style=\\"background: #fef3c7; border: 1px solid #fcd34d; color: #92400e; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u{1F4DD} Post saved as <strong>Draft</strong>! Click <strong>Preview</strong> below to review how it looks before publishing live.\\n    </div>\\n  ")
+    ;  } else if (typeof success !== 'undefined' && (success === 'published' || success === 'created')) { 
+    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u{1F680} Post published live successfully on Odisha Aspirants!\\n    </div>\\n  ")
     ;  } else if (typeof success !== 'undefined' && success === 'updated') { 
-    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 Notification successfully updated!\\n    </div>\\n  ")
+    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 Post successfully updated!\\n    </div>\\n  ")
     ;  } else if (typeof success !== 'undefined' && success === 'deleted') { 
-    ; __append("\\n    <div style=\\"background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u{1F5D1}\uFE0F Notification deleted successfully!\\n    </div>\\n  ")
+    ; __append("\\n    <div style=\\"background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u{1F5D1}\uFE0F Post deleted successfully!\\n    </div>\\n  ")
     ;  } 
     ; __append("\\n\\n  <!-- Filters Bar -->\\n  <form method=\\"GET\\" action=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
-    ; __append("/posts\\" class=\\"admin-filter-form\\" style=\\"display: flex; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid #e2e8f0; align-items: center;\\">\\n    <input \\n      type=\\"text\\" \\n      name=\\"search\\" \\n      class=\\"form-control\\" \\n      style=\\"max-width: 340px;\\" \\n      placeholder=\\"\u{1F50D} Search title or department...\\" \\n      value=\\"")
+    ; __append("/posts\\" class=\\"admin-filter-form\\" style=\\"display: flex; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid #e2e8f0; align-items: center;\\">\\n    <input \\n      type=\\"text\\" \\n      name=\\"search\\" \\n      class=\\"form-control\\" \\n      style=\\"max-width: 300px;\\" \\n      placeholder=\\"\u{1F50D} Search title or department...\\" \\n      value=\\"")
     ; __append(escapeFn( search ))
-    ; __append("\\"\\n    >\\n    <select name=\\"category\\" class=\\"form-control\\" style=\\"max-width: 230px;\\">\\n      <option value=\\"\\">All Categories (8)</option>\\n      ")
+    ; __append("\\"\\n    >\\n    <select name=\\"category\\" class=\\"form-control\\" style=\\"max-width: 210px;\\">\\n      <option value=\\"\\">All Categories (8)</option>\\n      ")
     ;  Object.keys(categories).forEach(key => { 
     ; __append("\\n        <option value=\\"")
     ; __append(escapeFn( key ))
@@ -78726,8 +79066,14 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( categories[key].name ))
     ; __append("\\n        </option>\\n      ")
     ;  }) 
-    ; __append("\\n    </select>\\n    <button type=\\"submit\\" class=\\"btn btn-primary btn-sm\\" style=\\"padding: 9px 16px;\\">Filter Results</button>\\n    ")
-    ;  if (search || selectedCategory) { 
+    ; __append("\\n    </select>\\n    <select name=\\"status\\" class=\\"form-control\\" style=\\"max-width: 170px;\\" onchange=\\"this.form.submit()\\">\\n      <option value=\\"\\">All Status</option>\\n      <option value=\\"active\\" ")
+    ; __append(escapeFn( (typeof selectedStatus !== 'undefined' && selectedStatus === 'active') ? 'selected' : '' ))
+    ; __append(">Published (Active)</option>\\n      <option value=\\"draft\\" ")
+    ; __append(escapeFn( (typeof selectedStatus !== 'undefined' && selectedStatus === 'draft') ? 'selected' : '' ))
+    ; __append(">Draft</option>\\n      <option value=\\"archived\\" ")
+    ; __append(escapeFn( (typeof selectedStatus !== 'undefined' && selectedStatus === 'archived') ? 'selected' : '' ))
+    ; __append(">Archived</option>\\n    </select>\\n    <button type=\\"submit\\" class=\\"btn btn-primary btn-sm\\" style=\\"padding: 9px 16px;\\">Filter Results</button>\\n    ")
+    ;  if (search || selectedCategory || (typeof selectedStatus !== 'undefined' && selectedStatus)) { 
     ; __append("\\n      <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts\\" class=\\"btn btn-secondary btn-sm\\" style=\\"padding: 8px 14px;\\">Reset</a>\\n    ")
@@ -78739,9 +79085,7 @@ var require_templateEngine = __commonJS({
     ; __append("\\n            <tr>\\n              <td style=\\"font-weight: 600; color: #64748b;\\">#")
     ; __append(escapeFn( post.id ))
     ; __append("</td>\\n              <td>\\n                <a href=\\"")
-    ; __append(escapeFn( (typeof publicBase !== 'undefined' ? publicBase : '') ))
-    ; __append("/post/")
-    ; __append(escapeFn( post.slug ))
+    ; __append(escapeFn( post.status === 'active' ? ((typeof publicBase !== 'undefined' ? publicBase : '') + '/post/' + post.slug) : (post.previewUrl || ((typeof adminBase !== 'undefined' ? adminBase : '/admin') + '/posts/preview/' + post.id)) ))
     ; __append("\\" target=\\"_blank\\" style=\\"font-weight: 600; color: #0f172a; text-decoration: none; display: flex; align-items: center; gap: 5px;\\">\\n                  <span>")
     ; __append(escapeFn( post.title ))
     ; __append("</span>\\n                  <span style=\\"font-size: 11px; color: #94a3b8;\\">\u2197</span>\\n                </a>\\n                ")
@@ -78759,12 +79103,24 @@ var require_templateEngine = __commonJS({
     ; __append("; color: ")
     ; __append(escapeFn( post.status === 'active' ? '#059669' : '#d97706' ))
     ; __append("; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700;\\">\\n                  \u25CF ")
-    ; __append(escapeFn( post.status ))
-    ; __append("\\n                </span>\\n              </td>\\n              <td style=\\"text-align: right; white-space: nowrap;\\">\\n                <a href=\\"")
+    ; __append(escapeFn( post.status === 'active' ? 'Published' : (post.status === 'draft' ? 'Draft' : post.status) ))
+    ; __append("\\n                </span>\\n              </td>\\n              <td style=\\"text-align: right; white-space: nowrap;\\">\\n                ")
+    ;  if (post.status !== 'active') { 
+    ; __append("\\n                  <a href=\\"")
+    ; __append(escapeFn( post.previewUrl || ((typeof adminBase !== 'undefined' ? adminBase : '/admin') + '/posts/preview/' + post.id) ))
+    ; __append("\\" target=\\"_blank\\" class=\\"btn btn-secondary btn-sm\\" style=\\"margin-right: 3px; background: #e0f2fe; color: #0369a1; border-color: #bae6fd;\\">\u{1F441}\uFE0F Preview</a>\\n                  <form action=\\"")
+    ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
+    ; __append("/posts/publish/")
+    ; __append(escapeFn( post.id ))
+    ; __append("\\" method=\\"POST\\" style=\\"display: inline-block; margin-right: 3px;\\" onsubmit=\\"return confirm('Publish this post live now?');\\">\\n                    <button type=\\"submit\\" class=\\"btn btn-primary btn-sm\\" style=\\"background: #16a34a; border-color: #15803d;\\">\u{1F680} Publish</button>\\n                  </form>\\n                ")
+    ;  } else { 
+    ; __append("\\n                  <a href=\\"")
     ; __append(escapeFn( (typeof publicBase !== 'undefined' ? publicBase : '') ))
     ; __append("/post/")
     ; __append(escapeFn( post.slug ))
-    ; __append("\\" target=\\"_blank\\" class=\\"btn btn-secondary btn-sm\\" style=\\"margin-right: 3px;\\">View</a>\\n                <a href=\\"")
+    ; __append("\\" target=\\"_blank\\" class=\\"btn btn-secondary btn-sm\\" style=\\"margin-right: 3px;\\">View</a>\\n                ")
+    ;  } 
+    ; __append("\\n                <a href=\\"")
     ; __append(escapeFn( (typeof adminBase !== 'undefined' ? adminBase : '/admin') ))
     ; __append("/posts/edit/")
     ; __append(escapeFn( post.id ))
@@ -79614,13 +79970,19 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( post ? post.apply_online_url : '' ))
     ; __append("\\"\\n        >\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"official_website_url\\">Official Website URL</label>\\n        <input \\n          type=\\"url\\" \\n          id=\\"official_website_url\\" \\n          name=\\"official_website_url\\" \\n          class=\\"form-control\\" \\n          placeholder=\\"https://ssc.gov.in\\" \\n          value=\\"")
     ; __append(escapeFn( post ? post.official_website_url : '' ))
-    ; __append("\\"\\n        >\\n      </div>\\n    </div>\\n\\n    <!-- Publication Status -->\\n    <div class=\\"form-row\\" style=\\"align-items: center; margin-top: 10px;\\">\\n      <div class=\\"form-group\\" style=\\"max-width: 250px;\\">\\n        <label for=\\"status\\">Publication Status</label>\\n        <select id=\\"status\\" name=\\"status\\" class=\\"form-control\\">\\n          <option value=\\"active\\" ")
+    ; __append("\\"\\n        >\\n      </div>\\n    </div>\\n\\n    <!-- Publication Status -->\\n    <div class=\\"form-row\\" style=\\"align-items: center; margin-top: 10px;\\">\\n      <div class=\\"form-group\\" style=\\"max-width: 280px;\\">\\n        <label for=\\"status\\">Publication Status</label>\\n        <select id=\\"status\\" name=\\"status\\" class=\\"form-control\\">\\n          <option value=\\"draft\\" ")
+    ; __append(escapeFn( (post && post.status === 'draft') || !post ? 'selected' : '' ))
+    ; __append(">Draft (Review Before Publish)</option>\\n          <option value=\\"active\\" ")
     ; __append(escapeFn( post && post.status === 'active' ? 'selected' : '' ))
-    ; __append(">Active (Publish Live)</option>\\n          <option value=\\"draft\\" ")
-    ; __append(escapeFn( post && post.status === 'draft' ? 'selected' : '' ))
-    ; __append(">Draft (Work in Progress)</option>\\n        </select>\\n      </div>\\n    </div>\\n\\n    <div style=\\"margin-top: 25px;\\">\\n      <button type=\\"submit\\" class=\\"btn btn-primary\\" style=\\"background: #2563eb; border-color: #1d4ed8; font-size: 16px; padding: 10px 25px;\\">\\n        \u{1F4BE} ")
-    ; __append(escapeFn( post ? 'Update Article' : 'Publish Article' ))
-    ; __append("\\n      </button>\\n      <a href=\\"/author-portal/posts\\" class=\\"btn btn-secondary\\" style=\\"margin-left: 10px;\\">Cancel</a>\\n    </div>\\n  </form>\\n</div>\\n\\n")
+    ; __append(">Published (Active Live)</option>\\n        </select>\\n      </div>\\n    </div>\\n\\n    ")
+    ;  if (post && post.id) { 
+    ; __append("\\n      <input type=\\"hidden\\" name=\\"post_id\\" value=\\"")
+    ; __append(escapeFn( post.id ))
+    ; __append("\\">\\n    ")
+    ;  } 
+    ; __append("\\n\\n    <div style=\\"margin-top: 25px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;\\">\\n      <button type=\\"submit\\" onclick=\\"document.getElementById('status').value='draft'\\" class=\\"btn btn-secondary\\" style=\\"background: #f59e0b; border-color: #d97706; color: #ffffff; font-size: 15px; padding: 10px 20px; font-weight: 700;\\">\\n        \u{1F4DD} Save as Draft\\n      </button>\\n      <button type=\\"button\\" data-preview-btn=\\"1\\" onclick=\\"previewAuthorPostDraft(this, '/author-portal/posts/preview')\\" class=\\"btn btn-secondary\\" style=\\"background: #0284c7; border-color: #0369a1; color: #ffffff; font-size: 15px; padding: 10px 20px; font-weight: 700;\\">\\n        \u{1F441}\uFE0F Preview Draft\\n      </button>\\n      <button type=\\"submit\\" onclick=\\"document.getElementById('status').value='active'\\" class=\\"btn btn-primary\\" style=\\"background: #16a34a; border-color: #15803d; font-size: 15px; padding: 10px 22px; font-weight: 700;\\">\\n        \u{1F680} ")
+    ; __append(escapeFn( (post && post.status === 'active') ? 'Update & Keep Published' : 'Publish Live' ))
+    ; __append("\\n      </button>\\n      <a href=\\"/author-portal/posts\\" class=\\"btn btn-secondary\\">Cancel</a>\\n    </div>\\n    <script>\\n      function previewAuthorPostDraft(btn, previewAction) {\\n        var form = btn && btn.closest('form');\\n        if (!form) return;\\n        if (typeof window.__syncAllBuilders === 'function') {\\n          window.__syncAllBuilders();\\n        }\\n        var origAction = form.getAttribute('action');\\n        var origTarget = form.getAttribute('target');\\n        form.setAttribute('action', previewAction);\\n        form.setAttribute('target', '_blank');\\n        HTMLFormElement.prototype.submit.call(form);\\n        setTimeout(function() {\\n          if (origAction) form.setAttribute('action', origAction);\\n          if (origTarget) form.setAttribute('target', origTarget);\\n          else form.removeAttribute('target');\\n        }, 150);\\n      }\\n    </script>\\n  </form>\\n</div>\\n\\n")
     ; __append( include('../partials/author-footer') )
     ; __append("\\n")
   }
@@ -79724,13 +80086,19 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( post ? post.apply_online_url : '' ))
     ; __append("\\"\\n        >\\n      </div>\\n\\n      <div class=\\"form-group\\">\\n        <label for=\\"official_website_url\\">Official Website URL</label>\\n        <input \\n          type=\\"url\\" \\n          id=\\"official_website_url\\" \\n          name=\\"official_website_url\\" \\n          class=\\"form-control\\" \\n          placeholder=\\"https://ssc.gov.in\\" \\n          value=\\"")
     ; __append(escapeFn( post ? post.official_website_url : '' ))
-    ; __append("\\"\\n        >\\n      </div>\\n    </div>\\n\\n    <!-- Publication Status -->\\n    <div class=\\"form-row\\" style=\\"align-items: center; margin-top: 10px;\\">\\n      <div class=\\"form-group\\" style=\\"max-width: 250px;\\">\\n        <label for=\\"status\\">Publication Status</label>\\n        <select id=\\"status\\" name=\\"status\\" class=\\"form-control\\">\\n          <option value=\\"active\\" ")
+    ; __append("\\"\\n        >\\n      </div>\\n    </div>\\n\\n    <!-- Publication Status -->\\n    <div class=\\"form-row\\" style=\\"align-items: center; margin-top: 10px;\\">\\n      <div class=\\"form-group\\" style=\\"max-width: 280px;\\">\\n        <label for=\\"status\\">Publication Status</label>\\n        <select id=\\"status\\" name=\\"status\\" class=\\"form-control\\">\\n          <option value=\\"draft\\" ")
+    ; __append(escapeFn( (post && post.status === 'draft') || !post ? 'selected' : '' ))
+    ; __append(">Draft (Review Before Publish)</option>\\n          <option value=\\"active\\" ")
     ; __append(escapeFn( post && post.status === 'active' ? 'selected' : '' ))
-    ; __append(">Active (Publish Live)</option>\\n          <option value=\\"draft\\" ")
-    ; __append(escapeFn( post && post.status === 'draft' ? 'selected' : '' ))
-    ; __append(">Draft (Work in Progress)</option>\\n        </select>\\n      </div>\\n    </div>\\n\\n    <div style=\\"margin-top: 25px;\\">\\n      <button type=\\"submit\\" class=\\"btn btn-primary\\" style=\\"background: #2563eb; border-color: #1d4ed8; font-size: 16px; padding: 10px 25px;\\">\\n        \u{1F4BE} ")
-    ; __append(escapeFn( post ? 'Update Article' : 'Publish Article' ))
-    ; __append("\\n      </button>\\n      <a href=\\"/author-portal/posts\\" class=\\"btn btn-secondary\\" style=\\"margin-left: 10px;\\">Cancel</a>\\n    </div>\\n  </form>\\n</div>\\n\\n")
+    ; __append(">Published (Active Live)</option>\\n        </select>\\n      </div>\\n    </div>\\n\\n    ")
+    ;  if (post && post.id) { 
+    ; __append("\\n      <input type=\\"hidden\\" name=\\"post_id\\" value=\\"")
+    ; __append(escapeFn( post.id ))
+    ; __append("\\">\\n    ")
+    ;  } 
+    ; __append("\\n\\n    <div style=\\"margin-top: 25px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;\\">\\n      <button type=\\"submit\\" onclick=\\"document.getElementById('status').value='draft'\\" class=\\"btn btn-secondary\\" style=\\"background: #f59e0b; border-color: #d97706; color: #ffffff; font-size: 15px; padding: 10px 20px; font-weight: 700;\\">\\n        \u{1F4DD} Save as Draft\\n      </button>\\n      <button type=\\"button\\" data-preview-btn=\\"1\\" onclick=\\"previewAuthorPostDraft(this, '/author-portal/posts/preview')\\" class=\\"btn btn-secondary\\" style=\\"background: #0284c7; border-color: #0369a1; color: #ffffff; font-size: 15px; padding: 10px 20px; font-weight: 700;\\">\\n        \u{1F441}\uFE0F Preview Draft\\n      </button>\\n      <button type=\\"submit\\" onclick=\\"document.getElementById('status').value='active'\\" class=\\"btn btn-primary\\" style=\\"background: #16a34a; border-color: #15803d; font-size: 15px; padding: 10px 22px; font-weight: 700;\\">\\n        \u{1F680} ")
+    ; __append(escapeFn( (post && post.status === 'active') ? 'Update & Keep Published' : 'Publish Live' ))
+    ; __append("\\n      </button>\\n      <a href=\\"/author-portal/posts\\" class=\\"btn btn-secondary\\">Cancel</a>\\n    </div>\\n    <script>\\n      function previewAuthorPostDraft(btn, previewAction) {\\n        var form = btn && btn.closest('form');\\n        if (!form) return;\\n        if (typeof window.__syncAllBuilders === 'function') {\\n          window.__syncAllBuilders();\\n        }\\n        var origAction = form.getAttribute('action');\\n        var origTarget = form.getAttribute('target');\\n        form.setAttribute('action', previewAction);\\n        form.setAttribute('target', '_blank');\\n        HTMLFormElement.prototype.submit.call(form);\\n        setTimeout(function() {\\n          if (origAction) form.setAttribute('action', origAction);\\n          if (origTarget) form.setAttribute('target', origTarget);\\n          else form.removeAttribute('target');\\n        }, 150);\\n      }\\n    </script>\\n  </form>\\n</div>\\n\\n")
     ; __append( include('../partials/author-footer') )
     ; __append("\\n")
   }
@@ -79750,8 +80118,14 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( (typeof isEditor !== 'undefined' && isEditor) ? '#047857' : '#1d4ed8' ))
     ; __append(";\\">\u2795 Write New Article</a>\\n    </div>\\n  </div>\\n\\n  ")
     ;  if (typeof success !== 'undefined' && success) { 
-    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 ")
-    ; __append(escapeFn( success === 'created' ? 'Article published successfully and linked to your profile!' : (success === 'updated' ? 'Article successfully updated!' : 'Action completed successfully!') ))
+    ; __append("\\n    <div style=\\"background: ")
+    ; __append(escapeFn( success === 'draft' ? '#fef3c7' : '#dcfce7' ))
+    ; __append("; border: 1px solid ")
+    ; __append(escapeFn( success === 'draft' ? '#fcd34d' : '#86efac' ))
+    ; __append("; color: ")
+    ; __append(escapeFn( success === 'draft' ? '#92400e' : '#166534' ))
+    ; __append("; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      ")
+    ; __append(escapeFn( success === 'draft' ? '\u{1F4DD} Article saved as Draft! Click Preview to review before publishing live.' : (success === 'published' || success === 'created' ? '\u{1F680} Article published live and linked to your profile!' : (success === 'updated' ? '\u2705 Article successfully updated!' : '\u2705 Action completed successfully!')) ))
     ; __append("\\n    </div>\\n  ")
     ;  } 
     ; __append("\\n\\n  <!-- Filters Row -->\\n  <form action=\\"/author-portal/posts\\" method=\\"GET\\" style=\\"display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;\\">\\n    <div style=\\"flex: 1; min-width: 200px;\\">\\n      <input \\n        type=\\"text\\" \\n        name=\\"search\\" \\n        class=\\"form-control\\" \\n        placeholder=\\"\u{1F50D} Search my articles by title, dept...\\" \\n        value=\\"")
@@ -79810,9 +80184,19 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( post.views || 0 ))
     ; __append("</span>\\n              </td>\\n              <td style=\\"font-size: 12px; color: #64748b; white-space: nowrap;\\">\\n                ")
     ; __append(escapeFn( post.post_date || formatDate(post.created_at) ))
-    ; __append("\\n              </td>\\n              <td style=\\"text-align: right; white-space: nowrap;\\">\\n                <a href=\\"/post/")
+    ; __append("\\n              </td>\\n              <td style=\\"text-align: right; white-space: nowrap;\\">\\n                ")
+    ;  if (post.status !== 'active') { 
+    ; __append("\\n                  <a href=\\"")
+    ; __append(escapeFn( post.previewUrl || ('/author-portal/posts/preview/' + post.id) ))
+    ; __append("\\" target=\\"_blank\\" class=\\"btn btn-secondary btn-sm\\" style=\\"background: #e0f2fe; color: #0369a1; border-color: #bae6fd;\\" title=\\"Preview Draft\\">\u{1F441}\uFE0F Preview</a>\\n                  <form action=\\"/author-portal/posts/publish/")
+    ; __append(escapeFn( post.id ))
+    ; __append("\\" method=\\"POST\\" style=\\"display: inline-block;\\" onsubmit=\\"return confirm('Publish this article live now?');\\">\\n                    <button type=\\"submit\\" class=\\"btn btn-primary btn-sm\\" style=\\"background: #16a34a; border-color: #15803d;\\" title=\\"Publish Live\\">\u{1F680} Publish</button>\\n                  </form>\\n                ")
+    ;  } else { 
+    ; __append("\\n                  <a href=\\"/post/")
     ; __append(escapeFn( post.slug ))
-    ; __append("\\" target=\\"_blank\\" class=\\"btn btn-secondary btn-sm\\" title=\\"View Public Post\\">\u{1F441}\uFE0F</a>\\n                <a href=\\"/author-portal/posts/edit/")
+    ; __append("\\" target=\\"_blank\\" class=\\"btn btn-secondary btn-sm\\" title=\\"View Public Post\\">\u{1F441}\uFE0F</a>\\n                ")
+    ;  } 
+    ; __append("\\n                <a href=\\"/author-portal/posts/edit/")
     ; __append(escapeFn( post.id ))
     ; __append("\\" class=\\"btn btn-secondary btn-sm\\" title=\\"Edit Article\\">\u270F\uFE0F Edit</a>\\n              </td>\\n            </tr>\\n          ")
     ;  }) 
@@ -79840,8 +80224,14 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( (typeof isEditor !== 'undefined' && isEditor) ? '#047857' : '#1d4ed8' ))
     ; __append(";\\">\u2795 Write New Article</a>\\n    </div>\\n  </div>\\n\\n  ")
     ;  if (typeof success !== 'undefined' && success) { 
-    ; __append("\\n    <div style=\\"background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      \u2705 ")
-    ; __append(escapeFn( success === 'created' ? 'Article published successfully and linked to your profile!' : (success === 'updated' ? 'Article successfully updated!' : 'Action completed successfully!') ))
+    ; __append("\\n    <div style=\\"background: ")
+    ; __append(escapeFn( success === 'draft' ? '#fef3c7' : '#dcfce7' ))
+    ; __append("; border: 1px solid ")
+    ; __append(escapeFn( success === 'draft' ? '#fcd34d' : '#86efac' ))
+    ; __append("; color: ")
+    ; __append(escapeFn( success === 'draft' ? '#92400e' : '#166534' ))
+    ; __append("; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;\\">\\n      ")
+    ; __append(escapeFn( success === 'draft' ? '\u{1F4DD} Article saved as Draft! Click Preview to review before publishing live.' : (success === 'published' || success === 'created' ? '\u{1F680} Article published live and linked to your profile!' : (success === 'updated' ? '\u2705 Article successfully updated!' : '\u2705 Action completed successfully!')) ))
     ; __append("\\n    </div>\\n  ")
     ;  } 
     ; __append("\\n\\n  <!-- Filters Row -->\\n  <form action=\\"/author-portal/posts\\" method=\\"GET\\" style=\\"display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;\\">\\n    <div style=\\"flex: 1; min-width: 200px;\\">\\n      <input \\n        type=\\"text\\" \\n        name=\\"search\\" \\n        class=\\"form-control\\" \\n        placeholder=\\"\u{1F50D} Search my articles by title, dept...\\" \\n        value=\\"")
@@ -79900,9 +80290,19 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( post.views || 0 ))
     ; __append("</span>\\n              </td>\\n              <td style=\\"font-size: 12px; color: #64748b; white-space: nowrap;\\">\\n                ")
     ; __append(escapeFn( post.post_date || formatDate(post.created_at) ))
-    ; __append("\\n              </td>\\n              <td style=\\"text-align: right; white-space: nowrap;\\">\\n                <a href=\\"/post/")
+    ; __append("\\n              </td>\\n              <td style=\\"text-align: right; white-space: nowrap;\\">\\n                ")
+    ;  if (post.status !== 'active') { 
+    ; __append("\\n                  <a href=\\"")
+    ; __append(escapeFn( post.previewUrl || ('/author-portal/posts/preview/' + post.id) ))
+    ; __append("\\" target=\\"_blank\\" class=\\"btn btn-secondary btn-sm\\" style=\\"background: #e0f2fe; color: #0369a1; border-color: #bae6fd;\\" title=\\"Preview Draft\\">\u{1F441}\uFE0F Preview</a>\\n                  <form action=\\"/author-portal/posts/publish/")
+    ; __append(escapeFn( post.id ))
+    ; __append("\\" method=\\"POST\\" style=\\"display: inline-block;\\" onsubmit=\\"return confirm('Publish this article live now?');\\">\\n                    <button type=\\"submit\\" class=\\"btn btn-primary btn-sm\\" style=\\"background: #16a34a; border-color: #15803d;\\" title=\\"Publish Live\\">\u{1F680} Publish</button>\\n                  </form>\\n                ")
+    ;  } else { 
+    ; __append("\\n                  <a href=\\"/post/")
     ; __append(escapeFn( post.slug ))
-    ; __append("\\" target=\\"_blank\\" class=\\"btn btn-secondary btn-sm\\" title=\\"View Public Post\\">\u{1F441}\uFE0F</a>\\n                <a href=\\"/author-portal/posts/edit/")
+    ; __append("\\" target=\\"_blank\\" class=\\"btn btn-secondary btn-sm\\" title=\\"View Public Post\\">\u{1F441}\uFE0F</a>\\n                ")
+    ;  } 
+    ; __append("\\n                <a href=\\"/author-portal/posts/edit/")
     ; __append(escapeFn( post.id ))
     ; __append("\\" class=\\"btn btn-secondary btn-sm\\" title=\\"Edit Article\\">\u270F\uFE0F Edit</a>\\n              </td>\\n            </tr>\\n          ")
     ;  }) 
@@ -80771,6 +81171,24 @@ var require_templateEngine = __commonJS({
     ; __append("\\"\\n    }\\n  ]\\n}\\n</script>\\n\\n")
     ;  const activeDetailLayout = (typeof settings !== 'undefined' && settings.post_detail_layout === 'blog_2col') ? 'blog_2col' : 'classic'; 
     ; __append("\\n\\n")
+    ;  if (typeof isDraftPreview !== 'undefined' && isDraftPreview) { 
+    ; __append("\\n  <div style=\\"background: #fef3c7; border-bottom: 2px solid #f59e0b; color: #78350f; padding: 12px 16px; font-size: 13.5px; font-weight: 600;\\">\\n    <div class=\\"container\\" style=\\"display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;\\">\\n      <div>\\n        \u{1F4DD} <strong>")
+    ; __append(escapeFn( (typeof previewStatus !== 'undefined' ? String(previewStatus).toUpperCase() : 'DRAFT') ))
+    ; __append(" PREVIEW MODE</strong> \u2014 This post is currently hidden from public visitors &amp; Google until published after review.\\n      </div>\\n      <div style=\\"display: flex; align-items: center; gap: 8px; flex-wrap: wrap;\\">\\n        ")
+    ;  if (typeof previewEditUrl !== 'undefined' && previewEditUrl) { 
+    ; __append("\\n          <a href=\\"")
+    ; __append(escapeFn( previewEditUrl ))
+    ; __append("\\" style=\\"background: #ffffff; color: #1e293b; border: 1px solid #cbd5e1; padding: 5px 12px; border-radius: 5px; text-decoration: none; font-size: 12.5px; font-weight: 700;\\">\u270F\uFE0F Back to Edit</a>\\n        ")
+    ;  } 
+    ; __append("\\n        ")
+    ;  if (typeof previewPublishUrl !== 'undefined' && previewPublishUrl) { 
+    ; __append("\\n          <form action=\\"")
+    ; __append(escapeFn( previewPublishUrl ))
+    ; __append("\\" method=\\"POST\\" style=\\"display: inline-block; margin: 0;\\" onsubmit=\\"return confirm('Publish this reviewed post live now?');\\">\\n            <button type=\\"submit\\" style=\\"background: #16a34a; color: #ffffff; border: none; padding: 6px 14px; border-radius: 5px; cursor: pointer; font-size: 12.5px; font-weight: 700;\\">\u{1F680} Publish Live Now</button>\\n          </form>\\n        ")
+    ;  } 
+    ; __append("\\n      </div>\\n    </div>\\n  </div>\\n")
+    ;  } 
+    ; __append("\\n\\n")
     ;  if (activeDetailLayout === 'blog_2col') { 
     ; __append("\\n<!-- ============================================================\\n     MODE 2: MODERN 2-COLUMN EDITORIAL BLOG LAYOUT (CBTRank Style)\\n     ============================================================ -->\\n<main class=\\"gez-blog-page-main\\">\\n  <div class=\\"gez-blog-main-container\\">\\n    <div class=\\"gez-blog-layout\\">\\n\\n      <!-- Left Main Article Area -->\\n      <div class=\\"gez-blog-content-area\\">\\n        <article class=\\"gez-article-wrap\\">\\n          <!-- Breadcrumb -->\\n          <div class=\\"detail-breadcrumb\\" style=\\"margin-bottom: 12px;\\">\\n            <a href=\\"/\\">Home</a> \xBB\\n            <a href=\\"/category/")
     ; __append(escapeFn( post.category ))
@@ -80997,6 +81415,24 @@ var require_templateEngine = __commonJS({
     ; __append(escapeFn( post.title.replace(/"/g, '\\\\"') ))
     ; __append("\\"\\n    }\\n  ]\\n}\\n</script>\\n\\n")
     ;  const activeDetailLayout = (typeof settings !== 'undefined' && settings.post_detail_layout === 'blog_2col') ? 'blog_2col' : 'classic'; 
+    ; __append("\\n\\n")
+    ;  if (typeof isDraftPreview !== 'undefined' && isDraftPreview) { 
+    ; __append("\\n  <div style=\\"background: #fef3c7; border-bottom: 2px solid #f59e0b; color: #78350f; padding: 12px 16px; font-size: 13.5px; font-weight: 600;\\">\\n    <div class=\\"container\\" style=\\"display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;\\">\\n      <div>\\n        \u{1F4DD} <strong>")
+    ; __append(escapeFn( (typeof previewStatus !== 'undefined' ? String(previewStatus).toUpperCase() : 'DRAFT') ))
+    ; __append(" PREVIEW MODE</strong> \u2014 This post is currently hidden from public visitors &amp; Google until published after review.\\n      </div>\\n      <div style=\\"display: flex; align-items: center; gap: 8px; flex-wrap: wrap;\\">\\n        ")
+    ;  if (typeof previewEditUrl !== 'undefined' && previewEditUrl) { 
+    ; __append("\\n          <a href=\\"")
+    ; __append(escapeFn( previewEditUrl ))
+    ; __append("\\" style=\\"background: #ffffff; color: #1e293b; border: 1px solid #cbd5e1; padding: 5px 12px; border-radius: 5px; text-decoration: none; font-size: 12.5px; font-weight: 700;\\">\u270F\uFE0F Back to Edit</a>\\n        ")
+    ;  } 
+    ; __append("\\n        ")
+    ;  if (typeof previewPublishUrl !== 'undefined' && previewPublishUrl) { 
+    ; __append("\\n          <form action=\\"")
+    ; __append(escapeFn( previewPublishUrl ))
+    ; __append("\\" method=\\"POST\\" style=\\"display: inline-block; margin: 0;\\" onsubmit=\\"return confirm('Publish this reviewed post live now?');\\">\\n            <button type=\\"submit\\" style=\\"background: #16a34a; color: #ffffff; border: none; padding: 6px 14px; border-radius: 5px; cursor: pointer; font-size: 12.5px; font-weight: 700;\\">\u{1F680} Publish Live Now</button>\\n          </form>\\n        ")
+    ;  } 
+    ; __append("\\n      </div>\\n    </div>\\n  </div>\\n")
+    ;  } 
     ; __append("\\n\\n")
     ;  if (activeDetailLayout === 'blog_2col') { 
     ; __append("\\n<!-- ============================================================\\n     MODE 2: MODERN 2-COLUMN EDITORIAL BLOG LAYOUT (CBTRank Style)\\n     ============================================================ -->\\n<main class=\\"gez-blog-page-main\\">\\n  <div class=\\"gez-blog-main-container\\">\\n    <div class=\\"gez-blog-layout\\">\\n\\n      <!-- Left Main Article Area -->\\n      <div class=\\"gez-blog-content-area\\">\\n        <article class=\\"gez-article-wrap\\">\\n          <!-- Breadcrumb -->\\n          <div class=\\"detail-breadcrumb\\" style=\\"margin-bottom: 12px;\\">\\n            <a href=\\"/\\">Home</a> \xBB\\n            <a href=\\"/category/")

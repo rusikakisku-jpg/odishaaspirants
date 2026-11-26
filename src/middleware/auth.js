@@ -60,6 +60,7 @@ function clearAuthCookie(res, req) {
 }
 
 module.exports = {
+  getAllValidTokens,
   requireAuth,
   setAuthCookie,
   clearAuthCookie

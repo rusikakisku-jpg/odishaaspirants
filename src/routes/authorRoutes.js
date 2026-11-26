@@ -14,6 +14,11 @@ const {
 const { slugify, CATEGORIES, safeJsonParse, formatDate } = require('../utils/helpers');
 const { saveUploadedAsset } = require('../utils/uploadHelper');
 const { getPostCategoryMap, syncPostCategoriesOnSave } = require('../utils/postCategoryManager');
+const {
+  buildDraftPreviewUrl,
+  buildPreviewPostFromBody,
+  renderPostPreview
+} = require('../utils/previewToken');
 
 // Multer memory storage for direct R2 streaming
 const upload = multer({
@@ -251,7 +256,11 @@ router.get('/posts', async (req, res, next) => {
 
     query += ' ORDER BY ' + (isEditor ? 'p.id' : 'id') + ' DESC LIMIT 100';
 
-    const posts = await d1.prepare(query).bind(...params).all();
+    const rawPosts = await d1.prepare(query).bind(...params).all();
+    const posts = (rawPosts || []).map(p => ({
+      ...p,
+      previewUrl: buildDraftPreviewUrl(p, '')
+    }));
     const allAuthors = isEditor ? await d1.prepare('SELECT id, name FROM authors ORDER BY name ASC').all() : [];
 
     res.render('author/posts-list', {
@@ -260,7 +269,7 @@ router.get('/posts', async (req, res, next) => {
       isEditor,
       allAuthors,
       selectedAuthor: authorFilter,
-      posts: posts || [],
+      posts,
       categories: CATEGORIES,
       selectedCategory: category,
       selectedStatus: status,
@@ -381,7 +390,8 @@ router.post('/posts/new', upload.fields([
     });
     globalThis.__invalidateCategoryCache?.();
 
-    res.redirect('/author-portal/posts?success=created');
+    const redirectFlag = postStatus === 'draft' ? 'draft' : 'published';
+    res.redirect(`/author-portal/posts?success=${redirectFlag}`);
   } catch (err) {
     next(err);
   }
@@ -534,7 +544,64 @@ router.post('/posts/edit/:id', upload.fields([
     });
     globalThis.__invalidateCategoryCache?.();
 
-    res.redirect('/author-portal/posts?success=updated');
+    const redirectFlag = postStatus === 'draft' ? 'draft' : ((postStatus === 'active' && currentPost.status !== 'active') ? 'published' : 'updated');
+    res.redirect(`/author-portal/posts?success=${redirectFlag}`);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// Live Unsaved Draft Preview (Author Form)
+router.post('/posts/preview', upload.fields([
+  { name: 'thumbnail_file', maxCount: 1 },
+  { name: 'notification_file', maxCount: 1 },
+  { name: 'admit_card_file', maxCount: 1 },
+  { name: 'result_file', maxCount: 1 }
+]), async (req, res, next) => {
+  try {
+    const previewPost = buildPreviewPostFromBody(req.body, req.author.id);
+    const editUrl = previewPost.id ? `/author-portal/posts/edit/${previewPost.id}` : '/author-portal/posts/new';
+    return await renderPostPreview(req, res, {
+      post: previewPost,
+      editUrl,
+      backUrl: '/author-portal/posts',
+      publishUrl: previewPost.id ? `/author-portal/posts/publish/${previewPost.id}` : ''
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// Saved Draft Preview (Author)
+router.get('/posts/preview/:id', async (req, res, next) => {
+  try {
+    const post = await d1.prepare('SELECT * FROM posts WHERE id = ?').bind(req.params.id).first();
+    if (!post) return res.status(404).send('Article not found.');
+    if (!req.isEditor && post.author_id !== req.author.id) {
+      return res.status(403).send('Access Denied: You are not authorized to preview articles written by another author.');
+    }
+    return await renderPostPreview(req, res, {
+      post,
+      editUrl: `/author-portal/posts/edit/${post.id}`,
+      backUrl: '/author-portal/posts',
+      publishUrl: post.status !== 'active' ? `/author-portal/posts/publish/${post.id}` : ''
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// One-Click Publish After Review (Author)
+router.post('/posts/publish/:id', async (req, res, next) => {
+  try {
+    const post = await d1.prepare('SELECT * FROM posts WHERE id = ?').bind(req.params.id).first();
+    if (!post) return res.status(404).send('Article not found.');
+    if (!req.isEditor && post.author_id !== req.author.id) {
+      return res.status(403).send('Access Denied: You cannot publish articles belonging to another author.');
+    }
+    await d1.prepare("UPDATE posts SET status = 'active', updated_at = CURRENT_TIMESTAMP WHERE id = ?").bind(post.id).run();
+    globalThis.__invalidateCategoryCache?.();
+    res.redirect('/author-portal/posts?success=published');
   } catch (err) {
     next(err);
   }

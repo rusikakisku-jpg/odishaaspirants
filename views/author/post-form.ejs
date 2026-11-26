@@ -362,21 +362,50 @@
 
     <!-- Publication Status -->
     <div class="form-row" style="align-items: center; margin-top: 10px;">
-      <div class="form-group" style="max-width: 250px;">
+      <div class="form-group" style="max-width: 280px;">
         <label for="status">Publication Status</label>
         <select id="status" name="status" class="form-control">
-          <option value="active" <%= post && post.status === 'active' ? 'selected' : '' %>>Active (Publish Live)</option>
-          <option value="draft" <%= post && post.status === 'draft' ? 'selected' : '' %>>Draft (Work in Progress)</option>
+          <option value="draft" <%= (post && post.status === 'draft') || !post ? 'selected' : '' %>>Draft (Review Before Publish)</option>
+          <option value="active" <%= post && post.status === 'active' ? 'selected' : '' %>>Published (Active Live)</option>
         </select>
       </div>
     </div>
 
-    <div style="margin-top: 25px;">
-      <button type="submit" class="btn btn-primary" style="background: #2563eb; border-color: #1d4ed8; font-size: 16px; padding: 10px 25px;">
-        💾 <%= post ? 'Update Article' : 'Publish Article' %>
+    <% if (post && post.id) { %>
+      <input type="hidden" name="post_id" value="<%= post.id %>">
+    <% } %>
+
+    <div style="margin-top: 25px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+      <button type="submit" onclick="document.getElementById('status').value='draft'" class="btn btn-secondary" style="background: #f59e0b; border-color: #d97706; color: #ffffff; font-size: 15px; padding: 10px 20px; font-weight: 700;">
+        📝 Save as Draft
       </button>
-      <a href="/author-portal/posts" class="btn btn-secondary" style="margin-left: 10px;">Cancel</a>
+      <button type="button" data-preview-btn="1" onclick="previewAuthorPostDraft(this, '/author-portal/posts/preview')" class="btn btn-secondary" style="background: #0284c7; border-color: #0369a1; color: #ffffff; font-size: 15px; padding: 10px 20px; font-weight: 700;">
+        👁️ Preview Draft
+      </button>
+      <button type="submit" onclick="document.getElementById('status').value='active'" class="btn btn-primary" style="background: #16a34a; border-color: #15803d; font-size: 15px; padding: 10px 22px; font-weight: 700;">
+        🚀 <%= (post && post.status === 'active') ? 'Update & Keep Published' : 'Publish Live' %>
+      </button>
+      <a href="/author-portal/posts" class="btn btn-secondary">Cancel</a>
     </div>
+    <script>
+      function previewAuthorPostDraft(btn, previewAction) {
+        var form = btn && btn.closest('form');
+        if (!form) return;
+        if (typeof window.__syncAllBuilders === 'function') {
+          window.__syncAllBuilders();
+        }
+        var origAction = form.getAttribute('action');
+        var origTarget = form.getAttribute('target');
+        form.setAttribute('action', previewAction);
+        form.setAttribute('target', '_blank');
+        HTMLFormElement.prototype.submit.call(form);
+        setTimeout(function() {
+          if (origAction) form.setAttribute('action', origAction);
+          if (origTarget) form.setAttribute('target', origTarget);
+          else form.removeAttribute('target');
+        }, 150);
+      }
+    </script>
   </form>
 </div>
 

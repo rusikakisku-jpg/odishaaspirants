@@ -3,6 +3,7 @@ const router = express.Router();
 const d1 = require('../db/d1Client');
 const { CATEGORIES, safeJsonParse, formatDate, formatPrettyDate } = require('../utils/helpers');
 const { recordPostView } = require('../utils/viewTracker');
+const { canPreviewPost } = require('../utils/previewToken');
 const {
   fetchCategoryPosts,
   countCategoryPosts,
@@ -214,8 +215,21 @@ router.get('/post/:slug', async (req, res, next) => {
       });
     }
 
-    // Record lifetime + daily post views cleanly before sending response
-    await recordPostView(post.id, req);
+    const isDraftPreview = post.status !== 'active';
+    if (isDraftPreview) {
+      const allowedPreview = await canPreviewPost(req, post);
+      if (!allowedPreview) {
+        return res.status(404).render('pages/error', {
+          title: 'Post Not Found | Odisha Aspirants',
+          message: 'The job or result notification you are looking for does not exist or has been removed.'
+        });
+      }
+      res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+      res.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
+    } else {
+      // Record lifetime + daily post views only for published posts
+      await recordPostView(post.id, req);
+    }
 
     // Fetch related posts, author, recent posts, popular posts, and category counts concurrently
     const [relatedPosts, authorRow, recentPosts, popularPosts, categoryCounts] = await Promise.all([
@@ -246,13 +260,18 @@ router.get('/post/:slug', async (req, res, next) => {
       bio: 'Verified recruitment researcher and content editor at Odisha Aspirants.'
     };
 
-    res.set('Cache-Control', 'public, max-age=30, s-maxage=60, stale-while-revalidate=120');
+    if (!isDraftPreview) {
+      res.set('Cache-Control', 'public, max-age=30, s-maxage=60, stale-while-revalidate=120');
+    }
 
     res.render('pages/detail', {
-      title: `${post.title} - Odisha Aspirants | WWW.ODISHAASPIRANTS.COM`,
+      title: `${isDraftPreview ? '[PREVIEW] ' : ''}${post.title} - Odisha Aspirants | WWW.ODISHAASPIRANTS.COM`,
       metaDescription: post.short_desc 
         ? post.short_desc.replace(/\s+/g, ' ').trim() 
         : `${post.title}. Check notification details, eligibility criteria, application process, and official links at Odisha Aspirants.`,
+      metaRobots: isDraftPreview ? 'noindex, nofollow' : undefined,
+      isDraftPreview,
+      previewStatus: post.status,
       post,
       author,
       catInfo: CATEGORIES[post.category] || { name: 'Notification', slug: post.category },

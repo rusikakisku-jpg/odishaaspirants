@@ -9,17 +9,21 @@
     <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/new" class="btn btn-primary">➕ Create New Post</a>
   </div>
 
-  <% if (typeof success !== 'undefined' && success === 'created') { %>
+  <% if (typeof success !== 'undefined' && success === 'draft') { %>
+    <div style="background: #fef3c7; border: 1px solid #fcd34d; color: #92400e; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
+      📝 Post saved as <strong>Draft</strong>! Click <strong>Preview</strong> below to review how it looks before publishing live.
+    </div>
+  <% } else if (typeof success !== 'undefined' && (success === 'published' || success === 'created')) { %>
     <div style="background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
-      ✅ Notification successfully created and published live on Odisha Aspirants!
+      🚀 Post published live successfully on Odisha Aspirants!
     </div>
   <% } else if (typeof success !== 'undefined' && success === 'updated') { %>
     <div style="background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
-      ✅ Notification successfully updated!
+      ✅ Post successfully updated!
     </div>
   <% } else if (typeof success !== 'undefined' && success === 'deleted') { %>
     <div style="background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-weight: 600;">
-      🗑️ Notification deleted successfully!
+      🗑️ Post deleted successfully!
     </div>
   <% } %>
 
@@ -29,11 +33,11 @@
       type="text" 
       name="search" 
       class="form-control" 
-      style="max-width: 340px;" 
+      style="max-width: 300px;" 
       placeholder="🔍 Search title or department..." 
       value="<%= search %>"
     >
-    <select name="category" class="form-control" style="max-width: 230px;">
+    <select name="category" class="form-control" style="max-width: 210px;">
       <option value="">All Categories (8)</option>
       <% Object.keys(categories).forEach(key => { %>
         <option value="<%= key %>" <%= selectedCategory === key ? 'selected' : '' %>>
@@ -41,8 +45,14 @@
         </option>
       <% }) %>
     </select>
+    <select name="status" class="form-control" style="max-width: 170px;" onchange="this.form.submit()">
+      <option value="">All Status</option>
+      <option value="active" <%= (typeof selectedStatus !== 'undefined' && selectedStatus === 'active') ? 'selected' : '' %>>Published (Active)</option>
+      <option value="draft" <%= (typeof selectedStatus !== 'undefined' && selectedStatus === 'draft') ? 'selected' : '' %>>Draft</option>
+      <option value="archived" <%= (typeof selectedStatus !== 'undefined' && selectedStatus === 'archived') ? 'selected' : '' %>>Archived</option>
+    </select>
     <button type="submit" class="btn btn-primary btn-sm" style="padding: 9px 16px;">Filter Results</button>
-    <% if (search || selectedCategory) { %>
+    <% if (search || selectedCategory || (typeof selectedStatus !== 'undefined' && selectedStatus)) { %>
       <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts" class="btn btn-secondary btn-sm" style="padding: 8px 14px;">Reset</a>
     <% } %>
   </form>
@@ -66,7 +76,7 @@
             <tr>
               <td style="font-weight: 600; color: #64748b;">#<%= post.id %></td>
               <td>
-                <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/post/<%= post.slug %>" target="_blank" style="font-weight: 600; color: #0f172a; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <a href="<%= post.status === 'active' ? ((typeof publicBase !== 'undefined' ? publicBase : '') + '/post/' + post.slug) : (post.previewUrl || ((typeof adminBase !== 'undefined' ? adminBase : '/admin') + '/posts/preview/' + post.id)) %>" target="_blank" style="font-weight: 600; color: #0f172a; text-decoration: none; display: flex; align-items: center; gap: 5px;">
                   <span><%= post.title %></span>
                   <span style="font-size: 11px; color: #94a3b8;">↗</span>
                 </a>
@@ -83,11 +93,18 @@
               <td style="font-size: 12.5px; color: #c62828; font-weight: 600;"><%= post.last_date || '-' %></td>
               <td>
                 <span style="background: <%= post.status === 'active' ? '#ecfdf5' : '#fffbeb' %>; color: <%= post.status === 'active' ? '#059669' : '#d97706' %>; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700;">
-                  ● <%= post.status %>
+                  ● <%= post.status === 'active' ? 'Published' : (post.status === 'draft' ? 'Draft' : post.status) %>
                 </span>
               </td>
               <td style="text-align: right; white-space: nowrap;">
-                <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/post/<%= post.slug %>" target="_blank" class="btn btn-secondary btn-sm" style="margin-right: 3px;">View</a>
+                <% if (post.status !== 'active') { %>
+                  <a href="<%= post.previewUrl || ((typeof adminBase !== 'undefined' ? adminBase : '/admin') + '/posts/preview/' + post.id) %>" target="_blank" class="btn btn-secondary btn-sm" style="margin-right: 3px; background: #e0f2fe; color: #0369a1; border-color: #bae6fd;">👁️ Preview</a>
+                  <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/publish/<%= post.id %>" method="POST" style="display: inline-block; margin-right: 3px;" onsubmit="return confirm('Publish this post live now?');">
+                    <button type="submit" class="btn btn-primary btn-sm" style="background: #16a34a; border-color: #15803d;">🚀 Publish</button>
+                  </form>
+                <% } else { %>
+                  <a href="<%= (typeof publicBase !== 'undefined' ? publicBase : '') %>/post/<%= post.slug %>" target="_blank" class="btn btn-secondary btn-sm" style="margin-right: 3px;">View</a>
+                <% } %>
                 <a href="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/edit/<%= post.id %>" class="btn btn-secondary btn-sm" style="margin-right: 3px;">Edit</a>
                 <form action="<%= (typeof adminBase !== 'undefined' ? adminBase : '/admin') %>/posts/delete/<%= post.id %>" method="POST" style="display: inline-block;" onsubmit="return confirm('Permanently delete this notification?');">
                   <button type="submit" class="btn btn-danger btn-sm">Delete</button>
